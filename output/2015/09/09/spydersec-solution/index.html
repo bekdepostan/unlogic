@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Sven Steinbauer">
+
+
+        <title>"SpyderSec solution"</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="Another day, another VM. Today it's the SpyderSec Challenge So let me start it up and get on it. {% img http://i.imgur.com/nah3Wah.gif ...">
+
+        <meta name="author" content="Sven Steinbauer">
+
+        <meta name="tags" content="[vulnhub">
+        <meta name="tags" content="spydersec">
+        <meta name="tags" content="infosec">
+        <meta name="tags" content="security">
+        <meta name="tags" content="walkthrough">
+        <meta name="tags" content="solution]">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Unlogic">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="Sven Steinbauer" >
+	<meta property="og:url" content="/2015/09/09/spydersec-solution/">
+	<meta property="og:title" content=""SpyderSec solution"">
+	<meta property="article:published_time" content="2015-09-09 00:00:00+01:00">
+            <meta property="og:description" content="Another day, another VM. Today it's the SpyderSec Challenge So let me start it up and get on it. {% img http://i.imgur.com/nah3Wah.gif ...">
+
+            <meta property="og:image" content="/images/keyboard-feature.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Unlogic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="/pages/about.html">About</a></li>
+                            <li><a href="/pages/all-posts.html">All posts</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/images/keyboard-feature.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>"SpyderSec solution"</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
+                             on Wed 09 September 2015
+                        </span>
+                            <span class="meta">Updated on Wed 09 September 2015</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <p>Another day, another VM. Today it's the <a href="https://www.vulnhub.com/entry/spydersec-challenge,128/">SpyderSec Challenge</a></p>
+<p>So let me start it up and get on it. </p>
+<p>{% img http://i.imgur.com/nah3Wah.gif %}</p>
+<p>As per usual I need the IP of the machine and
+the services it has running (if any). Straight from the Unlogic Cookbook</p>
+<p>{% highlight console %}
+root@kali:~/Downloads# nmap -sn 192.168.56.0/24</p>
+<p>Starting Nmap 6.49BETA4 ( https://nmap.org ) at 2015-09-09 16:07 BST
+Nmap scan report for 192.168.56.1
+Host is up (0.00039s latency).
+MAC Address: 0A:00:27:00:00:00 (Unknown)
+Nmap scan report for 192.168.56.100
+Host is up (0.00017s latency).
+MAC Address: 08:00:27:FF:57:41 (Cadmus Computer Systems)
+Nmap scan report for 192.168.56.101
+Host is up (0.00028s latency).
+MAC Address: 08:00:27:56:11:10 (Cadmus Computer Systems)
+Nmap scan report for 192.168.56.102
+Host is up.
+Nmap done: 256 IP addresses (4 hosts up) scanned in 1.77 seconds</p>
+<p>root@kali:~/Downloads# nmap -p- -sV 192.168.56.101</p>
+<p>Starting Nmap 6.49BETA4 ( https://nmap.org ) at 2015-09-09 16:07 BST
+Nmap scan report for 192.168.56.101
+Host is up (0.00049s latency).
+Not shown: 65533 filtered ports
+PORT   STATE  SERVICE VERSION
+22/tcp closed ssh
+80/tcp open   http    Apache httpd
+MAC Address: 08:00:27:56:11:10 (Cadmus Computer Systems)</p>
+<p>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 155.80 seconds</p>
+<p>{% endhighlight %}</p>
+<p>Lucky me, only one service running, and it's good old http at that. 
+Let's take a look at that page then:</p>
+<p><a href="http://i.imgur.com/IiA6MlY.png">{% img http://i.imgur.com/IiA6MlY.png %}</a></p>
+<p>Without wasting much time, let's get to the clue hunting. First things first: check the source.
+And there's clue number one, right between those script tags. It evals a function which seems to 
+do some text processing. I'll open Firebug to see if that shows anything interesting, and sure
+enough</p>
+<p _="%" endhighlight="endhighlight">{% highlight javascript %}
+SyntaxError: missing ; before statement
+    61:6c:65:72:74:28:27:6d:75:6c:64:65:72:2e:66:62:69:27:29:3b</p>
+<p>So that's the output from the eval. It throws an error because the result isn't valid
+javascript. It seems to me as though it might be HEX. I'll put it through Burp's decoder and
+sure enough it resolves to <code>a:l:e:r:t:(:':m:u:l:d:e:r:.:f:b:i:':):;</code>. That's not going to 
+affect the page in any way, but I'm sure it's a clue. I'll note it down and carry on exploring.</p>
+<p>The CSS contains a base64 encoded gif. I decided to investigate it by converting it to a file
+and opening it in Gimp to examine it. Nothing much of interest there either. Hexdump also shows
+nothing of note.</p>
+<p>Ok then, apart from that there's nothing of interest in the source, so let me move onto the images on the page.
+There's two images: <code>Challenge.png</code> and <code>SpyderSecLogo200.png</code>. On first glance they appear to
+have nothing special about them, but once examined with <code>exiftool</code> I see something of interest</p>
+<p _="%" endhighlight="endhighlight">{% highlight console %}
+root@kali:~/spydersec# exiftool Challenge.png 
+ExifTool Version Number         : 9.74
+File Name                       : Challenge.png
+Directory                       : .
+File Size                       : 83 kB
+File Modification Date/Time     : 2015:09:01 07:25:59+01:00
+File Access Date/Time           : 2015:09:09 14:29:25+01:00
+File Inode Change Date/Time     : 2015:09:09 14:29:19+01:00
+File Permissions                : rw-r--r--
+File Type                       : PNG
+MIME Type                       : image/png
+Image Width                     : 540
+Image Height                    : 540
+Bit Depth                       : 8
+Color Type                      : RGB with Alpha
+Compression                     : Deflate/Inflate
+Filter                          : Adaptive
+Interlace                       : Noninterlaced
+Background Color                : 255 255 255
+Pixels Per Unit X               : 2835
+Pixels Per Unit Y               : 2835
+Pixel Units                     : meters
+Comment                         : 35:31:3a:35:33:3a:34:36:3a:35:37:3a:36:34:3a:35:38:3a:33:35:3a:
+                                  37:31:3a:36:34:3a:34:35:3a:36:37:3a:36:61:3a:34:65:3a:37:61:3a:
+                                  34:39:3a:33:35:3a:36:33:3a:33:30:3a:37:38:3a:34:32:3a:34:66:3a:
+                                  33:32:3a:36:37:3a:33:30:3a:34:61:3a:35:31:3a:33:64:3a:33:64
+Image Size                      : 540x540</p>
+<p>Hex strings are the order of the day here at SpyderSec. So back to Burp's decoder once more
+after removing all the colons. The string decodes to another hex string. Same dance again, and
+I get a typical base64 string, decode once more and be rewarded with <code>A!Vu~jtH#729sLA;h4%</code>. Which is
+not encoded anymore. I make a note of it and carry on sleuthing.</p>
+<p>Watch out, here comes the reliable <code>dirbuster</code>. Running it with the regular word list I discover the <code>v</code> subdirectory.
+Browsing to that however merely responds with a <code>403 Forbidden</code> reply. I've not exhausted all the
+nooks and crannies yet, there's still that cookie jar to poke at.</p>
+<div class="highlight"><pre><span></span>Firebug -&gt; Cookie tab -&gt; URI /v/81JHPbvyEQ8729161jd6aKQ0N4/
+</pre></div>
+
+
+<p>Another clue.... leading me to a subdirectory under <code>v</code>. But that's also forbidden. Well, let
+me just plug some of the data we've found so far into it. The random characters from the
+exif data result in a 404, but the string from the javascript alert box however brings up a 
+download dialog for a file called <code>mulder.fbi</code>.</p>
+<p>{% highlight console %}
+root@kali:~/spydersec# wget http://192.168.56.101//v/81JHPbvyEQ8729161jd6aKQ0N4/mulder.fbi
+--2015-09-09 17:24:38--  http://192.168.56.101//v/81JHPbvyEQ8729161jd6aKQ0N4/mulder.fbi
+Connecting to 192.168.56.101:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 13960421 (13M) [text/plain]
+Saving to: ‘mulder.fbi’</p>
+<p>mulder.fbi.1            100%[===============================&gt;]  13.31M  5.52MB/s   in 2.4s   </p>
+<p>2015-09-09 17:24:41 (5.52 MB/s) - ‘mulder.fbi’ saved [13960421/13960421]</p>
+<p _="%" endhighlight="endhighlight">root@kali:~/spydersec# file mulder.fbi 
+mulder.fbi: ISO Media, MP4 v2 [ISO 14496-14]</p>
+<p>A video file, which when I play it, is the song "Twilight Time" by "The Platters".</p>
+<p>So here I hit another dead end. </p>
+<p _="%" http:_i.imgur.com_CbfWCmv.gif="http://i.imgur.com/CbfWCmv.gif" img="img">Let me think</p>
+<p>I'll take inventory of the clues I have left now:</p>
+<ul>
+<li>A music video "Twilight time" titled <em>mulder.fbi</em></li>
+<li>A seeming random string <code>A!Vu~jtH#729sLA;h4%</code></li>
+</ul>
+<p>So I ask myself, why is a video of a song named <em>mulder.fbi</em>? So I do a little research
+and after searching for <code>the platters "twilight time" x files</code> I hit this section in a 
+<a href="https://en.wikipedia.org/wiki/Kill_Switch_(The_X-Files)">Wikipedia article</a></p>
+<p _="%" endhighlight="endhighlight">{% highlight text %}
+When he puts it into the car stereo, it plays "Twilight Time" 
+by The Platters. However, the agents take it to the Lone Gunmen, 
+who discover that the disc contains a large quantity of encrypted data</p>
+<p>Well if that ain't a clue and a bit! Ok, so a little more research of what data you
+can hide in a video file (search for <code>hiding files video mp4</code>) I am directed to a
+<a href="http://lifehacker.com/5771142/embed-a-truecrypt-volume-in-a-playable-video-file">Lifehacker article</a> 
+describing the process of hiding Truecrypt volumes in MP4s. It mentions a few ways to 
+detect such a volume in a video, but to be honest, I might as well just try and mount the volume.
+That should be the easiest and quickest way to see if I am on the right track.</p>
+<p>Sure enough, there's a volume in the video, but it needs a password. Well there's only
+one unused piece of the puzzle left. I plug that in and there's our volume with the <code>flag.txt</code> file
+which contains:</p>
+<p>{% highlight text %}
+Congratulations! </p>
+<p>You are a winner. </p>
+<p>Please leave some feedback on your thoughts regarding this challenge.
+Was it fun? Was it hard enough or too easy? 
+What did you like or dislike, what could be done better?</p>
+<p _="%" endhighlight="endhighlight">https://www.spydersec.com/feedback</p>
+<p>Well that was a nice challenge, especially the truecrypt volume in the MP4. That's
+something new I learned from this. So thanks to <a href="https://twitter.com/Spydersec">@SpyderSec</a> 
+for the challenge, and thanks to you for stopping by to read this.</p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/vulnhub.html">[vulnhub</a>, <a href="/tag/spydersec.html">spydersec</a>, <a href="/tag/infosec.html">infosec</a>, <a href="/tag/security.html">security</a>, <a href="/tag/walkthrough.html">walkthrough</a>, <a href="/tag/solution.html">solution]</a>, </p>
+        </div>
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-you can add links in your config file fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-another social link fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+
+</html>

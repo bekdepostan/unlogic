@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Sven Steinbauer">
+
+
+        <title>"Meeting with gophers"</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="I've decided that it's time to get to grips with a new programming language for 2016. After some thinking (trust me, I didn't over think ...">
+
+        <meta name="author" content="Sven Steinbauer">
+
+        <meta name="tags" content="[go">
+        <meta name="tags" content="golang">
+        <meta name="tags" content="programming]">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Unlogic">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="Sven Steinbauer" >
+	<meta property="og:url" content="/2016/02/03/meeting-with-gophers/">
+	<meta property="og:title" content=""Meeting with gophers"">
+	<meta property="article:published_time" content="2016-02-03 00:00:00+00:00">
+            <meta property="og:description" content="I've decided that it's time to get to grips with a new programming language for 2016. After some thinking (trust me, I didn't over think ...">
+
+            <meta property="og:image" content="/images/keyboard-feature.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Unlogic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="/pages/about.html">About</a></li>
+                            <li><a href="/pages/all-posts.html">All posts</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/images/keyboard-feature.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>"Meeting with gophers"</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
+                             on Wed 03 February 2016
+                        </span>
+                            <span class="meta">Updated on Wed 03 February 2016</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <p>I've decided that it's time to get to grips with a new programming language for
+2016. After some thinking (trust me, I didn't over think this) I opted for <a href="http://golang.org">Go</a>.
+There were a few choices to pick from:</p>
+<ul>
+<li><a href="http://iolanguage.org/">io</a></li>
+<li><a href="http://pharo.org/">Pharo</a> (Smalltalk)</li>
+<li><a href="https://www.rust-lang.org/">Rust</a></li>
+</ul>
+<p>I've tried Go before and had a <a href="http://unlogic.co.uk/2015/01/12/solving-project-euler-with-rust-1/">brief</a>
+<a href="http://unlogic.co.uk/2015/01/20/solving-project-euler-with-rust-2/">fling</a> with Rust. I had a
+<em>very</em> quick dabble with io too. Technically when I did some work in Objective-C I kinda 
+wrote smalltalkish code too. But I wanted to go a little deeper, and spend some decent 
+time with one of these.</p>
+<p>Short story shorter: I selected Go</p>
+<p>Some of you might be asking "Why the fuck did you not choose Rust?". Well, it's
+gaining traction and it's certainly talked about amongst my friends. But I was never really
+taken by it. Then I watched <a href="https://www.youtube.com/watch?v=f6kdp27TYZs">this video</a> and
+the whole idea of <em>goroutines</em> and <em>channels</em> really appealed to me. I know Rust has channels too, but
+the Go implementation sits better with me.</p>
+<p>"But Sven", I hear you say, "what about the stop-the-world garbage collector?". Ah yes, the ol STWGC.
+I am well aware that some high interactivity web services have been written in C++ after
+the GC put a spanner in the works, but having read the release notes for 
+<a href="https://golang.org/doc/go1.5#gc">Go 1.5's GC</a> sound very promising, and lets face it,
+I can live with a little bit of a pause here and there for the stuff I write.</p>
+<p>Besides, it's not like I've decided to <strong>never</strong> learn any other language, it's just
+that right now, I'm going to concentrate on doing stuff with Go. Perhaps I'll 
+delve deeper into Rust later in the year, or next year.</p>
+<p>So with all that out of the way, let me share with you my naïve implementation of
+<a href="https://projecteuler.net">Project Euler</a> Problem 1</p>
+<blockquote>
+<p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p>
+<p>Find the sum of all the multiples of 3 or 5 below 1000.</p>
+</blockquote>
+<p>Ok, so first I just did the simple for loop solution</p>
+<div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">:=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">i</span><span class="o">%</span><span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">i</span><span class="o">%</span><span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sum</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Pretty much reads like C, right? Cool. But why would I write C code in Go? I
+could just use C, or even Python. So let's make use of these awesome <em>goroutines</em> and
+split the work a little bit. Now this implementation is a <em>little</em> clunky I am sure,
+but I'm just starting out, so I'm allowing for some leniency.</p>
+<p>{% highlight go %}
+package main</p>
+<p>import "fmt"</p>
+<p>func getSum(start int, end int, c chan&lt;- int) {
+    sum := 0
+    for i := start; i &lt; end; i++ {
+        if (i%3 == 0) || (i%5 == 0) {
+            sum += i
+        }
+    }
+    c &lt;- sum
+}</p>
+<p>func main() {
+    sum := 0
+    c := make(chan int)
+    go getSum(0, 250, c)
+    go getSum(250, 500, c)
+    go getSum(500, 750, c)
+    go getSum(750, 1000, c)</p>
+<div class="highlight"><pre><span></span>sum <span class="o">=</span> <span class="o">&lt;-</span><span class="kt">c</span> <span class="o">+</span> <span class="o">&lt;-</span><span class="kt">c</span> <span class="o">+</span> <span class="o">&lt;-</span><span class="kt">c</span> <span class="o">+</span> <span class="o">&lt;-</span><span class="kt">c</span>
+
+fmt.Println<span class="p">(</span><span class="kp">sum</span><span class="p">)</span>
+</pre></div>
+
+
+<p>}</p>
+<p>{% endhighlight %}</p>
+<p>Still with me? In that case let's quickly go over what the idea is here.
+First I create a channel <code>c</code> of type <code>int</code> that will communicate with the
+goroutine that sums up the relevant numbers. This routine, <code>getSum</code>, does
+what the <code>for loop</code> did in the original implementation, except the result is
+sent back to the channel (<code>c &lt;- sum</code>).</p>
+<p>Then I split the target into 4 (this to me could probably be done more elegantly)
+and execute the <em>goroutines</em> concurrently. Then the results of the channel are summed
+up by <code>sum = &lt;-c + &lt;-c + &lt;-c + &lt;-c</code>.</p>
+<p>Not quite content with this I decided to do a little timing test. I altered the code
+to solve the problem for all numbers under 1,000,000 and do that 100 times. 
+The channels are split into 4 as above, but with <code>0, 250000</code> and so on.
+Running the compiled code with <code>time euler_001</code> I checked the execution time:</p>
+<div class="highlight"><pre><span></span>Basic for loop implementation: 0:00.48
+Channel implementation: 0:00.19
+</pre></div>
+
+
+<p>Not a bad speed up, but also not definitive, as I'm just learning about channels
+and goroutines, so I might need to set up a better test bed for this later on.</p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/go.html">[go</a>, <a href="/tag/golang.html">golang</a>, <a href="/tag/programming.html">programming]</a>, </p>
+        </div>
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-you can add links in your config file fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-another social link fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Sven Steinbauer">
+
+
+        <title>Houdini voronoi shatter</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="Thought I would write about creating a very simple voronoi shatter effect in Houdini and how to explode it. The video below demonstrates ...">
+
+        <meta name="author" content="Sven Steinbauer">
+
+        <meta name="tags" content="[Houdini">
+        <meta name="tags" content="voronoi">
+        <meta name="tags" content="shatter">
+        <meta name="tags" content="dynamics]">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Unlogic">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="Sven Steinbauer" >
+	<meta property="og:url" content="/2012/12/08/houdini-voronoi-shatter/">
+	<meta property="og:title" content="Houdini voronoi shatter">
+	<meta property="article:published_time" content="2012-12-08 10:56:00+00:00">
+            <meta property="og:description" content="Thought I would write about creating a very simple voronoi shatter effect in Houdini and how to explode it. The video below demonstrates ...">
+
+            <meta property="og:image" content="/images/keyboard-feature.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Unlogic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="/pages/about.html">About</a></li>
+                            <li><a href="/pages/all-posts.html">All posts</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/images/keyboard-feature.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Houdini voronoi shatter</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
+                             on Sat 08 December 2012
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <p>Thought I would write about creating a very simple voronoi shatter effect in Houdini and how to explode it. The video below demonstrates the effect we're looking to achieve:</p>
+<p>{% vimeo 55168444 %}</p>
+<!-- more -->
+
+<p>The process of creating this is very simple, and I learned a few things from setting this up, so I figured I would share and hope you learn something from it too.</p>
+<p>So first we need to drop down a <em>Geometry</em> node and dive inside. Delete the file node and then create a <em>box</em> node. This box will be the object we will shatter. But in order to create a voronoi shatter we also need some seed points to generate the pattern with. So let's do that first. We'll use our box to generate the points we need, so drop down a <em>Points From Volume</em> node and connect the box to its input. Adjust the settings to your liking, or copy the ones below. I kept the number of points low as I wanted fewer and larger pieces.</p>
+<p>{% img content /images/content/points_from_vol.png %}</p>
+<p>Now that we have our points we can drop down a <em>Voronoi Fracture</em> node and connect the points to its second input. The only setting I changed was to turn on <code>Connect Inside Edges</code>. Finally we need to connect the <em>box</em> node to the <em>Voronoi Shatter's</em> first input. Now make the <em>Voronoi shatter</em> visible and you should see your fractured geo.</p>
+<p>{% img center /images/content/fracture.png %}</p>
+<p>Next we'll turn on the dynamics via the rigid bodies shelf at the top. Click <em>RBD Fracture</em> and make sure the voronoi geo is selected and press enter. If you press play now your object will fall down. Hrmmm, not totally awesome, as we wanted to explode it a little too. So the plan is to make all the pieces explode from the center outwards, like, for example, along the normals of a sphere say? Yes, that sounds about right. Ok, so let's put down a <em>Sphere</em> and scale it so that it's roughly the same size as the box. Append a <em>Point</em> node to the sphere and add a <em>Normal</em> and <em>Velocity</em> attribute. The <em>Velocity</em> attribute is under the <em>Particle</em> tab and we'll set its value to be a facture of the point's normal. Feel free to play with this value to get the efect you want. Basically this will set the point's velocity to the normal at that point, causing the pieces to rediate outwards when the sim starts.</p>
+<p>{% img center /images/content/vel_attribute.png %}</p>
+<p>Connect the output to the second input of an <em>Attribute Transfer</em> node and then connect the output of that to the <em>Rest Position</em> node. Connect the <em>Box</em> to the first input of the <em>Attribute Transfer</em> node. This will transfer the point attributes of the <em>Sphere</em> onto the shattered geo. You should now have a network that looks like this:</p>
+<p>{% img center /images/content/finalnetwork.png %}</p>
+<p>And yet still to exploding pieces? Well, we need to tell our solver to use the point velocity. So dive into the <em>Autodop Network</em> and on the <em>RBD Fracture Object</em> enable <em>Inherit Velocity From Point Velocity</em>. Hit play and you should see it explode.</p>
+<p>{% img center /images/content/inherit_pv.png %}</p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/houdini.html">[Houdini</a>, <a href="/tag/voronoi.html">voronoi</a>, <a href="/tag/shatter.html">shatter</a>, <a href="/tag/dynamics.html">dynamics]</a>, </p>
+        </div>
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-you can add links in your config file fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-another social link fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+
+</html>

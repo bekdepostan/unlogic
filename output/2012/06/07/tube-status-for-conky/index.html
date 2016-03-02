@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Sven Steinbauer">
+
+
+        <title>Tube status for Conky</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="Last night I was affected by "severe delays on the Central line" caused by a burst watermain and bringing part of the line to its knees. ...">
+
+        <meta name="author" content="Sven Steinbauer">
+
+        <meta name="tags" content="[python">
+        <meta name="tags" content="CLI">
+        <meta name="tags" content="Conky]">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Unlogic">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="Sven Steinbauer" >
+	<meta property="og:url" content="/2012/06/07/tube-status-for-conky/">
+	<meta property="og:title" content="Tube status for Conky">
+	<meta property="article:published_time" content="2012-06-07 12:00:00+01:00">
+            <meta property="og:description" content="Last night I was affected by "severe delays on the Central line" caused by a burst watermain and bringing part of the line to its knees. ...">
+
+            <meta property="og:image" content="/images/keyboard-feature.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Unlogic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="/pages/about.html">About</a></li>
+                            <li><a href="/pages/all-posts.html">All posts</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/images/keyboard-feature.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Tube status for Conky</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
+                             on Thu 07 June 2012
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <p>Last night I was affected by "severe delays on the Central line" caused by a burst watermain and bringing part of the line to its knees. Unfortunately I only found this out once I got to the station. Usually the line is well behaved and I have little need to check it often. I know it's really quick to do so and there's a whole host of ways to dit too. But the problems I have with them are:</p>
+<ol>
+<li><strong>Check online</strong>: Have to remember to go online and check, which I often/always forget.</li>
+<li><strong>iPhone app</strong>: Same again. Have to remember to actually do that each time I leave the office.</li>
+<li><strong>Email alerts</strong>: I get a fair bit of email each day and end up just clicking <em>delete</em> or <em>mark as read</em> on stuff like that</li>
+</ol>
+<p>So here's what I've come up with </p>
+<!-- more -->
+
+<p>A CLI app that checks the tube status for any number of given lines. "Yeah, how does that help?" I hear you ask. "You still have to use it to check it" you say. True. But there's another way to use it: Conky.</p>
+<p>I use <a href="http://conky.sourceforge.net/">Conky</a> and I love it. So what better than to have the tube status for the relevant lines <strong>always</strong> on my desktop and updating every few seconds? So I quickly put together this python script to accomplish the task:</p>
+<p>{% gist 2888187 %}</p>
+<p>And it looks like this:</p>
+<p>{% img center /images/content/conky.png %}</p>
+<p>To add it to Conky just edit the <code>.conkyrc</code> file and add a line like so: <code>$alignr${execi 2 /path/to/tube.py central -s}</code> where <em>central</em> is the name(s)  of the line(s) (separate multiple lines with spaces) you want to get statuses for. The full list of lines is <a href="http://tubeupdates.com/documentation/">here</a>. The -s simply tells the script to supress the output of the full message and shows only the line name and short status.</p>
+<p>It'd be good to know if you find it useful or if you have any suggestions for it.</p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/python.html">[python</a>, <a href="/tag/cli.html">CLI</a>, <a href="/tag/conky.html">Conky]</a>, </p>
+        </div>
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-you can add links in your config file fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-another social link fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+
+</html>

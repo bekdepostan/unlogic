@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Sven Steinbauer">
+
+
+        <title>"Python: expect the unexpected"</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="I've not really had much of a play with Python 3, but I'm aware of some of its differences. Yesterday I found out about a difference ...">
+
+        <meta name="author" content="Sven Steinbauer">
+
+        <meta name="tags" content="[python">
+        <meta name="tags" content="programming">
+        <meta name="tags" content="wat]">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Unlogic">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="Sven Steinbauer" >
+	<meta property="og:url" content="/2015/01/23/python-expect-the-unexpected/">
+	<meta property="og:title" content=""Python: expect the unexpected"">
+	<meta property="article:published_time" content="2015-01-23 00:00:00+00:00">
+            <meta property="og:description" content="I've not really had much of a play with Python 3, but I'm aware of some of its differences. Yesterday I found out about a difference ...">
+
+            <meta property="og:image" content="/images/keyboard-feature.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Unlogic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="/pages/about.html">About</a></li>
+                            <li><a href="/pages/all-posts.html">All posts</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/images/keyboard-feature.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>"Python: expect the unexpected"</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
+                             on Fri 23 January 2015
+                        </span>
+                            <span class="meta">Updated on Fri 23 January 2015</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <p>I've not really had much of a play with Python 3, but I'm aware of some of its
+differences. Yesterday I found out about a difference that took me by surprise.
+Enough of a surprise that I felt the urge to write this post. </p>
+<h1>Opinion Divided</h1>
+<p>What surprised me was how <code>/</code> has changed in Python 3. In Python 2.7 it returns
+the result of the division of two numbers.</p>
+<p>{% highlight python %}</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p _="%" endhighlight="endhighlight">8/2
+4
+10/3
+3</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Checks out to me. <code>10 / 3</code> is 3.3333, and because we are using integers in
+the expression, we expect an integer as the result.
+Change the input to floats (or at least one of the inputs)</p>
+<p>{% highlight python %}</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p _="%" endhighlight="endhighlight">10/3.0
+3.3333333333333335</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>and we get a float. Right, nothing weird there. Where it starts getting odd is 
+that in Python 3 you <strong>always</strong> get a float back, unless you use the <code>//</code> operator.
+Apparently that is because too many people expected integer division to return a float.
+Maybe it's just me and my fellow oldies who think that the original behaviour is
+correct and integer division should yield an integer, not a float. Pretty much all
+main stream languages behave like this. In C/C++ you need to cast one of the arguments
+to a float to get a float back.</p>
+<p>{% highlight c++ %}</p>
+<h1>include <iostream></h1>
+<p>int main () {
+    std::cout &lt;&lt; 10 / 3 &lt;&lt; std::endl;
+    std::cout &lt;&lt; (float)10 / 3 &lt;&lt; std::endl;</p>
+<div class="highlight"><pre><span></span>return 0;
+</pre></div>
+
+
+<p _="%" endhighlight="endhighlight">}</p>
+<p _="%" endhighlight="endhighlight">{% highlight console %}
+$] ./a.out 
+3
+3.33333</p>
+<p>I understand that if you are dividing numbers you will want to have 
+the accuracy of the float type, but I find this a bit of an odd choice 
+for the Python devs to make. But perhaps this is the future, and I'm
+just too old to accept what you whippersnappers are up to with your
+fancy <a href="http://i.imgur.com/GUum4gy.gif">languages and tools</a>.</p>
+<p>Ultimately, does it really matter? Well yes and no. No, because Python is
+dynamically typed, so it doesn't really matter what type the result is, whatever
+it gets assigned too will become what it needs to. Yes, because there may be
+times when getting a float might cause unexpected behaviour. </p>
+<p>It's not the end of the world as such, because the <em>no</em> above greatly 
+outweighs the <em>yes</em>, but I'm still a little surprised at this change. I would 
+perhaps have kept <code>/</code> as it is and made <code>//</code> the one that always returns a float.</p>
+<p>And just to finish:</p>
+<p>{% highlight python %}
+Python 3.4.0</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p _="%" endhighlight="endhighlight">10//3
+3
+10//3.0
+3.0</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><a href="http://i.imgur.com/WEllYN3.gif">Yeah, sure, why not?</a></p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/python.html">[python</a>, <a href="/tag/programming.html">programming</a>, <a href="/tag/wat.html">wat]</a>, </p>
+        </div>
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-you can add links in your config file fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-another social link fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+
+</html>
