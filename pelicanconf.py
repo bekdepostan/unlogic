@@ -25,6 +25,9 @@ COLOR_SCHEME_CSS = 'monokai.css'
 PATH = 'content'
 STATIC_PATHS = ['images']
 
+FEED_ATOM = 'post/index.xml'
+FEED_RSS = 'feed.xml'
+
 TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG = u'en'
@@ -44,7 +47,8 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 
 # Social widget
 SOCIAL = (('Github', 'https://github.com/svenito'),
-        ('Twitter', 'https://twitter.com/binaryheadache'),)
+        ('Twitter', 'https://twitter.com/binaryheadache'),
+        ('Rss', SITEURL + '/post/index.xml'),)
 
 DEFAULT_PAGINATION = 10
 
