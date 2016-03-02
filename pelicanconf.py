@@ -3,9 +3,13 @@
 from __future__ import unicode_literals
 
 # nest, blueidea, clean-blog, pelican-cait
-THEME = "../pelican-clean-blog"
+THEME = "../pelican-chunk"
 
 AUTHOR = u'Sven Steinbauer'
+SINGLE_AUTHOR = True
+
+DISPLAY_CATEGORIES_ON_MENU = False
+
 SITENAME = u'Unlogic'
 SITESUBTITLE = u'I\'ve got a keyboard, a terminal, and a whole load of luck'
 SITEURL = ''

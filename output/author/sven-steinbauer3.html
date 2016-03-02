@@ -1,292 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Sven Steinbauer">
-
-
-        <title>Unlogic - Articles by Sven Steinbauer</title>
-
-            <link href="/post/index.xml" type="application/atom+xml" rel="alternate" title="Unlogic Atom Feed" />
-            <link href="/feed.xml" type="application/rss+xml" rel="alternate" title="Unlogic RSS Feed" />
-        <!-- Bootstrap Core CSS -->
-        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
-
-        <!-- Code highlight color scheme -->
-            <link href="/theme/css/code_blocks/monokai.css" rel="stylesheet">
-
-
-        <!-- Custom Fonts -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-                <meta property="og:locale" content="">
-		<meta property="og:site_name" content="Unlogic">
+		<title>Unlogic &mdash; Articles by Sven Steinbauer</title>
+		<meta charset="utf-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
+		<style type="text/css">
+			body.custom-background { background-color: #f5f5f5; }
+		</style>
+		<link rel="alternate" type="application/atom+xml"
+			title="Unlogic — Flux Atom"
+			href="/" /> 
+		<link rel ="alternate" type="application/rss+xml"
+			title="Unlogic — Flux RSS"
+			href="/feed.xml" /> 
+		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
 </head>
 
-<body>
+<body class="home blog custom-background single-author" >
+	<div id="container">
+		<div id="header">
+				<h1 id="site-title"><a href="">Unlogic</a></h1>
+<h2 id="site-description">I've got a keyboard, a terminal, and a whole load of luck</h2>		</div><!-- /#banner -->
+		
+		<div id="menu">
+			<div class="menu-navigation-container">
+				<ul id="menu-navigation" class="menu">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/about.html">About</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/all-posts.html">All posts</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://getpelican.com/">Pelican</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://python.org/">Python.org</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">You can modify those links in your config file</a></li>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">Unlogic</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-
-                            <li><a href="/pages/about.html">About</a></li>
-                            <li><a href="/pages/all-posts.html">All posts</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('images/keyboard-feature.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>Articles by Sven Steinbauer</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-preview">
-            <a href="/2015/03/15/dominos-cli-update/" rel="bookmark" title="Permalink to Dominos CLI Update">
-                <h2 class="post-title">
-                    Dominos CLI Update
-                </h2>
-            </a>
-                <p>Small update on some progress and changes. Setting the store is now done by
-enetering your postcode and the nearest delivery store to ...
-            <p class="post-meta">Posted by
-                    <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
-                 on Sun 15 March 2015
-            </p>
-<p>There are <a href="/2015/03/15/dominos-cli-update/#disqus_thread">comments</a>.</p>        </div>
-        <div class="post-preview">
-            <a href="/2015/03/13/lets-crack-bandit-part-1/" rel="bookmark" title="Permalink to Let's crack Bandit Part 1">
-                <h2 class="post-title">
-                    Let's crack Bandit Part 1
-                </h2>
-            </a>
-                <p>Let's give Bandit from the <a class="reference external" href="http://overthewire.org/wargames">overthewire war games</a>
-a going ...
-            <p class="post-meta">Posted by
-                    <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
-                 on Fri 13 March 2015
-            </p>
-<p>There are <a href="/2015/03/13/lets-crack-bandit-part-1/#disqus_thread">comments</a>.</p>        </div>
-        <div class="post-preview">
-            <a href="/2015/03/13/lets-crack-bandit-part-2/" rel="bookmark" title="Permalink to Let's crack Bandit Part 2">
-                <h2 class="post-title">
-                    Let's crack Bandit Part 2
-                </h2>
-            </a>
-                <p>Continues on from <a class="reference external" href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part1">Let's crack Bandit ...
-            <p class="post-meta">Posted by
-                    <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
-                 on Fri 13 March 2015
-            </p>
-<p>There are <a href="/2015/03/13/lets-crack-bandit-part-2/#disqus_thread">comments</a>.</p>        </div>
-        <div class="post-preview">
-            <a href="/2015/03/11/solving-infosec-n00bsctf/" rel="bookmark" title="Permalink to Solving Infosec n00bsCTF">
-                <h2 class="post-title">
-                    Solving Infosec n00bsCTF
-                </h2>
-            </a>
-                <p>The InfoSec Institue is running a <a class="reference external" href="http://ctf.infosecinstitute.com/index.php">n00bsCTF</a>,
-and I ...
-            <p class="post-meta">Posted by
-                    <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
-                 on Wed 11 March 2015
-            </p>
-<p>There are <a href="/2015/03/11/solving-infosec-n00bsctf/#disqus_thread">comments</a>.</p>        </div>
-        <div class="post-preview">
-            <a href="/2015/03/04/cli-pizza/" rel="bookmark" title="Permalink to CLI Pizza">
-                <h2 class="post-title">
-                    CLI Pizza
-                </h2>
-            </a>
-                <p>Recently someone was talking about ordering Pizza from within
-<a class="reference external" href="http://sidefx.com">Houdini</a>. I ...
-            <p class="post-meta">Posted by
-                    <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
-                 on Wed 04 March 2015
-            </p>
-<p>There are <a href="/2015/03/04/cli-pizza/#disqus_thread">comments</a>.</p>        </div>
-        <div class="post-preview">
-            <a href="/2015/02/10/why-i-think-gear-vr-is-the-way-forward/" rel="bookmark" title="Permalink to Why I think Gear VR is the way forward">
-                <h2 class="post-title">
-                    Why I think Gear VR is the way forward
-                </h2>
-            </a>
-                <p>Recently I've been lucky enough to try out and work with the DK2 and the Samsung
-GearVR, and while both do what they do really well, ...
-            <p class="post-meta">Posted by
-                    <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
-                 on Tue 10 February 2015
-            </p>
-<p>There are <a href="/2015/02/10/why-i-think-gear-vr-is-the-way-forward/#disqus_thread">comments</a>.</p>        </div>
-        <div class="post-preview">
-            <a href="/2015/01/23/python/" rel="bookmark" title="Permalink to 'Python">
-                <h2 class="post-title">
-                    'Python
-                </h2>
-            </a>
-                <p>I've not really had much of a play with Python 3, but I'm aware of some of its
-differences. Yesterday I found out about a difference ...
-            <p class="post-meta">Posted by
-                    <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
-                 on Fri 23 January 2015
-            </p>
-<p>There are <a href="/2015/01/23/python/#disqus_thread">comments</a>.</p>        </div>
-        <div class="post-preview">
-            <a href="/2015/01/20/solving-project-euler-with-rust-2/" rel="bookmark" title="Permalink to Solving Project Euler with Rust 2">
-                <h2 class="post-title">
-                    Solving Project Euler with Rust 2
-                </h2>
-            </a>
-                <p>Carrying on with <a class="reference external" href="http://unlogic.co.uk/2015/01/12/solving-project-euler-with-rust-1/">the ...
-            <p class="post-meta">Posted by
-                    <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
-                 on Tue 20 January 2015
-            </p>
-<p>There are <a href="/2015/01/20/solving-project-euler-with-rust-2/#disqus_thread">comments</a>.</p>        </div>
-        <div class="post-preview">
-            <a href="/2015/01/15/wasd-v2/" rel="bookmark" title="Permalink to WASD V2">
-                <h2 class="post-title">
-                    WASD V2
-                </h2>
-            </a>
-                <p>It arrived! I am now the proud owner of a WASD V2 mechanical keyboard. I ordered
-it with brown MX switches, large centered font and ...
-            <p class="post-meta">Posted by
-                    <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
-                 on Thu 15 January 2015
-            </p>
-<p>There are <a href="/2015/01/15/wasd-v2/#disqus_thread">comments</a>.</p>        </div>
-        <div class="post-preview">
-            <a href="/2015/01/12/checking-in-follow-up/" rel="bookmark" title="Permalink to Checking in follow up">
-                <h2 class="post-title">
-                    Checking in follow up
-                </h2>
-            </a>
-                <p>In a <a class="reference external" href="http://unlogic.co.uk/2014/10/29/checking-in/">previous post</a> I wrote about how I use
-my ...
-            <p class="post-meta">Posted by
-                    <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
-                 on Mon 12 January 2015
-            </p>
-<p>There are <a href="/2015/01/12/checking-in-follow-up/#disqus_thread">comments</a>.</p>        </div>
-
-    <hr>
-    <!-- Pager -->
-    <ul class="pager">
-        <li class="next">
-                <a href="/author/sven-steinbauer2.html">Newest Posts &rarr;</a>
-                <a href="/author/sven-steinbauer4.html">Older Posts &rarr;</a>
-        </li>
-    </ul>
-    Page 3 / 6
-    <hr>
-            </div>
-        </div>
-    </div>
-
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                            <li>
-                                <a href="https://github.com/svenito">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/binaryheadache">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/post/index.xml">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                    </ul>
-<p class="copyright text-muted">
-    Blog powered by <a href="http://getpelican.com">Pelican</a>,
-    which takes great advantage of <a href="http://python.org">Python</a>.
-</p>                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="/theme/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/theme/js/bootstrap.min.js"></script>
-
-        <!-- Custom Theme JavaScript -->
-        <script src="/theme/js/clean-blog.min.js"></script>
-
+				</ul>
+			</div> <!--/#menu-navigation-container-->
+		</div><!-- /#menu -->
+		
+		<div class="page-title">
+	<h2>Posted by <span>Sven Steinbauer</span> &hellip;</h2>
+		</div>
+	
+		<div id="contents">
+<div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2015/03/15/dominos-cli-update/">Sun 15 March 2015</a></div>
+			<div class="comments"><a href="/2015/03/15/dominos-cli-update/#disqus_thread" title="Comment on Dominos CLI Update">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2015/03/15/dominos-cli-update/" title="Permalink to Dominos CLI Update" rel="bookmark">Dominos CLI Update</a>
+		</h2>
+		<div class="entry-content">
+            Small update on some progress and changes. Setting the store is now done by enetering your postcode and the nearest delivery store to that postcode is automatically selected. Setting the address also works and isn't just a stub, and ...
+        <a href="/2015/03/15/dominos-cli-update/" title="Read more">Read more</a>
+		</div> <!--/#entry-content-->
+    		<span class="tag-links"><strong>Tagged</strong>
+ <a href="/tag/.html" rel="tag">[]</a>    		</span>
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2015/03/13/lets-crack-bandit-part-1/">Fri 13 March 2015</a></div>
+			<div class="comments"><a href="/2015/03/13/lets-crack-bandit-part-1/#disqus_thread" title="Comment on Let's crack Bandit Part 1">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2015/03/13/lets-crack-bandit-part-1/" title="Permalink to Let's crack Bandit Part 1" rel="bookmark">Let's crack Bandit Part 1</a>
+		</h2>
+		<div class="entry-content">
+            Let's give Bandit from the overthewire war games a going over. I did this a while back, but never really wrote it up, so I'm going to do it again and write it up. Remember that you can copy and paste from all the asciinema videos below. ...
+        <a href="/2015/03/13/lets-crack-bandit-part-1/" title="Read more">Read more</a>
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2015/03/13/lets-crack-bandit-part-2/">Fri 13 March 2015</a></div>
+			<div class="comments"><a href="/2015/03/13/lets-crack-bandit-part-2/#disqus_thread" title="Comment on Let's crack Bandit Part 2">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2015/03/13/lets-crack-bandit-part-2/" title="Permalink to Let's crack Bandit Part 2" rel="bookmark">Let's crack Bandit Part 2</a>
+		</h2>
+		<div class="entry-content">
+            Continues on from Let's crack Bandit Part 1 Level 15 -> 16 # Level 15 Eventhough this is very similar to the previous level, it's a little more complicated as we need to connect with SSL. The simplest way is using openssl with s_client. ...
+        <a href="/2015/03/13/lets-crack-bandit-part-2/" title="Read more">Read more</a>
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2015/03/11/solving-infosec-n00bsctf/">Wed 11 March 2015</a></div>
+			<div class="comments"><a href="/2015/03/11/solving-infosec-n00bsctf/#disqus_thread" title="Comment on Solving Infosec n00bsCTF">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2015/03/11/solving-infosec-n00bsctf/" title="Permalink to Solving Infosec n00bsCTF" rel="bookmark">Solving Infosec n00bsCTF</a>
+		</h2>
+		<div class="entry-content">
+            The InfoSec Institue is running a n00bsCTF, and I can't resist a CTF really. Plus this will be a nice warmup for Hackyeaster 2015. So let's jump on it and get some flags... I haven't managed to get all of them, but I will be updating ...
+        <a href="/2015/03/11/solving-infosec-n00bsctf/" title="Read more">Read more</a>
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2015/03/04/cli-pizza/">Wed 04 March 2015</a></div>
+			<div class="comments"><a href="/2015/03/04/cli-pizza/#disqus_thread" title="Comment on CLI Pizza">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2015/03/04/cli-pizza/" title="Permalink to CLI Pizza" rel="bookmark">CLI Pizza</a>
+		</h2>
+		<div class="entry-content">
+            Recently someone was talking about ordering Pizza from within Houdini. I figured that it must be possible somehow. I looked for an API and only found a US based, possibly out of date, API for Dominos written in node.js. However I needed ...
+        <a href="/2015/03/04/cli-pizza/" title="Read more">Read more</a>
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2015/02/10/why-i-think-gear-vr-is-the-way-forward/">Tue 10 February 2015</a></div>
+			<div class="comments"><a href="/2015/02/10/why-i-think-gear-vr-is-the-way-forward/#disqus_thread" title="Comment on Why I think Gear VR is the way forward">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2015/02/10/why-i-think-gear-vr-is-the-way-forward/" title="Permalink to Why I think Gear VR is the way forward" rel="bookmark">Why I think Gear VR is the way forward</a>
+		</h2>
+		<div class="entry-content">
+            Recently I've been lucky enough to try out and work with the DK2 and the Samsung GearVR, and while both do what they do really well, I much prefer my experience with the GearVR. This isn't down to a technical advantage like improved ...
+        <a href="/2015/02/10/why-i-think-gear-vr-is-the-way-forward/" title="Read more">Read more</a>
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2015/01/23/python/">Fri 23 January 2015</a></div>
+			<div class="comments"><a href="/2015/01/23/python/#disqus_thread" title="Comment on 'Python">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2015/01/23/python/" title="Permalink to 'Python" rel="bookmark">'Python</a>
+		</h2>
+		<div class="entry-content">
+            I've not really had much of a play with Python 3, but I'm aware of some of its differences. Yesterday I found out about a difference that took me by surprise. Enough of a surprise that I felt the urge to write this post. Opinion Divided ...
+        <a href="/2015/01/23/python/" title="Read more">Read more</a>
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2015/01/20/solving-project-euler-with-rust-2/">Tue 20 January 2015</a></div>
+			<div class="comments"><a href="/2015/01/20/solving-project-euler-with-rust-2/#disqus_thread" title="Comment on Solving Project Euler with Rust 2">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2015/01/20/solving-project-euler-with-rust-2/" title="Permalink to Solving Project Euler with Rust 2" rel="bookmark">Solving Project Euler with Rust 2</a>
+		</h2>
+		<div class="entry-content">
+            Carrying on with the series, here's how I solved Project Euler's problem 2: Even Fibonacci numbers Problem 2 Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with 1 and 2, the first 10 ...
+        <a href="/2015/01/20/solving-project-euler-with-rust-2/" title="Read more">Read more</a>
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2015/01/15/wasd-v2/">Thu 15 January 2015</a></div>
+			<div class="comments"><a href="/2015/01/15/wasd-v2/#disqus_thread" title="Comment on WASD V2">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2015/01/15/wasd-v2/" title="Permalink to WASD V2" rel="bookmark">WASD V2</a>
+		</h2>
+		<div class="entry-content">
+            It arrived! I am now the proud owner of a WASD V2 mechanical keyboard. I ordered it with brown MX switches, large centered font and light grey alphanumeric caps and grey modifiers. I went of the 87 key version (no keypad) and also threw ...
+        <a href="/2015/01/15/wasd-v2/" title="Read more">Read more</a>
+		</div> <!--/#entry-content-->
+    		<span class="tag-links"><strong>Tagged</strong>
+ <a href="/tag/.html" rel="tag">[]</a>    		</span>
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2015/01/12/checking-in-follow-up/">Mon 12 January 2015</a></div>
+			<div class="comments"><a href="/2015/01/12/checking-in-follow-up/#disqus_thread" title="Comment on Checking in follow up">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2015/01/12/checking-in-follow-up/" title="Permalink to Checking in follow up" rel="bookmark">Checking in follow up</a>
+		</h2>
+		<div class="entry-content">
+            In a previous post I wrote about how I use my inbox as a TODO list. Since then I have received my Google Inbox invite and have now been using Inbox exclusively to manage my email. It works pretty much as I expected, which is great. The ...
+        <a href="/2015/01/12/checking-in-follow-up/" title="Read more">Read more</a>
+		</div> <!--/#entry-content-->
+    		<span class="tag-links"><strong>Tagged</strong>
+ <a href="/tag/.html" rel="tag">[]</a>    		</span>
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="navigation">
+		<div class="nav-previous">
+				<a href="/author/sven-steinbauer2.html">
+			<span class="meta-nav">&larr;</span> Newer posts</a>
+		</div>		
+		<div class="nav-next"><a href="/author/sven-steinbauer4.html" >Older posts <span class="meta-nav">&rarr;</span></a></div>
+</div>
+		</div>
+		
+		<div id="footer">
+			<p>Powered by <a href="http://getpelican.com">Pelican</a>, theme by <a href="http://bunnyman.info">tBunnyMan</a>.</p>
 <script type="text/javascript">
     var disqus_shortname = 'unlogic';
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
-</script>
+</script>		</div><!-- /#footer -->
+	</div><!-- /#container -->
+	<div style="display:none"></div>
 </body>
-
 </html>
