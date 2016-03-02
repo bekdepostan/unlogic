@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 # nest, blueidea, clean-blog, pelican-cait
-THEME = "/mill3d/users/sven/work/sandbox/pelican-clean-blog"
+THEME = "../pelican-clean-blog"
 
 AUTHOR = u'Sven Steinbauer'
 SITENAME = u'Unlogic'
