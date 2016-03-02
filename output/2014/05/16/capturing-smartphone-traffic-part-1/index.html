@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Sven Steinbauer">
+
+
+        <title>Capturing smartphone traffic - Part 1</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="We all carry phones around that are connected to some of network at all times. Unless you are the truly paranoid or battery saving type, ...">
+
+        <meta name="author" content="Sven Steinbauer">
+
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Unlogic">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="Sven Steinbauer" >
+	<meta property="og:url" content="/2014/05/16/capturing-smartphone-traffic-part-1/">
+	<meta property="og:title" content="Capturing smartphone traffic - Part 1">
+	<meta property="article:published_time" content="2014-05-16 00:00:00+01:00">
+            <meta property="og:description" content="We all carry phones around that are connected to some of network at all times. Unless you are the truly paranoid or battery saving type, ...">
+
+            <meta property="og:image" content="/images/keyboard-feature.jpg">
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:image" content="images/keyboard-feature.jpg">
+        <meta name="twitter:site" content="@binaryheadache" />
+        <meta name="twitter:title" content="Capturing smartphone traffic - Part 1" />
+            <meta name="twitter:description" content="<p>We all carry phones around that are connected to some of network at all times.
+Unless you are the truly paranoid or battery saving type, then there will be periods
+when your phone is dark.</p>
+<p>But even so, I often wonder what my phone is transmitting when I'm not ...</p>" />
+            <meta name="twitter:image" content="/images/keyboard-feature.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Unlogic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="/pages/about.html">About</a></li>
+                            <li><a href="/pages/all-posts.html">All posts</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/images/keyboard-feature.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Capturing smartphone traffic - Part 1</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
+                             on Fri 16 May 2014
+                        </span>
+                            <span class="meta">Updated on Fri 16 May 2014</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <p>We all carry phones around that are connected to some of network at all times.
+Unless you are the truly paranoid or battery saving type, then there will be periods
+when your phone is dark.</p>
+<p>But even so, I often wonder what my phone is transmitting when I'm not using it,
+or even when I am using it. So in this series I plan on doing some investigation
+into what goes in and out of my phone.</p>
+<p>In this post I'll just set up all the bits and pieces to start the monitoring
+process and run a quick check to make sure everything works. In the following
+parts I'll be taking a look at some common apps and their network chatter. The
+idea is to analyse the data and understand their communications. Hopefully we'll
+also unearth some interesting things along the way.</p>
+<div class="section" id="what-we-ll-need">
+<h2>What we'll need ##</h2>
+<ul class="simple">
+<li>A smartphone</li>
+<li>A laptop (or similar) to turn into a wireless access point</li>
+<li><a class="reference external" href="https://www.wireshark.org/">Wireshark</a> running on that laptop</li>
+<li>An internet connection</li>
+</ul>
+</div>
+<div class="section" id="setting-up-the-wireless-access-point">
+<h2>Setting up the wireless access point ##</h2>
+<p>I'm going to cover how to do this part in OSX for now. If I get round
+to it I'll add a Linux way to do it too.</p>
+<div class="section" id="osx">
+<h3>OSX ###</h3>
+<p>First connect the laptop to an ethernet connection. You can't be connected to
+a wireless network and create a wireless access point at the same time.
+So we will connect to the internet via ethernet and use the wireless radio
+for the access point. Once the ethernet connection is up and running, open
+<em>System Preferences -&gt; Sharing</em>. In the list click on the <em>Internet sharing</em>
+entry (not the check box) and select <em>Ethernet</em> in the <em>Share your connection
+from</em> dropdown. In the <em>To computers using</em> select <em>Wi-Fi</em>. Now select the
+check box next to <em>Internet Sharing</em> to turn sharing on.</p>
+<p><a class="reference external" href="http://i.imgur.com/K2Zeyoy.png">{{&lt; figure src=&quot;http://i.imgur.com/K2Zeyoy.png&quot; &gt;}}</a></p>
+<p>If everything went to plan your Wi-Fi indicator should now look like this:</p>
+<p><a class="reference external" href="http://i.imgur.com/ecXJUc8.png">{{&lt; figure src=&quot;http://i.imgur.com/ecXJUc8.png&quot; &gt;}}</a></p>
+</div>
+</div>
+<div class="section" id="connect-the-phone">
+<h2>Connect the phone ##</h2>
+<p>Now we connect tbe phone to the new access point. Go to your wireless network
+settings and select the name of the network we created. <strong>slaptop</strong> in my case.
+Once do we need to</p>
+</div>
+<div class="section" id="start-wireshark">
+<h2>Start Wireshark ##</h2>
+<p>Fireup Wireshark and then select the capture interface. The default will be
+eth0 usually. That's the ethernet port, but we want to capture traffic on the
+wireless access point. So we need to select <em>en1</em> (in my case). It's the one
+with the wireless icon next to it.</p>
+<p><a class="reference external" href="http://i.imgur.com/9wyI6s6.png">{{&lt; figure src=&quot;http://i.imgur.com/9wyI6s6.png&quot; &gt;}}</a></p>
+<p>Once this is done we'll want to filter out ARP packets as these are of little
+interest and there will be quite a few of them. See the screenshot below to
+see where to set this.</p>
+<p>Now we press the <em>Capture</em> button to begin bapturing traffic. Once running we
+can check to see if it's working by browsing to a site. I chose this site at
+<code>192.30.252.153</code>. You should see the capture window scroll past with some
+traffic going between your phone ip and the site your browsed to.</p>
+<p><a class="reference external" href="http://i.imgur.com/XjFuoOQ.png">{{&lt; figure src=&quot;http://i.imgur.com/XjFuoOQ.png&quot; &gt;}}</a></p>
+</div>
+<div class="section" id="in-the-next-post">
+<h2>In the next post ##</h2>
+<p>So I'm all set to capture any and all traffic now that goes to and from my phone.
+With this I can now open various apps and see what traffic they generate. In
+the next posts I plan to see what idle traffic there is (no apps being actively
+used) and what traffic some common apps generate. If I'm lucky I might even
+discover some interesting things about some apps.</p>
+<p>Stay tuned for part 2.</p>
+</div>
+
+    </article>
+
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="https://github.com/svenito">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/binaryheadache">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+
+</html>
