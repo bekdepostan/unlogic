@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Sven Steinbauer">
+
+
+        <title>"Solving Project Euler with Rust 2"</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="Carrying on with the series, here's how I solved Project Euler's problem 2: Even Fibonacci numbers Problem 2 Each new term in the ...">
+
+        <meta name="author" content="Sven Steinbauer">
+
+        <meta name="tags" content="[rust">
+        <meta name="tags" content="project euler">
+        <meta name="tags" content="programming">
+        <meta name="tags" content="learning]">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Unlogic">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="Sven Steinbauer" >
+	<meta property="og:url" content="/2015/01/20/solving-project-euler-with-rust-2/">
+	<meta property="og:title" content=""Solving Project Euler with Rust 2"">
+	<meta property="article:published_time" content="2015-01-20 00:00:00+00:00">
+            <meta property="og:description" content="Carrying on with the series, here's how I solved Project Euler's problem 2: Even Fibonacci numbers Problem 2 Each new term in the ...">
+
+            <meta property="og:image" content="/images/keyboard-feature.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Unlogic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="/pages/about.html">About</a></li>
+                            <li><a href="/pages/all-posts.html">All posts</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/images/keyboard-feature.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>"Solving Project Euler with Rust 2"</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
+                             on Tue 20 January 2015
+                        </span>
+                            <span class="meta">Updated on Tue 20 January 2015</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <p>Carrying on with <a href="http://unlogic.co.uk/2015/01/12/solving-project-euler-with-rust-1/">the series</a>, here's 
+how I solved Project Euler's problem 2:</p>
+<div class="highlight"><pre><span></span>Even Fibonacci numbers
+Problem 2
+Each new term in the Fibonacci sequence is generated by adding the previous 
+two terms. By starting with 1 and 2, the first 10 terms will be:
+
+    1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+
+By considering the terms in the Fibonacci sequence whose values do not 
+exceed four million, find the sum of the even-valued terms.
+</pre></div>
+
+
+<p>Fairly similar to the previous one, in terms that we need to sum a sequence
+of filtered numbers. This time though the sequence is not a straight run,
+but the fibonacci sequence.</p>
+<p>As usual with these issues I assume we will need a recursive function to generate
+our fibonacci numbers:</p>
+<p _="%" endhighlight="endhighlight">{% highlight rust %}
+fn fib(n: i32) -&gt; i32{
+    if n == 0 { 
+        return 0;
+    } else if n == 1 {
+        return 1;
+    } else {
+        return fib(n-1) + fib(n-2);
+    }  <br />
+}</p>
+<p>As I am still learning Rust, I am not sure if there's more Rustacean way of doing it.
+I couldn't find anything relevant to this in the docs, so for now I will leave it 
+as it is until I get some feedback on it. I wonder if a closure would be better?</p>
+<p>EDIT: From the comments below (thanks pf), this is a much more Rust like implementation IMO:</p>
+<p _="%" endhighlight="endhighlight">{% highlight rust %}
+fn fib(n: i32) -&gt; i32{
+    match n {
+        0 =&gt; 0,
+        1 =&gt; 1,
+        _ =&gt; fib(n-1) + fib(n-2),
+    }  <br />
+}</p>
+<p>Now I need to get a list of numbers while the return of the <code>fib</code> function 
+is &lt; 4,000,000. I cheated a bit here, as I figured out that the max number 
+to pass to the function in this case is 34.
+I would assume that in the <em>more correct</em> way of doing it, the limit is
+defined in a better way.</p>
+<p _="%" endhighlight="endhighlight">{% highlight rust %}
+fn main() {
+    let vals = (1..34).map(|x| fib(x));
+}</p>
+<p>Thinking back to the previous example I already know about filter and sum.</p>
+<p _="%" endhighlight="endhighlight">{% highlight rust %}
+fn main() {
+    let vals = (1..34).map(|x| fib(x))
+                .filter(|&amp;x| x % 2 == 0)
+                .sum();
+}</p>
+<p>But there's a problem:</p>
+<p>{% highlight console %}
+   Compiling euler_2 v0.0.1 (file:////work/sandbox/euler_rust/euler_2)
+/work/sandbox/euler_rust/euler_2/src/main.rs:16:10: 16:15 error: type <code>core::iter::Filter&lt;i32, core::iter::Map&lt;i32, i32, core::ops::Range&lt;i32&gt;, closure[/work/sandbox/euler_rust/euler_2/src/main.rs:14:32: 14:42]&gt;, closure[/work/sandbox/euler_rust/euler_2/src/main.rs:15:17: 15:31]&gt;</code> does not implement any method in scope named <code>sum</code>
+/work/sandbox/euler_rust/euler_2/src/main.rs:16         .sum();
+                                                        ^~~~~
+error: aborting due to previous error
+Could not compile <code>euler_2</code>.</p>
+<p>{% endhighlight %}</p>
+<p>Seems like <code>sum</code> won't work here due to the <code>map</code>. Not to worry, I used <code>fold</code> in the previous example,
+before the helpful folks at <a href="http://reddit.com/r/rust">/r/rust</a> told me about <code>sum</code>,
+so let's use that instead, as that should work.</p>
+<p>{% highlight rust %}
+fn main() {
+    let vals = (1..34).map(|x| fib(x))
+                .filter(|&amp;x| x % 2 == 0)
+                .fold(0, |a, b| a + b);</p>
+<p _="%" endhighlight="endhighlight">println!("{}", vals);
+}</p>
+<p>EDIT: <code>sum</code> does work, I just forgot to add <code>use std::iter::AdditiveIterator;</code> at the 
+top of the file. The Github file contains this fix.</p>
+<p>Let's run it:</p>
+<p _="%" endhighlight="endhighlight">{% highlight console %}
+cargo run
+     Running <code>target/euler_2</code>
+4613732</p>
+<p>The result checks out, so Project Euler 2 has been solved.</p>
+<p>What I would like to know though: Is there a better way to generate the 
+fibonacci sequence? If you have suggestions (or about anything else on this page), 
+please leave me a message below. After all, this is a learning exercise for me
+and for anyone else interested.</p>
+<p>EDIT: With some marvellous feedback (which is a great benefit of posting
+these) I have edited the code on Github to use an iterator instead of the recursive call.</p>
+<p>The code is now (main credit to /u/emk and others):</p>
+<p>{% highlight rust %}
+use std::iter::AdditiveIterator;</p>
+<h1>[derive(Copy)]</h1>
+<p>pub struct FibonacciSequence {
+    n_minus_1: u32,
+    n_minus_2: u32
+}</p>
+<p>impl Iterator for FibonacciSequence {
+    type Item = u32;
+    fn next(&amp;mut self) -&gt; Option<u32> {
+        let mut result = self.n_minus_1 + self.n_minus_2;</p>
+<div class="highlight"><pre><span></span>    // Special case: If all our fields are zero, we want to generate
+    // our initial 1.  Everything else will work correctly from here.
+    if result == 0 { result = 1; }
+
+    self.n_minus_2 = self.n_minus_1;
+    self.n_minus_1 = result;
+    Some(result)
+}
+</pre></div>
+
+
+<p>}</p>
+<p>pub fn fibonacci_sequence() -&gt; FibonacciSequence {
+    FibonacciSequence{n_minus_1: 0, n_minus_2: 0}
+}</p>
+<p>fn main() {
+    let sum = fibonacci_sequence()
+        .filter(|&amp;v| v % 2 == 0)
+        .take_while(|&amp;v| v &lt;= 4000000u32)
+        .sum();</p>
+<div class="highlight"><pre><span></span><span class="nt">println</span><span class="o">!(</span><span class="s2">&quot;Result: {}&quot;</span><span class="o">,</span> <span class="nt">sum</span><span class="o">);</span>
+</pre></div>
+
+
+<p _="%" endhighlight="endhighlight">}</p>
+<p>The interesting thing is the performance difference between the iterator
+implementation and the recursive call. The recursive implementation timings
+are:</p>
+<div class="highlight"><pre><span></span>real    0m0.311s
+user    0m0.255s
+sys 0m0.035s
+</pre></div>
+
+
+<p>Versus the timings of the iterator:</p>
+<div class="highlight"><pre><span></span>real    0m0.079s
+user    0m0.025s
+sys 0m0.035s
+</pre></div>
+
+
+<p>Clearly a vast improvement there at the cost of a little extra code. 
+With the iterator the benefit stems from the fact that we track where we
+are in the sequence. So for each number we don't need to recursively
+call the <code>fib</code> function until n is 1, which is where the big saving comes from.</p>
+<p>This and all future solutions are on <a href="https://github.com/Svenito/euler_rust">my Github</a></p>
+<p>Also posted to <a href="https://www.reddit.com/r/rust/comments/2t23ow/still_learning_rust_following_on_with_a_write_up/">/r/rust</a></p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/rust.html">[rust</a>, <a href="/tag/project-euler.html">project euler</a>, <a href="/tag/programming.html">programming</a>, <a href="/tag/learning.html">learning]</a>, </p>
+        </div>
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-you can add links in your config file fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-another social link fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+
+</html>

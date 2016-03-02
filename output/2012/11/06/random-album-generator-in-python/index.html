@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Sven Steinbauer">
+
+
+        <title>Random album generator in python</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="You may have heard about the "random music album" thing. Basically it goes like this: The album cover is the 4th image from a random ...">
+
+        <meta name="author" content="Sven Steinbauer">
+
+        <meta name="tags" content="[python">
+        <meta name="tags" content="programming]">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Unlogic">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="Sven Steinbauer" >
+	<meta property="og:url" content="/2012/11/06/random-album-generator-in-python/">
+	<meta property="og:title" content="Random album generator in python">
+	<meta property="article:published_time" content="2012-11-06 14:06:00+00:00">
+            <meta property="og:description" content="You may have heard about the "random music album" thing. Basically it goes like this: The album cover is the 4th image from a random ...">
+
+            <meta property="og:image" content="/images/keyboard-feature.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Unlogic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="/pages/about.html">About</a></li>
+                            <li><a href="/pages/all-posts.html">All posts</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/images/keyboard-feature.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Random album generator in python</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
+                             on Tue 06 November 2012
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <p>You may have heard about the "random music album" thing. Basically it goes like this:</p>
+<ul>
+<li>The album cover is the 4th image from a random page of Flickr's interesting pics</li>
+<li>The band name is the title of a random Wikipedia article</li>
+<li>The album name comes from the last 3 or 5 words of a famous quote</li>
+</ul>
+<p>This is all well and good, but isn't getting all this data manually, and then making the album cover a bit tedious? Sure it is, so let's see how we can do this in python</p>
+<p>Here are some example images generated with this script (click for the full size picture):</p>
+<p>{% img center /images/content/album2.jpg 585 585 %}</p>
+<p>{% img center /images/content/album3.jpg 585 585 %}</p>
+<p>{% img center /images/content/album4.jpg 585 585 %}</p>
+<!-- more -->
+
+<p>Let's cover our dependencies first. You will need:</p>
+<ul>
+<li>python 2.6 (or similar)</li>
+<li>PIL (<a href="http://www.pythonware.com/products/pil/">python Image Library</a>)</li>
+<li>A <a href="http://www.flickr.com/services/apps/create/apply/">Flickr API key</a></li>
+<li><a href="http://www.gnu.org/software/wget/">wget</a></li>
+</ul>
+<p>Not much to ask for is it? So once you've made sure you have all that, let's start by getting the album cover. This is handled by the <a href="http://www.flickr.com/services/api/flickr.interestingness.getList.html">interestingness</a> part of the API and is a very simple call that will return an XML structure of the photos on that page. Once we have a response we parse the XML and get the elements we need to construct the photo URL. It's a short function and here it is:</p>
+<p>{% highlight python %}
+def getAlbumImage():
+    page = random.randint(1,80)
+    url = "http://api.flickr.com/services/rest/?method=flickr.interestingness.getList&amp;api_key=YOURAPIKEYHERE&amp;per_page=6&amp;page=%d&amp;format=rest" % (page)
+    dom = minidom.parse(urllib.urlopen(url))</p>
+<div class="highlight"><pre><span></span>elem = dom.getElementsByTagName(&#39;photo&#39;)[4]
+farm_id = elem.getAttributeNode(&#39;farm&#39;).nodeValue
+server_id = elem.getAttributeNode(&#39;server&#39;).nodeValue
+the_id = elem.getAttributeNode(&#39;id&#39;).nodeValue
+secret = elem.getAttributeNode(&#39;secret&#39;).nodeValue
+
+photo_url = &quot;http://farm%s.staticflickr.com/%s/%s_%s_b.jpg&quot; % (farm_id, server_id, the_id, secret)
+target_photo = &#39;band.jpg&#39;
+subprocess.call([&quot;/usr/bin/wget&quot;, &quot;-O&quot;, target_photo, photo_url])
+</pre></div>
+
+
+<p>{% endhighlight %}</p>
+<p>First we generate a random number which will be the page number we use in constructing the API URL. Once constructed we use <code>minidom</code> to parse it and start extracting our data. If you paste the URL into your browser (with your valid API key) you can see the response format. Now that we have all the data we need, we construct our image URL (the format for this is in the docs) and save it to <code>band.jpg</code> using <code>wget</code>. You can of course use something else, but this is just easy here.</p>
+<p>Right, onto getting our band name. This is the random Wikipedia article. Luckily Wikipedia has an API also, and doesn't require an API key for this purpose. This is an even shorter function:</p>
+<p>{% highlight python %}
+def getBandName():
+    random_wiki_url = "http://en.wikipedia.org/w/api.php?format=xml&amp;action=query&amp;list=random&amp;rnnamespace=0&amp;rnlimit=1"
+    dom = minidom.parse(urllib.urlopen(random_wiki_url))</p>
+<div class="highlight"><pre><span></span>for line in dom.getElementsByTagName(&#39;page&#39;):
+    return line.getAttributeNode(&#39;title&#39;).nodeValue
+</pre></div>
+
+
+<p>{% endhighlight %}</p>
+<p>As above we create the URL, parse the output with minidom and fetch our page title. Done.</p>
+<p>Album title is a little trickier. I couldn't find a decent quote page that offered a free, easy to use API, so I decided to be a little more hacky and just parse the HTML itself. Hey, it works, don't judge me. We need a helper class for this called <code>MyHTMLParser</code> that derives from python's <a href="http://docs.python.org/2/library/htmlparser.html?highlight=htmlparser#HTMLParser">HTMLParser</a> class. </p>
+<p>{% highlight python %}
+class MyHTMLParser(HTMLParser):
+    def <strong>init</strong>(self):
+        HTMLParser.<strong>init</strong>(self)
+        self.get_data = False;
+        self.quotes = []</p>
+<div class="highlight"><pre><span></span>def handle_starttag(self, tag, attrs):
+    if tag == &quot;dt&quot;:
+        if attrs[0][0] == &#39;class&#39; and attrs[0][1] == &#39;quote&#39;:
+            self.get_data = True
+
+def handle_endtag(self, data):
+    pass
+
+def handle_data(self, data):
+    if self.get_data:
+        self.quotes.append(data)
+        self.get_data = False
+</pre></div>
+
+
+<p>def getAlbumTitle():
+    random_quote_url = "http://www.quotationspage.com/random.php3"
+    page = urllib.urlopen(random_quote_url).read()
+    parser = MyHTMLParser()
+    parser.feed(page)</p>
+<div class="highlight"><pre><span></span>num_quotes = len(parser.quotes)
+quote = parser.quotes[random.randint(0, num_quotes)].rstrip(&#39;.&#39;)
+
+last_set = random.randint(3,5)
+words = quote.split()
+
+if last_set &gt; len(words):
+    last_set = len(words)
+
+return (&quot; &quot;).join(words[-last_set:])
+</pre></div>
+
+
+<p>{% endhighlight %}</p>
+<p>The class here is used to parse the HTML from <a href="http://www.quotationspage.com/random.php3">http://www.quotationspage.com/random.php3</a>, specifically the tag that starts with <code>quote</code>. Once we have that we start capturing the data between that tag and store it in an array. Our <code>getAlbumTitle</code> function will use this data to select a random quote and then get the last 3 or 5 words from it and join them with spaces before returning that new string.</p>
+<p>So now we have the data that we need, we just need to wrap it all up and generate our final image using <code>PIL</code>. Surprise, surprise, this isn't a big deal either.</p>
+<p>{% highlight python %}
+def main():
+    band_name = getBandName()
+    album_title = getAlbumTitle()
+    cover = getAlbumImage()</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">ImageFont</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">ImageDraw</span>
+
+<span class="n">fnt</span> <span class="o">=</span> <span class="n">ImageFont</span><span class="o">.</span><span class="n">truetype</span><span class="p">(</span><span class="s2">&quot;/usr/share/fonts/dejavu/DejaVuSans.ttf&quot;</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">lineWidth</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;band.jpg&quot;</span><span class="p">)</span>
+<span class="n">imagebg</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGBA&#39;</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="s2">&quot;#000000&quot;</span><span class="p">)</span> <span class="c1"># make an entirely black image</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span><span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="s2">&quot;#000000&quot;</span><span class="p">)</span>       <span class="c1"># make a mask that masks out all</span>
+<span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>                     <span class="c1"># setup to draw on the main image</span>
+<span class="n">drawmask</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>                <span class="c1"># setup to draw on the mask</span>
+<span class="n">drawmask</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">lineWidth</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">lineWidth</span><span class="p">),</span>
+              <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;#999999&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>        <span class="c1"># draw a line on the mask to allow some bg through</span>
+<span class="n">image</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">imagebg</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>                    <span class="c1"># put the (somewhat) transparent bg on the main</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">band_name</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="n">fnt</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;#ffffff&quot;</span><span class="p">)</span>      <span class="c1"># add some text to the main</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">40</span><span class="p">),</span> <span class="n">album_title</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="n">fnt</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;#ffffff&quot;</span><span class="p">)</span>      <span class="c1"># add some text to the main</span>
+<span class="k">del</span> <span class="n">draw</span>
+<span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;out.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;JPEG&quot;</span><span class="p">,</span><span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+
+<p>{% endhighlight %}</p>
+<p>Let's go over what's happening here. You're welcome to clean it up as an exercise if you wish or think some values (like filenames) etc need configuring. Firstly we call the previously defined functions to fetch our album data and then we start the drawing. I use the <code>DejaVuSans.ttf</code> font for this example, but you can use any font you have, or even use different fonts for the title and band name, to make your cover look a bit more pleasing. Once the image we saved from Flickr is open, we start writing our title and band name on the album cover, and save out the result as a <code>JPEG</code>. The code here is commented so I won't go over the details here.</p>
+<p>And that's all there is to it. If you want the the script as a whole file, you can <a href="https://gist.github.com/4025200">get it from this gist</a></p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/python.html">[python</a>, <a href="/tag/programming.html">programming]</a>, </p>
+        </div>
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-you can add links in your config file fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-another social link fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+
+</html>

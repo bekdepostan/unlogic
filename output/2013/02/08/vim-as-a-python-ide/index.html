@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Sven Steinbauer">
+
+
+        <title>Vim as a Python IDE</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="Contents * Auto generated table of contents {:toc} I've been spending quite a bit of time with our good old buddy Python recently, and ...">
+
+        <meta name="author" content="Sven Steinbauer">
+
+        <meta name="tags" content="[python">
+        <meta name="tags" content="vim]">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Unlogic">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="Sven Steinbauer" >
+	<meta property="og:url" content="/2013/02/08/vim-as-a-python-ide/">
+	<meta property="og:title" content="Vim as a Python IDE">
+	<meta property="article:published_time" content="2013-02-08 22:36:00+00:00">
+            <meta property="og:description" content="Contents * Auto generated table of contents {:toc} I've been spending quite a bit of time with our good old buddy Python recently, and ...">
+
+            <meta property="og:image" content="/images/keyboard-feature.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Unlogic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="/pages/about.html">About</a></li>
+                            <li><a href="/pages/all-posts.html">All posts</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/images/keyboard-feature.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Vim as a Python IDE</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
+                             on Fri 08 February 2013
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <section id="table-of-contents" class="toc">
+<header>
+<h3>Contents</h3>
+</header>
+<div id="drawer" markdown="1">
+*  Auto generated table of contents
+{:toc}
+</div>
+</section>
+
+<!-- /#table-of-contents -->
+
+<p>I've been spending quite a bit of time with our good old buddy Python recently, and when
+I do, I always invite along our mutual friend Vim. He's a barrell of laughs and always 
+knows of a quicker way to do things. So I've been getting the two acquainted more and more
+and Vim's turned into a totally different person. So I am going to share with you how
+I setup Vim as my tool of choice when working with Python code. It's by no means the
+definitive way of working, but it works for me. I know there's quite a few posts similar to this one, 
+but these are the tools <strong>I</strong> find useful and use. If you have some suggestions, comments, or
+know of additional tools that might be useful, I would like to hear about them in the comments 
+below. </p>
+<p>If you are a Vim user you might find this useful. If you are new to Vim I suggest spending some
+time with it before installing any plugins. That way you get used to how Vim works out of the box.
+Once you're comfortable with using it, and you've gotten to grips with the Vim-way, go ahead and
+install some extras.</p>
+<p>Right, let's get started.</p>
+<!-- more -->
+
+<p>First and foremost you should install <a href="https://github.com/gmarik/vundle">Vundle</a>. Vundle will 
+make installing and updating all the other tools much easier. It's basically pathogen with a lot
+of nice extras, like installing the bundles itself from their Github repos (and other sources). 
+For more info see the README in the Github repo. To install follow the instructions from the repo, 
+which are repeated below:</p>
+<p _="%" endhighlight_="endhighlight%">{% highlight bash %}
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</p>
+<p>thenadd the following to your <code>.vimrc</code></p>
+<p>{% highlight vim %}
+set nocompatible
+filetype off</p>
+<p>set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()</p>
+<p>" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'</p>
+<p>" The bundles you install will be listed here</p>
+<p>filetype plugin indent on</p>
+<p _="%" endhighlight="endhighlight">" The rest of your config follows here</p>
+<p>Now if you launch Vim and run the command</p>
+<p _="%" endhighlight="endhighlight">{% highlight vim %}
+:BundleList</p>
+<p>a new split should appear listing the Vundle bundle. Everything went ok in that case.</p>
+<p>As you go through this article you can install each item separately or you can add the bundles
+to your <code>.vimrc</code> one by one and then just install them all at once at the end if you prefer.</p>
+<p>Ok, so having done that let's configure a few more things. </p>
+<h3>Highlight excess line length</h3>
+<p>You'll probably want to set a restriction to line width for python files. I like to set this to 120
+chars. 80 chars is usually the standard, but with modern displays we can allow ourselves a few more, 
+but you are free to adjust as you like. To enable this excess highlighting, add the following lines
+to your <code>.vimrc</code></p>
+<p _="%" endhighlight="endhighlight">{% highlight vim %}
+augroup vimrc_autocmds
+    autocmd!
+    " highlight characters past column 120
+    autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
+    autocmd FileType python match Excess /\%120v.*/
+    autocmd FileType python set nowrap
+    augroup END</p>
+<p>Anything that exceeds the line length will be highlighted black, feel free to change this colour
+to suit your colourscheme. It also turns off line wrapping for python files.</p>
+<h3>Powerline</h3>
+<p>Next up we install <a href="https://github.com/Lokaltog/powerline">Powerline</a> which looks like this:</p>
+<p>{% img center /images/content/powerline.png %}</p>
+<p>It shows you your current mode (NORMAL), the current branch in Git, the file you are editing and some other
+useful information.</p>
+<p>Simply add:</p>
+<p _="%" endhighlight="endhighlight">{% highlight vim %}
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}</p>
+<p>to your <code>.vimrc</code> below the comment we added earlier <code>" The bundles you install will be listed here</code>. Restart Vim
+and run <code>:BundleList</code> again. Now you should also see the Powerline bundle listed there. To install it run the command</p>
+<p _="%" endhighlight="endhighlight">{% highlight vim %}
+:BundleInstall</p>
+<p>You'll see Vundle process the list and report on the status of the installation. Hopefully everything went ok.</p>
+<p>Powerline however does require a few more things, most notably patched fonts to display the special characters it uses.
+You can get pre-patched fonts from <a href="https://github.com/Lokaltog/powerline-fonts">the powerline-fonts repo</a>. If your 
+font isn't listed then the powerline repo does provide a font-patcher you can use to try and patch your font. How this
+is done however is outside the scope of this article. To select your font and ensure that Powerline is always shown,
+you will also need to add these two lines to your <code>.vimrc</code></p>
+<p _="%" endhighlight="endhighlight">{% highlight vim %}
+" Powerline setup
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+set laststatus=2</p>
+<p><code>laststatus</code> ensures that Powerline shows up even if you don't have any splits.</p>
+<p>Restart vim and hopefully you'll see your powerline appear at the bottom of you window.</p>
+<p>Please note that this version of Powerline is a Python based version and thus requires your Vim to  be built
+with Python enabled. To check if it is run:</p>
+<p _="%" endhighlight="endhighlight">{% highlight bash %}
+$&gt; vim --version | grep -i python</p>
+<p>from the commandline. If you see <code>+python</code> then you are ok. There is 
+<a href="https://github.com/Lokaltog/vim-powerline">another Powerline</a> that is a native Vim plugin should 
+you not have Python enabled or prefer to use it over the Python version.</p>
+<h3>Fugitive</h3>
+<p><a href="https://github.com/tpope/vim-fugitive">Fugitive</a> is a <a href="http://git-scm.com/">Git</a> plugin. It basically wraps
+most Git commands so that you can call them from inside Vim. They are prefixed with <code>G</code>, for example <code>Gcommit</code>
+For example it allows you to stage files directly from Vim and make the commit. It also leverages VimDiff to perform
+conflict resolution, blame and the like. There's a whole set of screencasts on how to use it available from 
+<a href="http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/">Vim Casts</a> which I recommend watching.</p>
+<p>To install Fugitive, add its bundle to Vundle:</p>
+<p _="%" endhighlight="endhighlight">{% highlight vim %}
+Bundle 'tpope/vim-fugitive'</p>
+<p>Run <code>:BundleInstall</code> again to install it.</p>
+<h3>NerdTree</h3>
+<p><a href="https://github.com/scrooloose/nerdtree">NerdTree</a> is a filebrowser that pops up in a 
+split when you need it and features a tree like file browser (hence the  <em>tree</em> part in the name).
+It looks somewhat like this:</p>
+<p>{% img center /images/content/nerdtree.png %}</p>
+<p>As usual you just need to add its package to Vundle:</p>
+<p _="%" endhighlight="endhighlight">{% highlight vim %}
+Bundle 'scrooloose/nerdtree'</p>
+<p>and <code>:BundleInstall</code> once you restart Vim. To activate with <code>F2</code> add the following to <code>.vimrc</code>:</p>
+<p _="%" endhighlight="endhighlight">{% highlight vim %}
+map <F2> :NERDTreeToggle<CR></p>
+<p>Press <code>F2</code> in vim and it will take you to the current working directory. Press <code>?</code> to see NerdTree's 
+list of commands.</p>
+<h3>Python mode</h3>
+<p>This is the big one. It basically adds all the Python functionality you could ever want in Vim. Things like Lint, 
+codecompletion, documentation lookup, jump to classes, refactoring tools etc. You'll find it in 
+<a href="https://github.com/klen/python-mode">Python-mode</a></p>
+<p>Its bundle is:</p>
+<p _="%" endhighlight="endhighlight">{% highlight vim %}
+Bundle 'klen/python-mode'</p>
+<p>Again, <code>:BundleInstall</code> to install it and then we probably want to configure some items. There's a lot to
+configure, so if you want the complete picture I suggest you head over to the 
+<a href="https://github.com/klen/python-mode">Github repo</a> and read the more complete docs, 
+or run <code>:help python-mode</code> from inside Vim.</p>
+<p>I found the following settings most useful personally, but you might want to tweak some settings to suit your needs
+and workflow. The following a copy-paste from my .vimrc. The keyboard shortcuts in the comments are the ones I find
+most useful and I keep them there for reference:</p>
+<p>{% highlight vim %}
+" Python-mode
+" Activate rope
+" Keys:
+" K             Show python docs
+" <Ctrl-Space>  Rope autocomplete
+" <Ctrl-c>g     Rope goto definition
+" <Ctrl-c>d     Rope show documentation
+" <Ctrl-c>f     Rope find occurrences
+" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
+" [[            Jump on previous class or function (normal, visual, operator modes)
+" ]]            Jump on next class or function (normal, visual, operator modes)
+" [M            Jump on previous class or method (normal, visual, operator modes)
+" ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_rope = 1</p>
+<p>" Documentation
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'</p>
+<p>"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1</p>
+<p>" Support virtualenv
+let g:pymode_virtualenv = 1</p>
+<p>" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = '<leader>b'</p>
+<p>" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all</p>
+<p _="%" endhighlight="endhighlight">" Don't autofold code
+let g:pymode_folding = 0</p>
+<p>To explain the above a bit, here's what it does:</p>
+<ul>
+<li>Allow me to look up Python docs by pressing <code>K</code></li>
+<li>Automatically check my code on each save, but only use <code>PyLint</code> or <code>PyFlakes</code></li>
+<li>Support virtualenv</li>
+<li>Use <code>&lt;leader&gt;b</code> to add a pdb shortcut (inserts <code>import pdb; pdb.set_trace() ### XXX BREAKPOINT</code> into your code</li>
+<li>Enhanced syntax highlighting and formatting</li>
+</ul>
+<p>As I said, please read the full docs and adjust the settings as you see fit.</p>
+<h3>Jedi vim</h3>
+<p>Since I wrote this article I have discovered <a href="https://github.com/davidhalter/jedi-vim">Jedi-vim</a>
+which I now use as the autocompletion tool instead of the rope plugin that comes with Python Mode. All you need to do is
+add the plugin to the vundle list and turn off Rope by replacing the <code>let g:pymode_rope = 1</code> with
+<code>let g:pymode_rope = 0</code>. I feel it's snappier and more capable than Rope. But if you want to avoid
+installing another plugin, then feel free to stay with Rope.</p>
+<h3>Other settings</h3>
+<p>I also use some specific Vim settings in <code>.vimrc</code> that make the experience a bit nicer for me:</p>
+<p>{% highlight vim %}
+" Use <leader>l to toggle display of whitespace
+nmap <leader>l :set list!<CR>
+" automatically change window's cwd to file's dir
+set autochdir</p>
+<p>" I'm prefer spaces to tabs
+set tabstop=4
+set shiftwidth=4
+set expandtab</p>
+<p _="%" endhighlight="endhighlight">" more subtle popup colors 
+if has ('gui_running')
+    highlight Pmenu guibg=#cccccc gui=bold  <br />
+endif</p>
+<h3>Summary</h3>
+<p>This is basically the crux of my Python and Vim development setup. I think the core of the whole thing really is
+python mode as it provides the most Python specific tools. The other plugins however do add some really useful
+functionality to make your life a little easier. You might ask why I don't list things like <code>fuzzy file search</code> 
+and such, and that's because I don't use it. I've tried it before and didn't really get on with it very well and I 
+prefer to either just open the files directly or using <code>NerdTree</code>. </p>
+<p>I hope that this post provides some pointers to help you setup your Vim based Python development environment. As 
+I said above, feel free to leave a comment with any plugins or settings that you find useful, always happy to hear
+about what else is out there.</p>
+<p>Thanks for reading.</p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/python.html">[python</a>, <a href="/tag/vim.html">vim]</a>, </p>
+        </div>
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-you can add links in your config file fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-another social link fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+
+</html>

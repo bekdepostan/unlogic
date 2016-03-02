@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Sven Steinbauer">
+
+
+        <title>"nmap's idle scan with scapy"</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="If you've used nmap before you are probably familiar with its idle scan feature. Should you not be, go and skim the docs. I'll quickly ...">
+
+        <meta name="author" content="Sven Steinbauer">
+
+        <meta name="tags" content="[hack">
+        <meta name="tags" content="idle scan">
+        <meta name="tags" content="scapy">
+        <meta name="tags" content="nmap]">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Unlogic">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="Sven Steinbauer" >
+	<meta property="og:url" content="/2014/07/17/nmaps-idle-scan-with-scapy/">
+	<meta property="og:title" content=""nmap's idle scan with scapy"">
+	<meta property="article:published_time" content="2014-07-17 00:00:00+01:00">
+            <meta property="og:description" content="If you've used nmap before you are probably familiar with its idle scan feature. Should you not be, go and skim the docs. I'll quickly ...">
+
+            <meta property="og:image" content="/images/keyboard-feature.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Unlogic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="/pages/about.html">About</a></li>
+                            <li><a href="/pages/all-posts.html">All posts</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/images/keyboard-feature.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>"nmap's idle scan with scapy"</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
+                             on Thu 17 July 2014
+                        </span>
+                            <span class="meta">Updated on Thu 17 July 2014</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <p>If you've used nmap before you are probably familiar with its idle scan feature.
+Should you not be, go and <a href="http://nmap.org/book/idlescan.html">skim the docs</a>.
+I'll quickly cover the basics here anyway.</p>
+<p>Basically it will allow us to conduct a port scan of a remote host without revealing
+our IP address. This is done by making use of the fact that IP IDs are sequential.
+The images below (courtesy of the namp project documentation) explain this very
+well.</p>
+<p><strong>Open Port</strong>
+<a href="http://i.imgur.com/MajmRTH.png">{% img http://i.imgur.com/MajmRTH.png %}</a></p>
+<p><strong>Closed Port</strong>
+<a href="http://i.imgur.com/2UALzzd.png">{% img http://i.imgur.com/2UALzzd.png %}</a></p>
+<p><strong>Filtered Port</strong>
+<a href="http://i.imgur.com/Yv6hbwL.png">{% img http://i.imgur.com/Yv6hbwL.png %}</a></p>
+<p>Ok, so that's the short version of the theory and it's relatively painless
+to implement with scapy. Let's take a look at the script:</p>
+<p>{% gist e377713b90525e842266 %}</p>
+<p>You provide the script with a <code>zombie ip</code>, <code>target ip</code>, and <code>target port</code>.
+These should be self explanatory. Then we use scapy to assemble our packets to
+conduct our scan. The <code>p1</code> SYN/ACK packet will be sent to the zombie so we can
+obtain a current IP ID from the RST response as a reference.</p>
+<p><code>p2</code> is a SYN packet which we send to the target with a return address of the 
+zombie host. When the target receives this packet it will reply to
+the zombie instead of the source machine (us). The target will respond with a
+SYN/ACK to the <code>p2</code> packet, but send its response to the zombie instead of us.
+Thus increasing the zobmies IP ID value by one.</p>
+<p>Then we probe the zombie again with a further SYN/ACK packet (this is <code>p3</code>) to
+find out what the new IP ID is.</p>
+<p>Now we have enough information to determine if the remote port is open or not.
+We subtract the initial IP ID from the final one and print out the status of the port.</p>
+<p>So how do you use it? The important thing is to find a relative inactive machine to
+use as a zombie, as you don't want the IP ID to change while you are conducting
+your probe. I've had the best results with using networked printers as zombie hosts.
+Unless there's a lot of print jobs going on, they are fairly idle. The printer 
+is at <code>10.20.7.1</code> and I'm probing port 80 on <code>10.16.70.8</code>.</p>
+<p>{% highlight console %}
+$] sudo ./idle_scan.py 10.20.7.1 0.16.70.8 80
+WARNING: No route found for IPv6 destination :: (no default route?)</p>
+<p>[*] Scan 10.16.70.8 port 80 using 10.20.7.1 as zombie
+[+] Zombie initial IP id 57319
+[+] Zombie final IP id 57321
+[+] Port 80 : open</p>
+<p>sudo ./idle_scan.py 10.20.7.1 0.16.70.8 90
+WARNING: No route found for IPv6 destination :: (no default route?)</p>
+<p>[*] Scan 10.16.70.8 port 90 using 10.20.7.1 as zombie
+[+] Zombie initial IP id 57341
+[+] Zombie final IP id 57342
+[+] Port 90 : closed</p>
+<p>{% endhighlight %}</p>
+<p>And to be sure, let's verify our findings with a proper nmap scan.</p>
+<p>{% highlight console %}
+$] nmap 10.16.70.8 -p80,90</p>
+<p>Starting Nmap 5.51 ( http://nmap.org ) at 2014-07-17 13:07 BST
+Nmap scan report for 10.16.70.8 (10.16.70.8)
+Host is up (0.00013s latency).
+PORT   STATE  SERVICE
+80/tcp open   http
+90/tcp closed dnsix</p>
+<p>Nmap done: 1 IP address (1 host up) scanned in 0.04 seconds</p>
+<p>{% endhighlight %}</p>
+<p>Approved.</p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/hack.html">[hack</a>, <a href="/tag/idle-scan.html">idle scan</a>, <a href="/tag/scapy.html">scapy</a>, <a href="/tag/nmap.html">nmap]</a>, </p>
+        </div>
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-you can add links in your config file fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-another social link fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+
+</html>
