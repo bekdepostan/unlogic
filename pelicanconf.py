@@ -17,8 +17,8 @@ ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 
 DISQUS_SITENAME = 'unlogic'
-GITHUB_URL = 'http://github.com/myprofile'
-TWITTER_URL = 'http://twitter.com/myprofile'
+GITHUB_HANDLE = 'svenito'
+TWITTER_HANDLE = 'binaryheadache'
 
 COLOR_SCHEME_CSS = 'monokai.css'
 
@@ -43,8 +43,8 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('Github', 'https://github.com/svenito'),
+        ('Twitter', 'https://twitter.com/binaryheadache'),)
 
 DEFAULT_PAGINATION = 10
 

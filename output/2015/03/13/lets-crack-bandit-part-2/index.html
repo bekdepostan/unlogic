@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Sven Steinbauer">
+
+
+        <title>Let's crack Bandit Part 2</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="Continues on from Let's crack Bandit Part 1 Level 15 -> 16 # Level 15 Eventhough this is very similar to the previous level, it's a ...">
+
+        <meta name="author" content="Sven Steinbauer">
+
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Unlogic">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="Sven Steinbauer" >
+	<meta property="og:url" content="/2015/03/13/lets-crack-bandit-part-2/">
+	<meta property="og:title" content="Let's crack Bandit Part 2">
+	<meta property="article:published_time" content="2015-03-13 00:00:00+00:00">
+            <meta property="og:description" content="Continues on from Let's crack Bandit Part 1 Level 15 -> 16 # Level 15 Eventhough this is very similar to the previous level, it's a ...">
+
+            <meta property="og:image" content="/images/keyboard-feature.jpg">
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:image" content="images/keyboard-feature.jpg">
+        <meta name="twitter:site" content="@binaryheadache" />
+        <meta name="twitter:title" content="Let's crack Bandit Part 2" />
+            <meta name="twitter:description" content="<p>Continues on from <a class="reference external" href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part1">Let's crack Bandit Part 1</a></p>
+<div class="section" id="level-15-16">
+<h2>Level 15 -&gt; 16 #</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit16.html">Level 15</a></p>
+<p>Eventhough this is very similar to the previous level, it's a little
+more complicated as we need to connect with SSL.
+The simplest way is using <code>openssl</code> with <code>s_client</code>. Once connected it's the
+same ...</p></div>" />
+            <meta name="twitter:image" content="/images/keyboard-feature.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Unlogic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="/pages/about.html">About</a></li>
+                            <li><a href="/pages/all-posts.html">All posts</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/images/keyboard-feature.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Let's crack Bandit Part 2</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
+                             on Fri 13 March 2015
+                        </span>
+                            <span class="meta">Updated on Fri 13 March 2015</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <p>Continues on from <a class="reference external" href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part1">Let's crack Bandit Part 1</a></p>
+<div class="section" id="level-15-16">
+<h2>Level 15 -&gt; 16 #</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit16.html">Level 15</a></p>
+<p>Eventhough this is very similar to the previous level, it's a little
+more complicated as we need to connect with SSL.
+The simplest way is using <code>openssl</code> with <code>s_client</code>. Once connected it's the
+same dance as above</p>
+<div class="highlight"><pre><span></span><span class="gp">bandit15@melinda:~$</span> openssl s_client -quiet -connect localhost:30001
+<span class="go">depth=0 CN = li190-250.members.linode.com</span>
+<span class="go">verify error:num=18:self signed certificate</span>
+<span class="go">verify return:1</span>
+<span class="go">depth=0 CN = li190-250.members.linode.com</span>
+<span class="go">verify return:1</span>
+<span class="go">BfMYroe26WYalil77FoDi9qh59eK5xNr</span>
+<span class="go">Correct!</span>
+<span class="go">cluFn7wTiGryunymYOu4RcffSxQluehd</span>
+
+<span class="go">read:errno=0</span>
+</pre></div>
+</div>
+<div class="section" id="level-16-17">
+<h2>Level 16 -&gt; 17 #</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit17.html">Level 16</a></p>
+<p>Here we have a choice. We run a simple ping scan across the port range and then
+figure out which port is the right one by trying each one. Depending on the number
+of ports open this could take a while or not.
+Let's see how we're going to handle this by seeing which ports are open</p>
+<div class="highlight"><pre><span></span><span class="gp">bandit16@melinda:~$</span> nmap localhost -p 31000-32000
+
+<span class="go">Starting Nmap 6.40 ( http://nmap.org ) at 2015-03-20 14:54 UTC</span>
+<span class="go">Nmap scan report for localhost (127.0.0.1)</span>
+<span class="go">Host is up (0.00080s latency).</span>
+<span class="go">Not shown: 996 closed ports</span>
+<span class="go">PORT      STATE SERVICE</span>
+<span class="go">31046/tcp open  unknown</span>
+<span class="go">31518/tcp open  unknown</span>
+<span class="go">31691/tcp open  unknown</span>
+<span class="go">31790/tcp open  unknown</span>
+<span class="go">31960/tcp open  unknown</span>
+
+<span class="go">Nmap done: 1 IP address (1 host up) scanned in 0.08 seconds</span>
+</pre></div>
+<p>Not too bad. Because it's a short list, we can try them one by one, or
+we run a service discovery on them. Service discovery in nmap takes a while,
+so I only scan the ports we are interseted in:</p>
+<div class="highlight"><pre><span></span><span class="gp">bandit16@melinda:~$</span> nmap -sV -p 31046,31518,31691,31790,31960 localhost
+
+<span class="go">Starting Nmap 6.40 ( http://nmap.org ) at 2015-03-20 14:51 UTC</span>
+<span class="go">Nmap scan report for localhost (127.0.0.1)</span>
+<span class="go">Host is up (0.00015s latency).</span>
+<span class="go">PORT      STATE SERVICE VERSION</span>
+<span class="go">31046/tcp open  echo</span>
+<span class="go">31518/tcp open  msdtc   Microsoft Distributed Transaction Coordinator (error)</span>
+<span class="go">31691/tcp open  echo</span>
+<span class="go">31790/tcp open  msdtc   Microsoft Distributed Transaction Coordinator (error)</span>
+<span class="go">31960/tcp open  echo</span>
+<span class="go">Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows</span>
+</pre></div>
+<p>Now we only have two ports to try, as the others are clearly just echo ports.
+Eliminating one we go ahead and</p>
+<div class="highlight"><pre><span></span><span class="gp">bandit16@melinda:~$</span> openssl s_client -quiet -connect localhost:31790
+<span class="go">depth=0 CN = li190-250.members.linode.com</span>
+<span class="go">verify error:num=18:self signed certificate</span>
+<span class="go">verify return:1</span>
+<span class="go">depth=0 CN = li190-250.members.linode.com</span>
+<span class="go">verify return:1</span>
+<span class="go">cluFn7wTiGryunymYOu4RcffSxQluehd</span>
+<span class="go">Correct!</span>
+<span class="go">-----BEGIN RSA PRIVATE KEY-----</span>
+<span class="go">MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ</span>
+<span class="go">imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ</span>
+<span class="go">Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu</span>
+<span class="go">DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW</span>
+<span class="go">JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX</span>
+<span class="go">x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD</span>
+<span class="go">KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl</span>
+<span class="go">J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd</span>
+<span class="go">d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC</span>
+<span class="go">YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A</span>
+<span class="go">vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama</span>
+<span class="go">+TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT</span>
+<span class="go">8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx</span>
+<span class="go">SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd</span>
+<span class="go">HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt</span>
+<span class="go">SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A</span>
+<span class="go">R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi</span>
+<span class="go">Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg</span>
+<span class="go">R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu</span>
+<span class="go">L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni</span>
+<span class="go">blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU</span>
+<span class="go">YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM</span>
+<span class="go">77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b</span>
+<span class="go">dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3</span>
+<span class="go">vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=</span>
+<span class="go">-----END RSA PRIVATE KEY-----</span>
+
+<span class="go">read:errno=0</span>
+</pre></div>
+<p>Now copy that key into a new file and use <code>chmod go-rw key</code> to remove group
+and other read/write. ssh refuses to accept a key that is read/write by
+anyone other than the user who owns the file. Then simply</p>
+<div class="highlight"><pre><span></span><span class="gp">bandit16@melinda:~$</span> ssh -i /tmp/k.key bandit17@localhost
+</pre></div>
+</div>
+<div class="section" id="level-17-18">
+<h2>Level 17 -&gt; 18 #</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit18.html">Level 17</a></p>
+<p>We remain logged in as bandit17 from the previous level. To compare two files
+we need to do a <code>diff</code></p>
+<div class="highlight"><pre><span></span><span class="gp">bandit17@melinda:~$</span> diff passwords.old  passwords.new
+<span class="go">42c42</span>
+<span class="go">&lt; BS8bqB1kqkinKJjuxL6k072Qq9NRwQpR</span>
+</pre></div>
+</div>
+
+    </article>
+
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="https://github.com/svenito">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/binaryheadache">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+
+</html>
