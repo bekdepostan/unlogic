@@ -1899,8 +1899,7 @@ can do&lt;/p&gt;
 </summary></entry><entry><title>How's that Pizza coming along?</title><link href="/2015/04/15/hows-that-pizza-coming-along/" rel="alternate"></link><updated>2015-05-14T17:00:00+01:00</updated><author><name>Sven Steinbauer</name></author><id>tag:,2015-04-15:2015/04/15/hows-that-pizza-coming-along/</id><summary type="html">&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: Published what I have done so far &lt;a class="reference external" href="https://github.com/Svenito/dominos"&gt;on my Github&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Having been a bit busy with other things recently, I've not mentioned the Domino's
 thing for a while. So in case anyone is wondering where I am with this:&lt;/p&gt;
-&lt;p&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;&lt;a class="reference external" href="https://asciinema.org/a/17706.js"&gt;https://asciinema.org/a/17706.js&lt;/a&gt;&amp;quot; id=&amp;quot;asciicast-17706&amp;quot; async&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
-&lt;p&gt;Basically I've reworked how the store finder works. I've collapsed the whole store finding and
+&lt;script type="text/javascript" src="https://asciinema.org/a/17706.js" id="asciicast-17706" async&gt;&lt;/script&gt;&lt;p&gt;Basically I've reworked how the store finder works. I've collapsed the whole store finding and
 delivery postcode stuff into one &lt;code&gt;locate_store&lt;/code&gt; call.
 Enter your postcode and it'll get the nearest delivery capable store and select it.
 Much simpler, as you can see.&lt;/p&gt;
