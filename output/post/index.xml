@@ -1,45 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Unlogic</title><link href="/" rel="alternate"></link><link href="/post/index.xml" rel="self"></link><id>/</id><updated>2016-02-18T13:46:00+00:00</updated><entry><title>On communities</title><link href="/2016/02/18/on-communities/" rel="alternate"></link><updated>2016-02-18T13:46:00+00:00</updated><author><name>Sven Steinbauer</name></author><id>tag:,2016-02-18:2016/02/18/on-communities/</id><summary type="html">&lt;p&gt;A long time ago, in a life that is part of scriptures, I used to skate[board].
-I was never particularily good at it to be fair, but I enjoyed it a lot. I had
-a few tricks I could do, and I could fling myself around a skatepark, but nothing
-noteworthy. One of the best things about it was the community. That group of
-skater buddies you hung out with, the ones you'd head to your local skate spots with
-or perhaps a longer trip to a skate park. You had fun while you all repeatedly tried
-tricks you couldn't yet do, or perhaps just cruised around, enjoying yourself.&lt;/p&gt;
-&lt;p&gt;Not only that, but you also encouraged eachother to try new things, to keep
-practicing, gave eachother advice on what might help you land that trick. It
-really helped when someone would tell you that your feet are in the wrong
-position, or perhaps try moving your foot to a different position. Or simply
-would just say &amp;quot;you almost had it there, keep going&amp;quot;. Even those skaters that could
-throw tricks out like it was nothing would offer some advice and help out.
-Maybe I was just lucky to find the people I did, but in the majority it was a
-very good set of people. Some you knew by name, others you would just regularily
-see at the local skate spot, but you all had something in common, and that
-brought you together.
-Yes there were people who weren't quite so supportive, but they also didn't
-have a lot friends either :)&lt;/p&gt;
-&lt;p&gt;We knew that not everyone is born able to stand on a board, and we can't all pop and ollie
-from day one. It's about perseverance, practice, overcoming repeated failure, and
-having fun while doing it. You won't land a kickflip on your first try. Probably
-not even on your tenth. You just go to keep trying and failing until one day you stop
-failing, then you keep on practicing until that kickflip seems natural and you're
-able to do it reliably.
-This might mean just rolling backwards and forwards in a car park for an hour, but
-when you land it... it feels great.&lt;/p&gt;
-&lt;p&gt;So now that I've set the scene, let me just say:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;I wish more tech communities were like this.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;So many times I've seen people on forums and other communities make fun of people
-who are trying to learn how to do something that they've never tried before. Even if
-they are trying to do something advanced without having learned the basics first,
-that's no reason to make fun of them or be rude. Tell them what they should do first.
-They've done something that you think is stupid? Instead of just laughing at them, why
-not tell them how to do it right? Just like none of us could skateboard from day one, none
-of us were born programmers. We all had to start somewhere. We made stupid mistakes
-because we didn't know better. But we made the mistake and learned from it.&lt;/p&gt;
-&lt;p&gt;You lean forward when you drop-in on a halfpipe, you faceplant. Next time you know to
-lean back. But it's ok, we all did it at some point and we'll tell you what you did
-wrong and offer some advice.&lt;/p&gt;
-</summary><category term='"thoughts"'></category><category term='"communities"'></category><category term='"programming"'></category></entry><entry><title>Offline Coding</title><link href="/2016/02/16/offline-coding/" rel="alternate"></link><updated>2016-02-16T09:34:12+00:00</updated><author><name>Sven Steinbauer</name></author><id>tag:,2016-02-16:2016/02/16/offline-coding/</id><summary type="html">&lt;p&gt;These days, when you sit at your box, tapping out your code be it in whatever
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Unlogic</title><link href="/" rel="alternate"></link><link href="/post/index.xml" rel="self"></link><id>/</id><updated>2016-02-16T09:34:12+00:00</updated><entry><title>Offline Coding</title><link href="/2016/02/16/offline-coding/" rel="alternate"></link><updated>2016-02-16T09:34:12+00:00</updated><author><name>Sven Steinbauer</name></author><id>tag:,2016-02-16:2016/02/16/offline-coding/</id><summary type="html">&lt;p&gt;These days, when you sit at your box, tapping out your code be it in whatever
 language you use these days, you usually have one or more tabs open, ready to
 help you with any programming issues: DuckDuckGo, Google, Stack Overflow, Reddit,
 or whatever your go to site for answers is.&lt;/p&gt;
@@ -7034,7 +6994,7 @@ that my system has all the dependencies, after that I'll push the code to
 building on the code from the book, chapter by chapter until, one day, Lemon will be complete.&lt;/p&gt;
 </summary></entry><entry><title>Unit testing Houdini Python plugins with nose and coverage</title><link href="/2014/03/20/unit-testing-houdini-python-plugins-with-nose-and-coverage/" rel="alternate"></link><updated>2014-03-20T12:00:00+00:00</updated><author><name>Sven Steinbauer</name></author><id>tag:,2014-03-20:2014/03/20/unit-testing-houdini-python-plugins-with-nose-and-coverage/</id><summary type="html">&lt;p&gt;We all know how important unit testing is, right? But often you wonder how can
 you test a not so straight forward tool. In this case we're talking about a
-Python script intended to run inside &lt;a class="reference external" href="http://sidefx.com"&gt;Houdini&lt;/a&gt;. In my specific
+Python script intended to run inside &lt;a class="reference external" href="http://sidefx.com"&gt;Houdini&lt;/a&gt; . In my specific
 case the python script is launched from a script on a node when the user clicks
 a button on the OTL. I want to run unit tests on this script, but the problem is
 that the script parses a set of nodes and does various things according to the
@@ -7072,22 +7032,14 @@ separate them with commas: &lt;code&gt;os.environ['NOSE_COVER_PACKAGE'] = 'modul
 There's a small bug in older versions, so depending on your distro you may need to
 make the following change to
 &lt;code&gt;nose/plugins/cover.py&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Change these lines
-.. code-block:: python&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;for pkgs in [tolist(x) for x in options.cover_packages]:&lt;/dt&gt;
-&lt;dd&gt;self.coverPackages.extends(pkgs)&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;to these lines
-.. code-block:: python&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;for pkgs in tolist(options.cover_packages):&lt;/dt&gt;
-&lt;dd&gt;self.coverPackages.append(pkgs)&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Change these lines&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;pkgs&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;tolist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cover_packages&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;coverPackages&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;extends&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pkgs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;to these lines&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;pkgs&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tolist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cover_packages&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;coverPackages&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pkgs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Otherwise the &lt;code&gt;NOSE_COVER_PACKAGE&lt;/code&gt; variable won't work properly.&lt;/p&gt;
 &lt;p&gt;I also setup the &lt;code&gt;sys.path&lt;/code&gt; so that I load my local module rather
 than the globally installed one. Depending on how your directories are laid out
@@ -7165,7 +7117,7 @@ all I say.&lt;/p&gt;
 
     &lt;span class="n"&gt;nose&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;__file__&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;--cover_html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-</summary></entry><entry><title>Effort Vs Benefit</title><link href="/2014/03/12/effort-vs-benefit/" rel="alternate"></link><updated>2014-03-12T22:00:00+00:00</updated><author><name>Sven Steinbauer</name></author><id>tag:,2014-03-12:2014/03/12/effort-vs-benefit/</id><summary type="html">&lt;p&gt;How often have you thought: &amp;quot;Everything would be a lot better if this
+</summary><category term="houdini"></category><category term="programming"></category><category term="python"></category></entry><entry><title>Effort Vs Benefit</title><link href="/2014/03/12/effort-vs-benefit/" rel="alternate"></link><updated>2014-03-12T22:00:00+00:00</updated><author><name>Sven Steinbauer</name></author><id>tag:,2014-03-12:2014/03/12/effort-vs-benefit/</id><summary type="html">&lt;p&gt;How often have you thought: &amp;quot;Everything would be a lot better if this
 tool worked faster&amp;quot;? Probably quite often. You've most likely also heard the
 saying &amp;quot;Don't optimise prematurely&amp;quot;. It's true, there's no point making
 something faster if you don't know it's too slow. Don't waste time on

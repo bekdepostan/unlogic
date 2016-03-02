@@ -41,6 +41,9 @@
 
         <meta name="author" content="Sven Steinbauer">
 
+        <meta name="tags" content="houdini">
+        <meta name="tags" content="programming">
+        <meta name="tags" content="python">
 
 	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="Unlogic">
@@ -53,15 +56,6 @@
             <meta property="og:description" content="We all know how important unit testing is, right? But often you wonder how can you test a not so straight forward tool. In this case ...">
 
             <meta property="og:image" content="/images/keyboard-feature.jpg">
-            <meta name="twitter:card" content="summary" />
-            <meta name="twitter:image" content="images/keyboard-feature.jpg">
-        <meta name="twitter:site" content="@binaryheadache" />
-        <meta name="twitter:title" content="Unit testing Houdini Python plugins with nose and coverage" />
-            <meta name="twitter:description" content="<p>We all know how important unit testing is, right? But often you wonder how can
-you test a not so straight forward tool. In this case we're talking about a
-Python script intended to run inside <a class="reference external" href="http://sidefx.com">Houdini</a>. In my specific
-case the python script is launched from a script ...</p>" />
-            <meta name="twitter:image" content="/images/keyboard-feature.jpg">
 </head>
 
 <body>
@@ -120,7 +114,7 @@ case the python script is launched from a script ...</p>" />
     <article>
         <p>We all know how important unit testing is, right? But often you wonder how can
 you test a not so straight forward tool. In this case we're talking about a
-Python script intended to run inside <a class="reference external" href="http://sidefx.com">Houdini</a>. In my specific
+Python script intended to run inside <a class="reference external" href="http://sidefx.com">Houdini</a> . In my specific
 case the python script is launched from a script on a node when the user clicks
 a button on the OTL. I want to run unit tests on this script, but the problem is
 that the script parses a set of nodes and does various things according to the
@@ -158,22 +152,14 @@ separate them with commas: <code>os.environ['NOSE_COVER_PACKAGE'] = 'module_to_t
 There's a small bug in older versions, so depending on your distro you may need to
 make the following change to
 <code>nose/plugins/cover.py</code></p>
-<p>Change these lines
-.. code-block:: python</p>
-<blockquote>
-<dl class="docutils">
-<dt>for pkgs in [tolist(x) for x in options.cover_packages]:</dt>
-<dd>self.coverPackages.extends(pkgs)</dd>
-</dl>
-</blockquote>
-<p>to these lines
-.. code-block:: python</p>
-<blockquote>
-<dl class="docutils">
-<dt>for pkgs in tolist(options.cover_packages):</dt>
-<dd>self.coverPackages.append(pkgs)</dd>
-</dl>
-</blockquote>
+<p>Change these lines</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pkgs</span> <span class="ow">in</span> <span class="p">[</span><span class="n">tolist</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">cover_packages</span><span class="p">]:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">coverPackages</span><span class="o">.</span><span class="n">extends</span><span class="p">(</span><span class="n">pkgs</span><span class="p">)</span>
+</pre></div>
+<p>to these lines</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pkgs</span> <span class="ow">in</span> <span class="n">tolist</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">cover_packages</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">coverPackages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pkgs</span><span class="p">)</span>
+</pre></div>
 <p>Otherwise the <code>NOSE_COVER_PACKAGE</code> variable won't work properly.</p>
 <p>I also setup the <code>sys.path</code> so that I load my local module rather
 than the globally installed one. Depending on how your directories are laid out
@@ -254,6 +240,9 @@ all I say.</p>
 
     </article>
 
+        <div class="tags">
+            <p>tags: <a href="/tag/houdini.html">houdini</a>, <a href="/tag/programming.html">programming</a>, <a href="/tag/python.html">python</a>, </p>
+        </div>
 
 <hr>
 <div class="sharing">
