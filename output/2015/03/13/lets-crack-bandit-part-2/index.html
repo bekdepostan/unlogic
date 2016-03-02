@@ -9,7 +9,7 @@
         <meta name="author" content="Sven Steinbauer">
 
 
-        <title>"Let's crack Bandit Part 2"</title>
+        <title>Let's crack Bandit Part 2</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -35,15 +35,10 @@
 
 
 
-        <meta name="description" content="Continues on from Let's crack Bandit Part 1 Contents * Auto generated table of contents {:toc} Level 15 -> 16 Level 15 Eventhough this ...">
+        <meta name="description" content="Continues on from Let's crack Bandit Part 1 Level 15 -> 16 # Level 15 Eventhough this is very similar to the previous level, it's a ...">
 
         <meta name="author" content="Sven Steinbauer">
 
-        <meta name="tags" content="[ctf">
-        <meta name="tags" content="security">
-        <meta name="tags" content="hack">
-        <meta name="tags" content="overthewire">
-        <meta name="tags" content="bandit]">
 
 	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="Unlogic">
@@ -51,9 +46,9 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="Sven Steinbauer" >
 	<meta property="og:url" content="/2015/03/13/lets-crack-bandit-part-2/">
-	<meta property="og:title" content=""Let's crack Bandit Part 2"">
+	<meta property="og:title" content="Let's crack Bandit Part 2">
 	<meta property="article:published_time" content="2015-03-13 00:00:00+00:00">
-            <meta property="og:description" content="Continues on from Let's crack Bandit Part 1 Contents * Auto generated table of contents {:toc} Level 15 -> 16 Level 15 Eventhough this ...">
+            <meta property="og:description" content="Continues on from Let's crack Bandit Part 1 Level 15 -> 16 # Level 15 Eventhough this is very similar to the previous level, it's a ...">
 
             <meta property="og:image" content="/images/keyboard-feature.jpg">
 </head>
@@ -93,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>"Let's crack Bandit Part 2"</h1>
+                        <h1>Let's crack Bandit Part 2</h1>
                         <span class="meta">Posted by
                                 <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
                              on Fri 13 March 2015
@@ -112,351 +107,124 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p>Continues on from <a href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part1">Let's crack Bandit Part 1</a></p>
-<section id="table-of-contents" class="toc">
-<header>
-<h3>Contents</h3>
-</header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section>
-
-<!-- /#table-of-contents -->
-
-<h2>Level 15 -&gt; 16</h2>
-<p><a href="http://overthewire.org/wargames/bandit/bandit16.html">Level 15</a></p>
+        <p>Continues on from <a class="reference external" href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part1">Let's crack Bandit Part 1</a></p>
+<div class="section" id="level-15-16">
+<h2>Level 15 -&gt; 16 #</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit16.html">Level 15</a></p>
 <p>Eventhough this is very similar to the previous level, it's a little
 more complicated as we need to connect with SSL.
 The simplest way is using <code>openssl</code> with <code>s_client</code>. Once connected it's the
 same dance as above</p>
-<p>{% highlight console %}
-bandit15@melinda:~$ openssl s_client -quiet -connect localhost:30001
-depth=0 CN = li190-250.members.linode.com
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 CN = li190-250.members.linode.com
-verify return:1
-BfMYroe26WYalil77FoDi9qh59eK5xNr
-Correct!
-cluFn7wTiGryunymYOu4RcffSxQluehd</p>
-<p _="%" endhighlight="endhighlight">read:errno=0</p>
-<h2>Level 16 -&gt; 17</h2>
-<p><a href="http://overthewire.org/wargames/bandit/bandit17.html">Level 16</a></p>
+<div class="highlight"><pre><span></span><span class="gp">bandit15@melinda:~$</span> openssl s_client -quiet -connect localhost:30001
+<span class="go">depth=0 CN = li190-250.members.linode.com</span>
+<span class="go">verify error:num=18:self signed certificate</span>
+<span class="go">verify return:1</span>
+<span class="go">depth=0 CN = li190-250.members.linode.com</span>
+<span class="go">verify return:1</span>
+<span class="go">BfMYroe26WYalil77FoDi9qh59eK5xNr</span>
+<span class="go">Correct!</span>
+<span class="go">cluFn7wTiGryunymYOu4RcffSxQluehd</span>
+
+<span class="go">read:errno=0</span>
+</pre></div>
+</div>
+<div class="section" id="level-16-17">
+<h2>Level 16 -&gt; 17 #</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit17.html">Level 16</a></p>
 <p>Here we have a choice. We run a simple ping scan across the port range and then
 figure out which port is the right one by trying each one. Depending on the number
 of ports open this could take a while or not.
 Let's see how we're going to handle this by seeing which ports are open</p>
-<p>{% highlight console %}
-bandit16@melinda:~$ nmap localhost -p 31000-32000 </p>
-<p>Starting Nmap 6.40 ( http://nmap.org ) at 2015-03-20 14:54 UTC
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.00080s latency).
-Not shown: 996 closed ports
-PORT      STATE SERVICE
-31046/tcp open  unknown
-31518/tcp open  unknown
-31691/tcp open  unknown
-31790/tcp open  unknown
-31960/tcp open  unknown</p>
-<p _="%" endhighlight="endhighlight">Nmap done: 1 IP address (1 host up) scanned in 0.08 seconds</p>
+<div class="highlight"><pre><span></span><span class="gp">bandit16@melinda:~$</span> nmap localhost -p 31000-32000
+
+<span class="go">Starting Nmap 6.40 ( http://nmap.org ) at 2015-03-20 14:54 UTC</span>
+<span class="go">Nmap scan report for localhost (127.0.0.1)</span>
+<span class="go">Host is up (0.00080s latency).</span>
+<span class="go">Not shown: 996 closed ports</span>
+<span class="go">PORT      STATE SERVICE</span>
+<span class="go">31046/tcp open  unknown</span>
+<span class="go">31518/tcp open  unknown</span>
+<span class="go">31691/tcp open  unknown</span>
+<span class="go">31790/tcp open  unknown</span>
+<span class="go">31960/tcp open  unknown</span>
+
+<span class="go">Nmap done: 1 IP address (1 host up) scanned in 0.08 seconds</span>
+</pre></div>
 <p>Not too bad. Because it's a short list, we can try them one by one, or
 we run a service discovery on them. Service discovery in nmap takes a while,
 so I only scan the ports we are interseted in:</p>
-<p>{% highlight console %}
-bandit16@melinda:~$ nmap -sV -p 31046,31518,31691,31790,31960 localhost</p>
-<p _="%" endhighlight="endhighlight">Starting Nmap 6.40 ( http://nmap.org ) at 2015-03-20 14:51 UTC
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.00015s latency).
-PORT      STATE SERVICE VERSION
-31046/tcp open  echo
-31518/tcp open  msdtc   Microsoft Distributed Transaction Coordinator (error)
-31691/tcp open  echo
-31790/tcp open  msdtc   Microsoft Distributed Transaction Coordinator (error)
-31960/tcp open  echo
-Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows</p>
+<div class="highlight"><pre><span></span><span class="gp">bandit16@melinda:~$</span> nmap -sV -p 31046,31518,31691,31790,31960 localhost
+
+<span class="go">Starting Nmap 6.40 ( http://nmap.org ) at 2015-03-20 14:51 UTC</span>
+<span class="go">Nmap scan report for localhost (127.0.0.1)</span>
+<span class="go">Host is up (0.00015s latency).</span>
+<span class="go">PORT      STATE SERVICE VERSION</span>
+<span class="go">31046/tcp open  echo</span>
+<span class="go">31518/tcp open  msdtc   Microsoft Distributed Transaction Coordinator (error)</span>
+<span class="go">31691/tcp open  echo</span>
+<span class="go">31790/tcp open  msdtc   Microsoft Distributed Transaction Coordinator (error)</span>
+<span class="go">31960/tcp open  echo</span>
+<span class="go">Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows</span>
+</pre></div>
 <p>Now we only have two ports to try, as the others are clearly just echo ports.
 Eliminating one we go ahead and</p>
-<p>{% highlight console %}
-bandit16@melinda:~$ openssl s_client -quiet -connect localhost:31790
-depth=0 CN = li190-250.members.linode.com
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 CN = li190-250.members.linode.com
-verify return:1
-cluFn7wTiGryunymYOu4RcffSxQluehd
-Correct!
------BEGIN RSA PRIVATE KEY-----
-MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
-imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
-Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
-DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
-JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
-x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
-KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
-J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
-d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
-YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
-vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
-+TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
-8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
-SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
-HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
-SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
-R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
-Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
-R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
-L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
-blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
-YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
-77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
-dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
-vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
------END RSA PRIVATE KEY-----</p>
-<p _="%" endhighlight="endhighlight">read:errno=0</p>
+<div class="highlight"><pre><span></span><span class="gp">bandit16@melinda:~$</span> openssl s_client -quiet -connect localhost:31790
+<span class="go">depth=0 CN = li190-250.members.linode.com</span>
+<span class="go">verify error:num=18:self signed certificate</span>
+<span class="go">verify return:1</span>
+<span class="go">depth=0 CN = li190-250.members.linode.com</span>
+<span class="go">verify return:1</span>
+<span class="go">cluFn7wTiGryunymYOu4RcffSxQluehd</span>
+<span class="go">Correct!</span>
+<span class="go">-----BEGIN RSA PRIVATE KEY-----</span>
+<span class="go">MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ</span>
+<span class="go">imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ</span>
+<span class="go">Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu</span>
+<span class="go">DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW</span>
+<span class="go">JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX</span>
+<span class="go">x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD</span>
+<span class="go">KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl</span>
+<span class="go">J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd</span>
+<span class="go">d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC</span>
+<span class="go">YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A</span>
+<span class="go">vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama</span>
+<span class="go">+TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT</span>
+<span class="go">8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx</span>
+<span class="go">SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd</span>
+<span class="go">HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt</span>
+<span class="go">SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A</span>
+<span class="go">R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi</span>
+<span class="go">Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg</span>
+<span class="go">R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu</span>
+<span class="go">L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni</span>
+<span class="go">blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU</span>
+<span class="go">YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM</span>
+<span class="go">77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b</span>
+<span class="go">dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3</span>
+<span class="go">vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=</span>
+<span class="go">-----END RSA PRIVATE KEY-----</span>
+
+<span class="go">read:errno=0</span>
+</pre></div>
 <p>Now copy that key into a new file and use <code>chmod go-rw key</code> to remove group
 and other read/write. ssh refuses to accept a key that is read/write by
 anyone other than the user who owns the file. Then simply</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-bandit16@melinda:~$ ssh -i /tmp/k.key bandit17@localhost</p>
-<h2>Level 17 -&gt; 18</h2>
-<p><a href="http://overthewire.org/wargames/bandit/bandit18.html">Level 17</a></p>
+<div class="highlight"><pre><span></span><span class="gp">bandit16@melinda:~$</span> ssh -i /tmp/k.key bandit17@localhost
+</pre></div>
+</div>
+<div class="section" id="level-17-18">
+<h2>Level 17 -&gt; 18 #</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit18.html">Level 17</a></p>
 <p>We remain logged in as bandit17 from the previous level. To compare two files
 we need to do a <code>diff</code></p>
-<p>{% highlight console %}
-bandit17@melinda:~$ diff passwords.old  passwords.new 
-42c42
-&lt; BS8bqB1kqkinKJjuxL6k072Qq9NRwQpR</p>
-<hr />
-<blockquote>
-<p _="%" endhighlight="endhighlight">kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd</p>
-</blockquote>
-<p>The latter output is the entry in the <code>password.new</code> file, and thus the password
-for bandit18.</p>
-<h2>Level 18 -&gt; 19</h2>
-<p><a href="http://overthewire.org/wargames/bandit/bandit19.html">Level 18</a></p>
-<p>Oh noes. We get logged out as soon as we log in because some nefarious
-individual has been editing our <code>.bashrc</code> file. Well in that case
-we need to launch bash without an rc file.</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-ssh bandit18@bandit.labs.overthewire.org '/bin/bash --norc'
-cat readme
-IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x</p>
-<p>Because we launched without an rc file there's not going to be a prompt.
-All we need to do is cat the <code>readme</code> file and the password is ours.</p>
-<h2>Level 19 -&gt; 20</h2>
-<p><a href="http://overthewire.org/wargames/bandit/bandit20.html">Level 19</a></p>
-<p>Here we learn about setuid binaries. Basically this is a binary that a user can
-run, but when executed runs as the setuid user. To explain, long list the file</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-bandit19@melinda:~$ ls -al
-total 28
-drwxr-xr-x   2 root     root     4096 Nov 14 10:32 .
-drwxr-xr-x 167 root     root     4096 Jan 12 17:44 ..
--rw-r--r--   1 root     root      220 Apr  9  2014 .bash_logout
--rw-r--r--   1 root     root     3637 Apr  9  2014 .bashrc
--rw-r--r--   1 root     root      675 Apr  9  2014 .profile
--rwsr-x---   1 bandit20 bandit19 7370 Nov 14 10:32 bandit20-do</p>
-<p>So you see it's owned by <code>bandit20</code> and the <em>s</em> bit is set in <code>-rwsr-x---</code>. That's
-how we identify setuid binaries.</p>
-<p>Let's make use of it. This will run any command we supply, as the user <code>bandit20</code>,
-so let's simply print the password</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-bandit19@melinda:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
-GbKksEFF4yrVs6il55v6gwY5aVje5f0j</p>
-<h2>Level 20 -&gt; 21</h2>
-<p><a href="http://overthewire.org/wargames/bandit/bandit21.html">Level 20</a></p>
-<p>Now we're entering a more complicated example of networking. Not only do we need
-to connect to a host, we have to create the host to connect to. Once
-<code>suconnect</code> is connected, we must pass it the password and in return we get the
-one for the next level.</p>
-<p>Let's log into a new shell to create our server with <code>netcat</code></p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-bandit20@melinda:~$ nc -vlk 31337
-Listening on [0.0.0.0] (family 0, port 31337)</p>
-<p>The option <code>vlk</code> is <code>verbose</code>, <code>listen</code>, and <code>keep-open</code>. Ok, we're listening
-and now, from another terminal, we log into level 20 and execute <code>suconnect</code>. From
-our listening terminal, once we see an established connection, we send the password,
-and get our new one back.</p>
-<p>{% highlight console %}</p>
-<h1>terminal 2</h1>
-<p>bandit20@melinda:~$ ./suconnect  31337</p>
-<h1>terminal 1</h1>
-<p _="%" endhighlight="endhighlight">Connection from [127.0.0.1] port 31337 [tcp/*] accepted (family 2, sport 43463)
-GbKksEFF4yrVs6il55v6gwY5aVje5f0j
-gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr</p>
-<h2>Level 21 -&gt; 22</h2>
-<p><a href="http://overthewire.org/wargames/bandit/bandit22.html">Level 21</a></p>
-<p>First let's list the crontabs in the directory supplied. Our likely
-candidate is <code>/etc/cron.d/cronjob_bandit22</code> so let's see what it runs
-and also what that script contains</p>
-<p>{% highlight console %}
-cat /etc/cron.d/cronjob_bandit22
-<em> * </em> * * bandit22 /usr/bin/cronjob_bandit22.sh &amp;&gt; /dev/null
-bandit21@melinda:~$ cat /usr/bin/cronjob_bandit22.sh</p>
-<h1>!/bin/bash</h1>
-<p _="%" endhighlight="endhighlight">chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-cat /etc/bandit_pass/bandit22 &gt; /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv</p>
-<p>So basically it copies the password for the next level into a file in <code>/tmp</code>.</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-bandit21@melinda:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI</p>
-<h2>Level 22 -&gt; 23</h2>
-<p><a href="http://overthewire.org/wargames/bandit/bandit22.html">Level 22</a></p>
-<p>Pretty similar to above but with a different script</p>
-<p>{% highlight console %}
-bandit22@melinda:~$ cat /etc/cron.d/cronjob_bandit23
-<em> * </em> * * bandit23 /usr/bin/cronjob_bandit23.sh  &amp;&gt; /dev/null
-bandit22@melinda:~$ cat /usr/bin/cronjob_bandit23.sh</p>
-<h1>!/bin/bash</h1>
-<p>myname=$(whoami)
-mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)</p>
-<p>echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"</p>
-<p _="%" endhighlight="endhighlight">cat /etc/bandit_pass/$myname &gt; /tmp/$mytarget</p>
-<p>This script takes the string <code>I am user $myname</code> and hashes it with an md5
-then puts the next password into a file in <code>/tmp</code> with that filename. The easiest 
-thing to do is to see what the filename will be. It will run as <code>bandit23</code> so
-<code>whoami</code> will return that string.</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-bandit22@melinda:~$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
-8ca319486bfbbc3663ea0fbe81326349
-bandit22@melinda:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
-jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n</p>
-<h2>Level 23 -&gt; 24</h2>
-<p><a href="http://overthewire.org/wargames/bandit/bandit24.html">Level 23</a></p>
-<p>Once again....</p>
-<p>{% highlight console %}
-bandit23@melinda:~$ cat /etc/cron.d/cronjob_bandit24
-<em> * </em> * * bandit24 /usr/bin/cronjob_bandit24.sh &amp;&gt; /dev/null
-bandit23@melinda:~$ cat /usr/bin/cronjob_bandit24.sh</p>
-<h1>!/bin/bash</h1>
-<p>myname=$(whoami)</p>
-<p>cd /var/spool/$myname
-echo "Executing and deleting all scripts in /var/spool/$myname:"
-for i in *;
-do
-    echo "Handling $i"
-    ./$i
-    rm -f $i
-done</p>
-<p>{% endhighlight %}</p>
-<p>So anything in <code>/var/spool/bandit24</code> will get run as bandit24. Checking if we
-can write to that directory show us</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-bandit23@melinda:~$ ls -la /var/spool/
-total 21
-drwxr-xr-x  6 root     root     4096 Nov 15 14:55 .
-drwxr-xr-x 15 root     root     4096 Nov 14 10:32 ..
-drwxrwx---  2 bandit24 bandit23 1024 Mar 20 15:38 bandit24</p>
-<p>that we can. Excellent. So let's write a script to cat the password to a tmp file.</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-!#/bin/bash
-cat /etc/bandit_pass/bandit24 &gt; /tmp/unl.pass</p>
-<p>Make it executable, copy it to the right directory and then harvest the key</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-bandit23@melinda:/tmp$ chmod +x t.sh
-bandit23@melinda:/tmp$ cp t.sh /var/spool/bandit24/
-bandit23@melinda:/tmp$ cat /tmp/unl.pass
-UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ</p>
-<h2>Level 24 -&gt; 25</h2>
-<p><a href="http://overthewire.org/wargames/bandit/bandit25.html">Level 24</a></p>
-<p>Here we need to bruteforce our way to the password. No point entering our
-tries by hand, so let's leverage the power of bash. First create a loop
-to print the values, so we can be sure the input to the netcat command is 
-going to be right</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-bandit24@melinda:~$ for i in $(seq -f "%04g" 0 9999); do echo 'UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ '${i}; done
-.
-.
-UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ 9856
-UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ 9857
-.
-.</p>
-<p>seems to ne what we want. Let's actually pass it onto the command. Because each 
-iteration will take a while, we have plenty of time to stop it when it finds the 
-right answer</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-bandit24@melinda:~$ for i in $(seq -f "%04g" 0 9999); do echo 'UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ '${i} | nc localhost 30002; done </p>
-<p>But who wants to sit there watching a screen? A quick Python script and we can 
-leave it running until it finds the right PIN.
-Sometimes you just have to be patient.</p>
-<p>{% highlight python %}
-import socket</p>
-<p>def netcat(hostname, port, content):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect((hostname, port))
-    s.sendall(content)
-    s.shutdown(socket.SHUT_WR)
-    while 1:
-        data = s.recv(1024)
-        if data == "":
-            break
-        if 'I am the pincode' in repr(data):
-            continue</p>
-<div class="highlight"><pre><span></span>    if &#39;Wrong&#39; in repr(data):
-        print &#39;no:&#39;, content
-        return 0
-    else:
-        print repr(data)
-        print content
-        return 1
-
-print &quot;Connection closed.&quot;
-s.close()
+<div class="highlight"><pre><span></span><span class="gp">bandit17@melinda:~$</span> diff passwords.old  passwords.new
+<span class="go">42c42</span>
+<span class="go">&lt; BS8bqB1kqkinKJjuxL6k072Qq9NRwQpR</span>
 </pre></div>
+</div>
 
-
-<p>import sys</p>
-<p _="%" endhighlight="endhighlight">passw = 'UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ'
-count = 0
-while (1):
-    trypass = '%s %04d' % (passw, count)
-    if (netcat('localhost', 30002, trypass)):
-        break
-    count += 1</p>
-<p>Some time passes..... </p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-no: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ 5668
-'Correct!\nThe password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG\n\nExiting.\n'
-UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ 5669
-bandit24@melinda:~$ </p>
-<h2>Level 25 -&gt; 26</h2>
-<p><a href="http://overthewire.org/wargames/bandit/bandit26.html">Level 25</a></p>
-<p>Ok, so first we need to see what happens when we log in as Bandit26</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-bandit25@melinda:~$ ssh -i bandit26.sshkey bandit26@localhost
-  _                     _ <em> _   <strong><em>   </em><em><br />
- | |                   | (</em>) | |</strong> \ / /<br />
- | |<strong>   </strong> _ </em> <strong>   </strong>| |<em>| |</em>   ) / /<em><br />
- | '</em> \ / <em><code>| '_ \ / _</code> | | __| / / '</em> \ 
- | |<em>) | (</em>| | | | | (<em>| | | |</em> / /| (<em>) |
- |</em>.<strong>/ _<em>,</em>|<em>| |</em>|_<em>,</em>|<em>|_</em>|_____</strong>/ 
-Connection to localhost closed.</p>
-<p>Hrm... ok, let's check the shell bandit26 uses:</p>
-<p>{% highlight console %}
-bandit25@melinda:/home/bandit25$ cat /etc/passwd | grep bandit26
-bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
-bandit25@melinda:/home/bandit25$ cat /usr/bin/showtext</p>
-<h1>!/bin/sh</h1>
-<p>more ~/text.txt
-exit 0</p>
-<p>{% endhighlight %}</p>
-<p>Interesting. So we need to break out of <code>more</code> somehow. With <code>more</code> we
-can go into interactive mode if we can figure out how to pause it. 
-We can do that by limiting how much it can output to the screen.
-The ASCII art above is about 8 lines, let's resize the terminal to 5 lines 
-or something, and when it pauses, hit 'v' to open an editor.</p>
-<p>Once in the editor simply open <code>/etc/bandit_pass/bandit26</code> and the password 
-is: <code>5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z</code></p>
-<p>And that's the last password in the list, and thus the end of the game.</p>
-<p>It was good fun and had a nice incrementing level of difficulty</p>
-<p>Hope you had as much fun as me playing this. Next time we'll tackle <code>Leviathan</code>.</p>
     </article>
 
-        <div class="tags">
-            <p>tags: <a href="/tag/ctf.html">[ctf</a>, <a href="/tag/security.html">security</a>, <a href="/tag/hack.html">hack</a>, <a href="/tag/overthewire.html">overthewire</a>, <a href="/tag/bandit.html">bandit]</a>, </p>
-        </div>
 
 <hr>
 <div class="sharing">

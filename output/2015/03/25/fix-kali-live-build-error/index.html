@@ -9,7 +9,7 @@
         <meta name="author" content="Sven Steinbauer">
 
 
-        <title>"Fix Kali Live Build error"</title>
+        <title>Fix Kali Live Build error</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -39,9 +39,6 @@
 
         <meta name="author" content="Sven Steinbauer">
 
-        <meta name="tags" content="[Kali">
-        <meta name="tags" content="live build">
-        <meta name="tags" content="kali linux]">
 
 	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="Unlogic">
@@ -49,7 +46,7 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="Sven Steinbauer" >
 	<meta property="og:url" content="/2015/03/25/fix-kali-live-build-error/">
-	<meta property="og:title" content=""Fix Kali Live Build error"">
+	<meta property="og:title" content="Fix Kali Live Build error">
 	<meta property="article:published_time" content="2015-03-25 00:00:00+00:00">
             <meta property="og:description" content="I was trying out the Kali Linux live build, and ran into an an issue where the lb build command would throw an error: chroot: failed to ...">
 
@@ -91,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>"Fix Kali Live Build error"</h1>
+                        <h1>Fix Kali Live Build error</h1>
                         <span class="meta">Posted by
                                 <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
                              on Wed 25 March 2015
@@ -113,33 +110,31 @@
         <p>I was trying out the Kali Linux live build, and ran into an an issue where
 the <code>lb build</code> command would throw an error: <code>chroot: failed to run command '/usr/bin/env': No such file or directory</code></p>
 <p>Turns out this is a Debian bug that's been around since 2013. Luckily the fix
-is straightforward. First follow the usual <a href="http://docs.kali.org/development/live-build-a-custom-kali-iso">live build instructions</a>
-and then make sure the <a href="http://docs.kali.org/general-use/kali-linux-sources-list-repositories">Kali repo sources are set</a>.</p>
-<p>Now in order to fix the issue we follow the instructions provided in 
-<a href="https://bugs.kali.org/view.php?id=270">this bug report</a>. I'll write it down here, 
+is straightforward. First follow the usual <a class="reference external" href="http://docs.kali.org/development/live-build-a-custom-kali-iso">live build instructions</a>
+and then make sure the <a class="reference external" href="http://docs.kali.org/general-use/kali-linux-sources-list-repositories">Kali repo sources are set</a>.</p>
+<p>Now in order to fix the issue we follow the instructions provided in
+<a class="reference external" href="https://bugs.kali.org/view.php?id=270">this bug report</a>. I'll write it down here,
 in case I need to refer back to it later. I've also updated the version of
 the <code>libdebian-installer</code> package to the latest available at this time.</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-apt-get remove --purge libdebian-installer4
-wget http://ftp.debian.org/debian/pool/main/libd/libdebian-installer/libdebian-installer_0.99.tar.xz
-tar xvf libdebian-installer_0.99.tar.xz
-cd libdebian-installer-0.99
-grep -R parser_rfc822 src
-apt-get install automake libtool
-autoreconf -i -v
-./configure
-make
-make install
-git clone git://git.kali.org/live-build-config.git
-cd live-build-config/
-lb config
-lb build</p>
+<div class="highlight"><pre><span></span><span class="go">apt-get remove --purge libdebian-installer4</span>
+<span class="go">wget http://ftp.debian.org/debian/pool/main/libd/libdebian-installer/libdebian-installer_0.99.tar.xz</span>
+<span class="go">tar xvf libdebian-installer_0.99.tar.xz</span>
+<span class="go">cd libdebian-installer-0.99</span>
+<span class="go">grep -R parser_rfc822 src</span>
+<span class="go">apt-get install automake libtool</span>
+<span class="go">autoreconf -i -v</span>
+<span class="go">./configure</span>
+<span class="go">make</span>
+<span class="go">make install</span>
+<span class="go">git clone git://git.kali.org/live-build-config.git</span>
+<span class="go">cd live-build-config/</span>
+<span class="go">lb config</span>
+<span class="go">lb build</span>
+</pre></div>
 <p>After this the build ran fine.</p>
+
     </article>
 
-        <div class="tags">
-            <p>tags: <a href="/tag/kali.html">[Kali</a>, <a href="/tag/live-build.html">live build</a>, <a href="/tag/kali-linux.html">kali linux]</a>, </p>
-        </div>
 
 <hr>
 <div class="sharing">
