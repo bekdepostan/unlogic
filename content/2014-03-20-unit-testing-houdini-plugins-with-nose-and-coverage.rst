@@ -4,12 +4,12 @@ Unit testing Houdini Python plugins with nose and coverage
 :title: Unit testing Houdini Python plugins with nose and coverage
 :date: 2014-03-20T00
 :modified: 2014-03-20 12
-:tags:
+:tags: houdini, programming, python
 
 
 We all know how important unit testing is, right? But often you wonder how can 
 you test a not so straight forward tool. In this case we're talking about a
-Python script intended to run inside `Houdini <http://sidefx.com>`_. In my specific
+Python script intended to run inside `Houdini <http://sidefx.com>`_ . In my specific
 case the python script is launched from a script on a node when the user clicks
 a button on the OTL. I want to run unit tests on this script, but the problem is
 that the script parses a set of nodes and does various things according to the
@@ -31,7 +31,6 @@ Now that we have all our dependencies installed, we need to import all the
 modules we need and set some things up.
 
 .. code-block:: python
-
 	
 	import nose
 	import sys
@@ -58,12 +57,14 @@ make the following change to
 :code:`nose/plugins/cover.py`
 
 Change these lines
+
 .. code-block:: python
 
 	for pkgs in [tolist(x) for x in options.cover_packages]:
 	    self.coverPackages.extends(pkgs)
 
 to these lines
+
 .. code-block:: python
 
 	for pkgs in tolist(options.cover_packages):
@@ -81,7 +82,6 @@ Then we write our main function which will load our hip file and start our tests
 
 .. code-block:: python
 
-	
 	if __name__ == '__main__':
 	    hou.hipFile.load('/path/to/test.hip')
 	
@@ -98,7 +98,6 @@ The next bits are up to you now, here you write your tests following a format li
 
 .. code-block:: python
 
-	
 	def test_afunction():
 	    node = hou.node('/obj/geo/box1')
 	    result = module_to_test.do_stuff(node)
@@ -112,7 +111,6 @@ one, we need to run the tests through hython. Bear in mind that you'll consume a
 batch license when you run these tests.
 
 .. code-block:: bash
-
 	
 	hython ./test.py
 	
@@ -122,7 +120,6 @@ After a while you'll see your tests run and the coverage output. It should
 look a little like this
 
 .. code-block:: bash
-
 	
 	...
 	Name          Stmts   Miss  Cover   Missing

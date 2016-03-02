@@ -17,8 +17,8 @@ ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 
 DISQUS_SITENAME = 'unlogic'
-GITHUB_HANDLE = 'svenito'
-TWITTER_HANDLE = 'binaryheadache'
+#GITHUB_HANDLE = 'svenito'
+#TWITTER_HANDLE = 'binaryheadache'
 
 COLOR_SCHEME_CSS = 'monokai.css'
 
