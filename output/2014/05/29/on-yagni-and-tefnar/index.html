@@ -9,7 +9,7 @@
         <meta name="author" content="Sven Steinbauer">
 
 
-        <title>"On YAGNI and TEFNAR"</title>
+        <title>On YAGNI and TEFNAR</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -35,14 +35,10 @@
 
 
 
-        <meta name="description" content="You've probably heard of YAGNI but not of TEFNAR. To recap YAGNI stands for You Ain't Gonna Need It and refers to the development ...">
+        <meta name="description" content="You've probably heard of YAGNI but not of TEFNAR. To recap YAGNI stands for You Ain't Gonna N eed It and refers to the development ...">
 
         <meta name="author" content="Sven Steinbauer">
 
-        <meta name="tags" content="[yagni">
-        <meta name="tags" content="tefnar">
-        <meta name="tags" content="programming">
-        <meta name="tags" content="principle]">
 
 	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="Unlogic">
@@ -50,9 +46,9 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="Sven Steinbauer" >
 	<meta property="og:url" content="/2014/05/29/on-yagni-and-tefnar/">
-	<meta property="og:title" content=""On YAGNI and TEFNAR"">
+	<meta property="og:title" content="On YAGNI and TEFNAR">
 	<meta property="article:published_time" content="2014-05-29 00:00:00+01:00">
-            <meta property="og:description" content="You've probably heard of YAGNI but not of TEFNAR. To recap YAGNI stands for You Ain't Gonna Need It and refers to the development ...">
+            <meta property="og:description" content="You've probably heard of YAGNI but not of TEFNAR. To recap YAGNI stands for You Ain't Gonna N eed It and refers to the development ...">
 
             <meta property="og:image" content="/images/keyboard-feature.jpg">
 </head>
@@ -92,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>"On YAGNI and TEFNAR"</h1>
+                        <h1>On YAGNI and TEFNAR</h1>
                         <span class="meta">Posted by
                                 <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
                              on Thu 29 May 2014
@@ -111,8 +107,8 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p>You've probably heard of <a href="https://en.wikipedia.org/wiki/You_Ain%27t_Gonna_Need_It">YAGNI</a>
-but not of TEFNAR. To recap YAGNI stands for <strong>Y</strong>ou <strong>A</strong>in't <strong>G</strong>onna <strong>N</strong>eed <strong>I</strong>t and
+        <p>You've probably heard of <a class="reference external" href="https://en.wikipedia.org/wiki/You_Ain%27t_Gonna_Need_It">YAGNI</a>
+but not of TEFNAR. To recap YAGNI stands for <strong>Y</strong>ou <strong>A</strong>in't <strong>G</strong>onna <strong>N</strong> eed <strong>I</strong>t and
 refers to the development principle of that you shouldn't write a feature that no one has asked for
 in the first place as it's probably never going to be needed. Instead wait until
 it's a requirement and implement it then. This saves wasted effort and keeps the code base
@@ -137,55 +133,40 @@ that adds to the risk of introducing bugs and also adds another thing for future
 to debug. Granted, it didn't take him long to code up, but stay tuned, here comes the
 lesson.</p>
 <p>Fast forward a day and I get called over</p>
-<blockquote>
-<p>Hey Sven, fancy a Python puzzle?</p>
-</blockquote>
+<p>&gt; Hey Sven, fancy a Python puzzle?</p>
 <p>I took the bait and headed over.</p>
-<blockquote>
-<p>So in the interpreter <code>1.0 &lt; 1.0</code> is <code>False</code>, which is correct.
-But now look at this *runs small python script*. See here, <code>1.0 &lt; 1.0 True</code>
-How is that?</p>
-</blockquote>
+<p>&gt; So in the interpreter <code>1.0 &lt; 1.0</code> is <code>False</code>, which is correct.
+&gt; But now look at this *runs small python script*. See here, <code>1.0 &lt; 1.0 True</code>
+&gt; How is that?</p>
 <p>I look at the code and notice he's got a loop that adds 0.1 to a variable and
 compares that to 1.0. I chuckled.</p>
-<blockquote>
-<p>Yeah, that's a different kettle of fish. Floats aren't that accurate that you
-can accumulate like that and expect it to be <em>exactly</em> 1.0. That's the issue.</p>
-</blockquote>
+<p>&gt; Yeah, that's a different kettle of fish. Floats aren't that accurate that you
+&gt; can accumulate like that and expect it to be <em>exactly</em> 1.0. That's the issue.</p>
 <p>He looked a little confused. I explained to him about how floats are represented.
-If you are interested you can read up on <a href="https://docs.python.org/2.7/tutorial/floatingpoint.html">floating point values in Python</a>.</p>
+If you are interested you can read up on <a class="reference external" href="https://docs.python.org/2.7/tutorial/floatingpoint.html">floating point values in Python</a>.</p>
 <p>To demonstrate I opened an interpreter and ran this:</p>
-<p>{% highlight python %}</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>a = 0.1
-a += 0.1
-a += 0.1
-a += 0.1
-a += 0.1
-a
-0.6
-a += 0.1
-a += 0.1
-a
-0.7999999999999999</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>{% endhighlight %}</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mf">0.6</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mf">0.7999999999999999</span>
+</pre></div>
 <p>I suggested he try the same by incrementing the value by <code>0.2</code> and the error went away.
 He looked a little dejected. I asked what this was for and sure enough, it's how he
 animated his graphs, so some points were slightly higher than they should be.</p>
-<p>So be careful when you add code for no other reason than "it looks nice" as it's
+<p>So be careful when you add code for no other reason than &quot;it looks nice&quot; as it's
 just another area where you can introduce bugs. In this case it was a pretty small
 issue, but a different feature could affect a larger part of the program or
 even other programs.</p>
+
     </article>
 
-        <div class="tags">
-            <p>tags: <a href="/tag/yagni.html">[yagni</a>, <a href="/tag/tefnar.html">tefnar</a>, <a href="/tag/programming.html">programming</a>, <a href="/tag/principle.html">principle]</a>, </p>
-        </div>
 
 <hr>
 <div class="sharing">

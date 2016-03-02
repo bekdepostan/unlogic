@@ -9,7 +9,7 @@
         <meta name="author" content="Sven Steinbauer">
 
 
-        <title>"[dis]like"</title>
+        <title>'[dis]like'</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -39,8 +39,6 @@
 
         <meta name="author" content="Sven Steinbauer">
 
-        <meta name="tags" content="[python">
-        <meta name="tags" content="coding]">
 
 	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="Unlogic">
@@ -48,7 +46,7 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="Sven Steinbauer" >
 	<meta property="og:url" content="/2015/01/05/dislike/">
-	<meta property="og:title" content=""[dis]like"">
+	<meta property="og:title" content="'[dis]like'">
 	<meta property="article:published_time" content="2015-01-05 00:00:00+00:00">
             <meta property="og:description" content="Isn't it just like me to start a new year with a post titled "[dis]like"? It's not as bad as it sounds. I want to write about coding ...">
 
@@ -90,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>"[dis]like"</h1>
+                        <h1>'[dis]like'</h1>
                         <span class="meta">Posted by
                                 <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
                              on Mon 05 January 2015
@@ -109,28 +107,27 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p>Isn't it just like me to start a new year with a post titled "[dis]like"? It's not as bad as it sounds. I want to write about coding challenge sites and what I like and dislike about them, specifically regarding Python challenges.</p>
+        <p>Isn't it just like me to start a new year with a post titled &quot;[dis]like&quot;? It's not as bad as it sounds. I want to write about coding challenge sites and what I like and dislike about them, specifically regarding Python challenges.</p>
+<div class="section" id="what-i-like">
 <h2>What I Like</h2>
 <p>I take part in coding challenges regularily for various reasons and I get a great deal of benefit from them. Albeit some challenges are a bit contrived, they do offer some great practice in problem solving and writing clean code.</p>
 <p>I recommend to anyone interesting in improving their coding skills to go to some programming challenge sites and home your skills. The problems are very varied and of different difficulties so there's something for everyone.</p>
-<p>I frequent <a href="https://checkio.org">checkIO</a> and <a href="https://codewars.com">Codewars</a> and have even submitted some challenges to the Codewars site. The benefit of attempting to solve the challenges is one thing, but to me the best return is from reading other people's solutions. Solving a problem one way, and then seeing how someone else solved it is very interesting and great learning experience.</p>
+<p>I frequent [checkIO](<a class="reference external" href="https://checkio.org">https://checkio.org</a>) and <a class="reference external" href="https://codewars.com">Codewars</a> and have even submitted some challenges to the Codewars site. The benefit of attempting to solve the challenges is one thing, but to me the best return is from reading other people's solutions. Solving a problem one way, and then seeing how someone else solved it is very interesting and great learning experience.</p>
 <p>But this is also where the trouble begins.</p>
+</div>
+<div class="section" id="what-i-dislike">
 <h2>What I Dislike</h2>
-<p>Let me begin by going over some parts of the <a href="https://www.python.org/dev/peps/pep-0020/">PEP20</a></p>
-<blockquote>
-<ul>
-<li>Readability counts.</li>
-<li>Special cases aren't special enough to break the rules.</li>
-<li>Although practicality beats purity.</li>
-<li>Errors should never pass silently.</li>
-<li>Unless explicitly silenced.</li>
-<li>In the face of ambiguity, refuse the temptation to guess.</li>
-<li>There should be one-- and preferably only one --obvious way to do it.</li>
-<li>Although that way may not be obvious at first unless you're Dutch.</li>
-</ul>
-</blockquote>
-<p>In this case I want to refer to <em>There should be one-- and preferably only one --obvious way to do it.</em>
-I admit, this is ambiguous for a good reason. What is this <em>obvious</em> way? Taking the rest of the PEP20
+<p>Let me begin by going over some parts of the <a class="reference external" href="https://www.python.org/dev/peps/pep-0020/">PEP20</a></p>
+<p>&gt; * Readability counts.
+&gt; * Special cases aren't special enough to break the rules.
+&gt; * Although practicality beats purity.
+&gt; * Errors should never pass silently.
+&gt; * Unless explicitly silenced.
+&gt; * In the face of ambiguity, refuse the temptation to guess.
+&gt; * There should be one-- and preferably only one --obvious way to do it.
+&gt; * Although that way may not be obvious at first unless you're Dutch.</p>
+<p>In this case I want to refer to <strong>There should be one-- and preferably only one --obvious way to do it.</strong>
+I admit, this is ambiguous for a good reason. What is this _obvious_ way? Taking the rest of the PEP20
 into account we can sort of gleen a definition for this, but it's still open to interpretation by the
 developer. So what's my issue here? Head over to one of these sites and look at a list of submitted solutions.
 You get a lot of variety, some clever, some clear, some long, some short. A whole mixture of ways of doing it.
@@ -142,9 +139,9 @@ certain ways, they are often not very clear. <em>Readability counts</em>. Of cou
 of some of Python's awesome features and libraries, but not everyone you are going to be working with is going to
 be that clever, or that well versed in Python.</p>
 <p>This is what matters to me. I look for readable code, because in a shared development environment you cannot rely on
-the original developer to be around forever. One day they will leave and their smarts will go with them. 
+the original developer to be around forever. One day they will leave and their smarts will go with them.
 Then the slightly more elaborate code will be easier for the next person to pick up and the smart code will be left
-to degrade and possibly be re-written. While you might think that the next developer will love your smart and 
+to degrade and possibly be re-written. While you might think that the next developer will love your smart and
 cryptic one-liners, they are most likely cursing your name. Consider having to debug someone else's
 regular expression.</p>
 <p>I don't mean that <em>all</em> top posts are bad, not by a long run. I have seen some very nice, elegant solutions in the top
@@ -152,36 +149,37 @@ regular expression.</p>
 in a programming challenge game that's ok, I guess it's part of the game, but outside of this, I look for different
 values. CheckIO has a nice feature where solutions can be divided into different categories: clear, creative, speedy,
 and uncategorised. I find that people on Codewars tend to favour the less readable (to me) solutions.</p>
-<p>I'll give you an example from CheckIO's "Weak Point" challenge. The aim was to calculate the sum of
+<p>I'll give you an example from CheckIO's &quot;Weak Point&quot; challenge. The aim was to calculate the sum of
 each column and row of a matrix and return the row, column with the lowest sum. The top clear answer is this:</p>
-<p _="%" endhighlight="endhighlight">{% highlight python %}
-def weak_point(matrix):
-    n = len(matrix)
-    row = min(range(n), key=lambda r:sum(matrix[r][c] for c in range(n)))
-    col = min(range(n), key=lambda c:sum(matrix[r][c] for r in range(n)))
-    return row, col</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">weak_point</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span><span class="nb">sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+    <span class="n">col</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span><span class="nb">sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span>
+</pre></div>
 <p>I like this. It's concise, makes use of some handy Python features and is readable. However, compare to this:</p>
-<p _="%" endhighlight="endhighlight">{% highlight python %}
-def weak_point(matrix):
-    rows, cols = map(sum, matrix), map(sum, zip(*matrix))
-    return rows.index(min(rows)), cols.index(min(cols))</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">weak_point</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">sum</span><span class="p">,</span> <span class="n">matrix</span><span class="p">),</span> <span class="nb">map</span><span class="p">(</span><span class="nb">sum</span><span class="p">,</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">matrix</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">rows</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">rows</span><span class="p">)),</span> <span class="n">cols</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">cols</span><span class="p">))</span>
+</pre></div>
 <p>This is the second most popular answer, and I would prefer this over the top one. To me this is more readable
 and easier to understand. There are fewer nested conditionals and statements, and it makes sense (assuming you
 understand how <code>map</code> and <code>zip</code> work).
 Granted, this is my opinion and that doesn't mean anyone who voted for the other answer is wrong,
-I am merely trying to say that if there is one way to do it, then how come there are so many ways to do it, and 
+I am merely trying to say that if there is one way to do it, then how come there are so many ways to do it, and
 most of them don't seem wrong? Should we also go for cleverness over maintainability and clarity? Perhaps I
 am expecting the wrong thing from challenge site submissions.</p>
+</div>
+<div class="section" id="summary-tl-dr">
 <h2>Summary (TL;DR)</h2>
-<p>Programming challenge sites are great for improving your skills but be careful about learning how to be too 
+<p>Programming challenge sites are great for improving your skills but be careful about learning how to be too
 clever. Being clever on your own and on challenge sites is great practice, but isn't always the best way
 to solve an issue on a project that is or will me maintained by other people who you may
 never get to talk to and explain your code to. But perhaps I'm just not as good at reading Python anymore.</p>
+</div>
+
     </article>
 
-        <div class="tags">
-            <p>tags: <a href="/tag/python.html">[python</a>, <a href="/tag/coding.html">coding]</a>, </p>
-        </div>
 
 <hr>
 <div class="sharing">

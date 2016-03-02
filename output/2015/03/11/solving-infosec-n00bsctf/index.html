@@ -9,7 +9,7 @@
         <meta name="author" content="Sven Steinbauer">
 
 
-        <title>"Solving Infosec n00bsCTF"</title>
+        <title>Solving Infosec n00bsCTF</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -39,9 +39,6 @@
 
         <meta name="author" content="Sven Steinbauer">
 
-        <meta name="tags" content="[security">
-        <meta name="tags" content="ctf">
-        <meta name="tags" content="infosec]">
 
 	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="Unlogic">
@@ -49,7 +46,7 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="Sven Steinbauer" >
 	<meta property="og:url" content="/2015/03/11/solving-infosec-n00bsctf/">
-	<meta property="og:title" content=""Solving Infosec n00bsCTF"">
+	<meta property="og:title" content="Solving Infosec n00bsCTF">
 	<meta property="article:published_time" content="2015-03-11 00:00:00+00:00">
             <meta property="og:description" content="The InfoSec Institue is running a n00bsCTF, and I can't resist a CTF really. Plus this will be a nice warmup for Hackyeaster 2015. So ...">
 
@@ -91,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>"Solving Infosec n00bsCTF"</h1>
+                        <h1>Solving Infosec n00bsCTF</h1>
                         <span class="meta">Posted by
                                 <a href="/author/sven-steinbauer.html">Sven Steinbauer</a>
                              on Wed 11 March 2015
@@ -110,74 +107,58 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p>The InfoSec Institue is running a <a href="http://ctf.infosecinstitute.com/index.php">n00bsCTF</a>,
+        <p>The InfoSec Institue is running a <a class="reference external" href="http://ctf.infosecinstitute.com/index.php">n00bsCTF</a>,
 and I can't resist a CTF really. Plus this will be a nice warmup for Hackyeaster 2015.
 So let's jump on it and get some flags...</p>
 <p>I haven't managed to get all of them, but I will be updating this post when
 I manage to solve some of the others.</p>
-<section id="table-of-contents" class="toc">
-<header>
-<h3>Contents</h3>
-</header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section>
-
-<!-- /#table-of-contents -->
-
-<h2>Level 01</h2>
-<p><a href="http://ctf.infosecinstitute.com/levelone.php">http://ctf.infosecinstitute.com/levelone.php</a></p>
-<p>{% img http://i.imgur.com/ebnLRwp.png %}</p>
+<div class="section" id="level-01">
+<h2>Level 01 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/levelone.php">http://ctf.infosecinstitute.com/levelone.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/ebnLRwp.png&quot;" />
 <p>May the source be with you, eh? Sounds to me like someone wants us to look at the
-page source. Right click, select <code>view page source</code> and...</p>
-<p>{% highlight html %}</p>
-<!-- infosec_flagis_welcome -->
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-{% endhighlight %}
-
-<p>And there it is, right at the top.</p>
-<div class="highlight"><pre><span></span>infosec_flagis_welcome
+page source. Right click, select :code:<tt class="docutils literal">view page source</tt> and...</p>
+<div class="highlight"><pre><span></span><span class="c">&lt;!-- infosec_flagis_welcome --&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 </pre></div>
-
-
-<h2>Level 02</h2>
-<p><a href="http://ctf.infosecinstitute.com/leveltwo.php">http://ctf.infosecinstitute.com/leveltwo.php</a></p>
-<p>{% img http://i.imgur.com/TVGZFKU.png %}</p>
+<p>And there it is, right at the top.</p>
+<blockquote>
+infosec_flagis_welcome</blockquote>
+</div>
+<div class="section" id="level-02">
+<h2>Level 02 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/leveltwo.php">http://ctf.infosecinstitute.com/leveltwo.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/TVGZFKU.png&quot;" />
 <p>A broken image you say? Let's download it and have a look. We notice it's very small,
 only 45 bytes. So let's open it in a hex editor and examine its contents. I opened
-it in vim (to use it as a hex editor enter <code>:!xxd</code>),
+it in vim (to use it as a hex editor enter :code:<tt class="docutils literal">:!xxd</tt>),
 and was instantly greeted with this string. Didn't even have to convert it to hex.</p>
-<div class="highlight"><pre><span></span>aW5mb3NlY19mbGFnaXNfd2VhcmVqdXN0c3RhcnRpbmc=
-</pre></div>
-
-
+<blockquote>
+aW5mb3NlY19mbGFnaXNfd2VhcmVqdXN0c3RhcnRpbmc=</blockquote>
 <p>Base64 encoded text. Let's run it through a decoder and see what we get....</p>
-<div class="highlight"><pre><span></span>infosec_flagis_wearejuststarting
-</pre></div>
-
-
+<blockquote>
+infosec_flagis_wearejuststarting</blockquote>
 <p>Level02's flag done.</p>
-<h2>Level 03</h2>
-<p><a href="http://ctf.infosecinstitute.com/levelthree.php">http://ctf.infosecinstitute.com/levelthree.php</a></p>
-<p>{% img http://i.imgur.com/lL8OkTO.png %}</p>
+</div>
+<div class="section" id="level-03">
+<h2>Level 03 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/levelthree.php">http://ctf.infosecinstitute.com/levelthree.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/lL8OkTO.png&quot;" />
 <p>We are presented with a QR code. So I grabbed my phone, scanned it, and was presented
 with a series of dots and dashes. Morse code no doubt. Being lazy I didn't want to type
 it into a decoder manually,
-so I used <a href="http://zxing.org/w/decode.jspx">this tool</a> to decode the QR code
-and then copy/pasted the output into a <a href="http://www.onlineconversion.com/morse_code.htm">morse code translator</a>
+so I used <a class="reference external" href="http://zxing.org/w/decode.jspx">this tool</a> to decode the QR code
+and then copy/pasted the output into a <a class="reference external" href="http://www.onlineconversion.com/morse_code.htm">morse code translator</a>
 and ended up with:</p>
-<div class="highlight"><pre><span></span>INFOSECFLAGISMORSING
-</pre></div>
-
-
-<h2>Level 04</h2>
-<p><a href="http://ctf.infosecinstitute.com/levelfour.php">http://ctf.infosecinstitute.com/levelfour.php</a></p>
-<p>{% img http://i.imgur.com/yFiSrus.png %}</p>
+<blockquote>
+INFOSECFLAGISMORSING</blockquote>
+</div>
+<div class="section" id="level-04">
+<h2>Level 04 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/levelfour.php">http://ctf.infosecinstitute.com/levelfour.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/yFiSrus.png&quot;" />
 <p>A picture and a tidbit of information. Hrmm... Ok, not much to go with here. Mousing
 over the image pops up a dialog. Investigating that didn't lead me anywhere. Time
 to get the thinking hats on and think about what info we have here that might be
@@ -190,296 +171,293 @@ that amount. Due to the number of characters and _ in the string, it looks like 
 <p>So <code>vasbfrp_syntvf_jrybirpbbxvrf</code> should be <code>infosec_flag_xxxxxxx</code>. Knowing this
 we can work out the shift. Simple write out the alphabet once and
 then, write the letters we know below.</p>
-<div class="highlight"><pre><span></span>abcdefghijklmnopqrstuvwxyz
-n                 f   i
-</pre></div>
-
-
+<blockquote>
+abcdefghijklmnopqrstuvwxyz
+n                 f   i</blockquote>
 <p>That's enough for us to fill in the rest of the alphabet.
 Then transpose and solve the final part to get:</p>
-<div class="highlight"><pre><span></span>infosec_flag_welovecookies
-</pre></div>
-
-
+<blockquote>
+infosec_flag_welovecookies</blockquote>
 <p>Flag has been nommed.</p>
-<h2>Level 05</h2>
-<p><a href="http://ctf.infosecinstitute.com/levelfive.php">http://ctf.infosecinstitute.com/levelfive.php</a></p>
+</div>
+<div class="section" id="level-05">
+<h2>Level 05 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/levelfive.php">http://ctf.infosecinstitute.com/levelfive.php</a></p>
 <p>A pesky popup saying I'm a hacker? What an accusation. Well, let's top it from
 popping up and get ourselves a script blocker to see what else there might be.
 Once done, we examine the source and see it's loading an image too.</p>
-<p _="%" endhighlight="endhighlight">{% highlight html %}
-<img src="img/aliens.jpg" /> <br /> <br /></p>
-<p>{% img http://i.imgur.com/JwFtmSw.png %}</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;img/aliens.jpg&quot;</span> <span class="p">/&gt;</span> <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span> <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+</pre></div>
+<img alt="" src="&quot;http://i.imgur.com/JwFtmSw.png&quot;" />
 <p>Let's load up that image, or even better, let's just browse to <code>http://ctf.infosecinstitute.com/img/</code>
 (Since writing directory listing has been disabled for this path).
 Nothing particularily odd about the image. Let's try seeing if there's anything hidden in
-it by way of steganography. I loaded up the image into <a href="http://www.futureboy.us/stegano/decinput.html">this site</a>
+it by way of steganography. I loaded up the image into <a class="reference external" href="http://www.futureboy.us/stegano/decinput.html">this site</a>
 and sure enough, selecting a type of <code>text/plain</code> we get a stream of 1s and 0s. Binary data.
 Let's try to convert that to a string and see what, if anything, it says. Using any
 binary to text decoder on the internet, we are given the flag:</p>
-<div class="highlight"><pre><span></span>infosec_flagis_stegaliens
-</pre></div>
-
-
+<blockquote>
+infosec_flagis_stegaliens</blockquote>
 <p>Gotcha</p>
-<h2>Level 06</h2>
-<p><a href="http://ctf.infosecinstitute.com/levelsix.php">http://ctf.infosecinstitute.com/levelsix.php</a></p>
-<p>{% img http://i.imgur.com/w81ZV0N.png %}</p>
+</div>
+<div class="section" id="level-06">
+<h2>Level 06 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/levelsix.php">http://ctf.infosecinstitute.com/levelsix.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/w81ZV0N.png&quot;" />
 <p>At first I was a bit lost, but when you stare at a lot of data, it's easy to be overwhelmed.
 Especially when you don't know really what you are looking for. I decided to give it another go
 and have located the flag. It's actually in the very first packet. The hex string for <em>infosec_flag</em>
 is starting to look very familiar now. It appears as the data of the first packet:</p>
-<p>{% img http://i.imgur.com/aO8ojXG.png %}</p>
-<p>Enter the string with <code>696e66...</code> into a hex to string converter and you get</p>
-<div class="highlight"><pre><span></span>infosec_flagis_sniffed
-</pre></div>
-
-
+<img alt="" src="&quot;http://i.imgur.com/aO8ojXG.png&quot;" />
+<p>Enter the string with :code:<tt class="docutils literal"><span class="pre">696e66...</span></tt> into a hex to string converter and you get</p>
+<blockquote>
+infosec_flagis_sniffed</blockquote>
 <p>Sniffed right out.</p>
-<h2>Level 07</h2>
-<p><a href="http://ctf.infosecinstitute.com/404.php">http://ctf.infosecinstitute.com/404.php</a></p>
-<p>{% img http://i.imgur.com/PZu5CIK.png %}</p>
+</div>
+<div class="section" id="level-07">
+<h2>Level 07 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/404.php">http://ctf.infosecinstitute.com/404.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/PZu5CIK.png&quot;" />
 <p>We get an error saying <em>f00 not found</em> and the URL reads 404.php. Going by the other URLs
-I would assume we actually need <code>levelseven.php</code>, so let's enter that and see what we get.
+I would assume we actually need :code:<tt class="docutils literal">levelseven.php</tt>, so let's enter that and see what we get.
 It seems to return an empty page. That's not much use, but it's better than a real
 404. Because there's no error and no content, we must be getting back a 200 status (all OK).
 Perhaps there's something else to look at too?</p>
 <p>In this case let's examine what's going back and forth between us and the server.
-You can either fire up a proxy like <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">ZAP</a>
-or use a request inspection plugin for Firefox like <a href="https://addons.mozilla.org/en-US/firefox/addon/httprequester/">httpRequester</a>.</p>
-<p>So let's send off a GET request for <code>levelseven.php</code> and see what we get back.</p>
-<p _="%" endhighlight="endhighlight">{% highlight html %}
-HTTP/1.0 200 aW5mb3NlY19mbGFnaXNfeW91Zm91bmRpdA==
+You can either fire up a proxy like <a class="reference external" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">ZAP</a>
+or use a request inspection plugin for Firefox like <a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/httprequester/">httpRequester</a>.</p>
+<p>So let's send off a GET request for :code:<tt class="docutils literal">levelseven.php</tt> and see what we get back.</p>
+<div class="highlight"><pre><span></span>HTTP/1.0 200 aW5mb3NlY19mbGFnaXNfeW91Zm91bmRpdA==
 Date: Thu, 12 Mar 2015 09:26:48 GMT
 Server: Apache/2.4.7 (Ubuntu)
 X-Powered-By: PHP/5.5.9-1ubuntu4.6
 Content-Length: 0
 Connection: close
-Content-Type: text/html</p>
+Content-Type: text/html
+</pre></div>
 <p>Heh, very nice. We have a 200 response with, what is clearly a base64 encoded string.
 Copypasta that into a decoder and let's see what we get:</p>
-<div class="highlight"><pre><span></span>infosec_flagis_youfoundit
-</pre></div>
-
-
+<blockquote>
+infosec_flagis_youfoundit</blockquote>
 <p>Yes, I did find it.</p>
-<h2>Level 08</h2>
-<p><a href="http://ctf.infosecinstitute.com/leveleight.php">http://ctf.infosecinstitute.com/leveleight.php</a></p>
-<p>{% img http://i.imgur.com/OSKPz0g.png %}</p>
-<p>Ok, let's download <code>app.exe</code> and give this a go. It's a wrapper around <code>netstat</code> that
+</div>
+<div class="section" id="level-08">
+<h2>Level 08 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/leveleight.php">http://ctf.infosecinstitute.com/leveleight.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/OSKPz0g.png&quot;" />
+<p>Ok, let's download :code:<tt class="docutils literal"><span class="pre">app.exe`:code:`</span> and give this a go. It's a wrapper around <span class="pre">`:code:`netstat</span></tt> that
 just shows you what your current connections are. It takes no arguments, so there's
 not anyway to attack this thing with overflows. And this being a n00bs level CTF, it's
 unlikely we'll be thrown this kind of exploit development.
 So the other thing we can do is check its strings.</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-strings app.exe</p>
-<p>Sure enough, there's <code>infosec_flagis_0x1a</code>. At first I was reluctant to go with this, as
-it's a bit too simple, so I looked a bit further. I dumped the source with <code>objdump</code></p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-objdump -s app.exe | less</p>
-<p>And I found <code>infosec_flagis_0x1a</code> in it. It sits at <code>0x403000</code>, so let's run this
-through <code>gdb</code> too.</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-$&gt; gdb app.exe
-gdb$ disass main
-Dump of assembler code for function main:
-   0x00401290 &lt;+0&gt;: push   %ebp
-   0x00401291 &lt;+1&gt;: mov    %esp,%ebp
-   0x00401293 &lt;+3&gt;: sub    $0x18,%esp
-   0x00401296 &lt;+6&gt;: and    $0xfffffff0,%esp
-   0x00401299 &lt;+9&gt;: mov    $0x0,%eax
-   0x0040129e &lt;+14&gt;:    add    $0xf,%eax
-   0x004012a1 &lt;+17&gt;:    add    $0xf,%eax
-   0x004012a4 &lt;+20&gt;:    shr    $0x4,%eax
-   0x004012a7 &lt;+23&gt;:    shl    $0x4,%eax
-   0x004012aa &lt;+26&gt;:    mov    %eax,-0x8(%ebp)
-   0x004012ad &lt;+29&gt;:    mov    -0x8(%ebp),%eax
-   0x004012b0 &lt;+32&gt;:    call   0x401740 &lt;_alloca&gt;
-   0x004012b5 &lt;+37&gt;:    call   0x4013e0 &lt;__main&gt;
-   0x004012ba &lt;+42&gt;:    mov    $0x403000,%eax       &lt;------ aha oho
-   0x004012bf &lt;+47&gt;:    mov    %al,-0x1(%ebp)
-   0x004012c2 &lt;+50&gt;:    movl   $0x403014,(%esp)
-   0x004012c9 &lt;+57&gt;:    call   0x401850 <printf>
-   0x004012ce &lt;+62&gt;:    movl   $0x403044,(%esp)
-   0x004012d5 &lt;+69&gt;:    call   0x401850 <printf>
-   0x004012da &lt;+74&gt;:    movl   $0x403014,(%esp)
-   0x004012e1 &lt;+81&gt;:    call   0x401850 <printf>
-   0x004012e6 &lt;+86&gt;:    movl   $0x403072,(%esp)
-   0x004012ed &lt;+93&gt;:    call   0x401840 <system>
-   0x004012f2 &lt;+98&gt;:    call   0x4017c0 <getch>
-   0x004012f7 &lt;+103&gt;:   mov    $0x0,%eax
-   0x004012fc &lt;+108&gt;:   leave<br />
-   0x004012fd &lt;+109&gt;:   ret
-   0x004012fe &lt;+110&gt;:   nop
-   0x004012ff &lt;+111&gt;:   nop
-End of assembler dump</p>
+<div class="highlight"><pre><span></span><span class="go">strings app.exe</span>
+</pre></div>
+<p>Sure enough, there's :code:<tt class="docutils literal">infosec_flagis_0x1a</tt>. At first I was reluctant to go with this, as
+it's a bit too simple, so I looked a bit further. I dumped the source with :code:<tt class="docutils literal">objdump</tt></p>
+<div class="highlight"><pre><span></span><span class="go">objdump -s app.exe | less</span>
+</pre></div>
+<p>And I found :code:<tt class="docutils literal"><span class="pre">infosec_flagis_0x1a`:code:`</span> in it. It sits at <span class="pre">`:code:`0x403000</span></tt>, so let's run this
+through :code:<tt class="docutils literal">gdb</tt> too.</p>
+<div class="highlight"><pre><span></span><span class="gp">$</span>&gt; gdb app.exe
+<span class="go">gdb$ disass main</span>
+<span class="go">Dump of assembler code for function main:</span>
+<span class="go">   0x00401290 &lt;+0&gt;:     push   %ebp</span>
+<span class="go">   0x00401291 &lt;+1&gt;:     mov    %esp,%ebp</span>
+<span class="go">   0x00401293 &lt;+3&gt;:     sub    $0x18,%esp</span>
+<span class="go">   0x00401296 &lt;+6&gt;:     and    $0xfffffff0,%esp</span>
+<span class="go">   0x00401299 &lt;+9&gt;:     mov    $0x0,%eax</span>
+<span class="go">   0x0040129e &lt;+14&gt;:    add    $0xf,%eax</span>
+<span class="go">   0x004012a1 &lt;+17&gt;:    add    $0xf,%eax</span>
+<span class="go">   0x004012a4 &lt;+20&gt;:    shr    $0x4,%eax</span>
+<span class="go">   0x004012a7 &lt;+23&gt;:    shl    $0x4,%eax</span>
+<span class="go">   0x004012aa &lt;+26&gt;:    mov    %eax,-0x8(%ebp)</span>
+<span class="go">   0x004012ad &lt;+29&gt;:    mov    -0x8(%ebp),%eax</span>
+<span class="go">   0x004012b0 &lt;+32&gt;:    call   0x401740 &lt;_alloca&gt;</span>
+<span class="go">   0x004012b5 &lt;+37&gt;:    call   0x4013e0 &lt;__main&gt;</span>
+<span class="go">   0x004012ba &lt;+42&gt;:    mov    $0x403000,%eax       &lt;------ aha oho</span>
+<span class="go">   0x004012bf &lt;+47&gt;:    mov    %al,-0x1(%ebp)</span>
+<span class="go">   0x004012c2 &lt;+50&gt;:    movl   $0x403014,(%esp)</span>
+<span class="go">   0x004012c9 &lt;+57&gt;:    call   0x401850 &lt;printf&gt;</span>
+<span class="go">   0x004012ce &lt;+62&gt;:    movl   $0x403044,(%esp)</span>
+<span class="go">   0x004012d5 &lt;+69&gt;:    call   0x401850 &lt;printf&gt;</span>
+<span class="go">   0x004012da &lt;+74&gt;:    movl   $0x403014,(%esp)</span>
+<span class="go">   0x004012e1 &lt;+81&gt;:    call   0x401850 &lt;printf&gt;</span>
+<span class="go">   0x004012e6 &lt;+86&gt;:    movl   $0x403072,(%esp)</span>
+<span class="go">   0x004012ed &lt;+93&gt;:    call   0x401840 &lt;system&gt;</span>
+<span class="go">   0x004012f2 &lt;+98&gt;:    call   0x4017c0 &lt;getch&gt;</span>
+<span class="go">   0x004012f7 &lt;+103&gt;:   mov    $0x0,%eax</span>
+<span class="go">   0x004012fc &lt;+108&gt;:   leave</span>
+<span class="go">   0x004012fd &lt;+109&gt;:   ret</span>
+<span class="go">   0x004012fe &lt;+110&gt;:   nop</span>
+<span class="go">   0x004012ff &lt;+111&gt;:   nop</span>
+<span class="go">End of assembler dump</span>
+</pre></div>
 <p>There we see a fimilar address. Checking its contents</p>
-<p _="%" endhighlight="endhighlight">{% highlight console %}
-gdb$ x/s 0x403000
-0x403000:    "infosec_flagis_0x1a"</p>
+<div class="highlight"><pre><span></span><span class="go">gdb$ x/s 0x403000</span>
+<span class="go">0x403000:        &quot;infosec_flagis_0x1a&quot;</span>
+</pre></div>
 <p>There's nothing that would indicate that this string changes, so for now, I'm
 going to say the flag is:</p>
-<div class="highlight"><pre><span></span>infosec_flagis_0x1a
-</pre></div>
-
-
+<blockquote>
+infosec_flagis_0x1a</blockquote>
 <p>Leave a comment below to correct me if I am wrong though, I'd really appreciate that.</p>
-<h2>Level 09</h2>
-<p><a href="http://ctf.infosecinstitute.com/levelnine.php">http://ctf.infosecinstitute.com/levelnine.php</a></p>
-<p>{% img http://i.imgur.com/5XnlOL9.png %}</p>
+</div>
+<div class="section" id="level-09">
+<h2>Level 09 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/levelnine.php">http://ctf.infosecinstitute.com/levelnine.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/5XnlOL9.png&quot;" />
 <p>Initially I struggled with this. I tried the usual default passwords without success.
 Attacked it with SQL injections, nothing. Then I had a brainwave. Because I already had level15,
-I could just look at the <code>levelnine.php</code> file. So I did. Issue <code>test.com &amp;&amp; cat ../levelnine.php</code>
+I could just look at the :code:<tt class="docutils literal"><span class="pre">levelnine.php`:code:`</span> file. So I did. Issue <span class="pre">`:code:`test.com</span> &amp;&amp; cat <span class="pre">../levelnine.php</span></tt>
 and at the end we see what happens if we get the flag:</p>
-<p _="%" endhighlight="endhighlight">{% highlight javascript %}
-alert('ssaptluafed_sigalf_cesofni')";
-    }</p>
-<p>It's the flag reversed, so let's flip it to get:</p>
-<div class="highlight"><pre><span></span>infosec_flagis_defaultpass
+<div class="highlight"><pre><span></span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;ssaptluafed_sigalf_cesofni&#39;</span><span class="p">)</span><span class="err">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
 </pre></div>
-
-
+<p>It's the flag reversed, so let's flip it to get:</p>
+<blockquote>
+infosec_flagis_defaultpass</blockquote>
 <p>ti tog yllaniF</p>
-<p>PS: What's even cuter is if you run <code>test.com &amp;&amp; tac ../levelnine.php</code>. You actually
-get the popup. <code>tac</code> does the same as <code>cat</code>, but reverses the lines in the output.
+<p>PS: What's even cuter is if you run :code:<tt class="docutils literal">test.com &amp;&amp; tac <span class="pre">../levelnine.php</span></tt>. You actually
+get the popup. :code:<tt class="docutils literal"><span class="pre">tac`:code:`</span> does the same as <span class="pre">`:code:`cat</span></tt>, but reverses the lines in the output.
 The reason this works is because it will encounter the javascript pop up code before
 the conditional that checks the input.</p>
-<p _="%" endhighlight="endhighlight">It also prints out the username and password for us:
-{% highlight php %}
-?&gt; } echo ""; if ($username == 'root' and $password == 'attack') { 
-    $password = $_POST['password']; 
-    $username = $_POST['username'];</p>
+<p>It also prints out the username and password for us:
+.. code-block:: php</p>
+<blockquote>
+<dl class="docutils">
+<dt>?&gt; } echo &quot;&quot;; if ($username == 'root' and $password == 'attack') {</dt>
+<dd>$password = $_POST['password'];
+$username = $_POST['username'];</dd>
+</dl>
+</blockquote>
 <p>Now you can go to the levelnine url and enter that to get the flag. Either way should
 be valid, as the aim of the game is to get the flag. It shouldn't matter how you get it :)</p>
 <p>Level15 has been a huge help in all of this!</p>
-<h2>Level 10</h2>
-<p><a href="http://ctf.infosecinstitute.com/levelten.php">http://ctf.infosecinstitute.com/levelten.php</a></p>
-<p>{% img http://i.imgur.com/QENqipl.png %}</p>
+</div>
+<div class="section" id="level-10">
+<h2>Level 10 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/levelten.php">http://ctf.infosecinstitute.com/levelten.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/QENqipl.png&quot;" />
 <p>Let's listen to the sound. Hrmm Squeaky. Could be anything. Maybe some weirdly pitched morse.
 But let's download and open it in Audacity. My initial hunch is that it's sped up, due
 to the highpitched sound. So I started reducing the playback speed, and it turns out that
 at around 0.15 times the original speed, we hear someone talking. He's actually telling us
 the name of the flag</p>
-<div class="highlight"><pre><span></span>infosec_flagis_sound
-</pre></div>
-
-
+<blockquote>
+infosec_flagis_sound</blockquote>
 <p>Thanks kind stranger</p>
-<h2>Level 11</h2>
-<p><a href="http://ctf.infosecinstitute.com/leveleleven.php">http://ctf.infosecinstitute.com/leveleleven.php</a></p>
-<p>{% img http://i.imgur.com/L2tFy5t.png %}</p>
+</div>
+<div class="section" id="level-11">
+<h2>Level 11 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/leveleleven.php">http://ctf.infosecinstitute.com/leveleleven.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/L2tFy5t.png&quot;" />
 <p>Hrmm.. there's no sound this time, instead we get the PHP logo. Well, it's all
 we have so let's open it up. I loaded it into vim, changed to hex mode (:%!xxd)
 and right at the top we have</p>
-<div class="highlight"><pre><span></span>infosec_flagis_aHR0cDovL3d3dy5yb2xsZXJza2kuY28udWsvaW1hZ2VzYi9wb3dlcnNsaWRlX2xvZ29fbGFyZ2UuZ2lm
-</pre></div>
-
-
+<blockquote>
+infosec_flagis_aHR0cDovL3d3dy5yb2xsZXJza2kuY28udWsvaW1hZ2VzYi9wb3dlcnNsaWRlX2xvZ29fbGFyZ2UuZ2lm</blockquote>
 <p>Yeah, that won't be it will it? We're very familiar with base64 now aren't we? Ok, decode</p>
-<div class="highlight"><pre><span></span>http://www.rollerski.co.uk/imagesb/powerslide_logo_large.gif
-</pre></div>
-
-
+<blockquote>
+<a class="reference external" href="http://www.rollerski.co.uk/imagesb/powerslide_logo_large.gif">http://www.rollerski.co.uk/imagesb/powerslide_logo_large.gif</a></blockquote>
 <p>Open it up and we get an image. Because the domain is outside of the control of
 this CTF, we can assume that the image hasn't been tampered with or anything
 is embedded in it and that the actual flag is:</p>
-<div class="highlight"><pre><span></span>infosec_flagis_powerslide
-</pre></div>
-
-
+<blockquote>
+infosec_flagis_powerslide</blockquote>
 <p>I'll take it, thanks!</p>
-<h2>Level 12</h2>
-<p><a href="http://ctf.infosecinstitute.com/leveltwelve.php">http://ctf.infosecinstitute.com/leveltwelve.php</a></p>
-<p>{% img http://i.imgur.com/WdLl96v.png %}</p>
+</div>
+<div class="section" id="level-12">
+<h2>Level 12 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/leveltwelve.php">http://ctf.infosecinstitute.com/leveltwelve.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/WdLl96v.png&quot;" />
 <p>Ok we recognise this image. We had it in level 1 and we had to look at the source.
 Our clue is dig deeper and that could mean a number of things. Let's try some directory
 traversal by appending a slash and some random text at the end. Hrm, we just
 get a list of the levels and no css. Ok, that's not it. Let's dig into the source again.
 There's nothing obvious, but I reckon it might be one of the files included in the source.
 It would make sense given the clue we've been given.</p>
-<p>To cut a long story short, there's a css file <code>design.css</code> that's not included
+<p>To cut a long story short, there's a css file :code:<tt class="docutils literal">design.css</tt> that's not included
 in the other pages. I know this because I've pretty much looked at the source for each
 level. Force of habit. Anyway, let's take a look at it:</p>
-<p _="%" endhighlight="endhighlight">{% highlight css %}
-.thisloveis{
-    color: #696e666f7365635f666c616769735f686579696d6e6f7461636f6c6f72;
-}</p>
+<div class="highlight"><pre><span></span><span class="nc">.thisloveis</span><span class="p">{</span>
+        <span class="nb">color</span><span class="o">:</span> <span class="m">#696e666</span><span class="n">f7365635f666c616769735f686579696d6e6f7461636f6c6f72</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 <p>Aha, that's not a valid colour is it? It's also not base64. Looks like hex values
 to me. Run it through a hex to text converter and.....</p>
-<div class="highlight"><pre><span></span>infosec_flagis_heyimnotacolor
-</pre></div>
-
-
+<blockquote>
+infosec_flagis_heyimnotacolor</blockquote>
 <p>Yeah, you weren't a colour, that's for sure.</p>
-<h2>Level 13</h2>
-<p><a href="http://ctf.infosecinstitute.com/levelthirteen.php">http://ctf.infosecinstitute.com/levelthirteen.php</a></p>
-<p>{% img http://i.imgur.com/JX3Je1g.png %}</p>
+</div>
+<div class="section" id="level-13">
+<h2>Level 13 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/levelthirteen.php">http://ctf.infosecinstitute.com/levelthirteen.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/JX3Je1g.png&quot;" />
 <p>Ok, this was a bit of a cheat, because I skipped to level 15 and now I have a a few more
-tools available. I ran <code>test.com &amp;&amp; ls -la ..</code> and voila, there's the backup file:
-<code>levelthirteen.php.old</code>. Much easier than guessing, right?
-Looking at this file we see it will prompt us to download a file called <code>misc/imadecoy</code>.
-This seems to be a network capture involving a project called <a href="https://github.com/shipcod3/honeypy">HoneyPy</a>.</p>
+tools available. I ran :code:<tt class="docutils literal">test.com &amp;&amp; ls <span class="pre">-la</span> ..</tt> and voila, there's the backup file:
+:code:<tt class="docutils literal">levelthirteen.php.old</tt>. Much easier than guessing, right?
+Looking at this file we see it will prompt us to download a file called :code:<tt class="docutils literal">misc/imadecoy</tt>.
+This seems to be a network capture involving a project called <a class="reference external" href="https://github.com/shipcod3/honeypy">HoneyPy</a>.</p>
 <p>I opened it up in wireshark and spent quite a bit of time on it. There's really nothing
 interesting in it for the most part. However near the end we get a PNG image called
-<code>HoneyPY.PNG</code>. For some reason this just stood out to me. I took a chance and exported it
-by rightclicking the packet and selecting <code>Export Selected Packet Bytes</code> as shown</p>
-<p>{% img http://i.imgur.com/jhH2v19.png %}</p>
+:code:<tt class="docutils literal">HoneyPY.PNG</tt>. For some reason this just stood out to me. I took a chance and exported it
+by rightclicking the packet and selecting :code:<tt class="docutils literal">Export Selected Packet Bytes</tt> as shown</p>
+<img alt="" src="&quot;http://i.imgur.com/jhH2v19.png&quot;" />
 <p>Opening this image surprises us with a flag! W00t! That flag is:</p>
-<div class="highlight"><pre><span></span>infosec_flagis_morepackets
-</pre></div>
-
-
+<blockquote>
+infosec_flagis_morepackets</blockquote>
 <p>A wireshark level I managed to do. Yay</p>
-<h2>Level 14</h2>
-<p><a href="http://ctf.infosecinstitute.com/levelfourteen.php">http://ctf.infosecinstitute.com/levelfourteen.php</a></p>
-<p>{% img http://i.imgur.com/0akB0Ni.png %}</p>
-<p>UPDATE: The <code>level14.db</code> file has been removed and the <code>misc</code> directory can
+</div>
+<div class="section" id="level-14">
+<h2>Level 14 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/levelfourteen.php">http://ctf.infosecinstitute.com/levelfourteen.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/0akB0Ni.png&quot;" />
+<p>UPDATE: The :code:<tt class="docutils literal"><span class="pre">level14.db`:code:`</span> file has been removed and the <span class="pre">`:code:`misc</span></tt> directory can
 no longer be listed. Use the second method below to solve this level</p>
 <p>Once downloaded we get a database backup file. This one was quite interesting because
 there are two places where the flag is. So first I looked at what else is in the
-<code>misc</code> directory where this file lives. There's a <code>level14.db</code> file. Let's
+:code:<tt class="docutils literal"><span class="pre">misc`:code:`</span> directory where this file lives. There's a <span class="pre">`:code:`level14.db</span></tt> file. Let's
 take a look at that.</p>
 <p>It adds an entry to the flag db. It's a hex string, so like above, simply decode it and
 get</p>
-<div class="highlight"><pre><span></span>infosec_flagis_whatsorceryisthis
-</pre></div>
-
-
-<p>But, look at the <code>level14</code> file again. Scroll through and notice that in the
+<blockquote>
+infosec_flagis_whatsorceryisthis</blockquote>
+<p>But, look at the :code:<tt class="docutils literal">level14</tt> file again. Scroll through and notice that in the
 <code>friends</code> table there's a fimilar entry. Decoding that will also give you the flag.</p>
-<h2>Level 15</h2>
-<p><a href="http://ctf.infosecinstitute.com/levelfifteen/index.php">http://ctf.infosecinstitute.com/levelfifteen/index.php</a></p>
-<p>{% img http://i.imgur.com/EVJuDmC.png %}</p>
+</div>
+<div class="section" id="level-15">
+<h2>Level 15 ##</h2>
+<p><a class="reference external" href="http://ctf.infosecinstitute.com/levelfifteen/index.php">http://ctf.infosecinstitute.com/levelfifteen/index.php</a></p>
+<img alt="" src="&quot;http://i.imgur.com/EVJuDmC.png&quot;" />
 <p>So here we can lookup a dns entry by typing a domain in the text field. So let's try
-that and see what we get. I used <code>test.com</code> and as a result I get the output
-from the <code>dig</code> command. Interesting. It could be that the php script is merely
-calling <code>dig</code> with the search term appended to it. This is a bad way to execute
-a command, and we will see why. In Linux you can append a command to another using <code>&amp;&amp;</code>.
-So let's try listing the directory with <code>test.com&amp;&amp;ls</code> as our search query. Sure enough,
-we see <code>index.php</code> at the bottom of the output. Well, perhaps there's some hidden files so
-let's run <code>test.com &amp;&amp; ls -la</code>. Aha, there's a file called <code>.hey</code>, let's cat that with
-<code>test.com &amp;&amp; cat .hey</code> and we get <code>Miux+mT6Kkcx+IhyMjTFnxT6KjAa+i6ZLibC</code></p>
+that and see what we get. I used :code:<tt class="docutils literal">test.com</tt> and as a result I get the output
+from the :code:<tt class="docutils literal">dig</tt> command. Interesting. It could be that the php script is merely
+calling :code:<tt class="docutils literal">dig</tt> with the search term appended to it. This is a bad way to execute
+a command, and we will see why. In Linux you can append a command to another using :code:<tt class="docutils literal">&amp;&amp;</tt>.
+So let's try listing the directory with :code:<tt class="docutils literal"><span class="pre">test.com&amp;&amp;ls</span></tt> as our search query. Sure enough,
+we see :code:<tt class="docutils literal">index.php</tt> at the bottom of the output. Well, perhaps there's some hidden files so
+let's run :code:<tt class="docutils literal">test.com &amp;&amp; ls <span class="pre">-la`:code:`.</span> Aha, there's a file called <span class="pre">`:code:`.hey</span></tt>, let's cat that with
+:code:<tt class="docutils literal">test.com &amp;&amp; cat <span class="pre">.hey`:code:`</span> and we get <span class="pre">`:code:`Miux+mT6Kkcx+IhyMjTFnxT6KjAa+i6ZLibC</span></tt></p>
 <p>Not sure however where to go from here. The ZlibC at the end of the string might
 be a clue.</p>
 <p>Please leave any comments with ideas on this. I'm a bit stumped.</p>
-<p>UPDATE: Turns out it's Atom 128 adn you can use <a href="http://crypo.in.ua/tools/eng_atom128c.php">this site</a>
+<p>UPDATE: Turns out it's Atom 128 and you can use <a class="reference external" href="http://crypo.in.ua/tools/eng_atom128c.php">this</a>
 to decode it to <code>infosec_flagis_rceatomized</code></p>
-<p>Thanks to Anon and @fr1t3 for the info</p>
+<p>Thanks to Anon and &#64;fr1t3 for the info</p>
 <p>ALL FLAGS DONE</p>
-<h2>The lost level</h2>
+</div>
+<div class="section" id="the-lost-level">
+<h2>The lost level ##</h2>
 <p>UPDATED: This has since been removed, but I've left this here for posterity.</p>
-<p>Not sure where this belongs, but in the misc folder is a file called <code>readme.wav</code>
+<p>Not sure where this belongs, but in the misc folder is a file called :code:<tt class="docutils literal">readme.wav</tt>
 which contains the morsecode for</p>
-<div class="highlight"><pre><span></span>INFOSECFLAGISMORSECODETONES
-</pre></div>
-
-
+<blockquote>
+INFOSECFLAGISMORSECODETONES</blockquote>
 <p>Which level this belongs to, I don't know.</p>
+</div>
+
     </article>
 
-        <div class="tags">
-            <p>tags: <a href="/tag/security.html">[security</a>, <a href="/tag/ctf.html">ctf</a>, <a href="/tag/infosec.html">infosec]</a>, </p>
-        </div>
 
 <hr>
 <div class="sharing">
