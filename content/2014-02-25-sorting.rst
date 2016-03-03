@@ -15,9 +15,9 @@ a return value from a method. There's a really nice way to do it in place:
 	elif sort_by == 'age':
 	    people.sort(key=lambda x: x.get_age(), reverse=reverse)
 
-As you can see I wrapped the :code:```get_name:code:``` call in a :code:```str():code:``` because
+As you can see I wrapped the :code:`get_name` call in a :code:`str()` because
 in this case it was returning something else. I didn't have control over the 
 code for the user class.
 
-So now the :code:```people:code:``` list is sorted by whichever attribute you decide and
+So now the :code:`people` list is sorted by whichever attribute you decide and
 you can iterate over it as normal.

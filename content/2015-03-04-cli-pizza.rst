@@ -18,7 +18,9 @@ menus, place orders and such, and started building a Python API around that.
 So far I've got a few features working and am happy with the progress. Here's
 a little video of how it works at this stage:
 
-<script type="text/javascript" src="https://asciinema.org/a/17295.js" id="asciicast-17295" async></script>
+.. raw:: html
+
+    <script type="text/javascript" src="https://asciinema.org/a/17295.js" id="asciicast-17295" async></script>
 
 Quite a bit to do still, but happy with the progress. I'm planning to write up how
 I figured out all the API calls in order to interact with their backend, so stay

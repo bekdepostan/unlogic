@@ -54,16 +54,17 @@ separate them with commas: :code:`os.environ['NOSE_COVER_PACKAGE'] = 'module_to_
 
 Unfortunately for this to work properly you need to patch nose's cover plugin.
 There's a small bug in older versions, so depending on your distro you may need to 
-make the following change to 
-:code:`nose/plugins/cover.py`
+make the following change to :code:`nose/plugins/cover.py`
 
 Change these lines
+
 .. code:: python
 
 	for pkgs in [tolist(x) for x in options.cover_packages]:
 	    self.coverPackages.extends(pkgs)
 
 to these lines
+
 .. code:: python
 
 	for pkgs in tolist(options.cover_packages):

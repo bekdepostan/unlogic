@@ -2,7 +2,7 @@ Back it up
 ##########
 
 :title: Back it up
-:date: 2014-02-26T20
+:date: 2014-02-26
 
 For years I've been paying for `Backblaze <http://www.backblaze.com>`_ in order to ensure
 my photos, music, and other import data doesn't get lost in a hard drive crash, theft or fire.
@@ -12,8 +12,6 @@ But you should at least have a local backup, and ideally an offsite one too.
 So why did I stop paying for Backblaze? No real reason. It came up to the renewal date
 and I thought "I wonder if I can do this a little cheaper perhaps?". After all, I'm not
 a stranger to technology.
-
-<!--more-->
 
 For Christmas I was lovingly gifted a 2TB 
 `WD Mybook Live drive <http://www.wdc.com/en/products/products.aspx?id=280>`_

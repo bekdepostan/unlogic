@@ -57,16 +57,15 @@ I'll quickly cover the basics here anyway.</p>
 our IP address. This is done by making use of the fact that IP IDs are sequential.
 The images below (courtesy of the namp project documentation) explain this very
 well.</p>
-<p><strong>Open Port</strong>
-<a class="reference external" href="http://i.imgur.com/MajmRTH.png">{{&lt; figure src=&quot;http://i.imgur.com/MajmRTH.png&quot; &gt;}}</a></p>
-<p><strong>Closed Port</strong>
-<a class="reference external" href="http://i.imgur.com/2UALzzd.png">{{&lt; figure src=&quot;http://i.imgur.com/2UALzzd.png&quot; &gt;}}</a></p>
-<p><strong>Filtered Port</strong>
-<a class="reference external" href="http://i.imgur.com/Yv6hbwL.png">{{&lt; figure src=&quot;http://i.imgur.com/Yv6hbwL.png&quot; &gt;}}</a></p>
+<p><strong>Open Port</strong></p>
+<a class="reference external image-reference" href="http://i.imgur.com/MajmRTH.png"><img alt="" src="http://i.imgur.com/MajmRTH.png" style="width: 400px;" /></a>
+<p><strong>Closed Port</strong></p>
+<a class="reference external image-reference" href="http://i.imgur.com/2UALzzd.png&gt;"><img alt="" src="http://i.imgur.com/2UALzzd.png" style="width: 400px;" /></a>
+<p><strong>Filtered Port</strong></p>
+<a class="reference external image-reference" href="http://i.imgur.com/Yv6hbwL.png"><img alt="" src="http://i.imgur.com/Yv6hbwL.png" style="width: 400px;" /></a>
 <p>Ok, so that's the short version of the theory and it's relatively painless
 to implement with scapy. Let's take a look at the script:</p>
-<p>{% gist e377713b90525e842266 %}</p>
-<p>You provide the script with a <code>zombie ip</code>, <code>target ip</code>, and <code>target port</code>.
+<script src="https://gist.github.com/Svenito/e377713b90525e842266.js"></script><p>You provide the script with a <code>zombie ip</code>, <code>target ip</code>, and <code>target port</code>.
 These should be self explanatory. Then we use scapy to assemble our packets to
 conduct our scan. The <code>p1</code> SYN/ACK packet will be sent to the zombie so we can
 obtain a current IP ID from the RST response as a reference.</p>

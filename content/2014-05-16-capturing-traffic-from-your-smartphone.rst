@@ -21,7 +21,7 @@ parts I'll be taking a look at some common apps and their network chatter. The
 idea is to analyse the data and understand their communications. Hopefully we'll
 also unearth some interesting things along the way.
 
-What we'll need ##
+What we'll need 
 ------------------
 
 * A smartphone
@@ -30,13 +30,13 @@ What we'll need ##
 * An internet connection
 
 
-Setting up the wireless access point ##
+Setting up the wireless access point
 ---------------------------------------
 
 I'm going to cover how to do this part in OSX for now. If I get round
 to it I'll add a Linux way to do it too.
 
-OSX ###
+OSX
 ^^^^^^^
 
 First connect the laptop to an ethernet connection. You can't be connected to 
@@ -48,20 +48,24 @@ entry (not the check box) and select *Ethernet* in the *Share your connection
 from* dropdown. In the *To computers using* select *Wi-Fi*. Now select the
 check box next to *Internet Sharing* to turn sharing on.
 
-`{{< figure src="http://i.imgur.com/K2Zeyoy.png" >}} <http://i.imgur.com/K2Zeyoy.png>`_
+.. image:: http://i.imgur.com/K2Zeyoy.png
+    :width: 400px
+    :target: http://i.imgur.com/K2Zeyoy.png
 
 If everything went to plan your Wi-Fi indicator should now look like this:
 
-`{{< figure src="http://i.imgur.com/ecXJUc8.png" >}} <http://i.imgur.com/ecXJUc8.png>`_
+.. image:: http://i.imgur.com/ecXJUc8.png
+    :width: 400px
+    :target: http://i.imgur.com/ecXJUc8.png
 
-Connect the phone ##
+Connect the phone
 --------------------
 
 Now we connect tbe phone to the new access point. Go to your wireless network
 settings and select the name of the network we created. **slaptop** in my case.
 Once do we need to
 
-Start Wireshark ##
+Start Wireshark
 ------------------
 
 Fireup Wireshark and then select the capture interface. The default will be 
@@ -69,7 +73,9 @@ eth0 usually. That's the ethernet port, but we want to capture traffic on the
 wireless access point. So we need to select *en1* (in my case). It's the one 
 with the wireless icon next to it.
 
-`{{< figure src="http://i.imgur.com/9wyI6s6.png" >}} <http://i.imgur.com/9wyI6s6.png>`_
+.. image:: http://i.imgur.com/9wyI6s6.png
+    :width: 400px
+    :target: http://i.imgur.com/9wyI6s6.png
 
 Once this is done we'll want to filter out ARP packets as these are of little
 interest and there will be quite a few of them. See the screenshot below to
@@ -80,9 +86,11 @@ can check to see if it's working by browsing to a site. I chose this site at
 :code:`192.30.252.153`. You should see the capture window scroll past with some 
 traffic going between your phone ip and the site your browsed to.
 
-`{{< figure src="http://i.imgur.com/XjFuoOQ.png" >}} <http://i.imgur.com/XjFuoOQ.png>`_
+.. image:: http://i.imgur.com/XjFuoOQ.png
+    :width: 400px
+    :target: http://i.imgur.com/XjFuoOQ.png
 
-In the next post ##
+In the next post
 -------------------
 
 So I'm all set to capture any and all traffic now that goes to and from my phone.

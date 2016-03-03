@@ -12,8 +12,9 @@ it with brown MX switches, large centered font and light grey alphanumeric caps
 and grey modifiers. I went of the 87 key version (no keypad) and also threw in a 
 wrist rest to go with it.
 
-.. image:: "center http://i.imgur.com/SzmT9zJ.jpg?2"
-
+.. image:: http://i.imgur.com/SzmT9zJ.jpg?2
+    :width: 500px
+    :target: http://i.imgur.com/SzmT9zJ.jpg?2
 
 Yes, this isn't the most stylish photo, plus there's no shoe in it either.
 

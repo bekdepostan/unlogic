@@ -20,12 +20,12 @@ To quickly explain what you need to do: Login in as user :code:`levelxx` and the
 There's some explanations for each level on the machine's page over at Exploit Exercises.
 
 
-Level 00 ##
+Level 00
 -----------
 
-> This level requires you to find a Set User ID program that will run as the "flag00" account. You could also find this by carefully looking in top level directories in / for suspicious looking directories.
-> 
-> Alternatively, look at the find man page. 
+    This level requires you to find a Set User ID program that will run as the "flag00" account. You could also find this by carefully looking in top level directories in / for suspicious looking directories.
+
+    Alternatively, look at the find man page. 
 
 So somewhere from the root directory is a file will run as the flag00 user. As stated you can either look for it, or
 use :code:`find` to search for it. I chose to do a little bit of both. Running :code:`find` from the root of a system can take some time so I chose to take a look first. Amongst the usual directories at linux root level is a :code:`rofs` directory. So let's take a look inside.
@@ -62,7 +62,7 @@ There's the usual stuff, but there's also :code:`./bin/.../flag00`. If you run t
 	You have successfully executed getflag on a target account
 	
 
-Level 01 ##
+Level 01
 -----------
 
     There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it? 
@@ -106,10 +106,10 @@ So let's see about this vulnerability. It doesn't accept user input, but luckily
 	You have successfully executed getflag on a target account
 	
 
-Level 02 ##
+Level 02
 -----------
 
-> There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it? 
+    There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it? 
 
 .. code:: C
 
@@ -151,12 +151,12 @@ This is very similar to *Level01* but this time they seem to have patched the sy
 	
 	You have successfully executed getflag on a target account
 
-Level 03 ##
+Level 03
 -----------
 
-> Check the home directory of flag03 and take note of the files there.
-> 
-> There is a crontab that is called every couple of minutes. 
+    Check the home directory of flag03 and take note of the files there.
+
+    There is a crontab that is called every couple of minutes. 
 
 So first things first let's take a look at that crontab
 
@@ -180,7 +180,7 @@ Ok, so it will take a shell script in the :code:`writeable.d` directory, execute
 	level03@nebula:/home/flag03$ cat /tmp/gotflag
 	You have successfully executed getflag on a target account
 
-Level 04 ##
+Level 04
 -----------
 
     This level requires you to read the token file, but the code restricts the files that can be read. Find a way to bypass it :) 
@@ -252,7 +252,7 @@ Then get the flag (some ssh output cut for brevity)
 
 So the output of the command is a *token* which is the term used for the password of the flag's user. Using this to logon as *flag04* and run :code:`getflag`.
 
-Level 05 ##
+Level 05
 -----------
 
     Check the flag05 home directory. You are looking for weak directory permissions 
@@ -297,7 +297,7 @@ Right so let's use these keys to login as *flag05*.
 	flag05@nebula:~$ getflag
 	You have successfully executed getflag on a target account
 
-Level 06 ##
+Level 06
 -----------
 
     The flag06 account credentials came from a legacy unix system. 
@@ -330,7 +330,7 @@ That's that, now back on the nebula box
 	getflag06@nebula:~$ getflag
 	You have successfully executed getflag on a target account
 
-Level 07 ##
+Level 07
 -----------
 
     The flag07 user was writing their very first perl program that allowed them to ping hosts to see if they were reachable from the web server. 
@@ -380,7 +380,7 @@ We can't change the ping call, but we have control over what gets passed to the 
 
 Notice we need to encode the URL parms. The plaintext URL is :code:`http://192.168.56.102:7007/index.cgi?Host=127.0.0.1 && getflag`
 
-Level 08 ##
+Level 08
 -----------
 
     World readable files strike again. Check what that user was up to, and use it to log into flag08 account. 
@@ -411,7 +411,9 @@ The only interesting file that's readable here is :code:`capture.pcap`. Let's co
 
 Once in Wireshark we can see a TCP stream. Right click on one of the entries and select :code:`Follow TCP Stream`. A new window will appear in which we can see a login attempt. Red entries are user input, and blue entries are the server responses. The username is :code:`level08`. The password is... well, take a look. Notice the :code:`7f` entries. Those are deletes.
 
-`{{< figure src="http://i.imgur.com/IEseNUh.png" >}} <http://i.imgur.com/IEseNUh.png>`_
+.. image:: http://i.imgur.com/IEseNUh.png
+    :width: 400px
+    :target: http://i.imgur.com/IEseNUh.png
 
 So....
 
@@ -424,7 +426,7 @@ So....
 	flag08@nebula:~$ getflag
 	You have successfully executed getflag on a target account
 
-Level 09 ##
+Level 09
 -----------
 
     There's a C setuid wrapper for some vulnerable PHP code... 
@@ -479,7 +481,7 @@ So there's a few ways we can exploit this. We basically need to pass a command t
 	sh-4.2$ getflag
 	You have successfully executed getflag on a target account
 
-Level 10 ##
+Level 10
 -----------
 
     The setuid binary at /home/flag10/flag10 binary will upload any file given, as long as it meets the requirements of the access() system call. 

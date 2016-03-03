@@ -52,12 +52,10 @@
 		<div class="entry-content">
 			<p>I have a domain where I host images. It's nothing fancy, just a collection where gifs and generally humerous images get stored in a custom gallery script.
 I also have a script on my host that I can pass a URL to and it will get the image with wget, put it in the right directory and then curl the import URL for the gallery. So if you've ever wanted to parse email addresses for content via a script, read on. Example code inside.</p>
-<p>&lt;!--more--&gt;</p>
 <p>Now this in principle is great, but sometimes I need to add an image from my phone and the whole ssh thing becomes a bit cumbersome. Usually I'll see something in Reeder or some other iPhone app which allows me to email the URL. Perfect. So I wrote a quick script that would do the work for me, and set up an email address that passes any content to this script. The script in question is here:</p>
-<p>{% gist 3872497 %}</p>
-<p>I use the :code:<tt class="docutils literal"><span class="pre">fileinput`:code:`</span> module to read the data from stdin and then join it all to a single text chunk. I'm not expecting too much data in the email, so this isn't a big issue. Then I extract the message via the <span class="pre">`:code:`email`:code:`</span> module and parse the payload in order to get the actual email body, discarding the headers and all the other things I don't need. Assuming people have good etiquette and have the correct signature separator <span class="pre">(`:code:`--</span> \n</tt>), I also strip off the signature.
+<script src="https://gist.github.com/Svenito/3872497.js"></script><p>I use the <code>fileinput</code> module to read the data from stdin and then join it all to a single text chunk. I'm not expecting too much data in the email, so this isn't a big issue. Then I extract the message via the <code>email</code> module and parse the payload in order to get the actual email body, discarding the headers and all the other things I don't need. Assuming people have good etiquette and have the correct signature separator (<code>-- \n</code>), I also strip off the signature.
 Once I have the body I extract the image URL(s) using regular expressions, and then pass the URL to my import script.</p>
-<p>As you can see this only works with image URLs that are prefixed with :code:<tt class="docutils literal"><span class="pre">http://</span></tt>. The email address is a random collection of letters and numbers to reduce the likelyhood of just anyone emailling links.</p>
+<p>As you can see this only works with image URLs that are prefixed with <code>http://</code>. The email address is a random collection of letters and numbers to reduce the likelyhood of just anyone emailling links.</p>
 
 		</div> <!--/#entry-content-->
 	</div> <!--/#main-->

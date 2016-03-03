@@ -104,14 +104,14 @@ upper, lower, digits          | 62              | 56,800,235,584
 upper, lower, digits, special | 94              | 689,869,781,056
 </pre>
 <div class="section" id="no-rules">
-<h2>No rules ##</h2>
+<h2>No rules</h2>
 <p>Using any combination of characters the number of possible passwords is <em>689,869,781,056</em>.
 It would take <em>1943.29 seconds</em> (689,869,781,056 / 355,000,000) to crack this password.
 That's just over half an hour.</p>
 <p><em>Attack time</em>: 1943.29seconds</p>
 </div>
 <div class="section" id="at-least-one-upper-case">
-<h2>At least one upper case ##</h2>
+<h2>At least one upper case</h2>
 <p>If we are forced to chose at least one upper case character, we are also saying that
 there are no passwords now with just lowercase characters. The number of possible
 combinations is now <em>689,869,781,056 - 308,915,776 = 689,560,865,280</em>, or <em>99%</em> of
@@ -119,7 +119,7 @@ the original search space. This is a small impact of only 1 second.</p>
 <p><em>Attack time</em>: 1942.42seconds</p>
 </div>
 <div class="section" id="at-least-one-upper-case-and-one-digit">
-<h2>At least one upper case and one digit ##</h2>
+<h2>At least one upper case and one digit</h2>
 <p>Now we know that there are no passwords with just lowercase, or with lower and uppercase only.
 Therefore we can also remove these from the list of possibilities. Our new number is now
 <em>689,869,781,056 - 308,915,776 - 19,770,609,664 = 669,790,255,616</em> or <em>97%</em> of our search space.
@@ -128,7 +128,7 @@ still not much</p>
 <p><em>Attack time</em>: 1886.73seconds</p>
 </div>
 <div class="section" id="must-contain-all-of-the-above">
-<h2>Must contain all of the above ##</h2>
+<h2>Must contain all of the above</h2>
 <p>Upper, lower, digits, and special all need to be present. Therefore we can remove all the
 other possiblities for a grand total of:
 <em>689,869,781,056 - 308,915,776 - 19,770,609,664 - 56,800,235,584 = 612,990,020,032</em> or
@@ -136,7 +136,7 @@ other possiblities for a grand total of:
 <p><em>Attack time</em>: 1726.73seconds</p>
 </div>
 <div class="section" id="conclusion">
-<h2>Conclusion ##</h2>
+<h2>Conclusion</h2>
 <p>Although contrived, this scenario should indicate that <em>forcing</em> people to do
 things in the interest of security can help attackers too. If we are allowed
 to use any character out of the full set, an attack would have taken 4 minutes more than

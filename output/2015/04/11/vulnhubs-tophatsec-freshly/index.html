@@ -89,16 +89,16 @@ Nmap done: 1 IP address (1 host up) scanned in 6.46 sconds</span>
 </pre>
 <p>So I can see the host is at <code>192.168.56.103</code> and has ports <em>80, 443, and 8080</em>
 open. Browsing to the address presents an animated gif.</p>
-<img alt="" src="&quot;http://i.imgur.com/qgkgkgg.png&quot;" />
+<img alt="" src="http://i.imgur.com/qgkgkgg.png" />
 <p>My initial reaction is
 to look at the source, but here I only see the <code>&lt;img&gt;</code> tag and the image filename.
 The image filename could be useful later, but right now I see no use for it.</p>
 <p>In that case let's see if the SSL port holds anything more interesting.</p>
-<img alt="" src="&quot;http://i.imgur.com/wvHo8ru.png&quot;" />
+<img alt="" src="http://i.imgur.com/wvHo8ru.png" />
 <p>Nice, looks like I'm getting somewhere. I follow this link to a wordpress site
 which sells candy. Generally browsing the site I notice it's a Bitnami install
 of a Wordpress site, running a few plugins.</p>
-<img alt="" src="&quot;http://i.imgur.com/SHEXup3.png&quot;" />
+<img alt="" src="http://i.imgur.com/SHEXup3.png" style="width: 600px;" />
 <p>Before I start work on that, let me just see what's at port <em>8080</em>. Ah, it's a
 non <em>https</em> version of the wordpress site. I'm going to use that instead
 of the <em>https</em> version to avoid any certificate issues and generally make life
@@ -207,16 +207,16 @@ successful with getting anything out of it.</p>
 </ul>
 <p>Ok, thinking cap back on.... I need a different angle of attack.</p>
 <p>Revisiting the main wordpress site there is something a bit unusual.</p>
-<img alt="" src="&quot;http://i.imgur.com/2ddRfdF.png&quot;" />
+<img alt="" src="http://i.imgur.com/2ddRfdF.png" />
 <p>Did I miss something? Did I get done by a Jedi mindtrick? Let's see. I'll
 head back to the main site and try and find some other pages with <em>DirBuster</em>.</p>
 <p>This is how I set it up</p>
-<img alt="" src="&quot;http://i.imgur.com/auVPaoO.png&quot;" />
+<img alt="" src="http://i.imgur.com/auVPaoO.png" style="width: 600px;" />
 <p>Using this list I got lucky and received two interesting hits after short while</p>
-<img alt="" src="&quot;http://i.imgur.com/l647X5u.png&quot;" />
+<img alt="" src="http://i.imgur.com/l647X5u.png" style="width: 600px;" />
 <p>I've decided to hold back on on the <code>phpmyadmin</code> and investigate the <code>login.php</code>
 first. This is what lies at the end of that URL</p>
-<img alt="" src="&quot;http://i.imgur.com/c8aSx4n.png&quot;" />
+<img alt="" src="http://i.imgur.com/c8aSx4n.png" />
 <p>I could just start attacking this with various SQLi strings, but the
 beauty of attacking a virtual machine is that I can use tools without the fear
 of breaking someone else's stuff. Roll out <code>sqlmap</code> and let's see what we can find:</p>

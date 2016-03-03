@@ -61,26 +61,16 @@ there's a link to the original page for each section.</p>
 plain text format or not. Let me know in the comments below. I've used
 asciinema in the first level only, but would post the asciinema vids if they
 are useful.</p>
-<p>&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-&lt;header&gt;
-&lt;h3&gt;Contents&lt;/h3&gt;
-&lt;/header&gt;
-&lt;div id=&quot;drawer&quot; markdown=&quot;1&quot;&gt;
-*  Auto generated table of contents
-{:toc}
-&lt;/div&gt;
-&lt;/section&gt;&lt;!-- /#table-of-contents --&gt;</p>
 <div class="section" id="level-0-1">
-<h2>Level 0 -&gt; 1 #</h2>
+<h2>Level 0 -&gt; 1</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit1.html">level 00</a></p>
 <p>Not much to do here but login and read a file so:</p>
-<p>&lt;script type=&quot;text/javascript&quot; src=&quot;<a class="reference external" href="https://asciinema.org/a/17664.js">https://asciinema.org/a/17664.js</a>&quot; id=&quot;asciicast-17664&quot; async&gt;&lt;/script&gt;</p>
-</div>
+<script type="text/javascript" src="https://asciinema.org/a/17664.js" id="asciicast-17664" async></script></div>
 <div class="section" id="level-1-2">
-<h2>Level 1 -&gt; 2 #</h2>
+<h2>Level 1 -&gt; 2</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit2.html">level 01</a></p>
 <p>Using the password from the last session, let's login and look at what's in
-:code:<tt class="docutils literal"><span class="pre">-`:code:`.</span> The trick here is that <span class="pre">`:code:`-</span></tt> is a bit tricky to pass as an argument. Try
+<code>-</code>. The trick here is that <cite>:code:</cite>-` is a bit tricky to pass as an argument. Try
 it to see what happens. All we need to do it prefix it with the path:</p>
 <pre class="code console literal-block">
 <span class="gp">bandit1&#64;melinda:~$</span> ls -la
@@ -96,7 +86,7 @@ drwxr-xr-x 160 root    root    4096 Oct 17  2013 ..
 </pre>
 </div>
 <div class="section" id="level-2-3">
-<h2>Level 2 -&gt; 3 #</h2>
+<h2>Level 2 -&gt; 3</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit3.html">level 02</a></p>
 <p>Not much trickiness here, merely the spaces in the filename. But with TAB
 completion the escaping of the spaces will be handled for us:</p>
@@ -114,9 +104,9 @@ drwxr-xr-x 160 root    root    4096 Oct 17  2013 ..
 </pre>
 </div>
 <div class="section" id="level-3-4">
-<h2>Level 3 -&gt; 4 #</h2>
+<h2>Level 3 -&gt; 4</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit4.html">level 03</a></p>
-<p>Hidden file? Just do a long listing with :code:<tt class="docutils literal">ls <span class="pre">-la</span></tt></p>
+<p>Hidden file? Just do a long listing with <code>ls -la</code></p>
 <pre class="code console literal-block">
 <span class="gp">bandit3&#64;melinda:~$</span> ls -la
 <span class="go">total 24
@@ -138,7 +128,7 @@ drwxr-xr-x 3 root    root    4096 Jun  6  2013 ..
 </pre>
 </div>
 <div class="section" id="level-4-5">
-<h2>Level 4 -&gt; 5 #</h2>
+<h2>Level 4 -&gt; 5</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit5.html">level 04</a></p>
 <p>We need to find a human readable file in the <code>inhere</code> directory. Using the
 power of bash:</p>
@@ -163,7 +153,7 @@ command, get the filetype with the <code>file</code> command. Only one which is 
 that's a good candidate. Sure enough, it's the one we are after.</p>
 </div>
 <div class="section" id="level-5-6">
-<h2>Level 5 -&gt; 6 #</h2>
+<h2>Level 5 -&gt; 6</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit6.html">level 05</a></p>
 <p>This is similar to the previous level, except now we are looking for something
 with a specific size. Luckily the <code>find</code> command is just right for this:</p>
@@ -178,7 +168,7 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7</span>
 </pre>
 </div>
 <div class="section" id="level-6-7">
-<h2>Level 6 -&gt; 7 #</h2>
+<h2>Level 6 -&gt; 7</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit7.html">level 06</a></p>
 <p>Now we need to broaden our search. Once again <code>find</code> to the rescue. We know
 the user and group that own the file and its size. The user and group might
@@ -194,7 +184,7 @@ be enough already, so let's give that a go</p>
 with files that it can't read.</p>
 </div>
 <div class="section" id="level-7-8">
-<h2>Level 7 -&gt; 8 #</h2>
+<h2>Level 7 -&gt; 8</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit8.html">Level 07</a></p>
 <p>To find things in a file, <code>grep</code> is usually the answer. However it's probably
 wise to check the file format first in case all the words are smushed together
@@ -218,7 +208,7 @@ ember's f2XPIE1iDHW9oHPyodPyfTz87DAbWmXu
 fine.</p>
 </div>
 <div class="section" id="level-8-9">
-<h2>Level 8 -&gt; 9 #</h2>
+<h2>Level 8 -&gt; 9</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit9.html">level 08</a></p>
 <p>So the only way we know which entry is the password is that it occurs
 only once. For this the linux tool <code>uniq</code> seems perfect. However it can
@@ -231,7 +221,7 @@ unique lines:</p>
 </pre>
 </div>
 <div class="section" id="level-9-10">
-<h2>Level 9 -&gt; 10 #</h2>
+<h2>Level 9 -&gt; 10</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit10.html">Level 09</a></p>
 <p>This <code>data.txt</code> file is in binary. So in order to find the strings we need
 to dump it as hex, or, even simpler, run it through <code>strings</code>:</p>
@@ -244,7 +234,7 @@ to dump it as hex, or, even simpler, run it through <code>strings</code>:</p>
 </pre>
 </div>
 <div class="section" id="level-10-11">
-<h2>Level 10 -&gt; 11 #</h2>
+<h2>Level 10 -&gt; 11</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit11.html">Level 10</a></p>
 <p>Good ol base64. If you haven't seen it before, you'll get to see it a lot
 more if you carry on doing these kind of challenges. Simply done though:</p>
@@ -254,7 +244,7 @@ more if you carry on doing these kind of challenges. Simply done though:</p>
 </pre>
 </div>
 <div class="section" id="level-11-12">
-<h2>Level 11 -&gt; 12 #</h2>
+<h2>Level 11 -&gt; 12</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit12.html">level 11</a></p>
 <p>The description is a basically a verbose way of saying that the string
 has been encoded with rot13. The quickest way for me to un-rotate it, is
@@ -267,7 +257,7 @@ using python:</p>
 </pre>
 </div>
 <div class="section" id="level-12-13">
-<h2>Level 12 -&gt; 13 #</h2>
+<h2>Level 12 -&gt; 13</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit13.html">Level 12</a></p>
 <p>From here on it's going to get a little trickier. We know that data.txt is a hexdump
 of a binary, so first let's convert it back to a binary first with <code>xxd</code></p>
@@ -323,7 +313,7 @@ that should be clear enough.</p>
 password.</p>
 </div>
 <div class="section" id="level-13-14">
-<h2>Level 13 -&gt; 14 #</h2>
+<h2>Level 13 -&gt; 14</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit14.html">Level 13</a></p>
 <p>We're given a lot of information here, and one of those is that we get the SSH
 key for the <code>bandit14</code> user. We can use this to login as that user without knowing
@@ -343,7 +333,7 @@ Are you sure you want to continue connecting (yes/no)? yes
 as bandit14. Then we can read the file with the password.</p>
 </div>
 <div class="section" id="level-14-15">
-<h2>Level 14 -&gt; 15 #</h2>
+<h2>Level 14 -&gt; 15</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit15.html">Level 14</a></p>
 <p>This level starts introducing some networking and how to interact with remote
 hosts. Well, in this case it's localhost, but the principle is the same.

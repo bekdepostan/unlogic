@@ -16,12 +16,12 @@ a sort of diary for myself, so I can refer back to any info if I need to.
 
 This continues on from `part 1 <http://unlogic.co.uk/2014/06/24/cracking-nebula-part1/>`_.
 
-Level 11 ##
+Level 11
 -----------
 
-> The /home/flag11/flag11 binary processes standard input and executes a shell command.
-> 
-> There are two ways of completing this level, you may wish to do both :-) 
+    The /home/flag11/flag11 binary processes standard input and executes a shell command.
+
+    There are two ways of completing this level, you may wish to do both :-) 
 
 .. code:: C
 
@@ -130,10 +130,10 @@ Level 11 ##
 
 I'll be honest with you and admit that I had a lot of trouble with this. I eventually looked up how to do this on other blogs, but still couldn't get it to work. After some searching I believe it's down to the bash version my VM is running. The exploit was possible due to some feature in older versions of bash, but not in the version I have. If you would like to read how to get level 11 you can do so here: `http://www.kroosec.com/2012/11/nebula-level11.html <http://www.kroosec.com/2012/11/nebula-level11.html>`_
 
-level 12 ##
+level 12
 -----------
 
-> There is a backdoor process listening on port 50001. 
+    There is a backdoor process listening on port 50001. 
 
 .. code:: C
 
@@ -181,10 +181,10 @@ So we need to connect to the localhost on port 50001 and enter the correct passw
 	level12@nebula:/home/flag12$ cat /tmp/out
 	You have successfully executed getflag on a target account
 
-Level 13 ##
+Level 13
 -----------
 
-> There is a security check that prevents the program from continuing execution if the user invoking it does not match a specific user id. 
+    There is a security check that prevents the program from continuing execution if the user invoking it does not match a specific user id. 
 
 .. code:: C
 
@@ -255,10 +255,10 @@ library we are trying to preload.
 	flag13@nebula:~$ getflag
 	You have successfully executed getflag on a target account
 
-Level 14 ##
+Level 14
 -----------
 
- > This program resides in /home/flag14/flag14 . It encrypts input and writes it to standard output. An encrypted token file is also in that home directory, decrypt it :) 
+    This program resides in /home/flag14/flag14 . It encrypts input and writes it to standard output. An encrypted token file is also in that home directory, decrypt it :) 
 
 The contents of :code:`token` were encrypted using the :code:`flag14` binary in :code:`~flag14`. If you run it you can see how it works. Let's enter something and see if we can work out how it works. I created a file with the contents :code:`abcdefghijklmno` in :code:`/tmp/test`
 
@@ -302,14 +302,14 @@ And now pipe the token into it
 	flag14@nebula:~$ getflag
 	You have successfully executed getflag on a target account
 
-Level 15 ##
+Level 15
 -----------
 
-> strace the binary at /home/flag15/flag15 and see if you spot anything out of the ordinary.
-> 
-> You may wish to review how to "compile a shared library in linux" and how the libraries are loaded and processed by reviewing the dlopen manpage in depth.
-> 
-> Clean up after yourself :) 
+    strace the binary at /home/flag15/flag15 and see if you spot anything out of the ordinary.
+
+    You may wish to review how to "compile a shared library in linux" and how the libraries are loaded and processed by reviewing the dlopen manpage in depth.
+
+    Clean up after yourself :) 
 
 After running :code:`strace` we notice this particular bit
 
@@ -415,10 +415,10 @@ What? I realise we are slowly approaching the limits of my capabilities of deali
 
 *sigh* - symbol :code:`system` is missing. Ok, let's just build it statically and wrap it all up so we've got everything we need. From :code:`man gcc`
 
-> **-static-libgcc**
->           On systems that provide libgcc as a shared library, these options force the use of either the shared or 
->           static version respectively.  If no shared version of libgcc
->           was built when the compiler was configured, these options have no effect.
+    **-static-libgcc**
+              On systems that provide libgcc as a shared library, these options force the use of either the shared or 
+              static version respectively.  If no shared version of libgcc
+              was built when the compiler was configured, these options have no effect.
 
 So really we can also get rid of our implementation of :code:`__cxa_finalize` as it's all statically linked now.
 
@@ -431,10 +431,10 @@ So really we can also get rid of our implementation of :code:`__cxa_finalize` as
 	sh-4.2$ getflag
 	You have successfully executed getflag on a target account
 
-Level 16 ##
+Level 16
 -----------
 
-> There is a perl script running on port 1616.
+    There is a perl script running on port 1616.
 
 .. code:: perl
 
@@ -517,10 +517,10 @@ Back in the shell where we launched the netcat listener we do the following (the
 	whoami
 	flag16
 
-Level 17 ##
+Level 17
 -----------
 
-> There is a python script listening on port 10007 that contains a vulnerability. 
+    There is a python script listening on port 10007 that contains a vulnerability. 
 
 .. code:: python
 
@@ -588,10 +588,10 @@ Once run it looks like it worked so let's be sure
 	level17@nebula:/tmp/flag17$ cat ../f17pwned
 	You have successfully executed getflag on a target account
 
-Level 18 ##
+Level 18
 -----------
 
-> Analyse the C program, and look for vulnerabilities in the program. There is an easy way to solve this level, an intermediate way to solve it, and a more difficult/unreliable way to solve it. 
+    Analyse the C program, and look for vulnerabilities in the program. There is an easy way to solve this level, an intermediate way to solve it, and a more difficult/unreliable way to solve it. 
 
 .. code:: C
 
@@ -851,12 +851,12 @@ Right, so we need to remember that we're running :code:`sh` here, and our argume
 are being passed to it. Unfortunately :code:`-d` and such are not valid here. 
 Time to read the manual....
 
-> **--rcfile file**
-> 
-> Execute commands from file instead of the system wide 
-> initialization file /etc/bash.bashrc and the standard personal 
-> initialization file ~/.bashrc if the shell is interactive 
-> (see INVOCATION below).
+    **--rcfile file**
+
+    Execute commands from file instead of the system wide 
+    initialization file /etc/bash.bashrc and the standard personal 
+    initialization file ~/.bashrc if the shell is interactive 
+    (see INVOCATION below).
 
 Ok, well, it's worth a shot.
 
@@ -901,10 +901,10 @@ Inside that we will run out beloved :code:`getflag`
 The harder ways are beyond what I can do, but for those interested in 
 circumventing `FORTIFY_SOURCE` you can read `A Eulogy for Formatting Strings <http://phrack.org/issues/67/9.html>`_. I'll be re-reading that for sure.
 
-Flag 19 ##
+Flag 19
 ----------
 
-> There is a flaw in the below program in how it operates. 
+    There is a flaw in the below program in how it operates. 
 
 .. code:: C
 
@@ -988,7 +988,7 @@ Get the idea? Right, let's taste this pudding
 
 **Nebula done.** 
 
-Closing words ##
+Closing words
 ----------------
 
 Firstly: Thanks for taking the time to read this. Please leave any feedback or

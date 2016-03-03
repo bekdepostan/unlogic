@@ -13,7 +13,9 @@ automatically selected. Setting the address also works and isn't just a stub,
 and finally it is also able to determine if cash on delivery is available to you,
 albeit at the end of the process, but that's how they do it.
 
-<script type="text/javascript" src="https://asciinema.org/a/17706.js" id="asciicast-17706" async></script>
+.. raw:: html
+
+    <script type="text/javascript" src="https://asciinema.org/a/17706.js" id="asciicast-17706" async></script>
 
 So the API is coming along and the CLI interface (which is mostly just a proof
 of concept for the API) is also shaping up. Once cash on delivery orders are working

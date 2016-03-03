@@ -53,7 +53,7 @@ First I need to determine the image's IP address and what services it is running
 So I can see the host is at :code:`192.168.56.103` and has ports *80, 443, and 8080*
 open. Browsing to the address presents an animated gif. 
 
-.. image:: "http://i.imgur.com/qgkgkgg.png"
+.. image:: http://i.imgur.com/qgkgkgg.png
 
 
 My initial reaction is
@@ -62,14 +62,15 @@ The image filename could be useful later, but right now I see no use for it.
 
 In that case let's see if the SSL port holds anything more interesting.
 
-.. image:: "http://i.imgur.com/wvHo8ru.png"
+.. image:: http://i.imgur.com/wvHo8ru.png
 
 
 Nice, looks like I'm getting somewhere. I follow this link to a wordpress site
 which sells candy. Generally browsing the site I notice it's a Bitnami install
 of a Wordpress site, running a few plugins. 
 
-.. image:: "http://i.imgur.com/SHEXup3.png"
+.. image:: http://i.imgur.com/SHEXup3.png
+    :width: 600px
 
 
 Before I start work on that, let me just see what's at port *8080*. Ah, it's a 
@@ -181,7 +182,7 @@ Ok, thinking cap back on.... I need a different angle of attack.
 
 Revisiting the main wordpress site there is something a bit unusual.
 
-.. image:: "http://i.imgur.com/2ddRfdF.png"
+.. image:: http://i.imgur.com/2ddRfdF.png
 
 
 Did I miss something? Did I get done by a Jedi mindtrick? Let's see. I'll 
@@ -189,18 +190,20 @@ head back to the main site and try and find some other pages with *DirBuster*.
 
 This is how I set it up
 
-.. image:: "http://i.imgur.com/auVPaoO.png"
+.. image:: http://i.imgur.com/auVPaoO.png
+    :width: 600px
 
 
 Using this list I got lucky and received two interesting hits after short while
 
-.. image:: "http://i.imgur.com/l647X5u.png"
+.. image:: http://i.imgur.com/l647X5u.png
+    :width: 600px
 
 
 I've decided to hold back on on the :code:`phpmyadmin` and investigate the :code:`login.php`
 first. This is what lies at the end of that URL
 
-.. image:: "http://i.imgur.com/c8aSx4n.png"
+.. image:: http://i.imgur.com/c8aSx4n.png
 
 
 I could just start attacking this with various SQLi strings, but the

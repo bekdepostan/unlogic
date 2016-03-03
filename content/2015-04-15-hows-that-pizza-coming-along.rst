@@ -12,7 +12,9 @@ How's that Pizza coming along?
 Having been a bit busy with other things recently, I've not mentioned the Domino's
 thing for a while. So in case anyone is wondering where I am with this:
 
-<script type="text/javascript" src="https://asciinema.org/a/17706.js" id="asciicast-17706" async></script>
+.. raw:: html
+
+    <script type="text/javascript" src="https://asciinema.org/a/17706.js" id="asciicast-17706" async></script>
 
 Basically I've reworked how the store finder works. I've collapsed the whole store finding and 
 delivery postcode stuff into one :code:`locate_store` call. 
@@ -23,8 +25,8 @@ Now you also specify your name, phone number, and email when you select the
 delivery address. The payment side of things is coming along, but is only in debug
 at the moment.
 
-What's planned ###
-^^^^^^^^^^^^^^^^^^
+What's planned 
+^^^^^^^^^^^^^^^
 
 I want to actually place a *cash on delivery* order and eat a CLI pizza. Once that's finished, 
 I will clean up the project, put it on Github, and package it for *pip*.

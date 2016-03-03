@@ -59,10 +59,10 @@ a return value from a method. There's a really nice way to do it in place:</p>
 <span class="k">elif</span> <span class="n">sort_by</span> <span class="o">==</span> <span class="s1">'age'</span><span class="p">:</span>
     <span class="n">people</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get_age</span><span class="p">(),</span> <span class="n">reverse</span><span class="o">=</span><span class="n">reverse</span><span class="p">)</span>
 </pre>
-<p>As you can see I wrapped the :code:<tt class="docutils literal">`get_name:code:`</tt> call in a :code:<tt class="docutils literal"><span class="pre">`str():code:`</span></tt> because
+<p>As you can see I wrapped the <code>get_name</code> call in a <code>str()</code> because
 in this case it was returning something else. I didn't have control over the
 code for the user class.</p>
-<p>So now the :code:<tt class="docutils literal">`people:code:`</tt> list is sorted by whichever attribute you decide and
+<p>So now the <code>people</code> list is sorted by whichever attribute you decide and
 you can iterate over it as normal.</p>
 
 		</div> <!--/#entry-content-->

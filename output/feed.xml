@@ -1163,16 +1163,16 @@ frustrations. All in all this was another great year and I'm already looking
 forward to 2016's edition. I found this year's challenges were a bit harder than
 last year, but I did my best.&lt;/p&gt;
 &lt;div class="section" id="challenge-01"&gt;
-&lt;h2&gt;Challenge 01 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 01&lt;/h2&gt;
 &lt;p&gt;I'm told to search out the password in the following image&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/mIXj50g.jpg&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/mIXj50g.jpg" style="width: 600px;" /&gt;
 &lt;p&gt;Taking note of the missing letters and rearranging them to spell &lt;code&gt;HACKERZ&lt;/code&gt; I'll enter
 that into the egg-o-matic and see what happens. Oh, hello there'e the egg.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-02"&gt;
-&lt;h2&gt;Challenge 02 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 02&lt;/h2&gt;
 &lt;p&gt;The eggs is already there:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/98japcd.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/98japcd.png" /&gt;
 &lt;p&gt;But it won't scan in its current state, not with &lt;em&gt;NO&lt;/em&gt; written in the QR code.
 First things first I looked at the page and image source. Turns out that this is
 not an image, but a table instead. I examined the table with Firebug and noticed
@@ -1182,7 +1182,7 @@ saw that those tags were defined twice, causing the values to be overriden.&lt;/
 definition) and then we get a valid QR code that will scan.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-03"&gt;
-&lt;h2&gt;Challenge 03 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 03&lt;/h2&gt;
 &lt;p&gt;Lego. I love Lego, and therefore already knew what an &lt;code&gt;ldx&lt;/code&gt; file is. So I opened
 it in Lego Digital Designer and took a look at the bricks. Looks like quite a hard
 code to crack. Although it seems a little odd that the bottom layer is 3 bricks deep.
@@ -1191,7 +1191,7 @@ underneath. Potentially a QR code? Even using the &amp;quot;Select colour and sh
 all the top layer bricks will take a little while, but we are then rewarded with a valid QR code.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-04"&gt;
-&lt;h2&gt;Challenge 04 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 04&lt;/h2&gt;
 &lt;p&gt;Mobile challenge. I get a list of numbers, or definitions of numbers,
 and I have to arrange them in order. The easiest way to do this was to write them in a
 file and then use the linux &lt;code&gt;sort&lt;/code&gt; command to order them accordingly. Once I had the
@@ -1199,7 +1199,7 @@ list it was just a matter of ordering them in the right order on the phone, and 
 to get the egg.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-05"&gt;
-&lt;h2&gt;Challenge 05 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 05&lt;/h2&gt;
 &lt;p&gt;Another mobile challange. I get shown four bars, each one of which is controlled
 by some phone sensor. The middle two were easy to discover. Just by moving the phone I could
 see that the orientation and tilt controlled those. The top bar increased every 5 seconds. The
@@ -1209,7 +1209,7 @@ represents the time the phone has been charging since the app was run for the fi
 waited for the 5 second bar to fill up to collect my egg.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-06"&gt;
-&lt;h2&gt;Challenge 06 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 06&lt;/h2&gt;
 &lt;pre class="code console literal-block"&gt;
 &lt;span class="go"&gt;dah-dah-dit dit dah-dah-dah di-dah-dit dah-dah-dit dit dah-dah dah-di-dah-dit di-di-dah-dit di-dah-di-dit dah-di-dah-dah&lt;/span&gt;
 &lt;/pre&gt;
@@ -1218,7 +1218,7 @@ waited for the 5 second bar to fill up to collect my egg.&lt;/p&gt;
 change the system date to 3 months in the future. Resubmitted the password and was granted the egg.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-07"&gt;
-&lt;h2&gt;Challenge 07 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 07&lt;/h2&gt;
 &lt;p&gt;Mobile challange. I need to navigate a Google street view style app to search for the
 egg. I was actually surprised how easy it was to find. On the second screen
 I looked up and there it was, in the sky. Easy right? Well, once I capped the image, I brought
@@ -1226,7 +1226,7 @@ it into Gimp and manipulated it. Took quite a bit of cleanup and contrast tweaki
 but I got there in the end.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-08"&gt;
-&lt;h2&gt;Challenge 08 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 08&lt;/h2&gt;
 &lt;p&gt;So from a spreadsheet ID I have to find this particular spreadsheet? Like any sensible person
 I avoid working with spreadsheets as much as I can, so I had to investigate how Google
 docs uses these IDs. Luckily once you create a new sheet, you can already identify the ID in the URL.
@@ -1239,7 +1239,7 @@ on content. So that would have been the easy way.&lt;/p&gt;
 pasted the colums in order and snapped the code. Tedious, but produces results.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-09"&gt;
-&lt;h2&gt;Challenge 09 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 09&lt;/h2&gt;
 &lt;p&gt;Mobile challenge. The app's splash screen is egg #9, but distorted. With some
 skilled timing I screen capped it and imported it into Pixelmator, where I
 used the bulge tool to undistort it enough to be able to scan it.&lt;/p&gt;
@@ -1247,7 +1247,7 @@ used the bulge tool to undistort it enough to be able to scan it.&lt;/p&gt;
 this was simpler at the time.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-10"&gt;
-&lt;h2&gt;Challenge 10 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 10&lt;/h2&gt;
 &lt;p&gt;Thumper's got egg 10? Where could he have taken it? Initially I decided
 to look in the other challenges and there is one challenge that has a banner
 at the bottom. It is an advert for Thumper's info sec training course. Clicking
@@ -1259,13 +1259,13 @@ so all we do it replace the user &lt;code&gt;hops&lt;/code&gt; with &lt;code&gt;
 where he's hidden the egg.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-11"&gt;
-&lt;h2&gt;Challenge 11 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 11&lt;/h2&gt;
 &lt;p&gt;I was expecting this to be a bit harder, but I just downloaded the files,
 opened them up in Thunderbird and found a message with attachments. Downloading
 the attachment gives you the egg.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-12"&gt;
-&lt;h2&gt;Challenge 12 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 12&lt;/h2&gt;
 &lt;p&gt;A quiz! Simple of course. Well, this is Hacky Easter, so no. The fields are all
 incorrectly configured. Look at the source and you can see:&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -1283,7 +1283,7 @@ then I noticed that the submit button had &lt;code&gt;value=&amp;quot;false&amp;
 to the egg.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-13"&gt;
-&lt;h2&gt;Challenge 13 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 13&lt;/h2&gt;
 &lt;p&gt;This challenge had me going for quite a while. A great example of how you learn
 to observe information. Downloading the video I see a 15 minute video that has a
 different QR code every second (approx). Each QR code resolves to a egg style
@@ -1298,7 +1298,7 @@ egg. I used a different barcode scanner to scan this code and was given a URL. R
 in the video where the correct QR is shown.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-14"&gt;
-&lt;h2&gt;Challenge 14 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 14&lt;/h2&gt;
 &lt;p&gt;On a hunch I just decided to use a 2d barcode scanner to scan the code and see
 what happens. Oh, it gives us an egg string. But the app's scanner will only accept
 2d codes. Not to worry. Using duckduckgo's qr code creator we can just enter the string
@@ -1306,7 +1306,7 @@ we get from the 1d code, and in return we get a 2d code which we can scan with t
 Hacky Easter app.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-15"&gt;
-&lt;h2&gt;Challenge 15 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 15&lt;/h2&gt;
 &lt;p&gt;This one was fiendish for me. In the end I actually took apart the APK and
 disassembled the code to try and see what this does. From this I could see
 that it stores the pics on your SD card. It also runs some analysis on the images,
@@ -1321,7 +1321,7 @@ to give me the complete egg.&lt;/p&gt;
 &lt;p&gt;Was a little bit hit and miss with the pic taking, but nice idea for a challenge.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-16"&gt;
-&lt;h2&gt;Challenge 16 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 16&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Ghosts only come out when it's dark...&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;This required a few things: a keen eye, and knowledge of crypto.&lt;/p&gt;
 &lt;p&gt;So firstly we know that we need to make it dark or something. After a while
@@ -1358,39 +1358,39 @@ that's the &lt;code&gt;chaining&lt;/code&gt; part, as well as indicating we shou
 &lt;p&gt;No initialisation vector was required, so you can ignore the warning.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-17"&gt;
-&lt;h2&gt;Challenge 17 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 17&lt;/h2&gt;
 &lt;p&gt;There's no real way to spot the difference in the images with your eyes. So the
 easiest way is to bring them into Gimp on separate layers. Then I adjusted the top
 layer's blend mode to &amp;quot;difference&amp;quot; so that I could see which pixels differ. The image
 goes black indicating that there's no differences. Impossible!&lt;/p&gt;
 &lt;p&gt;Now thinking that there must be differences I figured that they might be so small
 that they appear black. I maxed the contrast and brightness to get:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/0iAoovp.jpg&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/0iAoovp.jpg" /&gt;
 &lt;p&gt;Now the QR code is in the left eye, and a target shape in the right. The target
 needs to be used to invert the pixels in the QR code. Once done, snap the code
 and move on.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-18"&gt;
-&lt;h2&gt;Challenge 18 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 18&lt;/h2&gt;
 &lt;p&gt;Once we visit the site we get asked to authenticate. No doubt the details will be in
 the pcap file, so let's open that. We can see a failed auth followed by a successful
 one. Inspect the relevant packet and we get the login:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/dhLNYS9.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/dhLNYS9.png" style="width: 600px;" /&gt;
 &lt;p&gt;Using this to login we are presented with another login form. Trying the same
 credentials gives a &amp;quot;Payment required&amp;quot; page. Heading back to the pcap file let's
 see if we can't find some details for this part too. Ah, right there at the bottom.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/Gp45s1R.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/Gp45s1R.png" style="width: 600px;" /&gt;
 &lt;p&gt;This time however we need to pass the hash and login details via POST. Either
 edit the form, or use a tool like Zap or Burp proxy, to add this data to the POST
 and we have our egg.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-19"&gt;
-&lt;h2&gt;Challenge 19 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 19&lt;/h2&gt;
 &lt;p&gt;Not found.&lt;/p&gt;
 &lt;p&gt;I will add a solution here later.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-20"&gt;
-&lt;h2&gt;Challenge 20 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 20&lt;/h2&gt;
 &lt;p&gt;The big clue here is robots. Why do we love robots? &lt;code&gt;robots.txt&lt;/code&gt; is why. Taking a
 look at it I can see&lt;/p&gt;
 &lt;pre class="code html literal-block"&gt;
@@ -1425,7 +1425,7 @@ I see&lt;/p&gt;
 &lt;code&gt;http://hackyeaster.hacking-lab.com//hackyeaster/bots/ruof.html&lt;/code&gt; and get the egg/&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-21"&gt;
-&lt;h2&gt;Challenge 21 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 21&lt;/h2&gt;
 &lt;p&gt;I am told that &lt;code&gt;blue&lt;/code&gt; is &lt;code&gt;110&lt;/code&gt;. I took a guess that therefore red will be &lt;code&gt;011&lt;/code&gt; and
 green &lt;code&gt;101&lt;/code&gt;. Basically the binary represents the RGB values inverted. Applying this
 I wrote a script to translate the colours to a binary string and then conver that to ASCII
@@ -1460,7 +1460,7 @@ which gave me the egg's URL.&lt;/p&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="challenge-22"&gt;
-&lt;h2&gt;Challenge 22 #&lt;/h2&gt;
+&lt;h2&gt;Challenge 22&lt;/h2&gt;
 &lt;p&gt;Hash cracking. I am new to this, but boy did I enjoy this challenge because I learned
 a lot! I decided to use &lt;a class="reference external" href="https://hashcat.net/oclhashcat/"&gt;hashcat&lt;/a&gt; for all the hashes.&lt;/p&gt;
 &lt;p&gt;Let's begin:&lt;/p&gt;
@@ -1959,8 +1959,7 @@ can do&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 08 May 2015 13:00:00 +0100</pubDate><guid>tag:,2015-05-08:2015/05/08/the-joys-of-server-ownership/</guid></item><item><title>How's that Pizza coming along?</title><link>/2015/04/15/hows-that-pizza-coming-along/</link><description>&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: Published what I have done so far &lt;a class="reference external" href="https://github.com/Svenito/dominos"&gt;on my Github&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Having been a bit busy with other things recently, I've not mentioned the Domino's
 thing for a while. So in case anyone is wondering where I am with this:&lt;/p&gt;
-&lt;p&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;&lt;a class="reference external" href="https://asciinema.org/a/17706.js"&gt;https://asciinema.org/a/17706.js&lt;/a&gt;&amp;quot; id=&amp;quot;asciicast-17706&amp;quot; async&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
-&lt;p&gt;Basically I've reworked how the store finder works. I've collapsed the whole store finding and
+&lt;script type="text/javascript" src="https://asciinema.org/a/17706.js" id="asciicast-17706" async&gt;&lt;/script&gt;&lt;p&gt;Basically I've reworked how the store finder works. I've collapsed the whole store finding and
 delivery postcode stuff into one &lt;code&gt;locate_store&lt;/code&gt; call.
 Enter your postcode and it'll get the nearest delivery capable store and select it.
 Much simpler, as you can see.&lt;/p&gt;
@@ -1968,7 +1967,7 @@ Much simpler, as you can see.&lt;/p&gt;
 delivery address. The payment side of things is coming along, but is only in debug
 at the moment.&lt;/p&gt;
 &lt;div class="section" id="what-s-planned"&gt;
-&lt;h2&gt;What's planned ###&lt;/h2&gt;
+&lt;h2&gt;What's planned&lt;/h2&gt;
 &lt;p&gt;I want to actually place a &lt;em&gt;cash on delivery&lt;/em&gt; order and eat a CLI pizza. Once that's finished,
 I will clean up the project, put it on Github, and package it for &lt;em&gt;pip&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Then I'll get to work on investigating if I can handle card payments via this tool too. Certainly
@@ -2031,14 +2030,14 @@ upper, lower, digits          | 62              | 56,800,235,584
 upper, lower, digits, special | 94              | 689,869,781,056
 &lt;/pre&gt;
 &lt;div class="section" id="no-rules"&gt;
-&lt;h2&gt;No rules ##&lt;/h2&gt;
+&lt;h2&gt;No rules&lt;/h2&gt;
 &lt;p&gt;Using any combination of characters the number of possible passwords is &lt;em&gt;689,869,781,056&lt;/em&gt;.
 It would take &lt;em&gt;1943.29 seconds&lt;/em&gt; (689,869,781,056 / 355,000,000) to crack this password.
 That's just over half an hour.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Attack time&lt;/em&gt;: 1943.29seconds&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="at-least-one-upper-case"&gt;
-&lt;h2&gt;At least one upper case ##&lt;/h2&gt;
+&lt;h2&gt;At least one upper case&lt;/h2&gt;
 &lt;p&gt;If we are forced to chose at least one upper case character, we are also saying that
 there are no passwords now with just lowercase characters. The number of possible
 combinations is now &lt;em&gt;689,869,781,056 - 308,915,776 = 689,560,865,280&lt;/em&gt;, or &lt;em&gt;99%&lt;/em&gt; of
@@ -2046,7 +2045,7 @@ the original search space. This is a small impact of only 1 second.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Attack time&lt;/em&gt;: 1942.42seconds&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="at-least-one-upper-case-and-one-digit"&gt;
-&lt;h2&gt;At least one upper case and one digit ##&lt;/h2&gt;
+&lt;h2&gt;At least one upper case and one digit&lt;/h2&gt;
 &lt;p&gt;Now we know that there are no passwords with just lowercase, or with lower and uppercase only.
 Therefore we can also remove these from the list of possibilities. Our new number is now
 &lt;em&gt;689,869,781,056 - 308,915,776 - 19,770,609,664 = 669,790,255,616&lt;/em&gt; or &lt;em&gt;97%&lt;/em&gt; of our search space.
@@ -2055,7 +2054,7 @@ still not much&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Attack time&lt;/em&gt;: 1886.73seconds&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="must-contain-all-of-the-above"&gt;
-&lt;h2&gt;Must contain all of the above ##&lt;/h2&gt;
+&lt;h2&gt;Must contain all of the above&lt;/h2&gt;
 &lt;p&gt;Upper, lower, digits, and special all need to be present. Therefore we can remove all the
 other possiblities for a grand total of:
 &lt;em&gt;689,869,781,056 - 308,915,776 - 19,770,609,664 - 56,800,235,584 = 612,990,020,032&lt;/em&gt; or
@@ -2063,7 +2062,7 @@ other possiblities for a grand total of:
 &lt;p&gt;&lt;em&gt;Attack time&lt;/em&gt;: 1726.73seconds&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="conclusion"&gt;
-&lt;h2&gt;Conclusion ##&lt;/h2&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Although contrived, this scenario should indicate that &lt;em&gt;forcing&lt;/em&gt; people to do
 things in the interest of security can help attackers too. If we are allowed
 to use any character out of the full set, an attack would have taken 4 minutes more than
@@ -2663,16 +2662,16 @@ Nmap done: 1 IP address (1 host up) scanned in 6.46 sconds&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;So I can see the host is at &lt;code&gt;192.168.56.103&lt;/code&gt; and has ports &lt;em&gt;80, 443, and 8080&lt;/em&gt;
 open. Browsing to the address presents an animated gif.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/qgkgkgg.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/qgkgkgg.png" /&gt;
 &lt;p&gt;My initial reaction is
 to look at the source, but here I only see the &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag and the image filename.
 The image filename could be useful later, but right now I see no use for it.&lt;/p&gt;
 &lt;p&gt;In that case let's see if the SSL port holds anything more interesting.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/wvHo8ru.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/wvHo8ru.png" /&gt;
 &lt;p&gt;Nice, looks like I'm getting somewhere. I follow this link to a wordpress site
 which sells candy. Generally browsing the site I notice it's a Bitnami install
 of a Wordpress site, running a few plugins.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/SHEXup3.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/SHEXup3.png" style="width: 600px;" /&gt;
 &lt;p&gt;Before I start work on that, let me just see what's at port &lt;em&gt;8080&lt;/em&gt;. Ah, it's a
 non &lt;em&gt;https&lt;/em&gt; version of the wordpress site. I'm going to use that instead
 of the &lt;em&gt;https&lt;/em&gt; version to avoid any certificate issues and generally make life
@@ -2781,16 +2780,16 @@ successful with getting anything out of it.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Ok, thinking cap back on.... I need a different angle of attack.&lt;/p&gt;
 &lt;p&gt;Revisiting the main wordpress site there is something a bit unusual.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/2ddRfdF.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/2ddRfdF.png" /&gt;
 &lt;p&gt;Did I miss something? Did I get done by a Jedi mindtrick? Let's see. I'll
 head back to the main site and try and find some other pages with &lt;em&gt;DirBuster&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;This is how I set it up&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/auVPaoO.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/auVPaoO.png" style="width: 600px;" /&gt;
 &lt;p&gt;Using this list I got lucky and received two interesting hits after short while&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/l647X5u.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/l647X5u.png" style="width: 600px;" /&gt;
 &lt;p&gt;I've decided to hold back on on the &lt;code&gt;phpmyadmin&lt;/code&gt; and investigate the &lt;code&gt;login.php&lt;/code&gt;
 first. This is what lies at the end of that URL&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/c8aSx4n.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/c8aSx4n.png" /&gt;
 &lt;p&gt;I could just start attacking this with various SQLi strings, but the
 beauty of attacking a virtual machine is that I can use tools without the fear
 of breaking someone else's stuff. Roll out &lt;code&gt;sqlmap&lt;/code&gt; and let's see what we can find:&lt;/p&gt;
@@ -2939,7 +2938,7 @@ stacks. For levels 5, 6, 7, and 8, see &lt;a class="reference external" href="ht
 &lt;p&gt;I've not included the passwords here, so you'll have to work through
 the exercises yourself (or find them elsewhere :))&lt;/p&gt;
 &lt;div class="section" id="level-00"&gt;
-&lt;h2&gt;Level 00 ##&lt;/h2&gt;
+&lt;h2&gt;Level 00&lt;/h2&gt;
 &lt;pre class="code c literal-block"&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 #include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
@@ -3014,7 +3013,7 @@ cat /etc/narnia_pass/narnia1
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-01"&gt;
-&lt;h2&gt;Level 01 ##&lt;/h2&gt;
+&lt;h2&gt;Level 01&lt;/h2&gt;
 &lt;pre class="code c literal-block"&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;
@@ -3048,7 +3047,7 @@ is the shellcode to do just that.&lt;/p&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-02"&gt;
-&lt;h2&gt;Level 02 ##&lt;/h2&gt;
+&lt;h2&gt;Level 02&lt;/h2&gt;
 &lt;pre class="code c literal-block"&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 #include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
@@ -3189,7 +3188,7 @@ of the sled&lt;/p&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-03"&gt;
-&lt;h2&gt;Level 03 ##&lt;/h2&gt;
+&lt;h2&gt;Level 03&lt;/h2&gt;
 &lt;pre class="code c literal-block"&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 #include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;sys/types.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
@@ -3260,7 +3259,7 @@ first path has to be a valid path, so that it can be written to. That's why we h
 the double &lt;code&gt;/tmp&lt;/code&gt; setup.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-04"&gt;
-&lt;h2&gt;Level 04 ##&lt;/h2&gt;
+&lt;h2&gt;Level 04&lt;/h2&gt;
 &lt;pre class="code c literal-block"&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 #include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
@@ -3418,7 +3417,7 @@ on to &lt;a class="reference external" href="http://overthewire.org/wargames/lev
 have hints, so there won't be any links to each of the levels.&lt;/p&gt;
 &lt;p&gt;Without further ado, let's get cracking.&lt;/p&gt;
 &lt;div class="section" id="level-0-1"&gt;
-&lt;h2&gt;Level 0 -&amp;gt; 1 #&lt;/h2&gt;
+&lt;h2&gt;Level 0 -&amp;gt; 1&lt;/h2&gt;
 &lt;p&gt;Logging in with &lt;code&gt;leviathan0:leviathan0&lt;/code&gt; we take a quick look around to see
 what we have to work with, if anything&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
@@ -3446,7 +3445,7 @@ grep for &lt;em&gt;leviathan&lt;/em&gt; in this file&lt;/p&gt;
 &lt;p&gt;And there it is&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-1-2"&gt;
-&lt;h2&gt;Level 1 -&amp;gt; 2 #&lt;/h2&gt;
+&lt;h2&gt;Level 1 -&amp;gt; 2&lt;/h2&gt;
 &lt;p&gt;As usual we login, do a &lt;code&gt;ls -la&lt;/code&gt; and see a &lt;code&gt;check&lt;/code&gt; binary that is setuid &lt;code&gt;leviathan2&lt;/code&gt;.
 Let's run it and see what happens&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
@@ -3530,7 +3529,7 @@ puts(&amp;quot;Wrong password, Good Bye ...&amp;quot;Wrong password, Good Bye ..
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-2-3"&gt;
-&lt;h2&gt;Level 2 -&amp;gt; 3 #&lt;/h2&gt;
+&lt;h2&gt;Level 2 -&amp;gt; 3&lt;/h2&gt;
 &lt;p&gt;This time we are given a file called &lt;code&gt;printfile&lt;/code&gt; that is setuid &lt;code&gt;leviathan3&lt;/code&gt;.
 Initially you'd think we can just print the contents of the &lt;code&gt;leviathan3&lt;/code&gt; password
 file. Nope, there's a check in the binary preventing us from doing so.&lt;/p&gt;
@@ -3563,7 +3562,7 @@ then &lt;code&gt;cat&lt;/code&gt; to print the files. let me show you&lt;/p&gt;
 passed to &lt;code&gt;cat&lt;/code&gt; which interprets it as two files, hence the &lt;code&gt;/bin/cat: other: No such file or directory&lt;/code&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-3-4"&gt;
-&lt;h2&gt;Level 3 -&amp;gt; 4 #&lt;/h2&gt;
+&lt;h2&gt;Level 3 -&amp;gt; 4&lt;/h2&gt;
 &lt;p&gt;Another program that prompts for a pass. Usual approaches of &lt;code&gt;strings&lt;/code&gt; and checking
 the &lt;em&gt;disass&lt;/em&gt; doesn't reveal much, but the function &lt;code&gt;do_stuff&lt;/code&gt; does call &lt;code&gt;strcmp&lt;/code&gt;
 and we know now that we can use &lt;code&gt;ltrace&lt;/code&gt; to help us out&lt;/p&gt;
@@ -3592,7 +3591,7 @@ is happening &lt;code&gt;strcmp(&amp;quot;d\n&amp;quot;, &amp;quot;snlprintf\n&a
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-4-5"&gt;
-&lt;h2&gt;Level 4 -&amp;gt; 5 #&lt;/h2&gt;
+&lt;h2&gt;Level 4 -&amp;gt; 5&lt;/h2&gt;
 &lt;p&gt;Inside the hidden directory (you always run &lt;code&gt;ls -la&lt;/code&gt;, right?) we have a bin file.
 It's executable, so let's run it&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
@@ -3603,7 +3602,7 @@ It's executable, so let's run it&lt;/p&gt;
 gives us &lt;code&gt;Tith4cokei&lt;/code&gt;. Testing it out takes us to&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-5-6"&gt;
-&lt;h2&gt;Level 5 -&amp;gt; 6 #&lt;/h2&gt;
+&lt;h2&gt;Level 5 -&amp;gt; 6&lt;/h2&gt;
 &lt;p&gt;We have a binary called &lt;code&gt;leviathan5&lt;/code&gt; that is suid &lt;code&gt;leviathan6&lt;/code&gt;. Upon running it,
 we get a message that file &lt;code&gt;tmp/file.log&lt;/code&gt; cannot be found. If you create one, it
 will open it, print its contents, close it, and then delete it. So let's give the
@@ -3616,7 +3615,7 @@ old symlink method a try:&lt;/p&gt;
 &lt;p&gt;Result.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-6-7"&gt;
-&lt;h2&gt;Level 6 -&amp;gt; 7 #&lt;/h2&gt;
+&lt;h2&gt;Level 6 -&amp;gt; 7&lt;/h2&gt;
 &lt;p&gt;We need a 4 digit pass code to access this. I opted for brute force. For 4 digits
 that's by far the simplest and quickest way. After looking at the disassembly, we
 see that it will call &lt;code&gt;/bin/sh&lt;/code&gt; and drop us to a shell, so we don't need an exit condition.&lt;/p&gt;
@@ -3649,325 +3648,15 @@ enetering your postcode and the nearest delivery store to that postcode is
 automatically selected. Setting the address also works and isn't just a stub,
 and finally it is also able to determine if cash on delivery is available to you,
 albeit at the end of the process, but that's how they do it.&lt;/p&gt;
-&lt;p&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;&lt;a class="reference external" href="https://asciinema.org/a/17706.js"&gt;https://asciinema.org/a/17706.js&lt;/a&gt;&amp;quot; id=&amp;quot;asciicast-17706&amp;quot; async&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
-&lt;p&gt;So the API is coming along and the CLI interface (which is mostly just a proof
+&lt;script type="text/javascript" src="https://asciinema.org/a/17706.js" id="asciicast-17706" async&gt;&lt;/script&gt;&lt;p&gt;So the API is coming along and the CLI interface (which is mostly just a proof
 of concept for the API) is also shaping up. Once cash on delivery orders are working
 I reckon it's time to release it. Then work on investigating how credit card orders
 are handled will start.&lt;/p&gt;
 &lt;p&gt;It's a fun, fairly pointless, and interesting ride :)&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/Svenito/dominos"&gt;Now on Github&lt;/a&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sun, 15 Mar 2015 06:00:00 +0000</pubDate><guid>tag:,2015-03-15:2015/03/15/dominos-cli-update/</guid><category>[]</category></item><item><title>Let's crack Bandit Part 1</title><link>/2015/03/13/lets-crack-bandit-part-1/</link><description>&lt;p&gt;Let's give Bandit from the &lt;a class="reference external" href="http://overthewire.org/wargames"&gt;overthewire war games&lt;/a&gt;
-a going over. I did this a while back, but never really wrote it up,
-so I'm going to do it again and write it up. Remember that you can copy
-and paste from all the &lt;a class="reference external" href="https://asciinema.org"&gt;asciinema&lt;/a&gt; videos below.&lt;/p&gt;
-&lt;p&gt;Bandit is a CTF/wargame for beginners and a great intro to various
-linux tools as well. I won't repeat the level summary for each post, instead
-there's a link to the original page for each section.&lt;/p&gt;
-&lt;p&gt;I'd be interested to know if the asciinema files are preferable over the
-plain text format or not. Let me know in the comments below. I've used
-asciinema in the first level only, but would post the asciinema vids if they
-are useful.&lt;/p&gt;
-&lt;p&gt;&amp;lt;section id=&amp;quot;table-of-contents&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt;
-&amp;lt;header&amp;gt;
-&amp;lt;h3&amp;gt;Contents&amp;lt;/h3&amp;gt;
-&amp;lt;/header&amp;gt;
-&amp;lt;div id=&amp;quot;drawer&amp;quot; markdown=&amp;quot;1&amp;quot;&amp;gt;
-*  Auto generated table of contents
-{:toc}
-&amp;lt;/div&amp;gt;
-&amp;lt;/section&amp;gt;&amp;lt;!-- /#table-of-contents --&amp;gt;&lt;/p&gt;
-&lt;div class="section" id="level-0-1"&gt;
-&lt;h2&gt;Level 0 -&amp;gt; 1 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit1.html"&gt;level 00&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Not much to do here but login and read a file so:&lt;/p&gt;
-&lt;p&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;&lt;a class="reference external" href="https://asciinema.org/a/17664.js"&gt;https://asciinema.org/a/17664.js&lt;/a&gt;&amp;quot; id=&amp;quot;asciicast-17664&amp;quot; async&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-1-2"&gt;
-&lt;h2&gt;Level 1 -&amp;gt; 2 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit2.html"&gt;level 01&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Using the password from the last session, let's login and look at what's in
-:code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-`:code:`.&lt;/span&gt; The trick here is that &lt;span class="pre"&gt;`:code:`-&lt;/span&gt;&lt;/tt&gt; is a bit tricky to pass as an argument. Try
-it to see what happens. All we need to do it prefix it with the path:&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit1&amp;#64;melinda:~$&lt;/span&gt; ls -la
-&lt;span class="go"&gt;total 24
--rw-r-----   1 bandit2 bandit1   33 Jun  6  2013 -
-drwxr-xr-x   2 root    root    4096 Jun  6  2013 .
-drwxr-xr-x 160 root    root    4096 Oct 17  2013 ..
--rw-r--r--   1 root    root     220 Apr  3  2012 .bash_logout
--rw-r--r--   1 root    root    3486 Apr  3  2012 .bashrc
--rw-r--r--   1 root    root     675 Apr  3  2012 .profile
-&lt;/span&gt;&lt;span class="gp"&gt;bandit1&amp;#64;melinda:~$&lt;/span&gt; cat ./-
-&lt;span class="go"&gt;CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-2-3"&gt;
-&lt;h2&gt;Level 2 -&amp;gt; 3 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit3.html"&gt;level 02&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Not much trickiness here, merely the spaces in the filename. But with TAB
-completion the escaping of the spaces will be handled for us:&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit2&amp;#64;melinda:~$&lt;/span&gt; ls -la
-&lt;span class="go"&gt;total 24
-drwxr-xr-x   2 root    root    4096 Jun  6  2013 .
-drwxr-xr-x 160 root    root    4096 Oct 17  2013 ..
--rw-r--r--   1 root    root     220 Apr  3  2012 .bash_logout
--rw-r--r--   1 root    root    3486 Apr  3  2012 .bashrc
--rw-r--r--   1 root    root     675 Apr  3  2012 .profile
--rw-r-----   1 bandit3 bandit2   33 Jun  6  2013 spaces in this filename
-&lt;/span&gt;&lt;span class="gp"&gt;bandit2&amp;#64;melinda:~$&lt;/span&gt; cat ./spaces&lt;span class="se"&gt;\ &lt;/span&gt;in&lt;span class="se"&gt;\ &lt;/span&gt;this&lt;span class="se"&gt;\ &lt;/span&gt;filename
-&lt;span class="go"&gt;UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-3-4"&gt;
-&lt;h2&gt;Level 3 -&amp;gt; 4 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit4.html"&gt;level 03&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Hidden file? Just do a long listing with :code:&lt;tt class="docutils literal"&gt;ls &lt;span class="pre"&gt;-la&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit3&amp;#64;melinda:~$&lt;/span&gt; ls -la
-&lt;span class="go"&gt;total 24
-drwxr-xr-x   3 root root 4096 Jun  6  2013 .
-drwxr-xr-x 160 root root 4096 Oct 17  2013 ..
--rw-r--r--   1 root root  220 Apr  3  2012 .bash_logout
--rw-r--r--   1 root root 3486 Apr  3  2012 .bashrc
--rw-r--r--   1 root root  675 Apr  3  2012 .profile
-drwxr-xr-x   2 root root 4096 Jun  6  2013 inhere
-&lt;/span&gt;&lt;span class="gp"&gt;bandit3&amp;#64;melinda:~$&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; inhere/
-&lt;span class="gp"&gt;bandit3&amp;#64;melinda:~/inhere$&lt;/span&gt; ls
-&lt;span class="gp"&gt;bandit3&amp;#64;melinda:~/inhere$&lt;/span&gt; ls -la
-&lt;span class="go"&gt;total 12
-drwxr-xr-x 2 root    root    4096 Jun  6  2013 .
-drwxr-xr-x 3 root    root    4096 Jun  6  2013 ..
--rw-r----- 1 bandit4 bandit3   33 Jun  6  2013 .hidden
-&lt;/span&gt;&lt;span class="gp"&gt;bandit3&amp;#64;melinda:~/inhere$&lt;/span&gt; cat .hidden
-&lt;span class="go"&gt;pIwrPrtPN36QITSp3EQaw936yaFoFgAB&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-4-5"&gt;
-&lt;h2&gt;Level 4 -&amp;gt; 5 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit5.html"&gt;level 04&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;We need to find a human readable file in the &lt;code&gt;inhere&lt;/code&gt; directory. Using the
-power of bash:&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit4&amp;#64;melinda:~$&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; inhere/
-&lt;span class="gp"&gt;bandit4&amp;#64;melinda:~/inhere$&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; f in &lt;span class="k"&gt;$(&lt;/span&gt;ls&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; file ./&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;
-&lt;span class="go"&gt;./-file00: data
-./-file01: data
-./-file02: data
-./-file03: data
-./-file04: data
-./-file05: data
-./-file06: data
-./-file07: ASCII text
-./-file08: data
-./-file09: data
-&lt;/span&gt;&lt;span class="gp"&gt;bandit4&amp;#64;melinda:~/inhere$&lt;/span&gt; cat ./-file07
-&lt;span class="go"&gt;koReBOKuIDDepwhWk7jZC0RTdopnAYKh&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Change into the &lt;code&gt;inhere&lt;/code&gt; directory and then for each file returned by the &lt;code&gt;ls&lt;/code&gt;
-command, get the filetype with the &lt;code&gt;file&lt;/code&gt; command. Only one which is ASCII, so
-that's a good candidate. Sure enough, it's the one we are after.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-5-6"&gt;
-&lt;h2&gt;Level 5 -&amp;gt; 6 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit6.html"&gt;level 05&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;This is similar to the previous level, except now we are looking for something
-with a specific size. Luckily the &lt;code&gt;find&lt;/code&gt; command is just right for this:&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit5&amp;#64;melinda:~$&lt;/span&gt; find ./ -size 1033c
-&lt;span class="go"&gt;./inhere/maybehere07/.file2
-&lt;/span&gt;&lt;span class="gp"&gt;bandit5&amp;#64;melinda:~$&lt;/span&gt; file ./inhere/maybehere07/.file2
-&lt;span class="go"&gt;./inhere/maybehere07/.file2: ASCII text, with very long lines
-&lt;/span&gt;&lt;span class="gp"&gt;bandit5&amp;#64;melinda:~$&lt;/span&gt; cat !$
-&lt;span class="go"&gt;cat ./inhere/maybehere07/.file2
-DXjZPULLxYr17uwoI01bNLQbtFemEgo7&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-6-7"&gt;
-&lt;h2&gt;Level 6 -&amp;gt; 7 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit7.html"&gt;level 06&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Now we need to broaden our search. Once again &lt;code&gt;find&lt;/code&gt; to the rescue. We know
-the user and group that own the file and its size. The user and group might
-be enough already, so let's give that a go&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit6&amp;#64;melinda:~$&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; /
-&lt;span class="gp"&gt;bandit6&amp;#64;melinda:/$&lt;/span&gt; find -user bandit7 -group bandit6  2&amp;gt; /dev/null
-&lt;span class="go"&gt;./var/lib/dpkg/info/bandit7.password
-&lt;/span&gt;&lt;span class="gp"&gt;bandit6&amp;#64;melinda:/$&lt;/span&gt; cat ./var/lib/dpkg/info/bandit7.password
-&lt;span class="go"&gt;HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Perfect. I piped the &lt;code&gt;stderr&lt;/code&gt; to &lt;code&gt;/dev/null&lt;/code&gt; so it doesn't clutter the output
-with files that it can't read.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-7-8"&gt;
-&lt;h2&gt;Level 7 -&amp;gt; 8 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit8.html"&gt;Level 07&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;To find things in a file, &lt;code&gt;grep&lt;/code&gt; is usually the answer. However it's probably
-wise to check the file format first in case all the words are smushed together
-and we need to filter grep again.&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit7&amp;#64;melinda:~$&lt;/span&gt; head data.txt
-&lt;span class="go"&gt;Kunming's       0D0KZ3TdLRBXD8lyd7Bj2hAqnxaMInQe
-multitude's     8MFZa8yOjTt6m8PvxteTp7XTDFLiuFAk
-audibility      ZeLj0yAw7ylmEoLxSUEqF4iB43c9DN4h
-unadvised       Pgp8X2LSVdNrmIKcJ7Oe8eqTzEVfhGbR
-Brecht's        uKyKryNUZYFuTQpwRlDqucLLIUbiIMF0
-Alvin   IpQIV6mpjticdB790obqXAvYkAgnDV8E
-insufficient    cgHhWVJahfDqFIe82vOliryQQ8ihGlGN
-Sauterne        UhPBp0A04GkIRfvZnUt1UdwlKU2ViYUd
-cluster 1GeFZ0B6rsEtJ5Sqb5h8Wv7UwG15DQzb
-ember's f2XPIE1iDHW9oHPyodPyfTz87DAbWmXu
-&lt;/span&gt;&lt;span class="gp"&gt;bandit7&amp;#64;melinda:~$&lt;/span&gt; grep millionth data.txt
-&lt;span class="go"&gt;millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Luckily it was one word and password per line, so grepping the file worked
-fine.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-8-9"&gt;
-&lt;h2&gt;Level 8 -&amp;gt; 9 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit9.html"&gt;level 08&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;So the only way we know which entry is the password is that it occurs
-only once. For this the linux tool &lt;code&gt;uniq&lt;/code&gt; seems perfect. However it can
-only detect duplicate lines if they are next to each other. To fix this
-we also need to sort the contents of the file and then display only
-unique lines:&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit8&amp;#64;melinda:~$&lt;/span&gt; cat data.txt &lt;span class="p"&gt;|&lt;/span&gt; sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -u
-&lt;span class="go"&gt;UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-9-10"&gt;
-&lt;h2&gt;Level 9 -&amp;gt; 10 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit10.html"&gt;Level 09&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;This &lt;code&gt;data.txt&lt;/code&gt; file is in binary. So in order to find the strings we need
-to dump it as hex, or, even simpler, run it through &lt;code&gt;strings&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit9&amp;#64;melinda:~$&lt;/span&gt; strings data.txt  &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nv"&gt;grep&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt;
-&lt;span class="go"&gt;I========== the6
-========== password
-========== ism
-========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-10-11"&gt;
-&lt;h2&gt;Level 10 -&amp;gt; 11 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit11.html"&gt;Level 10&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Good ol base64. If you haven't seen it before, you'll get to see it a lot
-more if you carry on doing these kind of challenges. Simply done though:&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit10&amp;#64;melinda:~$&lt;/span&gt; cat data.txt  &lt;span class="p"&gt;|&lt;/span&gt; base64 -d
-&lt;span class="go"&gt;The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-11-12"&gt;
-&lt;h2&gt;Level 11 -&amp;gt; 12 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit12.html"&gt;level 11&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The description is a basically a verbose way of saying that the string
-has been encoded with rot13. The quickest way for me to un-rotate it, is
-using python:&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit11&amp;#64;melinda:~$&lt;/span&gt; cat data.txt
-&lt;span class="go"&gt;Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
-&lt;/span&gt;&lt;span class="gp"&gt;bandit11&amp;#64;melinda:~$&lt;/span&gt; python -c &lt;span class="s1"&gt;'import codecs;print codecs.decode(&amp;quot;5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh&amp;quot;, &amp;quot;rot13&amp;quot;)'&lt;/span&gt;
-&lt;span class="go"&gt;5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-12-13"&gt;
-&lt;h2&gt;Level 12 -&amp;gt; 13 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit13.html"&gt;Level 12&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;From here on it's going to get a little trickier. We know that data.txt is a hexdump
-of a binary, so first let's convert it back to a binary first with &lt;code&gt;xxd&lt;/code&gt;&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; cat data.txt &lt;span class="p"&gt;|&lt;/span&gt; xxd -r &amp;gt; data2
-&lt;/pre&gt;
-&lt;p&gt;Then we can find out the filetype of data2&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data2
-&lt;span class="go"&gt;data2: gzip compressed data, was &amp;quot;data2.bin&amp;quot;, from Unix, last modified: Fri Nov 14 10:32:20 2014, max compression&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;gzip&lt;/code&gt; it is. So uncompress that to data3&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; cat data2 &lt;span class="p"&gt;|&lt;/span&gt; zcat &amp;gt; data3
-&lt;/pre&gt;
-&lt;p&gt;and get its filetype next. I won't go over each step in detail as there's quite
-a few iterations. I'll post the console log of how I got to the flag and hopefully
-that should be clear enough.&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data3
-&lt;span class="go"&gt;data3: bzip2 compressed data, block size = 900k
-&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; bzcat data3 &amp;gt; data4
-&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data4
-&lt;span class="go"&gt;data4: gzip compressed data, was &amp;quot;data4.bin&amp;quot;, from Unix, last modified: Fri Nov 14 10:32:20 2014, max compression
-&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; cat data4 &lt;span class="p"&gt;|&lt;/span&gt; zcat &amp;gt; data5
-&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data5
-&lt;span class="go"&gt;data5: POSIX tar archive (GNU)
-&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; tar xf data5
-&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; ls
-&lt;span class="go"&gt;data.txt  data2  data2.bin  data3  data4  data5  data5.bin
-&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data5.bin
-&lt;span class="go"&gt;data5.bin: POSIX tar archive (GNU)
-&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; tar xf data5.bin
-&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; ls
-&lt;span class="go"&gt;data.txt  data2  data2.bin  data3  data4  data5  data5.bin  data6.bin
-&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data6.bin
-&lt;span class="go"&gt;data6.bin: bzip2 compressed data, block size = 900k
-&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; bzcat data6.bin &amp;gt; data7
-&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data7
-&lt;span class="go"&gt;data7: POSIX tar archive (GNU)
-&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; tar xf data7
-&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; ls
-&lt;span class="go"&gt;data.txt  data2  data2.bin  data3  data4  data5  data5.bin  data6.bin  data7  data8.bin
-&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data8.bin
-&lt;span class="go"&gt;data8.bin: gzip compressed data, was &amp;quot;data9.bin&amp;quot;, from Unix, last modified: Fri Nov 14 10:32:20 2014, max compression
-&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; cat data8.bin &lt;span class="p"&gt;|&lt;/span&gt; zcat &amp;gt; data9
-&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data9
-&lt;span class="go"&gt;data9: ASCII text
-&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; cat data9
-&lt;span class="go"&gt;The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Basically we identify, extract, repeat, until we're at the plain text file with the
-password.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-13-14"&gt;
-&lt;h2&gt;Level 13 -&amp;gt; 14 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit14.html"&gt;Level 13&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;We're given a lot of information here, and one of those is that we get the SSH
-key for the &lt;code&gt;bandit14&lt;/code&gt; user. We can use this to login as that user without knowing
-the password:&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit13&amp;#64;melinda:~$&lt;/span&gt; ssh -i ./sshkey.private bandit14&amp;#64;localhost
-&lt;span class="go"&gt;Could not create directory '/home/bandit13/.ssh'.
-The authenticity of host 'localhost (127.0.0.1)' can't be established.
-ECDSA key fingerprint is 05:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
-Are you sure you want to continue connecting (yes/no)? yes
-.
-.
-&lt;/span&gt;&lt;span class="gp"&gt;bandit14&amp;#64;melinda:~$&lt;/span&gt; cat /etc/bandit_pass/bandit14
-&lt;span class="go"&gt;4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;We pass the key as an argument to the ssh command, and connect to the localhost
-as bandit14. Then we can read the file with the password.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="level-14-15"&gt;
-&lt;h2&gt;Level 14 -&amp;gt; 15 #&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit15.html"&gt;Level 14&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;This level starts introducing some networking and how to interact with remote
-hosts. Well, in this case it's localhost, but the principle is the same.
-We need to connect to a specific port on localhost and then supply
-the current password. I'm using &lt;code&gt;netcat&lt;/code&gt; to do this&lt;/p&gt;
-&lt;pre class="code console literal-block"&gt;
-&lt;span class="gp"&gt;bandit14&amp;#64;melinda:~$&lt;/span&gt; nc localhost 30000
-&lt;span class="go"&gt;4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
-Correct!
-BfMYroe26WYalil77FoDi9qh59eK5xNr&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;All you get is a blank line when you've connected. The simply paste in the
-password you logged in with and hit enter.&lt;/p&gt;
-&lt;p&gt;Continues with &lt;a class="reference external" href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part2"&gt;Let's crack Bandit Part 2&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 13 Mar 2015 21:00:00 +0000</pubDate><guid>tag:,2015-03-13:2015/03/13/lets-crack-bandit-part-1/</guid></item><item><title>Let's crack Bandit Part 2</title><link>/2015/03/13/lets-crack-bandit-part-2/</link><description>&lt;p&gt;Continues on from &lt;a class="reference external" href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part1"&gt;Let's crack Bandit Part 1&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sun, 15 Mar 2015 06:00:00 +0000</pubDate><guid>tag:,2015-03-15:2015/03/15/dominos-cli-update/</guid><category>[]</category></item><item><title>Let's crack Bandit Part 2</title><link>/2015/03/13/lets-crack-bandit-part-2/</link><description>&lt;p&gt;Continues on from &lt;a class="reference external" href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part1"&gt;Let's crack Bandit Part 1&lt;/a&gt;&lt;/p&gt;
 &lt;div class="section" id="level-15-16"&gt;
-&lt;h2&gt;Level 15 -&amp;gt; 16 #&lt;/h2&gt;
+&lt;h2&gt;Level 15 -&amp;gt; 16&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit16.html"&gt;Level 15&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Eventhough this is very similar to the previous level, it's a little
 more complicated as we need to connect with SSL.
@@ -3988,7 +3677,7 @@ read:errno=0&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-16-17"&gt;
-&lt;h2&gt;Level 16 -&amp;gt; 17 #&lt;/h2&gt;
+&lt;h2&gt;Level 16 -&amp;gt; 17&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit17.html"&gt;Level 16&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Here we have a choice. We run a simple ping scan across the port range and then
 figure out which port is the right one by trying each one. Depending on the number
@@ -4076,7 +3765,7 @@ anyone other than the user who owns the file. Then simply&lt;/p&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-17-18"&gt;
-&lt;h2&gt;Level 17 -&amp;gt; 18 #&lt;/h2&gt;
+&lt;h2&gt;Level 17 -&amp;gt; 18&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit18.html"&gt;Level 17&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;We remain logged in as bandit17 from the previous level. To compare two files
 we need to do a &lt;code&gt;diff&lt;/code&gt;&lt;/p&gt;
@@ -4086,15 +3775,314 @@ we need to do a &lt;code&gt;diff&lt;/code&gt;&lt;/p&gt;
 &amp;lt; BS8bqB1kqkinKJjuxL6k072Qq9NRwQpR&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 13 Mar 2015 21:00:00 +0000</pubDate><guid>tag:,2015-03-13:2015/03/13/lets-crack-bandit-part-2/</guid></item><item><title>Solving Infosec n00bsCTF</title><link>/2015/03/11/solving-infosec-n00bsctf/</link><description>&lt;p&gt;The InfoSec Institue is running a &lt;a class="reference external" href="http://ctf.infosecinstitute.com/index.php"&gt;n00bsCTF&lt;/a&gt;,
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 13 Mar 2015 21:10:00 +0000</pubDate><guid>tag:,2015-03-13:2015/03/13/lets-crack-bandit-part-2/</guid></item><item><title>Let's crack Bandit Part 1</title><link>/2015/03/13/lets-crack-bandit-part-1/</link><description>&lt;p&gt;Let's give Bandit from the &lt;a class="reference external" href="http://overthewire.org/wargames"&gt;overthewire war games&lt;/a&gt;
+a going over. I did this a while back, but never really wrote it up,
+so I'm going to do it again and write it up. Remember that you can copy
+and paste from all the &lt;a class="reference external" href="https://asciinema.org"&gt;asciinema&lt;/a&gt; videos below.&lt;/p&gt;
+&lt;p&gt;Bandit is a CTF/wargame for beginners and a great intro to various
+linux tools as well. I won't repeat the level summary for each post, instead
+there's a link to the original page for each section.&lt;/p&gt;
+&lt;p&gt;I'd be interested to know if the asciinema files are preferable over the
+plain text format or not. Let me know in the comments below. I've used
+asciinema in the first level only, but would post the asciinema vids if they
+are useful.&lt;/p&gt;
+&lt;div class="section" id="level-0-1"&gt;
+&lt;h2&gt;Level 0 -&amp;gt; 1&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit1.html"&gt;level 00&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Not much to do here but login and read a file so:&lt;/p&gt;
+&lt;script type="text/javascript" src="https://asciinema.org/a/17664.js" id="asciicast-17664" async&gt;&lt;/script&gt;&lt;/div&gt;
+&lt;div class="section" id="level-1-2"&gt;
+&lt;h2&gt;Level 1 -&amp;gt; 2&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit2.html"&gt;level 01&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Using the password from the last session, let's login and look at what's in
+&lt;code&gt;-&lt;/code&gt;. The trick here is that &lt;cite&gt;:code:&lt;/cite&gt;-` is a bit tricky to pass as an argument. Try
+it to see what happens. All we need to do it prefix it with the path:&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit1&amp;#64;melinda:~$&lt;/span&gt; ls -la
+&lt;span class="go"&gt;total 24
+-rw-r-----   1 bandit2 bandit1   33 Jun  6  2013 -
+drwxr-xr-x   2 root    root    4096 Jun  6  2013 .
+drwxr-xr-x 160 root    root    4096 Oct 17  2013 ..
+-rw-r--r--   1 root    root     220 Apr  3  2012 .bash_logout
+-rw-r--r--   1 root    root    3486 Apr  3  2012 .bashrc
+-rw-r--r--   1 root    root     675 Apr  3  2012 .profile
+&lt;/span&gt;&lt;span class="gp"&gt;bandit1&amp;#64;melinda:~$&lt;/span&gt; cat ./-
+&lt;span class="go"&gt;CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-2-3"&gt;
+&lt;h2&gt;Level 2 -&amp;gt; 3&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit3.html"&gt;level 02&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Not much trickiness here, merely the spaces in the filename. But with TAB
+completion the escaping of the spaces will be handled for us:&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit2&amp;#64;melinda:~$&lt;/span&gt; ls -la
+&lt;span class="go"&gt;total 24
+drwxr-xr-x   2 root    root    4096 Jun  6  2013 .
+drwxr-xr-x 160 root    root    4096 Oct 17  2013 ..
+-rw-r--r--   1 root    root     220 Apr  3  2012 .bash_logout
+-rw-r--r--   1 root    root    3486 Apr  3  2012 .bashrc
+-rw-r--r--   1 root    root     675 Apr  3  2012 .profile
+-rw-r-----   1 bandit3 bandit2   33 Jun  6  2013 spaces in this filename
+&lt;/span&gt;&lt;span class="gp"&gt;bandit2&amp;#64;melinda:~$&lt;/span&gt; cat ./spaces&lt;span class="se"&gt;\ &lt;/span&gt;in&lt;span class="se"&gt;\ &lt;/span&gt;this&lt;span class="se"&gt;\ &lt;/span&gt;filename
+&lt;span class="go"&gt;UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-3-4"&gt;
+&lt;h2&gt;Level 3 -&amp;gt; 4&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit4.html"&gt;level 03&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hidden file? Just do a long listing with &lt;code&gt;ls -la&lt;/code&gt;&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit3&amp;#64;melinda:~$&lt;/span&gt; ls -la
+&lt;span class="go"&gt;total 24
+drwxr-xr-x   3 root root 4096 Jun  6  2013 .
+drwxr-xr-x 160 root root 4096 Oct 17  2013 ..
+-rw-r--r--   1 root root  220 Apr  3  2012 .bash_logout
+-rw-r--r--   1 root root 3486 Apr  3  2012 .bashrc
+-rw-r--r--   1 root root  675 Apr  3  2012 .profile
+drwxr-xr-x   2 root root 4096 Jun  6  2013 inhere
+&lt;/span&gt;&lt;span class="gp"&gt;bandit3&amp;#64;melinda:~$&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; inhere/
+&lt;span class="gp"&gt;bandit3&amp;#64;melinda:~/inhere$&lt;/span&gt; ls
+&lt;span class="gp"&gt;bandit3&amp;#64;melinda:~/inhere$&lt;/span&gt; ls -la
+&lt;span class="go"&gt;total 12
+drwxr-xr-x 2 root    root    4096 Jun  6  2013 .
+drwxr-xr-x 3 root    root    4096 Jun  6  2013 ..
+-rw-r----- 1 bandit4 bandit3   33 Jun  6  2013 .hidden
+&lt;/span&gt;&lt;span class="gp"&gt;bandit3&amp;#64;melinda:~/inhere$&lt;/span&gt; cat .hidden
+&lt;span class="go"&gt;pIwrPrtPN36QITSp3EQaw936yaFoFgAB&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-4-5"&gt;
+&lt;h2&gt;Level 4 -&amp;gt; 5&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit5.html"&gt;level 04&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We need to find a human readable file in the &lt;code&gt;inhere&lt;/code&gt; directory. Using the
+power of bash:&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit4&amp;#64;melinda:~$&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; inhere/
+&lt;span class="gp"&gt;bandit4&amp;#64;melinda:~/inhere$&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; f in &lt;span class="k"&gt;$(&lt;/span&gt;ls&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; file ./&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;
+&lt;span class="go"&gt;./-file00: data
+./-file01: data
+./-file02: data
+./-file03: data
+./-file04: data
+./-file05: data
+./-file06: data
+./-file07: ASCII text
+./-file08: data
+./-file09: data
+&lt;/span&gt;&lt;span class="gp"&gt;bandit4&amp;#64;melinda:~/inhere$&lt;/span&gt; cat ./-file07
+&lt;span class="go"&gt;koReBOKuIDDepwhWk7jZC0RTdopnAYKh&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Change into the &lt;code&gt;inhere&lt;/code&gt; directory and then for each file returned by the &lt;code&gt;ls&lt;/code&gt;
+command, get the filetype with the &lt;code&gt;file&lt;/code&gt; command. Only one which is ASCII, so
+that's a good candidate. Sure enough, it's the one we are after.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-5-6"&gt;
+&lt;h2&gt;Level 5 -&amp;gt; 6&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit6.html"&gt;level 05&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is similar to the previous level, except now we are looking for something
+with a specific size. Luckily the &lt;code&gt;find&lt;/code&gt; command is just right for this:&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit5&amp;#64;melinda:~$&lt;/span&gt; find ./ -size 1033c
+&lt;span class="go"&gt;./inhere/maybehere07/.file2
+&lt;/span&gt;&lt;span class="gp"&gt;bandit5&amp;#64;melinda:~$&lt;/span&gt; file ./inhere/maybehere07/.file2
+&lt;span class="go"&gt;./inhere/maybehere07/.file2: ASCII text, with very long lines
+&lt;/span&gt;&lt;span class="gp"&gt;bandit5&amp;#64;melinda:~$&lt;/span&gt; cat !$
+&lt;span class="go"&gt;cat ./inhere/maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-6-7"&gt;
+&lt;h2&gt;Level 6 -&amp;gt; 7&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit7.html"&gt;level 06&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now we need to broaden our search. Once again &lt;code&gt;find&lt;/code&gt; to the rescue. We know
+the user and group that own the file and its size. The user and group might
+be enough already, so let's give that a go&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit6&amp;#64;melinda:~$&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; /
+&lt;span class="gp"&gt;bandit6&amp;#64;melinda:/$&lt;/span&gt; find -user bandit7 -group bandit6  2&amp;gt; /dev/null
+&lt;span class="go"&gt;./var/lib/dpkg/info/bandit7.password
+&lt;/span&gt;&lt;span class="gp"&gt;bandit6&amp;#64;melinda:/$&lt;/span&gt; cat ./var/lib/dpkg/info/bandit7.password
+&lt;span class="go"&gt;HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Perfect. I piped the &lt;code&gt;stderr&lt;/code&gt; to &lt;code&gt;/dev/null&lt;/code&gt; so it doesn't clutter the output
+with files that it can't read.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-7-8"&gt;
+&lt;h2&gt;Level 7 -&amp;gt; 8&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit8.html"&gt;Level 07&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To find things in a file, &lt;code&gt;grep&lt;/code&gt; is usually the answer. However it's probably
+wise to check the file format first in case all the words are smushed together
+and we need to filter grep again.&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit7&amp;#64;melinda:~$&lt;/span&gt; head data.txt
+&lt;span class="go"&gt;Kunming's       0D0KZ3TdLRBXD8lyd7Bj2hAqnxaMInQe
+multitude's     8MFZa8yOjTt6m8PvxteTp7XTDFLiuFAk
+audibility      ZeLj0yAw7ylmEoLxSUEqF4iB43c9DN4h
+unadvised       Pgp8X2LSVdNrmIKcJ7Oe8eqTzEVfhGbR
+Brecht's        uKyKryNUZYFuTQpwRlDqucLLIUbiIMF0
+Alvin   IpQIV6mpjticdB790obqXAvYkAgnDV8E
+insufficient    cgHhWVJahfDqFIe82vOliryQQ8ihGlGN
+Sauterne        UhPBp0A04GkIRfvZnUt1UdwlKU2ViYUd
+cluster 1GeFZ0B6rsEtJ5Sqb5h8Wv7UwG15DQzb
+ember's f2XPIE1iDHW9oHPyodPyfTz87DAbWmXu
+&lt;/span&gt;&lt;span class="gp"&gt;bandit7&amp;#64;melinda:~$&lt;/span&gt; grep millionth data.txt
+&lt;span class="go"&gt;millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Luckily it was one word and password per line, so grepping the file worked
+fine.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-8-9"&gt;
+&lt;h2&gt;Level 8 -&amp;gt; 9&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit9.html"&gt;level 08&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So the only way we know which entry is the password is that it occurs
+only once. For this the linux tool &lt;code&gt;uniq&lt;/code&gt; seems perfect. However it can
+only detect duplicate lines if they are next to each other. To fix this
+we also need to sort the contents of the file and then display only
+unique lines:&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit8&amp;#64;melinda:~$&lt;/span&gt; cat data.txt &lt;span class="p"&gt;|&lt;/span&gt; sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -u
+&lt;span class="go"&gt;UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-9-10"&gt;
+&lt;h2&gt;Level 9 -&amp;gt; 10&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit10.html"&gt;Level 09&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This &lt;code&gt;data.txt&lt;/code&gt; file is in binary. So in order to find the strings we need
+to dump it as hex, or, even simpler, run it through &lt;code&gt;strings&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit9&amp;#64;melinda:~$&lt;/span&gt; strings data.txt  &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nv"&gt;grep&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt;
+&lt;span class="go"&gt;I========== the6
+========== password
+========== ism
+========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-10-11"&gt;
+&lt;h2&gt;Level 10 -&amp;gt; 11&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit11.html"&gt;Level 10&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Good ol base64. If you haven't seen it before, you'll get to see it a lot
+more if you carry on doing these kind of challenges. Simply done though:&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit10&amp;#64;melinda:~$&lt;/span&gt; cat data.txt  &lt;span class="p"&gt;|&lt;/span&gt; base64 -d
+&lt;span class="go"&gt;The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-11-12"&gt;
+&lt;h2&gt;Level 11 -&amp;gt; 12&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit12.html"&gt;level 11&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The description is a basically a verbose way of saying that the string
+has been encoded with rot13. The quickest way for me to un-rotate it, is
+using python:&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit11&amp;#64;melinda:~$&lt;/span&gt; cat data.txt
+&lt;span class="go"&gt;Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+&lt;/span&gt;&lt;span class="gp"&gt;bandit11&amp;#64;melinda:~$&lt;/span&gt; python -c &lt;span class="s1"&gt;'import codecs;print codecs.decode(&amp;quot;5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh&amp;quot;, &amp;quot;rot13&amp;quot;)'&lt;/span&gt;
+&lt;span class="go"&gt;5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-12-13"&gt;
+&lt;h2&gt;Level 12 -&amp;gt; 13&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit13.html"&gt;Level 12&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;From here on it's going to get a little trickier. We know that data.txt is a hexdump
+of a binary, so first let's convert it back to a binary first with &lt;code&gt;xxd&lt;/code&gt;&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; cat data.txt &lt;span class="p"&gt;|&lt;/span&gt; xxd -r &amp;gt; data2
+&lt;/pre&gt;
+&lt;p&gt;Then we can find out the filetype of data2&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data2
+&lt;span class="go"&gt;data2: gzip compressed data, was &amp;quot;data2.bin&amp;quot;, from Unix, last modified: Fri Nov 14 10:32:20 2014, max compression&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;gzip&lt;/code&gt; it is. So uncompress that to data3&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; cat data2 &lt;span class="p"&gt;|&lt;/span&gt; zcat &amp;gt; data3
+&lt;/pre&gt;
+&lt;p&gt;and get its filetype next. I won't go over each step in detail as there's quite
+a few iterations. I'll post the console log of how I got to the flag and hopefully
+that should be clear enough.&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data3
+&lt;span class="go"&gt;data3: bzip2 compressed data, block size = 900k
+&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; bzcat data3 &amp;gt; data4
+&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data4
+&lt;span class="go"&gt;data4: gzip compressed data, was &amp;quot;data4.bin&amp;quot;, from Unix, last modified: Fri Nov 14 10:32:20 2014, max compression
+&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; cat data4 &lt;span class="p"&gt;|&lt;/span&gt; zcat &amp;gt; data5
+&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data5
+&lt;span class="go"&gt;data5: POSIX tar archive (GNU)
+&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; tar xf data5
+&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; ls
+&lt;span class="go"&gt;data.txt  data2  data2.bin  data3  data4  data5  data5.bin
+&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data5.bin
+&lt;span class="go"&gt;data5.bin: POSIX tar archive (GNU)
+&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; tar xf data5.bin
+&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; ls
+&lt;span class="go"&gt;data.txt  data2  data2.bin  data3  data4  data5  data5.bin  data6.bin
+&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data6.bin
+&lt;span class="go"&gt;data6.bin: bzip2 compressed data, block size = 900k
+&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; bzcat data6.bin &amp;gt; data7
+&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data7
+&lt;span class="go"&gt;data7: POSIX tar archive (GNU)
+&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; tar xf data7
+&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; ls
+&lt;span class="go"&gt;data.txt  data2  data2.bin  data3  data4  data5  data5.bin  data6.bin  data7  data8.bin
+&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data8.bin
+&lt;span class="go"&gt;data8.bin: gzip compressed data, was &amp;quot;data9.bin&amp;quot;, from Unix, last modified: Fri Nov 14 10:32:20 2014, max compression
+&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; cat data8.bin &lt;span class="p"&gt;|&lt;/span&gt; zcat &amp;gt; data9
+&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; file data9
+&lt;span class="go"&gt;data9: ASCII text
+&lt;/span&gt;&lt;span class="gp"&gt;bandit12&amp;#64;melinda:/tmp/unl$&lt;/span&gt; cat data9
+&lt;span class="go"&gt;The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Basically we identify, extract, repeat, until we're at the plain text file with the
+password.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-13-14"&gt;
+&lt;h2&gt;Level 13 -&amp;gt; 14&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit14.html"&gt;Level 13&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We're given a lot of information here, and one of those is that we get the SSH
+key for the &lt;code&gt;bandit14&lt;/code&gt; user. We can use this to login as that user without knowing
+the password:&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit13&amp;#64;melinda:~$&lt;/span&gt; ssh -i ./sshkey.private bandit14&amp;#64;localhost
+&lt;span class="go"&gt;Could not create directory '/home/bandit13/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is 05:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
+Are you sure you want to continue connecting (yes/no)? yes
+.
+.
+&lt;/span&gt;&lt;span class="gp"&gt;bandit14&amp;#64;melinda:~$&lt;/span&gt; cat /etc/bandit_pass/bandit14
+&lt;span class="go"&gt;4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;We pass the key as an argument to the ssh command, and connect to the localhost
+as bandit14. Then we can read the file with the password.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-14-15"&gt;
+&lt;h2&gt;Level 14 -&amp;gt; 15&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit15.html"&gt;Level 14&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This level starts introducing some networking and how to interact with remote
+hosts. Well, in this case it's localhost, but the principle is the same.
+We need to connect to a specific port on localhost and then supply
+the current password. I'm using &lt;code&gt;netcat&lt;/code&gt; to do this&lt;/p&gt;
+&lt;pre class="code console literal-block"&gt;
+&lt;span class="gp"&gt;bandit14&amp;#64;melinda:~$&lt;/span&gt; nc localhost 30000
+&lt;span class="go"&gt;4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;All you get is a blank line when you've connected. The simply paste in the
+password you logged in with and hit enter.&lt;/p&gt;
+&lt;p&gt;Continues with &lt;a class="reference external" href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part2"&gt;Let's crack Bandit Part 2&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 13 Mar 2015 21:00:00 +0000</pubDate><guid>tag:,2015-03-13:2015/03/13/lets-crack-bandit-part-1/</guid></item><item><title>Solving Infosec n00bsCTF</title><link>/2015/03/11/solving-infosec-n00bsctf/</link><description>&lt;p&gt;The InfoSec Institue is running a &lt;a class="reference external" href="http://ctf.infosecinstitute.com/index.php"&gt;n00bsCTF&lt;/a&gt;,
 and I can't resist a CTF really. Plus this will be a nice warmup for Hackyeaster 2015.
 So let's jump on it and get some flags...&lt;/p&gt;
 &lt;p&gt;I haven't managed to get all of them, but I will be updating this post when
 I manage to solve some of the others.&lt;/p&gt;
 &lt;div class="section" id="level-01"&gt;
-&lt;h2&gt;Level 01 ##&lt;/h2&gt;
+&lt;h2&gt;Level 01&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/levelone.php"&gt;http://ctf.infosecinstitute.com/levelone.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/ebnLRwp.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/ebnLRwp.png" /&gt;
 &lt;p&gt;May the source be with you, eh? Sounds to me like someone wants us to look at the
 page source. Right click, select :code:&lt;tt class="docutils literal"&gt;view page source&lt;/tt&gt; and...&lt;/p&gt;
 &lt;pre class="code html literal-block"&gt;
@@ -4108,9 +4096,9 @@ page source. Right click, select :code:&lt;tt class="docutils literal"&gt;view p
 infosec_flagis_welcome&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-02"&gt;
-&lt;h2&gt;Level 02 ##&lt;/h2&gt;
+&lt;h2&gt;Level 02&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/leveltwo.php"&gt;http://ctf.infosecinstitute.com/leveltwo.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/TVGZFKU.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/TVGZFKU.png" /&gt;
 &lt;p&gt;A broken image you say? Let's download it and have a look. We notice it's very small,
 only 45 bytes. So let's open it in a hex editor and examine its contents. I opened
 it in vim (to use it as a hex editor enter :code:&lt;tt class="docutils literal"&gt;:!xxd&lt;/tt&gt;),
@@ -4123,9 +4111,9 @@ infosec_flagis_wearejuststarting&lt;/blockquote&gt;
 &lt;p&gt;Level02's flag done.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-03"&gt;
-&lt;h2&gt;Level 03 ##&lt;/h2&gt;
+&lt;h2&gt;Level 03&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/levelthree.php"&gt;http://ctf.infosecinstitute.com/levelthree.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/lL8OkTO.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/lL8OkTO.png" /&gt;
 &lt;p&gt;We are presented with a QR code. So I grabbed my phone, scanned it, and was presented
 with a series of dots and dashes. Morse code no doubt. Being lazy I didn't want to type
 it into a decoder manually,
@@ -4136,9 +4124,9 @@ and ended up with:&lt;/p&gt;
 INFOSECFLAGISMORSING&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-04"&gt;
-&lt;h2&gt;Level 04 ##&lt;/h2&gt;
+&lt;h2&gt;Level 04&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/levelfour.php"&gt;http://ctf.infosecinstitute.com/levelfour.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/yFiSrus.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/yFiSrus.png" /&gt;
 &lt;p&gt;A picture and a tidbit of information. Hrmm... Ok, not much to go with here. Mousing
 over the image pops up a dialog. Investigating that didn't lead me anywhere. Time
 to get the thinking hats on and think about what info we have here that might be
@@ -4161,7 +4149,7 @@ infosec_flag_welovecookies&lt;/blockquote&gt;
 &lt;p&gt;Flag has been nommed.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-05"&gt;
-&lt;h2&gt;Level 05 ##&lt;/h2&gt;
+&lt;h2&gt;Level 05&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/levelfive.php"&gt;http://ctf.infosecinstitute.com/levelfive.php&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;A pesky popup saying I'm a hacker? What an accusation. Well, let's top it from
 popping up and get ourselves a script blocker to see what else there might be.
@@ -4169,7 +4157,7 @@ Once done, we examine the source and see it's loading an image too.&lt;/p&gt;
 &lt;pre class="code html literal-block"&gt;
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;img/aliens.jpg&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;br&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;br&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/JwFtmSw.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/JwFtmSw.png" /&gt;
 &lt;p&gt;Let's load up that image, or even better, let's just browse to &lt;code&gt;http://ctf.infosecinstitute.com/img/&lt;/code&gt;
 (Since writing directory listing has been disabled for this path).
 Nothing particularily odd about the image. Let's try seeing if there's anything hidden in
@@ -4182,23 +4170,23 @@ infosec_flagis_stegaliens&lt;/blockquote&gt;
 &lt;p&gt;Gotcha&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-06"&gt;
-&lt;h2&gt;Level 06 ##&lt;/h2&gt;
+&lt;h2&gt;Level 06&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/levelsix.php"&gt;http://ctf.infosecinstitute.com/levelsix.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/w81ZV0N.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/w81ZV0N.png" /&gt;
 &lt;p&gt;At first I was a bit lost, but when you stare at a lot of data, it's easy to be overwhelmed.
 Especially when you don't know really what you are looking for. I decided to give it another go
 and have located the flag. It's actually in the very first packet. The hex string for &lt;em&gt;infosec_flag&lt;/em&gt;
 is starting to look very familiar now. It appears as the data of the first packet:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/aO8ojXG.png&amp;quot;" /&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/aO8ojXG.png"&gt;&lt;img alt="" src="http://i.imgur.com/aO8ojXG.png" style="width: 500px;" /&gt;&lt;/a&gt;
 &lt;p&gt;Enter the string with :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;696e66...&lt;/span&gt;&lt;/tt&gt; into a hex to string converter and you get&lt;/p&gt;
 &lt;blockquote&gt;
 infosec_flagis_sniffed&lt;/blockquote&gt;
 &lt;p&gt;Sniffed right out.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-07"&gt;
-&lt;h2&gt;Level 07 ##&lt;/h2&gt;
+&lt;h2&gt;Level 07&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/404.php"&gt;http://ctf.infosecinstitute.com/404.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/PZu5CIK.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/PZu5CIK.png" /&gt;
 &lt;p&gt;We get an error saying &lt;em&gt;f00 not found&lt;/em&gt; and the URL reads 404.php. Going by the other URLs
 I would assume we actually need :code:&lt;tt class="docutils literal"&gt;levelseven.php&lt;/tt&gt;, so let's enter that and see what we get.
 It seems to return an empty page. That's not much use, but it's better than a real
@@ -4224,9 +4212,9 @@ infosec_flagis_youfoundit&lt;/blockquote&gt;
 &lt;p&gt;Yes, I did find it.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-08"&gt;
-&lt;h2&gt;Level 08 ##&lt;/h2&gt;
+&lt;h2&gt;Level 08&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/leveleight.php"&gt;http://ctf.infosecinstitute.com/leveleight.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/OSKPz0g.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/OSKPz0g.png" /&gt;
 &lt;p&gt;Ok, let's download :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;app.exe`:code:`&lt;/span&gt; and give this a go. It's a wrapper around &lt;span class="pre"&gt;`:code:`netstat&lt;/span&gt;&lt;/tt&gt; that
 just shows you what your current connections are. It takes no arguments, so there's
 not anyway to attack this thing with overflows. And this being a n00bs level CTF, it's
@@ -4289,9 +4277,9 @@ infosec_flagis_0x1a&lt;/blockquote&gt;
 &lt;p&gt;Leave a comment below to correct me if I am wrong though, I'd really appreciate that.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-09"&gt;
-&lt;h2&gt;Level 09 ##&lt;/h2&gt;
+&lt;h2&gt;Level 09&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/levelnine.php"&gt;http://ctf.infosecinstitute.com/levelnine.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/5XnlOL9.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/5XnlOL9.png" /&gt;
 &lt;p&gt;Initially I struggled with this. I tried the usual default passwords without success.
 Attacked it with SQL injections, nothing. Then I had a brainwave. Because I already had level15,
 I could just look at the :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;levelnine.php`:code:`&lt;/span&gt; file. So I did. Issue &lt;span class="pre"&gt;`:code:`test.com&lt;/span&gt; &amp;amp;&amp;amp; cat &lt;span class="pre"&gt;../levelnine.php&lt;/span&gt;&lt;/tt&gt;
@@ -4322,9 +4310,9 @@ be valid, as the aim of the game is to get the flag. It shouldn't matter how you
 &lt;p&gt;Level15 has been a huge help in all of this!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-10"&gt;
-&lt;h2&gt;Level 10 ##&lt;/h2&gt;
+&lt;h2&gt;Level 10&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/levelten.php"&gt;http://ctf.infosecinstitute.com/levelten.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/QENqipl.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/QENqipl.png" /&gt;
 &lt;p&gt;Let's listen to the sound. Hrmm Squeaky. Could be anything. Maybe some weirdly pitched morse.
 But let's download and open it in Audacity. My initial hunch is that it's sped up, due
 to the highpitched sound. So I started reducing the playback speed, and it turns out that
@@ -4335,9 +4323,9 @@ infosec_flagis_sound&lt;/blockquote&gt;
 &lt;p&gt;Thanks kind stranger&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-11"&gt;
-&lt;h2&gt;Level 11 ##&lt;/h2&gt;
+&lt;h2&gt;Level 11&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/leveleleven.php"&gt;http://ctf.infosecinstitute.com/leveleleven.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/L2tFy5t.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/L2tFy5t.png" /&gt;
 &lt;p&gt;Hrmm.. there's no sound this time, instead we get the PHP logo. Well, it's all
 we have so let's open it up. I loaded it into vim, changed to hex mode (:%!xxd)
 and right at the top we have&lt;/p&gt;
@@ -4354,9 +4342,9 @@ infosec_flagis_powerslide&lt;/blockquote&gt;
 &lt;p&gt;I'll take it, thanks!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-12"&gt;
-&lt;h2&gt;Level 12 ##&lt;/h2&gt;
+&lt;h2&gt;Level 12&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/leveltwelve.php"&gt;http://ctf.infosecinstitute.com/leveltwelve.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/WdLl96v.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/WdLl96v.png" /&gt;
 &lt;p&gt;Ok we recognise this image. We had it in level 1 and we had to look at the source.
 Our clue is dig deeper and that could mean a number of things. Let's try some directory
 traversal by appending a slash and some random text at the end. Hrm, we just
@@ -4378,9 +4366,9 @@ infosec_flagis_heyimnotacolor&lt;/blockquote&gt;
 &lt;p&gt;Yeah, you weren't a colour, that's for sure.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-13"&gt;
-&lt;h2&gt;Level 13 ##&lt;/h2&gt;
+&lt;h2&gt;Level 13&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/levelthirteen.php"&gt;http://ctf.infosecinstitute.com/levelthirteen.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/JX3Je1g.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/JX3Je1g.png" style="width: 500px;" /&gt;
 &lt;p&gt;Ok, this was a bit of a cheat, because I skipped to level 15 and now I have a a few more
 tools available. I ran :code:&lt;tt class="docutils literal"&gt;test.com &amp;amp;&amp;amp; ls &lt;span class="pre"&gt;-la&lt;/span&gt; ..&lt;/tt&gt; and voila, there's the backup file:
 :code:&lt;tt class="docutils literal"&gt;levelthirteen.php.old&lt;/tt&gt;. Much easier than guessing, right?
@@ -4390,16 +4378,16 @@ This seems to be a network capture involving a project called &lt;a class="refer
 interesting in it for the most part. However near the end we get a PNG image called
 :code:&lt;tt class="docutils literal"&gt;HoneyPY.PNG&lt;/tt&gt;. For some reason this just stood out to me. I took a chance and exported it
 by rightclicking the packet and selecting :code:&lt;tt class="docutils literal"&gt;Export Selected Packet Bytes&lt;/tt&gt; as shown&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/jhH2v19.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/jhH2v19.png" style="width: 500px;" /&gt;
 &lt;p&gt;Opening this image surprises us with a flag! W00t! That flag is:&lt;/p&gt;
 &lt;blockquote&gt;
 infosec_flagis_morepackets&lt;/blockquote&gt;
 &lt;p&gt;A wireshark level I managed to do. Yay&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-14"&gt;
-&lt;h2&gt;Level 14 ##&lt;/h2&gt;
+&lt;h2&gt;Level 14&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/levelfourteen.php"&gt;http://ctf.infosecinstitute.com/levelfourteen.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/0akB0Ni.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/0akB0Ni.png" /&gt;
 &lt;p&gt;UPDATE: The :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;level14.db`:code:`&lt;/span&gt; file has been removed and the &lt;span class="pre"&gt;`:code:`misc&lt;/span&gt;&lt;/tt&gt; directory can
 no longer be listed. Use the second method below to solve this level&lt;/p&gt;
 &lt;p&gt;Once downloaded we get a database backup file. This one was quite interesting because
@@ -4414,9 +4402,9 @@ infosec_flagis_whatsorceryisthis&lt;/blockquote&gt;
 &lt;code&gt;friends&lt;/code&gt; table there's a fimilar entry. Decoding that will also give you the flag.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-15"&gt;
-&lt;h2&gt;Level 15 ##&lt;/h2&gt;
+&lt;h2&gt;Level 15&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/levelfifteen/index.php"&gt;http://ctf.infosecinstitute.com/levelfifteen/index.php&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/EVJuDmC.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/EVJuDmC.png" /&gt;
 &lt;p&gt;So here we can lookup a dns entry by typing a domain in the text field. So let's try
 that and see what we get. I used :code:&lt;tt class="docutils literal"&gt;test.com&lt;/tt&gt; and as a result I get the output
 from the :code:&lt;tt class="docutils literal"&gt;dig&lt;/tt&gt; command. Interesting. It could be that the php script is merely
@@ -4435,7 +4423,7 @@ to decode it to &lt;code&gt;infosec_flagis_rceatomized&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;ALL FLAGS DONE&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-lost-level"&gt;
-&lt;h2&gt;The lost level ##&lt;/h2&gt;
+&lt;h2&gt;The lost level&lt;/h2&gt;
 &lt;p&gt;UPDATED: This has since been removed, but I've left this here for posterity.&lt;/p&gt;
 &lt;p&gt;Not sure where this belongs, but in the misc folder is a file called :code:&lt;tt class="docutils literal"&gt;readme.wav&lt;/tt&gt;
 which contains the morsecode for&lt;/p&gt;
@@ -4452,8 +4440,7 @@ So I began working on deconstructing the URLs that the Dominos site uses to get
 menus, place orders and such, and started building a Python API around that.&lt;/p&gt;
 &lt;p&gt;So far I've got a few features working and am happy with the progress. Here's
 a little video of how it works at this stage:&lt;/p&gt;
-&lt;p&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;&lt;a class="reference external" href="https://asciinema.org/a/17295.js"&gt;https://asciinema.org/a/17295.js&lt;/a&gt;&amp;quot; id=&amp;quot;asciicast-17295&amp;quot; async&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
-&lt;p&gt;Quite a bit to do still, but happy with the progress. I'm planning to write up how
+&lt;script type="text/javascript" src="https://asciinema.org/a/17295.js" id="asciicast-17295" async&gt;&lt;/script&gt;&lt;p&gt;Quite a bit to do still, but happy with the progress. I'm planning to write up how
 I figured out all the API calls in order to interact with their backend, so stay
 tuned for that. Follow on &lt;a class="reference external" href="https://www.titter.com/binaryheadache"&gt;Twitter&lt;/a&gt; or
 subscribe to the &lt;a class="reference external" href="http://unlogic.co.uk/feed.xml"&gt;RSS&lt;/a&gt;. The code will go up
@@ -4721,7 +4708,7 @@ call the &lt;code&gt;fib&lt;/code&gt; function until n is 1, which is where the 
 it with brown MX switches, large centered font and light grey alphanumeric caps
 and grey modifiers. I went of the 87 key version (no keypad) and also threw in a
 wrist rest to go with it.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;centerhttp://i.imgur.com/SzmT9zJ.jpg?2&amp;quot;" /&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/SzmT9zJ.jpg?2"&gt;&lt;img alt="" src="http://i.imgur.com/SzmT9zJ.jpg?2" style="width: 500px;" /&gt;&lt;/a&gt;
 &lt;p&gt;Yes, this isn't the most stylish photo, plus there's no shoe in it either.&lt;/p&gt;
 &lt;p&gt;This is my first mechanical keyboard so I can't really compare it to anything.
 That said, I very much love the feel of the keyboard and really enjoy typing on it.
@@ -4999,20 +4986,22 @@ is now to find that specific setting that I need to tweak. No more searching thr
 &lt;h2&gt;What I Like&lt;/h2&gt;
 &lt;p&gt;I take part in coding challenges regularily for various reasons and I get a great deal of benefit from them. Albeit some challenges are a bit contrived, they do offer some great practice in problem solving and writing clean code.&lt;/p&gt;
 &lt;p&gt;I recommend to anyone interesting in improving their coding skills to go to some programming challenge sites and home your skills. The problems are very varied and of different difficulties so there's something for everyone.&lt;/p&gt;
-&lt;p&gt;I frequent [checkIO](&lt;a class="reference external" href="https://checkio.org"&gt;https://checkio.org&lt;/a&gt;) and &lt;a class="reference external" href="https://codewars.com"&gt;Codewars&lt;/a&gt; and have even submitted some challenges to the Codewars site. The benefit of attempting to solve the challenges is one thing, but to me the best return is from reading other people's solutions. Solving a problem one way, and then seeing how someone else solved it is very interesting and great learning experience.&lt;/p&gt;
+&lt;p&gt;I frequent &lt;a class="reference external" href="https://checkio.org"&gt;checkIO&lt;/a&gt; and &lt;a class="reference external" href="https://codewars.com"&gt;Codewars&lt;/a&gt; and have even submitted some challenges to the Codewars site. The benefit of attempting to solve the challenges is one thing, but to me the best return is from reading other people's solutions. Solving a problem one way, and then seeing how someone else solved it is very interesting and great learning experience.&lt;/p&gt;
 &lt;p&gt;But this is also where the trouble begins.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="what-i-dislike"&gt;
 &lt;h2&gt;What I Dislike&lt;/h2&gt;
 &lt;p&gt;Let me begin by going over some parts of the &lt;a class="reference external" href="https://www.python.org/dev/peps/pep-0020/"&gt;PEP20&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&amp;gt; * Readability counts.
-&amp;gt; * Special cases aren't special enough to break the rules.
-&amp;gt; * Although practicality beats purity.
-&amp;gt; * Errors should never pass silently.
-&amp;gt; * Unless explicitly silenced.
-&amp;gt; * In the face of ambiguity, refuse the temptation to guess.
-&amp;gt; * There should be one-- and preferably only one --obvious way to do it.
-&amp;gt; * Although that way may not be obvious at first unless you're Dutch.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Readability counts.&lt;/li&gt;
+&lt;li&gt;Special cases aren't special enough to break the rules.&lt;/li&gt;
+&lt;li&gt;Although practicality beats purity.&lt;/li&gt;
+&lt;li&gt;Errors should never pass silently.&lt;/li&gt;
+&lt;li&gt;Unless explicitly silenced.&lt;/li&gt;
+&lt;li&gt;In the face of ambiguity, refuse the temptation to guess.&lt;/li&gt;
+&lt;li&gt;There should be one-- and preferably only one --obvious way to do it.&lt;/li&gt;
+&lt;li&gt;Although that way may not be obvious at first unless you're Dutch.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;In this case I want to refer to &lt;em&gt;There should be one-- and preferably only one --obvious way to do it.&lt;/em&gt;
 I admit, this is ambiguous for a good reason. What is this &lt;em&gt;obvious&lt;/em&gt; way? Taking the rest of the PEP20
 into account we can sort of gleen a definition for this, but it's still open to interpretation by the
@@ -5112,7 +5101,7 @@ content recently, for the simple reason that I have nothing much to write about.
 full time job and a family. Both these things are time consuming and that
 leaves little time for me to tinker, hack, code, write whatever. So I've decided
 that rather than shoe horn in half-assed attempts, I'd rather just take a step
-back. Going by the simple idion of
+back. Going by the simple idiom of
 &lt;a class="reference external" href="http://i.imgur.com/8maeRT0.jpg"&gt;&amp;quot;Anything worth doing, is worth doing right&amp;quot;&lt;/a&gt;. That doesn't mean I will be giving up coding, hacking, whatever,
 completely, it just means I will be working on things that aren't really worth
 writing about or that have already been written about a hundered times over.
@@ -5126,7 +5115,7 @@ not what I am about. I've tried it before and I didn't enjoy it, nor was I
 So with this I will leave what is here for your reference and who knows,
 maybe one day there will be another post about something or other.&lt;/p&gt;
 &lt;p&gt;Time to kickback and &lt;a class="reference external" href="http://i.imgur.com/rSxyNlO.gif"&gt;have a beer&lt;/a&gt; methinks.&lt;/p&gt;
-&lt;p&gt;Thanks for reading`. &amp;lt;&lt;a class="reference external" href="https://i.imgur.com/vG96Num.gif"&gt;https://i.imgur.com/vG96Num.gif&lt;/a&gt;&amp;gt;`_&lt;/p&gt;
+&lt;p&gt;Thanks for reading&lt;a class="reference external" href="https://i.imgur.com/vG96Num.gif"&gt;.&lt;/a&gt;&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 08 Aug 2014 16:00:00 +0100</pubDate><guid>tag:,2014-08-08:2014/08/08/why-it-will-be-quiet/</guid><category>[]</category></item><item><title>nmap's idle scan with scapy</title><link>/2014/07/17/nmaps-idle-scan-with-scapy/</link><description>&lt;p&gt;If you've used nmap before you are probably familiar with its idle scan feature.
 Should you not be, go and &lt;a class="reference external" href="http://nmap.org/book/idlescan.html"&gt;skim the docs&lt;/a&gt;.
 I'll quickly cover the basics here anyway.&lt;/p&gt;
@@ -5134,16 +5123,15 @@ I'll quickly cover the basics here anyway.&lt;/p&gt;
 our IP address. This is done by making use of the fact that IP IDs are sequential.
 The images below (courtesy of the namp project documentation) explain this very
 well.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Open Port&lt;/strong&gt;
-&lt;a class="reference external" href="http://i.imgur.com/MajmRTH.png"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/MajmRTH.png&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Closed Port&lt;/strong&gt;
-&lt;a class="reference external" href="http://i.imgur.com/2UALzzd.png"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/2UALzzd.png&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Filtered Port&lt;/strong&gt;
-&lt;a class="reference external" href="http://i.imgur.com/Yv6hbwL.png"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/Yv6hbwL.png&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Open Port&lt;/strong&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/MajmRTH.png"&gt;&lt;img alt="" src="http://i.imgur.com/MajmRTH.png" style="width: 400px;" /&gt;&lt;/a&gt;
+&lt;p&gt;&lt;strong&gt;Closed Port&lt;/strong&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/2UALzzd.png&amp;gt;"&gt;&lt;img alt="" src="http://i.imgur.com/2UALzzd.png" style="width: 400px;" /&gt;&lt;/a&gt;
+&lt;p&gt;&lt;strong&gt;Filtered Port&lt;/strong&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/Yv6hbwL.png"&gt;&lt;img alt="" src="http://i.imgur.com/Yv6hbwL.png" style="width: 400px;" /&gt;&lt;/a&gt;
 &lt;p&gt;Ok, so that's the short version of the theory and it's relatively painless
 to implement with scapy. Let's take a look at the script:&lt;/p&gt;
-&lt;p&gt;{% gist e377713b90525e842266 %}&lt;/p&gt;
-&lt;p&gt;You provide the script with a &lt;code&gt;zombie ip&lt;/code&gt;, &lt;code&gt;target ip&lt;/code&gt;, and &lt;code&gt;target port&lt;/code&gt;.
+&lt;script src="https://gist.github.com/Svenito/e377713b90525e842266.js"&gt;&lt;/script&gt;&lt;p&gt;You provide the script with a &lt;code&gt;zombie ip&lt;/code&gt;, &lt;code&gt;target ip&lt;/code&gt;, and &lt;code&gt;target port&lt;/code&gt;.
 These should be self explanatory. Then we use scapy to assemble our packets to
 conduct our scan. The &lt;code&gt;p1&lt;/code&gt; SYN/ACK packet will be sent to the zombie so we can
 obtain a current IP ID from the RST response as a reference.&lt;/p&gt;
@@ -5235,10 +5223,11 @@ up the process both for other's benefit if they get stuck, and also as
 a sort of diary for myself, so I can refer back to any info if I need to.&lt;/p&gt;
 &lt;p&gt;This continues on from &lt;a class="reference external" href="http://unlogic.co.uk/2014/06/24/cracking-nebula-part1/"&gt;part 1&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="level-11"&gt;
-&lt;h2&gt;Level 11 ##&lt;/h2&gt;
-&lt;p&gt;&amp;gt; The /home/flag11/flag11 binary processes standard input and executes a shell command.
-&amp;gt;
-&amp;gt; There are two ways of completing this level, you may wish to do both :-)&lt;/p&gt;
+&lt;h2&gt;Level 11&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The /home/flag11/flag11 binary processes standard input and executes a shell command.&lt;/p&gt;
+&lt;p&gt;There are two ways of completing this level, you may wish to do both :-)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;pre class="code C literal-block"&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 #include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;unistd.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
@@ -5346,8 +5335,9 @@ a sort of diary for myself, so I can refer back to any info if I need to.&lt;/p&
 &lt;p&gt;I'll be honest with you and admit that I had a lot of trouble with this. I eventually looked up how to do this on other blogs, but still couldn't get it to work. After some searching I believe it's down to the bash version my VM is running. The exploit was possible due to some feature in older versions of bash, but not in the version I have. If you would like to read how to get level 11 you can do so here: &lt;a class="reference external" href="http://www.kroosec.com/2012/11/nebula-level11.html"&gt;http://www.kroosec.com/2012/11/nebula-level11.html&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-12"&gt;
-&lt;h2&gt;level 12 ##&lt;/h2&gt;
-&lt;p&gt;&amp;gt; There is a backdoor process listening on port 50001.&lt;/p&gt;
+&lt;h2&gt;level 12&lt;/h2&gt;
+&lt;blockquote&gt;
+There is a backdoor process listening on port 50001.&lt;/blockquote&gt;
 &lt;pre class="code C literal-block"&gt;
 &lt;span class="n"&gt;local&lt;/span&gt; &lt;span class="n"&gt;socket&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;socket&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;local&lt;/span&gt; &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;assert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;socket&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bind&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;127.0.0.1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;50001&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -5393,8 +5383,9 @@ Better luck next time
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-13"&gt;
-&lt;h2&gt;Level 13 ##&lt;/h2&gt;
-&lt;p&gt;&amp;gt; There is a security check that prevents the program from continuing execution if the user invoking it does not match a specific user id.&lt;/p&gt;
+&lt;h2&gt;Level 13&lt;/h2&gt;
+&lt;blockquote&gt;
+There is a security check that prevents the program from continuing execution if the user invoking it does not match a specific user id.&lt;/blockquote&gt;
 &lt;pre class="code C literal-block"&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 #include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;unistd.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
@@ -5459,9 +5450,9 @@ library we are trying to preload.&lt;/p&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-14"&gt;
-&lt;h2&gt;Level 14 ##&lt;/h2&gt;
+&lt;h2&gt;Level 14&lt;/h2&gt;
 &lt;blockquote&gt;
-&amp;gt; This program resides in /home/flag14/flag14 . It encrypts input and writes it to standard output. An encrypted token file is also in that home directory, decrypt it :)&lt;/blockquote&gt;
+This program resides in /home/flag14/flag14 . It encrypts input and writes it to standard output. An encrypted token file is also in that home directory, decrypt it :)&lt;/blockquote&gt;
 &lt;p&gt;The contents of &lt;code&gt;token&lt;/code&gt; were encrypted using the &lt;code&gt;flag14&lt;/code&gt; binary in &lt;code&gt;~flag14&lt;/code&gt;. If you run it you can see how it works. Let's enter something and see if we can work out how it works. I created a file with the contents &lt;code&gt;abcdefghijklmno&lt;/code&gt; in &lt;code&gt;/tmp/test&lt;/code&gt;&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
 &lt;span class="go"&gt; level14&amp;#64;nebula:/home/flag14$ cat /tmp/test | ./flag14 -e
@@ -5500,12 +5491,12 @@ flag14&amp;#64;localhost's password: 8457c118-887c-4e40-a5a6-33a25353165
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-15"&gt;
-&lt;h2&gt;Level 15 ##&lt;/h2&gt;
-&lt;p&gt;&amp;gt; strace the binary at /home/flag15/flag15 and see if you spot anything out of the ordinary.
-&amp;gt;
-&amp;gt; You may wish to review how to &amp;quot;compile a shared library in linux&amp;quot; and how the libraries are loaded and processed by reviewing the dlopen manpage in depth.
-&amp;gt;
-&amp;gt; Clean up after yourself :)&lt;/p&gt;
+&lt;h2&gt;Level 15&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;strace the binary at /home/flag15/flag15 and see if you spot anything out of the ordinary.&lt;/p&gt;
+&lt;p&gt;You may wish to review how to &amp;quot;compile a shared library in linux&amp;quot; and how the libraries are loaded and processed by reviewing the dlopen manpage in depth.&lt;/p&gt;
+&lt;p&gt;Clean up after yourself :)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;After running &lt;code&gt;strace&lt;/code&gt; we notice this particular bit&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
 &lt;span class="gp"&gt;level15&amp;#64;nebula:/home/flag15$&lt;/span&gt; strace ./flag15
@@ -5593,10 +5584,14 @@ OFFSET   TYPE              VALUE
 &lt;span class="go"&gt;/home/flag15/flag15: relocation error: /var/tmp/flag15/libc.so.6: symbol system, version GLIBC_2.0 not defined in file libc.so.6 with link time reference&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;&lt;em&gt;sigh&lt;/em&gt; - symbol &lt;code&gt;system&lt;/code&gt; is missing. Ok, let's just build it statically and wrap it all up so we've got everything we need. From &lt;code&gt;man gcc&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&amp;gt; &lt;strong&gt;-static-libgcc&lt;/strong&gt;
-&amp;gt;           On systems that provide libgcc as a shared library, these options force the use of either the shared or
-&amp;gt;           static version respectively.  If no shared version of libgcc
-&amp;gt;           was built when the compiler was configured, these options have no effect.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;&lt;strong&gt;-static-libgcc&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;On systems that provide libgcc as a shared library, these options force the use of either the shared or
+static version respectively.  If no shared version of libgcc
+was built when the compiler was configured, these options have no effect.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;So really we can also get rid of our implementation of &lt;code&gt;__cxa_finalize&lt;/code&gt; as it's all statically linked now.&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
 &lt;span class="gp"&gt;level15&amp;#64;nebula:/var/tmp/flag15$&lt;/span&gt; gcc -fPIC -shared -static-libgcc -Wl,--version-script&lt;span class="o"&gt;=&lt;/span&gt;version,-Bstatic -o libc.so.6 mylibc.c
@@ -5608,8 +5603,9 @@ OFFSET   TYPE              VALUE
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-16"&gt;
-&lt;h2&gt;Level 16 ##&lt;/h2&gt;
-&lt;p&gt;&amp;gt; There is a perl script running on port 1616.&lt;/p&gt;
+&lt;h2&gt;Level 16&lt;/h2&gt;
+&lt;blockquote&gt;
+There is a perl script running on port 1616.&lt;/blockquote&gt;
 &lt;pre class="code perl literal-block"&gt;
 &lt;span class="ch"&gt;#!/usr/bin/env perl&lt;/span&gt;
 
@@ -5682,8 +5678,9 @@ flag16&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-17"&gt;
-&lt;h2&gt;Level 17 ##&lt;/h2&gt;
-&lt;p&gt;&amp;gt; There is a python script listening on port 10007 that contains a vulnerability.&lt;/p&gt;
+&lt;h2&gt;Level 17&lt;/h2&gt;
+&lt;blockquote&gt;
+There is a python script listening on port 10007 that contains a vulnerability.&lt;/blockquote&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="ch"&gt;#!/usr/bin/python&lt;/span&gt;
 
@@ -5746,8 +5743,9 @@ flag16&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-18"&gt;
-&lt;h2&gt;Level 18 ##&lt;/h2&gt;
-&lt;p&gt;&amp;gt; Analyse the C program, and look for vulnerabilities in the program. There is an easy way to solve this level, an intermediate way to solve it, and a more difficult/unreliable way to solve it.&lt;/p&gt;
+&lt;h2&gt;Level 18&lt;/h2&gt;
+&lt;blockquote&gt;
+Analyse the C program, and look for vulnerabilities in the program. There is an easy way to solve this level, an intermediate way to solve it, and a more difficult/unreliable way to solve it.&lt;/blockquote&gt;
 &lt;pre class="code C literal-block"&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 #include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;unistd.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
@@ -5992,12 +5990,13 @@ Shell options:
 &lt;p&gt;Right, so we need to remember that we're running &lt;code&gt;sh&lt;/code&gt; here, and our arguments
 are being passed to it. Unfortunately &lt;code&gt;-d&lt;/code&gt; and such are not valid here.
 Time to read the manual....&lt;/p&gt;
-&lt;p&gt;&amp;gt; &lt;strong&gt;--rcfile file&lt;/strong&gt;
-&amp;gt;
-&amp;gt; Execute commands from file instead of the system wide
-&amp;gt; initialization file /etc/bash.bashrc and the standard personal
-&amp;gt; initialization file ~/.bashrc if the shell is interactive
-&amp;gt; (see INVOCATION below).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;--rcfile file&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Execute commands from file instead of the system wide
+initialization file /etc/bash.bashrc and the standard personal
+initialization file ~/.bashrc if the shell is interactive
+(see INVOCATION below).&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Ok, well, it's worth a shot.&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
 &lt;span class="gp"&gt;level18&amp;#64;nebula:/home/flag18$&lt;/span&gt; python -c &lt;span class="s2"&gt;&amp;quot;print('login me\n'*1021 + 'closelog\n' + 'shell')&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; ./flag18 --rcfile -d /tmp/flag18/debug
@@ -6038,8 +6037,9 @@ You have successfully executed getflag on a target account
 circumventing &lt;cite&gt;FORTIFY_SOURCE&lt;/cite&gt; you can read &lt;a class="reference external" href="http://phrack.org/issues/67/9.html"&gt;A Eulogy for Formatting Strings&lt;/a&gt;. I'll be re-reading that for sure.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="flag-19"&gt;
-&lt;h2&gt;Flag 19 ##&lt;/h2&gt;
-&lt;p&gt;&amp;gt; There is a flaw in the below program in how it operates.&lt;/p&gt;
+&lt;h2&gt;Flag 19&lt;/h2&gt;
+&lt;blockquote&gt;
+There is a flaw in the below program in how it operates.&lt;/blockquote&gt;
 &lt;pre class="code C literal-block"&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 #include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;unistd.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
@@ -6116,7 +6116,7 @@ work.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Nebula done.&lt;/strong&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="closing-words"&gt;
-&lt;h2&gt;Closing words ##&lt;/h2&gt;
+&lt;h2&gt;Closing words&lt;/h2&gt;
 &lt;p&gt;Firstly: Thanks for taking the time to read this. Please leave any feedback or
 comments below (or twitter/email if you prefer).&lt;/p&gt;
 &lt;p&gt;Secondly: If you are here because you are also playing &lt;em&gt;Nebula&lt;/em&gt; and are
@@ -6142,10 +6142,11 @@ a sort of diary for myself, so I can refer back to any info if I need to.&lt;/p&
 &lt;p&gt;To quickly explain what you need to do: Login in as user &lt;code&gt;levelxx&lt;/code&gt; and then run &lt;code&gt;getflag&lt;/code&gt; as user &lt;code&gt;flagxx&lt;/code&gt;.
 There's some explanations for each level on the machine's page over at Exploit Exercises.&lt;/p&gt;
 &lt;div class="section" id="level-00"&gt;
-&lt;h2&gt;Level 00 ##&lt;/h2&gt;
-&lt;p&gt;&amp;gt; This level requires you to find a Set User ID program that will run as the &amp;quot;flag00&amp;quot; account. You could also find this by carefully looking in top level directories in / for suspicious looking directories.
-&amp;gt;
-&amp;gt; Alternatively, look at the find man page.&lt;/p&gt;
+&lt;h2&gt;Level 00&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This level requires you to find a Set User ID program that will run as the &amp;quot;flag00&amp;quot; account. You could also find this by carefully looking in top level directories in / for suspicious looking directories.&lt;/p&gt;
+&lt;p&gt;Alternatively, look at the find man page.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;So somewhere from the root directory is a file will run as the flag00 user. As stated you can either look for it, or
 use &lt;code&gt;find&lt;/code&gt; to search for it. I chose to do a little bit of both. Running &lt;code&gt;find&lt;/code&gt; from the root of a system can take some time so I chose to take a look first. Amongst the usual directories at linux root level is a &lt;code&gt;rofs&lt;/code&gt; directory. So let's take a look inside.&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
@@ -6171,7 +6172,7 @@ boot  etc  initrd.img  media  opt  root  sbin  srv      tmp  var&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-01"&gt;
-&lt;h2&gt;Level 01 ##&lt;/h2&gt;
+&lt;h2&gt;Level 01&lt;/h2&gt;
 &lt;blockquote&gt;
 There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it?&lt;/blockquote&gt;
 &lt;pre class="code c literal-block"&gt;
@@ -6208,8 +6209,9 @@ There is a vulnerability in the below program that allows arbitrary programs to 
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-02"&gt;
-&lt;h2&gt;Level 02 ##&lt;/h2&gt;
-&lt;p&gt;&amp;gt; There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it?&lt;/p&gt;
+&lt;h2&gt;Level 02&lt;/h2&gt;
+&lt;blockquote&gt;
+There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it?&lt;/blockquote&gt;
 &lt;pre class="code C literal-block"&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 #include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;unistd.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
@@ -6248,10 +6250,11 @@ You have successfully executed getflag on a target account&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-03"&gt;
-&lt;h2&gt;Level 03 ##&lt;/h2&gt;
-&lt;p&gt;&amp;gt; Check the home directory of flag03 and take note of the files there.
-&amp;gt;
-&amp;gt; There is a crontab that is called every couple of minutes.&lt;/p&gt;
+&lt;h2&gt;Level 03&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Check the home directory of flag03 and take note of the files there.&lt;/p&gt;
+&lt;p&gt;There is a crontab that is called every couple of minutes.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;So first things first let's take a look at that crontab&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
 &lt;span class="gp"&gt;level03&amp;#64;nebula:/home/flag03$&lt;/span&gt; cat writable.sh
@@ -6272,7 +6275,7 @@ done&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-04"&gt;
-&lt;h2&gt;Level 04 ##&lt;/h2&gt;
+&lt;h2&gt;Level 04&lt;/h2&gt;
 &lt;blockquote&gt;
 This level requires you to read the token file, but the code restricts the files that can be read. Find a way to bypass it :)&lt;/blockquote&gt;
 &lt;pre class="code C literal-block"&gt;
@@ -6337,7 +6340,7 @@ flag04&amp;#64;localhost's password:
 &lt;p&gt;So the output of the command is a &lt;em&gt;token&lt;/em&gt; which is the term used for the password of the flag's user. Using this to logon as &lt;em&gt;flag04&lt;/em&gt; and run &lt;code&gt;getflag&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-05"&gt;
-&lt;h2&gt;Level 05 ##&lt;/h2&gt;
+&lt;h2&gt;Level 05&lt;/h2&gt;
 &lt;blockquote&gt;
 Check the flag05 home directory. You are looking for weak directory permissions&lt;/blockquote&gt;
 &lt;p&gt;Ok, let's do that&lt;/p&gt;
@@ -6376,7 +6379,7 @@ drwxr-x--- 4 flag05 level05   93 2012-08-18 06:56 ..
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-06"&gt;
-&lt;h2&gt;Level 06 ##&lt;/h2&gt;
+&lt;h2&gt;Level 06&lt;/h2&gt;
 &lt;blockquote&gt;
 The flag06 account credentials came from a legacy unix system.&lt;/blockquote&gt;
 &lt;p&gt;To cut a long story short, the way the password is stored for this user is not the same as for the other users. In older * nix systems the password was stored inside the &lt;code&gt;/etc/passwd&lt;/code&gt; file. So let's take a look:&lt;/p&gt;
@@ -6403,7 +6406,7 @@ flag06&amp;#64;localhost's password: hello
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-07"&gt;
-&lt;h2&gt;Level 07 ##&lt;/h2&gt;
+&lt;h2&gt;Level 07&lt;/h2&gt;
 &lt;blockquote&gt;
 The flag07 user was writing their very first perl program that allowed them to ping hosts to see if they were reachable from the web server.&lt;/blockquote&gt;
 &lt;pre class="code perl literal-block"&gt;
@@ -6447,7 +6450,7 @@ You have successfully executed getflag on a target account&lt;/span&gt;
 &lt;p&gt;Notice we need to encode the URL parms. The plaintext URL is &lt;code&gt;http://192.168.56.102:7007/index.cgi?Host=127.0.0.1 &amp;amp;&amp;amp; getflag&lt;/code&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-08"&gt;
-&lt;h2&gt;Level 08 ##&lt;/h2&gt;
+&lt;h2&gt;Level 08&lt;/h2&gt;
 &lt;blockquote&gt;
 World readable files strike again. Check what that user was up to, and use it to log into flag08 account.&lt;/blockquote&gt;
 &lt;p&gt;Let's take a look then&lt;/p&gt;
@@ -6470,7 +6473,7 @@ level08&amp;#64;192.168.56.102's password:
 capture.pcap                                  100% 8302     8.1KB/s   00:00&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Once in Wireshark we can see a TCP stream. Right click on one of the entries and select &lt;code&gt;Follow TCP Stream&lt;/code&gt;. A new window will appear in which we can see a login attempt. Red entries are user input, and blue entries are the server responses. The username is &lt;code&gt;level08&lt;/code&gt;. The password is... well, take a look. Notice the &lt;code&gt;7f&lt;/code&gt; entries. Those are deletes.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://i.imgur.com/IEseNUh.png"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/IEseNUh.png&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/IEseNUh.png"&gt;&lt;img alt="" src="http://i.imgur.com/IEseNUh.png" style="width: 400px;" /&gt;&lt;/a&gt;
 &lt;p&gt;So....&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
 &lt;span class="gp"&gt;level08&amp;#64;nebula:/home/flag08$&lt;/span&gt; ssh flag08&amp;#64;localhost
@@ -6482,7 +6485,7 @@ flag08&amp;#64;localhost's password: backd00Rmate
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-09"&gt;
-&lt;h2&gt;Level 09 ##&lt;/h2&gt;
+&lt;h2&gt;Level 09&lt;/h2&gt;
 &lt;blockquote&gt;
 There's a C setuid wrapper for some vulnerable PHP code...&lt;/blockquote&gt;
 &lt;pre class="code php literal-block"&gt;
@@ -6531,7 +6534,7 @@ There's a C setuid wrapper for some vulnerable PHP code...&lt;/blockquote&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-10"&gt;
-&lt;h2&gt;Level 10 ##&lt;/h2&gt;
+&lt;h2&gt;Level 10&lt;/h2&gt;
 &lt;blockquote&gt;
 The setuid binary at /home/flag10/flag10 binary will upload any file given, as long as it meets the requirements of the access() system call.&lt;/blockquote&gt;
 &lt;pre class="code C literal-block"&gt;
@@ -6643,7 +6646,7 @@ refers to the development principle of that you shouldn't write a feature that n
 in the first place as it's probably never going to be needed. Instead wait until
 it's a requirement and implement it then. This saves wasted effort and keeps the code base
 clean and as small as possible.&lt;/p&gt;
-&lt;p&gt;TEFNAR stands for &lt;strong&gt;TE**chnology **F&lt;/strong&gt;or &lt;strong&gt;N&lt;/strong&gt;o &lt;strong&gt;A&lt;/strong&gt;pparent &lt;strong&gt;R&lt;/strong&gt;eason and is a term
+&lt;p&gt;TEFNAR stands for &lt;strong&gt;TE&lt;/strong&gt;chnology &lt;strong&gt;F&lt;/strong&gt;or &lt;strong&gt;N&lt;/strong&gt;o &lt;strong&gt;A&lt;/strong&gt;pparent &lt;strong&gt;R&lt;/strong&gt;eason and is a term
 my boss coined (AFAIK). It basically refers to any unnecessary technology that
 doesn't really add any functionality to the product. Sure it might look nice, but
 is there a reason that's there or does that?&lt;/p&gt;
@@ -6663,15 +6666,18 @@ that adds to the risk of introducing bugs and also adds another thing for future
 to debug. Granted, it didn't take him long to code up, but stay tuned, here comes the
 lesson.&lt;/p&gt;
 &lt;p&gt;Fast forward a day and I get called over&lt;/p&gt;
-&lt;p&gt;&amp;gt; Hey Sven, fancy a Python puzzle?&lt;/p&gt;
+&lt;blockquote&gt;
+Hey Sven, fancy a Python puzzle?&lt;/blockquote&gt;
 &lt;p&gt;I took the bait and headed over.&lt;/p&gt;
-&lt;p&gt;&amp;gt; So in the interpreter &lt;code&gt;1.0 &amp;lt; 1.0&lt;/code&gt; is &lt;code&gt;False&lt;/code&gt;, which is correct.
-&amp;gt; But now look at this *runs small python script*. See here, &lt;code&gt;1.0 &amp;lt; 1.0 True&lt;/code&gt;
-&amp;gt; How is that?&lt;/p&gt;
+&lt;blockquote&gt;
+So in the interpreter &lt;code&gt;1.0 &amp;lt; 1.0&lt;/code&gt; is &lt;code&gt;False&lt;/code&gt;, which is correct.
+But now look at this *runs small python script*. See here, &lt;code&gt;1.0 &amp;lt; 1.0 True&lt;/code&gt;
+How is that?&lt;/blockquote&gt;
 &lt;p&gt;I look at the code and notice he's got a loop that adds 0.1 to a variable and
 compares that to 1.0. I chuckled.&lt;/p&gt;
-&lt;p&gt;&amp;gt; Yeah, that's a different kettle of fish. Floats aren't that accurate that you
-&amp;gt; can accumulate like that and expect it to be &lt;em&gt;exactly&lt;/em&gt; 1.0. That's the issue.&lt;/p&gt;
+&lt;blockquote&gt;
+Yeah, that's a different kettle of fish. Floats aren't that accurate that you
+can accumulate like that and expect it to be &lt;em&gt;exactly&lt;/em&gt; 1.0. That's the issue.&lt;/blockquote&gt;
 &lt;p&gt;He looked a little confused. I explained to him about how floats are represented.
 If you are interested you can read up on &lt;a class="reference external" href="https://docs.python.org/2.7/tutorial/floatingpoint.html"&gt;floating point values in Python&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;To demonstrate I opened an interpreter and ran this:&lt;/p&gt;
@@ -6719,18 +6725,18 @@ and had a blast. Amidst meeting some amazing people and having a lot of
 fun, our team managed to get first (second actually, as it was 0 indexed) place,
 but only because it went into over time (even though it wasn't a draw), but who's bitter,
 right :). Either way, we won some awesome medals&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://i.imgur.com/K4ftxMo.jpg"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/K4ftxMo.jpg&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Here's the score board at game close (we're Minor Zeta): &lt;a class="reference external" href="http://i.imgur.com/ILD2eAn.jpg"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/ILD2eAn.jpg&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/K4ftxMo.jpg"&gt;&lt;img alt="" src="http://i.imgur.com/K4ftxMo.jpg" style="width: 400px;" /&gt;&lt;/a&gt;
+&lt;p&gt;Here's the score board at game close (we're Minor Zeta):&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/ILD2eAn.jpg"&gt;&lt;img alt="" src="http://i.imgur.com/ILD2eAn.jpg" style="width: 400px;" /&gt;&lt;/a&gt;
 &lt;p&gt;There was a lot of good competition and a lot of fluxuation on the scoreboard.
 At times there wasn't much separating the top teams.
 Here's some of them hard at work:&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://i.imgur.com/q58o9LN.jpg"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/q58o9LN.jpg&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/q58o9LN.jpg"&gt;&lt;img alt="" src="http://i.imgur.com/q58o9LN.jpg" style="width: 400px;" /&gt;&lt;/a&gt;
 &lt;p&gt;The challenges were well thought out and balanced for coders and non coders alike.
 I'll be there at the next one, will you? If so, I hope to see you there.&lt;/p&gt;
 &lt;p&gt;Anyway it was great and I hope that a few of the people who I told about this URL
 are going to be reading this.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 26 May 2014 20:00:00 +0100</pubDate><guid>tag:,2014-05-26:2014/05/26/london-hacker-olympics-2014/</guid></item><item><title>Twitter - I'm back on it</title><link>/2014/05/26/twitter-im-back-on-it/</link><description>&lt;p&gt;Yeah yeah, I gave in. Find me on Twitter: &lt;a class="reference external" href="https://twitter.com/breakmain"&gt;&amp;#64;breakmain&lt;/a&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 26 May 2014 23:00:00 +0100</pubDate><guid>tag:,2014-05-26:2014/05/26/twitter-im-back-on-it/</guid><category>[]</category></item><item><title>Capturing smartphone traffic - Part 1</title><link>/2014/05/16/capturing-smartphone-traffic-part-1/</link><description>&lt;p&gt;We all carry phones around that are connected to some of network at all times.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 26 May 2014 20:00:00 +0100</pubDate><guid>tag:,2014-05-26:2014/05/26/london-hacker-olympics-2014/</guid></item><item><title>Capturing smartphone traffic - Part 1</title><link>/2014/05/16/capturing-smartphone-traffic-part-1/</link><description>&lt;p&gt;We all carry phones around that are connected to some of network at all times.
 Unless you are the truly paranoid or battery saving type, then there will be periods
 when your phone is dark.&lt;/p&gt;
 &lt;p&gt;But even so, I often wonder what my phone is transmitting when I'm not using it,
@@ -6742,7 +6748,7 @@ parts I'll be taking a look at some common apps and their network chatter. The
 idea is to analyse the data and understand their communications. Hopefully we'll
 also unearth some interesting things along the way.&lt;/p&gt;
 &lt;div class="section" id="what-we-ll-need"&gt;
-&lt;h2&gt;What we'll need ##&lt;/h2&gt;
+&lt;h2&gt;What we'll need&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;A smartphone&lt;/li&gt;
 &lt;li&gt;A laptop (or similar) to turn into a wireless access point&lt;/li&gt;
@@ -6751,11 +6757,11 @@ also unearth some interesting things along the way.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="setting-up-the-wireless-access-point"&gt;
-&lt;h2&gt;Setting up the wireless access point ##&lt;/h2&gt;
+&lt;h2&gt;Setting up the wireless access point&lt;/h2&gt;
 &lt;p&gt;I'm going to cover how to do this part in OSX for now. If I get round
 to it I'll add a Linux way to do it too.&lt;/p&gt;
 &lt;div class="section" id="osx"&gt;
-&lt;h3&gt;OSX ###&lt;/h3&gt;
+&lt;h3&gt;OSX&lt;/h3&gt;
 &lt;p&gt;First connect the laptop to an ethernet connection. You can't be connected to
 a wireless network and create a wireless access point at the same time.
 So we will connect to the internet via ethernet and use the wireless radio
@@ -6764,24 +6770,24 @@ for the access point. Once the ethernet connection is up and running, open
 entry (not the check box) and select &lt;em&gt;Ethernet&lt;/em&gt; in the &lt;em&gt;Share your connection
 from&lt;/em&gt; dropdown. In the &lt;em&gt;To computers using&lt;/em&gt; select &lt;em&gt;Wi-Fi&lt;/em&gt;. Now select the
 check box next to &lt;em&gt;Internet Sharing&lt;/em&gt; to turn sharing on.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://i.imgur.com/K2Zeyoy.png"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/K2Zeyoy.png&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/K2Zeyoy.png"&gt;&lt;img alt="" src="http://i.imgur.com/K2Zeyoy.png" style="width: 400px;" /&gt;&lt;/a&gt;
 &lt;p&gt;If everything went to plan your Wi-Fi indicator should now look like this:&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://i.imgur.com/ecXJUc8.png"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/ecXJUc8.png&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/ecXJUc8.png"&gt;&lt;img alt="" src="http://i.imgur.com/ecXJUc8.png" style="width: 400px;" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="connect-the-phone"&gt;
-&lt;h2&gt;Connect the phone ##&lt;/h2&gt;
+&lt;h2&gt;Connect the phone&lt;/h2&gt;
 &lt;p&gt;Now we connect tbe phone to the new access point. Go to your wireless network
 settings and select the name of the network we created. &lt;strong&gt;slaptop&lt;/strong&gt; in my case.
 Once do we need to&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="start-wireshark"&gt;
-&lt;h2&gt;Start Wireshark ##&lt;/h2&gt;
+&lt;h2&gt;Start Wireshark&lt;/h2&gt;
 &lt;p&gt;Fireup Wireshark and then select the capture interface. The default will be
 eth0 usually. That's the ethernet port, but we want to capture traffic on the
 wireless access point. So we need to select &lt;em&gt;en1&lt;/em&gt; (in my case). It's the one
 with the wireless icon next to it.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://i.imgur.com/9wyI6s6.png"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/9wyI6s6.png&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/9wyI6s6.png"&gt;&lt;img alt="" src="http://i.imgur.com/9wyI6s6.png" style="width: 400px;" /&gt;&lt;/a&gt;
 &lt;p&gt;Once this is done we'll want to filter out ARP packets as these are of little
 interest and there will be quite a few of them. See the screenshot below to
 see where to set this.&lt;/p&gt;
@@ -6789,10 +6795,10 @@ see where to set this.&lt;/p&gt;
 can check to see if it's working by browsing to a site. I chose this site at
 &lt;code&gt;192.30.252.153&lt;/code&gt;. You should see the capture window scroll past with some
 traffic going between your phone ip and the site your browsed to.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://i.imgur.com/XjFuoOQ.png"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/XjFuoOQ.png&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/XjFuoOQ.png"&gt;&lt;img alt="" src="http://i.imgur.com/XjFuoOQ.png" style="width: 400px;" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;div class="section" id="in-the-next-post"&gt;
-&lt;h2&gt;In the next post ##&lt;/h2&gt;
+&lt;h2&gt;In the next post&lt;/h2&gt;
 &lt;p&gt;So I'm all set to capture any and all traffic now that goes to and from my phone.
 With this I can now open various apps and see what traffic they generate. In
 the next posts I plan to see what idle traffic there is (no apps being actively
@@ -6805,16 +6811,16 @@ discover some interesting things about some apps.&lt;/p&gt;
 require a little bit of work to achieve it. But if you got stuck and are wondering where those missing eggs
 are, I hope this guide will help you.&lt;/p&gt;
 &lt;div class="section" id="egg-0x01-just-for-fun"&gt;
-&lt;h2&gt;Egg 0x01 - Just for fun #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x01 - Just for fun&lt;/h2&gt;
 &lt;p&gt;The the first egg is fairly easy. There's two ways to approach this one, but ultimately we need
 to stop that egg from spinning so we can scan it. I first thought it was a .gif file and so opened it
 in a new tab so I can download it and open it in Gimp or something. Turns out it's a .png, so you can either
 &lt;em&gt;Open Image in New Tab&lt;/em&gt; or save it and view it from there to scan the QR code, or remove the CSS class
-&lt;em&gt;eggImage pulse&lt;/em&gt; from the :code:&lt;tt class="docutils literal"&gt;img&lt;/tt&gt; tag.&lt;/p&gt;
+&lt;em&gt;eggImage pulse&lt;/em&gt; from the &lt;code&gt;img&lt;/code&gt; tag.&lt;/p&gt;
 &lt;p&gt;Scan the code and we're done.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x02-dude-where-s-challenge-2"&gt;
-&lt;h2&gt;Egg 0x02 - Dude, where's challenge 2?! #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x02 - Dude, where's challenge 2?!&lt;/h2&gt;
 &lt;p&gt;This egg is a little trickier to get, only because it involves making some mental
 connections. First off we have no link, simply the title &lt;em&gt;Challenge 2: Dude, where's challenge 2? It should be after challenge 1.&lt;/em&gt;
 So where is it? First of all you'll want to do the most obvious thing, that is enter
@@ -6826,7 +6832,7 @@ So armed with this knowledge we can perhaps try the Icelandic word for two inste
 &lt;em&gt;tveir&lt;/em&gt;. Substituting this for &lt;em&gt;two&lt;/em&gt; in our URL works. We have egg 0x02&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x03-whooo-whooo"&gt;
-&lt;h2&gt;Egg 0x03 - Whooo Whooo! #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x03 - Whooo Whooo!&lt;/h2&gt;
 &lt;p&gt;This egg is found on the app. Once you open the challenge you will see a kid's drawing of
 an owl and some random letters at the bottom.&lt;/p&gt;
 &lt;p&gt;Where have we seen letters like that before? Everywhere where you have URL shorteners really.
@@ -6834,26 +6840,26 @@ But which one could it be? Well the image gives us a clue: &lt;a class="referenc
 &lt;p&gt;Collect the egg.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x04-nothing-to-see-here"&gt;
-&lt;h2&gt;Egg 0x04 - Nothing to see here #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x04 - Nothing to see here&lt;/h2&gt;
 &lt;p&gt;The page and image tells us that there's nothing to see here. Oh well, let's go back and forget about it.&lt;/p&gt;
 &lt;p&gt;No, let's not, let's just do the usual thing of looking at the page source. It's always a good
 idea to poke around inside things to figure out how they work. Sometimes they might reveal some useful information.&lt;/p&gt;
-&lt;p&gt;And there it is... just below the :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;footer-wrapper&lt;/span&gt;&lt;/tt&gt; is our easter egg. Albeit in a little
+&lt;p&gt;And there it is... just below the &lt;code&gt;footer-wrapper&lt;/code&gt; is our easter egg. Albeit in a little
 less scannable format. Not to worry, let's figure this out. It looks like raw, base64 image data.
 Two ways to approach this one too. Both achieve the same thing, that is to decode base64 data.&lt;/p&gt;
 &lt;p&gt;The simplest way to do it is to use an online tool like &lt;a class="reference external" href="http://www.motobit.com/util/base64-decoder-encoder.asp"&gt;the motobit decoder&lt;/a&gt;
 . Simply paste the text into the field, select &lt;strong&gt;decode&lt;/strong&gt; then &lt;strong&gt;export to a binary file&lt;/strong&gt; and put whatever filename
-you want with a :code:&lt;tt class="docutils literal"&gt;.png&lt;/tt&gt; extension. Then click &lt;strong&gt;Convert&lt;/strong&gt; and your image will download.&lt;/p&gt;
+you want with a &lt;code&gt;.png&lt;/code&gt; extension. Then click &lt;strong&gt;Convert&lt;/strong&gt; and your image will download.&lt;/p&gt;
 &lt;p&gt;Alternatively create a new HTML file and in the header add:&lt;/p&gt;
 &lt;pre class="code html literal-block"&gt;
 body {
     background-image: url(&amp;quot;data:image/png;base64,&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;base64&lt;/span&gt; &lt;span class="na"&gt;data&lt;/span&gt; &lt;span class="na"&gt;follows&lt;/span&gt; &lt;span class="na"&gt;here&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&amp;quot;);
 }
 &lt;/pre&gt;
-&lt;p&gt;making sure you add the :code:&lt;tt class="docutils literal"&gt;body&lt;/tt&gt; tags. View the page in your browser and scan one of the eggs.&lt;/p&gt;
+&lt;p&gt;making sure you add the &lt;code&gt;body&lt;/code&gt; tags. View the page in your browser and scan one of the eggs.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x05-pet-shop"&gt;
-&lt;h2&gt;Egg 0x05 - Pet Shop #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x05 - Pet Shop&lt;/h2&gt;
 &lt;p&gt;This is less of a brain teaser. You just need to find the QR code in the image.
 You can do it by just looking at the image and seeing if you can spot it, or
 start tweaking colour values and then brightness contrast. Eventually you will
@@ -6861,40 +6867,40 @@ reveal a QR code. I needed to re-trace some of it in order to get it to scan, bu
 it depends on how well you manage to isolate its colours.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x06-australia"&gt;
-&lt;h2&gt;Egg 0x06 - Australia #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x06 - Australia&lt;/h2&gt;
 &lt;p&gt;This challenge is in the phone application. Click on it and we get a picture of
 Australia. We all know one thing about Australia. No, not that, the other thing.
 That's right, they're all upside down. Turn your phone over and screencap the egg to
 scan it with your app from your desktop.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x07-e-gg-mail"&gt;
-&lt;h2&gt;Egg 0x07 - E(gg)-Mail #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x07 - E(gg)-Mail&lt;/h2&gt;
 &lt;p&gt;This one had me too. I decoded the obvious base64 message, but then was stumped as
 to how to extract the eggs. A friend of mine (the one with the windows box) managed to
 open it in a &lt;em&gt;.msg&lt;/em&gt; viewer and get the attachment that way. A &lt;em&gt;.msg&lt;/em&gt; is an Outlook/MS mail
 format. So a viewer to open the file is all that was needed to get the egg.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x08-hidden"&gt;
-&lt;h2&gt;Egg 0x08 - &lt;em&gt;hidden&lt;/em&gt; #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x08 - &lt;em&gt;hidden&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;This is a hidden egg. But where could it be hiding? Well, have you tried &lt;em&gt;searching&lt;/em&gt; for it?&lt;/p&gt;
 &lt;p&gt;At the time of writing searching for &lt;em&gt;hackyeaster&lt;/em&gt; in Google images shows you egg 0x08.
 It's actually in the screen shots for the apps. So either go to the AppStore or Google Play
 and look for the hacky easter app. Check the screen shots and you will find egg 0x08.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x09-wise-rabbit"&gt;
-&lt;h2&gt;Egg 0x09 - Wise Rabbit #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x09 - Wise Rabbit&lt;/h2&gt;
 &lt;p&gt;The Wise Rabbit.. oh he's such a smug bastard. This is a really annoying one because
 it's quite easy, but I had to spend quite some time thinking about it. This is where
 those many hours spent playing text adventures pays off.&lt;/p&gt;
 &lt;p&gt;So what do we notice about this page? First off it tells us to check the green eggs.
 First I skimmed the pages again, re-checked all the files and turned up with nothing.
 &amp;quot;Quick response&amp;quot; - might this relate to the email challenge? Check again but nothing.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Q*uick *R*esponse. QR. So let's just scan the green eggs again, but this time without
-the app, but with a separate QR code reader. **Beep*&lt;/em&gt; sure enough, there seems to be
+&lt;p&gt;&lt;em&gt;Q&lt;/em&gt;uick &lt;em&gt;R&lt;/em&gt;esponse. QR. So let's just scan the green eggs again, but this time without
+the app, but with a separate QR code reader. &lt;strong&gt;Beep&lt;/strong&gt; sure enough, there seems to be
 something there. Scan a few eggs and the pass phrase will reveal itself.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x0a-hidden"&gt;
-&lt;h2&gt;Egg 0x0a - &lt;em&gt;hidden&lt;/em&gt; #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x0a - &lt;em&gt;hidden&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;Another hidden one? I have to admit, these bugged me a lot, because you just had to
 be nosey enough to find them, and they were quite tricky to find.&lt;/p&gt;
 &lt;p&gt;So the first clue is that the hidden eggs might be in the files provided, outside of
@@ -6905,7 +6911,7 @@ we can extract that egg somehow. I tried &lt;a class="reference external" href="
 enough, there's the egg for you to scan.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x0b-i-frame-you-frame"&gt;
-&lt;h2&gt;Egg 0x0b - I frame, you frame #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x0b - I frame, you frame&lt;/h2&gt;
 &lt;p&gt;Another app based one. Fire up the challenge and you have to press a button.
 You press it and it tells you that it can't be viewed in a mobile browser.&lt;/p&gt;
 &lt;p&gt;So we need to figure out what URL is being accessed and enter that into a browser.
@@ -6915,11 +6921,11 @@ the URL.&lt;/p&gt;
 OSX called &lt;a class="reference external" href="http://squidman.net/squidman/"&gt;Squidman&lt;/a&gt;. Start it up and then
 connect to it with your device. How you do that depends on whether you have an Android or
 iPhone, but I am sure you can figure it out. Once connected view the Squid logs and
-press the button. You should now see the URL :code:&lt;tt class="docutils literal"&gt;GET&lt;/tt&gt; request. Gran this URL and
+press the button. You should now see the URL &lt;code&gt;GET&lt;/code&gt; request. Gran this URL and
 paste it into your browser URL. Snap the pic and&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x0c-call-me"&gt;
-&lt;h2&gt;Egg 0x0c - Call Me! #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x0c - Call Me!&lt;/h2&gt;
 &lt;p&gt;Call me? What do you mean? Who are you? Where are you? will this run up a massive
 phone bill?&lt;/p&gt;
 &lt;p&gt;No it won't. Take a look at the image. There's a protocol specified there: &lt;em&gt;ps.hackyeaster://&lt;/em&gt;
@@ -6927,7 +6933,7 @@ So enter that in your mobile browser (Chrome didn't work for me, but Firefox did
 &lt;p&gt;Voila, egg 0x0C&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x0d-hidden"&gt;
-&lt;h2&gt;Egg 0x0d - &lt;em&gt;hidden&lt;/em&gt; #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x0d - &lt;em&gt;hidden&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;Another hidden one.... &lt;em&gt;sigh&lt;/em&gt;, at least it's the last one.
 Well ok, let's have a look at some of the other supporting files.
 We've got the flyer already. Nothing else to download. Except perhaps.... Yes, the app itself.&lt;/p&gt;
@@ -6936,7 +6942,7 @@ grab the application APK and unzip it, search for PNG images and one of those is
 &lt;p&gt;Phew - that's all the hidden eggs done with.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x0e-bunny-research"&gt;
-&lt;h2&gt;Egg 0x0e - Bunny Research #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x0e - Bunny Research&lt;/h2&gt;
 &lt;p&gt;A PDF with some plain text and some, what appears to be, encrypted text. Well clearly the
 answer is in the encrypted text. But how do we decode it? Let's just read the text around it.
 Mostly just big words and hot air. Well, given the format of the encypted text it looks like a
@@ -6992,7 +6998,7 @@ as above to solve the rest of the key. Once you've deciphered the whole text, yo
 the page to get your key.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x0f-paper-chase"&gt;
-&lt;h2&gt;Egg 0x0f - Paper Chase #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x0f - Paper Chase&lt;/h2&gt;
 &lt;p&gt;This one already provides a big hint: Google maps.&lt;/p&gt;
 &lt;p&gt;So let's do a quick search to see if we can find the restaurant on line, get its address and take a look. It won't take long
 to get the location of the restaurant, so open Google Earth and take a look. Lots of photos. None of them the one we want.
@@ -7001,7 +7007,7 @@ a peek at the EXIF data. There we go, location data. Enter the data into Google 
 &lt;p&gt;And sure enough, there's the photo we are looking for. Click, zoom, ehance, scan.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x10-broken-egg"&gt;
-&lt;h2&gt;Egg 0x10 - Broken Egg #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x10 - Broken Egg&lt;/h2&gt;
 &lt;p&gt;We're given two png files. One is a partial egg, the other one doesn't even show. One thing
 I tend to do is always look at the files in hex if in doubt. The first egg looks normal. Let's take a look at
 the second egg. Oh, there's some familiar data there at the end. Looks like that base 64 stuff we've seen
@@ -7011,7 +7017,7 @@ pic is the top half.&lt;/p&gt;
 the file, and then use your favourite image editor to combine the two halves.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x11-number-cracker"&gt;
-&lt;h2&gt;Egg 0x11 - Number Cracker #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x11 - Number Cracker&lt;/h2&gt;
 &lt;p&gt;We're told what to do, so let's do that&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 $&amp;gt; netcat hackyeaster.hacking-lab.com 1234
@@ -7048,41 +7054,41 @@ taken to write a script to do it. Sometimes it's just easier to not try to
 automate it. Once done, you'll get your egg.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x12-lost-in-transformation"&gt;
-&lt;h2&gt;Egg 0x12 - Lost in Transformation #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x12 - Lost in Transformation&lt;/h2&gt;
 &lt;p&gt;We've got a wall of text here and our biggest clue is that the beginning of the text [100:b64]
 &lt;em&gt;b64&lt;/em&gt; most likely hints at base64 encoding, so let's give it a whirl. Copy everything but the bits
 in the [] and decode.&lt;/p&gt;
-&lt;p&gt;Now we have :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;[99:inv][98:URL]&lt;/span&gt;&lt;/tt&gt;.... oh god. It looks like... yeah, it's been encoded 100 times
+&lt;p&gt;Now we have &lt;code&gt;[99:inv][98:URL]&lt;/code&gt;.... oh god. It looks like... yeah, it's been encoded 100 times
 with a different method each time. We will have to script this. If you fancy the exercise you can
 run a loop over the text and decode it with whatever method is specified in the []. Each time you come
 across a new encoding method, add it to the list.&lt;/p&gt;
 &lt;p&gt;Alternatively view &lt;a class="reference external" href="https://gist.github.com/Svenito/d28572d6c9a4c1a1b603#file-egg0x0e-py"&gt;my gist&lt;/a&gt; of it here.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x13-tap-the-xap"&gt;
-&lt;h2&gt;Egg 0x13 - Tap The Xap #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x13 - Tap The Xap&lt;/h2&gt;
 &lt;p&gt;I hated this one. It was a pain. I thought that you had to run the xap to solve this, but I got lucky.
-VERY lucky. So apparently xap files are just zip files so :code:&lt;tt class="docutils literal"&gt;unzip TapTheXap.xap&lt;/tt&gt; will extract all there is
+VERY lucky. So apparently xap files are just zip files so &lt;code&gt;unzip TapTheXap.xap&lt;/code&gt; will extract all there is
 inside the app. Unfortunately no egg.png - that'd be too easy right? Where could it be? I got desperate and
-ran :code:&lt;tt class="docutils literal"&gt;grep egg *&lt;/tt&gt; on the files. Turns out TapTheXap.dll matches. Ok, let's see what's inside by viewing the
+ran &lt;code&gt;grep egg *&lt;/code&gt; on the files. Turns out TapTheXap.dll matches. Ok, let's see what's inside by viewing the
 hexdump.&lt;/p&gt;
 &lt;p&gt;Right, so in there is an egg13.png, inside, what appears to be a PKZIP. So I guess the dll contains a zip file
 with the egg in it. I'll give you a quick tip: you can unzip a zip file inside a dll by just doing
-:code:&lt;tt class="docutils literal"&gt;unzip TapTheXap.dll&lt;/tt&gt;. I didn't know that at first, but anyway. Now it wants a password. Grrr. The password must
-be in the app somewhere, so I just ran :code:&lt;tt class="docutils literal"&gt;strings TapTheXap.dll&lt;/tt&gt; to see what we've got. This looks promising
+&lt;code&gt;unzip TapTheXap.dll&lt;/code&gt;. I didn't know that at first, but anyway. Now it wants a password. Grrr. The password must
+be in the app somewhere, so I just ran &lt;code&gt;strings TapTheXap.dll&lt;/code&gt; to see what we've got. This looks promising
 &lt;em&gt;part 1: Dpbwob2HGo&lt;/em&gt;. So there must be a part 2... ah there is. But it has no password. I wish I could tell you
 I had a really cunning plan and found the second part that way, but I view the file in hex again and searched for
-part 2 in it. Then I scrolled looking for any interesting data. Eventually I found :code:&lt;tt class="docutils literal"&gt;tapthexap.zip&lt;/tt&gt; followed by
+part 2 in it. Then I scrolled looking for any interesting data. Eventually I found &lt;code&gt;tapthexap.zip&lt;/code&gt; followed by
 a potential password. What else can I do but just give it a try. So add that part to the end of part1 and.... Success!!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x14-boolean-101"&gt;
-&lt;h2&gt;Egg 0x14 - Boolean 101 #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x14 - Boolean 101&lt;/h2&gt;
 &lt;p&gt;Here we are given 4 files, all with binary numbers inside. The image actually gives us instructions. What we need to
 do here is take the data and perform the operations on it. I used a quick Python script to parse the files, remove the white
 space and perform the required operations. Once you've got that data save it to a new file and learn about
 &lt;a class="reference external" href="http://netpbm.sourceforge.net/"&gt;Netbpm&lt;/a&gt;. Use this to generate the QR code.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x15-jurrasic-hack"&gt;
-&lt;h2&gt;Egg 0x15 - Jurrasic Hack #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x15 - Jurrasic Hack&lt;/h2&gt;
 &lt;p&gt;Big clue - Steganography. But which image. I figured out the image by just looking at the file sizes.
 Alternatively the headers of the images (when viewed in hex) have big clue too. So I found out that the
 stegasaurus was suspiciously larger than the others. That must be our candidate.&lt;/p&gt;
@@ -7092,14 +7098,14 @@ So I opened it up in a hex editor to see if that will give me some answers. Ther
 and run it and sure enough, the egg's inside.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x16-time-to-travel"&gt;
-&lt;h2&gt;Egg 0x16 - Time To Travel #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x16 - Time To Travel&lt;/h2&gt;
 &lt;p&gt;We need to go to where? Well relax. We don't really. Now, if you are on iPhone, I can't help
 you specifically, but on Android you have to choices again. You can try a fakeGPS app to spoof
 the GPS coordinates, or you can just edit the app and upload it to the device again. All you need to
 do is find where the location coordinates are checked and override them. Get the egg and we're done.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x17-egg-safe"&gt;
-&lt;h2&gt;Egg 0x17 - Egg Safe #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x17 - Egg Safe&lt;/h2&gt;
 &lt;p&gt;This Java application requires us to enter a number to unlock the safe. Ok, can we brute force it? Sure, but
 it will take a while, so let's approach it a little more cleverly. So we can unzip a .jar file
 and see what's inside. There we have an EggSafe.class - we can decompile this and take a look at what it does.
@@ -7111,14 +7117,16 @@ to decode the image. I decoded the image to disk because the supplied app wasn't
 machine for some reason.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="egg-0x18-paper-and-pen"&gt;
-&lt;h2&gt;Egg 0x18 - Paper And Pen #&lt;/h2&gt;
+&lt;h2&gt;Egg 0x18 - Paper And Pen&lt;/h2&gt;
 &lt;p&gt;I loved this one after a period of frustration. I'll try to outline how I managed to decode this from that to finish.
 The hint here is that it's a paper and pen cipher, so first I looked up information on those and how they
 work in principle. None of the ciphers really looked anything like the one we have. I kept at it and looked at what the
 ciphers do and what their output means. Some use a keyword to encode the plain text, but it'd be impossible to
 decode without the keyword, and there wasn't anywhere that I could see a keyword. Others had the information
 encoded inside the cipher text. So let's take a look at the text a little bit closer.&lt;/p&gt;
-&lt;p&gt;:code:&lt;tt class="docutils literal"&gt;Dii2 Dii3 Di2 Gi1 Gi1 Aiii1 Diii2 Gi3 Aiii2 Gi2 Giii1 Dii3 Aiii3 Gii3 Di2 Diii3&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="code text literal-block"&gt;
+Dii2 Dii3 Di2 Gi1 Gi1 Aiii1 Diii2 Gi3 Aiii2 Gi2 Giii1 Dii3 Aiii3 Gii3 Di2 Diii3`
+&lt;/pre&gt;
 &lt;p&gt;We can see a few things here. The initial letter is either &lt;em&gt;A&lt;/em&gt;, &lt;em&gt;D&lt;/em&gt;, or &lt;em&gt;G&lt;/em&gt;, then follows one of &lt;em&gt;i&lt;/em&gt;, &lt;em&gt;ii&lt;/em&gt;, &lt;em&gt;iii&lt;/em&gt; and ends with
 &lt;em&gt;1&lt;/em&gt;, &lt;em&gt;2&lt;/em&gt;, &lt;em&gt;3&lt;/em&gt;. So that's actually 3 bits of information. Which could mean we're referencing 3D coordinates. What's the deal with
 A, D, and G though? Oh, look, the are all the same distance apart. So that got me thinking. &lt;em&gt;ABC&lt;/em&gt;, &lt;em&gt;DEF&lt;/em&gt;, &lt;em&gt;GHI&lt;/em&gt;.
@@ -7139,14 +7147,13 @@ Each components is an index into one part. The letters tell you the line, the &l
 || G | H | I || P | Q | R || Y | Z |   ||
 -----------------------------------------
 &lt;/pre&gt;
-&lt;p&gt;So &lt;em&gt;Dii2&lt;/em&gt; translates to :code:&lt;tt class="docutils literal"&gt;n&lt;/tt&gt;. Use the table to get the full text&lt;/p&gt;
+&lt;p&gt;So &lt;em&gt;Dii2&lt;/em&gt; translates to &lt;code&gt;n&lt;/code&gt;. Use the table to get the full text&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 22 Apr 2014 13:00:00 +0100</pubDate><guid>tag:,2014-04-25:2014/04/25/hackyeaster-all-eggs/</guid></item><item><title>Thoughts on piracy</title><link>/2014/04/12/thoughts-on-piracy/</link><description>&lt;p&gt;Piracy is rampant, or so certain media and copyright trolls would lead you to believe.
 I'm not sure how true this is as I have no access to figures proving it either way, and it would
 require me to define at what level copying copyrighted stuff becomes &lt;em&gt;rampant&lt;/em&gt;. Besides,
 this is not really what I wanted to write about. I'm more interested in airing a few
 thoughts I've had about some of the things going on around piracy.&lt;/p&gt;
-&lt;p&gt;&amp;lt;!--more--&amp;gt;&lt;/p&gt;
 &lt;p&gt;Piracy, in the copyright sense, has been around for as long as can remember. Copying a
 tape (a magnetic ribbon that stored data for those not as ancient as me) was not
 a big issue. In fact companies manufactured tape decks with two cassette players
@@ -7201,7 +7208,7 @@ out to suck won't be such a big loss. You'd spend a few units of your currency a
 it, then so what? Fork over 10 times that and you'll think twice before you spend it.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sat, 12 Apr 2014 20:00:00 +0100</pubDate><guid>tag:,2014-04-12:2014/04/12/thoughts-on-piracy/</guid></item><item><title>Threading Python</title><link>/2014/04/11/threading-python/</link><description>&lt;p&gt;Having helped my colleague deal with PyQt threads, I feel that
 this gif sums up threading in Python very well:&lt;/p&gt;
-&lt;p&gt;!`threads &amp;lt;&lt;a class="reference external" href="https://i.imgur.com/h7mePfx.gif"&gt;https://i.imgur.com/h7mePfx.gif&lt;/a&gt;&amp;gt;`_&lt;/p&gt;
+&lt;img alt="threads" src="https://i.imgur.com/h7mePfx.gif" /&gt;
 &lt;p&gt;Happy Friday&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 11 Apr 2014 15:00:00 +0100</pubDate><guid>tag:,2014-04-11:2014/04/11/threading-python/</guid></item><item><title>Rekindling old flames</title><link>/2014/04/10/rekindling-old-flames/</link><description>&lt;p&gt;Some time ago, some long, long time ago, I started working on a ray tracer. Yes, you're
 right, the world doesn't need another ray tracer. I wasn't writing another ray tracer though.
@@ -7255,24 +7262,17 @@ the module(s) we want to test. If you want to specify multiple modules simply
 separate them with commas: &lt;code&gt;os.environ['NOSE_COVER_PACKAGE'] = 'module_to_test,another_module'&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Unfortunately for this to work properly you need to patch nose's cover plugin.
 There's a small bug in older versions, so depending on your distro you may need to
-make the following change to
-&lt;code&gt;nose/plugins/cover.py&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Change these lines
-.. code:: python&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;for pkgs in [tolist(x) for x in options.cover_packages]:&lt;/dt&gt;
-&lt;dd&gt;self.coverPackages.extends(pkgs)&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;to these lines
-.. code:: python&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;for pkgs in tolist(options.cover_packages):&lt;/dt&gt;
-&lt;dd&gt;self.coverPackages.append(pkgs)&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/blockquote&gt;
+make the following change to &lt;code&gt;nose/plugins/cover.py&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Change these lines&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;pkgs&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;tolist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cover_packages&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;coverPackages&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;extends&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pkgs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;to these lines&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;pkgs&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tolist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cover_packages&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;coverPackages&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pkgs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
 &lt;p&gt;Otherwise the &lt;code&gt;NOSE_COVER_PACKAGE&lt;/code&gt; variable won't work properly.&lt;/p&gt;
 &lt;p&gt;I also setup the &lt;code&gt;sys.path&lt;/code&gt; so that I load my local module rather
 than the globally installed one. Depending on how your directories are laid out
@@ -7402,7 +7402,6 @@ But you should at least have a local backup, and ideally an offsite one too.&lt;
 &lt;p&gt;So why did I stop paying for Backblaze? No real reason. It came up to the renewal date
 and I thought &amp;quot;I wonder if I can do this a little cheaper perhaps?&amp;quot;. After all, I'm not
 a stranger to technology.&lt;/p&gt;
-&lt;p&gt;&amp;lt;!--more--&amp;gt;&lt;/p&gt;
 &lt;p&gt;For Christmas I was lovingly gifted a 2TB
 &lt;a class="reference external" href="http://www.wdc.com/en/products/products.aspx?id=280"&gt;WD Mybook Live drive&lt;/a&gt;
 and thought this is what I will use for backups (amongst other things). To give you
@@ -7475,7 +7474,7 @@ Backblaze, but so far this is the backup solution I am going with. I'll update
 this post with any discoveries if they are minor, or write new posts if they
 require a bit more space.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 26 Feb 2014 20:00:00 +0000</pubDate><guid>tag:,2014-02-26:2014/02/26/back-it-up/</guid></item><item><title>Sorting</title><link>/2014/02/25/sorting/</link><description>&lt;p&gt;A very quick post about sorting a list of objects in python. Suppose you have a
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 26 Feb 2014 00:00:00 +0000</pubDate><guid>tag:,2014-02-26:2014/02/26/back-it-up/</guid></item><item><title>Sorting</title><link>/2014/02/25/sorting/</link><description>&lt;p&gt;A very quick post about sorting a list of objects in python. Suppose you have a
 list of same objects and you wish to sort them based on one of these attributes, perhaps
 a return value from a method. There's a really nice way to do it in place:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
@@ -7484,10 +7483,10 @@ a return value from a method. There's a really nice way to do it in place:&lt;/p
 &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;sort_by&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'age'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_age&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;As you can see I wrapped the :code:&lt;tt class="docutils literal"&gt;`get_name:code:`&lt;/tt&gt; call in a :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;`str():code:`&lt;/span&gt;&lt;/tt&gt; because
+&lt;p&gt;As you can see I wrapped the &lt;code&gt;get_name&lt;/code&gt; call in a &lt;code&gt;str()&lt;/code&gt; because
 in this case it was returning something else. I didn't have control over the
 code for the user class.&lt;/p&gt;
-&lt;p&gt;So now the :code:&lt;tt class="docutils literal"&gt;`people:code:`&lt;/tt&gt; list is sorted by whichever attribute you decide and
+&lt;p&gt;So now the &lt;code&gt;people&lt;/code&gt; list is sorted by whichever attribute you decide and
 you can iterate over it as normal.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 25 Feb 2014 09:00:00 +0000</pubDate><guid>tag:,2014-02-25:2014/02/25/sorting/</guid></item><item><title>Back to the Octo</title><link>/2014/01/28/back-to-the-octo/</link><description>&lt;p&gt;Back to the Ocotpress we go....&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 28 Jan 2014 22:00:00 +0000</pubDate><guid>tag:,2014-01-28:2014/01/28/back-to-the-octo/</guid></item><item><title>YouCompleteMe</title><link>/2013/11/07/youcompleteme/</link><description>&lt;p&gt;If you haven't heard of the YouCompleteMe plugin for Vim, headover to
@@ -7495,13 +7494,12 @@ you can iterate over it as normal.&lt;/p&gt;
 It's a very competent auto completer for a variety of languages. But as always the C style completer takes
 a little bit of work to get going. So just for you, I've written up how I managed to get it to work
 on 64bit Centos 6.2.&lt;/p&gt;
-&lt;p&gt;&amp;lt;!--more--&amp;gt;&lt;/p&gt;
 &lt;p&gt;So using &lt;a class="reference external" href="https://github.com/gmarik/vundle)installYouCompleteMe(referredtoasYCMfromnowon"&gt;Vundle&lt;/a&gt;.
 Now we need to build clang. I managed to get this done by following &lt;a class="reference external" href="http://clang.llvm.org/get_started.html"&gt;these steps&lt;/a&gt;.
-Use :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;CC=&amp;quot;/usr/bin/gcc&amp;quot;&lt;/span&gt; &lt;span class="pre"&gt;CXX=&amp;quot;/usr/bin/g++&amp;quot;&lt;/span&gt; &lt;span class="pre"&gt;../llvm/configure&lt;/span&gt;&lt;/tt&gt; to configure it.&lt;/p&gt;
-&lt;p&gt;You will end up with a directory called :code:&lt;tt class="docutils literal"&gt;build&lt;/tt&gt; that contains almost everything. All you have to do is copy the
-:code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;llvm/tools/clang/include/clang-c&lt;/span&gt;&lt;/tt&gt; folder from the original checkout (step 2 if you follow the clang guide) to
-:code:&lt;tt class="docutils literal"&gt;build/include&lt;/tt&gt;.&lt;/p&gt;
+Use &lt;code&gt;CC=&amp;quot;/usr/bin/gcc&amp;quot; CXX=&amp;quot;/usr/bin/g++&amp;quot; ../llvm/configure&lt;/code&gt; to configure it.&lt;/p&gt;
+&lt;p&gt;You will end up with a directory called &lt;code&gt;build&lt;/code&gt; that contains almost everything. All you have to do is copy the
+&lt;code&gt;llvm/tools/clang/include/clang-c&lt;/code&gt; folder from the original checkout (step 2 if you follow the clang guide) to
+&lt;code&gt;build/include&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Now we need to build the YCM tools according to the docs. Here's the command I used:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 cmake -G &lt;span class="s2"&gt;&amp;quot;Unix Makefiles&amp;quot;&lt;/span&gt; -DPATH_TO_LLVM_ROOT&lt;span class="o"&gt;=&lt;/span&gt;/tmp/build -DEXTERNAL_LIBCLANG_PATH&lt;span class="o"&gt;=&lt;/span&gt;/tmp/build/Release+Asserts/lib/libclang.so . ~/.vim/bundle/YouCompleteMe/cpp
@@ -7511,7 +7509,7 @@ cmake -G &lt;span class="s2"&gt;&amp;quot;Unix Makefiles&amp;quot;&lt;/span&gt; 
 make ycm_support_libs
 &lt;/pre&gt;
 &lt;p&gt;And with some patience you are done.&lt;/p&gt;
-&lt;p&gt;Now you need to add a :code:&lt;tt class="docutils literal"&gt;.ycm_extra_conf.py&lt;/tt&gt; to your project and you should start seeing autocompletion.&lt;/p&gt;
+&lt;p&gt;Now you need to add a &lt;code&gt;.ycm_extra_conf.py&lt;/code&gt; to your project and you should start seeing autocompletion.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 07 Nov 2013 12:00:00 +0000</pubDate><guid>tag:,2013-11-07:2013/11/07/youcompleteme/</guid></item><item><title>Vim as a Python IDE</title><link>/2013/02/08/vim-as-a-python-ide/</link><description>&lt;p&gt;I've been spending quite a bit of time with our good old buddy Python recently, and when
 I do, I always invite along our mutual friend Vim. He's a barrell of laughs and always
 knows of a quicker way to do things. So I've been getting the two acquainted more and more
@@ -7526,7 +7524,6 @@ time with it before installing any plugins. That way you get used to how Vim wor
 Once you're comfortable with using it, and you've gotten to grips with the Vim-way, go ahead and
 install some extras.&lt;/p&gt;
 &lt;p&gt;Right, let's get started.&lt;/p&gt;
-&lt;p&gt;&amp;lt;!--more--&amp;gt;&lt;/p&gt;
 &lt;p&gt;First and foremost you should install &lt;a class="reference external" href="https://github.com/gmarik/vundle"&gt;Vundle&lt;/a&gt;. Vundle will
 make installing and updating all the other tools much easier. It's basically pathogen with a lot
 of nice extras, like installing the bundles itself from their Github repos (and other sources).
@@ -7562,7 +7559,7 @@ Bundle &lt;span class="s1"&gt;'gmarik/vundle'&lt;/span&gt;
 to your :code:&lt;tt class="docutils literal"&gt;.vimrc&lt;/tt&gt; one by one and then just install them all at once at the end if you prefer.&lt;/p&gt;
 &lt;p&gt;Ok, so having done that let's configure a few more things.&lt;/p&gt;
 &lt;div class="section" id="highlight-excess-line-length"&gt;
-&lt;h2&gt;Highlight excess line length #&lt;/h2&gt;
+&lt;h2&gt;Highlight excess line length&lt;/h2&gt;
 &lt;p&gt;You'll probably want to set a restriction to line width for python files. I like to set this to 120
 chars. 80 chars is usually the standard, but with modern displays we can allow ourselves a few more,
 but you are free to adjust as you like. To enable this excess highlighting, add the following lines
@@ -7580,9 +7577,9 @@ augroup vimrc_autocmds
 to suit your colourscheme. It also turns off line wrapping for python files.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="powerline"&gt;
-&lt;h2&gt;Powerline #&lt;/h2&gt;
+&lt;h2&gt;Powerline&lt;/h2&gt;
 &lt;p&gt;Next up we install &lt;a class="reference external" href="https://github.com/Lokaltog/powerline"&gt;Powerline&lt;/a&gt; which looks like this:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;/images/content/powerline.png&amp;quot;" /&gt;
+&lt;img alt="" src="/images/powerline.png" /&gt;
 &lt;p&gt;It shows you your current mode (NORMAL), the current branch in Git, the file you are editing and some other
 useful information.&lt;/p&gt;
 &lt;p&gt;Simply add:&lt;/p&gt;
@@ -7617,9 +7614,9 @@ $&amp;gt; vim --version &lt;span class="p"&gt;|&lt;/span&gt; grep -i python
 you not have Python enabled or prefer to use it over the Python version.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="fugitive"&gt;
-&lt;h2&gt;Fugitive #&lt;/h2&gt;
-&lt;p&gt;[Fugitive](&lt;a class="reference external" href="https://github.com/tpope/vim-fugitive"&gt;https://github.com/tpope/vim-fugitive&lt;/a&gt;) is a &lt;a class="reference external" href="http://git-scm.com/"&gt;Git&lt;/a&gt; plugin. It basically wraps
-most Git commands so that you can call them from inside Vim. They are prefixed with :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;G`:code:`,&lt;/span&gt; for example &lt;span class="pre"&gt;`:code:`Gcommit&lt;/span&gt;&lt;/tt&gt;
+&lt;h2&gt;Fugitive&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://git-scm.com/"&gt;Fugitive &amp;lt;https://github.com/tpope/vim-fugitive) is a `Git&lt;/a&gt; plugin. It basically wraps
+most Git commands so that you can call them from inside Vim. They are prefixed with &lt;code&gt;G&lt;/code&gt;, for example &lt;code&gt;Gcommit&lt;/code&gt;
 For example it allows you to stage files directly from Vim and make the commit. It also leverages VimDiff to perform
 conflict resolution, blame and the like. There's a whole set of screencasts on how to use it available from
 &lt;a class="reference external" href="http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/"&gt;Vim Casts&lt;/a&gt; which I recommend watching.&lt;/p&gt;
@@ -7630,24 +7627,24 @@ Bundle &lt;span class="s1"&gt;'tpope/vim-fugitive'&lt;/span&gt;
 &lt;p&gt;Run :code:&lt;tt class="docutils literal"&gt;:BundleInstall&lt;/tt&gt; again to install it.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="nerdtree"&gt;
-&lt;h2&gt;NerdTree #&lt;/h2&gt;
+&lt;h2&gt;NerdTree&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/scrooloose/nerdtree"&gt;NerdTree&lt;/a&gt; is a filebrowser that pops up in a
 split when you need it and features a tree like file browser (hence the  &lt;em&gt;tree&lt;/em&gt; part in the name).
 It looks somewhat like this:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;/images/content/nerdtree.png&amp;quot;" /&gt;
+&lt;img alt="" src="/images/nerdtree.png" /&gt;
 &lt;p&gt;As usual you just need to add its package to Vundle:&lt;/p&gt;
 &lt;pre class="code vim literal-block"&gt;
 Bundle &lt;span class="s1"&gt;'scrooloose/nerdtree'&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;and :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;:BundleInstall`:code:`&lt;/span&gt; once you restart Vim. To activate with &lt;span class="pre"&gt;`:code:`F2`:code:`&lt;/span&gt; add the following to &lt;span class="pre"&gt;`:code:`.vimrc&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
+&lt;p&gt;and &lt;code&gt;:BundleInstall&lt;/code&gt; once you restart Vim. To activate with &lt;code&gt;F2&lt;/code&gt; add the following to &lt;code&gt;.vimrc&lt;/code&gt;:&lt;/p&gt;
 &lt;pre class="code vim literal-block"&gt;
 map &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;F2&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; :NERDTreeToggle&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;CR&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Press :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;F2`:code:`&lt;/span&gt; in vim and it will take you to the current working directory. Press &lt;span class="pre"&gt;`:code:`?&lt;/span&gt;&lt;/tt&gt; to see NerdTree's
+&lt;p&gt;Press &lt;code&gt;F2&lt;/code&gt; in vim and it will take you to the current working directory. Press &lt;code&gt;?&lt;/code&gt; to see NerdTree's
 list of commands.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="python-mode"&gt;
-&lt;h2&gt;Python mode #&lt;/h2&gt;
+&lt;h2&gt;Python mode&lt;/h2&gt;
 &lt;p&gt;This is the big one. It basically adds all the Python functionality you could ever want in Vim. Things like Lint,
 codecompletion, documentation lookup, jump to classes, refactoring tools etc. You'll find it in
 &lt;a class="reference external" href="https://github.com/klen/python-mode"&gt;Python-mode&lt;/a&gt;&lt;/p&gt;
@@ -7655,10 +7652,10 @@ codecompletion, documentation lookup, jump to classes, refactoring tools etc. Yo
 &lt;pre class="code vim literal-block"&gt;
 Bundle &lt;span class="s1"&gt;'klen/python-mode'&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Again, :code:&lt;tt class="docutils literal"&gt;:BundleInstall&lt;/tt&gt; to install it and then we probably want to configure some items. There's a lot to
+&lt;p&gt;Again, &lt;code&gt;:BundleInstall&lt;/code&gt; to install it and then we probably want to configure some items. There's a lot to
 configure, so if you want the complete picture I suggest you head over to the
 &lt;a class="reference external" href="https://github.com/klen/python-mode"&gt;Github repo&lt;/a&gt; and read the more complete docs,
-or run :code:&lt;tt class="docutils literal"&gt;:help &lt;span class="pre"&gt;python-mode&lt;/span&gt;&lt;/tt&gt; from inside Vim.&lt;/p&gt;
+or run &lt;code&gt;:help python-mode&lt;/code&gt; from inside Vim.&lt;/p&gt;
 &lt;p&gt;I found the following settings most useful personally, but you might want to tweak some settings to suit your needs
 and workflow. The following a copy-paste from my .vimrc. The keyboard shortcuts in the comments are the ones I find
 most useful and I keep them there for reference:&lt;/p&gt;
@@ -7706,25 +7703,25 @@ most useful and I keep them there for reference:&lt;/p&gt;
 &lt;/pre&gt;
 &lt;p&gt;To explain the above a bit, here's what it does:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;Allow me to look up Python docs by pressing :code:&lt;tt class="docutils literal"&gt;K&lt;/tt&gt;&lt;/li&gt;
-&lt;li&gt;Automatically check my code on each save, but only use :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;PyLint`:code:`&lt;/span&gt; or &lt;span class="pre"&gt;`:code:`PyFlakes&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;Allow me to look up Python docs by pressing &lt;code&gt;K&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Automatically check my code on each save, but only use &lt;code&gt;PyLint&lt;/code&gt; or &lt;code&gt;PyFlakes&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Support virtualenv&lt;/li&gt;
-&lt;li&gt;Use :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;&amp;lt;leader&amp;gt;b`:code:`&lt;/span&gt; to add a pdb shortcut (inserts &lt;span class="pre"&gt;`:code:`import&lt;/span&gt; pdb; pdb.set_trace() # XXX BREAKPOINT&lt;/tt&gt; into your code&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;&amp;lt;leader&amp;gt;b&lt;/code&gt; to add a pdb shortcut (inserts &lt;code&gt;import pdb; pdb.set_trace() # XXX BREAKPOINT&lt;/code&gt; into your code&lt;/li&gt;
 &lt;li&gt;Enhanced syntax highlighting and formatting&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;As I said, please read the full docs and adjust the settings as you see fit.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="jedi-vim"&gt;
-&lt;h2&gt;Jedi vim #&lt;/h2&gt;
+&lt;h2&gt;Jedi vim&lt;/h2&gt;
 &lt;p&gt;Since I wrote this article I have discovered &lt;a class="reference external" href="https://github.com/davidhalter/jedi-vim"&gt;Jedi-vim&lt;/a&gt;
 which I now use as the autocompletion tool instead of the rope plugin that comes with Python Mode. All you need to do is
-add the plugin to the vundle list and turn off Rope by replacing the :code:&lt;tt class="docutils literal"&gt;let g:pymode_rope = 1&lt;/tt&gt; with
-:code:&lt;tt class="docutils literal"&gt;let g:pymode_rope = 0&lt;/tt&gt;. I feel it's snappier and more capable than Rope. But if you want to avoid
+add the plugin to the vundle list and turn off Rope by replacing the &lt;code&gt;let g:pymode_rope = 1&lt;/code&gt; with
+&lt;code&gt;let g:pymode_rope = 0&lt;/code&gt;. I feel it's snappier and more capable than Rope. But if you want to avoid
 installing another plugin, then feel free to stay with Rope.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="other-settings"&gt;
-&lt;h2&gt;Other settings #&lt;/h2&gt;
-&lt;p&gt;I also use some specific Vim settings in :code:&lt;tt class="docutils literal"&gt;.vimrc&lt;/tt&gt; that make the experience a bit nicer for me:&lt;/p&gt;
+&lt;h2&gt;Other settings&lt;/h2&gt;
+&lt;p&gt;I also use some specific Vim settings in &lt;code&gt;.vimrc&lt;/code&gt; that make the experience a bit nicer for me:&lt;/p&gt;
 &lt;pre class="code vim literal-block"&gt;
 &lt;span class="c"&gt;&amp;quot; Use &amp;lt;leader&amp;gt;l to toggle display of whitespace&lt;/span&gt;
 nmap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;leader&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;l&lt;/span&gt; :&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;!&amp;lt;&lt;/span&gt;CR&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -7743,31 +7740,30 @@ nmap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;leader&lt;span class="p"&gt;&amp
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="summary"&gt;
-&lt;h2&gt;Summary #&lt;/h2&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
 &lt;p&gt;This is basically the crux of my Python and Vim development setup. I think the core of the whole thing really is
 python mode as it provides the most Python specific tools. The other plugins however do add some really useful
-functionality to make your life a little easier. You might ask why I don't list things like :code:&lt;tt class="docutils literal"&gt;fuzzy file search&lt;/tt&gt;
+functionality to make your life a little easier. You might ask why I don't list things like &lt;code&gt;fuzzy file search&lt;/code&gt;
 and such, and that's because I don't use it. I've tried it before and didn't really get on with it very well and I
-prefer to either just open the files directly or using :code:&lt;tt class="docutils literal"&gt;NerdTree&lt;/tt&gt;.&lt;/p&gt;
+prefer to either just open the files directly or using &lt;code&gt;NerdTree&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;I hope that this post provides some pointers to help you setup your Vim based Python development environment. As
 I said above, feel free to leave a comment with any plugins or settings that you find useful, always happy to hear
 about what else is out there.&lt;/p&gt;
 &lt;p&gt;Thanks for reading.&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 08 Feb 2013 00:00:00 +0000</pubDate><guid>tag:,2013-02-08:2013/02/08/vim-as-a-python-ide/</guid></item><item><title>Houdini voronoi shatter</title><link>/2012/12/08/houdini-voronoi-shatter/</link><description>&lt;p&gt;Thought I would write about creating a very simple voronoi shatter effect in Houdini and how to explode it. The video below demonstrates the effect we're looking to achieve:&lt;/p&gt;
-&lt;p&gt;{% vimeo 55168444 %}&lt;/p&gt;
-&lt;p&gt;&amp;lt;!--more--&amp;gt;&lt;/p&gt;
-&lt;p&gt;The process of creating this is very simple, and I learned a few things from setting this up, so I figured I would share and hope you learn something from it too.&lt;/p&gt;
-&lt;p&gt;So first we need to drop down a &lt;em&gt;Geometry&lt;/em&gt; node and dive inside. Delete the file node and then create a &lt;em&gt;box&lt;/em&gt; node. This box will be the object we will shatter. But in order to create a voronoi shatter we also need some seed points to generate the pattern with. So let's do that first. We'll use our box to generate the points we need, so drop down a &lt;em&gt;Points From Volume&lt;/em&gt; node and connect the box to its input. Adjust the settings to your liking, or copy the ones below. I kept the number of points low as I wanted fewer and larger pieces.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;/images/content/points_from_vol.png&amp;quot;" /&gt;
-&lt;p&gt;Now that we have our points we can drop down a &lt;em&gt;Voronoi Fracture&lt;/em&gt; node and connect the points to its second input. The only setting I changed was to turn on :code:&lt;tt class="docutils literal"&gt;Connect Inside Edges&lt;/tt&gt;. Finally we need to connect the &lt;em&gt;box&lt;/em&gt; node to the &lt;em&gt;Voronoi Shatter's&lt;/em&gt; first input. Now make the &lt;em&gt;Voronoi shatter&lt;/em&gt; visible and you should see your fractured geo.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;/images/content/fracture.png&amp;quot;" /&gt;
+&lt;iframe src="https://player.vimeo.com/video/55168444" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/55168444"&gt;voronoi&lt;/a&gt; from &lt;a href="https://vimeo.com/user1380774"&gt;Sven&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;The process of creating this is very simple, and I learned a few things from setting this up, so I figured I would share and hope you learn something from it too.&lt;/p&gt;
+&lt;p&gt;So first we need to drop down a &lt;code&gt;Geometry&lt;/code&gt; node and dive inside. Delete the file node and then create a &lt;code&gt;box&lt;/code&gt; node. This box will be the object we will shatter. But in order to create a voronoi shatter we also need some seed points to generate the pattern with. So let's do that first. We'll use our box to generate the points we need, so drop down a &lt;code&gt;Points From Volume&lt;/code&gt; node and connect the box to its input. Adjust the settings to your liking, or copy the ones below. I kept the number of points low as I wanted fewer and larger pieces.&lt;/p&gt;
+&lt;img alt="" src="/images/points_from_vol.png" /&gt;
+&lt;p&gt;Now that we have our points we can drop down a &lt;code&gt;Voronoi Fracture&lt;/code&gt; node and connect the points to its second input. The only setting I changed was to turn on &lt;code&gt;Connect Inside Edges&lt;/code&gt;. Finally we need to connect the &lt;em&gt;box&lt;/em&gt; node to the &lt;em&gt;Voronoi Shatter's&lt;/em&gt; first input. Now make the &lt;em&gt;Voronoi shatter&lt;/em&gt; visible and you should see your fractured geo.&lt;/p&gt;
+&lt;img alt="" src="/images/fracture.png" /&gt;
 &lt;p&gt;Next we'll turn on the dynamics via the rigid bodies shelf at the top. Click &lt;em&gt;RBD Fracture&lt;/em&gt; and make sure the voronoi geo is selected and press enter. If you press play now your object will fall down. Hrmmm, not totally awesome, as we wanted to explode it a little too. So the plan is to make all the pieces explode from the outwards, like, for example, along the normals of a sphere say? Yes, that sounds about right. Ok, so let's put down a &lt;em&gt;Sphere&lt;/em&gt; and scale it so that it's roughly the same size as the box. Append a &lt;em&gt;Point&lt;/em&gt; node to the sphere and add a &lt;em&gt;Normal&lt;/em&gt; and &lt;em&gt;Velocity&lt;/em&gt; attribute. The &lt;em&gt;Velocity&lt;/em&gt; attribute is under the &lt;em&gt;Particle&lt;/em&gt; tab and we'll set its value to be a facture of the point's normal. Feel free to play with this value to get the efect you want. Basically this will set the point's velocity to the normal at that point, causing the pieces to rediate outwards when the sim starts.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;/images/content/vel_attribute.png&amp;quot;" /&gt;
+&lt;img alt="" src="/images/vel_attribute.png" /&gt;
 &lt;p&gt;Connect the output to the second input of an &lt;em&gt;Attribute Transfer&lt;/em&gt; node and then connect the output of that to the &lt;em&gt;Rest Position&lt;/em&gt; node. Connect the &lt;em&gt;Box&lt;/em&gt; to the first input of the &lt;em&gt;Attribute Transfer&lt;/em&gt; node. This will transfer the point attributes of the &lt;em&gt;Sphere&lt;/em&gt; onto the shattered geo. You should now have a network that looks like this:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;/images/content/finalnetwork.png&amp;quot;" /&gt;
+&lt;img alt="" src="/images/finalnetwork.png" /&gt;
 &lt;p&gt;And yet still to exploding pieces? Well, we need to tell our solver to use the point velocity. So dive into the &lt;em&gt;Autodop Network&lt;/em&gt; and on the &lt;em&gt;RBD Fracture Object&lt;/em&gt; enable &lt;em&gt;Inherit Velocity From Point Velocity&lt;/em&gt;. Hit play and you should see it explode.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;/images/content/inherit_pv.png&amp;quot;" /&gt;
+&lt;img alt="" src="/images/inherit_pv.png" /&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sat, 08 Dec 2012 00:00:00 +0000</pubDate><guid>tag:,2012-12-08:2012/12/08/houdini-voronoi-shatter/</guid></item><item><title>Random album generator in python</title><link>/2012/11/06/random-album-generator-in-python/</link><description>&lt;p&gt;You may have heard about the &amp;quot;random music album&amp;quot; thing. Basically it goes like this:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;The album cover is the 4th image from a random page of Flickr's interesting pics&lt;/li&gt;
@@ -7776,14 +7772,13 @@ about what else is out there.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;This is all well and good, but isn't getting all this data manually, and then making the album cover a bit tedious? Sure it is, so let's see how we can do this in python&lt;/p&gt;
 &lt;p&gt;Here are some example images generated with this script (click for the full size picture):&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;/images/content/album2.jpg&amp;quot;" /&gt;
-&lt;img alt="" src="&amp;quot;/images/content/album3.jpg&amp;quot;" /&gt;
-&lt;img alt="" src="&amp;quot;/images/content/album4.jpg&amp;quot;" /&gt;
-&lt;p&gt;&amp;lt;!--more--&amp;gt;&lt;/p&gt;
+&lt;img alt="" src="/images/album2.jpg" style="width: 400px;" /&gt;
+&lt;img alt="" src="/images/album3.jpg" style="width: 400px;" /&gt;
+&lt;img alt="" class="align-center" src="/images/album4.jpg" style="width: 400px;" /&gt;
 &lt;p&gt;Let's cover our dependencies first. You will need:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;python 2.6 (or similar)&lt;/li&gt;
-&lt;li&gt;PIL (&lt;a class="reference external" href="http://www.pythonware.com/products/pil/)"&gt;python Image Library&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;PIL (&lt;a class="reference external" href="http://www.pythonware.com/products/pil/)"&gt;python Image Library&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;A &lt;a class="reference external" href="http://www.flickr.com/services/apps/create/apply/"&gt;Flickr API key&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.gnu.org/software/wget/"&gt;wget&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -7883,10 +7878,9 @@ about what else is out there.&lt;/p&gt;
 &lt;p&gt;Let's go over what's happening here. You're welcome to clean it up as an exercise if you wish or think some values (like filenames) etc need configuring. Firstly we call the previously defined functions to fetch our album data and then we start the drawing. I use the &lt;code&gt;DejaVuSans.ttf&lt;/code&gt; font for this example, but you can use any font you have, or even use different fonts for the title and band name, to make your cover look a bit more pleasing. Once the image we saved from Flickr is open, we start writing our title and band name on the album cover, and save out the result as a &lt;code&gt;JPEG&lt;/code&gt;. The code here is commented so I won't go over the details here.&lt;/p&gt;
 &lt;p&gt;And that's all there is to it. If you want the the script as a whole file, you can &lt;a class="reference external" href="https://gist.github.com/4025200"&gt;get it from this gist&lt;/a&gt;&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 06 Nov 2012 00:00:00 +0000</pubDate><guid>tag:,2012-11-06:2012/11/06/random-album-generator-in-python/</guid></item><item><title>Show animated gifs using PyQT</title><link>/2012/11/02/show-animated-gifs-using-pyqt/</link><description>&lt;p&gt;This is just a quick post to show you how to display animated gifs in PyQt. It's a straightforward process and by the end I will give you a class that wraps up the work for you.&lt;/p&gt;
-&lt;p&gt;The way we're going to approach this is by using a :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;QLabel`:code:`&lt;/span&gt; to render a &lt;span class="pre"&gt;`:code:`QMovie`:code:`.&lt;/span&gt; Assuming we have our gif &lt;span class="pre"&gt;(`:code:`anim.gif`:code:`)&lt;/span&gt; we need to load it into a &lt;span class="pre"&gt;`:code:`QMovie`:code:`&lt;/span&gt; and set it on the &lt;span class="pre"&gt;`:code:`QLabel&lt;/span&gt;&lt;/tt&gt;.&lt;/p&gt;
-&lt;p&gt;I'll give you the code now:&lt;/p&gt;
-&lt;p&gt;{% gist 4000025 %}&lt;/p&gt;
-&lt;p&gt;The code should be fairly easy to follow, so I won't spend much time here going over it. If you want to call this from a :code:&lt;tt class="docutils literal"&gt;__main__&lt;/tt&gt; function you simply do:&lt;/p&gt;
+&lt;p&gt;The way we're going to approach this is by using a &lt;code&gt;QLabel&lt;/code&gt; to render a &lt;code&gt;QMovie&lt;/code&gt;. Assuming we have our gif (&lt;code&gt;anim.gif&lt;/code&gt;) we need to load it into a &lt;code&gt;QMovie&lt;/code&gt; and set it on the &lt;code&gt;QLabel&lt;/code&gt;.
+I'll give you the code now:&lt;/p&gt;
+&lt;script src="https://gist.github.com/Svenito/4000025.js"&gt;&lt;/script&gt;&lt;p&gt;The code should be fairly easy to follow, so I won't spend much time here going over it. If you want to call this from a &lt;code&gt;__main__&lt;/code&gt; function you simply do:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;gif&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/path/to/image.gif&amp;quot;&lt;/span&gt;
@@ -7897,12 +7891,10 @@ about what else is out there.&lt;/p&gt;
 &lt;/pre&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate><guid>tag:,2012-11-02:2012/11/02/show-animated-gifs-using-pyqt/</guid></item><item><title>Parsing email in python</title><link>/2012/10/11/parsing-email-in-python/</link><description>&lt;p&gt;I have a domain where I host images. It's nothing fancy, just a collection where gifs and generally humerous images get stored in a custom gallery script.
 I also have a script on my host that I can pass a URL to and it will get the image with wget, put it in the right directory and then curl the import URL for the gallery. So if you've ever wanted to parse email addresses for content via a script, read on. Example code inside.&lt;/p&gt;
-&lt;p&gt;&amp;lt;!--more--&amp;gt;&lt;/p&gt;
 &lt;p&gt;Now this in principle is great, but sometimes I need to add an image from my phone and the whole ssh thing becomes a bit cumbersome. Usually I'll see something in Reeder or some other iPhone app which allows me to email the URL. Perfect. So I wrote a quick script that would do the work for me, and set up an email address that passes any content to this script. The script in question is here:&lt;/p&gt;
-&lt;p&gt;{% gist 3872497 %}&lt;/p&gt;
-&lt;p&gt;I use the :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;fileinput`:code:`&lt;/span&gt; module to read the data from stdin and then join it all to a single text chunk. I'm not expecting too much data in the email, so this isn't a big issue. Then I extract the message via the &lt;span class="pre"&gt;`:code:`email`:code:`&lt;/span&gt; module and parse the payload in order to get the actual email body, discarding the headers and all the other things I don't need. Assuming people have good etiquette and have the correct signature separator &lt;span class="pre"&gt;(`:code:`--&lt;/span&gt; \n&lt;/tt&gt;), I also strip off the signature.
+&lt;script src="https://gist.github.com/Svenito/3872497.js"&gt;&lt;/script&gt;&lt;p&gt;I use the &lt;code&gt;fileinput&lt;/code&gt; module to read the data from stdin and then join it all to a single text chunk. I'm not expecting too much data in the email, so this isn't a big issue. Then I extract the message via the &lt;code&gt;email&lt;/code&gt; module and parse the payload in order to get the actual email body, discarding the headers and all the other things I don't need. Assuming people have good etiquette and have the correct signature separator (&lt;code&gt;-- \n&lt;/code&gt;), I also strip off the signature.
 Once I have the body I extract the image URL(s) using regular expressions, and then pass the URL to my import script.&lt;/p&gt;
-&lt;p&gt;As you can see this only works with image URLs that are prefixed with :code:&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;http://&lt;/span&gt;&lt;/tt&gt;. The email address is a random collection of letters and numbers to reduce the likelyhood of just anyone emailling links.&lt;/p&gt;
+&lt;p&gt;As you can see this only works with image URLs that are prefixed with &lt;code&gt;http://&lt;/code&gt;. The email address is a random collection of letters and numbers to reduce the likelyhood of just anyone emailling links.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 11 Oct 2012 00:00:00 +0100</pubDate><guid>tag:,2012-10-11:2012/10/11/parsing-email-in-python/</guid></item><item><title>cmake and gcov</title><link>/2012/08/13/cmake-and-gcov/</link><description>&lt;p&gt;Recently I setup a project that uses CMake as its build tool and &lt;a class="reference external" href="https://code.google.com/p/googletest/"&gt;googletest&lt;/a&gt; as a unit test framework. As is common place I wanted to make sure that my tests cover as much of the code as possible, so I went and grabbed the trusty gcov/lcov to analyse the tests only to find it wasn't as easy as I expected. I should mention this is the first time I have used CMake aswell as googletest. Granted, googletest is fairly simple and doesn't really complicate things when it comes to getting code coverage. I just had to figure out how we get CMake to build the test runner properly and then how to invoke lcov correctly. Turns out this was fairly easy too, once you ironed out some of the trickier bits and learned a little more about CMake.&lt;/p&gt;
 &lt;p&gt;In the &lt;code&gt;CMakeLists.txt&lt;/code&gt; file for your test suite you need to add the following (I've omitted some lines that aren't relevant to this article):&lt;/p&gt;
 &lt;pre class="code cmake literal-block"&gt;

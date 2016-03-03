@@ -64,7 +64,6 @@ time with it before installing any plugins. That way you get used to how Vim wor
 Once you're comfortable with using it, and you've gotten to grips with the Vim-way, go ahead and
 install some extras.</p>
 <p>Right, let's get started.</p>
-<p>&lt;!--more--&gt;</p>
 <p>First and foremost you should install <a class="reference external" href="https://github.com/gmarik/vundle">Vundle</a>. Vundle will
 make installing and updating all the other tools much easier. It's basically pathogen with a lot
 of nice extras, like installing the bundles itself from their Github repos (and other sources).
@@ -100,7 +99,7 @@ Bundle <span class="s1">'gmarik/vundle'</span>
 to your :code:<tt class="docutils literal">.vimrc</tt> one by one and then just install them all at once at the end if you prefer.</p>
 <p>Ok, so having done that let's configure a few more things.</p>
 <div class="section" id="highlight-excess-line-length">
-<h2>Highlight excess line length #</h2>
+<h2>Highlight excess line length</h2>
 <p>You'll probably want to set a restriction to line width for python files. I like to set this to 120
 chars. 80 chars is usually the standard, but with modern displays we can allow ourselves a few more,
 but you are free to adjust as you like. To enable this excess highlighting, add the following lines
@@ -118,9 +117,9 @@ augroup vimrc_autocmds
 to suit your colourscheme. It also turns off line wrapping for python files.</p>
 </div>
 <div class="section" id="powerline">
-<h2>Powerline #</h2>
+<h2>Powerline</h2>
 <p>Next up we install <a class="reference external" href="https://github.com/Lokaltog/powerline">Powerline</a> which looks like this:</p>
-<img alt="" src="&quot;/images/content/powerline.png&quot;" />
+<img alt="" src="/images/powerline.png" />
 <p>It shows you your current mode (NORMAL), the current branch in Git, the file you are editing and some other
 useful information.</p>
 <p>Simply add:</p>
@@ -155,9 +154,9 @@ $&gt; vim --version <span class="p">|</span> grep -i python
 you not have Python enabled or prefer to use it over the Python version.</p>
 </div>
 <div class="section" id="fugitive">
-<h2>Fugitive #</h2>
-<p>[Fugitive](<a class="reference external" href="https://github.com/tpope/vim-fugitive">https://github.com/tpope/vim-fugitive</a>) is a <a class="reference external" href="http://git-scm.com/">Git</a> plugin. It basically wraps
-most Git commands so that you can call them from inside Vim. They are prefixed with :code:<tt class="docutils literal"><span class="pre">G`:code:`,</span> for example <span class="pre">`:code:`Gcommit</span></tt>
+<h2>Fugitive</h2>
+<p><a class="reference external" href="http://git-scm.com/">Fugitive &lt;https://github.com/tpope/vim-fugitive) is a `Git</a> plugin. It basically wraps
+most Git commands so that you can call them from inside Vim. They are prefixed with <code>G</code>, for example <code>Gcommit</code>
 For example it allows you to stage files directly from Vim and make the commit. It also leverages VimDiff to perform
 conflict resolution, blame and the like. There's a whole set of screencasts on how to use it available from
 <a class="reference external" href="http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/">Vim Casts</a> which I recommend watching.</p>
@@ -168,24 +167,24 @@ Bundle <span class="s1">'tpope/vim-fugitive'</span>
 <p>Run :code:<tt class="docutils literal">:BundleInstall</tt> again to install it.</p>
 </div>
 <div class="section" id="nerdtree">
-<h2>NerdTree #</h2>
+<h2>NerdTree</h2>
 <p><a class="reference external" href="https://github.com/scrooloose/nerdtree">NerdTree</a> is a filebrowser that pops up in a
 split when you need it and features a tree like file browser (hence the  <em>tree</em> part in the name).
 It looks somewhat like this:</p>
-<img alt="" src="&quot;/images/content/nerdtree.png&quot;" />
+<img alt="" src="/images/nerdtree.png" />
 <p>As usual you just need to add its package to Vundle:</p>
 <pre class="code vim literal-block">
 Bundle <span class="s1">'scrooloose/nerdtree'</span>
 </pre>
-<p>and :code:<tt class="docutils literal"><span class="pre">:BundleInstall`:code:`</span> once you restart Vim. To activate with <span class="pre">`:code:`F2`:code:`</span> add the following to <span class="pre">`:code:`.vimrc</span></tt>:</p>
+<p>and <code>:BundleInstall</code> once you restart Vim. To activate with <code>F2</code> add the following to <code>.vimrc</code>:</p>
 <pre class="code vim literal-block">
 map <span class="p">&lt;</span>F2<span class="p">&gt;</span> :NERDTreeToggle<span class="p">&lt;</span>CR<span class="p">&gt;</span>
 </pre>
-<p>Press :code:<tt class="docutils literal"><span class="pre">F2`:code:`</span> in vim and it will take you to the current working directory. Press <span class="pre">`:code:`?</span></tt> to see NerdTree's
+<p>Press <code>F2</code> in vim and it will take you to the current working directory. Press <code>?</code> to see NerdTree's
 list of commands.</p>
 </div>
 <div class="section" id="python-mode">
-<h2>Python mode #</h2>
+<h2>Python mode</h2>
 <p>This is the big one. It basically adds all the Python functionality you could ever want in Vim. Things like Lint,
 codecompletion, documentation lookup, jump to classes, refactoring tools etc. You'll find it in
 <a class="reference external" href="https://github.com/klen/python-mode">Python-mode</a></p>
@@ -193,10 +192,10 @@ codecompletion, documentation lookup, jump to classes, refactoring tools etc. Yo
 <pre class="code vim literal-block">
 Bundle <span class="s1">'klen/python-mode'</span>
 </pre>
-<p>Again, :code:<tt class="docutils literal">:BundleInstall</tt> to install it and then we probably want to configure some items. There's a lot to
+<p>Again, <code>:BundleInstall</code> to install it and then we probably want to configure some items. There's a lot to
 configure, so if you want the complete picture I suggest you head over to the
 <a class="reference external" href="https://github.com/klen/python-mode">Github repo</a> and read the more complete docs,
-or run :code:<tt class="docutils literal">:help <span class="pre">python-mode</span></tt> from inside Vim.</p>
+or run <code>:help python-mode</code> from inside Vim.</p>
 <p>I found the following settings most useful personally, but you might want to tweak some settings to suit your needs
 and workflow. The following a copy-paste from my .vimrc. The keyboard shortcuts in the comments are the ones I find
 most useful and I keep them there for reference:</p>
@@ -244,25 +243,25 @@ most useful and I keep them there for reference:</p>
 </pre>
 <p>To explain the above a bit, here's what it does:</p>
 <ul class="simple">
-<li>Allow me to look up Python docs by pressing :code:<tt class="docutils literal">K</tt></li>
-<li>Automatically check my code on each save, but only use :code:<tt class="docutils literal"><span class="pre">PyLint`:code:`</span> or <span class="pre">`:code:`PyFlakes</span></tt></li>
+<li>Allow me to look up Python docs by pressing <code>K</code></li>
+<li>Automatically check my code on each save, but only use <code>PyLint</code> or <code>PyFlakes</code></li>
 <li>Support virtualenv</li>
-<li>Use :code:<tt class="docutils literal"><span class="pre">&lt;leader&gt;b`:code:`</span> to add a pdb shortcut (inserts <span class="pre">`:code:`import</span> pdb; pdb.set_trace() # XXX BREAKPOINT</tt> into your code</li>
+<li>Use <code>&lt;leader&gt;b</code> to add a pdb shortcut (inserts <code>import pdb; pdb.set_trace() # XXX BREAKPOINT</code> into your code</li>
 <li>Enhanced syntax highlighting and formatting</li>
 </ul>
 <p>As I said, please read the full docs and adjust the settings as you see fit.</p>
 </div>
 <div class="section" id="jedi-vim">
-<h2>Jedi vim #</h2>
+<h2>Jedi vim</h2>
 <p>Since I wrote this article I have discovered <a class="reference external" href="https://github.com/davidhalter/jedi-vim">Jedi-vim</a>
 which I now use as the autocompletion tool instead of the rope plugin that comes with Python Mode. All you need to do is
-add the plugin to the vundle list and turn off Rope by replacing the :code:<tt class="docutils literal">let g:pymode_rope = 1</tt> with
-:code:<tt class="docutils literal">let g:pymode_rope = 0</tt>. I feel it's snappier and more capable than Rope. But if you want to avoid
+add the plugin to the vundle list and turn off Rope by replacing the <code>let g:pymode_rope = 1</code> with
+<code>let g:pymode_rope = 0</code>. I feel it's snappier and more capable than Rope. But if you want to avoid
 installing another plugin, then feel free to stay with Rope.</p>
 </div>
 <div class="section" id="other-settings">
-<h2>Other settings #</h2>
-<p>I also use some specific Vim settings in :code:<tt class="docutils literal">.vimrc</tt> that make the experience a bit nicer for me:</p>
+<h2>Other settings</h2>
+<p>I also use some specific Vim settings in <code>.vimrc</code> that make the experience a bit nicer for me:</p>
 <pre class="code vim literal-block">
 <span class="c">&quot; Use &lt;leader&gt;l to toggle display of whitespace</span>
 nmap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">l</span> :<span class="k">set</span> <span class="nb">list</span><span class="p">!&lt;</span>CR<span class="p">&gt;</span>
@@ -281,12 +280,12 @@ nmap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k"
 </pre>
 </div>
 <div class="section" id="summary">
-<h2>Summary #</h2>
+<h2>Summary</h2>
 <p>This is basically the crux of my Python and Vim development setup. I think the core of the whole thing really is
 python mode as it provides the most Python specific tools. The other plugins however do add some really useful
-functionality to make your life a little easier. You might ask why I don't list things like :code:<tt class="docutils literal">fuzzy file search</tt>
+functionality to make your life a little easier. You might ask why I don't list things like <code>fuzzy file search</code>
 and such, and that's because I don't use it. I've tried it before and didn't really get on with it very well and I
-prefer to either just open the files directly or using :code:<tt class="docutils literal">NerdTree</tt>.</p>
+prefer to either just open the files directly or using <code>NerdTree</code>.</p>
 <p>I hope that this post provides some pointers to help you setup your Vim based Python development environment. As
 I said above, feel free to leave a comment with any plugins or settings that you find useful, always happy to hear
 about what else is out there.</p>

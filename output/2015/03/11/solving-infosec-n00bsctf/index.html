@@ -56,9 +56,9 @@ So let's jump on it and get some flags...</p>
 <p>I haven't managed to get all of them, but I will be updating this post when
 I manage to solve some of the others.</p>
 <div class="section" id="level-01">
-<h2>Level 01 ##</h2>
+<h2>Level 01</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/levelone.php">http://ctf.infosecinstitute.com/levelone.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/ebnLRwp.png&quot;" />
+<img alt="" src="http://i.imgur.com/ebnLRwp.png" />
 <p>May the source be with you, eh? Sounds to me like someone wants us to look at the
 page source. Right click, select :code:<tt class="docutils literal">view page source</tt> and...</p>
 <pre class="code html literal-block">
@@ -72,9 +72,9 @@ page source. Right click, select :code:<tt class="docutils literal">view page so
 infosec_flagis_welcome</blockquote>
 </div>
 <div class="section" id="level-02">
-<h2>Level 02 ##</h2>
+<h2>Level 02</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/leveltwo.php">http://ctf.infosecinstitute.com/leveltwo.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/TVGZFKU.png&quot;" />
+<img alt="" src="http://i.imgur.com/TVGZFKU.png" />
 <p>A broken image you say? Let's download it and have a look. We notice it's very small,
 only 45 bytes. So let's open it in a hex editor and examine its contents. I opened
 it in vim (to use it as a hex editor enter :code:<tt class="docutils literal">:!xxd</tt>),
@@ -87,9 +87,9 @@ infosec_flagis_wearejuststarting</blockquote>
 <p>Level02's flag done.</p>
 </div>
 <div class="section" id="level-03">
-<h2>Level 03 ##</h2>
+<h2>Level 03</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/levelthree.php">http://ctf.infosecinstitute.com/levelthree.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/lL8OkTO.png&quot;" />
+<img alt="" src="http://i.imgur.com/lL8OkTO.png" />
 <p>We are presented with a QR code. So I grabbed my phone, scanned it, and was presented
 with a series of dots and dashes. Morse code no doubt. Being lazy I didn't want to type
 it into a decoder manually,
@@ -100,9 +100,9 @@ and ended up with:</p>
 INFOSECFLAGISMORSING</blockquote>
 </div>
 <div class="section" id="level-04">
-<h2>Level 04 ##</h2>
+<h2>Level 04</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/levelfour.php">http://ctf.infosecinstitute.com/levelfour.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/yFiSrus.png&quot;" />
+<img alt="" src="http://i.imgur.com/yFiSrus.png" />
 <p>A picture and a tidbit of information. Hrmm... Ok, not much to go with here. Mousing
 over the image pops up a dialog. Investigating that didn't lead me anywhere. Time
 to get the thinking hats on and think about what info we have here that might be
@@ -125,7 +125,7 @@ infosec_flag_welovecookies</blockquote>
 <p>Flag has been nommed.</p>
 </div>
 <div class="section" id="level-05">
-<h2>Level 05 ##</h2>
+<h2>Level 05</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/levelfive.php">http://ctf.infosecinstitute.com/levelfive.php</a></p>
 <p>A pesky popup saying I'm a hacker? What an accusation. Well, let's top it from
 popping up and get ourselves a script blocker to see what else there might be.
@@ -133,7 +133,7 @@ Once done, we examine the source and see it's loading an image too.</p>
 <pre class="code html literal-block">
 <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;img/aliens.jpg&quot;</span> <span class="p">/&gt;</span> <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span> <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
 </pre>
-<img alt="" src="&quot;http://i.imgur.com/JwFtmSw.png&quot;" />
+<img alt="" src="http://i.imgur.com/JwFtmSw.png" />
 <p>Let's load up that image, or even better, let's just browse to <code>http://ctf.infosecinstitute.com/img/</code>
 (Since writing directory listing has been disabled for this path).
 Nothing particularily odd about the image. Let's try seeing if there's anything hidden in
@@ -146,23 +146,23 @@ infosec_flagis_stegaliens</blockquote>
 <p>Gotcha</p>
 </div>
 <div class="section" id="level-06">
-<h2>Level 06 ##</h2>
+<h2>Level 06</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/levelsix.php">http://ctf.infosecinstitute.com/levelsix.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/w81ZV0N.png&quot;" />
+<img alt="" src="http://i.imgur.com/w81ZV0N.png" />
 <p>At first I was a bit lost, but when you stare at a lot of data, it's easy to be overwhelmed.
 Especially when you don't know really what you are looking for. I decided to give it another go
 and have located the flag. It's actually in the very first packet. The hex string for <em>infosec_flag</em>
 is starting to look very familiar now. It appears as the data of the first packet:</p>
-<img alt="" src="&quot;http://i.imgur.com/aO8ojXG.png&quot;" />
+<a class="reference external image-reference" href="http://i.imgur.com/aO8ojXG.png"><img alt="" src="http://i.imgur.com/aO8ojXG.png" style="width: 500px;" /></a>
 <p>Enter the string with :code:<tt class="docutils literal"><span class="pre">696e66...</span></tt> into a hex to string converter and you get</p>
 <blockquote>
 infosec_flagis_sniffed</blockquote>
 <p>Sniffed right out.</p>
 </div>
 <div class="section" id="level-07">
-<h2>Level 07 ##</h2>
+<h2>Level 07</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/404.php">http://ctf.infosecinstitute.com/404.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/PZu5CIK.png&quot;" />
+<img alt="" src="http://i.imgur.com/PZu5CIK.png" />
 <p>We get an error saying <em>f00 not found</em> and the URL reads 404.php. Going by the other URLs
 I would assume we actually need :code:<tt class="docutils literal">levelseven.php</tt>, so let's enter that and see what we get.
 It seems to return an empty page. That's not much use, but it's better than a real
@@ -188,9 +188,9 @@ infosec_flagis_youfoundit</blockquote>
 <p>Yes, I did find it.</p>
 </div>
 <div class="section" id="level-08">
-<h2>Level 08 ##</h2>
+<h2>Level 08</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/leveleight.php">http://ctf.infosecinstitute.com/leveleight.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/OSKPz0g.png&quot;" />
+<img alt="" src="http://i.imgur.com/OSKPz0g.png" />
 <p>Ok, let's download :code:<tt class="docutils literal"><span class="pre">app.exe`:code:`</span> and give this a go. It's a wrapper around <span class="pre">`:code:`netstat</span></tt> that
 just shows you what your current connections are. It takes no arguments, so there's
 not anyway to attack this thing with overflows. And this being a n00bs level CTF, it's
@@ -253,9 +253,9 @@ infosec_flagis_0x1a</blockquote>
 <p>Leave a comment below to correct me if I am wrong though, I'd really appreciate that.</p>
 </div>
 <div class="section" id="level-09">
-<h2>Level 09 ##</h2>
+<h2>Level 09</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/levelnine.php">http://ctf.infosecinstitute.com/levelnine.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/5XnlOL9.png&quot;" />
+<img alt="" src="http://i.imgur.com/5XnlOL9.png" />
 <p>Initially I struggled with this. I tried the usual default passwords without success.
 Attacked it with SQL injections, nothing. Then I had a brainwave. Because I already had level15,
 I could just look at the :code:<tt class="docutils literal"><span class="pre">levelnine.php`:code:`</span> file. So I did. Issue <span class="pre">`:code:`test.com</span> &amp;&amp; cat <span class="pre">../levelnine.php</span></tt>
@@ -286,9 +286,9 @@ be valid, as the aim of the game is to get the flag. It shouldn't matter how you
 <p>Level15 has been a huge help in all of this!</p>
 </div>
 <div class="section" id="level-10">
-<h2>Level 10 ##</h2>
+<h2>Level 10</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/levelten.php">http://ctf.infosecinstitute.com/levelten.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/QENqipl.png&quot;" />
+<img alt="" src="http://i.imgur.com/QENqipl.png" />
 <p>Let's listen to the sound. Hrmm Squeaky. Could be anything. Maybe some weirdly pitched morse.
 But let's download and open it in Audacity. My initial hunch is that it's sped up, due
 to the highpitched sound. So I started reducing the playback speed, and it turns out that
@@ -299,9 +299,9 @@ infosec_flagis_sound</blockquote>
 <p>Thanks kind stranger</p>
 </div>
 <div class="section" id="level-11">
-<h2>Level 11 ##</h2>
+<h2>Level 11</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/leveleleven.php">http://ctf.infosecinstitute.com/leveleleven.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/L2tFy5t.png&quot;" />
+<img alt="" src="http://i.imgur.com/L2tFy5t.png" />
 <p>Hrmm.. there's no sound this time, instead we get the PHP logo. Well, it's all
 we have so let's open it up. I loaded it into vim, changed to hex mode (:%!xxd)
 and right at the top we have</p>
@@ -318,9 +318,9 @@ infosec_flagis_powerslide</blockquote>
 <p>I'll take it, thanks!</p>
 </div>
 <div class="section" id="level-12">
-<h2>Level 12 ##</h2>
+<h2>Level 12</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/leveltwelve.php">http://ctf.infosecinstitute.com/leveltwelve.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/WdLl96v.png&quot;" />
+<img alt="" src="http://i.imgur.com/WdLl96v.png" />
 <p>Ok we recognise this image. We had it in level 1 and we had to look at the source.
 Our clue is dig deeper and that could mean a number of things. Let's try some directory
 traversal by appending a slash and some random text at the end. Hrm, we just
@@ -342,9 +342,9 @@ infosec_flagis_heyimnotacolor</blockquote>
 <p>Yeah, you weren't a colour, that's for sure.</p>
 </div>
 <div class="section" id="level-13">
-<h2>Level 13 ##</h2>
+<h2>Level 13</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/levelthirteen.php">http://ctf.infosecinstitute.com/levelthirteen.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/JX3Je1g.png&quot;" />
+<img alt="" src="http://i.imgur.com/JX3Je1g.png" style="width: 500px;" />
 <p>Ok, this was a bit of a cheat, because I skipped to level 15 and now I have a a few more
 tools available. I ran :code:<tt class="docutils literal">test.com &amp;&amp; ls <span class="pre">-la</span> ..</tt> and voila, there's the backup file:
 :code:<tt class="docutils literal">levelthirteen.php.old</tt>. Much easier than guessing, right?
@@ -354,16 +354,16 @@ This seems to be a network capture involving a project called <a class="referenc
 interesting in it for the most part. However near the end we get a PNG image called
 :code:<tt class="docutils literal">HoneyPY.PNG</tt>. For some reason this just stood out to me. I took a chance and exported it
 by rightclicking the packet and selecting :code:<tt class="docutils literal">Export Selected Packet Bytes</tt> as shown</p>
-<img alt="" src="&quot;http://i.imgur.com/jhH2v19.png&quot;" />
+<img alt="" src="http://i.imgur.com/jhH2v19.png" style="width: 500px;" />
 <p>Opening this image surprises us with a flag! W00t! That flag is:</p>
 <blockquote>
 infosec_flagis_morepackets</blockquote>
 <p>A wireshark level I managed to do. Yay</p>
 </div>
 <div class="section" id="level-14">
-<h2>Level 14 ##</h2>
+<h2>Level 14</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/levelfourteen.php">http://ctf.infosecinstitute.com/levelfourteen.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/0akB0Ni.png&quot;" />
+<img alt="" src="http://i.imgur.com/0akB0Ni.png" />
 <p>UPDATE: The :code:<tt class="docutils literal"><span class="pre">level14.db`:code:`</span> file has been removed and the <span class="pre">`:code:`misc</span></tt> directory can
 no longer be listed. Use the second method below to solve this level</p>
 <p>Once downloaded we get a database backup file. This one was quite interesting because
@@ -378,9 +378,9 @@ infosec_flagis_whatsorceryisthis</blockquote>
 <code>friends</code> table there's a fimilar entry. Decoding that will also give you the flag.</p>
 </div>
 <div class="section" id="level-15">
-<h2>Level 15 ##</h2>
+<h2>Level 15</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/levelfifteen/index.php">http://ctf.infosecinstitute.com/levelfifteen/index.php</a></p>
-<img alt="" src="&quot;http://i.imgur.com/EVJuDmC.png&quot;" />
+<img alt="" src="http://i.imgur.com/EVJuDmC.png" />
 <p>So here we can lookup a dns entry by typing a domain in the text field. So let's try
 that and see what we get. I used :code:<tt class="docutils literal">test.com</tt> and as a result I get the output
 from the :code:<tt class="docutils literal">dig</tt> command. Interesting. It could be that the php script is merely
@@ -399,7 +399,7 @@ to decode it to <code>infosec_flagis_rceatomized</code></p>
 <p>ALL FLAGS DONE</p>
 </div>
 <div class="section" id="the-lost-level">
-<h2>The lost level ##</h2>
+<h2>The lost level</h2>
 <p>UPDATED: This has since been removed, but I've left this here for posterity.</p>
 <p>Not sure where this belongs, but in the misc folder is a file called :code:<tt class="docutils literal">readme.wav</tt>
 which contains the morsecode for</p>

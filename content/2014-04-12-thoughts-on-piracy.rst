@@ -13,8 +13,6 @@ require me to define at what level copying copyrighted stuff becomes *rampant*. 
 this is not really what I wanted to write about. I'm more interested in airing a few 
 thoughts I've had about some of the things going on around piracy.
 
-<!--more-->
-
 Piracy, in the copyright sense, has been around for as long as can remember. Copying a
 tape (a magnetic ribbon that stored data for those not as ancient as me) was not
 a big issue. In fact companies manufactured tape decks with two cassette players
