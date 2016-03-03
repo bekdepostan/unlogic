@@ -16,7 +16,7 @@ All levels are in :code:`/narnia` and both the binary and the source are provide
 I've not included the passwords here, so you'll have to work through
 the exercises yourself (or find them elsewhere :))
 
-Level 00 ##
+Level 00
 -----------
 
 .. code:: c  
@@ -101,7 +101,7 @@ need to keep it open. The trick is to append the :code:`cat` command to the inpu
 	cat /etc/narnia_pass/narnia1
 	[password]
 
-Level 01 ##
+Level 01
 -----------
 
 .. code:: c 
@@ -138,7 +138,7 @@ is the shellcode to do just that.
 	$ cat /etc/narnia_pass/narnia2
 	[password]
 
-Level 02 ##
+Level 02
 -----------
 
 .. code:: c 
@@ -290,7 +290,7 @@ of the sled
 	$ cat /etc/narnia_pass/narnia3
 	[password]
 
-Level 03 ##
+Level 03
 -----------
 
 .. code:: c 
@@ -369,7 +369,7 @@ It's a little odd, but I hope you understand what happened. The last part of the
 first path has to be a valid path, so that it can be written to. That's why we have 
 the double :code:`/tmp` setup.
 
-Level 04 ##
+Level 04
 -----------
 
 .. code:: c 

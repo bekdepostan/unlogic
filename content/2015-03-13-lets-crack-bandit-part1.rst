@@ -2,8 +2,8 @@ Let's crack Bandit Part 1
 #########################
 
 :title: Let's crack Bandit Part 1
-:date: 2015-03-13T00
-:modified: 2015-03-13 21
+:date: 2015-03-13 21:00
+:modified: 2015-03-13 21:00
 :tags:
 
 
@@ -21,32 +21,24 @@ plain text format or not. Let me know in the comments below. I've used
 asciinema in the first level only, but would post the asciinema vids if they 
 are useful.
 
-<section id="table-of-contents" class="toc">
-<header>
-<h3>Contents</h3>
-</header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section><!-- /#table-of-contents -->
-
-Level 0 -> 1 #
+Level 0 -> 1
 ==============
 
 `level 00 <http://overthewire.org/wargames/bandit/bandit1.html>`_
 
 Not much to do here but login and read a file so:
 
-<script type="text/javascript" src="https://asciinema.org/a/17664.js" id="asciicast-17664" async></script>
+.. raw:: html
 
-Level 1 -> 2 #
+    <script type="text/javascript" src="https://asciinema.org/a/17664.js" id="asciicast-17664" async></script>
+
+Level 1 -> 2
 ==============
 
 `level 01 <http://overthewire.org/wargames/bandit/bandit2.html>`_
 
 Using the password from the last session, let's login and look at what's in
-:code:``-`:code:`. The trick here is that `:code:`-`` is a bit tricky to pass as an argument. Try
+:code:`-`. The trick here is that `:code:`-` is a bit tricky to pass as an argument. Try
 it to see what happens. All we need to do it prefix it with the path:
 
 .. code:: console
@@ -62,7 +54,7 @@ it to see what happens. All we need to do it prefix it with the path:
 	bandit1@melinda:~$ cat ./-
 	CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 
-Level 2 -> 3 #
+Level 2 -> 3
 ==============
 
 `level 02 <http://overthewire.org/wargames/bandit/bandit3.html>`_
@@ -83,12 +75,12 @@ completion the escaping of the spaces will be handled for us:
 	bandit2@melinda:~$ cat ./spaces\ in\ this\ filename
 	UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
-Level 3 -> 4 #
+Level 3 -> 4
 ==============
 
 `level 03 <http://overthewire.org/wargames/bandit/bandit4.html>`_
 
-Hidden file? Just do a long listing with :code:``ls -la``
+Hidden file? Just do a long listing with :code:`ls -la`
 
 .. code:: console
 
@@ -110,7 +102,7 @@ Hidden file? Just do a long listing with :code:``ls -la``
 	bandit3@melinda:~/inhere$ cat .hidden
 	pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 
-Level 4 -> 5 #
+Level 4 -> 5
 ==============
 
 `level 04 <http://overthewire.org/wargames/bandit/bandit5.html>`_
@@ -139,7 +131,7 @@ Change into the :code:`inhere` directory and then for each file returned by the 
 command, get the filetype with the :code:`file` command. Only one which is ASCII, so
 that's a good candidate. Sure enough, it's the one we are after.
 
-Level 5 -> 6 #
+Level 5 -> 6
 ==============
 
 `level 05 <http://overthewire.org/wargames/bandit/bandit6.html>`_
@@ -157,7 +149,7 @@ with a specific size. Luckily the :code:`find` command is just right for this:
 	cat ./inhere/maybehere07/.file2
 	DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 
-Level 6 -> 7 #
+Level 6 -> 7
 ==============
 
 `level 06 <http://overthewire.org/wargames/bandit/bandit7.html>`_
@@ -177,7 +169,7 @@ be enough already, so let's give that a go
 Perfect. I piped the :code:`stderr` to :code:`/dev/null` so it doesn't clutter the output
 with files that it can't read.
 
-Level 7 -> 8 #
+Level 7 -> 8
 ==============
 
 `Level 07 <http://overthewire.org/wargames/bandit/bandit8.html>`_
@@ -205,7 +197,7 @@ and we need to filter grep again.
 Luckily it was one word and password per line, so grepping the file worked
 fine.
 
-Level 8 -> 9 #
+Level 8 -> 9
 ==============
 
 `level 08 <http://overthewire.org/wargames/bandit/bandit9.html>`_
@@ -221,7 +213,7 @@ unique lines:
 	bandit8@melinda:~$ cat data.txt | sort | uniq -u
 	UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 
-Level 9 -> 10 #
+Level 9 -> 10
 ===============
 
 `Level 09 <http://overthewire.org/wargames/bandit/bandit10.html>`_
@@ -237,7 +229,7 @@ to dump it as hex, or, even simpler, run it through :code:`strings`:
 	========== ism
 	========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 
-Level 10 -> 11 #
+Level 10 -> 11
 ================
 
 `Level 10 <http://overthewire.org/wargames/bandit/bandit11.html>`_
@@ -250,7 +242,7 @@ more if you carry on doing these kind of challenges. Simply done though:
 	bandit10@melinda:~$ cat data.txt  | base64 -d
 	The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 
-Level 11 -> 12 #
+Level 11 -> 12
 ================
 
 `level 11 <http://overthewire.org/wargames/bandit/bandit12.html>`_
@@ -266,7 +258,7 @@ using python:
 	bandit11@melinda:~$ python -c 'import codecs;print codecs.decode("5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh", "rot13")'
 	5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 
-Level 12 -> 13 #
+Level 12 -> 13
 ================
 
 `Level 12 <http://overthewire.org/wargames/bandit/bandit13.html>`_
@@ -332,7 +324,7 @@ that should be clear enough.
 Basically we identify, extract, repeat, until we're at the plain text file with the
 password.
 
-Level 13 -> 14 #
+Level 13 -> 14
 ================
 
 `Level 13 <http://overthewire.org/wargames/bandit/bandit14.html>`_
@@ -356,7 +348,7 @@ the password:
 We pass the key as an argument to the ssh command, and connect to the localhost
 as bandit14. Then we can read the file with the password.
 
-Level 14 -> 15 #
+Level 14 -> 15
 ================
 
 `Level 14 <http://overthewire.org/wargames/bandit/bandit15.html>`_

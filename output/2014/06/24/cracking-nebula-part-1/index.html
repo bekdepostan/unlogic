@@ -60,10 +60,11 @@ a sort of diary for myself, so I can refer back to any info if I need to.</p>
 <p>To quickly explain what you need to do: Login in as user <code>levelxx</code> and then run <code>getflag</code> as user <code>flagxx</code>.
 There's some explanations for each level on the machine's page over at Exploit Exercises.</p>
 <div class="section" id="level-00">
-<h2>Level 00 ##</h2>
-<p>&gt; This level requires you to find a Set User ID program that will run as the &quot;flag00&quot; account. You could also find this by carefully looking in top level directories in / for suspicious looking directories.
-&gt;
-&gt; Alternatively, look at the find man page.</p>
+<h2>Level 00</h2>
+<blockquote>
+<p>This level requires you to find a Set User ID program that will run as the &quot;flag00&quot; account. You could also find this by carefully looking in top level directories in / for suspicious looking directories.</p>
+<p>Alternatively, look at the find man page.</p>
+</blockquote>
 <p>So somewhere from the root directory is a file will run as the flag00 user. As stated you can either look for it, or
 use <code>find</code> to search for it. I chose to do a little bit of both. Running <code>find</code> from the root of a system can take some time so I chose to take a look first. Amongst the usual directories at linux root level is a <code>rofs</code> directory. So let's take a look inside.</p>
 <pre class="code console literal-block">
@@ -89,7 +90,7 @@ boot  etc  initrd.img  media  opt  root  sbin  srv      tmp  var</span>
 </pre>
 </div>
 <div class="section" id="level-01">
-<h2>Level 01 ##</h2>
+<h2>Level 01</h2>
 <blockquote>
 There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it?</blockquote>
 <pre class="code c literal-block">
@@ -126,8 +127,9 @@ There is a vulnerability in the below program that allows arbitrary programs to 
 </pre>
 </div>
 <div class="section" id="level-02">
-<h2>Level 02 ##</h2>
-<p>&gt; There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it?</p>
+<h2>Level 02</h2>
+<blockquote>
+There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it?</blockquote>
 <pre class="code C literal-block">
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
 #include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
@@ -166,10 +168,11 @@ You have successfully executed getflag on a target account</span>
 </pre>
 </div>
 <div class="section" id="level-03">
-<h2>Level 03 ##</h2>
-<p>&gt; Check the home directory of flag03 and take note of the files there.
-&gt;
-&gt; There is a crontab that is called every couple of minutes.</p>
+<h2>Level 03</h2>
+<blockquote>
+<p>Check the home directory of flag03 and take note of the files there.</p>
+<p>There is a crontab that is called every couple of minutes.</p>
+</blockquote>
 <p>So first things first let's take a look at that crontab</p>
 <pre class="code console literal-block">
 <span class="gp">level03&#64;nebula:/home/flag03$</span> cat writable.sh
@@ -190,7 +193,7 @@ done</span>
 </pre>
 </div>
 <div class="section" id="level-04">
-<h2>Level 04 ##</h2>
+<h2>Level 04</h2>
 <blockquote>
 This level requires you to read the token file, but the code restricts the files that can be read. Find a way to bypass it :)</blockquote>
 <pre class="code C literal-block">
@@ -255,7 +258,7 @@ flag04&#64;localhost's password:
 <p>So the output of the command is a <em>token</em> which is the term used for the password of the flag's user. Using this to logon as <em>flag04</em> and run <code>getflag</code>.</p>
 </div>
 <div class="section" id="level-05">
-<h2>Level 05 ##</h2>
+<h2>Level 05</h2>
 <blockquote>
 Check the flag05 home directory. You are looking for weak directory permissions</blockquote>
 <p>Ok, let's do that</p>
@@ -294,7 +297,7 @@ drwxr-x--- 4 flag05 level05   93 2012-08-18 06:56 ..
 </pre>
 </div>
 <div class="section" id="level-06">
-<h2>Level 06 ##</h2>
+<h2>Level 06</h2>
 <blockquote>
 The flag06 account credentials came from a legacy unix system.</blockquote>
 <p>To cut a long story short, the way the password is stored for this user is not the same as for the other users. In older * nix systems the password was stored inside the <code>/etc/passwd</code> file. So let's take a look:</p>
@@ -321,7 +324,7 @@ flag06&#64;localhost's password: hello
 </pre>
 </div>
 <div class="section" id="level-07">
-<h2>Level 07 ##</h2>
+<h2>Level 07</h2>
 <blockquote>
 The flag07 user was writing their very first perl program that allowed them to ping hosts to see if they were reachable from the web server.</blockquote>
 <pre class="code perl literal-block">
@@ -365,7 +368,7 @@ You have successfully executed getflag on a target account</span>
 <p>Notice we need to encode the URL parms. The plaintext URL is <code>http://192.168.56.102:7007/index.cgi?Host=127.0.0.1 &amp;&amp; getflag</code></p>
 </div>
 <div class="section" id="level-08">
-<h2>Level 08 ##</h2>
+<h2>Level 08</h2>
 <blockquote>
 World readable files strike again. Check what that user was up to, and use it to log into flag08 account.</blockquote>
 <p>Let's take a look then</p>
@@ -388,7 +391,7 @@ level08&#64;192.168.56.102's password:
 capture.pcap                                  100% 8302     8.1KB/s   00:00</span>
 </pre>
 <p>Once in Wireshark we can see a TCP stream. Right click on one of the entries and select <code>Follow TCP Stream</code>. A new window will appear in which we can see a login attempt. Red entries are user input, and blue entries are the server responses. The username is <code>level08</code>. The password is... well, take a look. Notice the <code>7f</code> entries. Those are deletes.</p>
-<p><a class="reference external" href="http://i.imgur.com/IEseNUh.png">{{&lt; figure src=&quot;http://i.imgur.com/IEseNUh.png&quot; &gt;}}</a></p>
+<a class="reference external image-reference" href="http://i.imgur.com/IEseNUh.png"><img alt="" src="http://i.imgur.com/IEseNUh.png" style="width: 400px;" /></a>
 <p>So....</p>
 <pre class="code console literal-block">
 <span class="gp">level08&#64;nebula:/home/flag08$</span> ssh flag08&#64;localhost
@@ -400,7 +403,7 @@ flag08&#64;localhost's password: backd00Rmate
 </pre>
 </div>
 <div class="section" id="level-09">
-<h2>Level 09 ##</h2>
+<h2>Level 09</h2>
 <blockquote>
 There's a C setuid wrapper for some vulnerable PHP code...</blockquote>
 <pre class="code php literal-block">
@@ -449,7 +452,7 @@ There's a C setuid wrapper for some vulnerable PHP code...</blockquote>
 </pre>
 </div>
 <div class="section" id="level-10">
-<h2>Level 10 ##</h2>
+<h2>Level 10</h2>
 <blockquote>
 The setuid binary at /home/flag10/flag10 binary will upload any file given, as long as it meets the requirements of the access() system call.</blockquote>
 <pre class="code C literal-block">

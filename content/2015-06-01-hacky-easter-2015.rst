@@ -12,23 +12,24 @@ frustrations. All in all this was another great year and I'm already looking
 forward to 2016's edition. I found this year's challenges were a bit harder than
 last year, but I did my best.
 
-Challenge 01 #
+Challenge 01
 ==============
 
 I'm told to search out the password in the following image
 
-.. image:: "http://i.imgur.com/mIXj50g.jpg"
+.. image:: http://i.imgur.com/mIXj50g.jpg
+    :width: 600px   
 
 
 Taking note of the missing letters and rearranging them to spell :code:`HACKERZ` I'll enter
 that into the egg-o-matic and see what happens. Oh, hello there'e the egg.
 
-Challenge 02 #
+Challenge 02
 ==============
 
 The eggs is already there:
 
-.. image:: "http://i.imgur.com/98japcd.png"
+.. image:: http://i.imgur.com/98japcd.png
 
 
 But it won't scan in its current state, not with *NO* written in the QR code.
@@ -40,7 +41,7 @@ saw that those tags were defined twice, causing the values to be overriden.
 I created a local copy, set the values to the initial values (so delete the second
 definition) and then we get a valid QR code that will scan.
 
-Challenge 03 #
+Challenge 03
 ==============
 
 Lego. I love Lego, and therefore already knew what an :code:`ldx` file is. So I opened
@@ -50,7 +51,7 @@ I started picking away some of the first layer and there were white and black br
 underneath. Potentially a QR code? Even using the "Select colour and shape" tool, removing
 all the top layer bricks will take a little while, but we are then rewarded with a valid QR code.
 
-Challenge 04 #
+Challenge 04
 ==============
 
 Mobile challenge. I get a list of numbers, or definitions of numbers, 
@@ -59,7 +60,7 @@ file and then use the linux :code:`sort` command to order them accordingly. Once
 list it was just a matter of ordering them in the right order on the phone, and submitting them
 to get the egg.
 
-Challenge 05 #
+Challenge 05
 ==============
 
 Another mobile challange. I get shown four bars, each one of which is controlled
@@ -71,7 +72,7 @@ represents the time the phone has been charging since the app was run for the fi
 I left it plugged in and waited until the bar was green, aligned the phone correctly and then
 waited for the 5 second bar to fill up to collect my egg.
 
-Challenge 06 #
+Challenge 06
 ==============
 
 .. code:: console
@@ -82,7 +83,7 @@ This is clearly morse code. :code:`dit` and :code:`di` are dots and the :code:`d
 :code:`georgemcfly`. I entered this and was told I was 3 months too early! Only one thing for it:
 change the system date to 3 months in the future. Resubmitted the password and was granted the egg.
 
-Challenge 07 #
+Challenge 07
 ==============
 
 Mobile challange. I need to navigate a Google street view style app to search for the 
@@ -91,7 +92,7 @@ I looked up and there it was, in the sky. Easy right? Well, once I capped the im
 it into Gimp and manipulated it. Took quite a bit of cleanup and contrast tweaking to get it to scan,
 but I got there in the end.
 
-Challenge 08 #
+Challenge 08
 ==============
 
 So from a spreadsheet ID I have to find this particular spreadsheet? Like any sensible person
@@ -107,7 +108,7 @@ on content. So that would have been the easy way.
 Instead I did it manually. Ordering the rows can be done automatically. Then I just copy
 pasted the colums in order and snapped the code. Tedious, but produces results.
 
-Challenge 09 #
+Challenge 09
 ==============
 
 Mobile challenge. The app's splash screen is egg #9, but distorted. With some 
@@ -117,7 +118,7 @@ used the bulge tool to undistort it enough to be able to scan it.
 Alternatively I could have grabbed the image out of the APK I reckon, but
 this was simpler at the time.
 
-Challenge 10 #
+Challenge 10
 ==============
 
 Thumper's got egg 10? Where could he have taken it? Initially I decided
@@ -131,14 +132,14 @@ the eggs each user has. The url for which is :code:`http://hackyeaster.hacking-l
 so all we do it replace the user :code:`hops` with :code:`Thumper` and sure enough, that's
 where he's hidden the egg.
 
-Challenge 11 #
+Challenge 11
 ==============
 
 I was expecting this to be a bit harder, but I just downloaded the files,
 opened them up in Thunderbird and found a message with attachments. Downloading
 the attachment gives you the egg.
 
-Challenge 12 #
+Challenge 12
 ==============
 
 A quiz! Simple of course. Well, this is Hacky Easter, so no. The fields are all
@@ -158,7 +159,7 @@ then I noticed that the submit button had :code:`value="false"` on it.
 Once I edited them all again and set the submit button to :code:`true` I was granted access
 to the egg.
 
-Challenge 13 #
+Challenge 13
 ==============
 
 This challenge had me going for quite a while. A great example of how you learn
@@ -178,7 +179,7 @@ Visiting the URL I download a wav file, which is clearly a reversed audio record
 Importing into Audacity, reversing it, and playing it back tells us the timestamp
 in the video where the correct QR is shown.
 
-Challenge 14 #
+Challenge 14
 ==============
 
 On a hunch I just decided to use a 2d barcode scanner to scan the code and see 
@@ -187,7 +188,7 @@ what happens. Oh, it gives us an egg string. But the app's scanner will only acc
 we get from the 1d code, and in return we get a 2d code which we can scan with the 
 Hacky Easter app.
 
-Challenge 15 #
+Challenge 15
 ==============
 
 This one was fiendish for me. In the end I actually took apart the APK and
@@ -206,7 +207,7 @@ to give me the complete egg.
 
 Was a little bit hit and miss with the pic taking, but nice idea for a challenge.
 
-Challenge 16 #
+Challenge 16
 ==============
 
 *Ghosts only come out when it's dark...*
@@ -254,7 +255,7 @@ Running it:
  
 No initialisation vector was required, so you can ignore the warning.
 
-Challenge 17 #
+Challenge 17
 ==============
 
 There's no real way to spot the difference in the images with your eyes. So the
@@ -265,42 +266,44 @@ goes black indicating that there's no differences. Impossible!
 Now thinking that there must be differences I figured that they might be so small
 that they appear black. I maxed the contrast and brightness to get:
 
-.. image:: "http://i.imgur.com/0iAoovp.jpg"
+.. image:: http://i.imgur.com/0iAoovp.jpg
 
 
 Now the QR code is in the left eye, and a target shape in the right. The target
 needs to be used to invert the pixels in the QR code. Once done, snap the code
 and move on.
 
-Challenge 18 #
+Challenge 18
 ==============
 
 Once we visit the site we get asked to authenticate. No doubt the details will be in 
 the pcap file, so let's open that. We can see a failed auth followed by a successful
 one. Inspect the relevant packet and we get the login:
 
-.. image:: "http://i.imgur.com/dhLNYS9.png"
+.. image:: http://i.imgur.com/dhLNYS9.png
+    :width: 600px
 
 
 Using this to login we are presented with another login form. Trying the same
 credentials gives a "Payment required" page. Heading back to the pcap file let's 
 see if we can't find some details for this part too. Ah, right there at the bottom.
 
-.. image:: "http://i.imgur.com/Gp45s1R.png"
+.. image:: http://i.imgur.com/Gp45s1R.png
+    :width: 600px
 
 
 This time however we need to pass the hash and login details via POST. Either
 edit the form, or use a tool like Zap or Burp proxy, to add this data to the POST
 and we have our egg.
 
-Challenge 19 #
+Challenge 19
 ==============
 
 Not found.
 
 I will add a solution here later.
 
-Challenge 20 #
+Challenge 20
 ==============
 
 The big clue here is robots. Why do we love robots? :code:`robots.txt` is why. Taking a
@@ -344,7 +347,7 @@ I see
 More ROILA? No, it's just backwards english. I'll just go to
 :code:`http://hackyeaster.hacking-lab.com//hackyeaster/bots/ruof.html` and get the egg/
 
-Challenge 21 #
+Challenge 21
 ==============
 
 I am told that :code:`blue` is :code:`110`. I took a guess that therefore red will be :code:`011` and
@@ -381,7 +384,7 @@ which gave me the egg's URL.
 	    ba = bytearray([t])
 	    sys.stdout.write(str(ba))
 
-Challenge 22 #
+Challenge 22
 ==============
 
 Hash cracking. I am new to this, but boy did I enjoy this challenge because I learned

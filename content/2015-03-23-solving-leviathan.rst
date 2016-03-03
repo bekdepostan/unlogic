@@ -13,7 +13,7 @@ have hints, so there won't be any links to each of the levels.
 
 Without further ado, let's get cracking.
 
-Level 0 -> 1 #
+Level 0 -> 1
 ==============
 
 Logging in with :code:`leviathan0:leviathan0` we take a quick look around to see
@@ -48,7 +48,7 @@ grep for *leviathan* in this file
 
 And there it is
 
-Level 1 -> 2 #
+Level 1 -> 2
 ==============
 
 As usual we login, do a :code:`ls -la` and see a :code:`check` binary that is setuid :code:`leviathan2`.
@@ -140,7 +140,7 @@ And there we have it.
 	$ cat /etc/leviathan_pass/leviathan2
 	ougahZi8Ta
 
-Level 2 -> 3 #
+Level 2 -> 3
 ==============
 
 This time we are given a file called :code:`printfile` that is setuid :code:`leviathan3`.
@@ -179,7 +179,7 @@ then :code:`cat` to print the files. let me show you
 So access checks :code:`/tmp/levpass3\ other` and deems it ok. Then that string gets
 passed to :code:`cat` which interprets it as two files, hence the :code:`/bin/cat: other: No such file or directory`
 
-Level 3 -> 4 #
+Level 3 -> 4
 ==============
 
 Another program that prompts for a pass. Usual approaches of :code:`strings` and checking
@@ -212,7 +212,7 @@ is happening :code:`strcmp("d\n", "snlprintf\n")`. Our password is :code:`snlpri
 	$ cat /etc/leviathan_pass/leviathan4
 	vuH0coox6m
 
-Level 4 -> 5 #
+Level 4 -> 5
 ==============
 
 Inside the hidden directory (you always run :code:`ls -la`, right?) we have a bin file.
@@ -226,7 +226,7 @@ It's executable, so let's run it
 I'm guessing we need to decode that from the current binary encoded string to text. This
 gives us :code:`Tith4cokei`. Testing it out takes us to
 
-Level 5 -> 6 #
+Level 5 -> 6
 ==============
 
 We have a binary called :code:`leviathan5` that is suid :code:`leviathan6`. Upon running it,
@@ -242,7 +242,7 @@ old symlink method a try:
 
 Result.
 
-Level 6 -> 7 #
+Level 6 -> 7
 ==============
 
 We need a 4 digit pass code to access this. I opted for brute force. For 4 digits

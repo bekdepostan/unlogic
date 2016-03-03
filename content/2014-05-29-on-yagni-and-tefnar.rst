@@ -14,7 +14,7 @@ in the first place as it's probably never going to be needed. Instead wait until
 it's a requirement and implement it then. This saves wasted effort and keeps the code base
 clean and as small as possible.
 
-TEFNAR stands for **TE**chnology **F**\ or **N**\ o **A**\ pparent **R**\ eason and is a term
+TEFNAR stands for **TE**\ chnology **F**\ or **N**\ o **A**\ pparent **R**\ eason and is a term
 my boss coined (AFAIK). It basically refers to any unnecessary technology that
 doesn't really add any functionality to the product. Sure it might look nice, but
 is there a reason that's there or does that?
@@ -38,19 +38,19 @@ lesson.
 
 Fast forward a day and I get called over
 
-> Hey Sven, fancy a Python puzzle?
+    Hey Sven, fancy a Python puzzle?
 
 I took the bait and headed over.
 
-> So in the interpreter :code:`1.0 < 1.0` is :code:`False`, which is correct.
-> But now look at this \*runs small python script\*. See here, :code:`1.0 < 1.0 True`
-> How is that?
+    So in the interpreter :code:`1.0 < 1.0` is :code:`False`, which is correct.
+    But now look at this \*runs small python script\*. See here, :code:`1.0 < 1.0 True`
+    How is that?
 
 I look at the code and notice he's got a loop that adds 0.1 to a variable and
 compares that to 1.0. I chuckled.
 
-> Yeah, that's a different kettle of fish. Floats aren't that accurate that you
-> can accumulate like that and expect it to be *exactly* 1.0. That's the issue.
+    Yeah, that's a different kettle of fish. Floats aren't that accurate that you
+    can accumulate like that and expect it to be *exactly* 1.0. That's the issue.
 
 He looked a little confused. I explained to him about how floats are represented.
 If you are interested you can read up on `floating point values in Python <https://docs.python.org/2.7/tutorial/floatingpoint.html>`_.

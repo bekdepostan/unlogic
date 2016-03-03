@@ -89,24 +89,17 @@ the module(s) we want to test. If you want to specify multiple modules simply
 separate them with commas: <code>os.environ['NOSE_COVER_PACKAGE'] = 'module_to_test,another_module'</code></p>
 <p>Unfortunately for this to work properly you need to patch nose's cover plugin.
 There's a small bug in older versions, so depending on your distro you may need to
-make the following change to
-<code>nose/plugins/cover.py</code></p>
-<p>Change these lines
-.. code:: python</p>
-<blockquote>
-<dl class="docutils">
-<dt>for pkgs in [tolist(x) for x in options.cover_packages]:</dt>
-<dd>self.coverPackages.extends(pkgs)</dd>
-</dl>
-</blockquote>
-<p>to these lines
-.. code:: python</p>
-<blockquote>
-<dl class="docutils">
-<dt>for pkgs in tolist(options.cover_packages):</dt>
-<dd>self.coverPackages.append(pkgs)</dd>
-</dl>
-</blockquote>
+make the following change to <code>nose/plugins/cover.py</code></p>
+<p>Change these lines</p>
+<pre class="code python literal-block">
+<span class="k">for</span> <span class="n">pkgs</span> <span class="ow">in</span> <span class="p">[</span><span class="n">tolist</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">cover_packages</span><span class="p">]:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">coverPackages</span><span class="o">.</span><span class="n">extends</span><span class="p">(</span><span class="n">pkgs</span><span class="p">)</span>
+</pre>
+<p>to these lines</p>
+<pre class="code python literal-block">
+<span class="k">for</span> <span class="n">pkgs</span> <span class="ow">in</span> <span class="n">tolist</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">cover_packages</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">coverPackages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pkgs</span><span class="p">)</span>
+</pre>
 <p>Otherwise the <code>NOSE_COVER_PACKAGE</code> variable won't work properly.</p>
 <p>I also setup the <code>sys.path</code> so that I load my local module rather
 than the globally installed one. Depending on how your directories are laid out

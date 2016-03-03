@@ -71,7 +71,7 @@ characters
     upper, lower, digits          | 62              | 56,800,235,584
     upper, lower, digits, special | 94              | 689,869,781,056
 
-No rules ##
+No rules
 -----------
 
 Using any combination of characters the number of possible passwords is *689,869,781,056*. 
@@ -80,7 +80,7 @@ That's just over half an hour.
 
 *Attack time*: 1943.29seconds
 
-At least one upper case ##
+At least one upper case
 --------------------------
 
 If we are forced to chose at least one upper case character, we are also saying that
@@ -90,7 +90,7 @@ the original search space. This is a small impact of only 1 second.
 
 *Attack time*: 1942.42seconds
 
-At least one upper case and one digit ##
+At least one upper case and one digit
 ----------------------------------------
 
 Now we know that there are no passwords with just lowercase, or with lower and uppercase only.
@@ -101,7 +101,7 @@ still not much
 
 *Attack time*: 1886.73seconds
 
-Must contain all of the above ##
+Must contain all of the above
 --------------------------------
 
 Upper, lower, digits, and special all need to be present. Therefore we can remove all the 
@@ -111,7 +111,7 @@ other possiblities for a grand total of:
 
 *Attack time*: 1726.73seconds
 
-Conclusion ##
+Conclusion
 -------------
 
 Although contrived, this scenario should indicate that *forcing* people to do

@@ -17,7 +17,7 @@ You see it's quite simple really: I'm taking a step back from it all. I have a
 full time job and a family. Both these things are time consuming and that 
 leaves little time for me to tinker, hack, code, write whatever. So I've decided
 that rather than shoe horn in half-assed attempts, I'd rather just take a step 
-back. Going by the simple idion of 
+back. Going by the simple idiom of 
 `"Anything worth doing, is worth doing right" <http://i.imgur.com/8maeRT0.jpg>`_. That doesn't mean I will be giving up coding, hacking, whatever, 
 completely, it just means I will be working on things that aren't really worth
 writing about or that have already been written about a hundered times over.
@@ -34,4 +34,4 @@ maybe one day there will be another post about something or other.
 
 Time to kickback and `have a beer <http://i.imgur.com/rSxyNlO.gif>`_ methinks.
 
-Thanks for reading`. <https://i.imgur.com/vG96Num.gif>`_
+Thanks for reading\ `. <https://i.imgur.com/vG96Num.gif>`_

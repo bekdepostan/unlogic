@@ -8,13 +8,14 @@ Show animated gifs using PyQT
 
 This is just a quick post to show you how to display animated gifs in PyQt. It's a straightforward process and by the end I will give you a class that wraps up the work for you.
 
-The way we're going to approach this is by using a :code:``QLabel`:code:` to render a `:code:`QMovie`:code:`. Assuming we have our gif (`:code:`anim.gif`:code:`) we need to load it into a `:code:`QMovie`:code:` and set it on the `:code:`QLabel``. 
-
+The way we're going to approach this is by using a :code:`QLabel` to render a :code:`QMovie`. Assuming we have our gif (:code:`anim.gif`) we need to load it into a :code:`QMovie` and set it on the :code:`QLabel`. 
 I'll give you the code now:
 
-{% gist 4000025 %}
+.. raw:: html
 
-The code should be fairly easy to follow, so I won't spend much time here going over it. If you want to call this from a :code:``__main__`` function you simply do:
+    <script src="https://gist.github.com/Svenito/4000025.js"></script>
+
+The code should be fairly easy to follow, so I won't spend much time here going over it. If you want to call this from a :code:`__main__` function you simply do:
 
 .. code:: python
 

@@ -15,7 +15,7 @@ I take part in coding challenges regularily for various reasons and I get a grea
 
 I recommend to anyone interesting in improving their coding skills to go to some programming challenge sites and home your skills. The problems are very varied and of different difficulties so there's something for everyone.
 
-I frequent [checkIO](https://checkio.org) and `Codewars <https://codewars.com>`_ and have even submitted some challenges to the Codewars site. The benefit of attempting to solve the challenges is one thing, but to me the best return is from reading other people's solutions. Solving a problem one way, and then seeing how someone else solved it is very interesting and great learning experience.
+I frequent `checkIO <https://checkio.org>`_ and `Codewars <https://codewars.com>`_ and have even submitted some challenges to the Codewars site. The benefit of attempting to solve the challenges is one thing, but to me the best return is from reading other people's solutions. Solving a problem one way, and then seeing how someone else solved it is very interesting and great learning experience.
 
 But this is also where the trouble begins.
 
@@ -23,14 +23,14 @@ What I Dislike
 --------------
 Let me begin by going over some parts of the `PEP20 <https://www.python.org/dev/peps/pep-0020/>`_
 
-> * Readability counts.
-> * Special cases aren't special enough to break the rules.
-> * Although practicality beats purity.
-> * Errors should never pass silently.
-> * Unless explicitly silenced.
-> * In the face of ambiguity, refuse the temptation to guess.
-> * There should be one-- and preferably only one --obvious way to do it.
-> * Although that way may not be obvious at first unless you're Dutch.
+* Readability counts.
+* Special cases aren't special enough to break the rules.
+* Although practicality beats purity.
+* Errors should never pass silently.
+* Unless explicitly silenced.
+* In the face of ambiguity, refuse the temptation to guess.
+* There should be one-- and preferably only one --obvious way to do it.
+* Although that way may not be obvious at first unless you're Dutch.
     
 In this case I want to refer to *There should be one-- and preferably only one --obvious way to do it.*
 I admit, this is ambiguous for a good reason. What is this *obvious* way? Taking the rest of the PEP20

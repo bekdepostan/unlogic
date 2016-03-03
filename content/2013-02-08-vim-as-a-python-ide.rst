@@ -5,7 +5,6 @@ Vim as a Python IDE
 :date: 2013-02-08T00
 :tags:
 
-
 I've been spending quite a bit of time with our good old buddy Python recently, and when
 I do, I always invite along our mutual friend Vim. He's a barrell of laughs and always 
 knows of a quicker way to do things. So I've been getting the two acquainted more and more
@@ -22,8 +21,6 @@ Once you're comfortable with using it, and you've gotten to grips with the Vim-w
 install some extras.
 
 Right, let's get started.
-
-<!--more-->
 
 First and foremost you should install `Vundle <https://github.com/gmarik/vundle>`_. Vundle will 
 make installing and updating all the other tools much easier. It's basically pathogen with a lot
@@ -68,7 +65,7 @@ to your :code:``.vimrc`` one by one and then just install them all at once at th
 
 Ok, so having done that let's configure a few more things. 
 
-Highlight excess line length #
+Highlight excess line length 
 ==============================
 
 You'll probably want to set a restriction to line width for python files. I like to set this to 120
@@ -89,12 +86,12 @@ to your :code:``.vimrc``
 Anything that exceeds the line length will be highlighted black, feel free to change this colour
 to suit your colourscheme. It also turns off line wrapping for python files.
 
-Powerline #
+Powerline 
 ===========
 
 Next up we install `Powerline <https://github.com/Lokaltog/powerline>`_ which looks like this:
 
-.. image:: "/images/content/powerline.png"
+.. image:: /images/powerline.png
 
 
 It shows you your current mode (NORMAL), the current branch in Git, the file you are editing and some other
@@ -142,11 +139,11 @@ from the commandline. If you see :code:``+python`` then you are ok. There is
 `another Powerline <https://github.com/Lokaltog/vim-powerline>`_ that is a native Vim plugin should 
 you not have Python enabled or prefer to use it over the Python version.
 
-Fugitive #
+Fugitive 
 ==========
 
-[Fugitive](https://github.com/tpope/vim-fugitive) is a `Git <http://git-scm.com/>`_ plugin. It basically wraps
-most Git commands so that you can call them from inside Vim. They are prefixed with :code:``G`:code:`, for example `:code:`Gcommit``
+`Fugitive <https://github.com/tpope/vim-fugitive) is a `Git <http://git-scm.com/>`_ plugin. It basically wraps
+most Git commands so that you can call them from inside Vim. They are prefixed with :code:`G`, for example :code:`Gcommit`
 For example it allows you to stage files directly from Vim and make the commit. It also leverages VimDiff to perform
 conflict resolution, blame and the like. There's a whole set of screencasts on how to use it available from 
 `Vim Casts <http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/>`_ which I recommend watching.
@@ -159,14 +156,14 @@ To install Fugitive, add its bundle to Vundle:
 
 Run :code:``:BundleInstall`` again to install it.
 
-NerdTree #
+NerdTree 
 ==========
 
 `NerdTree <https://github.com/scrooloose/nerdtree>`_ is a filebrowser that pops up in a 
 split when you need it and features a tree like file browser (hence the  *tree* part in the name).
 It looks somewhat like this:
 
-.. image:: "/images/content/nerdtree.png"
+.. image:: /images/nerdtree.png
 
 
 As usual you just need to add its package to Vundle:
@@ -175,16 +172,16 @@ As usual you just need to add its package to Vundle:
 
 	Bundle 'scrooloose/nerdtree'
 
-and :code:``:BundleInstall`:code:` once you restart Vim. To activate with `:code:`F2`:code:` add the following to `:code:`.vimrc``:
+and :code:`:BundleInstall` once you restart Vim. To activate with :code:`F2` add the following to :code:`.vimrc`:
 
 .. code:: vim
 
 	map <F2> :NERDTreeToggle<CR>
     
-Press :code:``F2`:code:` in vim and it will take you to the current working directory. Press `:code:`?`` to see NerdTree's 
+Press :code:`F2` in vim and it will take you to the current working directory. Press :code:`?` to see NerdTree's 
 list of commands.
 
-Python mode #
+Python mode 
 =============
 
 This is the big one. It basically adds all the Python functionality you could ever want in Vim. Things like Lint, 
@@ -197,10 +194,10 @@ Its bundle is:
 
 	Bundle 'klen/python-mode'
 
-Again, :code:``:BundleInstall`` to install it and then we probably want to configure some items. There's a lot to
+Again, :code:`:BundleInstall` to install it and then we probably want to configure some items. There's a lot to
 configure, so if you want the complete picture I suggest you head over to the 
 `Github repo <https://github.com/klen/python-mode>`_ and read the more complete docs, 
-or run :code:``:help python-mode`` from inside Vim.
+or run :code:`:help python-mode` from inside Vim.
 
 I found the following settings most useful personally, but you might want to tweak some settings to suit your needs
 and workflow. The following a copy-paste from my .vimrc. The keyboard shortcuts in the comments are the ones I find
@@ -251,27 +248,27 @@ most useful and I keep them there for reference:
 
 To explain the above a bit, here's what it does:
 
-* Allow me to look up Python docs by pressing :code:``K``
-* Automatically check my code on each save, but only use :code:``PyLint`:code:` or `:code:`PyFlakes``
+* Allow me to look up Python docs by pressing :code:`K`
+* Automatically check my code on each save, but only use :code:`PyLint` or :code:`PyFlakes`
 * Support virtualenv
-* Use :code:``<leader>b`:code:` to add a pdb shortcut (inserts `:code:`import pdb; pdb.set_trace() # XXX BREAKPOINT`` into your code
+* Use :code:`<leader>b` to add a pdb shortcut (inserts :code:`import pdb; pdb.set_trace() # XXX BREAKPOINT` into your code
 * Enhanced syntax highlighting and formatting
 
 As I said, please read the full docs and adjust the settings as you see fit.
 
-Jedi vim #
+Jedi vim 
 ==========
 
 Since I wrote this article I have discovered `Jedi-vim <https://github.com/davidhalter/jedi-vim>`_
 which I now use as the autocompletion tool instead of the rope plugin that comes with Python Mode. All you need to do is
-add the plugin to the vundle list and turn off Rope by replacing the :code:``let g:pymode_rope = 1`` with
-:code:``let g:pymode_rope = 0``. I feel it's snappier and more capable than Rope. But if you want to avoid
+add the plugin to the vundle list and turn off Rope by replacing the :code:`let g:pymode_rope = 1` with
+:code:`let g:pymode_rope = 0`. I feel it's snappier and more capable than Rope. But if you want to avoid
 installing another plugin, then feel free to stay with Rope.
 
-Other settings #
+Other settings 
 ================
 
-I also use some specific Vim settings in :code:``.vimrc`` that make the experience a bit nicer for me:
+I also use some specific Vim settings in :code:`.vimrc` that make the experience a bit nicer for me:
 
 .. code:: vim
 
@@ -290,14 +287,14 @@ I also use some specific Vim settings in :code:``.vimrc`` that make the experien
 	    highlight Pmenu guibg=#cccccc gui=bold    
 	endif
 
-Summary #
+Summary 
 =========
 
 This is basically the crux of my Python and Vim development setup. I think the core of the whole thing really is
 python mode as it provides the most Python specific tools. The other plugins however do add some really useful
-functionality to make your life a little easier. You might ask why I don't list things like :code:``fuzzy file search`` 
+functionality to make your life a little easier. You might ask why I don't list things like :code:`fuzzy file search` 
 and such, and that's because I don't use it. I've tried it before and didn't really get on with it very well and I 
-prefer to either just open the files directly or using :code:``NerdTree``. 
+prefer to either just open the files directly or using :code:`NerdTree`. 
 
 I hope that this post provides some pointers to help you setup your Vim based Python development environment. As 
 I said above, feel free to leave a comment with any plugins or settings that you find useful, always happy to hear

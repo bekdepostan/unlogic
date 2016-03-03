@@ -13,12 +13,12 @@ So let's jump on it and get some flags...
 I haven't managed to get all of them, but I will be updating this post when
 I manage to solve some of the others.
 
-Level 01 ##
+Level 01
 -----------
 
 `http://ctf.infosecinstitute.com/levelone.php <http://ctf.infosecinstitute.com/levelone.php>`_
 
-.. image:: "http://i.imgur.com/ebnLRwp.png"
+.. image:: http://i.imgur.com/ebnLRwp.png
 
 
 May the source be with you, eh? Sounds to me like someone wants us to look at the
@@ -36,12 +36,12 @@ And there it is, right at the top.
 
     infosec_flagis_welcome
 
-Level 02 ##
+Level 02
 -----------
 
 `http://ctf.infosecinstitute.com/leveltwo.php <http://ctf.infosecinstitute.com/leveltwo.php>`_
 
-.. image:: "http://i.imgur.com/TVGZFKU.png"
+.. image:: http://i.imgur.com/TVGZFKU.png
 
 
 A broken image you say? Let's download it and have a look. We notice it's very small,
@@ -57,12 +57,12 @@ Base64 encoded text. Let's run it through a decoder and see what we get....
 
 Level02's flag done.
 
-Level 03 ##
+Level 03
 -----------
 
 `http://ctf.infosecinstitute.com/levelthree.php <http://ctf.infosecinstitute.com/levelthree.php>`_
 
-.. image:: "http://i.imgur.com/lL8OkTO.png"
+.. image:: http://i.imgur.com/lL8OkTO.png
 
 
 We are presented with a QR code. So I grabbed my phone, scanned it, and was presented
@@ -74,12 +74,12 @@ and ended up with:
 
     INFOSECFLAGISMORSING
 
-Level 04 ##
+Level 04
 -----------
 
 `http://ctf.infosecinstitute.com/levelfour.php <http://ctf.infosecinstitute.com/levelfour.php>`_
 
-.. image:: "http://i.imgur.com/yFiSrus.png"
+.. image:: http://i.imgur.com/yFiSrus.png
 
 
 A picture and a tidbit of information. Hrmm... Ok, not much to go with here. Mousing
@@ -107,7 +107,7 @@ Then transpose and solve the final part to get:
 
 Flag has been nommed.
 
-Level 05 ##
+Level 05
 -----------
 
 `http://ctf.infosecinstitute.com/levelfive.php <http://ctf.infosecinstitute.com/levelfive.php>`_
@@ -120,7 +120,7 @@ Once done, we examine the source and see it's loading an image too.
 
 	<img src="img/aliens.jpg" /> <br /> <br />
 
-.. image:: "http://i.imgur.com/JwFtmSw.png"
+.. image:: http://i.imgur.com/JwFtmSw.png
 
 
 Let's load up that image, or even better, let's just browse to :code:`http://ctf.infosecinstitute.com/img/`
@@ -135,12 +135,12 @@ binary to text decoder on the internet, we are given the flag:
 
 Gotcha
 
-Level 06 ##
+Level 06
 -----------
 
 `http://ctf.infosecinstitute.com/levelsix.php <http://ctf.infosecinstitute.com/levelsix.php>`_
 
-.. image:: "http://i.imgur.com/w81ZV0N.png"
+.. image:: http://i.imgur.com/w81ZV0N.png
 
 
 At first I was a bit lost, but when you stare at a lot of data, it's easy to be overwhelmed.
@@ -148,8 +148,9 @@ Especially when you don't know really what you are looking for. I decided to giv
 and have located the flag. It's actually in the very first packet. The hex string for *infosec_flag*
 is starting to look very familiar now. It appears as the data of the first packet:
 
-.. image:: "http://i.imgur.com/aO8ojXG.png"
-
+.. image:: http://i.imgur.com/aO8ojXG.png
+    :width: 500px
+    :target: http://i.imgur.com/aO8ojXG.png 
 
 Enter the string with :code:``696e66...`` into a hex to string converter and you get
 
@@ -157,12 +158,12 @@ Enter the string with :code:``696e66...`` into a hex to string converter and you
 
 Sniffed right out.
 
-Level 07 ##
+Level 07
 -----------
 
 `http://ctf.infosecinstitute.com/404.php <http://ctf.infosecinstitute.com/404.php>`_
 
-.. image:: "http://i.imgur.com/PZu5CIK.png"
+.. image:: http://i.imgur.com/PZu5CIK.png
 
 
 We get an error saying *f00 not found* and the URL reads 404.php. Going by the other URLs
@@ -194,12 +195,12 @@ Copypasta that into a decoder and let's see what we get:
 
 Yes, I did find it.
 
-Level 08 ##
+Level 08
 -----------
 
 `http://ctf.infosecinstitute.com/leveleight.php <http://ctf.infosecinstitute.com/leveleight.php>`_
 
-.. image:: "http://i.imgur.com/OSKPz0g.png"
+.. image:: http://i.imgur.com/OSKPz0g.png
 
 
 Ok, let's download :code:``app.exe`:code:` and give this a go. It's a wrapper around `:code:`netstat`` that
@@ -272,12 +273,12 @@ going to say the flag is:
 
 Leave a comment below to correct me if I am wrong though, I'd really appreciate that.
 
-Level 09 ##
+Level 09
 -----------
 
 `http://ctf.infosecinstitute.com/levelnine.php <http://ctf.infosecinstitute.com/levelnine.php>`_
 
-.. image:: "http://i.imgur.com/5XnlOL9.png"
+.. image:: http://i.imgur.com/5XnlOL9.png
 
 
 Initially I struggled with this. I tried the usual default passwords without success.
@@ -313,12 +314,12 @@ be valid, as the aim of the game is to get the flag. It shouldn't matter how you
 
 Level15 has been a huge help in all of this!
 
-Level 10 ##
+Level 10
 -----------
 
 `http://ctf.infosecinstitute.com/levelten.php <http://ctf.infosecinstitute.com/levelten.php>`_
 
-.. image:: "http://i.imgur.com/QENqipl.png"
+.. image:: http://i.imgur.com/QENqipl.png
 
 
 Let's listen to the sound. Hrmm Squeaky. Could be anything. Maybe some weirdly pitched morse.
@@ -331,12 +332,12 @@ the name of the flag
 
 Thanks kind stranger
 
-Level 11 ##
+Level 11
 -----------
 
 `http://ctf.infosecinstitute.com/leveleleven.php <http://ctf.infosecinstitute.com/leveleleven.php>`_
 
-.. image:: "http://i.imgur.com/L2tFy5t.png"
+.. image:: http://i.imgur.com/L2tFy5t.png
 
 
 Hrmm.. there's no sound this time, instead we get the PHP logo. Well, it's all
@@ -357,12 +358,12 @@ is embedded in it and that the actual flag is:
 
 I'll take it, thanks!
 
-Level 12 ##
+Level 12
 -----------
 
 `http://ctf.infosecinstitute.com/leveltwelve.php <http://ctf.infosecinstitute.com/leveltwelve.php>`_
 
-.. image:: "http://i.imgur.com/WdLl96v.png"
+.. image:: http://i.imgur.com/WdLl96v.png
 
 
 Ok we recognise this image. We had it in level 1 and we had to look at the source.
@@ -389,13 +390,13 @@ to me. Run it through a hex to text converter and.....
 
 Yeah, you weren't a colour, that's for sure.
 
-Level 13 ##
+Level 13
 -----------
 
 `http://ctf.infosecinstitute.com/levelthirteen.php <http://ctf.infosecinstitute.com/levelthirteen.php>`_
 
-.. image:: "http://i.imgur.com/JX3Je1g.png"
-
+.. image:: http://i.imgur.com/JX3Je1g.png
+    :width: 500px
 
 Ok, this was a bit of a cheat, because I skipped to level 15 and now I have a a few more
 tools available. I ran :code:``test.com && ls -la ..`` and voila, there's the backup file:
@@ -408,7 +409,8 @@ interesting in it for the most part. However near the end we get a PNG image cal
 :code:``HoneyPY.PNG``. For some reason this just stood out to me. I took a chance and exported it
 by rightclicking the packet and selecting :code:``Export Selected Packet Bytes`` as shown
 
-.. image:: "http://i.imgur.com/jhH2v19.png"
+.. image:: http://i.imgur.com/jhH2v19.png
+    :width: 500px
 
 
 Opening this image surprises us with a flag! W00t! That flag is:
@@ -417,12 +419,12 @@ Opening this image surprises us with a flag! W00t! That flag is:
 
 A wireshark level I managed to do. Yay
 
-Level 14 ##
+Level 14
 -----------
 
 `http://ctf.infosecinstitute.com/levelfourteen.php <http://ctf.infosecinstitute.com/levelfourteen.php>`_
 
-.. image:: "http://i.imgur.com/0akB0Ni.png"
+.. image:: http://i.imgur.com/0akB0Ni.png
 
 
 UPDATE: The :code:``level14.db`:code:` file has been removed and the `:code:`misc`` directory can
@@ -441,12 +443,12 @@ get
 But, look at the :code:``level14`` file again. Scroll through and notice that in the
 :code:`friends` table there's a fimilar entry. Decoding that will also give you the flag.
 
-Level 15 ##
+Level 15
 -----------
 
 `http://ctf.infosecinstitute.com/levelfifteen/index.php <http://ctf.infosecinstitute.com/levelfifteen/index.php>`_
 
-.. image:: "http://i.imgur.com/EVJuDmC.png"
+.. image:: http://i.imgur.com/EVJuDmC.png
 
 
 So here we can lookup a dns entry by typing a domain in the text field. So let's try
@@ -471,7 +473,7 @@ Thanks to Anon and @fr1t3 for the info
 
 ALL FLAGS DONE
 
-The lost level ##
+The lost level
 -----------------
 
 UPDATED: This has since been removed, but I've left this here for posterity.

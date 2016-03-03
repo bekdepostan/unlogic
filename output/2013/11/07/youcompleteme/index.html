@@ -55,13 +55,12 @@
 It's a very competent auto completer for a variety of languages. But as always the C style completer takes
 a little bit of work to get going. So just for you, I've written up how I managed to get it to work
 on 64bit Centos 6.2.</p>
-<p>&lt;!--more--&gt;</p>
 <p>So using <a class="reference external" href="https://github.com/gmarik/vundle)installYouCompleteMe(referredtoasYCMfromnowon">Vundle</a>.
 Now we need to build clang. I managed to get this done by following <a class="reference external" href="http://clang.llvm.org/get_started.html">these steps</a>.
-Use :code:<tt class="docutils literal"><span class="pre">CC=&quot;/usr/bin/gcc&quot;</span> <span class="pre">CXX=&quot;/usr/bin/g++&quot;</span> <span class="pre">../llvm/configure</span></tt> to configure it.</p>
-<p>You will end up with a directory called :code:<tt class="docutils literal">build</tt> that contains almost everything. All you have to do is copy the
-:code:<tt class="docutils literal"><span class="pre">llvm/tools/clang/include/clang-c</span></tt> folder from the original checkout (step 2 if you follow the clang guide) to
-:code:<tt class="docutils literal">build/include</tt>.</p>
+Use <code>CC=&quot;/usr/bin/gcc&quot; CXX=&quot;/usr/bin/g++&quot; ../llvm/configure</code> to configure it.</p>
+<p>You will end up with a directory called <code>build</code> that contains almost everything. All you have to do is copy the
+<code>llvm/tools/clang/include/clang-c</code> folder from the original checkout (step 2 if you follow the clang guide) to
+<code>build/include</code>.</p>
 <p>Now we need to build the YCM tools according to the docs. Here's the command I used:</p>
 <pre class="code bash literal-block">
 cmake -G <span class="s2">&quot;Unix Makefiles&quot;</span> -DPATH_TO_LLVM_ROOT<span class="o">=</span>/tmp/build -DEXTERNAL_LIBCLANG_PATH<span class="o">=</span>/tmp/build/Release+Asserts/lib/libclang.so . ~/.vim/bundle/YouCompleteMe/cpp
@@ -71,7 +70,7 @@ cmake -G <span class="s2">&quot;Unix Makefiles&quot;</span> -DPATH_TO_LLVM_ROOT<
 make ycm_support_libs
 </pre>
 <p>And with some patience you are done.</p>
-<p>Now you need to add a :code:<tt class="docutils literal">.ycm_extra_conf.py</tt> to your project and you should start seeing autocompletion.</p>
+<p>Now you need to add a <code>.ycm_extra_conf.py</code> to your project and you should start seeing autocompletion.</p>
 
 		</div> <!--/#entry-content-->
 	</div> <!--/#main-->

@@ -55,7 +55,7 @@ on to <a class="reference external" href="http://overthewire.org/wargames/leviat
 have hints, so there won't be any links to each of the levels.</p>
 <p>Without further ado, let's get cracking.</p>
 <div class="section" id="level-0-1">
-<h2>Level 0 -&gt; 1 #</h2>
+<h2>Level 0 -&gt; 1</h2>
 <p>Logging in with <code>leviathan0:leviathan0</code> we take a quick look around to see
 what we have to work with, if anything</p>
 <pre class="code console literal-block">
@@ -83,7 +83,7 @@ grep for <em>leviathan</em> in this file</p>
 <p>And there it is</p>
 </div>
 <div class="section" id="level-1-2">
-<h2>Level 1 -&gt; 2 #</h2>
+<h2>Level 1 -&gt; 2</h2>
 <p>As usual we login, do a <code>ls -la</code> and see a <code>check</code> binary that is setuid <code>leviathan2</code>.
 Let's run it and see what happens</p>
 <pre class="code console literal-block">
@@ -167,7 +167,7 @@ puts(&quot;Wrong password, Good Bye ...&quot;Wrong password, Good Bye ...
 </pre>
 </div>
 <div class="section" id="level-2-3">
-<h2>Level 2 -&gt; 3 #</h2>
+<h2>Level 2 -&gt; 3</h2>
 <p>This time we are given a file called <code>printfile</code> that is setuid <code>leviathan3</code>.
 Initially you'd think we can just print the contents of the <code>leviathan3</code> password
 file. Nope, there's a check in the binary preventing us from doing so.</p>
@@ -200,7 +200,7 @@ then <code>cat</code> to print the files. let me show you</p>
 passed to <code>cat</code> which interprets it as two files, hence the <code>/bin/cat: other: No such file or directory</code></p>
 </div>
 <div class="section" id="level-3-4">
-<h2>Level 3 -&gt; 4 #</h2>
+<h2>Level 3 -&gt; 4</h2>
 <p>Another program that prompts for a pass. Usual approaches of <code>strings</code> and checking
 the <em>disass</em> doesn't reveal much, but the function <code>do_stuff</code> does call <code>strcmp</code>
 and we know now that we can use <code>ltrace</code> to help us out</p>
@@ -229,7 +229,7 @@ is happening <code>strcmp(&quot;d\n&quot;, &quot;snlprintf\n&quot;)</code>. Our 
 </pre>
 </div>
 <div class="section" id="level-4-5">
-<h2>Level 4 -&gt; 5 #</h2>
+<h2>Level 4 -&gt; 5</h2>
 <p>Inside the hidden directory (you always run <code>ls -la</code>, right?) we have a bin file.
 It's executable, so let's run it</p>
 <pre class="code console literal-block">
@@ -240,7 +240,7 @@ It's executable, so let's run it</p>
 gives us <code>Tith4cokei</code>. Testing it out takes us to</p>
 </div>
 <div class="section" id="level-5-6">
-<h2>Level 5 -&gt; 6 #</h2>
+<h2>Level 5 -&gt; 6</h2>
 <p>We have a binary called <code>leviathan5</code> that is suid <code>leviathan6</code>. Upon running it,
 we get a message that file <code>tmp/file.log</code> cannot be found. If you create one, it
 will open it, print its contents, close it, and then delete it. So let's give the
@@ -253,7 +253,7 @@ old symlink method a try:</p>
 <p>Result.</p>
 </div>
 <div class="section" id="level-6-7">
-<h2>Level 6 -&gt; 7 #</h2>
+<h2>Level 6 -&gt; 7</h2>
 <p>We need a 4 digit pass code to access this. I opted for brute force. For 4 digits
 that's by far the simplest and quickest way. After looking at the disassembly, we
 see that it will call <code>/bin/sh</code> and drop us to a shell, so we don't need an exit condition.</p>

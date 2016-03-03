@@ -2,14 +2,14 @@ Let's crack Bandit Part 2
 #########################
 
 :title: Let's crack Bandit Part 2
-:date: 2015-03-13T00
-:modified: 2015-03-13 21
+:date: 2015-03-13 21:10
+:modified: 2015-03-13 21:10
 :tags:
 
 
 Continues on from `Let's crack Bandit Part 1 <http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part1>`_
 
-Level 15 -> 16 #
+Level 15 -> 16
 ================
 
 `Level 15 <http://overthewire.org/wargames/bandit/bandit16.html>`_
@@ -33,7 +33,7 @@ same dance as above
 	
 	read:errno=0
 
-Level 16 -> 17 #
+Level 16 -> 17
 ================
 
 `Level 16 <http://overthewire.org/wargames/bandit/bandit17.html>`_
@@ -130,7 +130,7 @@ anyone other than the user who owns the file. Then simply
 
 	bandit16@melinda:~$ ssh -i /tmp/k.key bandit17@localhost
 
-Level 17 -> 18 #
+Level 17 -> 18
 ================
 
 `Level 17 <http://overthewire.org/wargames/bandit/bandit18.html>`_

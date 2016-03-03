@@ -16,21 +16,20 @@ This is all well and good, but isn't getting all this data manually, and then ma
 
 Here are some example images generated with this script (click for the full size picture):
 
-.. image:: "/images/content/album2.jpg"
+.. image:: /images/album2.jpg
+    :width: 400px
 
+.. image:: /images/album3.jpg
+    :width: 400px
 
-.. image:: "/images/content/album3.jpg"
-
-
-.. image:: "/images/content/album4.jpg"
-
-
-<!--more-->
+.. image:: /images/album4.jpg
+    :width: 400px
+    :align: center
 
 Let's cover our dependencies first. You will need:
 
 * python 2.6 (or similar)
-* PIL (`python Image Library <http://www.pythonware.com/products/pil/)>`_
+* PIL (`python Image Library <http://www.pythonware.com/products/pil/)>`_)
 * A `Flickr API key <http://www.flickr.com/services/apps/create/apply/>`_
 * `wget <http://www.gnu.org/software/wget/>`_
 

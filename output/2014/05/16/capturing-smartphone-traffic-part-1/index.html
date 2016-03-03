@@ -62,7 +62,7 @@ parts I'll be taking a look at some common apps and their network chatter. The
 idea is to analyse the data and understand their communications. Hopefully we'll
 also unearth some interesting things along the way.</p>
 <div class="section" id="what-we-ll-need">
-<h2>What we'll need ##</h2>
+<h2>What we'll need</h2>
 <ul class="simple">
 <li>A smartphone</li>
 <li>A laptop (or similar) to turn into a wireless access point</li>
@@ -71,11 +71,11 @@ also unearth some interesting things along the way.</p>
 </ul>
 </div>
 <div class="section" id="setting-up-the-wireless-access-point">
-<h2>Setting up the wireless access point ##</h2>
+<h2>Setting up the wireless access point</h2>
 <p>I'm going to cover how to do this part in OSX for now. If I get round
 to it I'll add a Linux way to do it too.</p>
 <div class="section" id="osx">
-<h3>OSX ###</h3>
+<h3>OSX</h3>
 <p>First connect the laptop to an ethernet connection. You can't be connected to
 a wireless network and create a wireless access point at the same time.
 So we will connect to the internet via ethernet and use the wireless radio
@@ -84,24 +84,24 @@ for the access point. Once the ethernet connection is up and running, open
 entry (not the check box) and select <em>Ethernet</em> in the <em>Share your connection
 from</em> dropdown. In the <em>To computers using</em> select <em>Wi-Fi</em>. Now select the
 check box next to <em>Internet Sharing</em> to turn sharing on.</p>
-<p><a class="reference external" href="http://i.imgur.com/K2Zeyoy.png">{{&lt; figure src=&quot;http://i.imgur.com/K2Zeyoy.png&quot; &gt;}}</a></p>
+<a class="reference external image-reference" href="http://i.imgur.com/K2Zeyoy.png"><img alt="" src="http://i.imgur.com/K2Zeyoy.png" style="width: 400px;" /></a>
 <p>If everything went to plan your Wi-Fi indicator should now look like this:</p>
-<p><a class="reference external" href="http://i.imgur.com/ecXJUc8.png">{{&lt; figure src=&quot;http://i.imgur.com/ecXJUc8.png&quot; &gt;}}</a></p>
+<a class="reference external image-reference" href="http://i.imgur.com/ecXJUc8.png"><img alt="" src="http://i.imgur.com/ecXJUc8.png" style="width: 400px;" /></a>
 </div>
 </div>
 <div class="section" id="connect-the-phone">
-<h2>Connect the phone ##</h2>
+<h2>Connect the phone</h2>
 <p>Now we connect tbe phone to the new access point. Go to your wireless network
 settings and select the name of the network we created. <strong>slaptop</strong> in my case.
 Once do we need to</p>
 </div>
 <div class="section" id="start-wireshark">
-<h2>Start Wireshark ##</h2>
+<h2>Start Wireshark</h2>
 <p>Fireup Wireshark and then select the capture interface. The default will be
 eth0 usually. That's the ethernet port, but we want to capture traffic on the
 wireless access point. So we need to select <em>en1</em> (in my case). It's the one
 with the wireless icon next to it.</p>
-<p><a class="reference external" href="http://i.imgur.com/9wyI6s6.png">{{&lt; figure src=&quot;http://i.imgur.com/9wyI6s6.png&quot; &gt;}}</a></p>
+<a class="reference external image-reference" href="http://i.imgur.com/9wyI6s6.png"><img alt="" src="http://i.imgur.com/9wyI6s6.png" style="width: 400px;" /></a>
 <p>Once this is done we'll want to filter out ARP packets as these are of little
 interest and there will be quite a few of them. See the screenshot below to
 see where to set this.</p>
@@ -109,10 +109,10 @@ see where to set this.</p>
 can check to see if it's working by browsing to a site. I chose this site at
 <code>192.30.252.153</code>. You should see the capture window scroll past with some
 traffic going between your phone ip and the site your browsed to.</p>
-<p><a class="reference external" href="http://i.imgur.com/XjFuoOQ.png">{{&lt; figure src=&quot;http://i.imgur.com/XjFuoOQ.png&quot; &gt;}}</a></p>
+<a class="reference external image-reference" href="http://i.imgur.com/XjFuoOQ.png"><img alt="" src="http://i.imgur.com/XjFuoOQ.png" style="width: 400px;" /></a>
 </div>
 <div class="section" id="in-the-next-post">
-<h2>In the next post ##</h2>
+<h2>In the next post</h2>
 <p>So I'm all set to capture any and all traffic now that goes to and from my phone.
 With this I can now open various apps and see what traffic they generate. In
 the next posts I plan to see what idle traffic there is (no apps being actively

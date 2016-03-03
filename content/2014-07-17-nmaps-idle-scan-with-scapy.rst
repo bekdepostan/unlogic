@@ -17,18 +17,29 @@ The images below (courtesy of the namp project documentation) explain this very
 well.
 
 **Open Port**
-`{{< figure src="http://i.imgur.com/MajmRTH.png" >}} <http://i.imgur.com/MajmRTH.png>`_
+
+.. image:: http://i.imgur.com/MajmRTH.png
+    :width: 400px
+    :target: http://i.imgur.com/MajmRTH.png
 
 **Closed Port**
-`{{< figure src="http://i.imgur.com/2UALzzd.png" >}} <http://i.imgur.com/2UALzzd.png>`_
+
+.. image:: http://i.imgur.com/2UALzzd.png
+    :width: 400px
+    :target: http://i.imgur.com/2UALzzd.png>
 
 **Filtered Port**
-`{{< figure src="http://i.imgur.com/Yv6hbwL.png" >}} <http://i.imgur.com/Yv6hbwL.png>`_
+
+.. image:: http://i.imgur.com/Yv6hbwL.png
+    :width: 400px
+    :target: http://i.imgur.com/Yv6hbwL.png
 
 Ok, so that's the short version of the theory and it's relatively painless
 to implement with scapy. Let's take a look at the script:
 
-{% gist e377713b90525e842266 %}
+.. raw:: html
+
+    <script src="https://gist.github.com/Svenito/e377713b90525e842266.js"></script>
 
 You provide the script with a :code:`zombie ip`, :code:`target ip`, and :code:`target port`.
 These should be self explanatory. Then we use scapy to assemble our packets to
