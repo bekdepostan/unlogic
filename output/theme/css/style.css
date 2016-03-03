@@ -45,6 +45,8 @@ body {
 /* =Header
 ----------------------------------------------- */
 #site-title {
+    background: url("/images/keyboard-feature.jpg") no-repeat center center;
+    border-radius: 10px;
 	color: #000;
 	font-family: 'Oswald', Helvetica, Arial, sans-serif;
 	font-weight: bold;
@@ -54,7 +56,7 @@ body {
 	text-rendering: optimizeLegibility;
 }
 #site-title a {
-	color: #000;
+	color: #FFF;
 	letter-spacing: 1px;
 	text-decoration: none;
 }
