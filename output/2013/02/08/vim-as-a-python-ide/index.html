@@ -70,28 +70,31 @@ make installing and updating all the other tools much easier. It's basically pat
 of nice extras, like installing the bundles itself from their Github repos (and other sources).
 For more info see the README in the Github repo. To install follow the instructions from the repo,
 which are repeated below:</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-</pre></div>
+<pre class="code bash literal-block">
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+</pre>
 <p>thenadd the following to your :code:<tt class="docutils literal">.vimrc</tt></p>
-<div class="highlight"><pre><span></span><span class="hllk">set</span> <span class="hllnb">nocompatible</span>
-<span class="hllk">filetype</span> off
+<pre class="code vim literal-block">
+<span class="k">set</span> <span class="nb">nocompatible</span>
+<span class="k">filetype</span> off
 
-<span class="hllk">set</span> <span class="hllnb">rtp</span><span class="hllp">+=~</span><span class="hllsr">/.vim/</span>bundle<span class="hllsr">/vundle/</span>
-<span class="hllk">call</span> vundle#rc<span class="hllp">()</span>
+<span class="k">set</span> <span class="nb">rtp</span><span class="p">+=~</span><span class="sr">/.vim/</span>bundle<span class="sr">/vundle/</span>
+<span class="k">call</span> vundle#rc<span class="p">()</span>
+<span class="c">
+&quot; let Vundle manage Vundle</span>
+<span class="c">&quot; required!</span>
+Bundle <span class="s1">'gmarik/vundle'</span>
+<span class="c">
+&quot; The bundles you install will be listed here</span>
 
-<span class="hllc">&quot; let Vundle manage Vundle</span>
-<span class="hllc">&quot; required!</span>
-Bundle <span class="hlls1">&#39;gmarik/vundle&#39;</span>
-
-<span class="hllc">&quot; The bundles you install will be listed here</span>
-
-<span class="hllk">filetype</span> plugin indent <span class="hllk">on</span>
-
-<span class="hllc">&quot; The rest of your config follows here</span>
-</pre></div>
+<span class="k">filetype</span> plugin indent <span class="k">on</span>
+<span class="c">
+&quot; The rest of your config follows here</span>
+</pre>
 <p>Now if you launch Vim and run the command</p>
-<div class="highlight"><pre><span></span><span class="hllp">:</span>BundleList
-</pre></div>
+<pre class="code vim literal-block">
+<span class="p">:</span>BundleList
+</pre>
 <p>a new split should appear listing the Vundle bundle. Everything went ok in that case.</p>
 <p>As you go through this article you can install each item separately or you can add the bundles
 to your :code:<tt class="docutils literal">.vimrc</tt> one by one and then just install them all at once at the end if you prefer.</p>
@@ -102,14 +105,15 @@ to your :code:<tt class="docutils literal">.vimrc</tt> one by one and then just 
 chars. 80 chars is usually the standard, but with modern displays we can allow ourselves a few more,
 but you are free to adjust as you like. To enable this excess highlighting, add the following lines
 to your :code:<tt class="docutils literal">.vimrc</tt></p>
-<div class="highlight"><pre><span></span>augroup vimrc_autocmds
-    autocmd<span class="hllp">!</span>
-<span class="hllc">    &quot; highlight characters past column 120</span>
-    autocmd <span class="hllnb">FileType</span> python <span class="hllnb">highlight</span> Excess ctermbg<span class="hllp">=</span>DarkGrey guibg<span class="hllp">=</span>Black
-    autocmd <span class="hllnb">FileType</span> python <span class="hllk">match</span> Excess <span class="hllsr">/\%120v.*/</span>
-    autocmd <span class="hllnb">FileType</span> python <span class="hllk">set</span> <span class="hllnb">nowrap</span>
+<pre class="code vim literal-block">
+augroup vimrc_autocmds
+    autocmd<span class="p">!</span>
+<span class="c">    &quot; highlight characters past column 120</span>
+    autocmd <span class="nb">FileType</span> python <span class="nb">highlight</span> Excess ctermbg<span class="p">=</span>DarkGrey guibg<span class="p">=</span>Black
+    autocmd <span class="nb">FileType</span> python <span class="k">match</span> Excess <span class="sr">/\%120v.*/</span>
+    autocmd <span class="nb">FileType</span> python <span class="k">set</span> <span class="nb">nowrap</span>
     augroup END
-</pre></div>
+</pre>
 <p>Anything that exceeds the line length will be highlighted black, feel free to change this colour
 to suit your colourscheme. It also turns off line wrapping for python files.</p>
 </div>
@@ -120,28 +124,32 @@ to suit your colourscheme. It also turns off line wrapping for python files.</p>
 <p>It shows you your current mode (NORMAL), the current branch in Git, the file you are editing and some other
 useful information.</p>
 <p>Simply add:</p>
-<div class="highlight"><pre><span></span>Bundle <span class="hlls1">&#39;Lokaltog/powerline&#39;</span><span class="hllp">,</span> {<span class="hlls1">&#39;rtp&#39;</span>: <span class="hlls1">&#39;powerline/bindings/vim/&#39;</span>}
-</pre></div>
+<pre class="code vim literal-block">
+Bundle <span class="s1">'Lokaltog/powerline'</span><span class="p">,</span> {<span class="s1">'rtp'</span>: <span class="s1">'powerline/bindings/vim/'</span>}
+</pre>
 <p>to your :code:<tt class="docutils literal"><span class="pre">.vimrc`:code:`</span> below the comment we added earlier <span class="pre">`:code:`&quot;</span> The bundles you install will be listed here</tt>. Restart Vim
 and run :code:<tt class="docutils literal">:BundleList</tt> again. Now you should also see the Powerline bundle listed there. To install it run the command</p>
-<div class="highlight"><pre><span></span><span class="hllp">:</span>BundleInstall
-</pre></div>
+<pre class="code vim literal-block">
+<span class="p">:</span>BundleInstall
+</pre>
 <p>You'll see Vundle process the list and report on the status of the installation. Hopefully everything went ok.</p>
 <p>Powerline however does require a few more things, most notably patched fonts to display the special characters it uses.
 You can get pre-patched fonts from <a class="reference external" href="https://github.com/Lokaltog/powerline-fonts">the powerline-fonts repo</a>. If your
 font isn't listed then the powerline repo does provide a font-patcher you can use to try and patch your font. How this
 is done however is outside the scope of this article. To select your font and ensure that Powerline is always shown,
 you will also need to add these two lines to your :code:<tt class="docutils literal">.vimrc</tt></p>
-<div class="highlight"><pre><span></span><span class="hllc">&quot; Powerline setup</span>
-<span class="hllk">set</span> <span class="hllnb">guifont</span><span class="hllp">=</span>DejaVu\ Sans\ Mono\ <span class="hllk">for</span>\ Powerline\ <span class="hllm">9</span>
-<span class="hllk">set</span> <span class="hllnb">laststatus</span><span class="hllp">=</span><span class="hllm">2</span>
-</pre></div>
+<pre class="code vim literal-block">
+<span class="c">&quot; Powerline setup</span>
+<span class="k">set</span> <span class="nb">guifont</span><span class="p">=</span>DejaVu\ Sans\ Mono\ <span class="k">for</span>\ Powerline\ <span class="m">9</span>
+<span class="k">set</span> <span class="nb">laststatus</span><span class="p">=</span><span class="m">2</span>
+</pre>
 <p>:code:<tt class="docutils literal">laststatus</tt> ensures that Powerline shows up even if you don't have any splits.</p>
 <p>Restart vim and hopefully you'll see your powerline appear at the bottom of you window.</p>
 <p>Please note that this version of Powerline is a Python based version and thus requires your Vim to  be built
 with Python enabled. To check if it is run:</p>
-<div class="highlight"><pre><span></span>$&gt; vim --version <span class="hllp">|</span> grep -i python
-</pre></div>
+<pre class="code bash literal-block">
+$&gt; vim --version <span class="p">|</span> grep -i python
+</pre>
 <p>from the commandline. If you see :code:<tt class="docutils literal">+python</tt> then you are ok. There is
 <a class="reference external" href="https://github.com/Lokaltog/vim-powerline">another Powerline</a> that is a native Vim plugin should
 you not have Python enabled or prefer to use it over the Python version.</p>
@@ -154,8 +162,9 @@ For example it allows you to stage files directly from Vim and make the commit. 
 conflict resolution, blame and the like. There's a whole set of screencasts on how to use it available from
 <a class="reference external" href="http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/">Vim Casts</a> which I recommend watching.</p>
 <p>To install Fugitive, add its bundle to Vundle:</p>
-<div class="highlight"><pre><span></span>Bundle <span class="hlls1">&#39;tpope/vim-fugitive&#39;</span>
-</pre></div>
+<pre class="code vim literal-block">
+Bundle <span class="s1">'tpope/vim-fugitive'</span>
+</pre>
 <p>Run :code:<tt class="docutils literal">:BundleInstall</tt> again to install it.</p>
 </div>
 <div class="section" id="nerdtree">
@@ -165,11 +174,13 @@ split when you need it and features a tree like file browser (hence the  <em>tre
 It looks somewhat like this:</p>
 <img alt="" src="&quot;/images/content/nerdtree.png&quot;" />
 <p>As usual you just need to add its package to Vundle:</p>
-<div class="highlight"><pre><span></span>Bundle <span class="hlls1">&#39;scrooloose/nerdtree&#39;</span>
-</pre></div>
+<pre class="code vim literal-block">
+Bundle <span class="s1">'scrooloose/nerdtree'</span>
+</pre>
 <p>and :code:<tt class="docutils literal"><span class="pre">:BundleInstall`:code:`</span> once you restart Vim. To activate with <span class="pre">`:code:`F2`:code:`</span> add the following to <span class="pre">`:code:`.vimrc</span></tt>:</p>
-<div class="highlight"><pre><span></span>map <span class="hllp">&lt;</span>F2<span class="hllp">&gt;</span> :NERDTreeToggle<span class="hllp">&lt;</span>CR<span class="hllp">&gt;</span>
-</pre></div>
+<pre class="code vim literal-block">
+map <span class="p">&lt;</span>F2<span class="p">&gt;</span> :NERDTreeToggle<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+</pre>
 <p>Press :code:<tt class="docutils literal"><span class="pre">F2`:code:`</span> in vim and it will take you to the current working directory. Press <span class="pre">`:code:`?</span></tt> to see NerdTree's
 list of commands.</p>
 </div>
@@ -179,8 +190,9 @@ list of commands.</p>
 codecompletion, documentation lookup, jump to classes, refactoring tools etc. You'll find it in
 <a class="reference external" href="https://github.com/klen/python-mode">Python-mode</a></p>
 <p>Its bundle is:</p>
-<div class="highlight"><pre><span></span>Bundle <span class="hlls1">&#39;klen/python-mode&#39;</span>
-</pre></div>
+<pre class="code vim literal-block">
+Bundle <span class="s1">'klen/python-mode'</span>
+</pre>
 <p>Again, :code:<tt class="docutils literal">:BundleInstall</tt> to install it and then we probably want to configure some items. There's a lot to
 configure, so if you want the complete picture I suggest you head over to the
 <a class="reference external" href="https://github.com/klen/python-mode">Github repo</a> and read the more complete docs,
@@ -188,47 +200,48 @@ or run :code:<tt class="docutils literal">:help <span class="pre">python-mode</s
 <p>I found the following settings most useful personally, but you might want to tweak some settings to suit your needs
 and workflow. The following a copy-paste from my .vimrc. The keyboard shortcuts in the comments are the ones I find
 most useful and I keep them there for reference:</p>
-<div class="highlight"><pre><span></span><span class="hllc">&quot; Python-mode</span>
-<span class="hllc">&quot; Activate rope</span>
-<span class="hllc">&quot; Keys:</span>
-<span class="hllc">&quot; K             Show python docs</span>
-<span class="hllc">&quot; &lt;Ctrl-Space&gt;  Rope autocomplete</span>
-<span class="hllc">&quot; &lt;Ctrl-c&gt;g     Rope goto definition</span>
-<span class="hllc">&quot; &lt;Ctrl-c&gt;d     Rope show documentation</span>
-<span class="hllc">&quot; &lt;Ctrl-c&gt;f     Rope find occurrences</span>
-<span class="hllc">&quot; &lt;Leader&gt;b     Set, unset breakpoint (g:pymode_breakpoint enabled)</span>
-<span class="hllc">&quot; [[            Jump on previous class or function (normal, visual, operator modes)</span>
-<span class="hllc">&quot; ]]            Jump on next class or function (normal, visual, operator modes)</span>
-<span class="hllc">&quot; [M            Jump on previous class or method (normal, visual, operator modes)</span>
-<span class="hllc">&quot; ]M            Jump on next class or method (normal, visual, operator modes)</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_rope <span class="hllp">=</span> <span class="hllm">1</span>
-
-<span class="hllc">&quot; Documentation</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_doc <span class="hllp">=</span> <span class="hllm">1</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_doc_key <span class="hllp">=</span> <span class="hlls1">&#39;K&#39;</span>
-
-<span class="hllc">&quot;Linting</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_lint <span class="hllp">=</span> <span class="hllm">1</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_lint_checker <span class="hllp">=</span> <span class="hlls2">&quot;pyflakes,pep8&quot;</span>
-<span class="hllc">&quot; Auto check on save</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_lint_write <span class="hllp">=</span> <span class="hllm">1</span>
-
-<span class="hllc">&quot; Support virtualenv</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_virtualenv <span class="hllp">=</span> <span class="hllm">1</span>
-
-<span class="hllc">&quot; Enable breakpoints plugin</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_breakpoint <span class="hllp">=</span> <span class="hllm">1</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_breakpoint_bind <span class="hllp">=</span> <span class="hlls1">&#39;&lt;leader&gt;b&#39;</span>
-
-<span class="hllc">&quot; syntax highlighting</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_syntax <span class="hllp">=</span> <span class="hllm">1</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_syntax_all <span class="hllp">=</span> <span class="hllm">1</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_syntax_indent_errors <span class="hllp">=</span> <span class="hllk">g</span>:pymode_syntax_all
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_syntax_space_errors <span class="hllp">=</span> <span class="hllk">g</span>:pymode_syntax_all
-
-<span class="hllc">&quot; Don&#39;t autofold code</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:pymode_folding <span class="hllp">=</span> <span class="hllm">0</span>
-</pre></div>
+<pre class="code vim literal-block">
+<span class="c">&quot; Python-mode</span>
+<span class="c">&quot; Activate rope</span>
+<span class="c">&quot; Keys:</span>
+<span class="c">&quot; K             Show python docs</span>
+<span class="c">&quot; &lt;Ctrl-Space&gt;  Rope autocomplete</span>
+<span class="c">&quot; &lt;Ctrl-c&gt;g     Rope goto definition</span>
+<span class="c">&quot; &lt;Ctrl-c&gt;d     Rope show documentation</span>
+<span class="c">&quot; &lt;Ctrl-c&gt;f     Rope find occurrences</span>
+<span class="c">&quot; &lt;Leader&gt;b     Set, unset breakpoint (g:pymode_breakpoint enabled)</span>
+<span class="c">&quot; [[            Jump on previous class or function (normal, visual, operator modes)</span>
+<span class="c">&quot; ]]            Jump on next class or function (normal, visual, operator modes)</span>
+<span class="c">&quot; [M            Jump on previous class or method (normal, visual, operator modes)</span>
+<span class="c">&quot; ]M            Jump on next class or method (normal, visual, operator modes)</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_rope <span class="p">=</span> <span class="m">1</span>
+<span class="c">
+&quot; Documentation</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_doc <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_doc_key <span class="p">=</span> <span class="s1">'K'</span>
+<span class="c">
+&quot;Linting</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_lint <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_lint_checker <span class="p">=</span> <span class="s2">&quot;pyflakes,pep8&quot;</span>
+<span class="c">&quot; Auto check on save</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_lint_write <span class="p">=</span> <span class="m">1</span>
+<span class="c">
+&quot; Support virtualenv</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_virtualenv <span class="p">=</span> <span class="m">1</span>
+<span class="c">
+&quot; Enable breakpoints plugin</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_breakpoint <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_breakpoint_bind <span class="p">=</span> <span class="s1">'&lt;leader&gt;b'</span>
+<span class="c">
+&quot; syntax highlighting</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_syntax <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_syntax_all <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_syntax_indent_errors <span class="p">=</span> <span class="k">g</span>:pymode_syntax_all
+<span class="k">let</span> <span class="k">g</span>:pymode_syntax_space_errors <span class="p">=</span> <span class="k">g</span>:pymode_syntax_all
+<span class="c">
+&quot; Don't autofold code</span>
+<span class="k">let</span> <span class="k">g</span>:pymode_folding <span class="p">=</span> <span class="m">0</span>
+</pre>
 <p>To explain the above a bit, here's what it does:</p>
 <ul class="simple">
 <li>Allow me to look up Python docs by pressing :code:<tt class="docutils literal">K</tt></li>
@@ -250,21 +263,22 @@ installing another plugin, then feel free to stay with Rope.</p>
 <div class="section" id="other-settings">
 <h2>Other settings #</h2>
 <p>I also use some specific Vim settings in :code:<tt class="docutils literal">.vimrc</tt> that make the experience a bit nicer for me:</p>
-<div class="highlight"><pre><span></span><span class="hllc">&quot; Use &lt;leader&gt;l to toggle display of whitespace</span>
-nmap <span class="hllp">&lt;</span>leader<span class="hllp">&gt;</span><span class="hllk">l</span> :<span class="hllk">set</span> <span class="hllnb">list</span><span class="hllp">!&lt;</span>CR<span class="hllp">&gt;</span>
-<span class="hllc">&quot; automatically change window&#39;s cwd to file&#39;s dir</span>
-<span class="hllk">set</span> <span class="hllnb">autochdir</span>
-
-<span class="hllc">&quot; I&#39;m prefer spaces to tabs</span>
-<span class="hllk">set</span> <span class="hllnb">tabstop</span><span class="hllp">=</span><span class="hllm">4</span>
-<span class="hllk">set</span> <span class="hllnb">shiftwidth</span><span class="hllp">=</span><span class="hllm">4</span>
-<span class="hllk">set</span> <span class="hllnb">expandtab</span>
-
-<span class="hllc">&quot; more subtle popup colors</span>
-<span class="hllk">if</span> has <span class="hllp">(</span><span class="hlls1">&#39;gui_running&#39;</span><span class="hllp">)</span>
-    <span class="hllnb">highlight</span> Pmenu guibg<span class="hllp">=</span><span class="hllmh">#cccccc</span> <span class="hllk">gui</span><span class="hllp">=</span><span class="hllnb">bold</span>
-<span class="hllk">endif</span>
-</pre></div>
+<pre class="code vim literal-block">
+<span class="c">&quot; Use &lt;leader&gt;l to toggle display of whitespace</span>
+nmap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">l</span> :<span class="k">set</span> <span class="nb">list</span><span class="p">!&lt;</span>CR<span class="p">&gt;</span>
+<span class="c">&quot; automatically change window's cwd to file's dir</span>
+<span class="k">set</span> <span class="nb">autochdir</span>
+<span class="c">
+&quot; I'm prefer spaces to tabs</span>
+<span class="k">set</span> <span class="nb">tabstop</span><span class="p">=</span><span class="m">4</span>
+<span class="k">set</span> <span class="nb">shiftwidth</span><span class="p">=</span><span class="m">4</span>
+<span class="k">set</span> <span class="nb">expandtab</span>
+<span class="c">
+&quot; more subtle popup colors</span>
+<span class="k">if</span> has <span class="p">(</span><span class="s1">'gui_running'</span><span class="p">)</span>
+    <span class="nb">highlight</span> Pmenu guibg<span class="p">=</span><span class="mh">#cccccc</span> <span class="k">gui</span><span class="p">=</span><span class="nb">bold</span>
+<span class="k">endif</span>
+</pre>
 </div>
 <div class="section" id="summary">
 <h2>Summary #</h2>

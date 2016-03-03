@@ -16,7 +16,7 @@ So what we want to do is create two frames, one for the background image and one
 
 Ready? Then let’s set up a frame for both the background image and the overlay
 
-.. code-block:: objective-c
+.. code:: objective-c
 
 	// Assume that overlay and userImage are our UIImages
 	// overlay and background images respectively
@@ -34,7 +34,7 @@ Ready? Then let’s set up a frame for both the background image and the overlay
 
 In order to draw our image rotated we actually need to rotate the context and then draw our image into it. We also need to know the size of the rectangle that contains the rotated context. We’ll use some simple trig to work that out. We need this new size in order to correctly position the background, as core graphics uses the top left corner to place the context and after the rotation the top left corner has moved somewhat. 
 
-.. code-block:: objective-c
+.. code:: objective-c
 
 	// Get the size of the background frame (unrotated)
 	CGSize size = bgFrame.size;
@@ -78,7 +78,7 @@ You will notice I'm a bit bewildered as to why the origin of the background fram
 
 Home stretch now, we're almost done. Just draw the overlay and then nab the contents of the context and write it to the device
 
-.. code-block:: objective-c
+.. code:: objective-c
 
 	// On to the comp
 	bgFrame.size.height = h1;

@@ -70,7 +70,7 @@ other thing under our control.
 
 I'm going to guess that code looks somewhat like this:
 
-.. code-block:: php
+.. code:: php
 
 	eval ("print $num1 $op $num2;");
 
@@ -109,7 +109,7 @@ once again, changing the :code:`lastname` field to a :code:`textarea` type:
 Now I can have multiple lines and enter a real carriage return into the field. My last
 name will be
 
-.. code-block:: console
+.. code:: console
 
 	alpha7
 	role:admin
@@ -221,7 +221,7 @@ is submitted back to itself.
 Using this we can inject something into the field to hopefully reflect our data on the page.
 By employing the :code:`arg` paramater we can close the :code:`input` tag, and the inject our :code:`h1` tags:
 
-.. code-block:: console
+.. code:: console
 
 	http://ctf.infosecinstitute.com/ctf2/exercises/ex7.php?arg='><h1>username</h1>
 
@@ -239,14 +239,14 @@ Here we need to upload an image that will produce a javscript alert. First thing
 things I upload an image to see how it behaves. Once uploaded I click on the example links and notice that
 images are fetched via an id. The URL is 
 
-.. code-block:: console
+.. code:: console
 
 	http://ctf.infosecinstitute.com/ctf2/exercises/ex8.php?attachment_id=1
 
 So let me see if I can access an image via another ID, for example :code:`id=4`.
 I get the message:
 
-.. code-block:: console
+.. code:: console
 
 	This attachment is currently under review by our editors. 
 
@@ -264,7 +264,7 @@ is trying to interpret the file as an image, which it clearly isn't. There's got
 to get at my image. How about the object reference in the URL :code:`http://ctf.infosecinstitute.com/ctf2/exercises/ex8.php?attachment_id=1`
 for example? Maybe if I just reference the filename directly?
 
-.. code-block:: console
+.. code:: console
 
 	http://ctf.infosecinstitute.com/ctf2/exercises/ex8.php?file=index.jpg
 
@@ -291,14 +291,14 @@ Using Firebug once again I inspect the cookies and sure enough
 
 This is "JOHN+DOE" encoded as base64 as it turns out. One thing to note is when you
 
-.. code-block:: console
+.. code:: console
 
 	echo Sk9ITitET0u= | base64 -d
 
 there is no newline at end of the name. So to encode :code:`MARY+JANE` correctly I need to 
 use echo with the :code:`-n` flag:
 
-.. code-block:: console
+.. code:: console
 
 	$> echo -n MARY+JANE | base64
 	TUFSWStKQU5F
@@ -371,7 +371,7 @@ john the ripper. So why not download it and give it a try?
 
 I fire up :code:`wfuzz` with the following commandline
 
-.. code-block:: console
+.. code:: console
 
 	$> wfuzz -c -z file,/usr/share/wordlists/password-2011.lst --hw Incorrect -d "username=admin&password=FUZZ&logIn=Login" "http://ctf.infosecinstitute.com/ctf2/exercises/ex12.php"
 

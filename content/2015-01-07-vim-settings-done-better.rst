@@ -22,7 +22,7 @@ the main :code:`.vimrc` (which we still need). The role of this file is to sourc
 files we will create later. A `previous post <http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/>`_
 covers some configuration options specific for Python, if you are interested.
 
-.. code-block:: vim
+.. code:: vim
 
 	let s:vim_home = '~/.vim/settings/'
 	

@@ -55,12 +55,14 @@
 <p>But code completion in vim? Well yes. You can use ctags. Yes, you can make tag files for ALL your APIs and autocompletion works rather well. I did this and the Qt tags file is 1.7GB. So, urm yeah, that's not entirely awesome either. Plus it doesn't handle things like smart pointers, which you will no doubt come across at some stage.</p>
 <p>&lt;!--more--&gt;</p>
 <p>So come on down [clang_complete](<a class="reference external" href="https://github.com/Rip-Rip/clang_complete">https://github.com/Rip-Rip/clang_complete</a>). A little plugin for vim that uses <a class="reference external" href="http://clang.llvm.org/">clang</a> to resolve the necessary symbols. Plus it's reasonably easy to set up. All you need to do is follow the instructions that come with the plugin to install it. You will also need to install/build clang. For our purposes we will only need <tt class="docutils literal">libclang.so</tt> as we will be using the library to do the completion instead of the binary - this is also the faster way. In order to use the library you need to add two things to your <tt class="docutils literal">.vimrc</tt> file</p>
-<div class="highlight"><pre><span></span><span class="hllk">let</span> <span class="hllk">g</span>:clang_use_library <span class="hllp">=</span> <span class="hllm">1</span>
-<span class="hllk">let</span> <span class="hllk">g</span>:clang_library_path <span class="hllp">=</span> <span class="hlls2">&quot;/path/to/libclang&quot;</span>
-</pre></div>
+<pre class="code vim literal-block">
+<span class="k">let</span> <span class="k">g</span>:clang_use_library <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="k">g</span>:clang_library_path <span class="p">=</span> <span class="s2">&quot;/path/to/libclang&quot;</span>
+</pre>
 <p>The :code:<tt class="docutils literal"><span class="pre">/path/to/libclang`:code:`</span> is the path where libclang.so is located, not including the file name itself. Once you have set this up we should already see the autocomplete working when you start typing <span class="pre">`:code:`.`:code:`,</span> <span class="pre">`:code:`-&gt;`:code:`,</span> or <span class="pre">`:code:`::`:code:`</span> after a variable. But in order to specify the right paths to header files, we also need to make a <span class="pre">`:code:`.clang_complete`:code:`</span> file in our project's root directory. This includes the compiler's include flags like <span class="pre">`:code:`-I/path/to/boost`:code:`.</span> Luckily there's a handy tool that can generate this file from the current Makefile. It's located in <span class="pre">`:code:`~/.vim/bin`:code:`.</span> All you need to do is build your project by passing <span class="pre">`:code:`CXX='~/.vim/bin/cc_args.py</span> <span class="pre">g++'</span></tt> to the make command. For example:</p>
-<div class="highlight"><pre><span></span><span class="hllerr">make</span> <span class="hllnv">CXX</span><span class="hllo">=</span><span class="hlls1">&#39;~/.vim/bin/cc_args.py g++&#39;</span>
-</pre></div>
+<pre class="code make literal-block">
+<span class="err">make</span> <span class="nv">CXX</span><span class="o">=</span><span class="s1">'~/.vim/bin/cc_args.py g++'</span>
+</pre>
 <p>I should also mention that symbol resolution is scope dependant in case you see some weird completions. Enjoy.</p>
 <p>EDIT 17/11/2012 The :code:<tt class="docutils literal"><span class="pre">.clang_include`:code:`</span> file should actually be called <span class="pre">`:code:`.clang_complete</span></tt></p>
 

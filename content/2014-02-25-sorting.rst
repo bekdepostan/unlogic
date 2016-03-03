@@ -8,7 +8,7 @@ A very quick post about sorting a list of objects in python. Suppose you have a
 list of same objects and you wish to sort them based on one of these attributes, perhaps
 a return value from a method. There's a really nice way to do it in place:
 
-.. code-block:: python
+.. code:: python
 
 	if sort_by == 'name':
 	    people.sort(key=lambda x: str(x.get_name()), reverse=reverse)

@@ -67,70 +67,77 @@ of filtered numbers. This time though the sequence is not a straight run,
 but the fibonacci sequence.</p>
 <p>As usual with these issues I assume we will need a recursive function to generate
 our fibonacci numbers:</p>
-<div class="highlight"><pre><span></span><span class="hllk">fn</span><span class="hllw"> </span><span class="hlln">fib</span><span class="hllp">(</span><span class="hlln">n</span><span class="hllo">:</span><span class="hllw"> </span><span class="hllkt">i32</span><span class="hllp">)</span><span class="hllw"> </span><span class="hllo">-&gt;</span><span class="hllw"> </span><span class="hllkt">i32</span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllk">if</span><span class="hllw"> </span><span class="hlln">n</span><span class="hllw"> </span><span class="hllo">==</span><span class="hllw"> </span><span class="hllmi">0</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">        </span><span class="hllk">return</span><span class="hllw"> </span><span class="hllmi">0</span><span class="hllp">;</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllp">}</span><span class="hllw"> </span><span class="hllk">else</span><span class="hllw"> </span><span class="hllk">if</span><span class="hllw"> </span><span class="hlln">n</span><span class="hllw"> </span><span class="hllo">==</span><span class="hllw"> </span><span class="hllmi">1</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">        </span><span class="hllk">return</span><span class="hllw"> </span><span class="hllmi">1</span><span class="hllp">;</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllp">}</span><span class="hllw"> </span><span class="hllk">else</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">        </span><span class="hllk">return</span><span class="hllw"> </span><span class="hlln">fib</span><span class="hllp">(</span><span class="hlln">n</span><span class="hllo">-</span><span class="hllmi">1</span><span class="hllp">)</span><span class="hllw"> </span><span class="hllo">+</span><span class="hllw"> </span><span class="hlln">fib</span><span class="hllp">(</span><span class="hlln">n</span><span class="hllo">-</span><span class="hllmi">2</span><span class="hllp">);</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllp">}</span><span class="hllw"></span>
-<span class="hllp">}</span><span class="hllw"></span>
-</pre></div>
+<pre class="code rust literal-block">
+<span class="k">fn</span><span class="w"> </span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">i32</span><span class="p">{</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="k">return</span><span class="w"> </span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span>
+</pre>
 <p>As I am still learning Rust, I am not sure if there's more Rustacean way of doing it.
 I couldn't find anything relevant to this in the docs, so for now I will leave it
 as it is until I get some feedback on it. I wonder if a closure would be better?</p>
 <p>EDIT: From the comments below (thanks pf), this is a much more Rust like implementation IMO:</p>
-<div class="highlight"><pre><span></span><span class="hllk">fn</span><span class="hllw"> </span><span class="hlln">fib</span><span class="hllp">(</span><span class="hlln">n</span><span class="hllo">:</span><span class="hllw"> </span><span class="hllkt">i32</span><span class="hllp">)</span><span class="hllw"> </span><span class="hllo">-&gt;</span><span class="hllw"> </span><span class="hllkt">i32</span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllk">match</span><span class="hllw"> </span><span class="hlln">n</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">        </span><span class="hllmi">0</span><span class="hllw"> </span><span class="hllo">=&gt;</span><span class="hllw"> </span><span class="hllmi">0</span><span class="hllp">,</span><span class="hllw"></span>
-<span class="hllw">        </span><span class="hllmi">1</span><span class="hllw"> </span><span class="hllo">=&gt;</span><span class="hllw"> </span><span class="hllmi">1</span><span class="hllp">,</span><span class="hllw"></span>
-<span class="hllw">        </span><span class="hlln">_</span><span class="hllw"> </span><span class="hllo">=&gt;</span><span class="hllw"> </span><span class="hlln">fib</span><span class="hllp">(</span><span class="hlln">n</span><span class="hllo">-</span><span class="hllmi">1</span><span class="hllp">)</span><span class="hllw"> </span><span class="hllo">+</span><span class="hllw"> </span><span class="hlln">fib</span><span class="hllp">(</span><span class="hlln">n</span><span class="hllo">-</span><span class="hllmi">2</span><span class="hllp">),</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllp">}</span><span class="hllw"></span>
-<span class="hllp">}</span><span class="hllw"></span>
-</pre></div>
+<pre class="code rust literal-block">
+<span class="k">fn</span><span class="w"> </span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">i32</span><span class="p">{</span><span class="w">
+    </span><span class="k">match</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="mi">0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="mi">1</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span>
+</pre>
 <p>Now I need to get a list of numbers while the return of the <code>fib</code> function
 is &lt; 4,000,000. I cheated a bit here, as I figured out that the max number
 to pass to the function in this case is 34.
 I would assume that in the <em>more correct</em> way of doing it, the limit is
 defined in a better way.</p>
-<div class="highlight"><pre><span></span><span class="hllk">fn</span><span class="hllw"> </span><span class="hlln">main</span><span class="hllp">()</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllkd">let</span><span class="hllw"> </span><span class="hlln">vals</span><span class="hllw"> </span><span class="hllo">=</span><span class="hllw"> </span><span class="hllp">(</span><span class="hllmi">1</span><span class="hllp">..</span><span class="hllmi">34</span><span class="hllp">).</span><span class="hlln">map</span><span class="hllp">(</span><span class="hllo">|</span><span class="hlln">x</span><span class="hllo">|</span><span class="hllw"> </span><span class="hlln">fib</span><span class="hllp">(</span><span class="hlln">x</span><span class="hllp">));</span><span class="hllw"></span>
-<span class="hllp">}</span><span class="hllw"></span>
-</pre></div>
+<pre class="code rust literal-block">
+<span class="k">fn</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="kd">let</span><span class="w"> </span><span class="n">vals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">..</span><span class="mi">34</span><span class="p">).</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">fib</span><span class="p">(</span><span class="n">x</span><span class="p">));</span><span class="w">
+</span><span class="p">}</span>
+</pre>
 <p>Thinking back to the previous example I already know about filter and sum.</p>
-<div class="highlight"><pre><span></span><span class="hllk">fn</span><span class="hllw"> </span><span class="hlln">main</span><span class="hllp">()</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllkd">let</span><span class="hllw"> </span><span class="hlln">vals</span><span class="hllw"> </span><span class="hllo">=</span><span class="hllw"> </span><span class="hllp">(</span><span class="hllmi">1</span><span class="hllp">..</span><span class="hllmi">34</span><span class="hllp">).</span><span class="hlln">map</span><span class="hllp">(</span><span class="hllo">|</span><span class="hlln">x</span><span class="hllo">|</span><span class="hllw"> </span><span class="hlln">fib</span><span class="hllp">(</span><span class="hlln">x</span><span class="hllp">))</span><span class="hllw"></span>
-<span class="hllw">                </span><span class="hllp">.</span><span class="hlln">filter</span><span class="hllp">(</span><span class="hllo">|&amp;</span><span class="hlln">x</span><span class="hllo">|</span><span class="hllw"> </span><span class="hlln">x</span><span class="hllw"> </span><span class="hllo">%</span><span class="hllw"> </span><span class="hllmi">2</span><span class="hllw"> </span><span class="hllo">==</span><span class="hllw"> </span><span class="hllmi">0</span><span class="hllp">)</span><span class="hllw"></span>
-<span class="hllw">                </span><span class="hllp">.</span><span class="hlln">sum</span><span class="hllp">();</span><span class="hllw"></span>
-<span class="hllp">}</span><span class="hllw"></span>
-</pre></div>
+<pre class="code rust literal-block">
+<span class="k">fn</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="kd">let</span><span class="w"> </span><span class="n">vals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">..</span><span class="mi">34</span><span class="p">).</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">fib</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w">
+                </span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">|&amp;</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">
+                </span><span class="p">.</span><span class="n">sum</span><span class="p">();</span><span class="w">
+</span><span class="p">}</span>
+</pre>
 <p>But there's a problem:</p>
-<div class="highlight"><pre><span></span><span class="hllgo">   Compiling euler_2 v0.0.1 (file:////work/sandbox/euler_rust/euler_2)</span>
-<span class="hllgo">/work/sandbox/euler_rust/euler_2/src/main.rs:16:10: 16:15 error: type `core::iter::Filter&lt;i32, core::iter::Map&lt;i32, i32, core::ops::Range&lt;i32&gt;, closure[/work/sandbox/euler_rust/euler_2/src/main.rs:14:32: 14:42]&gt;, closure[/work/sandbox/euler_rust/euler_2/src/main.rs:15:17: 15:31]&gt;` does not implement any method in scope named `sum`</span>
-<span class="hllgo">/work/sandbox/euler_rust/euler_2/src/main.rs:16         .sum();</span>
-<span class="hllgo">                                                        ^~~~~</span>
-<span class="hllgo">error: aborting due to previous error</span>
-<span class="hllgo">Could not compile `euler_2`.</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="go">   Compiling euler_2 v0.0.1 (file:////work/sandbox/euler_rust/euler_2)
+/work/sandbox/euler_rust/euler_2/src/main.rs:16:10: 16:15 error: type `core::iter::Filter&lt;i32, core::iter::Map&lt;i32, i32, core::ops::Range&lt;i32&gt;, closure[/work/sandbox/euler_rust/euler_2/src/main.rs:14:32: 14:42]&gt;, closure[/work/sandbox/euler_rust/euler_2/src/main.rs:15:17: 15:31]&gt;` does not implement any method in scope named `sum`
+/work/sandbox/euler_rust/euler_2/src/main.rs:16         .sum();
+                                                        ^~~~~
+error: aborting due to previous error
+Could not compile `euler_2`.</span>
+</pre>
 <p>Seems like <code>sum</code> won't work here due to the <code>map</code>. Not to worry, I used <code>fold</code> in the previous example,
 before the helpful folks at <a class="reference external" href="http://reddit.com/r/rust">the rust subreddit</a> told me about <cite>sum</cite>,
 so let's use that instead, as that should work.</p>
-<div class="highlight"><pre><span></span><span class="hllk">fn</span><span class="hllw"> </span><span class="hlln">main</span><span class="hllp">()</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllkd">let</span><span class="hllw"> </span><span class="hlln">vals</span><span class="hllw"> </span><span class="hllo">=</span><span class="hllw"> </span><span class="hllp">(</span><span class="hllmi">1</span><span class="hllp">..</span><span class="hllmi">34</span><span class="hllp">).</span><span class="hlln">map</span><span class="hllp">(</span><span class="hllo">|</span><span class="hlln">x</span><span class="hllo">|</span><span class="hllw"> </span><span class="hlln">fib</span><span class="hllp">(</span><span class="hlln">x</span><span class="hllp">))</span><span class="hllw"></span>
-<span class="hllw">                </span><span class="hllp">.</span><span class="hlln">filter</span><span class="hllp">(</span><span class="hllo">|&amp;</span><span class="hlln">x</span><span class="hllo">|</span><span class="hllw"> </span><span class="hlln">x</span><span class="hllw"> </span><span class="hllo">%</span><span class="hllw"> </span><span class="hllmi">2</span><span class="hllw"> </span><span class="hllo">==</span><span class="hllw"> </span><span class="hllmi">0</span><span class="hllp">)</span><span class="hllw"></span>
-<span class="hllw">                </span><span class="hllp">.</span><span class="hlln">fold</span><span class="hllp">(</span><span class="hllmi">0</span><span class="hllp">,</span><span class="hllw"> </span><span class="hllo">|</span><span class="hlln">a</span><span class="hllp">,</span><span class="hllw"> </span><span class="hlln">b</span><span class="hllo">|</span><span class="hllw"> </span><span class="hlln">a</span><span class="hllw"> </span><span class="hllo">+</span><span class="hllw"> </span><span class="hlln">b</span><span class="hllp">);</span><span class="hllw"></span>
+<pre class="code rust literal-block">
+<span class="k">fn</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="kd">let</span><span class="w"> </span><span class="n">vals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">..</span><span class="mi">34</span><span class="p">).</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">fib</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w">
+                </span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">|&amp;</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">
+                </span><span class="p">.</span><span class="n">fold</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">
 
-<span class="hllw">   </span><span class="hlln">println</span><span class="hllo">!</span><span class="hllp">(</span><span class="hlls">&quot;{}&quot;</span><span class="hllp">,</span><span class="hllw"> </span><span class="hlln">vals</span><span class="hllp">);</span><span class="hllw"></span>
-<span class="hllp">}</span><span class="hllw"></span>
-</pre></div>
+   </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">vals</span><span class="p">);</span><span class="w">
+</span><span class="p">}</span>
+</pre>
 <p>EDIT: <code>sum</code> does work, I just forgot to add <code>use std::iter::AdditiveIterator;</code> at the
 top of the file. The Github file contains this fix.</p>
 <p>Let's run it:</p>
-<div class="highlight"><pre><span></span><span class="hllgo">cargo run</span>
-<span class="hllgo">     Running `target/euler_2`</span>
-<span class="hllgo">4613732</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="go">cargo run
+     Running `target/euler_2`
+4613732</span>
+</pre>
 <p>The result checks out, so Project Euler 2 has been solved.</p>
 <p>What I would like to know though: Is there a better way to generate the
 fibonacci sequence? If you have suggestions (or about anything else on this page),
@@ -139,42 +146,43 @@ and for anyone else interested.</p>
 <p>EDIT: With some marvellous feedback (which is a great benefit of posting
 these) I have edited the code on Github to use an iterator instead of the recursive call.</p>
 <p>The code is now (main credit to /u/emk and others):</p>
-<div class="highlight"><pre><span></span><span class="hllkn">use</span><span class="hllw"> </span><span class="hlln">std</span><span class="hllo">::</span><span class="hlln">iter</span><span class="hllo">::</span><span class="hlln">AdditiveIterator</span><span class="hllp">;</span><span class="hllw"></span>
+<pre class="code rust literal-block">
+<span class="kn">use</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">iter</span><span class="o">::</span><span class="n">AdditiveIterator</span><span class="p">;</span><span class="w">
 
-<span class="hllcp">#[derive(Copy)]</span><span class="hllw"></span>
-<span class="hllk">pub</span><span class="hllw"> </span><span class="hllk">struct</span><span class="hllw"> </span><span class="hlln">FibonacciSequence</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hlln">n_minus_1</span><span class="hllo">:</span><span class="hllw"> </span><span class="hllkt">u32</span><span class="hllp">,</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hlln">n_minus_2</span><span class="hllo">:</span><span class="hllw"> </span><span class="hllkt">u32</span><span class="hllw"></span>
-<span class="hllp">}</span><span class="hllw"></span>
+</span><span class="cp">#[derive(Copy)]</span><span class="w">
+</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="n">FibonacciSequence</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">n_minus_1</span><span class="o">:</span><span class="w"> </span><span class="kt">u32</span><span class="p">,</span><span class="w">
+    </span><span class="n">n_minus_2</span><span class="o">:</span><span class="w"> </span><span class="kt">u32</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-<span class="hllk">impl</span><span class="hllw"> </span><span class="hllnb">Iterator</span><span class="hllw"> </span><span class="hllk">for</span><span class="hllw"> </span><span class="hlln">FibonacciSequence</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllk">type</span><span class="hllw"> </span><span class="hlln">Item</span><span class="hllw"> </span><span class="hllo">=</span><span class="hllw"> </span><span class="hllkt">u32</span><span class="hllp">;</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllk">fn</span><span class="hllw"> </span><span class="hlln">next</span><span class="hllp">(</span><span class="hllo">&amp;</span><span class="hllk">mut</span><span class="hllw"> </span><span class="hllbp">self</span><span class="hllp">)</span><span class="hllw"> </span><span class="hllo">-&gt;</span><span class="hllw"> </span><span class="hllnb">Option</span><span class="hllo">&lt;</span><span class="hllkt">u32</span><span class="hllo">&gt;</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">        </span><span class="hllkd">let</span><span class="hllw"> </span><span class="hllk">mut</span><span class="hllw"> </span><span class="hlln">result</span><span class="hllw"> </span><span class="hllo">=</span><span class="hllw"> </span><span class="hllbp">self</span><span class="hllp">.</span><span class="hlln">n_minus_1</span><span class="hllw"> </span><span class="hllo">+</span><span class="hllw"> </span><span class="hllbp">self</span><span class="hllp">.</span><span class="hlln">n_minus_2</span><span class="hllp">;</span><span class="hllw"></span>
+</span><span class="k">impl</span><span class="w"> </span><span class="nb">Iterator</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">FibonacciSequence</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="k">type</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">u32</span><span class="p">;</span><span class="w">
+    </span><span class="k">fn</span><span class="w"> </span><span class="n">next</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Option</span><span class="o">&lt;</span><span class="kt">u32</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">n_minus_1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">n_minus_2</span><span class="p">;</span><span class="w">
 
-<span class="hllw">        </span><span class="hllc1">// Special case: If all our fields are zero, we want to generate</span>
-<span class="hllw">        </span><span class="hllc1">// our initial 1.  Everything else will work correctly from here.</span>
-<span class="hllw">        </span><span class="hllk">if</span><span class="hllw"> </span><span class="hlln">result</span><span class="hllw"> </span><span class="hllo">==</span><span class="hllw"> </span><span class="hllmi">0</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"> </span><span class="hlln">result</span><span class="hllw"> </span><span class="hllo">=</span><span class="hllw"> </span><span class="hllmi">1</span><span class="hllp">;</span><span class="hllw"> </span><span class="hllp">}</span><span class="hllw"></span>
+        </span><span class="c1">// Special case: If all our fields are zero, we want to generate
+</span><span class="w">        </span><span class="c1">// our initial 1.  Everything else will work correctly from here.
+</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">
 
-<span class="hllw">        </span><span class="hllbp">self</span><span class="hllp">.</span><span class="hlln">n_minus_2</span><span class="hllw"> </span><span class="hllo">=</span><span class="hllw"> </span><span class="hllbp">self</span><span class="hllp">.</span><span class="hlln">n_minus_1</span><span class="hllp">;</span><span class="hllw"></span>
-<span class="hllw">        </span><span class="hllbp">self</span><span class="hllp">.</span><span class="hlln">n_minus_1</span><span class="hllw"> </span><span class="hllo">=</span><span class="hllw"> </span><span class="hlln">result</span><span class="hllp">;</span><span class="hllw"></span>
-<span class="hllw">        </span><span class="hllnb">Some</span><span class="hllp">(</span><span class="hlln">result</span><span class="hllp">)</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllp">}</span><span class="hllw"></span>
-<span class="hllp">}</span><span class="hllw"></span>
+        </span><span class="bp">self</span><span class="p">.</span><span class="n">n_minus_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">n_minus_1</span><span class="p">;</span><span class="w">
+        </span><span class="bp">self</span><span class="p">.</span><span class="n">n_minus_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w">
+        </span><span class="nb">Some</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-<span class="hllk">pub</span><span class="hllw"> </span><span class="hllk">fn</span><span class="hllw"> </span><span class="hlln">fibonacci_sequence</span><span class="hllp">()</span><span class="hllw"> </span><span class="hllo">-&gt;</span><span class="hllw"> </span><span class="hlln">FibonacciSequence</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hlln">FibonacciSequence</span><span class="hllp">{</span><span class="hlln">n_minus_1</span><span class="hllo">:</span><span class="hllw"> </span><span class="hllmi">0</span><span class="hllp">,</span><span class="hllw"> </span><span class="hlln">n_minus_2</span><span class="hllo">:</span><span class="hllw"> </span><span class="hllmi">0</span><span class="hllp">}</span><span class="hllw"></span>
-<span class="hllp">}</span><span class="hllw"></span>
+</span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="n">fibonacci_sequence</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">FibonacciSequence</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">FibonacciSequence</span><span class="p">{</span><span class="n">n_minus_1</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n_minus_2</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-<span class="hllk">fn</span><span class="hllw"> </span><span class="hlln">main</span><span class="hllp">()</span><span class="hllw"> </span><span class="hllp">{</span><span class="hllw"></span>
-<span class="hllw">    </span><span class="hllkd">let</span><span class="hllw"> </span><span class="hlln">sum</span><span class="hllw"> </span><span class="hllo">=</span><span class="hllw"> </span><span class="hlln">fibonacci_sequence</span><span class="hllp">()</span><span class="hllw"></span>
-<span class="hllw">        </span><span class="hllp">.</span><span class="hlln">filter</span><span class="hllp">(</span><span class="hllo">|&amp;</span><span class="hlln">v</span><span class="hllo">|</span><span class="hllw"> </span><span class="hlln">v</span><span class="hllw"> </span><span class="hllo">%</span><span class="hllw"> </span><span class="hllmi">2</span><span class="hllw"> </span><span class="hllo">==</span><span class="hllw"> </span><span class="hllmi">0</span><span class="hllp">)</span><span class="hllw"></span>
-<span class="hllw">        </span><span class="hllp">.</span><span class="hlln">take_while</span><span class="hllp">(</span><span class="hllo">|&amp;</span><span class="hlln">v</span><span class="hllo">|</span><span class="hllw"> </span><span class="hlln">v</span><span class="hllw"> </span><span class="hllo">&lt;=</span><span class="hllw"> </span><span class="hllmi">4000000</span><span class="hllk">u32</span><span class="hllp">)</span><span class="hllw"></span>
-<span class="hllw">        </span><span class="hllp">.</span><span class="hlln">sum</span><span class="hllp">();</span><span class="hllw"></span>
+</span><span class="k">fn</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="kd">let</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fibonacci_sequence</span><span class="p">()</span><span class="w">
+        </span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">|&amp;</span><span class="n">v</span><span class="o">|</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">
+        </span><span class="p">.</span><span class="n">take_while</span><span class="p">(</span><span class="o">|&amp;</span><span class="n">v</span><span class="o">|</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">4000000</span><span class="k">u32</span><span class="p">)</span><span class="w">
+        </span><span class="p">.</span><span class="n">sum</span><span class="p">();</span><span class="w">
 
-<span class="hllw">    </span><span class="hlln">println</span><span class="hllo">!</span><span class="hllp">(</span><span class="hlls">&quot;Result: {}&quot;</span><span class="hllp">,</span><span class="hllw"> </span><span class="hlln">sum</span><span class="hllp">);</span><span class="hllw"></span>
-<span class="hllp">}</span><span class="hllw"></span>
-</pre></div>
+    </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Result: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">);</span><span class="w">
+</span><span class="p">}</span>
+</pre>
 <p>The interesting thing is the performance difference between the iterator
 implementation and the recursive call. The recursive implementation timings
 are:</p>

@@ -63,11 +63,13 @@ Use :code:<tt class="docutils literal"><span class="pre">CC=&quot;/usr/bin/gcc&q
 :code:<tt class="docutils literal"><span class="pre">llvm/tools/clang/include/clang-c</span></tt> folder from the original checkout (step 2 if you follow the clang guide) to
 :code:<tt class="docutils literal">build/include</tt>.</p>
 <p>Now we need to build the YCM tools according to the docs. Here's the command I used:</p>
-<div class="highlight"><pre><span></span>cmake -G <span class="hlls2">&quot;Unix Makefiles&quot;</span> -DPATH_TO_LLVM_ROOT<span class="hllo">=</span>/tmp/build -DEXTERNAL_LIBCLANG_PATH<span class="hllo">=</span>/tmp/build/Release+Asserts/lib/libclang.so . ~/.vim/bundle/YouCompleteMe/cpp
-</pre></div>
+<pre class="code bash literal-block">
+cmake -G <span class="s2">&quot;Unix Makefiles&quot;</span> -DPATH_TO_LLVM_ROOT<span class="o">=</span>/tmp/build -DEXTERNAL_LIBCLANG_PATH<span class="o">=</span>/tmp/build/Release+Asserts/lib/libclang.so . ~/.vim/bundle/YouCompleteMe/cpp
+</pre>
 <p>adjust the paths as necessary. After the configure stage run</p>
-<div class="highlight"><pre><span></span>make ycm_support_libs
-</pre></div>
+<pre class="code bash literal-block">
+make ycm_support_libs
+</pre>
 <p>And with some patience you are done.</p>
 <p>Now you need to add a :code:<tt class="docutils literal">.ycm_extra_conf.py</tt> to your project and you should start seeing autocompletion.</p>
 

@@ -57,7 +57,7 @@ If you are interested you can read up on `floating point values in Python <https
 
 To demonstrate I opened an interpreter and ran this:
 
-.. code-block:: python
+.. code:: python
 
 	
 	>>> a = 0.1

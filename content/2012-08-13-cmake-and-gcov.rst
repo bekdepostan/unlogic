@@ -10,7 +10,7 @@ Recently I setup a project that uses CMake as its build tool and `googletest <ht
 
 In the :code:``CMakeLists.txt`` file for your test suite you need to add the following (I've omitted some lines that aren't relevant to this article):
 
-.. code-block:: cmake
+.. code:: cmake
 
 	SET(PROJECT_TEST_NAME ${PROJECT_NAME_STR}_test)
 	    
@@ -26,7 +26,7 @@ In the :code:``CMakeLists.txt`` file for your test suite you need to add the fol
 
 We need to make sure a debug build is on (:code:``-g`:code:`), that we build without optimisation (`:code:`-O0`:code:`), and enable profiling (`:code:`-fprofile-arcs -ftest-coverage`:code:`). On the link phase we need to link against the google unit test libraries and pthread. Once you have sucessfully built your unit test you can then use lcov to generate the coverage results. Although you'll soon notice that it might not work. CMake places its files into different directories than you'd expect from make or other build systems. So here's what I did to get this to work. Assuming you have a `:code:`tests`:code:` directory in your build, where your tests are and the test runner binary is built into, you have to run the following from that directory (`:code:`${PROJECTDIR}/build/tests``):
 
-.. code-block:: bash
+.. code:: bash
 
 	$ lcov --zerocounters --directory .
 	$ lcov --capture --initial --directory . --output-file app

@@ -62,7 +62,7 @@ and uncategorised. I find that people on Codewars tend to favour the less readab
 I'll give you an example from CheckIO's "Weak Point" challenge. The aim was to calculate the sum of
 each column and row of a matrix and return the row, column with the lowest sum. The top clear answer is this:
 
-.. code-block:: python
+.. code:: python
 
 	def weak_point(matrix):
 	    n = len(matrix)
@@ -72,7 +72,7 @@ each column and row of a matrix and return the row, column with the lowest sum. 
 
 I like this. It's concise, makes use of some handy Python features and is readable. However, compare to this:
 
-.. code-block:: python
+.. code:: python
 
 	def weak_point(matrix):
 	    rows, cols = map(sum, matrix), map(sum, zip(*matrix))

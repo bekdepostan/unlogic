@@ -17,7 +17,7 @@ Opinion Divided
 What surprised me was how :code:`/` has changed in Python 3. In Python 2.7 it returns
 the result of the division of two numbers.
 
-.. code-block:: python
+.. code:: python
 
 	>>> 8/2
 	4
@@ -28,7 +28,7 @@ Checks out to me. :code:`10 / 3` is 3.3333, and because we are using integers in
 the expression, we expect an integer as the result.
 Change the input to floats (or at least one of the inputs)
 
-.. code-block:: python
+.. code:: python
 
 	>>> 10/3.0
 	3.3333333333333335
@@ -41,7 +41,7 @@ correct and integer division should yield an integer, not a float. Pretty much a
 main stream languages behave like this. In C/C++ you need to cast one of the arguments
 to a float to get a float back.
 
-.. code-block:: cpp
+.. code:: cpp
 
 	#include <iostream>
 	
@@ -52,7 +52,7 @@ to a float to get a float back.
 	    return 0;
 	}
 
-.. code-block:: console
+.. code:: console
 
 	$] ./a.out 
 	3
@@ -75,7 +75,7 @@ perhaps have kept :code:`/` as it is and made :code:`//` the one that always ret
 
 And just to finish:
 
-.. code-block:: python
+.. code:: python
 
 	Python 3.4.0
 	>>> 10//3

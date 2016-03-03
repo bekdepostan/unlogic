@@ -57,17 +57,19 @@ Enough of a surprise that I felt the urge to write this post.</p>
 <h2>Opinion Divided</h2>
 <p>What surprised me was how <code>/</code> has changed in Python 3. In Python 2.7 it returns
 the result of the division of two numbers.</p>
-<div class="highlight"><pre><span></span><span class="hllo">&gt;&gt;&gt;</span> <span class="hllmi">8</span><span class="hllo">/</span><span class="hllmi">2</span>
-<span class="hllmi">4</span>
-<span class="hllo">&gt;&gt;&gt;</span> <span class="hllmi">10</span><span class="hllo">/</span><span class="hllmi">3</span>
-<span class="hllmi">3</span>
-</pre></div>
+<pre class="code python literal-block">
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">8</span><span class="o">/</span><span class="mi">2</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span><span class="o">/</span><span class="mi">3</span>
+<span class="mi">3</span>
+</pre>
 <p>Checks out to me. <code>10 / 3</code> is 3.3333, and because we are using integers in
 the expression, we expect an integer as the result.
 Change the input to floats (or at least one of the inputs)</p>
-<div class="highlight"><pre><span></span><span class="hllo">&gt;&gt;&gt;</span> <span class="hllmi">10</span><span class="hllo">/</span><span class="hllmf">3.0</span>
-<span class="hllmf">3.3333333333333335</span>
-</pre></div>
+<pre class="code python literal-block">
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span><span class="o">/</span><span class="mf">3.0</span>
+<span class="mf">3.3333333333333335</span>
+</pre>
 <p>and we get a float. Right, nothing weird there. Where it starts getting odd is
 that in Python 3 you <strong>always</strong> get a float back, unless you use the <code>//</code> operator.
 Apparently that is because too many people expected integer division to return a float.
@@ -75,19 +77,21 @@ Maybe it's just me and my fellow oldies who think that the original behaviour is
 correct and integer division should yield an integer, not a float. Pretty much all
 main stream languages behave like this. In C/C++ you need to cast one of the arguments
 to a float to get a float back.</p>
-<div class="highlight"><pre><span></span><span class="hllcp">#include</span> <span class="hllcpf">&lt;iostream&gt;</span><span class="hllcp"></span>
+<pre class="code cpp literal-block">
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="mi">10</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-<span class="hllkt">int</span> <span class="hllnf">main</span> <span class="hllp">()</span> <span class="hllp">{</span>
-    <span class="hlln">std</span><span class="hllo">::</span><span class="hlln">cout</span> <span class="hllo">&lt;&lt;</span> <span class="hllmi">10</span> <span class="hllo">/</span> <span class="hllmi">3</span> <span class="hllo">&lt;&lt;</span> <span class="hlln">std</span><span class="hllo">::</span><span class="hlln">endl</span><span class="hllp">;</span>
-    <span class="hlln">std</span><span class="hllo">::</span><span class="hlln">cout</span> <span class="hllo">&lt;&lt;</span> <span class="hllp">(</span><span class="hllkt">float</span><span class="hllp">)</span><span class="hllmi">10</span> <span class="hllo">/</span> <span class="hllmi">3</span> <span class="hllo">&lt;&lt;</span> <span class="hlln">std</span><span class="hllo">::</span><span class="hlln">endl</span><span class="hllp">;</span>
-
-    <span class="hllk">return</span> <span class="hllmi">0</span><span class="hllp">;</span>
-<span class="hllp">}</span>
-</pre></div>
-<div class="highlight"><pre><span></span><span class="hllgp">$</span><span class="hllo">]</span> ./a.out
-<span class="hllgo">3</span>
-<span class="hllgo">3.33333</span>
-</pre></div>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+<pre class="code console literal-block">
+<span class="o"></span><span class="gp">$</span><span class="o">]</span> ./a.out
+<span class="go">3
+3.33333</span>
+</pre>
 <p>I understand that if you are dividing numbers you will want to have
 the accuracy of the float type, but I find this a bit of an odd choice
 for the Python devs to make. But perhaps this is the future, and I'm
@@ -101,12 +105,13 @@ times when getting a float might cause unexpected behaviour.</p>
 outweighs the <em>yes</em>, but I'm still a little surprised at this change. I would
 perhaps have kept <code>/</code> as it is and made <code>//</code> the one that always returns a float.</p>
 <p>And just to finish:</p>
-<div class="highlight"><pre><span></span><span class="hlln">Python</span> <span class="hllmf">3.4</span><span class="hllo">.</span><span class="hllmi">0</span>
-<span class="hllo">&gt;&gt;&gt;</span> <span class="hllmi">10</span><span class="hllo">//</span><span class="hllmi">3</span>
-<span class="hllmi">3</span>
-<span class="hllo">&gt;&gt;&gt;</span> <span class="hllmi">10</span><span class="hllo">//</span><span class="hllmf">3.0</span>
-<span class="hllmf">3.0</span>
-</pre></div>
+<pre class="code python literal-block">
+<span class="n">Python</span> <span class="mf">3.4</span><span class="o">.</span><span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span><span class="o">//</span><span class="mi">3</span>
+<span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span><span class="o">//</span><span class="mf">3.0</span>
+<span class="mf">3.0</span>
+</pre>
 <p><a class="reference external" href="http://i.imgur.com/WEllYN3.gif">Yeah, sure, why not?</a></p>
 </div>
 

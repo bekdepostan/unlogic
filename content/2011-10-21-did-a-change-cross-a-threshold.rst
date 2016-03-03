@@ -13,7 +13,7 @@ So recently I needed to check if a change to a number caused it to cross a thres
 
 You get the idea. So how do we best do it. With some thinking it's actually quite easy as you just base the decision off of the number of multiples each number is of 25:
 
-.. code-block:: python
+.. code:: python
 
 	prev_multiple = t[1] / 25;
 	new_multiple = new_percentage / 25;

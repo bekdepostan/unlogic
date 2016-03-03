@@ -36,7 +36,7 @@ Let's cover our dependencies first. You will need:
 
 Not much to ask for is it? So once you've made sure you have all that, let's start by getting the album cover. This is handled by the `interestingness <http://www.flickr.com/services/api/flickr.interestingness.getList.html>`_ part of the API and is a very simple call that will return an XML structure of the photos on that page. Once we have a response we parse the XML and get the elements we need to construct the photo URL. It's a short function and here it is:
  
-.. code-block:: python
+.. code:: python
 
 	def getAlbumImage():
 	    page = random.randint(1,80)
@@ -57,7 +57,7 @@ First we generate a random number which will be the page number we use in constr
 
 Right, onto getting our band name. This is the random Wikipedia article. Luckily Wikipedia has an API also, and doesn't require an API key for this purpose. This is an even shorter function:
 
-.. code-block:: python
+.. code:: python
 
 	def getBandName():
 	    random_wiki_url = "http://en.wikipedia.org/w/api.php?format=xml&action=query&list=random&rnnamespace=0&rnlimit=1"
@@ -70,7 +70,7 @@ As above we create the URL, parse the output with minidom and fetch our page tit
 
 Album title is a little trickier. I couldn't find a decent quote page that offered a free, easy to use API, so I decided to be a little more hacky and just parse the HTML itself. Hey, it works, don't judge me. We need a helper class for this called `MyHTMLParser` that derives from python's `HTMLParser <http://docs.python.org/2/library/htmlparser.html?highlight=htmlparser#HTMLParser>`_ class. 
 
-.. code-block:: python
+.. code:: python
 
 	class MyHTMLParser(HTMLParser):
 	    def __init__(self):
@@ -112,7 +112,7 @@ The class here is used to parse the HTML from `http://www.quotationspage.com/ran
 
 So now we have the data that we need, we just need to wrap it all up and generate our final image using :code:`PIL`. Surprise, surprise, this isn't a big deal either.
 
-.. code-block:: python
+.. code:: python
 
 	def main():
 	    band_name = getBandName()

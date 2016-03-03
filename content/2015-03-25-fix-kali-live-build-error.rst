@@ -19,7 +19,7 @@ Now in order to fix the issue we follow the instructions provided in
 in case I need to refer back to it later. I've also updated the version of
 the :code:`libdebian-installer` package to the latest available at this time.
 
-.. code-block:: console
+.. code:: console
 
 	apt-get remove --purge libdebian-installer4
 	wget http://ftp.debian.org/debian/pool/main/libd/libdebian-installer/libdebian-installer_0.99.tar.xz

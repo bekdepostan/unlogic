@@ -59,21 +59,22 @@ and then make sure the <a class="reference external" href="http://docs.kali.org/
 <a class="reference external" href="https://bugs.kali.org/view.php?id=270">this bug report</a>. I'll write it down here,
 in case I need to refer back to it later. I've also updated the version of
 the <code>libdebian-installer</code> package to the latest available at this time.</p>
-<div class="highlight"><pre><span></span><span class="hllgo">apt-get remove --purge libdebian-installer4</span>
-<span class="hllgo">wget http://ftp.debian.org/debian/pool/main/libd/libdebian-installer/libdebian-installer_0.99.tar.xz</span>
-<span class="hllgo">tar xvf libdebian-installer_0.99.tar.xz</span>
-<span class="hllgo">cd libdebian-installer-0.99</span>
-<span class="hllgo">grep -R parser_rfc822 src</span>
-<span class="hllgo">apt-get install automake libtool</span>
-<span class="hllgo">autoreconf -i -v</span>
-<span class="hllgo">./configure</span>
-<span class="hllgo">make</span>
-<span class="hllgo">make install</span>
-<span class="hllgo">git clone git://git.kali.org/live-build-config.git</span>
-<span class="hllgo">cd live-build-config/</span>
-<span class="hllgo">lb config</span>
-<span class="hllgo">lb build</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="go">apt-get remove --purge libdebian-installer4
+wget http://ftp.debian.org/debian/pool/main/libd/libdebian-installer/libdebian-installer_0.99.tar.xz
+tar xvf libdebian-installer_0.99.tar.xz
+cd libdebian-installer-0.99
+grep -R parser_rfc822 src
+apt-get install automake libtool
+autoreconf -i -v
+./configure
+make
+make install
+git clone git://git.kali.org/live-build-config.git
+cd live-build-config/
+lb config
+lb build</span>
+</pre>
 <p>After this the build ran fine.</p>
 
 		</div> <!--/#entry-content-->

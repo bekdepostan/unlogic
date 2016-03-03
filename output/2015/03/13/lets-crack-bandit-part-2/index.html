@@ -58,18 +58,19 @@
 more complicated as we need to connect with SSL.
 The simplest way is using <code>openssl</code> with <code>s_client</code>. Once connected it's the
 same dance as above</p>
-<div class="highlight"><pre><span></span><span class="hllgp">bandit15@melinda:~$</span> openssl s_client -quiet -connect localhost:30001
-<span class="hllgo">depth=0 CN = li190-250.members.linode.com</span>
-<span class="hllgo">verify error:num=18:self signed certificate</span>
-<span class="hllgo">verify return:1</span>
-<span class="hllgo">depth=0 CN = li190-250.members.linode.com</span>
-<span class="hllgo">verify return:1</span>
-<span class="hllgo">BfMYroe26WYalil77FoDi9qh59eK5xNr</span>
-<span class="hllgo">Correct!</span>
-<span class="hllgo">cluFn7wTiGryunymYOu4RcffSxQluehd</span>
+<pre class="code console literal-block">
+<span class="gp">bandit15&#64;melinda:~$</span> openssl s_client -quiet -connect localhost:30001
+<span class="go">depth=0 CN = li190-250.members.linode.com
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = li190-250.members.linode.com
+verify return:1
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+Correct!
+cluFn7wTiGryunymYOu4RcffSxQluehd
 
-<span class="hllgo">read:errno=0</span>
-</pre></div>
+read:errno=0</span>
+</pre>
 </div>
 <div class="section" id="level-16-17">
 <h2>Level 16 -&gt; 17 #</h2>
@@ -78,92 +79,97 @@ same dance as above</p>
 figure out which port is the right one by trying each one. Depending on the number
 of ports open this could take a while or not.
 Let's see how we're going to handle this by seeing which ports are open</p>
-<div class="highlight"><pre><span></span><span class="hllgp">bandit16@melinda:~$</span> nmap localhost -p 31000-32000
+<pre class="code console literal-block">
+<span class="gp">bandit16&#64;melinda:~$</span> nmap localhost -p 31000-32000
+<span class="go">
+Starting Nmap 6.40 ( http://nmap.org ) at 2015-03-20 14:54 UTC
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00080s latency).
+Not shown: 996 closed ports
+PORT      STATE SERVICE
+31046/tcp open  unknown
+31518/tcp open  unknown
+31691/tcp open  unknown
+31790/tcp open  unknown
+31960/tcp open  unknown
 
-<span class="hllgo">Starting Nmap 6.40 ( http://nmap.org ) at 2015-03-20 14:54 UTC</span>
-<span class="hllgo">Nmap scan report for localhost (127.0.0.1)</span>
-<span class="hllgo">Host is up (0.00080s latency).</span>
-<span class="hllgo">Not shown: 996 closed ports</span>
-<span class="hllgo">PORT      STATE SERVICE</span>
-<span class="hllgo">31046/tcp open  unknown</span>
-<span class="hllgo">31518/tcp open  unknown</span>
-<span class="hllgo">31691/tcp open  unknown</span>
-<span class="hllgo">31790/tcp open  unknown</span>
-<span class="hllgo">31960/tcp open  unknown</span>
-
-<span class="hllgo">Nmap done: 1 IP address (1 host up) scanned in 0.08 seconds</span>
-</pre></div>
+Nmap done: 1 IP address (1 host up) scanned in 0.08 seconds</span>
+</pre>
 <p>Not too bad. Because it's a short list, we can try them one by one, or
 we run a service discovery on them. Service discovery in nmap takes a while,
 so I only scan the ports we are interseted in:</p>
-<div class="highlight"><pre><span></span><span class="hllgp">bandit16@melinda:~$</span> nmap -sV -p 31046,31518,31691,31790,31960 localhost
-
-<span class="hllgo">Starting Nmap 6.40 ( http://nmap.org ) at 2015-03-20 14:51 UTC</span>
-<span class="hllgo">Nmap scan report for localhost (127.0.0.1)</span>
-<span class="hllgo">Host is up (0.00015s latency).</span>
-<span class="hllgo">PORT      STATE SERVICE VERSION</span>
-<span class="hllgo">31046/tcp open  echo</span>
-<span class="hllgo">31518/tcp open  msdtc   Microsoft Distributed Transaction Coordinator (error)</span>
-<span class="hllgo">31691/tcp open  echo</span>
-<span class="hllgo">31790/tcp open  msdtc   Microsoft Distributed Transaction Coordinator (error)</span>
-<span class="hllgo">31960/tcp open  echo</span>
-<span class="hllgo">Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="gp">bandit16&#64;melinda:~$</span> nmap -sV -p 31046,31518,31691,31790,31960 localhost
+<span class="go">
+Starting Nmap 6.40 ( http://nmap.org ) at 2015-03-20 14:51 UTC
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00015s latency).
+PORT      STATE SERVICE VERSION
+31046/tcp open  echo
+31518/tcp open  msdtc   Microsoft Distributed Transaction Coordinator (error)
+31691/tcp open  echo
+31790/tcp open  msdtc   Microsoft Distributed Transaction Coordinator (error)
+31960/tcp open  echo
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows</span>
+</pre>
 <p>Now we only have two ports to try, as the others are clearly just echo ports.
 Eliminating one we go ahead and</p>
-<div class="highlight"><pre><span></span><span class="hllgp">bandit16@melinda:~$</span> openssl s_client -quiet -connect localhost:31790
-<span class="hllgo">depth=0 CN = li190-250.members.linode.com</span>
-<span class="hllgo">verify error:num=18:self signed certificate</span>
-<span class="hllgo">verify return:1</span>
-<span class="hllgo">depth=0 CN = li190-250.members.linode.com</span>
-<span class="hllgo">verify return:1</span>
-<span class="hllgo">cluFn7wTiGryunymYOu4RcffSxQluehd</span>
-<span class="hllgo">Correct!</span>
-<span class="hllgo">-----BEGIN RSA PRIVATE KEY-----</span>
-<span class="hllgo">MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ</span>
-<span class="hllgo">imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ</span>
-<span class="hllgo">Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu</span>
-<span class="hllgo">DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW</span>
-<span class="hllgo">JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX</span>
-<span class="hllgo">x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD</span>
-<span class="hllgo">KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl</span>
-<span class="hllgo">J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd</span>
-<span class="hllgo">d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC</span>
-<span class="hllgo">YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A</span>
-<span class="hllgo">vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama</span>
-<span class="hllgo">+TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT</span>
-<span class="hllgo">8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx</span>
-<span class="hllgo">SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd</span>
-<span class="hllgo">HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt</span>
-<span class="hllgo">SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A</span>
-<span class="hllgo">R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi</span>
-<span class="hllgo">Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg</span>
-<span class="hllgo">R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu</span>
-<span class="hllgo">L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni</span>
-<span class="hllgo">blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU</span>
-<span class="hllgo">YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM</span>
-<span class="hllgo">77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b</span>
-<span class="hllgo">dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3</span>
-<span class="hllgo">vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=</span>
-<span class="hllgo">-----END RSA PRIVATE KEY-----</span>
+<pre class="code console literal-block">
+<span class="gp">bandit16&#64;melinda:~$</span> openssl s_client -quiet -connect localhost:31790
+<span class="go">depth=0 CN = li190-250.members.linode.com
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = li190-250.members.linode.com
+verify return:1
+cluFn7wTiGryunymYOu4RcffSxQluehd
+Correct!
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+-----END RSA PRIVATE KEY-----
 
-<span class="hllgo">read:errno=0</span>
-</pre></div>
+read:errno=0</span>
+</pre>
 <p>Now copy that key into a new file and use <code>chmod go-rw key</code> to remove group
 and other read/write. ssh refuses to accept a key that is read/write by
 anyone other than the user who owns the file. Then simply</p>
-<div class="highlight"><pre><span></span><span class="hllgp">bandit16@melinda:~$</span> ssh -i /tmp/k.key bandit17@localhost
-</pre></div>
+<pre class="code console literal-block">
+<span class="gp">bandit16&#64;melinda:~$</span> ssh -i /tmp/k.key bandit17&#64;localhost
+</pre>
 </div>
 <div class="section" id="level-17-18">
 <h2>Level 17 -&gt; 18 #</h2>
 <p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit18.html">Level 17</a></p>
 <p>We remain logged in as bandit17 from the previous level. To compare two files
 we need to do a <code>diff</code></p>
-<div class="highlight"><pre><span></span><span class="hllgp">bandit17@melinda:~$</span> diff passwords.old  passwords.new
-<span class="hllgo">42c42</span>
-<span class="hllgo">&lt; BS8bqB1kqkinKJjuxL6k072Qq9NRwQpR</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="gp">bandit17&#64;melinda:~$</span> diff passwords.old  passwords.new
+<span class="go">42c42
+&lt; BS8bqB1kqkinKJjuxL6k072Qq9NRwQpR</span>
+</pre>
 </div>
 
 		</div> <!--/#entry-content-->

@@ -53,7 +53,7 @@ your probe. I've had the best results with using networked printers as zombie ho
 Unless there's a lot of print jobs going on, they are fairly idle. The printer 
 is at :code:`10.20.7.1` and I'm probing port 80 on :code:`10.16.70.8`.
 
-.. code-block:: console
+.. code:: console
 
 	$] sudo ./idle_scan.py 10.20.7.1 0.16.70.8 80
 	WARNING: No route found for IPv6 destination :: (no default route?)
@@ -74,7 +74,7 @@ is at :code:`10.20.7.1` and I'm probing port 80 on :code:`10.16.70.8`.
 
 And to be sure, let's verify our findings with a proper nmap scan.
 
-.. code-block:: console
+.. code:: console
 
 	$] nmap 10.16.70.8 -p80,90
 	

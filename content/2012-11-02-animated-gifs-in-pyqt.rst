@@ -16,7 +16,7 @@ I'll give you the code now:
 
 The code should be fairly easy to follow, so I won't spend much time here going over it. If you want to call this from a :code:``__main__`` function you simply do:
 
-.. code-block:: python
+.. code:: python
 
 	if __name__ == "__main__":
 	    gif = "/path/to/image.gif"

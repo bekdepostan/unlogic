@@ -29,7 +29,7 @@ read the `Rust By Example <http://rustbyexample.com/>`_ pages and the new and of
 
 First let's define some structure:
 
-.. code-block:: rust
+.. code:: rust
 
 	
 	fn solve(max_num: i32) -> i32 {
@@ -47,7 +47,7 @@ omitted is our return value. So far, so good.
 
 Let's try to sum up the relevant numbers with a hard coded max value of 10.
 
-.. code-block:: rust
+.. code:: rust
 
 	
 	fn solve(max_num: i32) -> i32 {
@@ -78,7 +78,7 @@ gets assigned to :code:`acc` to each entry :code:`x`. Ultimately it's a :code:`s
 Functionally we're done. The problem is solved as far as the initial requirement are concerned.
 But I want to add some user input, so let's go over that part next.
 
-.. code-block:: rust
+.. code:: rust
 
 	
 	fn solve(max_num: i32) -> i32 {
@@ -106,7 +106,7 @@ But if we try to run this we get the following error:
 Right, because it's still an :code:`Option<i32>` type. Helpfully the book explains that we need to 
 unwrap the :code:`Option`, and the best way to do this is with :code:`match`:
 
-.. code-block:: rust
+.. code:: rust
 
 	
 	fn solve(max_num: i32) -> i32 {
@@ -132,7 +132,7 @@ unwrap the :code:`Option`, and the best way to do this is with :code:`match`:
 
 Let's run this and see what happens:
 
-.. code-block:: console
+.. code:: console
 
 	ninja:euler_1 unlogic$ cargo run
 	   Compiling euler_1 v0.0.1 (file:///work/code/rust/euler/euler_1)
@@ -161,7 +161,7 @@ Well that was a nice little trip into Rust land, wasn't it?
 UPDATE: I posted this on `reddit <https://www.reddit.com/r/rust/comments/2s9lam/just_started_playing_with_rust_heres_a_write_up/>`_ 
 and having taken some suggestions on board, I have made some small changes:
 
-.. code-block:: rust
+.. code:: rust
 
 	use std::iter::AdditiveIterator;
 	

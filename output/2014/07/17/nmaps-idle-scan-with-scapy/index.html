@@ -84,34 +84,36 @@ use as a zombie, as you don't want the IP ID to change while you are conducting
 your probe. I've had the best results with using networked printers as zombie hosts.
 Unless there's a lot of print jobs going on, they are fairly idle. The printer
 is at <code>10.20.7.1</code> and I'm probing port 80 on <code>10.16.70.8</code>.</p>
-<div class="highlight"><pre><span></span><span class="hllgp">$</span><span class="hllo">]</span> sudo ./idle_scan.py 10.20.7.1 0.16.70.8 80
-<span class="hllgo">WARNING: No route found for IPv6 destination :: (no default route?)</span>
+<pre class="code console literal-block">
+<span class="o"></span><span class="gp">$</span><span class="o">]</span> sudo ./idle_scan.py 10.20.7.1 0.16.70.8 80
+<span class="go">WARNING: No route found for IPv6 destination :: (no default route?)
 
-<span class="hllgo">[*] Scan 10.16.70.8 port 80 using 10.20.7.1 as zombie</span>
-<span class="hllgo">[+] Zombie initial IP id 57319</span>
-<span class="hllgo">[+] Zombie final IP id 57321</span>
-<span class="hllgo">[+] Port 80 : open</span>
+[*] Scan 10.16.70.8 port 80 using 10.20.7.1 as zombie
+[+] Zombie initial IP id 57319
+[+] Zombie final IP id 57321
+[+] Port 80 : open
 
-<span class="hllgo">sudo ./idle_scan.py 10.20.7.1 0.16.70.8 90</span>
-<span class="hllgo">WARNING: No route found for IPv6 destination :: (no default route?)</span>
+sudo ./idle_scan.py 10.20.7.1 0.16.70.8 90
+WARNING: No route found for IPv6 destination :: (no default route?)
 
-<span class="hllgo">[*] Scan 10.16.70.8 port 90 using 10.20.7.1 as zombie</span>
-<span class="hllgo">[+] Zombie initial IP id 57341</span>
-<span class="hllgo">[+] Zombie final IP id 57342</span>
-<span class="hllgo">[+] Port 90 : closed</span>
-</pre></div>
+[*] Scan 10.16.70.8 port 90 using 10.20.7.1 as zombie
+[+] Zombie initial IP id 57341
+[+] Zombie final IP id 57342
+[+] Port 90 : closed</span>
+</pre>
 <p>And to be sure, let's verify our findings with a proper nmap scan.</p>
-<div class="highlight"><pre><span></span><span class="hllgp">$</span><span class="hllo">]</span> nmap 10.16.70.8 -p80,90
+<pre class="code console literal-block">
+<span class="o"></span><span class="gp">$</span><span class="o">]</span> nmap 10.16.70.8 -p80,90
+<span class="go">
+Starting Nmap 5.51 ( http://nmap.org ) at 2014-07-17 13:07 BST
+Nmap scan report for 10.16.70.8 (10.16.70.8)
+Host is up (0.00013s latency).
+PORT   STATE  SERVICE
+80/tcp open   http
+90/tcp closed dnsix
 
-<span class="hllgo">Starting Nmap 5.51 ( http://nmap.org ) at 2014-07-17 13:07 BST</span>
-<span class="hllgo">Nmap scan report for 10.16.70.8 (10.16.70.8)</span>
-<span class="hllgo">Host is up (0.00013s latency).</span>
-<span class="hllgo">PORT   STATE  SERVICE</span>
-<span class="hllgo">80/tcp open   http</span>
-<span class="hllgo">90/tcp closed dnsix</span>
-
-<span class="hllgo">Nmap done: 1 IP address (1 host up) scanned in 0.04 seconds</span>
-</pre></div>
+Nmap done: 1 IP address (1 host up) scanned in 0.04 seconds</span>
+</pre>
 <p>Approved.</p>
 
 		</div> <!--/#entry-content-->

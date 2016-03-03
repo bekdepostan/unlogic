@@ -88,18 +88,19 @@ compares that to 1.0. I chuckled.</p>
 <p>He looked a little confused. I explained to him about how floats are represented.
 If you are interested you can read up on <a class="reference external" href="https://docs.python.org/2.7/tutorial/floatingpoint.html">floating point values in Python</a>.</p>
 <p>To demonstrate I opened an interpreter and ran this:</p>
-<div class="highlight"><pre><span></span><span class="hllo">&gt;&gt;&gt;</span> <span class="hlln">a</span> <span class="hllo">=</span> <span class="hllmf">0.1</span>
-<span class="hllo">&gt;&gt;&gt;</span> <span class="hlln">a</span> <span class="hllo">+=</span> <span class="hllmf">0.1</span>
-<span class="hllo">&gt;&gt;&gt;</span> <span class="hlln">a</span> <span class="hllo">+=</span> <span class="hllmf">0.1</span>
-<span class="hllo">&gt;&gt;&gt;</span> <span class="hlln">a</span> <span class="hllo">+=</span> <span class="hllmf">0.1</span>
-<span class="hllo">&gt;&gt;&gt;</span> <span class="hlln">a</span> <span class="hllo">+=</span> <span class="hllmf">0.1</span>
-<span class="hllo">&gt;&gt;&gt;</span> <span class="hlln">a</span>
-<span class="hllmf">0.6</span>
-<span class="hllo">&gt;&gt;&gt;</span> <span class="hlln">a</span> <span class="hllo">+=</span> <span class="hllmf">0.1</span>
-<span class="hllo">&gt;&gt;&gt;</span> <span class="hlln">a</span> <span class="hllo">+=</span> <span class="hllmf">0.1</span>
-<span class="hllo">&gt;&gt;&gt;</span> <span class="hlln">a</span>
-<span class="hllmf">0.7999999999999999</span>
-</pre></div>
+<pre class="code python literal-block">
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mf">0.6</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mf">0.7999999999999999</span>
+</pre>
 <p>I suggested he try the same by incrementing the value by <code>0.2</code> and the error went away.
 He looked a little dejected. I asked what this was for and sure enough, it's how he
 animated his graphs, so some points were slightly higher than they should be.</p>

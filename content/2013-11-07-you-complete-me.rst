@@ -24,13 +24,13 @@ You will end up with a directory called :code:``build`` that contains almost eve
 
 Now we need to build the YCM tools according to the docs. Here's the command I used:
 
-.. code-block:: bash
+.. code:: bash
 
 	cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=/tmp/build -DEXTERNAL_LIBCLANG_PATH=/tmp/build/Release+Asserts/lib/libclang.so . ~/.vim/bundle/YouCompleteMe/cpp
 
 adjust the paths as necessary. After the configure stage run
 
-.. code-block:: bash
+.. code:: bash
 
 	make ycm_support_libs
 

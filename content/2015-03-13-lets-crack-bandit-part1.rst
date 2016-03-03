@@ -49,7 +49,7 @@ Using the password from the last session, let's login and look at what's in
 :code:``-`:code:`. The trick here is that `:code:`-`` is a bit tricky to pass as an argument. Try
 it to see what happens. All we need to do it prefix it with the path:
 
-.. code-block:: console
+.. code:: console
 
 	bandit1@melinda:~$ ls -la
 	total 24
@@ -70,7 +70,7 @@ Level 2 -> 3 #
 Not much trickiness here, merely the spaces in the filename. But with TAB 
 completion the escaping of the spaces will be handled for us:
 
-.. code-block:: console
+.. code:: console
 
 	bandit2@melinda:~$ ls -la
 	total 24
@@ -90,7 +90,7 @@ Level 3 -> 4 #
 
 Hidden file? Just do a long listing with :code:``ls -la``
 
-.. code-block:: console
+.. code:: console
 
 	bandit3@melinda:~$ ls -la
 	total 24
@@ -118,7 +118,7 @@ Level 4 -> 5 #
 We need to find a human readable file in the :code:`inhere` directory. Using the 
 power of bash:
 
-.. code-block:: console
+.. code:: console
 
 	bandit4@melinda:~$ cd inhere/
 	bandit4@melinda:~/inhere$ for f in $(ls); do file ./${f}; done
@@ -147,7 +147,7 @@ Level 5 -> 6 #
 This is similar to the previous level, except now we are looking for something 
 with a specific size. Luckily the :code:`find` command is just right for this:
 
-.. code-block:: console
+.. code:: console
 
 	bandit5@melinda:~$ find ./ -size 1033c
 	./inhere/maybehere07/.file2
@@ -166,7 +166,7 @@ Now we need to broaden our search. Once again :code:`find` to the rescue. We kno
 the user and group that own the file and its size. The user and group might
 be enough already, so let's give that a go
 
-.. code-block:: console
+.. code:: console
 
 	bandit6@melinda:~$ cd /
 	bandit6@melinda:/$ find -user bandit7 -group bandit6  2> /dev/null 
@@ -186,7 +186,7 @@ To find things in a file, :code:`grep` is usually the answer. However it's proba
 wise to check the file format first in case all the words are smushed together
 and we need to filter grep again.
 
-.. code-block:: console
+.. code:: console
 
 	bandit7@melinda:~$ head data.txt 
 	Kunming's	0D0KZ3TdLRBXD8lyd7Bj2hAqnxaMInQe
@@ -216,7 +216,7 @@ only detect duplicate lines if they are next to each other. To fix this
 we also need to sort the contents of the file and then display only
 unique lines:
 
-.. code-block:: console
+.. code:: console
 
 	bandit8@melinda:~$ cat data.txt | sort | uniq -u
 	UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
@@ -229,7 +229,7 @@ Level 9 -> 10 #
 This :code:`data.txt` file is in binary. So in order to find the strings we need
 to dump it as hex, or, even simpler, run it through :code:`strings`:
 
-.. code-block:: console
+.. code:: console
 
 	bandit9@melinda:~$ strings data.txt  | grep ==
 	I========== the6
@@ -245,7 +245,7 @@ Level 10 -> 11 #
 Good ol base64. If you haven't seen it before, you'll get to see it a lot
 more if you carry on doing these kind of challenges. Simply done though:
 
-.. code-block:: console
+.. code:: console
 
 	bandit10@melinda:~$ cat data.txt  | base64 -d
 	The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
@@ -259,7 +259,7 @@ The description is a basically a verbose way of saying that the string
 has been encoded with rot13. The quickest way for me to un-rotate it, is
 using python:
 
-.. code-block:: console
+.. code:: console
 
 	bandit11@melinda:~$ cat data.txt 
 	Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
@@ -274,20 +274,20 @@ Level 12 -> 13 #
 From here on it's going to get a little trickier. We know that data.txt is a hexdump
 of a binary, so first let's convert it back to a binary first with :code:`xxd`
 
-.. code-block:: console
+.. code:: console
 
 	bandit12@melinda:/tmp/unl$ cat data.txt | xxd -r > data2
 
 Then we can find out the filetype of data2
 
-.. code-block:: console
+.. code:: console
 
 	bandit12@melinda:/tmp/unl$ file data2
 	data2: gzip compressed data, was "data2.bin", from Unix, last modified: Fri Nov 14 10:32:20 2014, max compression
 
 :code:`gzip` it is. So uncompress that to data3
 
-.. code-block:: console
+.. code:: console
 
 	bandit12@melinda:/tmp/unl$ cat data2 | zcat > data3
 
@@ -295,7 +295,7 @@ and get its filetype next. I won't go over each step in detail as there's quite
 a few iterations. I'll post the console log of how I got to the flag and hopefully
 that should be clear enough.
 
-.. code-block:: console
+.. code:: console
 
 	bandit12@melinda:/tmp/unl$ file data3
 	data3: bzip2 compressed data, block size = 900k
@@ -341,7 +341,7 @@ We're given a lot of information here, and one of those is that we get the SSH
 key for the :code:`bandit14` user. We can use this to login as that user without knowing
 the password:
 
-.. code-block:: console
+.. code:: console
 
 	bandit13@melinda:~$ ssh -i ./sshkey.private bandit14@localhost 
 	Could not create directory '/home/bandit13/.ssh'.
@@ -366,7 +366,7 @@ hosts. Well, in this case it's localhost, but the principle is the same.
 We need to connect to a specific port on localhost and then supply
 the current password. I'm using :code:`netcat` to do this
 
-.. code-block:: console
+.. code:: console
 
 	bandit14@melinda:~$ nc localhost 30000
 	4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e

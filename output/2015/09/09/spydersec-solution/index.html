@@ -55,36 +55,37 @@
 <img alt="" src="&quot;http://i.imgur.com/nah3Wah.gif&quot;" />
 <p>As per usual I need the IP of the machine and
 the services it has running (if any). Straight from the Unlogic Cookbook</p>
-<div class="highlight"><pre><span></span><span class="hllgp">root@kali:~/Downloads#</span> nmap -sn 192.168.56.0/24
+<pre class="code console literal-block">
+<span class="gp">root&#64;kali:~/Downloads#</span> nmap -sn 192.168.56.0/24
+<span class="go">
+Starting Nmap 6.49BETA4 ( https://nmap.org ) at 2015-09-09 16:07 BST
+Nmap scan report for 192.168.56.1
+Host is up (0.00039s latency).
+MAC Address: 0A:00:27:00:00:00 (Unknown)
+Nmap scan report for 192.168.56.100
+Host is up (0.00017s latency).
+MAC Address: 08:00:27:FF:57:41 (Cadmus Computer Systems)
+Nmap scan report for 192.168.56.101
+Host is up (0.00028s latency).
+MAC Address: 08:00:27:56:11:10 (Cadmus Computer Systems)
+Nmap scan report for 192.168.56.102
+Host is up.
+Nmap done: 256 IP addresses (4 hosts up) scanned in 1.77 seconds
 
-<span class="hllgo">Starting Nmap 6.49BETA4 ( https://nmap.org ) at 2015-09-09 16:07 BST</span>
-<span class="hllgo">Nmap scan report for 192.168.56.1</span>
-<span class="hllgo">Host is up (0.00039s latency).</span>
-<span class="hllgo">MAC Address: 0A:00:27:00:00:00 (Unknown)</span>
-<span class="hllgo">Nmap scan report for 192.168.56.100</span>
-<span class="hllgo">Host is up (0.00017s latency).</span>
-<span class="hllgo">MAC Address: 08:00:27:FF:57:41 (Cadmus Computer Systems)</span>
-<span class="hllgo">Nmap scan report for 192.168.56.101</span>
-<span class="hllgo">Host is up (0.00028s latency).</span>
-<span class="hllgo">MAC Address: 08:00:27:56:11:10 (Cadmus Computer Systems)</span>
-<span class="hllgo">Nmap scan report for 192.168.56.102</span>
-<span class="hllgo">Host is up.</span>
-<span class="hllgo">Nmap done: 256 IP addresses (4 hosts up) scanned in 1.77 seconds</span>
+</span><span class="gp">root&#64;kali:~/Downloads#</span> nmap -p- -sV 192.168.56.101
+<span class="go">
+Starting Nmap 6.49BETA4 ( https://nmap.org ) at 2015-09-09 16:07 BST
+Nmap scan report for 192.168.56.101
+Host is up (0.00049s latency).
+Not shown: 65533 filtered ports
+PORT   STATE  SERVICE VERSION
+22/tcp closed ssh
+80/tcp open   http    Apache httpd
+MAC Address: 08:00:27:56:11:10 (Cadmus Computer Systems)
 
-<span class="hllgp">root@kali:~/Downloads#</span> nmap -p- -sV 192.168.56.101
-
-<span class="hllgo">Starting Nmap 6.49BETA4 ( https://nmap.org ) at 2015-09-09 16:07 BST</span>
-<span class="hllgo">Nmap scan report for 192.168.56.101</span>
-<span class="hllgo">Host is up (0.00049s latency).</span>
-<span class="hllgo">Not shown: 65533 filtered ports</span>
-<span class="hllgo">PORT   STATE  SERVICE VERSION</span>
-<span class="hllgo">22/tcp closed ssh</span>
-<span class="hllgo">80/tcp open   http    Apache httpd</span>
-<span class="hllgo">MAC Address: 08:00:27:56:11:10 (Cadmus Computer Systems)</span>
-
-<span class="hllgo">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span>
-<span class="hllgo">Nmap done: 1 IP address (1 host up) scanned in 155.80 seconds</span>
-</pre></div>
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 155.80 seconds</span>
+</pre>
 <p>Lucky me, only one service running, and it's good old http at that.
 Let's take a look at that page then:</p>
 <p><a class="reference external" href="http://i.imgur.com/IiA6MlY.png">{{&lt; figure src=&quot;http://i.imgur.com/IiA6MlY.png&quot; &gt;}}</a></p>
@@ -92,9 +93,10 @@ Let's take a look at that page then:</p>
 And there's clue number one, right between those script tags. It evals a function which seems to
 do some text processing. I'll open Firebug to see if that shows anything interesting, and sure
 enough</p>
-<div class="highlight"><pre><span></span><span class="hllnx">SyntaxError</span><span class="hllo">:</span> <span class="hllnx">missing</span> <span class="hllp">;</span> <span class="hllnx">before</span> <span class="hllnx">statement</span>
-    <span class="hllmi">61</span><span class="hllo">:</span><span class="hllmi">6</span><span class="hllnx">c</span><span class="hllo">:</span><span class="hllmi">65</span><span class="hllo">:</span><span class="hllmi">72</span><span class="hllo">:</span><span class="hllmi">74</span><span class="hllo">:</span><span class="hllmi">28</span><span class="hllo">:</span><span class="hllmi">27</span><span class="hllo">:</span><span class="hllmi">6</span><span class="hllnx">d</span><span class="hllo">:</span><span class="hllmi">75</span><span class="hllo">:</span><span class="hllmi">6</span><span class="hllnx">c</span><span class="hllo">:</span><span class="hllmi">64</span><span class="hllo">:</span><span class="hllmi">65</span><span class="hllo">:</span><span class="hllmi">72</span><span class="hllo">:</span><span class="hllmi">2</span><span class="hllnx">e</span><span class="hllo">:</span><span class="hllmi">66</span><span class="hllo">:</span><span class="hllmi">62</span><span class="hllo">:</span><span class="hllmi">69</span><span class="hllo">:</span><span class="hllmi">27</span><span class="hllo">:</span><span class="hllmi">29</span><span class="hllo">:</span><span class="hllmi">3</span><span class="hllnx">b</span>
-</pre></div>
+<pre class="code javascript literal-block">
+<span class="nx">SyntaxError</span><span class="o">:</span> <span class="nx">missing</span> <span class="p">;</span> <span class="nx">before</span> <span class="nx">statement</span>
+    <span class="mi">61</span><span class="o">:</span><span class="mi">6</span><span class="nx">c</span><span class="o">:</span><span class="mi">65</span><span class="o">:</span><span class="mi">72</span><span class="o">:</span><span class="mi">74</span><span class="o">:</span><span class="mi">28</span><span class="o">:</span><span class="mi">27</span><span class="o">:</span><span class="mi">6</span><span class="nx">d</span><span class="o">:</span><span class="mi">75</span><span class="o">:</span><span class="mi">6</span><span class="nx">c</span><span class="o">:</span><span class="mi">64</span><span class="o">:</span><span class="mi">65</span><span class="o">:</span><span class="mi">72</span><span class="o">:</span><span class="mi">2</span><span class="nx">e</span><span class="o">:</span><span class="mi">66</span><span class="o">:</span><span class="mi">62</span><span class="o">:</span><span class="mi">69</span><span class="o">:</span><span class="mi">27</span><span class="o">:</span><span class="mi">29</span><span class="o">:</span><span class="mi">3</span><span class="nx">b</span>
+</pre>
 <p>So that's the output from the eval. It throws an error because the result isn't valid
 javascript. It seems to me as though it might be HEX. I'll put it through Burp's decoder and
 sure enough it resolves to <code>a:l:e:r:t:(:':m:u:l:d:e:r:.:f:b:i:':):;</code>. That's not going to
@@ -105,34 +107,35 @@ nothing of note.</p>
 <p>Ok then, apart from that there's nothing of interest in the source, so let me move onto the images on the page.
 There's two images: <code>Challenge.png</code> and <code>SpyderSecLogo200.png</code>. On first glance they appear to
 have nothing special about them, but once examined with <code>exiftool</code> I see something of interest</p>
-<div class="highlight"><pre><span></span><span class="hllgp">root@kali:~/spydersec#</span> exiftool Challenge.png
-<span class="hllgo">ExifTool Version Number         : 9.74</span>
-<span class="hllgo">File Name                       : Challenge.png</span>
-<span class="hllgo">Directory                       : .</span>
-<span class="hllgo">File Size                       : 83 kB</span>
-<span class="hllgo">File Modification Date/Time     : 2015:09:01 07:25:59+01:00</span>
-<span class="hllgo">File Access Date/Time           : 2015:09:09 14:29:25+01:00</span>
-<span class="hllgo">File Inode Change Date/Time     : 2015:09:09 14:29:19+01:00</span>
-<span class="hllgo">File Permissions                : rw-r--r--</span>
-<span class="hllgo">File Type                       : PNG</span>
-<span class="hllgo">MIME Type                       : image/png</span>
-<span class="hllgo">Image Width                     : 540</span>
-<span class="hllgo">Image Height                    : 540</span>
-<span class="hllgo">Bit Depth                       : 8</span>
-<span class="hllgo">Color Type                      : RGB with Alpha</span>
-<span class="hllgo">Compression                     : Deflate/Inflate</span>
-<span class="hllgo">Filter                          : Adaptive</span>
-<span class="hllgo">Interlace                       : Noninterlaced</span>
-<span class="hllgo">Background Color                : 255 255 255</span>
-<span class="hllgo">Pixels Per Unit X               : 2835</span>
-<span class="hllgo">Pixels Per Unit Y               : 2835</span>
-<span class="hllgo">Pixel Units                     : meters</span>
-<span class="hllgo">Comment                         : 35:31:3a:35:33:3a:34:36:3a:35:37:3a:36:34:3a:35:38:3a:33:35:3a:</span>
-<span class="hllgo">                                  37:31:3a:36:34:3a:34:35:3a:36:37:3a:36:61:3a:34:65:3a:37:61:3a:</span>
-<span class="hllgo">                                  34:39:3a:33:35:3a:36:33:3a:33:30:3a:37:38:3a:34:32:3a:34:66:3a:</span>
-<span class="hllgo">                                  33:32:3a:36:37:3a:33:30:3a:34:61:3a:35:31:3a:33:64:3a:33:64</span>
-<span class="hllgo">Image Size                      : 540x540</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="gp">root&#64;kali:~/spydersec#</span> exiftool Challenge.png
+<span class="go">ExifTool Version Number         : 9.74
+File Name                       : Challenge.png
+Directory                       : .
+File Size                       : 83 kB
+File Modification Date/Time     : 2015:09:01 07:25:59+01:00
+File Access Date/Time           : 2015:09:09 14:29:25+01:00
+File Inode Change Date/Time     : 2015:09:09 14:29:19+01:00
+File Permissions                : rw-r--r--
+File Type                       : PNG
+MIME Type                       : image/png
+Image Width                     : 540
+Image Height                    : 540
+Bit Depth                       : 8
+Color Type                      : RGB with Alpha
+Compression                     : Deflate/Inflate
+Filter                          : Adaptive
+Interlace                       : Noninterlaced
+Background Color                : 255 255 255
+Pixels Per Unit X               : 2835
+Pixels Per Unit Y               : 2835
+Pixel Units                     : meters
+Comment                         : 35:31:3a:35:33:3a:34:36:3a:35:37:3a:36:34:3a:35:38:3a:33:35:3a:
+                                  37:31:3a:36:34:3a:34:35:3a:36:37:3a:36:61:3a:34:65:3a:37:61:3a:
+                                  34:39:3a:33:35:3a:36:33:3a:33:30:3a:37:38:3a:34:32:3a:34:66:3a:
+                                  33:32:3a:36:37:3a:33:30:3a:34:61:3a:35:31:3a:33:64:3a:33:64
+Image Size                      : 540x540</span>
+</pre>
 <p>Hex strings are the order of the day here at SpyderSec. So back to Burp's decoder once more
 after removing all the colons. The string decodes to another hex string. Same dance again, and
 I get a typical base64 string, decode once more and be rewarded with <code>A!Vu~jtH#729sLA;h4%</code>. Which is
@@ -146,20 +149,21 @@ Firebug -&gt; Cookie tab -&gt; URI /v/81JHPbvyEQ8729161jd6aKQ0N4/</blockquote>
 me just plug some of the data we've found so far into it. The random characters from the
 exif data result in a 404, but the string from the javascript alert box however brings up a
 download dialog for a file called <code>mulder.fbi</code>.</p>
-<div class="highlight"><pre><span></span><span class="hllgp">root@kali:~/spydersec#</span> wget http://192.168.56.101//v/81JHPbvyEQ8729161jd6aKQ0N4/mulder.fbi
-<span class="hllgo">--2015-09-09 17:24:38--  http://192.168.56.101//v/81JHPbvyEQ8729161jd6aKQ0N4/mulder.fbi</span>
-<span class="hllgo">Connecting to 192.168.56.101:80... connected.</span>
-<span class="hllgo">HTTP request sent, awaiting response... 200 OK</span>
-<span class="hllgo">Length: 13960421 (13M) [text/plain]</span>
-<span class="hllgo">Saving to: ‘mulder.fbi’</span>
+<pre class="code console literal-block">
+<span class="gp">root&#64;kali:~/spydersec#</span> wget http://192.168.56.101//v/81JHPbvyEQ8729161jd6aKQ0N4/mulder.fbi
+<span class="go">--2015-09-09 17:24:38--  http://192.168.56.101//v/81JHPbvyEQ8729161jd6aKQ0N4/mulder.fbi
+Connecting to 192.168.56.101:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 13960421 (13M) [text/plain]
+Saving to: ‘mulder.fbi’
 
-<span class="hllgo">mulder.fbi.1            100%[===============================&gt;]  13.31M  5.52MB/s   in 2.4s</span>
+mulder.fbi.1            100%[===============================&gt;]  13.31M  5.52MB/s   in 2.4s
 
-<span class="hllgo">2015-09-09 17:24:41 (5.52 MB/s) - ‘mulder.fbi’ saved [13960421/13960421]</span>
+2015-09-09 17:24:41 (5.52 MB/s) - ‘mulder.fbi’ saved [13960421/13960421]
 
-<span class="hllgp">root@kali:~/spydersec#</span> file mulder.fbi
-<span class="hllgo">mulder.fbi: ISO Media, MP4 v2 [ISO 14496-14]</span>
-</pre></div>
+</span><span class="gp">root&#64;kali:~/spydersec#</span> file mulder.fbi
+<span class="go">mulder.fbi: ISO Media, MP4 v2 [ISO 14496-14]</span>
+</pre>
 <p>A video file, which when I play it, is the song &quot;Twilight Time&quot; by &quot;The Platters&quot;.</p>
 <p>So here I hit another dead end.</p>
 <p>Let me think
@@ -172,10 +176,11 @@ download dialog for a file called <code>mulder.fbi</code>.</p>
 <p>So I ask myself, why is a video of a song named <em>mulder.fbi</em>? So I do a little research
 and after searching for <code>the platters &quot;twilight time&quot; x files</code> I hit this section in a
 <a class="reference external" href="https://en.wikipedia.org/wiki/Kill_Switch_(The_X-Files)">Wikipedia article</a></p>
-<div class="highlight"><pre><span></span>When he puts it into the car stereo, it plays &quot;Twilight Time&quot;
+<pre class="code text literal-block">
+When he puts it into the car stereo, it plays &quot;Twilight Time&quot;
 by The Platters. However, the agents take it to the Lone Gunmen,
 who discover that the disc contains a large quantity of encrypted data
-</pre></div>
+</pre>
 <p>Well if that ain't a clue and a bit! Ok, so a little more research of what data you
 can hide in a video file (search for <code>hiding files video mp4</code>) I am directed to a
 <a class="reference external" href="http://lifehacker.com/5771142/embed-a-truecrypt-volume-in-a-playable-video-file">Lifehacker article</a>
@@ -185,7 +190,8 @@ That should be the easiest and quickest way to see if I am on the right track.</
 <p>Sure enough, there's a volume in the video, but it needs a password. Well there's only
 one unused piece of the puzzle left. I plug that in and there's our volume with the <code>flag.txt</code> file
 which contains:</p>
-<div class="highlight"><pre><span></span>Congratulations!
+<pre class="code text literal-block">
+Congratulations!
 
 You are a winner.
 
@@ -194,7 +200,7 @@ Was it fun? Was it hard enough or too easy?
 What did you like or dislike, what could be done better?
 
 https://www.spydersec.com/feedback
-</pre></div>
+</pre>
 <p>Well that was a nice challenge, especially the truecrypt volume in the MP4. That's
 something new I learned from this. So thanks to <a class="reference external" href="https://twitter.com/Spydersec">&#64;SpyderSec</a>
 for the challenge, and thanks to you for stopping by to read this.</p>
