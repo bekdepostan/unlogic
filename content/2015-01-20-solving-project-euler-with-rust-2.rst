@@ -90,7 +90,7 @@ But there's a problem:
 	
 
 Seems like :code:`sum` won't work here due to the :code:`map`. Not to worry, I used :code:`fold` in the previous example,
-before the helpful folks at `\/r\/rust <http://reddit.com/r/rust>`_ told me about `sum`,
+before the helpful folks at `the rust subreddit <http://reddit.com/r/rust>`_ told me about `sum`,
 so let's use that instead, as that should work.
 
 .. code-block:: rust
@@ -185,4 +185,4 @@ call the :code:`fib` function until n is 1, which is where the big saving comes 
 
 This and all future solutions are on `my Github <https://github.com/Svenito/euler_rust>`_
 
-Also posted to `/r/rust`_
+Also posted to `/r/rust <https://www.reddit.com/r/rust/comments/2t23ow/still_learning_rust_following_on_with_a_write_up/>`_

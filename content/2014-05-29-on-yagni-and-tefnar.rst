@@ -8,13 +8,13 @@ On YAGNI and TEFNAR
 
 
 You've probably heard of `YAGNI <https://en.wikipedia.org/wiki/You_Ain%27t_Gonna_Need_It>`_
-but not of TEFNAR. To recap YAGNI stands for **Y**\ ou **A**\ in't **G**\ onna **N** \eed **I**\ t and
+but not of TEFNAR. To recap YAGNI stands for **Y**\ ou **A**\ in't **G**\ onna **N**\ eed **I**\ t and
 refers to the development principle of that you shouldn't write a feature that no one has asked for
 in the first place as it's probably never going to be needed. Instead wait until
 it's a requirement and implement it then. This saves wasted effort and keeps the code base
 clean and as small as possible.
 
-TEFNAR stands for **TE**\ chnology **F**\ or **N**\ o **A**\ pparent **R**\ eason and is a term
+TEFNAR stands for **TE**chnology **F**\ or **N**\ o **A**\ pparent **R**\ eason and is a term
 my boss coined (AFAIK). It basically refers to any unnecessary technology that
 doesn't really add any functionality to the product. Sure it might look nice, but
 is there a reason that's there or does that?

@@ -65,9 +65,10 @@ There's the usual stuff, but there's also :code:`./bin/.../flag00`. If you run t
 Level 01 ##
 -----------
 
->  There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it? 
+    There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it? 
 
 .. code-block:: c
+
 	
 	#include <stdlib.h>
 	#include <unistd.h>
@@ -92,6 +93,7 @@ Level 01 ##
 So let's see about this vulnerability. It doesn't accept user input, but luckily there's only one place where it actually runs anything, so that makes it easier to narrow down where its weakness is. The :code:`system` call executes an :code:`echo` but there's a small oversight. It calls :code:`echo` without an explicit path, can you see where this is going? As :code:`flag01` runs as user :code:`flag01`, anything it executes will also run under that user.
 
 .. code-block:: console
+
 	
 	level01@nebula:/home/flag01$ mkdir /tmp/mybin
 	level01@nebula:/home/flag01$ cd /tmp/mybin
@@ -110,6 +112,7 @@ Level 02 ##
 > There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it? 
 
 .. code-block:: C
+
 	
 	#include <stdlib.h>
 	#include <unistd.h>
@@ -180,7 +183,7 @@ Ok, so it will take a shell script in the :code:`writeable.d` directory, execute
 Level 04 ##
 -----------
 
-> This level requires you to read the token file, but the code restricts the files that can be read. Find a way to bypass it :) 
+    This level requires you to read the token file, but the code restricts the files that can be read. Find a way to bypass it :) 
 
 .. code-block:: C
 
@@ -221,6 +224,7 @@ Level 04 ##
 	}
 
 Ok, so let's take a look at what happens when we run the file
+
 .. code-block:: console
 
 	level04@nebula:/home/flag04$ ls
@@ -233,6 +237,7 @@ Ok, so let's take a look at what happens when we run the file
 So we can't access token. Looking at the code there's a check to see if the file is named :code:`token`. We can't simply copy the *token* file because it's read only by the flag user. So there's only one thing for it: symlinks
 
 Then get the flag (some ssh output cut for brevity)
+
 .. code-block:: console
 
 	level04@nebula:/home/flag04$ ln -s /home/flag04/token /tmp/myfile
@@ -250,9 +255,10 @@ So the output of the command is a *token* which is the term used for the passwor
 Level 05 ##
 -----------
 
-> Check the flag05 home directory. You are looking for weak directory permissions 
+    Check the flag05 home directory. You are looking for weak directory permissions 
 
 Ok, let's do that
+
 .. code-block:: console
 
 	level05@nebula:~$ cd ~flag05
@@ -294,9 +300,9 @@ Right so let's use these keys to login as *flag05*.
 Level 06 ##
 -----------
 
-> The flag06 account credentials came from a legacy unix system. 
+    The flag06 account credentials came from a legacy unix system. 
 
-To cut a long story short, the way the password is stored for this user is not the same as for the other users. In older \*nix systems the password was stored inside the :code:`/etc/passwd` file. So let's take a look:
+To cut a long story short, the way the password is stored for this user is not the same as for the other users. In older * nix systems the password was stored inside the :code:`/etc/passwd` file. So let's take a look:
 
 .. code-block:: console
 
@@ -327,11 +333,10 @@ That's that, now back on the nebula box
 Level 07 ##
 -----------
 
->The flag07 user was writing their very first perl program that allowed them to ping hosts to see if they were reachable from the web server. 
+    The flag07 user was writing their very first perl program that allowed them to ping hosts to see if they were reachable from the web server. 
 
 .. code-block:: perl
 
-	
 	#!/usr/bin/perl
 	
 	use CGI qw{param};
@@ -354,7 +359,6 @@ Level 07 ##
 	
 	ping(param("Host"));
 	
-
 So the Nebula machine has a webserver running. Checking the config file we can see that it's running on port 7007. The script tells us that it's expecting a :code:`Host` parameter. So let's hit the server from our web browser at the following URL (your IP will depend on what IP your VM has) :code:`http://192.168.56.102:7007/index.cgi?Host=192.168.56.102`
 
 Basically I am pinging the same host. The webpage will display the output of the ping command.
@@ -379,7 +383,7 @@ Notice we need to encode the URL parms. The plaintext URL is :code:`http://192.1
 Level 08 ##
 -----------
 
-> World readable files strike again. Check what that user was up to, and use it to log into flag08 account. 
+    World readable files strike again. Check what that user was up to, and use it to log into flag08 account. 
 
 Let's take a look then
 
@@ -423,7 +427,7 @@ So....
 Level 09 ##
 -----------
 
-> There's a C setuid wrapper for some vulnerable PHP code... 
+    There's a C setuid wrapper for some vulnerable PHP code... 
 
 .. code-block:: php
 
@@ -478,7 +482,7 @@ So there's a few ways we can exploit this. We basically need to pass a command t
 Level 10 ##
 -----------
 
-> The setuid binary at /home/flag10/flag10 binary will upload any file given, as long as it meets the requirements of the access() system call. 
+    The setuid binary at /home/flag10/flag10 binary will upload any file given, as long as it meets the requirements of the access() system call. 
 
 .. code-block:: C
 

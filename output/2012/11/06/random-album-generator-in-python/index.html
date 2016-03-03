@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Unlogic &mdash; Random album generator in python</title>
+		<meta charset="utf-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
+		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
+		<style type="text/css">
+			body.custom-background { background-color: #f5f5f5; }
+		</style>
+		<link rel="alternate" type="application/atom+xml"
+			title="Unlogic — Flux Atom"
+			href="/" /> 
+		<link rel ="alternate" type="application/rss+xml"
+			title="Unlogic — Flux RSS"
+			href="/feed.xml" /> 
+		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
+</head>
+
+<body class="home blog custom-background single-author" >
+	<div id="container">
+		<div id="header">
+				<h1 id="site-title"><a href="">Unlogic</a></h1>
+<h2 id="site-description">I've got a keyboard, a terminal, and a whole load of luck</h2>		</div><!-- /#banner -->
+		
+		<div id="menu">
+			<div class="menu-navigation-container">
+				<ul id="menu-navigation" class="menu">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/about.html">About</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/all-posts.html">All posts</a></li>
+
+				</ul>
+			</div> <!--/#menu-navigation-container-->
+		</div><!-- /#menu -->
+		
+		<div class="page-title">
+		</div>
+	
+		<div id="contents">
+
+<div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2012/11/06/random-album-generator-in-python/">Tue 06 November 2012</a></div>
+			<div class="comments"><a href="/2012/11/06/random-album-generator-in-python/#disqus_thread" title="Comment on Random album generator in python">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2012/11/06/random-album-generator-in-python/" title="Permalink to Random album generator in python" rel="bookmark">Random album generator in python</a>
+		</h2>
+		<div class="entry-content">
+			<p>You may have heard about the &quot;random music album&quot; thing. Basically it goes like this:</p>
+<ul class="simple">
+<li>The album cover is the 4th image from a random page of Flickr's interesting pics</li>
+<li>The band name is the title of a random Wikipedia article</li>
+<li>The album name comes from the last 3 or 5 words of a famous quote</li>
+</ul>
+<p>This is all well and good, but isn't getting all this data manually, and then making the album cover a bit tedious? Sure it is, so let's see how we can do this in python</p>
+<p>Here are some example images generated with this script (click for the full size picture):</p>
+<img alt="" src="&quot;/images/content/album2.jpg&quot;" />
+<img alt="" src="&quot;/images/content/album3.jpg&quot;" />
+<img alt="" src="&quot;/images/content/album4.jpg&quot;" />
+<p>&lt;!--more--&gt;</p>
+<p>Let's cover our dependencies first. You will need:</p>
+<ul class="simple">
+<li>python 2.6 (or similar)</li>
+<li>PIL (<a class="reference external" href="http://www.pythonware.com/products/pil/)">python Image Library</a></li>
+<li>A <a class="reference external" href="http://www.flickr.com/services/apps/create/apply/">Flickr API key</a></li>
+<li><a class="reference external" href="http://www.gnu.org/software/wget/">wget</a></li>
+</ul>
+<p>Not much to ask for is it? So once you've made sure you have all that, let's start by getting the album cover. This is handled by the <a class="reference external" href="http://www.flickr.com/services/api/flickr.interestingness.getList.html">interestingness</a> part of the API and is a very simple call that will return an XML structure of the photos on that page. Once we have a response we parse the XML and get the elements we need to construct the photo URL. It's a short function and here it is:</p>
+<div class="highlight"><pre><span></span><span class="hllk">def</span> <span class="hllnf">getAlbumImage</span><span class="hllp">():</span>
+    <span class="hlln">page</span> <span class="hllo">=</span> <span class="hlln">random</span><span class="hllo">.</span><span class="hlln">randint</span><span class="hllp">(</span><span class="hllmi">1</span><span class="hllp">,</span><span class="hllmi">80</span><span class="hllp">)</span>
+    <span class="hlln">url</span> <span class="hllo">=</span> <span class="hlls2">&quot;http://api.flickr.com/services/rest/?method=flickr.interestingness.getList&amp;api_key=YOURAPIKEYHERE&amp;per_page=6&amp;page=</span><span class="hllsi">%d</span><span class="hlls2">&amp;format=rest&quot;</span> <span class="hllo">%</span> <span class="hllp">(</span><span class="hlln">page</span><span class="hllp">)</span>
+    <span class="hlln">dom</span> <span class="hllo">=</span> <span class="hlln">minidom</span><span class="hllo">.</span><span class="hlln">parse</span><span class="hllp">(</span><span class="hlln">urllib</span><span class="hllo">.</span><span class="hlln">urlopen</span><span class="hllp">(</span><span class="hlln">url</span><span class="hllp">))</span>
+
+    <span class="hlln">elem</span> <span class="hllo">=</span> <span class="hlln">dom</span><span class="hllo">.</span><span class="hlln">getElementsByTagName</span><span class="hllp">(</span><span class="hlls1">&#39;photo&#39;</span><span class="hllp">)[</span><span class="hllmi">4</span><span class="hllp">]</span>
+    <span class="hlln">farm_id</span> <span class="hllo">=</span> <span class="hlln">elem</span><span class="hllo">.</span><span class="hlln">getAttributeNode</span><span class="hllp">(</span><span class="hlls1">&#39;farm&#39;</span><span class="hllp">)</span><span class="hllo">.</span><span class="hlln">nodeValue</span>
+    <span class="hlln">server_id</span> <span class="hllo">=</span> <span class="hlln">elem</span><span class="hllo">.</span><span class="hlln">getAttributeNode</span><span class="hllp">(</span><span class="hlls1">&#39;server&#39;</span><span class="hllp">)</span><span class="hllo">.</span><span class="hlln">nodeValue</span>
+    <span class="hlln">the_id</span> <span class="hllo">=</span> <span class="hlln">elem</span><span class="hllo">.</span><span class="hlln">getAttributeNode</span><span class="hllp">(</span><span class="hlls1">&#39;id&#39;</span><span class="hllp">)</span><span class="hllo">.</span><span class="hlln">nodeValue</span>
+    <span class="hlln">secret</span> <span class="hllo">=</span> <span class="hlln">elem</span><span class="hllo">.</span><span class="hlln">getAttributeNode</span><span class="hllp">(</span><span class="hlls1">&#39;secret&#39;</span><span class="hllp">)</span><span class="hllo">.</span><span class="hlln">nodeValue</span>
+
+    <span class="hlln">photo_url</span> <span class="hllo">=</span> <span class="hlls2">&quot;http://farm</span><span class="hllsi">%s</span><span class="hlls2">.staticflickr.com/</span><span class="hllsi">%s</span><span class="hlls2">/</span><span class="hllsi">%s</span><span class="hlls2">_</span><span class="hllsi">%s</span><span class="hlls2">_b.jpg&quot;</span> <span class="hllo">%</span> <span class="hllp">(</span><span class="hlln">farm_id</span><span class="hllp">,</span> <span class="hlln">server_id</span><span class="hllp">,</span> <span class="hlln">the_id</span><span class="hllp">,</span> <span class="hlln">secret</span><span class="hllp">)</span>
+    <span class="hlln">target_photo</span> <span class="hllo">=</span> <span class="hlls1">&#39;band.jpg&#39;</span>
+    <span class="hlln">subprocess</span><span class="hllo">.</span><span class="hlln">call</span><span class="hllp">([</span><span class="hlls2">&quot;/usr/bin/wget&quot;</span><span class="hllp">,</span> <span class="hlls2">&quot;-O&quot;</span><span class="hllp">,</span> <span class="hlln">target_photo</span><span class="hllp">,</span> <span class="hlln">photo_url</span><span class="hllp">])</span>
+</pre></div>
+<p>First we generate a random number which will be the page number we use in constructing the API URL. Once constructed we use <code>minidom</code> to parse it and start extracting our data. If you paste the URL into your browser (with your valid API key) you can see the response format. Now that we have all the data we need, we construct our image URL (the format for this is in the docs) and save it to <code>band.jpg</code> using <code>wget</code>. You can of course use something else, but this is just easy here.</p>
+<p>Right, onto getting our band name. This is the random Wikipedia article. Luckily Wikipedia has an API also, and doesn't require an API key for this purpose. This is an even shorter function:</p>
+<div class="highlight"><pre><span></span><span class="hllk">def</span> <span class="hllnf">getBandName</span><span class="hllp">():</span>
+    <span class="hlln">random_wiki_url</span> <span class="hllo">=</span> <span class="hlls2">&quot;http://en.wikipedia.org/w/api.php?format=xml&amp;action=query&amp;list=random&amp;rnnamespace=0&amp;rnlimit=1&quot;</span>
+    <span class="hlln">dom</span> <span class="hllo">=</span> <span class="hlln">minidom</span><span class="hllo">.</span><span class="hlln">parse</span><span class="hllp">(</span><span class="hlln">urllib</span><span class="hllo">.</span><span class="hlln">urlopen</span><span class="hllp">(</span><span class="hlln">random_wiki_url</span><span class="hllp">))</span>
+
+    <span class="hllk">for</span> <span class="hlln">line</span> <span class="hllow">in</span> <span class="hlln">dom</span><span class="hllo">.</span><span class="hlln">getElementsByTagName</span><span class="hllp">(</span><span class="hlls1">&#39;page&#39;</span><span class="hllp">):</span>
+        <span class="hllk">return</span> <span class="hlln">line</span><span class="hllo">.</span><span class="hlln">getAttributeNode</span><span class="hllp">(</span><span class="hlls1">&#39;title&#39;</span><span class="hllp">)</span><span class="hllo">.</span><span class="hlln">nodeValue</span>
+</pre></div>
+<p>As above we create the URL, parse the output with minidom and fetch our page title. Done.</p>
+<p>Album title is a little trickier. I couldn't find a decent quote page that offered a free, easy to use API, so I decided to be a little more hacky and just parse the HTML itself. Hey, it works, don't judge me. We need a helper class for this called <cite>MyHTMLParser</cite> that derives from python's <a class="reference external" href="http://docs.python.org/2/library/htmlparser.html?highlight=htmlparser#HTMLParser">HTMLParser</a> class.</p>
+<div class="highlight"><pre><span></span><span class="hllk">class</span> <span class="hllnc">MyHTMLParser</span><span class="hllp">(</span><span class="hlln">HTMLParser</span><span class="hllp">):</span>
+    <span class="hllk">def</span> <span class="hllnf">__init__</span><span class="hllp">(</span><span class="hllbp">self</span><span class="hllp">):</span>
+        <span class="hlln">HTMLParser</span><span class="hllo">.</span><span class="hlln">__init__</span><span class="hllp">(</span><span class="hllbp">self</span><span class="hllp">)</span>
+        <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">get_data</span> <span class="hllo">=</span> <span class="hllbp">False</span><span class="hllp">;</span>
+        <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">quotes</span> <span class="hllo">=</span> <span class="hllp">[]</span>
+
+    <span class="hllk">def</span> <span class="hllnf">handle_starttag</span><span class="hllp">(</span><span class="hllbp">self</span><span class="hllp">,</span> <span class="hlln">tag</span><span class="hllp">,</span> <span class="hlln">attrs</span><span class="hllp">):</span>
+        <span class="hllk">if</span> <span class="hlln">tag</span> <span class="hllo">==</span> <span class="hlls2">&quot;dt&quot;</span><span class="hllp">:</span>
+            <span class="hllk">if</span> <span class="hlln">attrs</span><span class="hllp">[</span><span class="hllmi">0</span><span class="hllp">][</span><span class="hllmi">0</span><span class="hllp">]</span> <span class="hllo">==</span> <span class="hlls1">&#39;class&#39;</span> <span class="hllow">and</span> <span class="hlln">attrs</span><span class="hllp">[</span><span class="hllmi">0</span><span class="hllp">][</span><span class="hllmi">1</span><span class="hllp">]</span> <span class="hllo">==</span> <span class="hlls1">&#39;quote&#39;</span><span class="hllp">:</span>
+                <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">get_data</span> <span class="hllo">=</span> <span class="hllbp">True</span>
+
+    <span class="hllk">def</span> <span class="hllnf">handle_endtag</span><span class="hllp">(</span><span class="hllbp">self</span><span class="hllp">,</span> <span class="hlln">data</span><span class="hllp">):</span>
+        <span class="hllk">pass</span>
+
+    <span class="hllk">def</span> <span class="hllnf">handle_data</span><span class="hllp">(</span><span class="hllbp">self</span><span class="hllp">,</span> <span class="hlln">data</span><span class="hllp">):</span>
+        <span class="hllk">if</span> <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">get_data</span><span class="hllp">:</span>
+            <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">quotes</span><span class="hllo">.</span><span class="hlln">append</span><span class="hllp">(</span><span class="hlln">data</span><span class="hllp">)</span>
+            <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">get_data</span> <span class="hllo">=</span> <span class="hllbp">False</span>
+
+<span class="hllk">def</span> <span class="hllnf">getAlbumTitle</span><span class="hllp">():</span>
+    <span class="hlln">random_quote_url</span> <span class="hllo">=</span> <span class="hlls2">&quot;http://www.quotationspage.com/random.php3&quot;</span>
+    <span class="hlln">page</span> <span class="hllo">=</span> <span class="hlln">urllib</span><span class="hllo">.</span><span class="hlln">urlopen</span><span class="hllp">(</span><span class="hlln">random_quote_url</span><span class="hllp">)</span><span class="hllo">.</span><span class="hlln">read</span><span class="hllp">()</span>
+    <span class="hlln">parser</span> <span class="hllo">=</span> <span class="hlln">MyHTMLParser</span><span class="hllp">()</span>
+    <span class="hlln">parser</span><span class="hllo">.</span><span class="hlln">feed</span><span class="hllp">(</span><span class="hlln">page</span><span class="hllp">)</span>
+
+    <span class="hlln">num_quotes</span> <span class="hllo">=</span> <span class="hllnb">len</span><span class="hllp">(</span><span class="hlln">parser</span><span class="hllo">.</span><span class="hlln">quotes</span><span class="hllp">)</span>
+    <span class="hlln">quote</span> <span class="hllo">=</span> <span class="hlln">parser</span><span class="hllo">.</span><span class="hlln">quotes</span><span class="hllp">[</span><span class="hlln">random</span><span class="hllo">.</span><span class="hlln">randint</span><span class="hllp">(</span><span class="hllmi">0</span><span class="hllp">,</span> <span class="hlln">num_quotes</span><span class="hllp">)]</span><span class="hllo">.</span><span class="hlln">rstrip</span><span class="hllp">(</span><span class="hlls1">&#39;.&#39;</span><span class="hllp">)</span>
+
+    <span class="hlln">last_set</span> <span class="hllo">=</span> <span class="hlln">random</span><span class="hllo">.</span><span class="hlln">randint</span><span class="hllp">(</span><span class="hllmi">3</span><span class="hllp">,</span><span class="hllmi">5</span><span class="hllp">)</span>
+    <span class="hlln">words</span> <span class="hllo">=</span> <span class="hlln">quote</span><span class="hllo">.</span><span class="hlln">split</span><span class="hllp">()</span>
+
+    <span class="hllk">if</span> <span class="hlln">last_set</span> <span class="hllo">&gt;</span> <span class="hllnb">len</span><span class="hllp">(</span><span class="hlln">words</span><span class="hllp">):</span>
+        <span class="hlln">last_set</span> <span class="hllo">=</span> <span class="hllnb">len</span><span class="hllp">(</span><span class="hlln">words</span><span class="hllp">)</span>
+
+    <span class="hllk">return</span> <span class="hllp">(</span><span class="hlls2">&quot; &quot;</span><span class="hllp">)</span><span class="hllo">.</span><span class="hlln">join</span><span class="hllp">(</span><span class="hlln">words</span><span class="hllp">[</span><span class="hllo">-</span><span class="hlln">last_set</span><span class="hllp">:])</span>
+</pre></div>
+<p>The class here is used to parse the HTML from <a class="reference external" href="http://www.quotationspage.com/random.php3">http://www.quotationspage.com/random.php3</a>, specifically the tag that starts with <cite>quote</cite>. Once we have that we start capturing the data between that tag and store it in an array. Our <cite>getAlbumTitle</cite> function will use this data to select a random quote and then get the last 3 or 5 words from it and join them with spaces before returning that new string.</p>
+<p>So now we have the data that we need, we just need to wrap it all up and generate our final image using <code>PIL</code>. Surprise, surprise, this isn't a big deal either.</p>
+<div class="highlight"><pre><span></span><span class="hllk">def</span> <span class="hllnf">main</span><span class="hllp">():</span>
+    <span class="hlln">band_name</span> <span class="hllo">=</span> <span class="hlln">getBandName</span><span class="hllp">()</span>
+    <span class="hlln">album_title</span> <span class="hllo">=</span> <span class="hlln">getAlbumTitle</span><span class="hllp">()</span>
+    <span class="hlln">cover</span> <span class="hllo">=</span> <span class="hlln">getAlbumImage</span><span class="hllp">()</span>
+
+    <span class="hllkn">from</span> <span class="hllnn">PIL</span> <span class="hllkn">import</span> <span class="hlln">ImageFont</span>
+    <span class="hllkn">from</span> <span class="hllnn">PIL</span> <span class="hllkn">import</span> <span class="hlln">Image</span>
+    <span class="hllkn">from</span> <span class="hllnn">PIL</span> <span class="hllkn">import</span> <span class="hlln">ImageDraw</span>
+
+    <span class="hlln">fnt</span> <span class="hllo">=</span> <span class="hlln">ImageFont</span><span class="hllo">.</span><span class="hlln">truetype</span><span class="hllp">(</span><span class="hlls2">&quot;/usr/share/fonts/dejavu/DejaVuSans.ttf&quot;</span><span class="hllp">,</span><span class="hllmi">25</span><span class="hllp">)</span>
+    <span class="hlln">lineWidth</span> <span class="hllo">=</span> <span class="hllmi">20</span>
+    <span class="hlln">image</span> <span class="hllo">=</span> <span class="hlln">Image</span><span class="hllo">.</span><span class="hlln">open</span><span class="hllp">(</span><span class="hlls2">&quot;band.jpg&quot;</span><span class="hllp">)</span>
+    <span class="hlln">imagebg</span> <span class="hllo">=</span> <span class="hlln">Image</span><span class="hllo">.</span><span class="hlln">new</span><span class="hllp">(</span><span class="hlls1">&#39;RGBA&#39;</span><span class="hllp">,</span> <span class="hlln">image</span><span class="hllo">.</span><span class="hlln">size</span><span class="hllp">,</span> <span class="hlls2">&quot;#000000&quot;</span><span class="hllp">)</span> <span class="hllc1"># make an entirely black image</span>
+    <span class="hlln">mask</span> <span class="hllo">=</span> <span class="hlln">Image</span><span class="hllo">.</span><span class="hlln">new</span><span class="hllp">(</span><span class="hlls1">&#39;L&#39;</span><span class="hllp">,</span><span class="hlln">image</span><span class="hllo">.</span><span class="hlln">size</span><span class="hllp">,</span><span class="hlls2">&quot;#000000&quot;</span><span class="hllp">)</span>       <span class="hllc1"># make a mask that masks out all</span>
+    <span class="hlln">draw</span> <span class="hllo">=</span> <span class="hlln">ImageDraw</span><span class="hllo">.</span><span class="hlln">Draw</span><span class="hllp">(</span><span class="hlln">image</span><span class="hllp">)</span>                     <span class="hllc1"># setup to draw on the main image</span>
+    <span class="hlln">drawmask</span> <span class="hllo">=</span> <span class="hlln">ImageDraw</span><span class="hllo">.</span><span class="hlln">Draw</span><span class="hllp">(</span><span class="hlln">mask</span><span class="hllp">)</span>                <span class="hllc1"># setup to draw on the mask</span>
+    <span class="hlln">drawmask</span><span class="hllo">.</span><span class="hlln">line</span><span class="hllp">((</span><span class="hllmi">0</span><span class="hllp">,</span> <span class="hlln">lineWidth</span><span class="hllp">,</span> <span class="hlln">image</span><span class="hllo">.</span><span class="hlln">size</span><span class="hllp">[</span><span class="hllmi">0</span><span class="hllp">],</span><span class="hlln">lineWidth</span><span class="hllp">),</span>
+                  <span class="hlln">fill</span><span class="hllo">=</span><span class="hlls2">&quot;#999999&quot;</span><span class="hllp">,</span> <span class="hlln">width</span><span class="hllo">=</span><span class="hllmi">100</span><span class="hllp">)</span>        <span class="hllc1"># draw a line on the mask to allow some bg through</span>
+    <span class="hlln">image</span><span class="hllo">.</span><span class="hlln">paste</span><span class="hllp">(</span><span class="hlln">imagebg</span><span class="hllp">,</span> <span class="hlln">mask</span><span class="hllo">=</span><span class="hlln">mask</span><span class="hllp">)</span>                    <span class="hllc1"># put the (somewhat) transparent bg on the main</span>
+    <span class="hlln">draw</span><span class="hllo">.</span><span class="hlln">text</span><span class="hllp">((</span><span class="hllmi">10</span><span class="hllp">,</span><span class="hllmi">0</span><span class="hllp">),</span> <span class="hlln">band_name</span><span class="hllp">,</span> <span class="hlln">font</span><span class="hllo">=</span><span class="hlln">fnt</span><span class="hllp">,</span> <span class="hlln">fill</span><span class="hllo">=</span><span class="hlls2">&quot;#ffffff&quot;</span><span class="hllp">)</span>      <span class="hllc1"># add some text to the main</span>
+    <span class="hlln">draw</span><span class="hllo">.</span><span class="hlln">text</span><span class="hllp">((</span><span class="hllmi">10</span><span class="hllp">,</span><span class="hllmi">40</span><span class="hllp">),</span> <span class="hlln">album_title</span><span class="hllp">,</span> <span class="hlln">font</span><span class="hllo">=</span><span class="hlln">fnt</span><span class="hllp">,</span> <span class="hlln">fill</span><span class="hllo">=</span><span class="hlls2">&quot;#ffffff&quot;</span><span class="hllp">)</span>      <span class="hllc1"># add some text to the main</span>
+    <span class="hllk">del</span> <span class="hlln">draw</span>
+    <span class="hlln">image</span><span class="hllo">.</span><span class="hlln">save</span><span class="hllp">(</span><span class="hlls2">&quot;out.jpg&quot;</span><span class="hllp">,</span><span class="hlls2">&quot;JPEG&quot;</span><span class="hllp">,</span><span class="hlln">quality</span><span class="hllo">=</span><span class="hllmi">100</span><span class="hllp">)</span>
+</pre></div>
+<p>Let's go over what's happening here. You're welcome to clean it up as an exercise if you wish or think some values (like filenames) etc need configuring. Firstly we call the previously defined functions to fetch our album data and then we start the drawing. I use the <code>DejaVuSans.ttf</code> font for this example, but you can use any font you have, or even use different fonts for the title and band name, to make your cover look a bit more pleasing. Once the image we saved from Flickr is open, we start writing our title and band name on the album cover, and save out the result as a <code>JPEG</code>. The code here is commented so I won't go over the details here.</p>
+<p>And that's all there is to it. If you want the the script as a whole file, you can <a class="reference external" href="https://gist.github.com/4025200">get it from this gist</a></p>
+
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post-->
+	<div id="comments">
+		<div id="respond">
+			<div id="disqus_thread"></div>
+	        <script type="text/javascript">
+	            var disqus_shortname = 'unlogic';
+	
+	            /* * * DON'T EDIT BELOW THIS LINE * * */
+	            (function() {
+	                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	            })();
+	        </script>
+	        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		</div><!-- #respond -->					
+</div><!-- #comments -->
+
+		</div>
+		
+		<div id="footer">
+			<p>Powered by <a href="http://getpelican.com">Pelican</a>, theme by <a href="http://bunnyman.info">tBunnyMan</a>.</p>
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>		</div><!-- /#footer -->
+	</div><!-- /#container -->
+	<div style="display:none"></div>
+</body>
+</html>

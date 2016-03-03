@@ -1,7 +1,7 @@
 Hello Hugo, goodbye Jekyll
 ##########################
 
-:date: 2016-02-09T11:06:24
+:date: 2016-02-09 11:06:24
 :tags: hugo, jekyll, blog
 :share: true
 

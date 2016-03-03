@@ -1,5 +1,5 @@
-[dis]like
-#########
+'[dis]like'
+###########
 
 :title: '[dis]like'
 :date: 2015-01-05T00
@@ -32,8 +32,8 @@ Let me begin by going over some parts of the `PEP20 <https://www.python.org/dev/
 > * There should be one-- and preferably only one --obvious way to do it.
 > * Although that way may not be obvious at first unless you're Dutch.
     
-In this case I want to refer to **There should be one-- and preferably only one --obvious way to do it.**
-I admit, this is ambiguous for a good reason. What is this _obvious_ way? Taking the rest of the PEP20
+In this case I want to refer to *There should be one-- and preferably only one --obvious way to do it.*
+I admit, this is ambiguous for a good reason. What is this *obvious* way? Taking the rest of the PEP20
 into account we can sort of gleen a definition for this, but it's still open to interpretation by the
 developer. So what's my issue here? Head over to one of these sites and look at a list of submitted solutions.
 You get a lot of variety, some clever, some clear, some long, some short. A whole mixture of ways of doing it.

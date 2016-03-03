@@ -41,7 +41,8 @@ Now resubmitting the XSS payload works and the string is reflected on the page:
 However, there's no pop up. So there must be something else validating input. Heading back to the
 source I find some javscript in :code:`ex1.js` which contains the following code:
 
-.. image:: http://i.imgur.com/VVe74tW.png"
+.. image:: http://i.imgur.com/VVe74tW.png
+    :target: http://i.imgur.com/VVe74tW.png
 
 The :code:`siteName` variable has all :code:`<` and :code:`>` characters replaced with their equivalent html codes.
 By clicking on the gutter in the source code I set a breakpoint on the line that does this, and resubmit
@@ -103,7 +104,7 @@ but had no luck. Unless..
 So let's not use :code:`\n` but a real new line. I can achieve this by editing the source with Firebug
 once again, changing the :code:`lastname` field to a :code:`textarea` type:
 
-.. image:: "http://i.imgur.com/QBVptMv.png"
+`{{< figure src="http://i.imgur.com/QBVptMv.png" >}} <http://i.imgur.com/QBVptMv.png>`_
 
 Now I can have multiple lines and enter a real carriage return into the field. My last
 name will be
@@ -123,7 +124,8 @@ Level 04 #
 
 `Level 04 <http://ctf.infosecinstitute.com/ctf2/exercises/ex4.php>`_ 
 
-.. image:: "http://i.imgur.com/nmRe8U2.png"
+.. image:: http://i.imgur.com/nmRe8U2.png
+    :target: http://i.imgur.com/nmRe8U2.png
 
 Here we need to load a php file instead of the text files that load when you click
 on the *Bio*, *Clients*, or *About* buttons. The instructions are very clear,
@@ -150,7 +152,8 @@ As one of the hints is that the regex might be case sensitive, let's capitalise 
 This time we get an *invalid file* message, so that bypass worked. Now we need to satisfy the
 :code:`file3.txt` requirement and using :code:`Http://infosecinstitute.com/file3.txt.php` I get the flag
 
-.. image::  "http://i.imgur.com/WTFYtJi.png"
+.. image:: http://i.imgur.com/WTFYtJi.png
+    :target: http://i.imgur.com/WTFYtJi.png
 
 
 Level 05 #
@@ -388,7 +391,8 @@ Well the obvious thing is just to try and type in another URL :code:`http://ctf.
 but that gives me an error. Hrmm... trying a few other redirect options tells me that the redirect is URL 
 relative, which means if I strip off the protocol off the URL, I should be able to make this work:
 
-.. image:: "http://i.imgur.com/QM7V8Dk.png"
+.. image:: http://i.imgur.com/QM7V8Dk.png
+    :target: http://i.imgur.com/QM7V8Dk.png
 
 Sure enough, that worked. That's it, the final flag.
 

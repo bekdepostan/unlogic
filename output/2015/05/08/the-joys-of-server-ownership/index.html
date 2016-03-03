@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
 		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
 		<style type="text/css">
 			body.custom-background { background-color: #f5f5f5; }
@@ -68,16 +69,16 @@ only allow key based authentication it's a bit redundant, but if you want to
 go that way, there's the info.</p>
 <p>Then turn off password authentication for SSH as I'll be using only keys to
 authenticate. Edit <code>/etc/ssh/sshd_conf</code> and change the following lines to read:</p>
-<div class="highlight"><pre><span></span><span class="go">ChallengeResponseAuthentication no</span>
-<span class="go">PasswordAuthentication no</span>
-<span class="go">UsePAM no</span>
+<div class="highlight"><pre><span></span><span class="hllgo">ChallengeResponseAuthentication no</span>
+<span class="hllgo">PasswordAuthentication no</span>
+<span class="hllgo">UsePAM no</span>
 </pre></div>
 <p>Make sure you have uploaded your <a class="reference external" href="https://help.ubuntu.com/community/SSH/OpenSSH/Keys">public key</a> to
 <code>~/.ssh/authorized_keys</code> and set the permissions on <code>.ssh</code> and <code>authorized_keys</code> on the
 server to <code>700</code> and <code>600</code> respectively.</p>
 <p>I also changed the default SSH port to something else, as that already keeps the number of automated
 bruteforcers down. Do this by changing the following line in <code>/etc/ssh/sshd_config</code></p>
-<div class="highlight"><pre><span></span><span class="go">Port 22</span>
+<div class="highlight"><pre><span></span><span class="hllgo">Port 22</span>
 </pre></div>
 <p>Set it to anything that doesn't clash with other services. i.e. not 25 or 80 for example.</p>
 <p>Once configured <code>sudo service sshd reload</code> to pick up the changes.</p>
@@ -85,11 +86,11 @@ bruteforcers down. Do this by changing the following line in <code>/etc/ssh/sshd
 which gives you a good start. Be sure to run <code>sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT</code> first.
 Otherwise you'll end up blocking your current connection and... yeah, ok, I made that mistake.</p>
 <p>Then allow what you need and default to dropping the rest. It's all in the URL above, but to re-iterate:</p>
-<div class="highlight"><pre><span></span><span class="gp">#</span> Accept connections on port 22
-<span class="go">iptables -A INPUT -p tcp --syn --destination-port 22 -j ACCEPT</span>
+<div class="highlight"><pre><span></span><span class="hllgp">#</span> Accept connections on port 22
+<span class="hllgo">iptables -A INPUT -p tcp --syn --destination-port 22 -j ACCEPT</span>
 
-<span class="gp">#</span> Deny all other input
-<span class="go">iptables -A INPUT -p tcp -syn -j DROP</span>
+<span class="hllgp">#</span> Deny all other input
+<span class="hllgo">iptables -A INPUT -p tcp -syn -j DROP</span>
 </pre></div>
 <p>You will need to run the first line for each port that needs to be able to accept
 incoming connections.</p>
@@ -99,13 +100,13 @@ set for enabling and disabling the ssh port. Edit this to reflect any port chang
 for a knock, simply concatenate the command with <code>&amp;&amp;</code>. You can even make one command open
 a port for a given time. As we have our <em>keep established connections</em> rule in <code>iptables</code> we
 can do</p>
-<div class="highlight"><pre><span></span><span class="go">[opencloseSSH]</span>
-<span class="go">        sequence      = 2222:udp,3333:tcp,4444:udp</span>
-<span class="go">        seq_timeout   = 15</span>
-<span class="go">        tcpflags      = syn,ack</span>
-<span class="go">        start_command = /usr/sbin/iptables -A INPUT -s %IP% -p tcp --syn --dport 22 -j ACCEPT</span>
-<span class="go">        cmd_timeout   = 10</span>
-<span class="go">        stop_command  = /usr/sbin/iptables -D INPUT -s %IP% -p tcp --syn --dport 22 -j ACCEPT</span>
+<div class="highlight"><pre><span></span><span class="hllgo">[opencloseSSH]</span>
+<span class="hllgo">        sequence      = 2222:udp,3333:tcp,4444:udp</span>
+<span class="hllgo">        seq_timeout   = 15</span>
+<span class="hllgo">        tcpflags      = syn,ack</span>
+<span class="hllgo">        start_command = /usr/sbin/iptables -A INPUT -s %IP% -p tcp --syn --dport 22 -j ACCEPT</span>
+<span class="hllgo">        cmd_timeout   = 10</span>
+<span class="hllgo">        stop_command  = /usr/sbin/iptables -D INPUT -s %IP% -p tcp --syn --dport 22 -j ACCEPT</span>
 </pre></div>
 <p>Lifted from the docs. This will allow and block only the IP from where the knock originated.</p>
 <p>That's all for now. Postfix next time....</p>

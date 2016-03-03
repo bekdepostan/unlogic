@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Unlogic &mdash; Strong passwords?</title>
+		<meta charset="utf-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
+		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
+		<style type="text/css">
+			body.custom-background { background-color: #f5f5f5; }
+		</style>
+		<link rel="alternate" type="application/atom+xml"
+			title="Unlogic — Flux Atom"
+			href="/" /> 
+		<link rel ="alternate" type="application/rss+xml"
+			title="Unlogic — Flux RSS"
+			href="/feed.xml" /> 
+		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
+</head>
+
+<body class="home blog custom-background single-author" >
+	<div id="container">
+		<div id="header">
+				<h1 id="site-title"><a href="">Unlogic</a></h1>
+<h2 id="site-description">I've got a keyboard, a terminal, and a whole load of luck</h2>		</div><!-- /#banner -->
+		
+		<div id="menu">
+			<div class="menu-navigation-container">
+				<ul id="menu-navigation" class="menu">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/about.html">About</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/all-posts.html">All posts</a></li>
+
+				</ul>
+			</div> <!--/#menu-navigation-container-->
+		</div><!-- /#menu -->
+		
+		<div class="page-title">
+		</div>
+	
+		<div id="contents">
+
+<div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2012/06/06/strong-passwords/">Wed 06 June 2012</a></div>
+			<div class="comments"><a href="/2012/06/06/strong-passwords/#disqus_thread" title="Comment on Strong passwords?">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2012/06/06/strong-passwords/" title="Permalink to Strong passwords?" rel="bookmark">Strong passwords?</a>
+		</h2>
+		<div class="entry-content">
+			<p>As I'm just going around and updating the passwords to some of my online accounts, which was prompted by <a class="reference external" href="http://translate.google.com/translate?hl=en&amp;sl=no&amp;tl=en&amp;u=http://www.dagensit.no/article2411857.ece">this</a> article, I was wonderingwhat a good password really is. Not just in terms of security but also in terms of user friendliness.</p>
+<p>&lt;!--more--&gt;</p>
+<p>I use <a class="reference external" href="http://www.lastpass.com)tomanagemypasswordsandhaveitautofillinmycredentialsonvarioussites.ThisworkswelluntilIneedtomanuallyenterthemonanotherdevice(iPhoneforexample-Ihaven'tgotapremiumsubscriptionyet">Lastpass</a> or have to type it in just because.</p>
+<p>We know that everywhere suggests some wonderfully random characters of at least 8 characters in length and Lastpass actually provides a tool to generate these:</p>
+<ul class="simple">
+<li>k%U94*7r</li>
+<li>66ds}9R</li>
+<li>9^wtH7xo</li>
+</ul>
+<p>Here we have some 8 character examples for apparently fairly secure options. Fine. They probably are secure. But do you really want to type those in using a touch keyboard on a phone?</p>
+<p>Now here's my suggestion: <strong>Three or more random, unrelated words making one password.</strong>
+For example:</p>
+<ul class="simple">
+<li>tarnishedmoleclouds</li>
+<li>refriedchutneygarbage</li>
+<li>turkeyloadedparasol</li>
+</ul>
+<p>Those of you who read [XKCD](<a class="reference external" href="http://xkcd.com/936/">http://xkcd.com/936/</a>) should already be on the same page as me. Not only are these more memorable (which if you use a password manager is irrelevant) but also much easier to type in on any type of keyboard. But that's not all. Let's have a look at bruteforce times using <a class="reference external" href="http://www.lockdown.co.uk/?pg=combi">these tables</a></p>
+<p>In the first case we have 8 character passwords made up of &quot;Mixed upper and lower case alphabet and common symbols.&quot;. According to the relevant table (and we are assuming a reasonably competent team of crackers using a <a class="reference external" href="http://www.lockdown.co.uk/?pg=combi#classE)attack)thesepasswordscanbecrackedin346days.Nottoobadreally.Butlet'sseehowthatcomparesto&quot;Thefullalphabet,eitherupperorlowercase(notbothinthiscase)&quot;.Pickingonepasswordfromabove(refriedchutneygarbage">class E</a> with 21 characters it would take at least 6.3trillions years to break. Much better. Heck, even with 1000,000,000 guesses per second you're still looking at 631billion years.</p>
+<p>I can't say how much of an impact adding/removing spaces has on the timings though - if any one knows, or has any insights, do share in the comments. Is using spaces better, the same, or worse than not using spaces? Theoretically I'd imagine that it'd be better with spaces as that's an extra character to add to the list.</p>
+<div class="section" id="update">
+<h2>UPDATE</h2>
+<p>Having said the above, it's worth also assuming that any competent cracker will be using wordlists too, and not just brute forcing the password. According to the <a class="reference external" href="http://oxforddictionaries.com/words/how-many-words-are-there-in-the-english-language">Oxford English Dictionary</a> there are about 140,000 words in use. This number is a bit high as most of us won't know, or use them all. So to get a more realistic number, I've looked at some common wordlists you can find on the internet and the word count we're looking at is around 50,000 to 70,000.</p>
+<p>Given that (as mentioned in the comments) we essentially have a 3 character password with a much larger search space, we can do the math. Three words, 60,000 (taking the middle word count) words will give us 216trillion possibilities. At a rate of 10,000,000 passwords per second it would take around 250 days to crack. Not too shabby still, but not as good as initially hoped, and also worse than your 'messy' passwords.</p>
+<p>So my solution to generating secure, but still easily typeable passwords, is to generate 15-20 character long passwords made only of random alphabetical characters rather than words. In this case the figures above will still hold true.</p>
+<p>As a quick sampler of a generated password with 16 characters, lowercase only, and pronouncable:</p>
+<ul class="simple">
+<li>alicattervetonstou</li>
+<li>molyciontivenzagol</li>
+<li>audentophitendowdy</li>
+</ul>
+<p>harder to remember, harder to crack but still easily typed out even with an onscreen keyboard. The pronounceable part is optional but it might aid in remembering the password better.</p>
+</div>
+
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post-->
+	<div id="comments">
+		<div id="respond">
+			<div id="disqus_thread"></div>
+	        <script type="text/javascript">
+	            var disqus_shortname = 'unlogic';
+	
+	            /* * * DON'T EDIT BELOW THIS LINE * * */
+	            (function() {
+	                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	            })();
+	        </script>
+	        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		</div><!-- #respond -->					
+</div><!-- #comments -->
+
+		</div>
+		
+		<div id="footer">
+			<p>Powered by <a href="http://getpelican.com">Pelican</a>, theme by <a href="http://bunnyman.info">tBunnyMan</a>.</p>
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>		</div><!-- /#footer -->
+	</div><!-- /#container -->
+	<div style="display:none"></div>
+</body>
+</html>

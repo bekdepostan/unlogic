@@ -12,9 +12,7 @@ How's that Pizza coming along?
 Having been a bit busy with other things recently, I've not mentioned the Domino's
 thing for a while. So in case anyone is wondering where I am with this:
 
-.. raw:: html
-
-    <script type="text/javascript" src="https://asciinema.org/a/17706.js" id="asciicast-17706" async></script>
+<script type="text/javascript" src="https://asciinema.org/a/17706.js" id="asciicast-17706" async></script>
 
 Basically I've reworked how the store finder works. I've collapsed the whole store finding and 
 delivery postcode stuff into one :code:`locate_store` call. 

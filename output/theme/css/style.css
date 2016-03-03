@@ -820,3 +820,23 @@ article.comment {
 .sharedaddy {
 	clear: both;
 }
+
+@media only screen and (max-width: 719px) {
+
+#site-title a {
+    font-size: 55px;
+}
+
+.hentry .main {
+    width: 400px;
+}
+
+#container {
+   width: 600px;
+}
+
+#header {
+    width: 600px;
+}
+
+}
