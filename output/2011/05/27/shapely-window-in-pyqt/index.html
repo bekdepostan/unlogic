@@ -50,63 +50,78 @@
 			<a href="/2011/05/27/shapely-window-in-pyqt/" title="Permalink to Shapely Window in PyQT" rel="bookmark">Shapely Window in PyQT</a>
 		</h2>
 		<div class="entry-content">
-			<p>Recently I needed to make a PyQt app where the&nbsp;<strong>window</strong>&nbsp;is the shape of an image and doesn’t have a border. I say needed, that’s not strictly true, more like wanted to because it’d be more interesting.</p>
-<p>&lt;!--more--&gt;</p>
-<p>It wasn’t as straight forward as I had hoped but I managed to get it working in the end and here I am about to share it with the world. Here’s what we will need:</p>
+			<p>Recently I needed to make a PyQt app where the&nbsp;<code>window</code>&nbsp;is the shape of an image and doesn’t
+have a border. I say needed, that’s not strictly true, more like wanted to because it’d be more
+interesting.</p>
+<p>It wasn’t as straight forward as I had hoped but I managed to get it working in the end and
+here I am about to share it with the world. Here’s what we will need:</p>
 <ol class="arabic simple">
 <li>python,&nbsp;Qt,&nbsp;and PyQt installed</li>
 <li>The image you want to use as the background with transparency. PNG will do nicely</li>
 <li>A texteditor</li>
 <li>A cup of coffee</li>
 </ol>
-<p>Set the coffee aside so you don’t knock it over, but keep it within reach. First we need to open up Designer.</p>
-<p>Once open create a new Dialog or MainWindow. Open the resource browser and add your background image to the list of resources. Now right click on the&nbsp;<strong>window</strong>&nbsp;and select&nbsp;<code>Change styleSheet</code>&nbsp;(I am using Designer4 in case it looks different for you). Enter the following in the popup, adjusting for names and path as appropriate.</p>
-<div class="highlight"><pre><span></span><span class="hllc1">#Dialog{</span>
-    <span class="hlln">background</span><span class="hllo">-</span><span class="hlln">color</span><span class="hllp">:</span> <span class="hlln">rgb</span><span class="hllp">(</span><span class="hllmi">0</span><span class="hllp">,</span> <span class="hllmi">0</span><span class="hllp">,</span> <span class="hllmi">0</span><span class="hllp">);</span>
-    <span class="hlln">background</span><span class="hllo">-</span><span class="hlln">image</span><span class="hllp">:</span> <span class="hlln">url</span><span class="hllp">(:</span><span class="hllo">/</span><span class="hlln">img</span><span class="hllo">/</span><span class="hlln">windowshape</span><span class="hllo">.</span><span class="hlln">png</span><span class="hllp">);</span>
-<span class="hllp">}</span>
-</pre></div>
-<p>Adjusting the :code:<tt class="docutils literal">#Dialog</tt> to the&nbsp;<strong>window</strong>&nbsp;name and the url path to your image.</p>
-<p>You should now see the image in the&nbsp;<strong>window</strong>&nbsp;with a black surround. At this point it’s also good to set the&nbsp;<strong>window</strong>&nbsp;size to something suitable for your image.</p>
+<p>Set the coffee aside so you don’t knock it over, but keep it within reach. First we need to
+open up Designer.</p>
+<p>Once open create a new Dialog or MainWindow. Open the resource browser and add your background
+image to the list of resources. Now right click on the&nbsp;<code>window</code>&nbsp;and select
+<code>Change styleSheet</code>&nbsp;(I am using Designer4 in case it looks different for you).
+Enter the following in the popup, adjusting for names and path as appropriate.</p>
+<pre class="code python literal-block">
+<span class="c1">#Dialog{</span>
+    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">background</span><span class="o">-</span><span class="n">image</span><span class="p">:</span> <span class="n">url</span><span class="p">(:</span><span class="o">/</span><span class="n">img</span><span class="o">/</span><span class="n">windowshape</span><span class="o">.</span><span class="n">png</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+<p>Adjusting the :code:<tt class="docutils literal">#Dialog</tt> to the&nbsp;<code>window</code>&nbsp;name and the url path to your image.</p>
+<p>You should now see the image in the&nbsp;<code>window</code>&nbsp;with a black surround. At this point it’s also
+good to set the&nbsp;<code>window</code>&nbsp;size to something suitable for your image.</p>
 <p>As per usual you will need to compile your .ui and resource files with pyuic and pyrcc, but details on that are outside the scope of this post.
-So in order to remove the border we call this in our :code:<tt class="docutils literal">__init__</tt> function</p>
-<div class="highlight"><pre><span></span><span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">win</span> <span class="hllo">=</span> <span class="hlln">QtGui</span><span class="hllo">.</span><span class="hlln">QMainWindow</span><span class="hllp">()</span>
-<span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">win</span><span class="hllo">.</span><span class="hlln">setWindowFlags</span><span class="hllp">(</span><span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">win</span><span class="hllo">.</span><span class="hlln">windowFlags</span><span class="hllp">()</span> <span class="hllo">|</span>
-    <span class="hlln">QtCore</span><span class="hllo">.</span><span class="hlln">Qt</span><span class="hllo">.</span><span class="hlln">FramelessWindowHint</span> <span class="hllo">|</span>
-    <span class="hlln">QtCore</span><span class="hllo">.</span><span class="hlln">Qt</span><span class="hllo">.</span><span class="hlln">WindowSystemMenuHint</span><span class="hllp">)</span>
-</pre></div>
-<p>It’s important to derive your class from :code:<tt class="docutils literal">QtGui.QMainWindow</tt> otherwise this won’t work.</p>
-<p>Don’t be surprised if under certain&nbsp;<strong>window</strong>&nbsp;managers you still see a border, not all&nbsp;<strong>window</strong>&nbsp;managers will render windows without borders from&nbsp;<strong>Qt</strong>. The settings are just a request rather than a demand. In Fluxbox for instance the border still shows. Gnome and KDE work fine.</p>
-<p>Right, time for a sip of coffee. You earned it. But wait, what about the black colour? We want the&nbsp;<strong>window</strong>&nbsp;in the shape of the image. Ah yes, we do that by adding this function</p>
-<div class="highlight"><pre><span></span><span class="hllk">def</span> <span class="hllnf">resizeEvent</span><span class="hllp">(</span><span class="hllbp">self</span><span class="hllp">,</span> <span class="hlln">event</span><span class="hllp">):</span>
-    <span class="hlln">pixmap</span> <span class="hllo">=</span> <span class="hlln">QtGui</span><span class="hllo">.</span><span class="hlln">QPixmap</span><span class="hllp">(</span><span class="hlls2">&quot;:/img/windowshape.png&quot;</span><span class="hllp">)</span>
-    <span class="hlln">region</span> <span class="hllo">=</span> <span class="hlln">QtGui</span><span class="hllo">.</span><span class="hlln">QRegion</span><span class="hllp">(</span><span class="hlln">pixmap</span><span class="hllo">.</span><span class="hlln">mask</span><span class="hllp">())</span>
-    <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">setMask</span><span class="hllp">(</span><span class="hlln">pixmap</span><span class="hllo">.</span><span class="hlln">mask</span><span class="hllp">());</span>
-</pre></div>
-<p>This will tell&nbsp;<strong>Qt</strong>&nbsp;to use the image as a mask for the&nbsp;<strong>window</strong>&nbsp;region, effectively hiding any parts where the image is transparent.</p>
-<p>More coffee, we're almost there. Right now, as you're swallowing that last sip, you're wondering &quot;How do I move or close the&nbsp;<strong>window</strong>&nbsp;without a border?&quot;. Fear not fellow coder for there is a solution for each of these:</p>
-<p>To close the&nbsp;<strong>window</strong>&nbsp;we just need to add a context menu. Simply done by adding one more function to your class:</p>
-<div class="highlight"><pre><span></span><span class="hllk">def</span> <span class="hllnf">contextMenuEvent</span><span class="hllp">(</span><span class="hllbp">self</span><span class="hllp">,</span> <span class="hlln">event</span><span class="hllp">):</span>
-    <span class="hlln">menu</span> <span class="hllo">=</span> <span class="hlln">QtGui</span><span class="hllo">.</span><span class="hlln">QMenu</span><span class="hllp">(</span><span class="hllbp">self</span><span class="hllp">)</span>
-    <span class="hlln">quitAction</span> <span class="hllo">=</span> <span class="hlln">menu</span><span class="hllo">.</span><span class="hlln">addAction</span><span class="hllp">(</span><span class="hlls2">&quot;Quit&quot;</span><span class="hllp">)</span>
-    <span class="hlln">action</span> <span class="hllo">=</span> <span class="hlln">menu</span><span class="hllo">.</span><span class="hlln">exec_</span><span class="hllp">(</span><span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">mapToGlobal</span><span class="hllp">(</span><span class="hlln">event</span><span class="hllo">.</span><span class="hlln">pos</span><span class="hllp">()))</span>
-    <span class="hllk">if</span> <span class="hlln">action</span> <span class="hllo">==</span> <span class="hlln">quitAction</span><span class="hllp">:</span>
-        <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">close</span><span class="hllp">()</span>
-</pre></div>
-<p>You can of course replace the :code:<tt class="docutils literal">self.close()</tt> with a call to some confirmation dialog if you want, but that will now enable a right-click menu on your GUI with a quit option. Also you can add keyboard shortcuts to the application as well if you are so inclined.</p>
+So in order to remove the border we call this in our <code>__init__</code> function</p>
+<pre class="code python literal-block">
+<span class="bp">self</span><span class="o">.</span><span class="n">win</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">()</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">win</span><span class="o">.</span><span class="n">setWindowFlags</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">win</span><span class="o">.</span><span class="n">windowFlags</span><span class="p">()</span> <span class="o">|</span>
+    <span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">FramelessWindowHint</span> <span class="o">|</span>
+    <span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">WindowSystemMenuHint</span><span class="p">)</span>
+</pre>
+<p>It’s important to derive your class from <code>QtGui.QMainWindow</code> otherwise this won’t work.</p>
+<p>Don’t be surprised if under certain&nbsp;<code>window</code>&nbsp;managers you still see a border, not all&nbsp;<cite>window</cite>
+managers will render windows without borders from&nbsp;<code>Qt</code>. The settings are just a request rather than a demand. In Fluxbox for instance the border still shows. Gnome and KDE work fine.</p>
+<p>Right, time for a sip of coffee. You earned it. But wait, what about the black colour? We want the&nbsp;<code>window</code>&nbsp;in the shape of the image. Ah yes, we do that by adding this function</p>
+<pre class="code python literal-block">
+<span class="k">def</span> <span class="nf">resizeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="n">pixmap</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QPixmap</span><span class="p">(</span><span class="s2">&quot;:/img/windowshape.png&quot;</span><span class="p">)</span>
+    <span class="n">region</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QRegion</span><span class="p">(</span><span class="n">pixmap</span><span class="o">.</span><span class="n">mask</span><span class="p">())</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">setMask</span><span class="p">(</span><span class="n">pixmap</span><span class="o">.</span><span class="n">mask</span><span class="p">());</span>
+</pre>
+<p>This will tell&nbsp;<code>Qt</code>&nbsp;to use the image as a mask for the&nbsp;<cite>window</cite>&nbsp;region, effectively hiding any parts where the image is transparent.
+More coffee, we're almost there. Right now, as you're swallowing that last sip, you're wondering &quot;How do I move or close the&nbsp;<code>window</code>&nbsp;without a border?&quot;. Fear not fellow coder for there is a solution for each of these:</p>
+<p>To close the&nbsp;<code>window</code>&nbsp;we just need to add a context menu. Simply done by adding one more function to your class:</p>
+<pre class="code python literal-block">
+<span class="k">def</span> <span class="nf">contextMenuEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="n">menu</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QMenu</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="n">quitAction</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="s2">&quot;Quit&quot;</span><span class="p">)</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">exec_</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mapToGlobal</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">()))</span>
+    <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="n">quitAction</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre>
+<p>You can of course replace the <code>self.close()</code> with a call to some confirmation dialog if you want, but that will now enable a right-click menu on your GUI with a quit option. Also you can add keyboard shortcuts to the application as well if you are so inclined.</p>
 <p>Now for moving the thing. Here we need two extra functions, one for the mouse move and one for the mouse press:</p>
-<div class="highlight"><pre><span></span><span class="hllk">def</span> <span class="hllnf">mouseMoveEvent</span><span class="hllp">(</span><span class="hllbp">self</span><span class="hllp">,</span> <span class="hlln">event</span><span class="hllp">):</span>
-    <span class="hllk">if</span> <span class="hllp">(</span><span class="hlln">event</span><span class="hllo">.</span><span class="hlln">buttons</span><span class="hllp">()</span> <span class="hllo">==</span> <span class="hlln">QtCore</span><span class="hllo">.</span><span class="hlln">Qt</span><span class="hllo">.</span><span class="hlln">LeftButton</span><span class="hllp">):</span>
-        <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">move</span><span class="hllp">(</span><span class="hlln">event</span><span class="hllo">.</span><span class="hlln">globalPos</span><span class="hllp">()</span><span class="hllo">.</span><span class="hlln">x</span><span class="hllp">()</span> <span class="hllo">-</span> <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">drag_position</span><span class="hllo">.</span><span class="hlln">x</span><span class="hllp">(),</span>
-            <span class="hlln">event</span><span class="hllo">.</span><span class="hlln">globalPos</span><span class="hllp">()</span><span class="hllo">.</span><span class="hlln">y</span><span class="hllp">()</span> <span class="hllo">-</span> <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">drag_position</span><span class="hllo">.</span><span class="hlln">y</span><span class="hllp">());</span>
-    <span class="hlln">event</span><span class="hllo">.</span><span class="hlln">accept</span><span class="hllp">();</span>
+<pre class="code python literal-block">
+<span class="k">def</span> <span class="nf">mouseMoveEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">buttons</span><span class="p">()</span> <span class="o">==</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">LeftButton</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">globalPos</span><span class="p">()</span><span class="o">.</span><span class="n">x</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">drag_position</span><span class="o">.</span><span class="n">x</span><span class="p">(),</span>
+            <span class="n">event</span><span class="o">.</span><span class="n">globalPos</span><span class="p">()</span><span class="o">.</span><span class="n">y</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">drag_position</span><span class="o">.</span><span class="n">y</span><span class="p">());</span>
+    <span class="n">event</span><span class="o">.</span><span class="n">accept</span><span class="p">();</span>
 
-<span class="hllk">def</span> <span class="hllnf">mousePressEvent</span><span class="hllp">(</span><span class="hllbp">self</span><span class="hllp">,</span> <span class="hlln">event</span><span class="hllp">):</span>
-    <span class="hllk">if</span> <span class="hllp">(</span><span class="hlln">event</span><span class="hllo">.</span><span class="hlln">button</span><span class="hllp">()</span> <span class="hllo">==</span> <span class="hlln">QtCore</span><span class="hllo">.</span><span class="hlln">Qt</span><span class="hllo">.</span><span class="hlln">LeftButton</span><span class="hllp">):</span>
-        <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">drag_position</span> <span class="hllo">=</span> <span class="hlln">event</span><span class="hllo">.</span><span class="hlln">globalPos</span><span class="hllp">()</span> <span class="hllo">-</span> <span class="hllbp">self</span><span class="hllo">.</span><span class="hlln">pos</span><span class="hllp">();</span>
-    <span class="hlln">event</span><span class="hllo">.</span><span class="hlln">accept</span><span class="hllp">();</span>
-</pre></div>
-<p>We just get the click position when the mouse button is pressed, work out the offset from the top left corner of the&nbsp;<strong>window</strong>&nbsp;(this is what the move function uses) and then when the mouse moves, we move the&nbsp;<strong>window</strong>&nbsp;with it.</p>
+<span class="k">def</span> <span class="nf">mousePressEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">button</span><span class="p">()</span> <span class="o">==</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">LeftButton</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">drag_position</span><span class="o">*</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">globalPos</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">();</span>
+    <span class="n">event</span><span class="o">.</span><span class="n">accept</span><span class="p">();</span>
+</pre>
+<p>We just get the click position when the mouse button is pressed, work out the offset from the
+top left corner of the&nbsp;<code>window</code>&nbsp;(this is what the move function uses) and then when
+the mouse moves, we move the&nbsp;<cite>window</cite>&nbsp;with it.</p>
 <p>That's it really. Pretty simple once you know how. Now go and enjoy the rest of that coffee.</p>
 
 		</div> <!--/#entry-content-->

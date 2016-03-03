@@ -1,4 +1,4 @@
-.code { background-color: #333333; color: #AAA; }
+.code { background-color: #333333; color: #AAA; overflow: auto;}
 .hll { background-color: #333333 }
 .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
 .err { color: #ffffff } /* Error */
