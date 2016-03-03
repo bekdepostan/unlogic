@@ -269,7 +269,7 @@ the last printed number to get the password
 
 The final flag for level 7 is
 
-    Well Done, you seem to have used a \*nix system before, now try something more serious.
+    Well Done, you seem to have used a * nix system before, now try something more serious.
     (Please don't post writeups, solutions or spoilers about the games on the web. Thank you!)  
 
 I understand the reasons, but this is not the only write up out there, and it is a fairly old

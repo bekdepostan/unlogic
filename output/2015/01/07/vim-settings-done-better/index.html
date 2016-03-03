@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
 		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
 		<style type="text/css">
 			body.custom-background { background-color: #f5f5f5; }
@@ -61,26 +62,26 @@ setting rather than trawling through a long <code>.vimrc</code> file. So, withou
 the main <code>.vimrc</code> (which we still need). The role of this file is to source all the other
 files we will create later. A <a class="reference external" href="http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/">previous post</a>
 covers some configuration options specific for Python, if you are interested.</p>
-<div class="highlight"><pre><span></span><span class="k">let</span> s:vim_home <span class="p">=</span> <span class="s1">&#39;~/.vim/settings/&#39;</span>
+<div class="highlight"><pre><span></span><span class="hllk">let</span> s:vim_home <span class="hllp">=</span> <span class="hlls1">&#39;~/.vim/settings/&#39;</span>
 
-<span class="k">let</span> config_list <span class="p">=</span> [
-  \ <span class="s1">&#39;plugins.vim&#39;</span><span class="p">,</span>
-  \ <span class="s1">&#39;base.vim&#39;</span><span class="p">,</span>
-  \ <span class="s1">&#39;functions.vim&#39;</span><span class="p">,</span>
-  \ <span class="s1">&#39;theme.vim&#39;</span><span class="p">,</span>
-  \ <span class="s1">&#39;settings.vim&#39;</span><span class="p">,</span>
-  \ <span class="s1">&#39;leader.vim&#39;</span><span class="p">,</span>
-  \ <span class="s1">&#39;keymappings.vim&#39;</span><span class="p">,</span>
-  \ <span class="s1">&#39;languages.vim&#39;</span><span class="p">,</span>
-  \ <span class="s1">&#39;plugin_settings.vim&#39;</span>
+<span class="hllk">let</span> config_list <span class="hllp">=</span> [
+  \ <span class="hlls1">&#39;plugins.vim&#39;</span><span class="hllp">,</span>
+  \ <span class="hlls1">&#39;base.vim&#39;</span><span class="hllp">,</span>
+  \ <span class="hlls1">&#39;functions.vim&#39;</span><span class="hllp">,</span>
+  \ <span class="hlls1">&#39;theme.vim&#39;</span><span class="hllp">,</span>
+  \ <span class="hlls1">&#39;settings.vim&#39;</span><span class="hllp">,</span>
+  \ <span class="hlls1">&#39;leader.vim&#39;</span><span class="hllp">,</span>
+  \ <span class="hlls1">&#39;keymappings.vim&#39;</span><span class="hllp">,</span>
+  \ <span class="hlls1">&#39;languages.vim&#39;</span><span class="hllp">,</span>
+  \ <span class="hlls1">&#39;plugin_settings.vim&#39;</span>
 \]
 
-<span class="k">for</span> <span class="k">files</span> <span class="k">in</span> config_list
-  <span class="k">for</span> <span class="k">f</span> <span class="k">in</span> split<span class="p">(</span>glob<span class="p">(</span>s:vim_home.<span class="k">files</span><span class="p">),</span> <span class="s1">&#39;\n&#39;</span><span class="p">)</span>
-    exec <span class="s1">&#39;source &#39;</span>.<span class="k">f</span>
-  <span class="k">endfor</span>
+<span class="hllk">for</span> <span class="hllk">files</span> <span class="hllk">in</span> config_list
+  <span class="hllk">for</span> <span class="hllk">f</span> <span class="hllk">in</span> split<span class="hllp">(</span>glob<span class="hllp">(</span>s:vim_home.<span class="hllk">files</span><span class="hllp">),</span> <span class="hlls1">&#39;\n&#39;</span><span class="hllp">)</span>
+    exec <span class="hlls1">&#39;source &#39;</span>.<span class="hllk">f</span>
+  <span class="hllk">endfor</span>
 
-<span class="k">endfor</span>
+<span class="hllk">endfor</span>
 </pre></div>
 <p>You can see how we'll divide up responsibility here. I won't go into details about the
 contents of each file, I will leave that up to you to decide. Basically here we set a

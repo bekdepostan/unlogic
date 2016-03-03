@@ -1,10 +1,8 @@
-Offline Coding
+Offline coding
 ##############
 
-:date: 2016-02-16T09:34:12
+:date: 2016-02-16T09:34:12Z
 :tags: tips, coding, programming
-:title: Offline Coding
-
 
 These days, when you sit at your box, tapping out your code be it in whatever
 language you use these days, you usually have one or more tabs open, ready to

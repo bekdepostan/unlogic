@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
 		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
 		<style type="text/css">
 			body.custom-background { background-color: #f5f5f5; }
@@ -83,33 +84,33 @@ use as a zombie, as you don't want the IP ID to change while you are conducting
 your probe. I've had the best results with using networked printers as zombie hosts.
 Unless there's a lot of print jobs going on, they are fairly idle. The printer
 is at <code>10.20.7.1</code> and I'm probing port 80 on <code>10.16.70.8</code>.</p>
-<div class="highlight"><pre><span></span><span class="gp">$</span><span class="o">]</span> sudo ./idle_scan.py 10.20.7.1 0.16.70.8 80
-<span class="go">WARNING: No route found for IPv6 destination :: (no default route?)</span>
+<div class="highlight"><pre><span></span><span class="hllgp">$</span><span class="hllo">]</span> sudo ./idle_scan.py 10.20.7.1 0.16.70.8 80
+<span class="hllgo">WARNING: No route found for IPv6 destination :: (no default route?)</span>
 
-<span class="go">[*] Scan 10.16.70.8 port 80 using 10.20.7.1 as zombie</span>
-<span class="go">[+] Zombie initial IP id 57319</span>
-<span class="go">[+] Zombie final IP id 57321</span>
-<span class="go">[+] Port 80 : open</span>
+<span class="hllgo">[*] Scan 10.16.70.8 port 80 using 10.20.7.1 as zombie</span>
+<span class="hllgo">[+] Zombie initial IP id 57319</span>
+<span class="hllgo">[+] Zombie final IP id 57321</span>
+<span class="hllgo">[+] Port 80 : open</span>
 
-<span class="go">sudo ./idle_scan.py 10.20.7.1 0.16.70.8 90</span>
-<span class="go">WARNING: No route found for IPv6 destination :: (no default route?)</span>
+<span class="hllgo">sudo ./idle_scan.py 10.20.7.1 0.16.70.8 90</span>
+<span class="hllgo">WARNING: No route found for IPv6 destination :: (no default route?)</span>
 
-<span class="go">[*] Scan 10.16.70.8 port 90 using 10.20.7.1 as zombie</span>
-<span class="go">[+] Zombie initial IP id 57341</span>
-<span class="go">[+] Zombie final IP id 57342</span>
-<span class="go">[+] Port 90 : closed</span>
+<span class="hllgo">[*] Scan 10.16.70.8 port 90 using 10.20.7.1 as zombie</span>
+<span class="hllgo">[+] Zombie initial IP id 57341</span>
+<span class="hllgo">[+] Zombie final IP id 57342</span>
+<span class="hllgo">[+] Port 90 : closed</span>
 </pre></div>
 <p>And to be sure, let's verify our findings with a proper nmap scan.</p>
-<div class="highlight"><pre><span></span><span class="gp">$</span><span class="o">]</span> nmap 10.16.70.8 -p80,90
+<div class="highlight"><pre><span></span><span class="hllgp">$</span><span class="hllo">]</span> nmap 10.16.70.8 -p80,90
 
-<span class="go">Starting Nmap 5.51 ( http://nmap.org ) at 2014-07-17 13:07 BST</span>
-<span class="go">Nmap scan report for 10.16.70.8 (10.16.70.8)</span>
-<span class="go">Host is up (0.00013s latency).</span>
-<span class="go">PORT   STATE  SERVICE</span>
-<span class="go">80/tcp open   http</span>
-<span class="go">90/tcp closed dnsix</span>
+<span class="hllgo">Starting Nmap 5.51 ( http://nmap.org ) at 2014-07-17 13:07 BST</span>
+<span class="hllgo">Nmap scan report for 10.16.70.8 (10.16.70.8)</span>
+<span class="hllgo">Host is up (0.00013s latency).</span>
+<span class="hllgo">PORT   STATE  SERVICE</span>
+<span class="hllgo">80/tcp open   http</span>
+<span class="hllgo">90/tcp closed dnsix</span>
 
-<span class="go">Nmap done: 1 IP address (1 host up) scanned in 0.04 seconds</span>
+<span class="hllgo">Nmap done: 1 IP address (1 host up) scanned in 0.04 seconds</span>
 </pre></div>
 <p>Approved.</p>
 

@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
 		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
 		<style type="text/css">
 			body.custom-background { background-color: #f5f5f5; }
@@ -68,8 +69,8 @@
 &gt; * In the face of ambiguity, refuse the temptation to guess.
 &gt; * There should be one-- and preferably only one --obvious way to do it.
 &gt; * Although that way may not be obvious at first unless you're Dutch.</p>
-<p>In this case I want to refer to <strong>There should be one-- and preferably only one --obvious way to do it.</strong>
-I admit, this is ambiguous for a good reason. What is this _obvious_ way? Taking the rest of the PEP20
+<p>In this case I want to refer to <em>There should be one-- and preferably only one --obvious way to do it.</em>
+I admit, this is ambiguous for a good reason. What is this <em>obvious</em> way? Taking the rest of the PEP20
 into account we can sort of gleen a definition for this, but it's still open to interpretation by the
 developer. So what's my issue here? Head over to one of these sites and look at a list of submitted solutions.
 You get a lot of variety, some clever, some clear, some long, some short. A whole mixture of ways of doing it.
@@ -93,16 +94,16 @@ values. CheckIO has a nice feature where solutions can be divided into different
 and uncategorised. I find that people on Codewars tend to favour the less readable (to me) solutions.</p>
 <p>I'll give you an example from CheckIO's &quot;Weak Point&quot; challenge. The aim was to calculate the sum of
 each column and row of a matrix and return the row, column with the lowest sum. The top clear answer is this:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">weak_point</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
-    <span class="n">row</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span><span class="nb">sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
-    <span class="n">col</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span><span class="nb">sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
-    <span class="k">return</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span>
+<div class="highlight"><pre><span></span><span class="hllk">def</span> <span class="hllnf">weak_point</span><span class="hllp">(</span><span class="hlln">matrix</span><span class="hllp">):</span>
+    <span class="hlln">n</span> <span class="hllo">=</span> <span class="hllnb">len</span><span class="hllp">(</span><span class="hlln">matrix</span><span class="hllp">)</span>
+    <span class="hlln">row</span> <span class="hllo">=</span> <span class="hllnb">min</span><span class="hllp">(</span><span class="hllnb">range</span><span class="hllp">(</span><span class="hlln">n</span><span class="hllp">),</span> <span class="hlln">key</span><span class="hllo">=</span><span class="hllk">lambda</span> <span class="hlln">r</span><span class="hllp">:</span><span class="hllnb">sum</span><span class="hllp">(</span><span class="hlln">matrix</span><span class="hllp">[</span><span class="hlln">r</span><span class="hllp">][</span><span class="hlln">c</span><span class="hllp">]</span> <span class="hllk">for</span> <span class="hlln">c</span> <span class="hllow">in</span> <span class="hllnb">range</span><span class="hllp">(</span><span class="hlln">n</span><span class="hllp">)))</span>
+    <span class="hlln">col</span> <span class="hllo">=</span> <span class="hllnb">min</span><span class="hllp">(</span><span class="hllnb">range</span><span class="hllp">(</span><span class="hlln">n</span><span class="hllp">),</span> <span class="hlln">key</span><span class="hllo">=</span><span class="hllk">lambda</span> <span class="hlln">c</span><span class="hllp">:</span><span class="hllnb">sum</span><span class="hllp">(</span><span class="hlln">matrix</span><span class="hllp">[</span><span class="hlln">r</span><span class="hllp">][</span><span class="hlln">c</span><span class="hllp">]</span> <span class="hllk">for</span> <span class="hlln">r</span> <span class="hllow">in</span> <span class="hllnb">range</span><span class="hllp">(</span><span class="hlln">n</span><span class="hllp">)))</span>
+    <span class="hllk">return</span> <span class="hlln">row</span><span class="hllp">,</span> <span class="hlln">col</span>
 </pre></div>
 <p>I like this. It's concise, makes use of some handy Python features and is readable. However, compare to this:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">weak_point</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
-    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">sum</span><span class="p">,</span> <span class="n">matrix</span><span class="p">),</span> <span class="nb">map</span><span class="p">(</span><span class="nb">sum</span><span class="p">,</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">matrix</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">rows</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">rows</span><span class="p">)),</span> <span class="n">cols</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">cols</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><span class="hllk">def</span> <span class="hllnf">weak_point</span><span class="hllp">(</span><span class="hlln">matrix</span><span class="hllp">):</span>
+    <span class="hlln">rows</span><span class="hllp">,</span> <span class="hlln">cols</span> <span class="hllo">=</span> <span class="hllnb">map</span><span class="hllp">(</span><span class="hllnb">sum</span><span class="hllp">,</span> <span class="hlln">matrix</span><span class="hllp">),</span> <span class="hllnb">map</span><span class="hllp">(</span><span class="hllnb">sum</span><span class="hllp">,</span> <span class="hllnb">zip</span><span class="hllp">(</span><span class="hllo">*</span><span class="hlln">matrix</span><span class="hllp">))</span>
+    <span class="hllk">return</span> <span class="hlln">rows</span><span class="hllo">.</span><span class="hlln">index</span><span class="hllp">(</span><span class="hllnb">min</span><span class="hllp">(</span><span class="hlln">rows</span><span class="hllp">)),</span> <span class="hlln">cols</span><span class="hllo">.</span><span class="hlln">index</span><span class="hllp">(</span><span class="hllnb">min</span><span class="hllp">(</span><span class="hlln">cols</span><span class="hllp">))</span>
 </pre></div>
 <p>This is the second most popular answer, and I would prefer this over the top one. To me this is more readable
 and easier to understand. There are fewer nested conditionals and statements, and it makes sense (assuming you

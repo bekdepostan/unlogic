@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Unlogic &mdash; vim clang autocompletion</title>
+		<meta charset="utf-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
+		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
+		<style type="text/css">
+			body.custom-background { background-color: #f5f5f5; }
+		</style>
+		<link rel="alternate" type="application/atom+xml"
+			title="Unlogic — Flux Atom"
+			href="/" /> 
+		<link rel ="alternate" type="application/rss+xml"
+			title="Unlogic — Flux RSS"
+			href="/feed.xml" /> 
+		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
+</head>
+
+<body class="home blog custom-background single-author" >
+	<div id="container">
+		<div id="header">
+				<h1 id="site-title"><a href="">Unlogic</a></h1>
+<h2 id="site-description">I've got a keyboard, a terminal, and a whole load of luck</h2>		</div><!-- /#banner -->
+		
+		<div id="menu">
+			<div class="menu-navigation-container">
+				<ul id="menu-navigation" class="menu">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/about.html">About</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/all-posts.html">All posts</a></li>
+
+				</ul>
+			</div> <!--/#menu-navigation-container-->
+		</div><!-- /#menu -->
+		
+		<div class="page-title">
+		</div>
+	
+		<div id="contents">
+
+<div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="/2012/07/13/vim-clang-autocompletion/">Fri 13 July 2012</a></div>
+			<div class="comments"><a href="/2012/07/13/vim-clang-autocompletion/#disqus_thread" title="Comment on vim clang autocompletion">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="/2012/07/13/vim-clang-autocompletion/" title="Permalink to vim clang autocompletion" rel="bookmark">vim clang autocompletion</a>
+		</h2>
+		<div class="entry-content">
+			<p>Code completion. Isn't it nice? Especially when you have a so many APIs that you can't always remember EVERY method, member or class name in it.</p>
+<p>Vim. Isn't it powerful? The ease and speed with which it allows you to edit your code and do your work is just lovely.</p>
+<p>But code completion in vim? Well yes. You can use ctags. Yes, you can make tag files for ALL your APIs and autocompletion works rather well. I did this and the Qt tags file is 1.7GB. So, urm yeah, that's not entirely awesome either. Plus it doesn't handle things like smart pointers, which you will no doubt come across at some stage.</p>
+<p>&lt;!--more--&gt;</p>
+<p>So come on down [clang_complete](<a class="reference external" href="https://github.com/Rip-Rip/clang_complete">https://github.com/Rip-Rip/clang_complete</a>). A little plugin for vim that uses <a class="reference external" href="http://clang.llvm.org/">clang</a> to resolve the necessary symbols. Plus it's reasonably easy to set up. All you need to do is follow the instructions that come with the plugin to install it. You will also need to install/build clang. For our purposes we will only need <tt class="docutils literal">libclang.so</tt> as we will be using the library to do the completion instead of the binary - this is also the faster way. In order to use the library you need to add two things to your <tt class="docutils literal">.vimrc</tt> file</p>
+<div class="highlight"><pre><span></span><span class="hllk">let</span> <span class="hllk">g</span>:clang_use_library <span class="hllp">=</span> <span class="hllm">1</span>
+<span class="hllk">let</span> <span class="hllk">g</span>:clang_library_path <span class="hllp">=</span> <span class="hlls2">&quot;/path/to/libclang&quot;</span>
+</pre></div>
+<p>The :code:<tt class="docutils literal"><span class="pre">/path/to/libclang`:code:`</span> is the path where libclang.so is located, not including the file name itself. Once you have set this up we should already see the autocomplete working when you start typing <span class="pre">`:code:`.`:code:`,</span> <span class="pre">`:code:`-&gt;`:code:`,</span> or <span class="pre">`:code:`::`:code:`</span> after a variable. But in order to specify the right paths to header files, we also need to make a <span class="pre">`:code:`.clang_complete`:code:`</span> file in our project's root directory. This includes the compiler's include flags like <span class="pre">`:code:`-I/path/to/boost`:code:`.</span> Luckily there's a handy tool that can generate this file from the current Makefile. It's located in <span class="pre">`:code:`~/.vim/bin`:code:`.</span> All you need to do is build your project by passing <span class="pre">`:code:`CXX='~/.vim/bin/cc_args.py</span> <span class="pre">g++'</span></tt> to the make command. For example:</p>
+<div class="highlight"><pre><span></span><span class="hllerr">make</span> <span class="hllnv">CXX</span><span class="hllo">=</span><span class="hlls1">&#39;~/.vim/bin/cc_args.py g++&#39;</span>
+</pre></div>
+<p>I should also mention that symbol resolution is scope dependant in case you see some weird completions. Enjoy.</p>
+<p>EDIT 17/11/2012 The :code:<tt class="docutils literal"><span class="pre">.clang_include`:code:`</span> file should actually be called <span class="pre">`:code:`.clang_complete</span></tt></p>
+
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post-->
+	<div id="comments">
+		<div id="respond">
+			<div id="disqus_thread"></div>
+	        <script type="text/javascript">
+	            var disqus_shortname = 'unlogic';
+	
+	            /* * * DON'T EDIT BELOW THIS LINE * * */
+	            (function() {
+	                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	            })();
+	        </script>
+	        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		</div><!-- #respond -->					
+</div><!-- #comments -->
+
+		</div>
+		
+		<div id="footer">
+			<p>Powered by <a href="http://getpelican.com">Pelican</a>, theme by <a href="http://bunnyman.info">tBunnyMan</a>.</p>
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>		</div><!-- /#footer -->
+	</div><!-- /#container -->
+	<div style="display:none"></div>
+</body>
+</html>

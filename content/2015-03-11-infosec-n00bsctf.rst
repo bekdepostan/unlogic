@@ -1,7 +1,6 @@
 Solving Infosec n00bsCTF
 ########################
 
-:title: Solving Infosec n00bsCTF
 :date: 2015-03-11T00
 :modified: 2015-03-13 21
 :tags:
@@ -465,7 +464,7 @@ be a clue.
 
 Please leave any comments with ideas on this. I'm a bit stumped.
 
-UPDATE: Turns out it's Atom 128 and you can use `this <http://crypo.in.ua/tools/eng_atom128c.php>`_
+UPDATE: Turns out it's Atom 128 adn you can use `this decoder <http://crypo.in.ua/tools/eng_atom128c.php>`_
 to decode it to :code:`infosec_flagis_rceatomized`
 
 Thanks to Anon and @fr1t3 for the info

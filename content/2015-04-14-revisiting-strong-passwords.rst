@@ -35,11 +35,11 @@ special characters we have the following available
 
 .. code::
 
-    Name | Content | Character Count
-    -----|---------|-----------------
-    lower | abcdefghijklmnopqrstuvwxyz | 26
-    upper | ABCDEFGHIJKLMNOPQRSTUVWXYZ | 26
-    digits | 0123456789 | 10
+    Name    | Content                           | Character Count
+    --------|-----------------------------------|-----------------
+    lower   | abcdefghijklmnopqrstuvwxyz        | 26
+    upper   | ABCDEFGHIJKLMNOPQRSTUVWXYZ        | 26
+    digits  | 0123456789                        | 10
     special | !"#$%&'()*+,-./:;<=>?@[\]^_{\|}~` | 32
 
 Let's assume that I have a list of password hashes from somewhere. I know
@@ -64,12 +64,12 @@ characters
 
 .. code::
 
-    Possible characters | Character count | Number of combinations
-    --------------------|-----------------|-----------------------
-    lower only | 26 | 308,915,776
-    upper and lower | 52 | 19,770,609,664
-    upper, lower, digits | 62 | 56,800,235,584
-    upper, lower, digits, special | 94 | 689,869,781,056
+    Possible characters           | Character count | Number of combinations
+    ------------------------------|-----------------|-----------------------
+    lower only                    | 26              | 308,915,776
+    upper and lower               | 52              | 19,770,609,664
+    upper, lower, digits          | 62              | 56,800,235,584
+    upper, lower, digits, special | 94              | 689,869,781,056
 
 No rules ##
 -----------
@@ -78,7 +78,7 @@ Using any combination of characters the number of possible passwords is *689,869
 It would take *1943.29 seconds* (689,869,781,056 / 355,000,000) to crack this password. 
 That's just over half an hour.
 
-*Attack time* : 1943.29seconds
+*Attack time*: 1943.29seconds
 
 At least one upper case ##
 --------------------------
@@ -86,9 +86,9 @@ At least one upper case ##
 If we are forced to chose at least one upper case character, we are also saying that
 there are no passwords now with just lowercase characters. The number of possible
 combinations is now *689,869,781,056 - 308,915,776 = 689,560,865,280*, or *99%* of
-he original search space. This is a small impact of only 1 second.
+the original search space. This is a small impact of only 1 second.
 
-*Attack time* : 1942.42seconds
+*Attack time*: 1942.42seconds
 
 At least one upper case and one digit ##
 ----------------------------------------
@@ -99,7 +99,7 @@ Therefore we can also remove these from the list of possibilities. Our new numbe
 Now we're starting to see savings of up around 100seconds. In the grand scheme of things, 
 still not much
 
-*Attack time* : 1886.73seconds
+*Attack time*: 1886.73seconds
 
 Must contain all of the above ##
 --------------------------------
@@ -109,7 +109,7 @@ other possiblities for a grand total of:
 *689,869,781,056 - 308,915,776 - 19,770,609,664 - 56,800,235,584 = 612,990,020,032* or
 *88%* of the original. Now we've saved another 100 seconds.
 
-*Attack time* : 1726.73seconds
+*Attack time*: 1726.73seconds
 
 Conclusion ##
 -------------

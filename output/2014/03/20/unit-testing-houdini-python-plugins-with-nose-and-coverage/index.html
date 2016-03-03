@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
 		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
 		<style type="text/css">
 			body.custom-background { background-color: #f5f5f5; }
@@ -51,7 +52,7 @@
 		<div class="entry-content">
 			<p>We all know how important unit testing is, right? But often you wonder how can
 you test a not so straight forward tool. In this case we're talking about a
-Python script intended to run inside <a class="reference external" href="http://sidefx.com">Houdini</a> . In my specific
+Python script intended to run inside <a class="reference external" href="http://sidefx.com">Houdini</a>. In my specific
 case the python script is launched from a script on a node when the user clicks
 a button on the OTL. I want to run unit tests on this script, but the problem is
 that the script parses a set of nodes and does various things according to the
@@ -68,17 +69,17 @@ this to the same directory as my test script.</p>
 sure they work.</p>
 <p>Now that we have all our dependencies installed, we need to import all the
 modules we need and set some things up.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nose</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../path_of_module&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="hllkn">import</span> <span class="hllnn">nose</span>
+<span class="hllkn">import</span> <span class="hllnn">sys</span>
+<span class="hlln">sys</span><span class="hllo">.</span><span class="hlln">path</span><span class="hllo">.</span><span class="hlln">insert</span><span class="hllp">(</span><span class="hllmi">0</span><span class="hllp">,</span> <span class="hlls1">&#39;../path_of_module&#39;</span><span class="hllp">)</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NOSE_WITH_COVERAGE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NOSE_COVER_PACKAGE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;module_to_test&#39;</span>
+<span class="hllkn">import</span> <span class="hllnn">os</span>
+<span class="hlln">os</span><span class="hllo">.</span><span class="hlln">environ</span><span class="hllp">[</span><span class="hlls1">&#39;NOSE_WITH_COVERAGE&#39;</span><span class="hllp">]</span> <span class="hllo">=</span> <span class="hlls1">&#39;1&#39;</span>
+<span class="hlln">os</span><span class="hllo">.</span><span class="hlln">environ</span><span class="hllp">[</span><span class="hlls1">&#39;NOSE_COVER_PACKAGE&#39;</span><span class="hllp">]</span> <span class="hllo">=</span> <span class="hlls1">&#39;module_to_test&#39;</span>
 
-<span class="kn">import</span> <span class="nn">hou</span>
+<span class="hllkn">import</span> <span class="hllnn">hou</span>
 
-<span class="kn">import</span> <span class="nn">module_to_test</span>
+<span class="hllkn">import</span> <span class="hllnn">module_to_test</span>
 </pre></div>
 <p>We import the <code>nose</code> module and then we need to tell nose to make use of the
 coverage package. <code>os.environ['NOSE_WITH_COVERAGE'] = '1'</code> does just that, and
@@ -89,24 +90,32 @@ separate them with commas: <code>os.environ['NOSE_COVER_PACKAGE'] = 'module_to_t
 There's a small bug in older versions, so depending on your distro you may need to
 make the following change to
 <code>nose/plugins/cover.py</code></p>
-<p>Change these lines</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pkgs</span> <span class="ow">in</span> <span class="p">[</span><span class="n">tolist</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">cover_packages</span><span class="p">]:</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">coverPackages</span><span class="o">.</span><span class="n">extends</span><span class="p">(</span><span class="n">pkgs</span><span class="p">)</span>
-</pre></div>
-<p>to these lines</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pkgs</span> <span class="ow">in</span> <span class="n">tolist</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">cover_packages</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">coverPackages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pkgs</span><span class="p">)</span>
-</pre></div>
+<p>Change these lines
+.. code-block:: python</p>
+<blockquote>
+<dl class="docutils">
+<dt>for pkgs in [tolist(x) for x in options.cover_packages]:</dt>
+<dd>self.coverPackages.extends(pkgs)</dd>
+</dl>
+</blockquote>
+<p>to these lines
+.. code-block:: python</p>
+<blockquote>
+<dl class="docutils">
+<dt>for pkgs in tolist(options.cover_packages):</dt>
+<dd>self.coverPackages.append(pkgs)</dd>
+</dl>
+</blockquote>
 <p>Otherwise the <code>NOSE_COVER_PACKAGE</code> variable won't work properly.</p>
 <p>I also setup the <code>sys.path</code> so that I load my local module rather
 than the globally installed one. Depending on how your directories are laid out
 you might not need this.</p>
 <p>After this we need to import the <code>hou</code> module and finally the module(s) we want to test.</p>
 <p>Then we write our main function which will load our hip file and start our tests</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">hou</span><span class="o">.</span><span class="n">hipFile</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/path/to/test.hip&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="hllk">if</span> <span class="hlln">__name__</span> <span class="hllo">==</span> <span class="hlls1">&#39;__main__&#39;</span><span class="hllp">:</span>
+    <span class="hlln">hou</span><span class="hllo">.</span><span class="hlln">hipFile</span><span class="hllo">.</span><span class="hlln">load</span><span class="hllp">(</span><span class="hlls1">&#39;/path/to/test.hip&#39;</span><span class="hllp">)</span>
 
-    <span class="n">nose</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="n">__file__</span><span class="p">],</span> <span class="s1">&#39;--cover_html&#39;</span><span class="p">])</span>
+    <span class="hlln">nose</span><span class="hllo">.</span><span class="hlln">run</span><span class="hllp">(</span><span class="hlln">argv</span><span class="hllo">=</span><span class="hllp">[</span><span class="hlln">__file__</span><span class="hllp">],</span> <span class="hlls1">&#39;--cover_html&#39;</span><span class="hllp">])</span>
 </pre></div>
 <p>As you can see, you can pass the commandline argments for nose into the run function.
 With <code>--cover_html</code> we automatically generate the html coverage information. You
@@ -114,10 +123,10 @@ could omit this and run <code>coverage html</code> after the tests complete to g
 html coverage pages instead. The output from the two methods is slightly different,
 so pick the one that you prefer.</p>
 <p>The next bits are up to you now, here you write your tests following a format like</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_afunction</span><span class="p">():</span>
-    <span class="n">node</span> <span class="o">=</span> <span class="n">hou</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;/obj/geo/box1&#39;</span><span class="p">)</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">module_to_test</span><span class="o">.</span><span class="n">do_stuff</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="hllk">def</span> <span class="hllnf">test_afunction</span><span class="hllp">():</span>
+    <span class="hlln">node</span> <span class="hllo">=</span> <span class="hlln">hou</span><span class="hllo">.</span><span class="hlln">node</span><span class="hllp">(</span><span class="hlls1">&#39;/obj/geo/box1&#39;</span><span class="hllp">)</span>
+    <span class="hlln">result</span> <span class="hllo">=</span> <span class="hlln">module_to_test</span><span class="hllo">.</span><span class="hlln">do_stuff</span><span class="hllp">(</span><span class="hlln">node</span><span class="hllp">)</span>
+    <span class="hllk">assert</span> <span class="hllp">(</span><span class="hlln">result</span> <span class="hllo">==</span> <span class="hllmi">4</span><span class="hllp">)</span>
 </pre></div>
 <p>You can access any and all <code>hou.</code> calls from your tests, so do what you must.</p>
 <p>Once you are happy with your tests, or you just want to go ahead and test a single
@@ -131,12 +140,12 @@ look a little like this</p>
 <div class="highlight"><pre><span></span>...
 Name          Stmts   Miss  Cover   Missing
 -------------------------------------------
-module_to_test  <span class="m">25</span>     <span class="m">14</span>    44%   1-2, 6, 9, 12-15, 21, 27-32
-another_module  <span class="m">314</span>    <span class="m">173</span>    45%   4-20, 24, 37-38, 46
+module_to_test  <span class="hllm">25</span>     <span class="hllm">14</span>    44%   1-2, 6, 9, 12-15, 21, 27-32
+another_module  <span class="hllm">314</span>    <span class="hllm">173</span>    45%   4-20, 24, 37-38, 46
 -------------------------------------------
-TOTAL           <span class="m">339</span>    <span class="m">187</span>    45%
+TOTAL           <span class="hllm">339</span>    <span class="hllm">187</span>    45%
 ----------------------------------------------------------------------
-Ran <span class="m">3</span> tests in 0.053s
+Ran <span class="hllm">3</span> tests in 0.053s
 
 OK
 </pre></div>
@@ -150,34 +159,32 @@ up to get everything to work right. There will still be some limitations as to w
 you can test and get results for, but any testing is always better than none at
 all I say.</p>
 <p>And the <code>test.py</code> file as a whole</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nose</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../path_of_module&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="hllkn">import</span> <span class="hllnn">nose</span>
+<span class="hllkn">import</span> <span class="hllnn">sys</span>
+<span class="hlln">sys</span><span class="hllo">.</span><span class="hlln">path</span><span class="hllo">.</span><span class="hlln">insert</span><span class="hllp">(</span><span class="hllmi">0</span><span class="hllp">,</span> <span class="hlls1">&#39;../path_of_module&#39;</span><span class="hllp">)</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NOSE_WITH_COVERAGE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NOSE_COVER_PACKAGE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;module_to_test&#39;</span>
+<span class="hllkn">import</span> <span class="hllnn">os</span>
+<span class="hlln">os</span><span class="hllo">.</span><span class="hlln">environ</span><span class="hllp">[</span><span class="hlls1">&#39;NOSE_WITH_COVERAGE&#39;</span><span class="hllp">]</span> <span class="hllo">=</span> <span class="hlls1">&#39;1&#39;</span>
+<span class="hlln">os</span><span class="hllo">.</span><span class="hlln">environ</span><span class="hllp">[</span><span class="hlls1">&#39;NOSE_COVER_PACKAGE&#39;</span><span class="hllp">]</span> <span class="hllo">=</span> <span class="hlls1">&#39;module_to_test&#39;</span>
 
-<span class="kn">import</span> <span class="nn">hou</span>
+<span class="hllkn">import</span> <span class="hllnn">hou</span>
 
-<span class="kn">import</span> <span class="nn">module_to_test</span>
-
-
-<span class="k">def</span> <span class="nf">test_afunction</span><span class="p">():</span>
-    <span class="n">node</span> <span class="o">=</span> <span class="n">hou</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;/obj/geo/box1&#39;</span><span class="p">)</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">module_to_test</span><span class="o">.</span><span class="n">do_stuff</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
+<span class="hllkn">import</span> <span class="hllnn">module_to_test</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">hou</span><span class="o">.</span><span class="n">hipFile</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/path/to/test.hip&#39;</span><span class="p">)</span>
+<span class="hllk">def</span> <span class="hllnf">test_afunction</span><span class="hllp">():</span>
+    <span class="hlln">node</span> <span class="hllo">=</span> <span class="hlln">hou</span><span class="hllo">.</span><span class="hlln">node</span><span class="hllp">(</span><span class="hlls1">&#39;/obj/geo/box1&#39;</span><span class="hllp">)</span>
+    <span class="hlln">result</span> <span class="hllo">=</span> <span class="hlln">module_to_test</span><span class="hllo">.</span><span class="hlln">do_stuff</span><span class="hllp">(</span><span class="hlln">node</span><span class="hllp">)</span>
+    <span class="hllk">assert</span> <span class="hllp">(</span><span class="hlln">result</span> <span class="hllo">==</span> <span class="hllmi">4</span><span class="hllp">)</span>
 
-    <span class="n">nose</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="n">__file__</span><span class="p">],</span> <span class="s1">&#39;--cover_html&#39;</span><span class="p">])</span>
+
+<span class="hllk">if</span> <span class="hlln">__name__</span> <span class="hllo">==</span> <span class="hlls1">&#39;__main__&#39;</span><span class="hllp">:</span>
+    <span class="hlln">hou</span><span class="hllo">.</span><span class="hlln">hipFile</span><span class="hllo">.</span><span class="hlln">load</span><span class="hllp">(</span><span class="hlls1">&#39;/path/to/test.hip&#39;</span><span class="hllp">)</span>
+
+    <span class="hlln">nose</span><span class="hllo">.</span><span class="hlln">run</span><span class="hllp">(</span><span class="hlln">argv</span><span class="hllo">=</span><span class="hllp">[</span><span class="hlln">__file__</span><span class="hllp">],</span> <span class="hlls1">&#39;--cover_html&#39;</span><span class="hllp">])</span>
 </pre></div>
 
 		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="/tag/houdini.html" rel="tag">houdini</a>,  <a href="/tag/programming.html" rel="tag">programming</a>,  <a href="/tag/python.html" rel="tag">python</a>    		</span>
 	</div> <!--/#main-->
 </div>  <!--/#post-->
 	<div id="comments">

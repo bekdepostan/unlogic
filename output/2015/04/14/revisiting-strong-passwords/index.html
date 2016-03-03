@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
 		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
 		<style type="text/css">
 			body.custom-background { background-color: #f5f5f5; }
@@ -70,11 +71,11 @@ size of the search space large will help.</p>
 <p>So using the commonly used english alphabet with digits and
 special characters we have the following available</p>
 <pre class="code literal-block">
-Name | Content | Character Count
------|---------|-----------------
-lower | abcdefghijklmnopqrstuvwxyz | 26
-upper | ABCDEFGHIJKLMNOPQRSTUVWXYZ | 26
-digits | 0123456789 | 10
+Name    | Content                           | Character Count
+--------|-----------------------------------|-----------------
+lower   | abcdefghijklmnopqrstuvwxyz        | 26
+upper   | ABCDEFGHIJKLMNOPQRSTUVWXYZ        | 26
+digits  | 0123456789                        | 10
 special | !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?&#64;[\]^_{\|}~` | 32
 </pre>
 <p>Let's assume that I have a list of password hashes from somewhere. I know
@@ -95,27 +96,27 @@ Usually an attack stops when a valid match is found, shortening the attack.</li>
 <p>For reference, these are the number of possible combinations for each set of
 characters</p>
 <pre class="code literal-block">
-Possible characters | Character count | Number of combinations
---------------------|-----------------|-----------------------
-lower only | 26 | 308,915,776
-upper and lower | 52 | 19,770,609,664
-upper, lower, digits | 62 | 56,800,235,584
-upper, lower, digits, special | 94 | 689,869,781,056
+Possible characters           | Character count | Number of combinations
+------------------------------|-----------------|-----------------------
+lower only                    | 26              | 308,915,776
+upper and lower               | 52              | 19,770,609,664
+upper, lower, digits          | 62              | 56,800,235,584
+upper, lower, digits, special | 94              | 689,869,781,056
 </pre>
 <div class="section" id="no-rules">
 <h2>No rules ##</h2>
 <p>Using any combination of characters the number of possible passwords is <em>689,869,781,056</em>.
 It would take <em>1943.29 seconds</em> (689,869,781,056 / 355,000,000) to crack this password.
 That's just over half an hour.</p>
-<p><em>Attack time</em> : 1943.29seconds</p>
+<p><em>Attack time</em>: 1943.29seconds</p>
 </div>
 <div class="section" id="at-least-one-upper-case">
 <h2>At least one upper case ##</h2>
 <p>If we are forced to chose at least one upper case character, we are also saying that
 there are no passwords now with just lowercase characters. The number of possible
 combinations is now <em>689,869,781,056 - 308,915,776 = 689,560,865,280</em>, or <em>99%</em> of
-he original search space. This is a small impact of only 1 second.</p>
-<p><em>Attack time</em> : 1942.42seconds</p>
+the original search space. This is a small impact of only 1 second.</p>
+<p><em>Attack time</em>: 1942.42seconds</p>
 </div>
 <div class="section" id="at-least-one-upper-case-and-one-digit">
 <h2>At least one upper case and one digit ##</h2>
@@ -124,7 +125,7 @@ Therefore we can also remove these from the list of possibilities. Our new numbe
 <em>689,869,781,056 - 308,915,776 - 19,770,609,664 = 669,790,255,616</em> or <em>97%</em> of our search space.
 Now we're starting to see savings of up around 100seconds. In the grand scheme of things,
 still not much</p>
-<p><em>Attack time</em> : 1886.73seconds</p>
+<p><em>Attack time</em>: 1886.73seconds</p>
 </div>
 <div class="section" id="must-contain-all-of-the-above">
 <h2>Must contain all of the above ##</h2>
@@ -132,7 +133,7 @@ still not much</p>
 other possiblities for a grand total of:
 <em>689,869,781,056 - 308,915,776 - 19,770,609,664 - 56,800,235,584 = 612,990,020,032</em> or
 <em>88%</em> of the original. Now we've saved another 100 seconds.</p>
-<p><em>Attack time</em> : 1726.73seconds</p>
+<p><em>Attack time</em>: 1726.73seconds</p>
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion ##</h2>

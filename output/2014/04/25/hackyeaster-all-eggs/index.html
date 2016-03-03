@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" />
 		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
 		<style type="text/css">
 			body.custom-background { background-color: #f5f5f5; }
@@ -95,7 +96,7 @@ Two ways to approach this one too. Both achieve the same thing, that is to decod
 you want with a :code:<tt class="docutils literal">.png</tt> extension. Then click <strong>Convert</strong> and your image will download.</p>
 <p>Alternatively create a new HTML file and in the header add:</p>
 <div class="highlight"><pre><span></span>body {
-    background-image: url(&quot;data:image/png;base64,<span class="p">&lt;</span><span class="nt">base64</span> <span class="na">data</span> <span class="na">follows</span> <span class="na">here</span><span class="p">&gt;</span>&quot;);
+    background-image: url(&quot;data:image/png;base64,<span class="hllp">&lt;</span><span class="hllnt">base64</span> <span class="hllna">data</span> <span class="hllna">follows</span> <span class="hllna">here</span><span class="hllp">&gt;</span>&quot;);
 }
 </pre></div>
 <p>making sure you add the :code:<tt class="docutils literal">body</tt> tags. View the page in your browser and scan one of the eggs.</p>
@@ -261,7 +262,7 @@ the file, and then use your favourite image editor to combine the two halves.</p
 <div class="highlight"><pre><span></span>$&gt; netcat hackyeaster.hacking-lab.com 1234
 Enter your guess, dude:
 123456789
-I need <span class="m">20</span> digits, dude!
+I need <span class="hllm">20</span> digits, dude!
 </pre></div>
 <p>Ok, so not enough digits, let's try 20</p>
 <div class="highlight"><pre><span></span>$&gt; netcat hackyeaster.hacking-lab.com 1234
@@ -271,12 +272,12 @@ Enter your guess, dude:
 </pre></div>
 <p>Hrmm. What does that mean? Let's change the command a little to make reentering
 the numbers easier</p>
-<div class="highlight"><pre><span></span>$&gt; <span class="nb">echo</span> 12345678901234567890<span class="p">|</span> netcat hackyeaster.hacking-lab.com 1234
+<div class="highlight"><pre><span></span>$&gt; <span class="hllnb">echo</span> 12345678901234567890<span class="hllp">|</span> netcat hackyeaster.hacking-lab.com 1234
 Enter your guess, dude:
 0&lt;
 </pre></div>
 <p>Let's the edit the input from the first number.</p>
-<div class="highlight"><pre><span></span>$&gt; <span class="nb">echo</span> 22345678901234567890<span class="p">|</span> netcat hackyeaster.hacking-lab.com 1234
+<div class="highlight"><pre><span></span>$&gt; <span class="hllnb">echo</span> 22345678901234567890<span class="hllp">|</span> netcat hackyeaster.hacking-lab.com 1234
 Enter your guess, dude:
 1&lt;
 </pre></div>

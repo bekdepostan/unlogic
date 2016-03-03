@@ -20,6 +20,8 @@ HEADER_COVER = 'images/keyboard-feature.jpg'
 ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 
+PYGMENTS_RST_OPTIONS = {'classprefix': 'hll'}
+
 DISQUS_SITENAME = 'unlogic'
 #GITHUB_HANDLE = 'svenito'
 #TWITTER_HANDLE = 'binaryheadache'
