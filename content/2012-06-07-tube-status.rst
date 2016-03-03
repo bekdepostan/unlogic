@@ -14,19 +14,21 @@ Last night I was affected by "severe delays on the Central line" caused by a bur
 
 So here's what I've come up with 
 
-<!--more-->
-
 A CLI app that checks the tube status for any number of given lines. "Yeah, how does that help?" I hear you ask. "You still have to use it to check it" you say. True. But there's another way to use it: Conky.
 
 I use `Conky <http://conky.sourceforge.net/>`_ and I love it. So what better than to have the tube status for the relevant lines **always** on my desktop and updating every few seconds? So I quickly put together this python script to accomplish the task:
 
-{% gist 2888187 %}
+.. raw:: html
+
+    <script src="https://gist.github.com/Svenito/2888187.js"></script>
 
 And it looks like this:
 
-.. image:: "center /images/content/conky.png"
+.. image:: /images/conky.png
 
 
-To add it to Conky just edit the ``.conkyrc`` file and add a line like so: ``$alignr${execi 2 /path/to/tube.py central -s}`` where *central* is the name(s)  of the line(s) (separate multiple lines with spaces) you want to get statuses for. The full list of lines is `here <http://tubeupdates.com/documentation/>`_. The -s simply tells the script to supress the output of the full message and shows only the line name and short status.
+To add it to Conky just edit the :code:`.conkyrc` file and add a line like so: 
+:code:`$alignr${execi 2 /path/to/tube.py central -s}` where *central* is the name(s)
+of the line(s) (separate multiple lines with spaces) you want to get statuses for. The full list of lines is `here <http://tubeupdates.com/documentation/>`_. The -s simply tells the script to supress the output of the full message and shows only the line name and short status.
 
 It'd be good to know if you find it useful or if you have any suggestions for it.

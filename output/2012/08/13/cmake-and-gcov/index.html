@@ -51,7 +51,7 @@
 		</h2>
 		<div class="entry-content">
 			<p>Recently I setup a project that uses CMake as its build tool and <a class="reference external" href="https://code.google.com/p/googletest/">googletest</a> as a unit test framework. As is common place I wanted to make sure that my tests cover as much of the code as possible, so I went and grabbed the trusty gcov/lcov to analyse the tests only to find it wasn't as easy as I expected. I should mention this is the first time I have used CMake aswell as googletest. Granted, googletest is fairly simple and doesn't really complicate things when it comes to getting code coverage. I just had to figure out how we get CMake to build the test runner properly and then how to invoke lcov correctly. Turns out this was fairly easy too, once you ironed out some of the trickier bits and learned a little more about CMake.</p>
-<p>In the :code:<tt class="docutils literal">CMakeLists.txt</tt> file for your test suite you need to add the following (I've omitted some lines that aren't relevant to this article):</p>
+<p>In the <code>CMakeLists.txt</code> file for your test suite you need to add the following (I've omitted some lines that aren't relevant to this article):</p>
 <pre class="code cmake literal-block">
 <span class="nb">SET</span><span class="p">(</span><span class="s">PROJECT_TEST_NAME</span> <span class="o">${</span><span class="nv">PROJECT_NAME_STR</span><span class="o">}</span><span class="s">_test</span><span class="p">)</span>
 
@@ -65,7 +65,7 @@
 
 <span class="nb">target_link_libraries</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_TEST_NAME</span><span class="o">}</span> <span class="s2">&quot;gtest_main&quot;</span> <span class="s2">&quot;gtest&quot;</span> <span class="s2">&quot;pthread&quot;</span><span class="p">)</span>
 </pre>
-<p>We need to make sure a debug build is on (:code:<tt class="docutils literal"><span class="pre">-g`:code:`),</span> that we build without optimisation <span class="pre">(`:code:`-O0`:code:`),</span> and enable profiling <span class="pre">(`:code:`-fprofile-arcs</span> <span class="pre">-ftest-coverage`:code:`).</span> On the link phase we need to link against the google unit test libraries and pthread. Once you have sucessfully built your unit test you can then use lcov to generate the coverage results. Although you'll soon notice that it might not work. CMake places its files into different directories than you'd expect from make or other build systems. So here's what I did to get this to work. Assuming you have a <span class="pre">`:code:`tests`:code:`</span> directory in your build, where your tests are and the test runner binary is built into, you have to run the following from that directory <span class="pre">(`:code:`${PROJECTDIR}/build/tests</span></tt>):</p>
+<p>We need to make sure a debug build is on (<code>-g</code>), that we build without optimisation (<code>-O0</code>), and enable profiling (<code>-fprofile-arcs -ftest-coverage</code>). On the link phase we need to link against the google unit test libraries and pthread. Once you have sucessfully built your unit test you can then use lcov to generate the coverage results. Although you'll soon notice that it might not work. CMake places its files into different directories than you'd expect from make or other build systems. So here's what I did to get this to work. Assuming you have a <cite>:code:`tests</cite>:code:` directory in your build, where your tests are and the test runner binary is built into, you have to run the following from that directory (<code>${PROJECTDIR}/build/tests</code>):</p>
 <pre class="code bash literal-block">
 $ lcov --zerocounters --directory .
 $ lcov --capture --initial --directory . --output-file app
@@ -76,7 +76,7 @@ $ lcov --no-checksum --directory . --capture --output-file app.info
 $ genthml app.info
 </pre>
 <p>Now you can point your browser to that directory and you will have the nice html view of your coverage data.</p>
-<p><em>Note</em>: sometimes I got an error from the second to last line saying it could not find any gcno files. In this case I just ran the test runner again and then ran the last two lines from above again.</p>
+<p><strong>Note</strong>: sometimes I got an error from the second to last line saying it could not find any gcno files. In this case I just ran the test runner again and then ran the last two lines from above again.</p>
 <p>Hope this helps you out in case you have the same issue as me.</p>
 
 		</div> <!--/#entry-content-->
