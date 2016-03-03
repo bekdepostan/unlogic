@@ -34,7 +34,7 @@ Half way there. Next we find w2 and h2 in a similar way
 
 Now all we need to do is add h1 and h2 together to get h’ and w1 to w1 to get w’. In code that is
 
-.. code-block:: c
+.. code:: c
 
 	    float h_dash = h*fabs(cos(alpha)) + w*fabs(sin(alpha));
 	    float w_dash = w*fabs(cos(alpha)) + h*fabs(sin(alpha));

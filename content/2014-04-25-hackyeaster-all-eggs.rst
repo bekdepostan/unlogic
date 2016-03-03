@@ -67,7 +67,7 @@ you want with a :code:``.png`` extension. Then click **Convert** and your image 
 
 Alternatively create a new HTML file and in the header add:
 
-.. code-block:: html
+.. code:: html
 
 	
 	body {
@@ -198,7 +198,7 @@ it was the text **XHV R* TYNEAP**. Given it's a computer text I bet the plain te
 
 In order to decipher the text and get the possible keyword we need to setup something like this:
 
-.. code-block:: text
+.. code:: text
 
 	
 	-----------------------------------------------------
@@ -214,7 +214,7 @@ the key (or part of it). In order to get the key we reverse the lookup into the
 vignere table. Look for the expected plaintext letter in the top row and go down 
 until you find the matching cipher letter. Then look across to find the key's letter.
 
-.. code-block:: text
+.. code:: text
 
 	
 	-----------------------------------------------------
@@ -228,7 +228,7 @@ until you find the matching cipher letter. Then look across to find the key's le
 We're getting something here, specifically **BUNNYI**. The **THE** looks like a wrong guess. Let's try
 another possible 3 letter word:
 
-.. code-block:: text
+.. code:: text
 
 	
 	-------------
@@ -277,7 +277,7 @@ Egg 0x11 - Number Cracker #
 
 We're told what to do, so let's do that
 
-.. code-block:: bash
+.. code:: bash
 
 	
 	$> netcat hackyeaster.hacking-lab.com 1234
@@ -287,7 +287,7 @@ We're told what to do, so let's do that
 
 Ok, so not enough digits, let's try 20
 
-.. code-block:: bash
+.. code:: bash
 
 	
 	$> netcat hackyeaster.hacking-lab.com 1234
@@ -298,7 +298,7 @@ Ok, so not enough digits, let's try 20
 Hrmm. What does that mean? Let's change the command a little to make reentering 
 the numbers easier
 
-.. code-block:: bash
+.. code:: bash
 
 	
 	$> echo 12345678901234567890| netcat hackyeaster.hacking-lab.com 1234
@@ -307,7 +307,7 @@ the numbers easier
 
 Let's the edit the input from the first number.
 
-.. code-block:: bash
+.. code:: bash
 
 	
 	$> echo 22345678901234567890| netcat hackyeaster.hacking-lab.com 1234
@@ -418,7 +418,7 @@ Each components is an index into one part. The letters tell you the line, the *i
 
 I ended up with this (forgive the crap ASCII table. I'll see about getting a nicer one):
 
-.. code-block:: text
+.. code:: text
 
 	
 	-----------------------------------------

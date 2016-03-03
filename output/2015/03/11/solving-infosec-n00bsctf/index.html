@@ -61,11 +61,12 @@ I manage to solve some of the others.</p>
 <img alt="" src="&quot;http://i.imgur.com/ebnLRwp.png&quot;" />
 <p>May the source be with you, eh? Sounds to me like someone wants us to look at the
 page source. Right click, select :code:<tt class="docutils literal">view page source</tt> and...</p>
-<div class="highlight"><pre><span></span><span class="hllc">&lt;!-- infosec_flagis_welcome --&gt;</span>
-<span class="hllcp">&lt;!DOCTYPE html&gt;</span>
-<span class="hllp">&lt;</span><span class="hllnt">html</span> <span class="hllna">lang</span><span class="hllo">=</span><span class="hlls">&quot;en&quot;</span><span class="hllp">&gt;</span>
-  <span class="hllp">&lt;</span><span class="hllnt">head</span><span class="hllp">&gt;</span>
-</pre></div>
+<pre class="code html literal-block">
+<span class="c">&lt;!-- infosec_flagis_welcome --&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre>
 <p>And there it is, right at the top.</p>
 <blockquote>
 infosec_flagis_welcome</blockquote>
@@ -129,8 +130,9 @@ infosec_flag_welovecookies</blockquote>
 <p>A pesky popup saying I'm a hacker? What an accusation. Well, let's top it from
 popping up and get ourselves a script blocker to see what else there might be.
 Once done, we examine the source and see it's loading an image too.</p>
-<div class="highlight"><pre><span></span><span class="hllp">&lt;</span><span class="hllnt">img</span> <span class="hllna">src</span><span class="hllo">=</span><span class="hlls">&quot;img/aliens.jpg&quot;</span> <span class="hllp">/&gt;</span> <span class="hllp">&lt;</span><span class="hllnt">br</span> <span class="hllp">/&gt;</span> <span class="hllp">&lt;</span><span class="hllnt">br</span> <span class="hllp">/&gt;</span>
-</pre></div>
+<pre class="code html literal-block">
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;img/aliens.jpg&quot;</span> <span class="p">/&gt;</span> <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span> <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+</pre>
 <img alt="" src="&quot;http://i.imgur.com/JwFtmSw.png&quot;" />
 <p>Let's load up that image, or even better, let's just browse to <code>http://ctf.infosecinstitute.com/img/</code>
 (Since writing directory listing has been disabled for this path).
@@ -170,14 +172,15 @@ Perhaps there's something else to look at too?</p>
 You can either fire up a proxy like <a class="reference external" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">ZAP</a>
 or use a request inspection plugin for Firefox like <a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/httprequester/">httpRequester</a>.</p>
 <p>So let's send off a GET request for :code:<tt class="docutils literal">levelseven.php</tt> and see what we get back.</p>
-<div class="highlight"><pre><span></span>HTTP/1.0 200 aW5mb3NlY19mbGFnaXNfeW91Zm91bmRpdA==
+<pre class="code html literal-block">
+HTTP/1.0 200 aW5mb3NlY19mbGFnaXNfeW91Zm91bmRpdA==
 Date: Thu, 12 Mar 2015 09:26:48 GMT
 Server: Apache/2.4.7 (Ubuntu)
 X-Powered-By: PHP/5.5.9-1ubuntu4.6
 Content-Length: 0
 Connection: close
 Content-Type: text/html
-</pre></div>
+</pre>
 <p>Heh, very nice. We have a 200 response with, what is clearly a base64 encoded string.
 Copypasta that into a decoder and let's see what we get:</p>
 <blockquote>
@@ -193,52 +196,56 @@ just shows you what your current connections are. It takes no arguments, so ther
 not anyway to attack this thing with overflows. And this being a n00bs level CTF, it's
 unlikely we'll be thrown this kind of exploit development.
 So the other thing we can do is check its strings.</p>
-<div class="highlight"><pre><span></span><span class="hllgo">strings app.exe</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="go">strings app.exe</span>
+</pre>
 <p>Sure enough, there's :code:<tt class="docutils literal">infosec_flagis_0x1a</tt>. At first I was reluctant to go with this, as
 it's a bit too simple, so I looked a bit further. I dumped the source with :code:<tt class="docutils literal">objdump</tt></p>
-<div class="highlight"><pre><span></span><span class="hllgo">objdump -s app.exe | less</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="go">objdump -s app.exe | less</span>
+</pre>
 <p>And I found :code:<tt class="docutils literal"><span class="pre">infosec_flagis_0x1a`:code:`</span> in it. It sits at <span class="pre">`:code:`0x403000</span></tt>, so let's run this
 through :code:<tt class="docutils literal">gdb</tt> too.</p>
-<div class="highlight"><pre><span></span><span class="hllgp">$</span>&gt; gdb app.exe
-<span class="hllgo">gdb$ disass main</span>
-<span class="hllgo">Dump of assembler code for function main:</span>
-<span class="hllgo">   0x00401290 &lt;+0&gt;:     push   %ebp</span>
-<span class="hllgo">   0x00401291 &lt;+1&gt;:     mov    %esp,%ebp</span>
-<span class="hllgo">   0x00401293 &lt;+3&gt;:     sub    $0x18,%esp</span>
-<span class="hllgo">   0x00401296 &lt;+6&gt;:     and    $0xfffffff0,%esp</span>
-<span class="hllgo">   0x00401299 &lt;+9&gt;:     mov    $0x0,%eax</span>
-<span class="hllgo">   0x0040129e &lt;+14&gt;:    add    $0xf,%eax</span>
-<span class="hllgo">   0x004012a1 &lt;+17&gt;:    add    $0xf,%eax</span>
-<span class="hllgo">   0x004012a4 &lt;+20&gt;:    shr    $0x4,%eax</span>
-<span class="hllgo">   0x004012a7 &lt;+23&gt;:    shl    $0x4,%eax</span>
-<span class="hllgo">   0x004012aa &lt;+26&gt;:    mov    %eax,-0x8(%ebp)</span>
-<span class="hllgo">   0x004012ad &lt;+29&gt;:    mov    -0x8(%ebp),%eax</span>
-<span class="hllgo">   0x004012b0 &lt;+32&gt;:    call   0x401740 &lt;_alloca&gt;</span>
-<span class="hllgo">   0x004012b5 &lt;+37&gt;:    call   0x4013e0 &lt;__main&gt;</span>
-<span class="hllgo">   0x004012ba &lt;+42&gt;:    mov    $0x403000,%eax       &lt;------ aha oho</span>
-<span class="hllgo">   0x004012bf &lt;+47&gt;:    mov    %al,-0x1(%ebp)</span>
-<span class="hllgo">   0x004012c2 &lt;+50&gt;:    movl   $0x403014,(%esp)</span>
-<span class="hllgo">   0x004012c9 &lt;+57&gt;:    call   0x401850 &lt;printf&gt;</span>
-<span class="hllgo">   0x004012ce &lt;+62&gt;:    movl   $0x403044,(%esp)</span>
-<span class="hllgo">   0x004012d5 &lt;+69&gt;:    call   0x401850 &lt;printf&gt;</span>
-<span class="hllgo">   0x004012da &lt;+74&gt;:    movl   $0x403014,(%esp)</span>
-<span class="hllgo">   0x004012e1 &lt;+81&gt;:    call   0x401850 &lt;printf&gt;</span>
-<span class="hllgo">   0x004012e6 &lt;+86&gt;:    movl   $0x403072,(%esp)</span>
-<span class="hllgo">   0x004012ed &lt;+93&gt;:    call   0x401840 &lt;system&gt;</span>
-<span class="hllgo">   0x004012f2 &lt;+98&gt;:    call   0x4017c0 &lt;getch&gt;</span>
-<span class="hllgo">   0x004012f7 &lt;+103&gt;:   mov    $0x0,%eax</span>
-<span class="hllgo">   0x004012fc &lt;+108&gt;:   leave</span>
-<span class="hllgo">   0x004012fd &lt;+109&gt;:   ret</span>
-<span class="hllgo">   0x004012fe &lt;+110&gt;:   nop</span>
-<span class="hllgo">   0x004012ff &lt;+111&gt;:   nop</span>
-<span class="hllgo">End of assembler dump</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="gp">$</span>&gt; gdb app.exe
+<span class="go">gdb$ disass main
+Dump of assembler code for function main:
+   0x00401290 &lt;+0&gt;:     push   %ebp
+   0x00401291 &lt;+1&gt;:     mov    %esp,%ebp
+   0x00401293 &lt;+3&gt;:     sub    $0x18,%esp
+   0x00401296 &lt;+6&gt;:     and    $0xfffffff0,%esp
+   0x00401299 &lt;+9&gt;:     mov    $0x0,%eax
+   0x0040129e &lt;+14&gt;:    add    $0xf,%eax
+   0x004012a1 &lt;+17&gt;:    add    $0xf,%eax
+   0x004012a4 &lt;+20&gt;:    shr    $0x4,%eax
+   0x004012a7 &lt;+23&gt;:    shl    $0x4,%eax
+   0x004012aa &lt;+26&gt;:    mov    %eax,-0x8(%ebp)
+   0x004012ad &lt;+29&gt;:    mov    -0x8(%ebp),%eax
+   0x004012b0 &lt;+32&gt;:    call   0x401740 &lt;_alloca&gt;
+   0x004012b5 &lt;+37&gt;:    call   0x4013e0 &lt;__main&gt;
+   0x004012ba &lt;+42&gt;:    mov    $0x403000,%eax       &lt;------ aha oho
+   0x004012bf &lt;+47&gt;:    mov    %al,-0x1(%ebp)
+   0x004012c2 &lt;+50&gt;:    movl   $0x403014,(%esp)
+   0x004012c9 &lt;+57&gt;:    call   0x401850 &lt;printf&gt;
+   0x004012ce &lt;+62&gt;:    movl   $0x403044,(%esp)
+   0x004012d5 &lt;+69&gt;:    call   0x401850 &lt;printf&gt;
+   0x004012da &lt;+74&gt;:    movl   $0x403014,(%esp)
+   0x004012e1 &lt;+81&gt;:    call   0x401850 &lt;printf&gt;
+   0x004012e6 &lt;+86&gt;:    movl   $0x403072,(%esp)
+   0x004012ed &lt;+93&gt;:    call   0x401840 &lt;system&gt;
+   0x004012f2 &lt;+98&gt;:    call   0x4017c0 &lt;getch&gt;
+   0x004012f7 &lt;+103&gt;:   mov    $0x0,%eax
+   0x004012fc &lt;+108&gt;:   leave
+   0x004012fd &lt;+109&gt;:   ret
+   0x004012fe &lt;+110&gt;:   nop
+   0x004012ff &lt;+111&gt;:   nop
+End of assembler dump</span>
+</pre>
 <p>There we see a fimilar address. Checking its contents</p>
-<div class="highlight"><pre><span></span><span class="hllgo">gdb$ x/s 0x403000</span>
-<span class="hllgo">0x403000:        &quot;infosec_flagis_0x1a&quot;</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="go">gdb$ x/s 0x403000
+0x403000:        &quot;infosec_flagis_0x1a&quot;</span>
+</pre>
 <p>There's nothing that would indicate that this string changes, so for now, I'm
 going to say the flag is:</p>
 <blockquote>
@@ -253,9 +260,10 @@ infosec_flagis_0x1a</blockquote>
 Attacked it with SQL injections, nothing. Then I had a brainwave. Because I already had level15,
 I could just look at the :code:<tt class="docutils literal"><span class="pre">levelnine.php`:code:`</span> file. So I did. Issue <span class="pre">`:code:`test.com</span> &amp;&amp; cat <span class="pre">../levelnine.php</span></tt>
 and at the end we see what happens if we get the flag:</p>
-<div class="highlight"><pre><span></span><span class="hllnx">alert</span><span class="hllp">(</span><span class="hlls1">&#39;ssaptluafed_sigalf_cesofni&#39;</span><span class="hllp">)</span><span class="hllerr">&quot;</span><span class="hllp">;</span>
-    <span class="hllp">}</span>
-</pre></div>
+<pre class="code javascript literal-block">
+<span class="nx">alert</span><span class="p">(</span><span class="s1">'ssaptluafed_sigalf_cesofni'</span><span class="p">)</span><span class="err">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre>
 <p>It's the flag reversed, so let's flip it to get:</p>
 <blockquote>
 infosec_flagis_defaultpass</blockquote>
@@ -265,7 +273,7 @@ get the popup. :code:<tt class="docutils literal"><span class="pre">tac`:code:`<
 The reason this works is because it will encounter the javascript pop up code before
 the conditional that checks the input.</p>
 <p>It also prints out the username and password for us:
-.. code-block:: php</p>
+.. code:: php</p>
 <blockquote>
 <dl class="docutils">
 <dt>?&gt; } echo &quot;&quot;; if ($username == 'root' and $password == 'attack') {</dt>
@@ -322,10 +330,11 @@ It would make sense given the clue we've been given.</p>
 <p>To cut a long story short, there's a css file :code:<tt class="docutils literal">design.css</tt> that's not included
 in the other pages. I know this because I've pretty much looked at the source for each
 level. Force of habit. Anyway, let's take a look at it:</p>
-<div class="highlight"><pre><span></span><span class="hllnc">.thisloveis</span><span class="hllp">{</span>
-        <span class="hllnb">color</span><span class="hllo">:</span> <span class="hllm">#696e666</span><span class="hlln">f7365635f666c616769735f686579696d6e6f7461636f6c6f72</span><span class="hllp">;</span>
-<span class="hllp">}</span>
-</pre></div>
+<pre class="code css literal-block">
+<span class="nc">.thisloveis</span><span class="p">{</span>
+        <span class="nb">color</span><span class="o">:</span> <span class="m">#696e666</span><span class="n">f7365635f666c616769735f686579696d6e6f7461636f6c6f72</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
 <p>Aha, that's not a valid colour is it? It's also not base64. Looks like hex values
 to me. Run it through a hex to text converter and.....</p>
 <blockquote>

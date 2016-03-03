@@ -56,12 +56,13 @@
 <li>True if the first value is 43 and the new value is 58 . (crosses 50)</li>
 </ul>
 <p>You get the idea. So how do we best do it. With some thinking it's actually quite easy as you just base the decision off of the number of multiples each number is of 25:</p>
-<div class="highlight"><pre><span></span><span class="hlln">prev_multiple</span> <span class="hllo">=</span> <span class="hlln">t</span><span class="hllp">[</span><span class="hllmi">1</span><span class="hllp">]</span> <span class="hllo">/</span> <span class="hllmi">25</span><span class="hllp">;</span>
-<span class="hlln">new_multiple</span> <span class="hllo">=</span> <span class="hlln">new_percentage</span> <span class="hllo">/</span> <span class="hllmi">25</span><span class="hllp">;</span>
+<pre class="code python literal-block">
+<span class="n">prev_multiple</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">25</span><span class="p">;</span>
+<span class="n">new_multiple</span> <span class="o">=</span> <span class="n">new_percentage</span> <span class="o">/</span> <span class="mi">25</span><span class="p">;</span>
 
-<span class="hllk">if</span> <span class="hllp">(</span><span class="hlln">new_multiple</span> <span class="hllo">&gt;</span> <span class="hlln">prev_multiple</span><span class="hllp">):</span>
-    <span class="hllk">print</span> <span class="hlls2">&quot;Crossed&quot;</span>
-</pre></div>
+<span class="k">if</span> <span class="p">(</span><span class="n">new_multiple</span> <span class="o">&gt;</span> <span class="n">prev_multiple</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s2">&quot;Crossed&quot;</span>
+</pre>
 <p>Nice and simple :)</p>
 
 		</div> <!--/#entry-content-->

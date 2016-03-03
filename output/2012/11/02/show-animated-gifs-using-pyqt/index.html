@@ -55,13 +55,14 @@
 <p>I'll give you the code now:</p>
 <p>{% gist 4000025 %}</p>
 <p>The code should be fairly easy to follow, so I won't spend much time here going over it. If you want to call this from a :code:<tt class="docutils literal">__main__</tt> function you simply do:</p>
-<div class="highlight"><pre><span></span><span class="hllk">if</span> <span class="hlln">__name__</span> <span class="hllo">==</span> <span class="hlls2">&quot;__main__&quot;</span><span class="hllp">:</span>
-    <span class="hlln">gif</span> <span class="hllo">=</span> <span class="hlls2">&quot;/path/to/image.gif&quot;</span>
-    <span class="hlln">app</span> <span class="hllo">=</span> <span class="hlln">QApplication</span><span class="hllp">(</span><span class="hlln">sys</span><span class="hllo">.</span><span class="hlln">argv</span><span class="hllp">)</span>
-    <span class="hlln">player</span> <span class="hllo">=</span> <span class="hlln">ImagePlayer</span><span class="hllp">(</span><span class="hlln">gif</span><span class="hllp">)</span>
-    <span class="hlln">player</span><span class="hllo">.</span><span class="hlln">show</span><span class="hllp">()</span>
-    <span class="hlln">sys</span><span class="hllo">.</span><span class="hlln">exit</span><span class="hllp">(</span><span class="hlln">app</span><span class="hllo">.</span><span class="hlln">exec_</span><span class="hllp">())</span>
-</pre></div>
+<pre class="code python literal-block">
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">gif</span> <span class="o">=</span> <span class="s2">&quot;/path/to/image.gif&quot;</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">player</span> <span class="o">=</span> <span class="n">ImagePlayer</span><span class="p">(</span><span class="n">gif</span><span class="p">)</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">())</span>
+</pre>
 
 		</div> <!--/#entry-content-->
 	</div> <!--/#main-->

@@ -95,10 +95,11 @@ Two ways to approach this one too. Both achieve the same thing, that is to decod
 . Simply paste the text into the field, select <strong>decode</strong> then <strong>export to a binary file</strong> and put whatever filename
 you want with a :code:<tt class="docutils literal">.png</tt> extension. Then click <strong>Convert</strong> and your image will download.</p>
 <p>Alternatively create a new HTML file and in the header add:</p>
-<div class="highlight"><pre><span></span>body {
-    background-image: url(&quot;data:image/png;base64,<span class="hllp">&lt;</span><span class="hllnt">base64</span> <span class="hllna">data</span> <span class="hllna">follows</span> <span class="hllna">here</span><span class="hllp">&gt;</span>&quot;);
+<pre class="code html literal-block">
+body {
+    background-image: url(&quot;data:image/png;base64,<span class="p">&lt;</span><span class="nt">base64</span> <span class="na">data</span> <span class="na">follows</span> <span class="na">here</span><span class="p">&gt;</span>&quot;);
 }
-</pre></div>
+</pre>
 <p>making sure you add the :code:<tt class="docutils literal">body</tt> tags. View the page in your browser and scan one of the eggs.</p>
 </div>
 <div class="section" id="egg-0x05-pet-shop">
@@ -199,36 +200,39 @@ and plain text for us. I used <a class="reference external" href="http://gurno.c
 text. So let's start analysing the text for something we might be able to identify. For me
 it was the text <strong>XHV R* TYNEAP</strong>. Given it's a computer text I bet the plain text is <strong>the A* search</strong>.</p>
 <p>In order to decipher the text and get the possible keyword we need to setup something like this:</p>
-<div class="highlight"><pre><span></span>-----------------------------------------------------
+<pre class="code text literal-block">
+-----------------------------------------------------
 | T | H | E |   | A | * |   | S | E | A | R | C | H |
 -----------------------------------------------------
 | X | H | V |   | R | * |   | T | Y | N | E | A | P |
 =====================================================
 |   |   |   |   |   |   |   |   |   |   |   |   |   |
 -----------------------------------------------------
-</pre></div>
+</pre>
 <p>The top row is the plain text we expect, the second row is the cipher text and the bottom row
 the key (or part of it). In order to get the key we reverse the lookup into the
 vignere table. Look for the expected plaintext letter in the top row and go down
 until you find the matching cipher letter. Then look across to find the key's letter.</p>
-<div class="highlight"><pre><span></span>-----------------------------------------------------
+<pre class="code text literal-block">
+-----------------------------------------------------
 | T | H | E |   | A | * |   | S | E | A | R | C | H |
 -----------------------------------------------------
 | X | H | V |   | R | * |   | T | Y | N | E | A | P |
 =====================================================
 | E | A | R |   | R | * |   | B | U | N | N | Y | I |
 -----------------------------------------------------
-</pre></div>
+</pre>
 <p>We're getting something here, specifically <strong>BUNNYI</strong>. The <strong>THE</strong> looks like a wrong guess. Let's try
 another possible 3 letter word:</p>
-<div class="highlight"><pre><span></span>-------------
+<pre class="code text literal-block">
+-------------
 | F | O | R |
 -------------
 | X | H | V |
 =============
 | S | T | E |
 -------------
-</pre></div>
+</pre>
 <p>This gives us <strong>EASTERBUNNY</strong> - <strong>much</strong> more likely to be correct. So let's copy out the text from the pdf
 into a text file, modify the vigen script to open that instead and just enter what we have so far. One thing
 you have to do is either modify the vigen script to skip non alpha chars, or remove them from the source text.</p>
@@ -259,28 +263,32 @@ the file, and then use your favourite image editor to combine the two halves.</p
 <div class="section" id="egg-0x11-number-cracker">
 <h2>Egg 0x11 - Number Cracker #</h2>
 <p>We're told what to do, so let's do that</p>
-<div class="highlight"><pre><span></span>$&gt; netcat hackyeaster.hacking-lab.com 1234
+<pre class="code bash literal-block">
+$&gt; netcat hackyeaster.hacking-lab.com 1234
 Enter your guess, dude:
 123456789
-I need <span class="hllm">20</span> digits, dude!
-</pre></div>
+I need <span class="m">20</span> digits, dude!
+</pre>
 <p>Ok, so not enough digits, let's try 20</p>
-<div class="highlight"><pre><span></span>$&gt; netcat hackyeaster.hacking-lab.com 1234
+<pre class="code bash literal-block">
+$&gt; netcat hackyeaster.hacking-lab.com 1234
 Enter your guess, dude:
 12345678901234567890
 0&lt;
-</pre></div>
+</pre>
 <p>Hrmm. What does that mean? Let's change the command a little to make reentering
 the numbers easier</p>
-<div class="highlight"><pre><span></span>$&gt; <span class="hllnb">echo</span> 12345678901234567890<span class="hllp">|</span> netcat hackyeaster.hacking-lab.com 1234
+<pre class="code bash literal-block">
+$&gt; <span class="nb">echo</span> 12345678901234567890<span class="p">|</span> netcat hackyeaster.hacking-lab.com 1234
 Enter your guess, dude:
 0&lt;
-</pre></div>
+</pre>
 <p>Let's the edit the input from the first number.</p>
-<div class="highlight"><pre><span></span>$&gt; <span class="hllnb">echo</span> 22345678901234567890<span class="hllp">|</span> netcat hackyeaster.hacking-lab.com 1234
+<pre class="code bash literal-block">
+$&gt; <span class="nb">echo</span> 22345678901234567890<span class="p">|</span> netcat hackyeaster.hacking-lab.com 1234
 Enter your guess, dude:
 1&lt;
-</pre></div>
+</pre>
 <p>Ahhh so it seems that the first digit tells us how many numbers are correct
 from the start of the number. The <em>&lt;</em> tells us we're lower than we need to be.</p>
 <p>So you have a choice, script it, or, if you are lazy like me, go through it
@@ -368,7 +376,8 @@ Then I realised that those bits of information have 27 permutations, enough to c
 <p>So that's the first group, then the next bits of the alphabet go into a second 3x3 group and finally the last letters.
 Each components is an index into one part. The letters tell you the line, the <em>i</em>'s tell you the chunk and the number the column.</p>
 <p>I ended up with this (forgive the crap ASCII table. I'll see about getting a nicer one):</p>
-<div class="highlight"><pre><span></span>-----------------------------------------
+<pre class="code text literal-block">
+-----------------------------------------
 ||    i      ||     ii    ||     iii   ||
 -----------------------------------------
 || 1 | 2 | 3 || 1 | 2 | 3 || 1 | 2 | 3 ||
@@ -379,7 +388,7 @@ Each components is an index into one part. The letters tell you the line, the <e
 -----------------------------------------
 || G | H | I || P | Q | R || Y | Z |   ||
 -----------------------------------------
-</pre></div>
+</pre>
 <p>So <em>Dii2</em> translates to :code:<tt class="docutils literal">n</tt>. Use the table to get the full text</p>
 </div>
 

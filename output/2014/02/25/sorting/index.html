@@ -53,11 +53,12 @@
 			<p>A very quick post about sorting a list of objects in python. Suppose you have a
 list of same objects and you wish to sort them based on one of these attributes, perhaps
 a return value from a method. There's a really nice way to do it in place:</p>
-<div class="highlight"><pre><span></span><span class="hllk">if</span> <span class="hlln">sort_by</span> <span class="hllo">==</span> <span class="hlls1">&#39;name&#39;</span><span class="hllp">:</span>
-    <span class="hlln">people</span><span class="hllo">.</span><span class="hlln">sort</span><span class="hllp">(</span><span class="hlln">key</span><span class="hllo">=</span><span class="hllk">lambda</span> <span class="hlln">x</span><span class="hllp">:</span> <span class="hllnb">str</span><span class="hllp">(</span><span class="hlln">x</span><span class="hllo">.</span><span class="hlln">get_name</span><span class="hllp">()),</span> <span class="hlln">reverse</span><span class="hllo">=</span><span class="hlln">reverse</span><span class="hllp">)</span>
-<span class="hllk">elif</span> <span class="hlln">sort_by</span> <span class="hllo">==</span> <span class="hlls1">&#39;age&#39;</span><span class="hllp">:</span>
-    <span class="hlln">people</span><span class="hllo">.</span><span class="hlln">sort</span><span class="hllp">(</span><span class="hlln">key</span><span class="hllo">=</span><span class="hllk">lambda</span> <span class="hlln">x</span><span class="hllp">:</span> <span class="hlln">x</span><span class="hllo">.</span><span class="hlln">get_age</span><span class="hllp">(),</span> <span class="hlln">reverse</span><span class="hllo">=</span><span class="hlln">reverse</span><span class="hllp">)</span>
-</pre></div>
+<pre class="code python literal-block">
+<span class="k">if</span> <span class="n">sort_by</span> <span class="o">==</span> <span class="s1">'name'</span><span class="p">:</span>
+    <span class="n">people</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">get_name</span><span class="p">()),</span> <span class="n">reverse</span><span class="o">=</span><span class="n">reverse</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">sort_by</span> <span class="o">==</span> <span class="s1">'age'</span><span class="p">:</span>
+    <span class="n">people</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get_age</span><span class="p">(),</span> <span class="n">reverse</span><span class="o">=</span><span class="n">reverse</span><span class="p">)</span>
+</pre>
 <p>As you can see I wrapped the :code:<tt class="docutils literal">`get_name:code:`</tt> call in a :code:<tt class="docutils literal"><span class="pre">`str():code:`</span></tt> because
 in this case it was returning something else. I didn't have control over the
 code for the user class.</p>

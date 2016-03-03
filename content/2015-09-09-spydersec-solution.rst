@@ -17,7 +17,7 @@ So let me start it up and get on it.
 As per usual I need the IP of the machine and
 the services it has running (if any). Straight from the Unlogic Cookbook
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:~/Downloads# nmap -sn 192.168.56.0/24
 	
@@ -60,7 +60,7 @@ And there's clue number one, right between those script tags. It evals a functio
 do some text processing. I'll open Firebug to see if that shows anything interesting, and sure
 enough
 
-.. code-block:: javascript
+.. code:: javascript
 
 	SyntaxError: missing ; before statement
 	    61:6c:65:72:74:28:27:6d:75:6c:64:65:72:2e:66:62:69:27:29:3b
@@ -78,7 +78,7 @@ Ok then, apart from that there's nothing of interest in the source, so let me mo
 There's two images: :code:`Challenge.png` and :code:`SpyderSecLogo200.png`. On first glance they appear to
 have nothing special about them, but once examined with :code:`exiftool` I see something of interest
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:~/spydersec# exiftool Challenge.png 
 	ExifTool Version Number         : 9.74
@@ -124,7 +124,7 @@ me just plug some of the data we've found so far into it. The random characters 
 exif data result in a 404, but the string from the javascript alert box however brings up a 
 download dialog for a file called :code:`mulder.fbi`.
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:~/spydersec# wget http://192.168.56.101//v/81JHPbvyEQ8729161jd6aKQ0N4/mulder.fbi
 	--2015-09-09 17:24:38--  http://192.168.56.101//v/81JHPbvyEQ8729161jd6aKQ0N4/mulder.fbi
@@ -157,7 +157,7 @@ So I ask myself, why is a video of a song named *mulder.fbi*? So I do a little r
 and after searching for :code:`the platters "twilight time" x files` I hit this section in a 
 `Wikipedia article <https://en.wikipedia.org/wiki/Kill_Switch_(The_X-Files)>`_
 
-.. code-block:: text
+.. code:: text
 
 	When he puts it into the car stereo, it plays "Twilight Time" 
 	by The Platters. However, the agents take it to the Lone Gunmen, 
@@ -174,7 +174,7 @@ Sure enough, there's a volume in the video, but it needs a password. Well there'
 one unused piece of the puzzle left. I plug that in and there's our volume with the :code:`flag.txt` file
 which contains:
 
-.. code-block:: text
+.. code:: text
 
 	Congratulations! 
 	

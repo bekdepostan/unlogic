@@ -33,7 +33,7 @@ go that way, there's the info.
 Then turn off password authentication for SSH as I'll be using only keys to 
 authenticate. Edit :code:`/etc/ssh/sshd_conf` and change the following lines to read:
 
-.. code-block:: console
+.. code:: console
 
 	ChallengeResponseAuthentication no
 	PasswordAuthentication no
@@ -46,7 +46,7 @@ server to :code:`700` and :code:`600` respectively.
 I also changed the default SSH port to something else, as that already keeps the number of automated 
 bruteforcers down. Do this by changing the following line in :code:`/etc/ssh/sshd_config`
 
-.. code-block:: console
+.. code:: console
 
 	Port 22
 
@@ -60,7 +60,7 @@ Otherwise you'll end up blocking your current connection and... yeah, ok, I made
 
 Then allow what you need and default to dropping the rest. It's all in the URL above, but to re-iterate:
 
-.. code-block:: console
+.. code:: console
 
 	# Accept connections on port 22
 	iptables -A INPUT -p tcp --syn --destination-port 22 -j ACCEPT
@@ -79,7 +79,7 @@ for a knock, simply concatenate the command with :code:`&&`. You can even make o
 a port for a given time. As we have our *keep established connections* rule in :code:`iptables` we 
 can do
 
-.. code-block:: console
+.. code:: console
 
 	[opencloseSSH]
 	        sequence      = 2222:udp,3333:tcp,4444:udp

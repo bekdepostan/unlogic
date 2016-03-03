@@ -30,7 +30,7 @@ sure they work.
 Now that we have all our dependencies installed, we need to import all the 
 modules we need and set some things up.
 
-.. code-block:: python
+.. code:: python
 
 	
 	import nose
@@ -58,13 +58,13 @@ make the following change to
 :code:`nose/plugins/cover.py`
 
 Change these lines
-.. code-block:: python
+.. code:: python
 
 	for pkgs in [tolist(x) for x in options.cover_packages]:
 	    self.coverPackages.extends(pkgs)
 
 to these lines
-.. code-block:: python
+.. code:: python
 
 	for pkgs in tolist(options.cover_packages):
 	    self.coverPackages.append(pkgs)
@@ -79,7 +79,7 @@ After this we need to import the :code:`hou` module and finally the module(s) we
 
 Then we write our main function which will load our hip file and start our tests
 
-.. code-block:: python
+.. code:: python
 
 	
 	if __name__ == '__main__':
@@ -96,7 +96,7 @@ so pick the one that you prefer.
 
 The next bits are up to you now, here you write your tests following a format like
 
-.. code-block:: python
+.. code:: python
 
 	
 	def test_afunction():
@@ -111,7 +111,7 @@ Once you are happy with your tests, or you just want to go ahead and test a sing
 one, we need to run the tests through hython. Bear in mind that you'll consume a
 batch license when you run these tests.
 
-.. code-block:: bash
+.. code:: bash
 
 	
 	hython ./test.py
@@ -121,7 +121,7 @@ where :code:`test.py` is the name of the file that contains the tests you wrote.
 After a while you'll see your tests run and the coverage output. It should
 look a little like this
 
-.. code-block:: bash
+.. code:: bash
 
 	
 	...
@@ -150,7 +150,7 @@ all I say.
 
 And the :code:`test.py` file as a whole
 
-.. code-block:: python
+.. code:: python
 
 	import nose
 	import sys

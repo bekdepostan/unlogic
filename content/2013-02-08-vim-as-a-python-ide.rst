@@ -31,13 +31,13 @@ of nice extras, like installing the bundles itself from their Github repos (and 
 For more info see the README in the Github repo. To install follow the instructions from the repo, 
 which are repeated below:
 
-.. code-block:: bash
+.. code:: bash
 
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 thenadd the following to your :code:``.vimrc``
 
-.. code-block:: vim
+.. code:: vim
 
 	set nocompatible
 	filetype off
@@ -57,7 +57,7 @@ thenadd the following to your :code:``.vimrc``
 
 Now if you launch Vim and run the command
 
-.. code-block:: vim
+.. code:: vim
 
 	:BundleList
 
@@ -76,7 +76,7 @@ chars. 80 chars is usually the standard, but with modern displays we can allow o
 but you are free to adjust as you like. To enable this excess highlighting, add the following lines
 to your :code:``.vimrc``
 
-.. code-block:: vim
+.. code:: vim
 
 	augroup vimrc_autocmds
 	    autocmd!
@@ -102,14 +102,14 @@ useful information.
 
 Simply add:
 
-.. code-block:: vim
+.. code:: vim
 
 	Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 to your :code:``.vimrc`:code:` below the comment we added earlier `:code:`" The bundles you install will be listed here``. Restart Vim
 and run :code:``:BundleList`` again. Now you should also see the Powerline bundle listed there. To install it run the command
 
-.. code-block:: vim
+.. code:: vim
 
 	:BundleInstall
 
@@ -121,7 +121,7 @@ font isn't listed then the powerline repo does provide a font-patcher you can us
 is done however is outside the scope of this article. To select your font and ensure that Powerline is always shown,
 you will also need to add these two lines to your :code:``.vimrc``
 
-.. code-block:: vim
+.. code:: vim
 
 	" Powerline setup
 	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
@@ -134,7 +134,7 @@ Restart vim and hopefully you'll see your powerline appear at the bottom of you 
 Please note that this version of Powerline is a Python based version and thus requires your Vim to  be built
 with Python enabled. To check if it is run:
 
-.. code-block:: bash
+.. code:: bash
 
 	$> vim --version | grep -i python
 
@@ -153,7 +153,7 @@ conflict resolution, blame and the like. There's a whole set of screencasts on h
 
 To install Fugitive, add its bundle to Vundle:
 
-.. code-block:: vim
+.. code:: vim
 
 	Bundle 'tpope/vim-fugitive'
 
@@ -171,13 +171,13 @@ It looks somewhat like this:
 
 As usual you just need to add its package to Vundle:
 
-.. code-block:: vim
+.. code:: vim
 
 	Bundle 'scrooloose/nerdtree'
 
 and :code:``:BundleInstall`:code:` once you restart Vim. To activate with `:code:`F2`:code:` add the following to `:code:`.vimrc``:
 
-.. code-block:: vim
+.. code:: vim
 
 	map <F2> :NERDTreeToggle<CR>
     
@@ -193,7 +193,7 @@ codecompletion, documentation lookup, jump to classes, refactoring tools etc. Yo
 
 Its bundle is:
 
-.. code-block:: vim
+.. code:: vim
 
 	Bundle 'klen/python-mode'
 
@@ -206,7 +206,7 @@ I found the following settings most useful personally, but you might want to twe
 and workflow. The following a copy-paste from my .vimrc. The keyboard shortcuts in the comments are the ones I find
 most useful and I keep them there for reference:
 
-.. code-block:: vim
+.. code:: vim
 
 	" Python-mode
 	" Activate rope
@@ -273,7 +273,7 @@ Other settings #
 
 I also use some specific Vim settings in :code:``.vimrc`` that make the experience a bit nicer for me:
 
-.. code-block:: vim
+.. code:: vim
 
 	" Use <leader>l to toggle display of whitespace
 	nmap <leader>l :set list!<CR>

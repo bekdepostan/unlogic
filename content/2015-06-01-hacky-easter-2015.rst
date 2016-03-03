@@ -74,7 +74,7 @@ waited for the 5 second bar to fill up to collect my egg.
 Challenge 06 #
 ==============
 
-.. code-block:: console
+.. code:: console
 
 	dah-dah-dit dit dah-dah-dah di-dah-dit dah-dah-dit dit dah-dah dah-di-dah-dit di-di-dah-dit di-dah-di-dit dah-di-dah-dah
 
@@ -234,7 +234,7 @@ that's the :code:`chaining` part, as well as indicating we should used :code:`MC
 
 This PHP script ended up doing the work for me
 
-.. code-block:: php
+.. code:: php
 
 	<?php
 	$hash1 = base64_decode('d5++xytj6RiGwmqEecm63Kow7RZGAAHh');
@@ -247,7 +247,7 @@ This PHP script ended up doing the work for me
 
 Running it:
 
-.. code-block:: console
+.. code:: console
 
 	$> php ./gost.php | base64 -d
 	http://hackyeaster.hacking-lab.com/hackyeaster/images/egg_16_a3eIIACKSy02sJ6LxXeh.png
@@ -306,7 +306,7 @@ Challenge 20 #
 The big clue here is robots. Why do we love robots? :code:`robots.txt` is why. Taking a
 look at it I can see
 
-.. code-block:: html
+.. code:: html
 
 	User-agent: EasterBot
 	Disallow: /
@@ -319,7 +319,7 @@ Visiting the url :code:`/hackyeaster/bots/bots.html` takes me to the CP30 Wiki p
 to spoof my user agent to be :code:`EasterBot` and I get a different result. An image 
 with the following text
 
-.. code-block:: text
+.. code:: text
 
 	BAMA WABOKI PISAL FATATU FOMU WOSEBI SEJU SOWU SEJU - BAMAS MUFE WAFUB FOMU MOWEWE
 
@@ -327,7 +327,7 @@ Hrmm. I tried to decipher this many ways before I gave up and Googled it. It tur
 out this is actually `ROILA <http://roila.org/language-guide/vocabulary/>`_ and
 comes with a nice dictionary. So I set about translating it and got:
 
-.. code-block:: text
+.. code:: text
 
 	you must make word of addition two and two - this be name of page
 
@@ -336,7 +336,7 @@ Right, so I add two and two to give four and I load up
 word :code:`MetAE`. Well meta can only mean I need to look at the page metadata. Viewing the source
 I see
 
-.. code-block:: html
+.. code:: html
 
 	<meta name="description" content="Robots talk in ROILA language: eman egap eht esrever tsum">
 	<meta name="keywords" content="secret, page, robots, fun, hacky easter, blrt, five, beep">
@@ -352,7 +352,7 @@ green :code:`101`. Basically the binary represents the RGB values inverted. Appl
 I wrote a script to translate the colours to a binary string and then conver that to ASCII
 which gave me the egg's URL.
 
-.. code-block:: python
+.. code:: python
 
 	#!/bin/env python
 	from PIL import Image
@@ -395,7 +395,7 @@ hash 1
 A 16 digit pin takes a long time to bruteforce, but the hint tells me that the only
 numbers in the PIN are 1, 7, 9, and 0.
 
-.. code-block:: text
+.. code:: text
 
 	hashcat -m100 -1 1790 --pw-min=16 --pw-max=16 -a3 hash1.txt ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1
 
@@ -420,7 +420,7 @@ list of words that had one substitution and one upper case letter. Only the
 punctuation and digit missing now. For this step I wrote a python script
 that would generate the required rule table:
 
-.. code-block:: python
+.. code:: python
 
 	puncs = '! @ # $ % ^ & * ( ) _ + { } [ ] : ; . , / ? ~ `'.split()
 	nums = '1 2 3 4 5 6 7 8 9 0'.split()
@@ -450,7 +450,7 @@ Here I needed to run hashcat's combinator attack a few times on the word list.
 What this does is append each word of a wordlist to every other word. 
 Running this a few times will give me the list I need:
 
-.. code-block:: text
+.. code:: text
 
 	hashcat -a1 wordlist.txt --stdout > pass1.txt
 	hashcat -a1 -m1400 hash4.txt pass1.txt
@@ -474,7 +474,7 @@ I plumped for option 2 and hoped there wouldn't be too many quips to harvest. Ha
 played against the bot a few times I managed to get myself the list of comebacks and
 wrote a Python script to pwn the Nerd Master
 
-.. code-block:: python
+.. code:: python
 
 	
 	import socket
@@ -565,7 +565,7 @@ Challenge 24
 
 Hrm, this really isn't a secure hash at all. A Python script can do this
 
-.. code-block:: python
+.. code:: python
 
 	
 	from Crypto.Hash import MD2, MD5, SHA, SHA256, SHA512
@@ -676,7 +676,7 @@ So I reimplemented the Java code and bruteforced it. A few numbers matched,
 so I just entered them until I got a valid download:
 (disclaimer: I am not very good at Java at all)
 
-.. code-block:: java
+.. code:: java
 
 	
 	

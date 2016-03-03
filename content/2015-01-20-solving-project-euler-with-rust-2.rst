@@ -27,7 +27,7 @@ but the fibonacci sequence.
 As usual with these issues I assume we will need a recursive function to generate
 our fibonacci numbers:
 
-.. code-block:: rust
+.. code:: rust
 
 	fn fib(n: i32) -> i32{
 	    if n == 0 { 
@@ -45,7 +45,7 @@ as it is until I get some feedback on it. I wonder if a closure would be better?
 
 EDIT: From the comments below (thanks pf), this is a much more Rust like implementation IMO:
 
-.. code-block:: rust
+.. code:: rust
 
 	fn fib(n: i32) -> i32{
 	    match n {
@@ -61,7 +61,7 @@ to pass to the function in this case is 34.
 I would assume that in the *more correct* way of doing it, the limit is
 defined in a better way.
 
-.. code-block:: rust
+.. code:: rust
 
 	fn main() {
 	    let vals = (1..34).map(|x| fib(x));
@@ -69,7 +69,7 @@ defined in a better way.
 
 Thinking back to the previous example I already know about filter and sum.
 
-.. code-block:: rust
+.. code:: rust
 
 	fn main() {
 	    let vals = (1..34).map(|x| fib(x))
@@ -79,7 +79,7 @@ Thinking back to the previous example I already know about filter and sum.
 
 But there's a problem:
 
-.. code-block:: console
+.. code:: console
 
 	   Compiling euler_2 v0.0.1 (file:////work/sandbox/euler_rust/euler_2)
 	/work/sandbox/euler_rust/euler_2/src/main.rs:16:10: 16:15 error: type `core::iter::Filter<i32, core::iter::Map<i32, i32, core::ops::Range<i32>, closure[/work/sandbox/euler_rust/euler_2/src/main.rs:14:32: 14:42]>, closure[/work/sandbox/euler_rust/euler_2/src/main.rs:15:17: 15:31]>` does not implement any method in scope named `sum`
@@ -93,7 +93,7 @@ Seems like :code:`sum` won't work here due to the :code:`map`. Not to worry, I u
 before the helpful folks at `the rust subreddit <http://reddit.com/r/rust>`_ told me about `sum`,
 so let's use that instead, as that should work.
 
-.. code-block:: rust
+.. code:: rust
 
 	fn main() {
 	    let vals = (1..34).map(|x| fib(x))
@@ -108,7 +108,7 @@ top of the file. The Github file contains this fix.
 
 Let's run it:
 
-.. code-block:: console
+.. code:: console
 
 	cargo run
 	     Running `target/euler_2`
@@ -126,7 +126,7 @@ these) I have edited the code on Github to use an iterator instead of the recurs
 
 The code is now (main credit to /u/emk and others):
 
-.. code-block:: rust
+.. code:: rust
 
 	use std::iter::AdditiveIterator;
 	

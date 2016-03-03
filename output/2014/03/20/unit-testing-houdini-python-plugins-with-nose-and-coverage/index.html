@@ -69,18 +69,19 @@ this to the same directory as my test script.</p>
 sure they work.</p>
 <p>Now that we have all our dependencies installed, we need to import all the
 modules we need and set some things up.</p>
-<div class="highlight"><pre><span></span><span class="hllkn">import</span> <span class="hllnn">nose</span>
-<span class="hllkn">import</span> <span class="hllnn">sys</span>
-<span class="hlln">sys</span><span class="hllo">.</span><span class="hlln">path</span><span class="hllo">.</span><span class="hlln">insert</span><span class="hllp">(</span><span class="hllmi">0</span><span class="hllp">,</span> <span class="hlls1">&#39;../path_of_module&#39;</span><span class="hllp">)</span>
+<pre class="code python literal-block">
+<span class="kn">import</span> <span class="nn">nose</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'../path_of_module'</span><span class="p">)</span>
 
-<span class="hllkn">import</span> <span class="hllnn">os</span>
-<span class="hlln">os</span><span class="hllo">.</span><span class="hlln">environ</span><span class="hllp">[</span><span class="hlls1">&#39;NOSE_WITH_COVERAGE&#39;</span><span class="hllp">]</span> <span class="hllo">=</span> <span class="hlls1">&#39;1&#39;</span>
-<span class="hlln">os</span><span class="hllo">.</span><span class="hlln">environ</span><span class="hllp">[</span><span class="hlls1">&#39;NOSE_COVER_PACKAGE&#39;</span><span class="hllp">]</span> <span class="hllo">=</span> <span class="hlls1">&#39;module_to_test&#39;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'NOSE_WITH_COVERAGE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1'</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'NOSE_COVER_PACKAGE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'module_to_test'</span>
 
-<span class="hllkn">import</span> <span class="hllnn">hou</span>
+<span class="kn">import</span> <span class="nn">hou</span>
 
-<span class="hllkn">import</span> <span class="hllnn">module_to_test</span>
-</pre></div>
+<span class="kn">import</span> <span class="nn">module_to_test</span>
+</pre>
 <p>We import the <code>nose</code> module and then we need to tell nose to make use of the
 coverage package. <code>os.environ['NOSE_WITH_COVERAGE'] = '1'</code> does just that, and
 <code>os.environ['NOSE_COVER_PACKAGE'] = 'module_to_test'</code> restricts our test results to
@@ -91,7 +92,7 @@ There's a small bug in older versions, so depending on your distro you may need 
 make the following change to
 <code>nose/plugins/cover.py</code></p>
 <p>Change these lines
-.. code-block:: python</p>
+.. code:: python</p>
 <blockquote>
 <dl class="docutils">
 <dt>for pkgs in [tolist(x) for x in options.cover_packages]:</dt>
@@ -99,7 +100,7 @@ make the following change to
 </dl>
 </blockquote>
 <p>to these lines
-.. code-block:: python</p>
+.. code:: python</p>
 <blockquote>
 <dl class="docutils">
 <dt>for pkgs in tolist(options.cover_packages):</dt>
@@ -112,43 +113,47 @@ than the globally installed one. Depending on how your directories are laid out
 you might not need this.</p>
 <p>After this we need to import the <code>hou</code> module and finally the module(s) we want to test.</p>
 <p>Then we write our main function which will load our hip file and start our tests</p>
-<div class="highlight"><pre><span></span><span class="hllk">if</span> <span class="hlln">__name__</span> <span class="hllo">==</span> <span class="hlls1">&#39;__main__&#39;</span><span class="hllp">:</span>
-    <span class="hlln">hou</span><span class="hllo">.</span><span class="hlln">hipFile</span><span class="hllo">.</span><span class="hlln">load</span><span class="hllp">(</span><span class="hlls1">&#39;/path/to/test.hip&#39;</span><span class="hllp">)</span>
+<pre class="code python literal-block">
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">hou</span><span class="o">.</span><span class="n">hipFile</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">'/path/to/test.hip'</span><span class="p">)</span>
 
-    <span class="hlln">nose</span><span class="hllo">.</span><span class="hlln">run</span><span class="hllp">(</span><span class="hlln">argv</span><span class="hllo">=</span><span class="hllp">[</span><span class="hlln">__file__</span><span class="hllp">],</span> <span class="hlls1">&#39;--cover_html&#39;</span><span class="hllp">])</span>
-</pre></div>
+    <span class="n">nose</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="n">__file__</span><span class="p">],</span> <span class="s1">'--cover_html'</span><span class="p">])</span>
+</pre>
 <p>As you can see, you can pass the commandline argments for nose into the run function.
 With <code>--cover_html</code> we automatically generate the html coverage information. You
 could omit this and run <code>coverage html</code> after the tests complete to generate the
 html coverage pages instead. The output from the two methods is slightly different,
 so pick the one that you prefer.</p>
 <p>The next bits are up to you now, here you write your tests following a format like</p>
-<div class="highlight"><pre><span></span><span class="hllk">def</span> <span class="hllnf">test_afunction</span><span class="hllp">():</span>
-    <span class="hlln">node</span> <span class="hllo">=</span> <span class="hlln">hou</span><span class="hllo">.</span><span class="hlln">node</span><span class="hllp">(</span><span class="hlls1">&#39;/obj/geo/box1&#39;</span><span class="hllp">)</span>
-    <span class="hlln">result</span> <span class="hllo">=</span> <span class="hlln">module_to_test</span><span class="hllo">.</span><span class="hlln">do_stuff</span><span class="hllp">(</span><span class="hlln">node</span><span class="hllp">)</span>
-    <span class="hllk">assert</span> <span class="hllp">(</span><span class="hlln">result</span> <span class="hllo">==</span> <span class="hllmi">4</span><span class="hllp">)</span>
-</pre></div>
+<pre class="code python literal-block">
+<span class="k">def</span> <span class="nf">test_afunction</span><span class="p">():</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">hou</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'/obj/geo/box1'</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">module_to_test</span><span class="o">.</span><span class="n">do_stuff</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
+</pre>
 <p>You can access any and all <code>hou.</code> calls from your tests, so do what you must.</p>
 <p>Once you are happy with your tests, or you just want to go ahead and test a single
 one, we need to run the tests through hython. Bear in mind that you'll consume a
 batch license when you run these tests.</p>
-<div class="highlight"><pre><span></span>hython ./test.py
-</pre></div>
+<pre class="code bash literal-block">
+hython ./test.py
+</pre>
 <p>where <code>test.py</code> is the name of the file that contains the tests you wrote.
 After a while you'll see your tests run and the coverage output. It should
 look a little like this</p>
-<div class="highlight"><pre><span></span>...
+<pre class="code bash literal-block">
+...
 Name          Stmts   Miss  Cover   Missing
 -------------------------------------------
-module_to_test  <span class="hllm">25</span>     <span class="hllm">14</span>    44%   1-2, 6, 9, 12-15, 21, 27-32
-another_module  <span class="hllm">314</span>    <span class="hllm">173</span>    45%   4-20, 24, 37-38, 46
+module_to_test  <span class="m">25</span>     <span class="m">14</span>    44%   1-2, 6, 9, 12-15, 21, 27-32
+another_module  <span class="m">314</span>    <span class="m">173</span>    45%   4-20, 24, 37-38, 46
 -------------------------------------------
-TOTAL           <span class="hllm">339</span>    <span class="hllm">187</span>    45%
+TOTAL           <span class="m">339</span>    <span class="m">187</span>    45%
 ----------------------------------------------------------------------
-Ran <span class="hllm">3</span> tests in 0.053s
+Ran <span class="m">3</span> tests in 0.053s
 
 OK
-</pre></div>
+</pre>
 <p>You'll also have a directory called <code>cover</code> which will contain the html output,
 assuming you have the <code>--cover_html</code> flag on. If not, run <code>coverage html</code> and
 after a short wait you will have a <code>htmlcov</code> directory with the html coverage
@@ -159,30 +164,31 @@ up to get everything to work right. There will still be some limitations as to w
 you can test and get results for, but any testing is always better than none at
 all I say.</p>
 <p>And the <code>test.py</code> file as a whole</p>
-<div class="highlight"><pre><span></span><span class="hllkn">import</span> <span class="hllnn">nose</span>
-<span class="hllkn">import</span> <span class="hllnn">sys</span>
-<span class="hlln">sys</span><span class="hllo">.</span><span class="hlln">path</span><span class="hllo">.</span><span class="hlln">insert</span><span class="hllp">(</span><span class="hllmi">0</span><span class="hllp">,</span> <span class="hlls1">&#39;../path_of_module&#39;</span><span class="hllp">)</span>
+<pre class="code python literal-block">
+<span class="kn">import</span> <span class="nn">nose</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'../path_of_module'</span><span class="p">)</span>
 
-<span class="hllkn">import</span> <span class="hllnn">os</span>
-<span class="hlln">os</span><span class="hllo">.</span><span class="hlln">environ</span><span class="hllp">[</span><span class="hlls1">&#39;NOSE_WITH_COVERAGE&#39;</span><span class="hllp">]</span> <span class="hllo">=</span> <span class="hlls1">&#39;1&#39;</span>
-<span class="hlln">os</span><span class="hllo">.</span><span class="hlln">environ</span><span class="hllp">[</span><span class="hlls1">&#39;NOSE_COVER_PACKAGE&#39;</span><span class="hllp">]</span> <span class="hllo">=</span> <span class="hlls1">&#39;module_to_test&#39;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'NOSE_WITH_COVERAGE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1'</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'NOSE_COVER_PACKAGE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'module_to_test'</span>
 
-<span class="hllkn">import</span> <span class="hllnn">hou</span>
+<span class="kn">import</span> <span class="nn">hou</span>
 
-<span class="hllkn">import</span> <span class="hllnn">module_to_test</span>
-
-
-<span class="hllk">def</span> <span class="hllnf">test_afunction</span><span class="hllp">():</span>
-    <span class="hlln">node</span> <span class="hllo">=</span> <span class="hlln">hou</span><span class="hllo">.</span><span class="hlln">node</span><span class="hllp">(</span><span class="hlls1">&#39;/obj/geo/box1&#39;</span><span class="hllp">)</span>
-    <span class="hlln">result</span> <span class="hllo">=</span> <span class="hlln">module_to_test</span><span class="hllo">.</span><span class="hlln">do_stuff</span><span class="hllp">(</span><span class="hlln">node</span><span class="hllp">)</span>
-    <span class="hllk">assert</span> <span class="hllp">(</span><span class="hlln">result</span> <span class="hllo">==</span> <span class="hllmi">4</span><span class="hllp">)</span>
+<span class="kn">import</span> <span class="nn">module_to_test</span>
 
 
-<span class="hllk">if</span> <span class="hlln">__name__</span> <span class="hllo">==</span> <span class="hlls1">&#39;__main__&#39;</span><span class="hllp">:</span>
-    <span class="hlln">hou</span><span class="hllo">.</span><span class="hlln">hipFile</span><span class="hllo">.</span><span class="hlln">load</span><span class="hllp">(</span><span class="hlls1">&#39;/path/to/test.hip&#39;</span><span class="hllp">)</span>
+<span class="k">def</span> <span class="nf">test_afunction</span><span class="p">():</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">hou</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'/obj/geo/box1'</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">module_to_test</span><span class="o">.</span><span class="n">do_stuff</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
 
-    <span class="hlln">nose</span><span class="hllo">.</span><span class="hlln">run</span><span class="hllp">(</span><span class="hlln">argv</span><span class="hllo">=</span><span class="hllp">[</span><span class="hlln">__file__</span><span class="hllp">],</span> <span class="hlls1">&#39;--cover_html&#39;</span><span class="hllp">])</span>
-</pre></div>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">hou</span><span class="o">.</span><span class="n">hipFile</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">'/path/to/test.hip'</span><span class="p">)</span>
+
+    <span class="n">nose</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="n">__file__</span><span class="p">],</span> <span class="s1">'--cover_html'</span><span class="p">])</span>
+</pre>
 
 		</div> <!--/#entry-content-->
 	</div> <!--/#main-->

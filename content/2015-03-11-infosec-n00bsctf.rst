@@ -24,7 +24,7 @@ Level 01 ##
 May the source be with you, eh? Sounds to me like someone wants us to look at the
 page source. Right click, select :code:``view page source`` and...
 
-.. code-block:: html
+.. code:: html
 
 	
 	<!-- infosec_flagis_welcome -->
@@ -116,7 +116,7 @@ A pesky popup saying I'm a hacker? What an accusation. Well, let's top it from
 popping up and get ourselves a script blocker to see what else there might be.
 Once done, we examine the source and see it's loading an image too.
 
-.. code-block:: html
+.. code:: html
 
 	<img src="img/aliens.jpg" /> <br /> <br />
 
@@ -177,7 +177,7 @@ or use a request inspection plugin for Firefox like `httpRequester <https://addo
 
 So let's send off a GET request for :code:``levelseven.php`` and see what we get back.
 
-.. code-block:: html
+.. code:: html
 
 	HTTP/1.0 200 aW5mb3NlY19mbGFnaXNfeW91Zm91bmRpdA==
 	Date: Thu, 12 Mar 2015 09:26:48 GMT
@@ -208,21 +208,21 @@ not anyway to attack this thing with overflows. And this being a n00bs level CTF
 unlikely we'll be thrown this kind of exploit development.
 So the other thing we can do is check its strings.
 
-.. code-block:: console
+.. code:: console
 
 	strings app.exe
 
 Sure enough, there's :code:``infosec_flagis_0x1a``. At first I was reluctant to go with this, as
 it's a bit too simple, so I looked a bit further. I dumped the source with :code:``objdump``
 
-.. code-block:: console
+.. code:: console
 
 	objdump -s app.exe | less
 
 And I found :code:``infosec_flagis_0x1a`:code:` in it. It sits at `:code:`0x403000``, so let's run this
 through :code:``gdb`` too.
 
-.. code-block:: console
+.. code:: console
 
 	$> gdb app.exe
 	gdb$ disass main
@@ -260,7 +260,7 @@ through :code:``gdb`` too.
 
 There we see a fimilar address. Checking its contents
 
-.. code-block:: console
+.. code:: console
 
 	gdb$ x/s 0x403000
 	0x403000:	 "infosec_flagis_0x1a"
@@ -285,7 +285,7 @@ Attacked it with SQL injections, nothing. Then I had a brainwave. Because I alre
 I could just look at the :code:``levelnine.php`:code:` file. So I did. Issue `:code:`test.com && cat ../levelnine.php``
 and at the end we see what happens if we get the flag:
 
-.. code-block:: javascript
+.. code:: javascript
 
 	alert('ssaptluafed_sigalf_cesofni')";
 	    }
@@ -302,7 +302,7 @@ The reason this works is because it will encounter the javascript pop up code be
 the conditional that checks the input.
 
 It also prints out the username and password for us:
-.. code-block:: php
+.. code:: php
 
 	?> } echo ""; if ($username == 'root' and $password == 'attack') { 
 	    $password = $_POST['password']; 
@@ -376,7 +376,7 @@ To cut a long story short, there's a css file :code:``design.css`` that's not in
 in the other pages. I know this because I've pretty much looked at the source for each
 level. Force of habit. Anyway, let's take a look at it:
 
-.. code-block:: css
+.. code:: css
 
 	.thisloveis{
 		color: #696e666f7365635f666c616769735f686579696d6e6f7461636f6c6f72;

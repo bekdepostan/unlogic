@@ -89,8 +89,9 @@ and other characters into the two fields I quickly learn that the input for thos
 That means I can't enter anything but numbers into those fields. That leaves the operator as the only
 other thing under our control.</p>
 <p>I'm going to guess that code looks somewhat like this:</p>
-<div class="highlight"><pre><span></span><span class="hllx">eval (&quot;print $num1 $op $num2;&quot;);</span>
-</pre></div>
+<pre class="code php literal-block">
+<span class="x">eval (&quot;print $num1 $op $num2;&quot;);</span>
+</pre>
 <p>So I need to change the operand to something that prints <code>phpinfo</code> but leaves the rest of the statement
 valid. With Firebug I can edit the value of the operand to the following:</p>
 <img alt="" src="&quot;http://i.imgur.com/8xnqMxv.png&quot;" />
@@ -113,9 +114,10 @@ once again, changing the <code>lastname</code> field to a <code>textarea</code> 
 <p><a class="reference external" href="http://i.imgur.com/QBVptMv.png">{{&lt; figure src=&quot;http://i.imgur.com/QBVptMv.png&quot; &gt;}}</a></p>
 <p>Now I can have multiple lines and enter a real carriage return into the field. My last
 name will be</p>
-<div class="highlight"><pre><span></span><span class="hllgo">alpha7</span>
-<span class="hllgo">role:admin</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="go">alpha7
+role:admin</span>
+</pre>
 <p>And after a login with the new creds:</p>
 <img alt="" src="&quot;http://i.imgur.com/Akj9NL8.png&quot;" />
 </div>
@@ -185,8 +187,9 @@ a php_self value. That is it uses whatever the URL part is to populate the field
 is submitted back to itself.</p>
 <p>Using this we can inject something into the field to hopefully reflect our data on the page.
 By employing the <code>arg</code> paramater we can close the <code>input</code> tag, and the inject our <code>h1</code> tags:</p>
-<div class="highlight"><pre><span></span><span class="hllgo">http://ctf.infosecinstitute.com/ctf2/exercises/ex7.php?arg=&#39;&gt;&lt;h1&gt;username&lt;/h1&gt;</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="go">http://ctf.infosecinstitute.com/ctf2/exercises/ex7.php?arg='&gt;&lt;h1&gt;username&lt;/h1&gt;</span>
+</pre>
 <p>Submitting that puts <code>username</code> on the page surrounded by <code>h1</code> tags and nabs the flag</p>
 </div>
 <div class="section" id="level-08">
@@ -196,12 +199,14 @@ By employing the <code>arg</code> paramater we can close the <code>input</code> 
 <p>Here we need to upload an image that will produce a javscript alert. First things first with these
 things I upload an image to see how it behaves. Once uploaded I click on the example links and notice that
 images are fetched via an id. The URL is</p>
-<div class="highlight"><pre><span></span><span class="hllgo">http://ctf.infosecinstitute.com/ctf2/exercises/ex8.php?attachment_id=1</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="go">http://ctf.infosecinstitute.com/ctf2/exercises/ex8.php?attachment_id=1</span>
+</pre>
 <p>So let me see if I can access an image via another ID, for example <code>id=4</code>.
 I get the message:</p>
-<div class="highlight"><pre><span></span><span class="hllgo">This attachment is currently under review by our editors.</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="go">This attachment is currently under review by our editors.</span>
+</pre>
 <p>So no. Checking out the image URL for one of the chess images shows me that the images
 are stored at <code>http://ctf.infosecinstitute.com/ctf2/ex8_assets/img/chess1.png</code> for example.</p>
 <p>I make a note of this.</p>
@@ -212,8 +217,9 @@ request with Burp proxy I can change the extension to <code>jpg</code> and suces
 is trying to interpret the file as an image, which it clearly isn't. There's got to be another way
 to get at my image. How about the object reference in the URL <code>http://ctf.infosecinstitute.com/ctf2/exercises/ex8.php?attachment_id=1</code>
 for example? Maybe if I just reference the filename directly?</p>
-<div class="highlight"><pre><span></span><span class="hllgo">http://ctf.infosecinstitute.com/ctf2/exercises/ex8.php?file=index.jpg</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="go">http://ctf.infosecinstitute.com/ctf2/exercises/ex8.php?file=index.jpg</span>
+</pre>
 <p>Success</p>
 <p><a class="reference external" href="http://i.imgur.com/RVoJGMr.png">{ %img http://i.imgur.com/RVoJGMr.png %}</a></p>
 </div>
@@ -227,13 +233,15 @@ no login, so how can the page know who to show? There's one place left: the cook
 <p>Using Firebug once again I inspect the cookies and sure enough</p>
 <img alt="" src="&quot;http://i.imgur.com/xGdtDa7.png&quot;" />
 <p>This is &quot;JOHN+DOE&quot; encoded as base64 as it turns out. One thing to note is when you</p>
-<div class="highlight"><pre><span></span><span class="hllgo">echo Sk9ITitET0u= | base64 -d</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="go">echo Sk9ITitET0u= | base64 -d</span>
+</pre>
 <p>there is no newline at end of the name. So to encode <code>MARY+JANE</code> correctly I need to
 use echo with the <code>-n</code> flag:</p>
-<div class="highlight"><pre><span></span><span class="hllgp">$</span>&gt; <span class="hllnb">echo</span> -n MARY+JANE <span class="hllp">|</span> base64
-<span class="hllgo">TUFSWStKQU5F</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="gp">$</span>&gt; <span class="nb">echo</span> -n MARY+JANE <span class="p">|</span> base64
+<span class="go">TUFSWStKQU5F</span>
+</pre>
 <p>Editing the cookie and inserting that base64 string will show us Mary Jane's details.</p>
 </div>
 <div class="section" id="level-10">
@@ -274,8 +282,9 @@ login attempt limits, no rate limits, so it's ripe for the picking.</p>
 <p>After searching for the suggested password list, the first hit is the Openwall password list for
 john the ripper. So why not download it and give it a try?</p>
 <p>I fire up <code>wfuzz</code> with the following commandline</p>
-<div class="highlight"><pre><span></span><span class="hllgp">$</span>&gt; wfuzz -c -z file,/usr/share/wordlists/password-2011.lst --hw Incorrect -d <span class="hlls2">&quot;username=admin&amp;password=FUZZ&amp;logIn=Login&quot;</span> <span class="hlls2">&quot;http://ctf.infosecinstitute.com/ctf2/exercises/ex12.php&quot;</span>
-</pre></div>
+<pre class="code console literal-block">
+<span class="gp">$</span>&gt; wfuzz -c -z file,/usr/share/wordlists/password-2011.lst --hw Incorrect -d <span class="s2">&quot;username=admin&amp;password=FUZZ&amp;logIn=Login&quot;</span> <span class="s2">&quot;http://ctf.infosecinstitute.com/ctf2/exercises/ex12.php&quot;</span>
+</pre>
 <p>Within a few seconds I get a hit with <code>princess</code>. Enter that with the username <code>admin</code> and onto the next level</p>
 </div>
 <div class="section" id="level-13">

@@ -19,7 +19,7 @@ more complicated as we need to connect with SSL.
 The simplest way is using :code:`openssl` with :code:`s_client`. Once connected it's the
 same dance as above
 
-.. code-block:: console
+.. code:: console
 
 	bandit15@melinda:~$ openssl s_client -quiet -connect localhost:30001
 	depth=0 CN = li190-250.members.linode.com
@@ -43,7 +43,7 @@ figure out which port is the right one by trying each one. Depending on the numb
 of ports open this could take a while or not.
 Let's see how we're going to handle this by seeing which ports are open
 
-.. code-block:: console
+.. code:: console
 
 	bandit16@melinda:~$ nmap localhost -p 31000-32000 
 	
@@ -64,7 +64,7 @@ Not too bad. Because it's a short list, we can try them one by one, or
 we run a service discovery on them. Service discovery in nmap takes a while,
 so I only scan the ports we are interseted in:
 
-.. code-block:: console
+.. code:: console
 
 	bandit16@melinda:~$ nmap -sV -p 31046,31518,31691,31790,31960 localhost
 	
@@ -82,7 +82,7 @@ so I only scan the ports we are interseted in:
 Now we only have two ports to try, as the others are clearly just echo ports.
 Eliminating one we go ahead and
 
-.. code-block:: console
+.. code:: console
 
 	bandit16@melinda:~$ openssl s_client -quiet -connect localhost:31790
 	depth=0 CN = li190-250.members.linode.com
@@ -126,7 +126,7 @@ Now copy that key into a new file and use :code:`chmod go-rw key` to remove grou
 and other read/write. ssh refuses to accept a key that is read/write by
 anyone other than the user who owns the file. Then simply
 
-.. code-block:: console
+.. code:: console
 
 	bandit16@melinda:~$ ssh -i /tmp/k.key bandit17@localhost
 
@@ -138,7 +138,7 @@ Level 17 -> 18 #
 We remain logged in as bandit17 from the previous level. To compare two files
 we need to do a :code:`diff`
 
-.. code-block:: console
+.. code:: console
 
 	bandit17@melinda:~$ diff passwords.old  passwords.new 
 	42c42
