@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Unlogic &mdash; Tube status for Conky</title>
+		<meta charset="utf-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" href="http://unlogic.co.uk/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://unlogic.co.uk/theme/css/pygments.css" />
+		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<style type="text/css">
+			body.custom-background { background-color: #f5f5f5; }
+		</style>
+		<link rel="alternate" type="application/atom+xml"
+			title="Unlogic — Flux Atom"
+			href="http://unlogic.co.uk/" /> 
+		<link rel ="alternate" type="application/rss+xml"
+			title="Unlogic — Flux RSS"
+			href="http://unlogic.co.uk/feed.xml" /> 
+		<!--[if lte IE 8]><script src="http://unlogic.co.uk/theme/js/html5shiv.js"></script><![endif]-->
+</head>
+
+<body class="home blog custom-background single-author" >
+	<div id="container">
+		<div id="header">
+				<h1 id="site-title"><a href="http://unlogic.co.uk/">Unlogic</a></h1>
+<h2 id="site-description">I've got a keyboard, a terminal, and a whole load of luck</h2>		</div><!-- /#banner -->
+		
+		<div id="menu">
+            <div class="menu-social-container">
+                <ul id="menu-social" class="social">
+                    <li><a href="https://twitter.com/binaryheadache"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+                    <li><a href="https://github.com/svenito"><i class="fa fa-github-square fa-2x"></i></a></li>
+                </ul>
+            </div>
+			<div class="menu-navigation-container">
+                
+                <ul id="menu-navigation" class="menu">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://unlogic.co.uk/pages/all-posts.html">All posts</a></li>
+
+				</ul>
+			</div> <!--/#menu-navigation-container-->
+            <div style="clear: both;"></div>
+		</div><!-- /#menu -->
+		
+		<div class="page-title">
+		</div>
+	
+		<div id="contents">
+
+<div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="http://unlogic.co.uk/2012/06/07/tube-status-for-conky/">Thu 07 June 2012</a></div>
+			<div class="comments"><a href="http://unlogic.co.uk/2012/06/07/tube-status-for-conky/#disqus_thread" title="Comment on Tube status for Conky">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="http://unlogic.co.uk/2012/06/07/tube-status-for-conky/" title="Permalink to Tube status for Conky" rel="bookmark">Tube status for Conky</a>
+		</h2>
+		<div class="entry-content">
+			<p>Last night I was affected by &quot;severe delays on the Central line&quot; caused by a burst watermain and bringing part of the line to its knees. Unfortunately I only found this out once I got to the station. Usually the line is well behaved and I have little need to check it often. I know it's really quick to do so and there's a whole host of ways to dit too. But the problems I have with them are:</p>
+<ol class="arabic simple">
+<li><strong>Check online</strong>: Have to remember to go online and check, which I often/always forget.</li>
+<li><strong>iPhone app</strong>: Same again. Have to remember to actually do that each time I leave the office.</li>
+<li><strong>Email alerts</strong>: I get a fair bit of email each day and end up just clicking <em>delete</em> or <em>mark as read</em> on stuff like that</li>
+</ol>
+<p>So here's what I've come up with</p>
+<p>A CLI app that checks the tube status for any number of given lines. &quot;Yeah, how does that help?&quot; I hear you ask. &quot;You still have to use it to check it&quot; you say. True. But there's another way to use it: Conky.</p>
+<p>I use <a class="reference external" href="http://conky.sourceforge.net/">Conky</a> and I love it. So what better than to have the tube status for the relevant lines <strong>always</strong> on my desktop and updating every few seconds? So I quickly put together this python script to accomplish the task:</p>
+<script src="https://gist.github.com/Svenito/2888187.js"></script><p>And it looks like this:</p>
+<img alt="" src="/images/conky.png" />
+<p>To add it to Conky just edit the <code>.conkyrc</code> file and add a line like so:
+<code>$alignr${execi 2 /path/to/tube.py central -s}</code> where <em>central</em> is the name(s)
+of the line(s) (separate multiple lines with spaces) you want to get statuses for. The full list of lines is <a class="reference external" href="http://tubeupdates.com/documentation/">here</a>. The -s simply tells the script to supress the output of the full message and shows only the line name and short status.</p>
+<p>It'd be good to know if you find it useful or if you have any suggestions for it.</p>
+
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post-->
+	<div id="comments">
+		<div id="respond">
+			<div id="disqus_thread"></div>
+	        <script type="text/javascript">
+	            var disqus_shortname = 'unlogic';
+	
+	            /* * * DON'T EDIT BELOW THIS LINE * * */
+	            (function() {
+	                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	            })();
+	        </script>
+	        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		</div><!-- #respond -->					
+</div><!-- #comments -->
+
+		</div>
+		
+		<div id="footer">
+			<p><p>Powered by <a href="http://getpelican.com">Pelican</a></p>
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>		</div><!-- /#footer -->
+	</div><!-- /#container -->
+	<div style="display:none"></div>
+</body>
+</html>

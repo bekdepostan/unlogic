@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Unlogic &mdash; Hacky Easter 2015</title>
+		<meta charset="utf-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" href="http://unlogic.co.uk/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://unlogic.co.uk/theme/css/pygments.css" />
+		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<style type="text/css">
+			body.custom-background { background-color: #f5f5f5; }
+		</style>
+		<link rel="alternate" type="application/atom+xml"
+			title="Unlogic — Flux Atom"
+			href="http://unlogic.co.uk/" /> 
+		<link rel ="alternate" type="application/rss+xml"
+			title="Unlogic — Flux RSS"
+			href="http://unlogic.co.uk/feed.xml" /> 
+		<!--[if lte IE 8]><script src="http://unlogic.co.uk/theme/js/html5shiv.js"></script><![endif]-->
+</head>
+
+<body class="home blog custom-background single-author" >
+	<div id="container">
+		<div id="header">
+				<h1 id="site-title"><a href="http://unlogic.co.uk/">Unlogic</a></h1>
+<h2 id="site-description">I've got a keyboard, a terminal, and a whole load of luck</h2>		</div><!-- /#banner -->
+		
+		<div id="menu">
+            <div class="menu-social-container">
+                <ul id="menu-social" class="social">
+                    <li><a href="https://twitter.com/binaryheadache"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+                    <li><a href="https://github.com/svenito"><i class="fa fa-github-square fa-2x"></i></a></li>
+                </ul>
+            </div>
+			<div class="menu-navigation-container">
+                
+                <ul id="menu-navigation" class="menu">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://unlogic.co.uk/pages/all-posts.html">All posts</a></li>
+
+				</ul>
+			</div> <!--/#menu-navigation-container-->
+            <div style="clear: both;"></div>
+		</div><!-- /#menu -->
+		
+		<div class="page-title">
+		</div>
+	
+		<div id="contents">
+
+<div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="http://unlogic.co.uk/2015/06/01/hacky-easter-2015/">Mon 01 June 2015</a></div>
+			<div class="comments"><a href="http://unlogic.co.uk/2015/06/01/hacky-easter-2015/#disqus_thread" title="Comment on Hacky Easter 2015">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="http://unlogic.co.uk/2015/06/01/hacky-easter-2015/" title="Permalink to Hacky Easter 2015" rel="bookmark">Hacky Easter 2015</a>
+		</h2>
+		<div class="entry-content">
+			<p>Another year, another Hacky Easter and a month, of fun, learning, and
+frustrations. All in all this was another great year and I'm already looking
+forward to 2016's edition. I found this year's challenges were a bit harder than
+last year, but I did my best.</p>
+<div class="section" id="challenge-01">
+<h2>Challenge 01</h2>
+<p>I'm told to search out the password in the following image</p>
+<img alt="" src="http://i.imgur.com/mIXj50g.jpg" style="width: 600px;" />
+<p>Taking note of the missing letters and rearranging them to spell <code>HACKERZ</code> I'll enter
+that into the egg-o-matic and see what happens. Oh, hello there'e the egg.</p>
+</div>
+<div class="section" id="challenge-02">
+<h2>Challenge 02</h2>
+<p>The eggs is already there:</p>
+<img alt="" src="http://i.imgur.com/98japcd.png" />
+<p>But it won't scan in its current state, not with <em>NO</em> written in the QR code.
+First things first I looked at the page and image source. Turns out that this is
+not an image, but a table instead. I examined the table with Firebug and noticed
+that the elements of the <em>NO</em> have different CSS tags. Looking up at the header I
+saw that those tags were defined twice, causing the values to be overriden.</p>
+<p>I created a local copy, set the values to the initial values (so delete the second
+definition) and then we get a valid QR code that will scan.</p>
+</div>
+<div class="section" id="challenge-03">
+<h2>Challenge 03</h2>
+<p>Lego. I love Lego, and therefore already knew what an <code>ldx</code> file is. So I opened
+it in Lego Digital Designer and took a look at the bricks. Looks like quite a hard
+code to crack. Although it seems a little odd that the bottom layer is 3 bricks deep.
+I started picking away some of the first layer and there were white and black bricks
+underneath. Potentially a QR code? Even using the &quot;Select colour and shape&quot; tool, removing
+all the top layer bricks will take a little while, but we are then rewarded with a valid QR code.</p>
+</div>
+<div class="section" id="challenge-04">
+<h2>Challenge 04</h2>
+<p>Mobile challenge. I get a list of numbers, or definitions of numbers,
+and I have to arrange them in order. The easiest way to do this was to write them in a
+file and then use the linux <code>sort</code> command to order them accordingly. Once I had the
+list it was just a matter of ordering them in the right order on the phone, and submitting them
+to get the egg.</p>
+</div>
+<div class="section" id="challenge-05">
+<h2>Challenge 05</h2>
+<p>Another mobile challange. I get shown four bars, each one of which is controlled
+by some phone sensor. The middle two were easy to discover. Just by moving the phone I could
+see that the orientation and tilt controlled those. The top bar increased every 5 seconds. The
+bottom bar however was a bit trickier. It took a day to discover this, because it actually
+represents the time the phone has been charging since the app was run for the first time.</p>
+<p>I left it plugged in and waited until the bar was green, aligned the phone correctly and then
+waited for the 5 second bar to fill up to collect my egg.</p>
+</div>
+<div class="section" id="challenge-06">
+<h2>Challenge 06</h2>
+<pre class="code console literal-block">
+<span class="go">dah-dah-dit dit dah-dah-dah di-dah-dit dah-dah-dit dit dah-dah dah-di-dah-dit di-di-dah-dit di-dah-di-dit dah-di-dah-dah</span>
+</pre>
+<p>This is clearly morse code. <code>dit</code> and <code>di</code> are dots and the <code>dah</code> is dash. Decoded this to get
+<code>georgemcfly</code>. I entered this and was told I was 3 months too early! Only one thing for it:
+change the system date to 3 months in the future. Resubmitted the password and was granted the egg.</p>
+</div>
+<div class="section" id="challenge-07">
+<h2>Challenge 07</h2>
+<p>Mobile challange. I need to navigate a Google street view style app to search for the
+egg. I was actually surprised how easy it was to find. On the second screen
+I looked up and there it was, in the sky. Easy right? Well, once I capped the image, I brought
+it into Gimp and manipulated it. Took quite a bit of cleanup and contrast tweaking to get it to scan,
+but I got there in the end.</p>
+</div>
+<div class="section" id="challenge-08">
+<h2>Challenge 08</h2>
+<p>So from a spreadsheet ID I have to find this particular spreadsheet? Like any sensible person
+I avoid working with spreadsheets as much as I can, so I had to investigate how Google
+docs uses these IDs. Luckily once you create a new sheet, you can already identify the ID in the URL.
+Replace your ID with the Hacky Easter one and you are given the sheet.</p>
+<p>The problem is that the sheet is jumbled up. You need to order the colums and rows in numerical order.
+I could have done this in Python, but at the time I got <em>1</em> back for the black boxes. Being
+a spreadsheet n00b I didn't know about conditional formating, but you can specify cell formatting based
+on content. So that would have been the easy way.</p>
+<p>Instead I did it manually. Ordering the rows can be done automatically. Then I just copy
+pasted the colums in order and snapped the code. Tedious, but produces results.</p>
+</div>
+<div class="section" id="challenge-09">
+<h2>Challenge 09</h2>
+<p>Mobile challenge. The app's splash screen is egg #9, but distorted. With some
+skilled timing I screen capped it and imported it into Pixelmator, where I
+used the bulge tool to undistort it enough to be able to scan it.</p>
+<p>Alternatively I could have grabbed the image out of the APK I reckon, but
+this was simpler at the time.</p>
+</div>
+<div class="section" id="challenge-10">
+<h2>Challenge 10</h2>
+<p>Thumper's got egg 10? Where could he have taken it? Initially I decided
+to look in the other challenges and there is one challenge that has a banner
+at the bottom. It is an advert for Thumper's info sec training course. Clicking
+the banner merely told me that 'the egg is not in any challenge'. They knew we'd
+come looking.</p>
+<p>So where else would people keep eggs? Of course, on the pages where you can see
+the eggs each user has. The url for which is <code>http://hackyeaster.hacking-lab.com/hackyeaster/eggs.html?name=hops</code>
+so all we do it replace the user <code>hops</code> with <code>Thumper</code> and sure enough, that's
+where he's hidden the egg.</p>
+</div>
+<div class="section" id="challenge-11">
+<h2>Challenge 11</h2>
+<p>I was expecting this to be a bit harder, but I just downloaded the files,
+opened them up in Thunderbird and found a message with attachments. Downloading
+the attachment gives you the egg.</p>
+</div>
+<div class="section" id="challenge-12">
+<h2>Challenge 12</h2>
+<p>A quiz! Simple of course. Well, this is Hacky Easter, so no. The fields are all
+incorrectly configured. Look at the source and you can see:</p>
+<ul class="simple">
+<li>Field 1 will change it contents when it loses focus.</li>
+<li>Field 2 is a number field but should be a string</li>
+<li>Field 3 is a text field but should be a number</li>
+<li>Field 4 is a radio button set, but should be checkboxes</li>
+<li>Field 5 is a dropdown that is missing the right answer</li>
+</ul>
+<p>So I worked out the answers, as I still need to get them right, and then I used
+Firebug to edit the HTML in place. Once ready I hit <em>Submit</em> only to find I was
+wrong. I am sure everything was correct though. I double checked the fields, and
+then I noticed that the submit button had <code>value=&quot;false&quot;</code> on it.</p>
+<p>Once I edited them all again and set the submit button to <code>true</code> I was granted access
+to the egg.</p>
+</div>
+<div class="section" id="challenge-13">
+<h2>Challenge 13</h2>
+<p>This challenge had me going for quite a while. A great example of how you learn
+to observe information. Downloading the video I see a 15 minute video that has a
+different QR code every second (approx). Each QR code resolves to a egg style
+string, so there's no automated way to filter out the right code.</p>
+<p>I can't watch it and scan each egg, that would take forever. So I thought about
+what I know. Eventually it dawned on me that it's called <em>LEET TV</em>. Leet = 7337.
+I wonder if... scrub the video to 7337 and scan the code. Error message.</p>
+<p>But careful, this isn't the same message as you would get if you scan an invalid
+egg. I used a different barcode scanner to scan this code and was given a URL. Result!</p>
+<p>Visiting the URL I download a wav file, which is clearly a reversed audio recording.</p>
+<p>Importing into Audacity, reversing it, and playing it back tells us the timestamp
+in the video where the correct QR is shown.</p>
+</div>
+<div class="section" id="challenge-14">
+<h2>Challenge 14</h2>
+<p>On a hunch I just decided to use a 2d barcode scanner to scan the code and see
+what happens. Oh, it gives us an egg string. But the app's scanner will only accept
+2d codes. Not to worry. Using duckduckgo's qr code creator we can just enter the string
+we get from the 1d code, and in return we get a 2d code which we can scan with the
+Hacky Easter app.</p>
+</div>
+<div class="section" id="challenge-15">
+<h2>Challenge 15</h2>
+<p>This one was fiendish for me. In the end I actually took apart the APK and
+disassembled the code to try and see what this does. From this I could see
+that it stores the pics on your SD card. It also runs some analysis on the images,
+based on the pixel values. I assumed that it was in fact looking for a picture
+of a tomato and a grassy field.</p>
+<p>I took a picture of a green screen and managed to get it to return one half of the
+code. The tomato was a bit trickier, as a simply red image was not enough. It actually
+needed <em>some</em> green in it. Google image search for <em>tomato</em> and took a reasonalbe pic,
+which gave me the other half of the code.</p>
+<p>After downloading the pics to my desktop, it was just a matter of joining them together
+to give me the complete egg.</p>
+<p>Was a little bit hit and miss with the pic taking, but nice idea for a challenge.</p>
+</div>
+<div class="section" id="challenge-16">
+<h2>Challenge 16</h2>
+<p><em>Ghosts only come out when it's dark...</em></p>
+<p>This required a few things: a keen eye, and knowledge of crypto.</p>
+<p>So firstly we know that we need to make it dark or something. After a while
+I finally noticed the light bulb at the bottom right of the main
+challenges page. Clicking that makes the page dark and changes the thumbnail for
+challenge 16. Now when we click on it we get a set of 4 strings and picture of
+a &quot;The Ring&quot; girl with the word <em>spooky</em> written across it. We are also told:</p>
+<p><em>Dark is beautiful. A GOST with chaining appears and has a message for you</em></p>
+<p>Nothing is a coincidence, so that's no typo. Searching for <em>GOST</em> I discovered that
+it was an encryption method. After quite a bit more searching I discovered that
+PHP's mcrypt library supports decrypting this cipher. The cipher requires a
+key. On a hunch I decided to use the only other clue available: <em>spooky</em></p>
+<p>Now this is where I almost failed. I could decrypt the first code without any
+problem. It resulted in the string <code>http://hackyeas</code>. But the second string's
+first 8 characters were corrupt. I was so stuck until I discovered that
+you had to append all the ciphers together in order to get the plaintext. I guess
+that's the <code>chaining</code> part, as well as indicating we should used <code>MCRYPT_MODE_CBC</code>.</p>
+<p>This PHP script ended up doing the work for me</p>
+<pre class="code php literal-block">
+<span class="cp">&lt;?php</span>
+<span class="nv">$hash1</span> <span class="o">=</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="s1">'d5++xytj6RiGwmqEecm63Kow7RZGAAHh'</span><span class="p">);</span>
+<span class="nv">$hash2</span> <span class="o">=</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="s1">'VFsksHFuj/Anap7pWHDZ1XQw8DAApUEN'</span><span class="p">);</span>
+<span class="nv">$hash3</span> <span class="o">=</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="s1">'R5ExOGUKTzGOtvSAlCHkHq6NneL6ZUTX'</span><span class="p">);</span>
+<span class="nv">$hash4</span> <span class="o">=</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="s1">'ej8Taxz+kHK9w9U8dxTOSksZ4HKS2YYD'</span><span class="p">);</span>
+
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">mcrypt_decrypt</span><span class="p">(</span><span class="nx">MCRYPT_GOST</span><span class="p">,</span> <span class="s1">'spooky'</span><span class="p">,</span> <span class="nv">$hash1</span><span class="o">.</span><span class="nv">$hash2</span><span class="o">.</span><span class="nv">$hash3</span><span class="o">.</span><span class="nv">$hash4</span><span class="p">,</span> <span class="nx">MCRYPT_MODE_CBC</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+</pre>
+<p>Running it:</p>
+<pre class="code console literal-block">
+<span class="gp">$</span>&gt; php ./gost.php <span class="p">|</span> base64 -d
+<span class="go">http://hackyeaster.hacking-lab.com/hackyeaster/images/egg_16_a3eIIACKSy02sJ6LxXeh.png</span>
+</pre>
+<p>No initialisation vector was required, so you can ignore the warning.</p>
+</div>
+<div class="section" id="challenge-17">
+<h2>Challenge 17</h2>
+<p>There's no real way to spot the difference in the images with your eyes. So the
+easiest way is to bring them into Gimp on separate layers. Then I adjusted the top
+layer's blend mode to &quot;difference&quot; so that I could see which pixels differ. The image
+goes black indicating that there's no differences. Impossible!</p>
+<p>Now thinking that there must be differences I figured that they might be so small
+that they appear black. I maxed the contrast and brightness to get:</p>
+<img alt="" src="http://i.imgur.com/0iAoovp.jpg" />
+<p>Now the QR code is in the left eye, and a target shape in the right. The target
+needs to be used to invert the pixels in the QR code. Once done, snap the code
+and move on.</p>
+</div>
+<div class="section" id="challenge-18">
+<h2>Challenge 18</h2>
+<p>Once we visit the site we get asked to authenticate. No doubt the details will be in
+the pcap file, so let's open that. We can see a failed auth followed by a successful
+one. Inspect the relevant packet and we get the login:</p>
+<img alt="" src="http://i.imgur.com/dhLNYS9.png" style="width: 600px;" />
+<p>Using this to login we are presented with another login form. Trying the same
+credentials gives a &quot;Payment required&quot; page. Heading back to the pcap file let's
+see if we can't find some details for this part too. Ah, right there at the bottom.</p>
+<img alt="" src="http://i.imgur.com/Gp45s1R.png" style="width: 600px;" />
+<p>This time however we need to pass the hash and login details via POST. Either
+edit the form, or use a tool like Zap or Burp proxy, to add this data to the POST
+and we have our egg.</p>
+</div>
+<div class="section" id="challenge-19">
+<h2>Challenge 19</h2>
+<p>Not found.</p>
+<p>I will add a solution here later.</p>
+</div>
+<div class="section" id="challenge-20">
+<h2>Challenge 20</h2>
+<p>The big clue here is robots. Why do we love robots? <code>robots.txt</code> is why. Taking a
+look at it I can see</p>
+<pre class="code html literal-block">
+User-agent: EasterBot
+Disallow: /
+Allow: /hackyeaster/bots/bots.
+
+User-agent: *
+Disallow: /
+</pre>
+<p>Visiting the url <code>/hackyeaster/bots/bots.html</code> takes me to the CP30 Wiki page. That can't be right. So I decided
+to spoof my user agent to be <code>EasterBot</code> and I get a different result. An image
+with the following text</p>
+<pre class="code text literal-block">
+BAMA WABOKI PISAL FATATU FOMU WOSEBI SEJU SOWU SEJU - BAMAS MUFE WAFUB FOMU MOWEWE
+</pre>
+<p>Hrmm. I tried to decipher this many ways before I gave up and Googled it. It turns
+out this is actually <a class="reference external" href="http://roila.org/language-guide/vocabulary/">ROILA</a> and
+comes with a nice dictionary. So I set about translating it and got:</p>
+<pre class="code text literal-block">
+you must make word of addition two and two - this be name of page
+</pre>
+<p>Right, so I add two and two to give four and I load up
+<code>http://hackyeaster.hacking-lab.com//hackyeaster/bots/four.html</code> and see Gir with the
+word <code>MetAE</code>. Well meta can only mean I need to look at the page metadata. Viewing the source
+I see</p>
+<pre class="code html literal-block">
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Robots talk in ROILA language: eman egap eht esrever tsum&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;secret, page, robots, fun, hacky easter, blrt, five, beep&quot;</span><span class="p">&gt;</span>
+</pre>
+<p>More ROILA? No, it's just backwards english. I'll just go to
+<code>http://hackyeaster.hacking-lab.com//hackyeaster/bots/ruof.html</code> and get the egg/</p>
+</div>
+<div class="section" id="challenge-21">
+<h2>Challenge 21</h2>
+<p>I am told that <code>blue</code> is <code>110</code>. I took a guess that therefore red will be <code>011</code> and
+green <code>101</code>. Basically the binary represents the RGB values inverted. Applying this
+I wrote a script to translate the colours to a binary string and then conver that to ASCII
+which gave me the egg's URL.</p>
+<pre class="code python literal-block">
+<span class="ch">#!/bin/env python</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">codes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'111'</span><span class="p">,</span> <span class="s1">'110'</span><span class="p">,</span> <span class="s1">'101'</span><span class="p">,</span> <span class="s1">'100'</span><span class="p">,</span> <span class="s1">'011'</span><span class="p">,</span> <span class="s1">'010'</span><span class="p">,</span> <span class="s1">'001'</span><span class="p">,</span> <span class="s1">'000'</span><span class="p">]</span>
+
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'conycode.png'</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">im</span><span class="o">.</span><span class="n">size</span>
+<span class="k">print</span> <span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mf">14.0</span>
+<span class="n">pixels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">getdata</span><span class="p">())</span>
+<span class="k">print</span> <span class="n">pixels</span><span class="p">[</span><span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="k">print</span> <span class="n">pixels</span><span class="p">[</span><span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mi">18</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)]</span>
+<span class="k">print</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">18</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">18</span><span class="p">):</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">codes</span><span class="p">[</span><span class="n">pixels</span><span class="p">[</span><span class="n">w</span> <span class="o">+</span> <span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">h</span><span class="p">)]])</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">bin_string</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="k">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">bin_string</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bin_string</span><span class="p">),</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">bin_string</span><span class="p">[</span><span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">+</span><span class="mi">8</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">ba</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">([</span><span class="n">t</span><span class="p">])</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ba</span><span class="p">))</span>
+</pre>
+</div>
+<div class="section" id="challenge-22">
+<h2>Challenge 22</h2>
+<p>Hash cracking. I am new to this, but boy did I enjoy this challenge because I learned
+a lot! I decided to use <a class="reference external" href="https://hashcat.net/oclhashcat/">hashcat</a> for all the hashes.</p>
+<p>Let's begin:</p>
+<div class="section" id="hash-1">
+<h3>hash 1</h3>
+<p>A 16 digit pin takes a long time to bruteforce, but the hint tells me that the only
+numbers in the PIN are 1, 7, 9, and 0.</p>
+<pre class="code text literal-block">
+hashcat -m100 -1 1790 --pw-min=16 --pw-max=16 -a3 hash1.txt ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1
+</pre>
+<p>time taken: 4:40 minutes</p>
+</div>
+<div class="section" id="hash-2">
+<h3>hash 2</h3>
+<p>This one had me stumped for ages, because it was hard to bruteforce and hashcat didn't support
+sha384. Luckily I found <a class="reference external" href="https://crackstation.net/">Crackstation</a> where I entered the hash
+and was immediately rewarded with the correct answer. Alternatively writing a brute forcer in Python
+and using the Rockyou wordlist would also have worked.</p>
+</div>
+<div class="section" id="hash-3">
+<h3>hash 3</h3>
+<p>Here I employed hashcat's <a class="reference external" href="https://hashcat.net/wiki/doku.php?id=rule_based_attack">rule based attacks</a>
+to make myself a new wordlist based on the given rules.
+First I needed to run the <code>toggle</code> rule to generate the words with one upper case char.
+Then I ran a the substituion rule (which is the <code>leetspeak.rule</code>). Now I had a
+list of words that had one substitution and one upper case letter. Only the
+punctuation and digit missing now. For this step I wrote a python script
+that would generate the required rule table:</p>
+<pre class="code python literal-block">
+<span class="n">puncs</span> <span class="o">=</span> <span class="s1">'! &#64; # $ % ^ &amp; * ( ) _ + { } [ ] : ; . , / ? ~ `'</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">nums</span> <span class="o">=</span> <span class="s1">'1 2 3 4 5 6 7 8 9 0'</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pn.rule'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">punc</span> <span class="ow">in</span> <span class="n">puncs</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+        <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'$</span><span class="si">%s</span><span class="s1">$</span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">punc</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+        <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'$</span><span class="si">%s</span><span class="s1">$</span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">punc</span><span class="p">))</span>
+
+<span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre>
+<p>I then used this rule to run it over the word list, then</p>
+<p>:code:<tt class="docutils literal">`
+hashcat <span class="pre">-m0</span> hash3.txt final.txt
+:code:`</tt></p>
+<p>to get the plaintext in 3 seconds.</p>
+</div>
+<div class="section" id="hash-4">
+<h3>hash 4</h3>
+<p>Here I needed to run hashcat's combinator attack a few times on the word list.
+What this does is append each word of a wordlist to every other word.
+Running this a few times will give me the list I need:</p>
+<pre class="code text literal-block">
+hashcat -a1 wordlist.txt --stdout &gt; pass1.txt
+hashcat -a1 -m1400 hash4.txt pass1.txt
+</pre>
+<p>Scoop the plaintext in 8 minutes.</p>
+</div>
+</div>
+<div class="section" id="challenge-23">
+<h2>Challenge 23</h2>
+<p>Once connected to the server I have to insult the bot quickly and smartly. But who is
+smarter than the bot? No one that's who. Except perhaps the bot itself. In essence
+what needs to be done is get the taunts from the master and play them back
+to him. Then use his replies as respsonses to his taunts.</p>
+<p>I figure there's two ways of doing this;</p>
+<blockquote>
+<ol class="arabic simple">
+<li>Connect the bot to itself via a client that relays the messages between the two</li>
+<li>Record the quips and play them back automatically as needed</li>
+</ol>
+</blockquote>
+<p>I plumped for option 2 and hoped there wouldn't be too many quips to harvest. Having
+played against the bot a few times I managed to get myself the list of comebacks and
+wrote a Python script to pwn the Nerd Master</p>
+<pre class="code python literal-block">
+<span class="kn">import</span> <span class="nn">socket</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+
+<span class="n">challs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Pna lbh ernq guvf?'</span><span class="p">:</span> <span class="s1">'EBG13 vf sbe ynzref.'</span><span class="p">,</span>
+          <span class="s2">&quot;You're so slow, you must have been written in BASIC.&quot;</span><span class="p">:</span> <span class="s2">&quot;At least I don't have memory leaks like you.&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Go 127.0.0.1 to your mummy.&quot;</span><span class="p">:</span> <span class="s2">&quot;go 127.0.0.1 to your mom&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;I have more friends than you.&quot;</span><span class="p">:</span> <span class="s2">&quot;Yeah, but only until you update your Facebook profile with a real picture of you!&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;You should leave your cave and socialize a bit.&quot;</span><span class="p">:</span> <span class="s2">&quot;I'm not anti-social. I'm just not user friendly.&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;This fight is like a hash function - it works in one direction only.&quot;</span><span class="p">:</span> <span class="s2">&quot;Too bad you picked LM hashing.&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;I bet you don't even understand binary.&quot;</span><span class="p">:</span> <span class="s2">&quot;Sure I do. Me and you, we are 10 different kind of persons.&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;1f u c4n r34d th1s u r s70p1d.&quot;</span><span class="p">:</span> <span class="s2">&quot;You better check your spelling. Stoopid has two 'o's.&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;After loosing to me, your life won't be the same anymore.&quot;</span><span class="p">:</span> <span class="s2">&quot;A Life? Cool! Where can I download one of those?&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;You'll be 0xdeadbeef soon.&quot;</span><span class="p">:</span> <span class="s2">&quot;Not as long as I have my 0xcafebabe.&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Af7ter th1s f1gh7, I w1ll pwn ur b0x3n.&quot;</span><span class="p">:</span> <span class="s2">&quot;Check your settings - you seem to have chosen the Klingon keyboard layout.&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;I have more friends than you.&quot;</span><span class="p">:</span> <span class="s2">&quot;Yeah, but only until you update your Facebook profile with a real picture of you!&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;I'll check you out - any last words?&quot;</span><span class="p">:</span> <span class="s2">&quot;svn:ignore&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Tell me your name, hobo. I need to check your records.&quot;</span><span class="p">:</span> <span class="s2">&quot;My name is bob'; DROP TABLE VALJ;--&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;format C:&quot;</span><span class="p">:</span> <span class="s2">&quot;Specified drive does not exist.&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;You must be jealous when seeing my phone's display.&quot;</span><span class="p">:</span> <span class="s2">&quot;Not really - Your pixels are so big, some of them have their own region code!&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Ping! Anybody there?&quot;</span><span class="p">:</span> <span class="s2">&quot;ICMP type 3, code 13: Communication Administratively Prohibited&quot;</span>
+          <span class="p">}</span>
+
+<span class="n">tosends</span> <span class="o">=</span> <span class="n">challs</span>
+
+<span class="k">def</span> <span class="nf">removekey</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">r</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">r</span>
+
+<span class="k">def</span> <span class="nf">sendchall</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">chall</span><span class="p">):</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">challs</span><span class="p">[</span><span class="n">chall</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\r</span><span class="s1">'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">netcat</span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">tosends</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">print</span> <span class="s2">&quot;Received:&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;Speechless?</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">or</span>
+            <span class="n">data</span> <span class="o">==</span> <span class="s1">'Go play with your toys, yellow-belly.</span><span class="se">\n</span><span class="s1">'</span><span class="p">):</span>
+            <span class="k">print</span> <span class="n">data</span>
+            <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">data</span> <span class="o">==</span> <span class="s1">'Do you feel brave enough to challenge the mighty nerdmaster? (y|n)</span><span class="se">\n</span><span class="s1">'</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="s1">'y</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;.*YOUR TURN ----</span><span class="se">\\</span><span class="s2">n&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+            <span class="n">chal</span> <span class="o">=</span> <span class="n">tosends</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tosends</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">chal</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+            <span class="k">print</span> <span class="s1">'send challenge: '</span><span class="p">,</span> <span class="n">chal</span>
+            <span class="n">tosends</span> <span class="o">=</span> <span class="n">removekey</span><span class="p">(</span><span class="n">tosends</span><span class="p">,</span> <span class="n">chal</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+
+
+        <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">'.*MY TURN ----</span><span class="se">\\</span><span class="s1">n(.*)</span><span class="se">\\</span><span class="s1">n'</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+            <span class="n">chal</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">chal</span> <span class="ow">in</span> <span class="n">challs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">sendchall</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">chal</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">challs</span><span class="p">[</span><span class="n">chal</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span>
+                <span class="k">continue</span>
+            <span class="k">continue</span>
+
+        <span class="k">print</span> <span class="s1">'::::::'</span><span class="p">,</span> <span class="n">data</span>
+
+
+    <span class="k">print</span> <span class="s2">&quot;Connection closed.&quot;</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">nc</span> <span class="o">=</span> <span class="n">netcat</span><span class="p">(</span><span class="s1">'hackyeaster.hacking-lab.com'</span><span class="p">,</span> <span class="mi">1400</span><span class="p">)</span>
+</pre>
+</div>
+<div class="section" id="challenge-24">
+<h2>Challenge 24</h2>
+<p>Hrm, this really isn't a secure hash at all. A Python script can do this</p>
+<pre class="code python literal-block">
+<span class="kn">from</span> <span class="nn">Crypto.Hash</span> <span class="kn">import</span> <span class="n">MD2</span><span class="p">,</span> <span class="n">MD5</span><span class="p">,</span> <span class="n">SHA</span><span class="p">,</span> <span class="n">SHA256</span><span class="p">,</span> <span class="n">SHA512</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="k">def</span> <span class="nf">part_1</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">MD2</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">hashed</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">hashed</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">print</span> <span class="s1">'[*] First part is:'</span><span class="p">,</span> <span class="n">word</span>
+            <span class="k">return</span>
+
+<span class="k">def</span> <span class="nf">part_2</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">MD5</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">hashed</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">hashed</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="k">print</span> <span class="s1">'[*] Second part is:'</span><span class="p">,</span> <span class="n">word</span>
+            <span class="k">return</span>
+
+<span class="k">def</span> <span class="nf">part_3</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">SHA</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">hashed</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">hashed</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+            <span class="k">print</span> <span class="s1">'[*] Third part is:'</span><span class="p">,</span> <span class="n">word</span>
+            <span class="k">return</span>
+
+<span class="k">def</span> <span class="nf">part_4</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">SHA256</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">hashed</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">hashed</span><span class="p">[</span><span class="mi">18</span><span class="p">:</span><span class="mi">24</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+            <span class="k">print</span> <span class="s1">'[*] Fourth part is:'</span><span class="p">,</span> <span class="n">word</span>
+            <span class="k">return</span>
+
+<span class="k">def</span> <span class="nf">part_5</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">SHA512</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">hashed</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">hashed</span><span class="p">[</span><span class="mi">24</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
+            <span class="k">print</span> <span class="s1">'[*] Fifth part is:'</span><span class="p">,</span> <span class="n">word</span>
+            <span class="k">return</span>
+
+
+<span class="n">my_chars</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">printable</span>
+
+<span class="n">target</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'757c47'</span><span class="p">,</span><span class="s1">'9895d6'</span><span class="p">,</span> <span class="s1">'845b2b'</span><span class="p">,</span> <span class="s1">'0530cd'</span><span class="p">,</span> <span class="s1">'9a2b11'</span><span class="p">]</span>
+
+<span class="n">which_part</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">gen</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">(</span><span class="n">my_chars</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">print</span> <span class="s1">'[+] Here we go....'</span><span class="p">,</span> <span class="n">which_part</span>
+
+<span class="k">if</span> <span class="n">which_part</span> <span class="o">==</span> <span class="s1">'1'</span><span class="p">:</span>
+    <span class="n">part_1</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">which_part</span> <span class="o">==</span> <span class="s1">'2'</span><span class="p">:</span>
+    <span class="n">part_2</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">which_part</span> <span class="o">==</span> <span class="s1">'3'</span><span class="p">:</span>
+    <span class="n">part_3</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">which_part</span> <span class="o">==</span> <span class="s1">'4'</span><span class="p">:</span>
+    <span class="n">part_4</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">which_part</span> <span class="o">==</span> <span class="s1">'5'</span><span class="p">:</span>
+    <span class="n">part_5</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="s1">'[+] Finished'</span>
+</pre>
+</div>
+<div class="section" id="challenge-25">
+<h2>Challenge 25</h2>
+<p>Not solved.</p>
+</div>
+<div class="section" id="challenge-26">
+<h2>Challenge 26</h2>
+<p>I saw no really easy way to do this other than taking apart the apk and
+using <code>dex2jar</code> on the main java file. In this file I found the code
+that makes use of the PIN and reversed engineered the code. There's
+some hashing and ultimately the app will download the egg.</p>
+<p>So I reimplemented the Java code and bruteforced it. A few numbers matched,
+so I just entered them until I got a valid download:
+(disclaimer: I am not very good at Java at all)</p>
+<pre class="code java literal-block">
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.MessageDigest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.SecureRandom</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.regex.Matcher</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.regex.Pattern</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.*</span><span class="o">;</span> <span class="c1">//MessageDigest;
+</span><span class="kn">import</span> <span class="nn">javax.crypto.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.crypto.spec.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.crypto.spec.SecretKeySpec</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.Graphics</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.image.BufferedImage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Files</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Paths</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.ByteArrayInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.*</span><span class="o">;</span> <span class="c1">//MessageDigest;
+</span><span class="kn">import</span> <span class="nn">javax.crypto.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.crypto.spec.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.imageio.ImageIO</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JFrame</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JPanel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">sun.misc.BASE64Decoder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">sun.misc.BASE64Encoder</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">do_sha</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="n">String</span> <span class="n">s1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i1</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">NoSuchAlgorithmException</span>
+    <span class="o">{</span>
+        <span class="n">MessageDigest</span> <span class="n">messagedigest</span> <span class="o">=</span> <span class="n">MessageDigest</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&quot;SHA1&quot;</span><span class="o">);</span>
+        <span class="kt">byte</span> <span class="n">abyte0</span><span class="o">[]</span> <span class="o">=</span> <span class="o">(</span><span class="k">new</span> <span class="n">StringBuilder</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">s1</span><span class="o">))).</span><span class="na">append</span><span class="o">(</span><span class="n">s</span><span class="o">).</span><span class="na">toString</span><span class="o">().</span><span class="na">getBytes</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">j1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="k">do</span>
+        <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">j1</span> <span class="o">&gt;=</span> <span class="n">i1</span><span class="o">)</span>
+            <span class="o">{</span>
+                <span class="kt">byte</span> <span class="n">abyte1</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">16</span><span class="o">];</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">abyte0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">abyte1</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">15</span><span class="o">);</span>
+                <span class="k">return</span> <span class="n">abyte1</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="n">abyte0</span> <span class="o">=</span> <span class="n">messagedigest</span><span class="o">.</span><span class="na">digest</span><span class="o">(</span><span class="n">abyte0</span><span class="o">);</span>
+            <span class="n">j1</span><span class="o">++;</span>
+        <span class="o">}</span> <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">hardwork</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">();</span>
+        <span class="k">try</span>
+        <span class="o">{</span>
+            <span class="n">Cipher</span> <span class="n">cipher</span> <span class="o">=</span> <span class="n">Cipher</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&quot;AES&quot;</span><span class="o">);</span>
+            <span class="n">SecretKeySpec</span> <span class="n">secretkeyspec</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SecretKeySpec</span><span class="o">(</span><span class="n">do_sha</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="s">&quot;ovaederecumsale&quot;</span><span class="o">,</span> <span class="mi">10000</span><span class="o">),</span> <span class="s">&quot;AES&quot;</span><span class="o">);</span>
+            <span class="n">cipher</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">secretkeyspec</span><span class="o">);</span>
+            <span class="n">BASE64Decoder</span> <span class="n">decoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BASE64Decoder</span><span class="o">();</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">decodedBytes</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="na">decodeBuffer</span><span class="o">(</span><span class="s">&quot;8QeNdEdkspV6+1I77SEEEF4aWs5dl/auahJ46MMufkg=&quot;</span><span class="o">);</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">plaintxt</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">decodedBytes</span><span class="o">);</span>
+            <span class="n">BASE64Encoder</span> <span class="n">encoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BASE64Encoder</span><span class="o">();</span>
+            <span class="n">s1</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="na">encodeBuffer</span><span class="o">(</span><span class="n">plaintxt</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">exception</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s1</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">s1</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>  <span class="kd">throws</span> <span class="n">Exception</span>
+    <span class="o">{</span>
+        <span class="n">hardwork</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+</div>
+<div class="section" id="challenge-27">
+<h2>Challenge 27</h2>
+<p>One time pad with a reused pad. Another challenge that taught me a lot, specifically
+cribdragging. Having found <a class="reference external" href="https://github.com/SpiderLabs/cribdrag">this tool</a> I started
+to figure out how to use this.</p>
+<p>Basically you need to take two of the encrypted texts, use the <code>xorstrings</code> to
+xor them together and then pass that to the <code>cribdrag</code> tool. Then you need to start
+entering words that might be in the text. If a word like <code>the</code>, or <code>and</code>, are in the
+text, you should see some plaintext appear in the output. Then perhaps pad the word
+with spaces either side. Once you have more of the plaintext, you can use that to
+expand the strings in either text.</p>
+<p>Eventually you will get the plain text for either string. Using that you can then
+decipher the other texts.</p>
+<p>The strings increase in length, so combine them all until you have the final
+sentence.</p>
+<p>Here's a quick example for a couple of the lines:</p>
+<p>[!`asciicast](<a class="reference external" href="https://asciinema.org/a/65rhh2rqofe51f0yst1nktmbu.png">https://asciinema.org/a/65rhh2rqofe51f0yst1nktmbu.png</a>) &lt;<a class="reference external" href="https://asciinema.org/a/65rhh2rqofe51f0yst1nktmbu">https://asciinema.org/a/65rhh2rqofe51f0yst1nktmbu</a>&gt;`_</p>
+</div>
+
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post-->
+	<div id="comments">
+		<div id="respond">
+			<div id="disqus_thread"></div>
+	        <script type="text/javascript">
+	            var disqus_shortname = 'unlogic';
+	
+	            /* * * DON'T EDIT BELOW THIS LINE * * */
+	            (function() {
+	                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	            })();
+	        </script>
+	        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		</div><!-- #respond -->					
+</div><!-- #comments -->
+
+		</div>
+		
+		<div id="footer">
+			<p><p>Powered by <a href="http://getpelican.com">Pelican</a></p>
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>		</div><!-- /#footer -->
+	</div><!-- /#container -->
+	<div style="display:none"></div>
+</body>
+</html>

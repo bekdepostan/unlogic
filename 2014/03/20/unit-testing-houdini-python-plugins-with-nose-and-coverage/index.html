@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Unlogic &mdash; Unit testing Houdini Python plugins with nose and coverage</title>
+		<meta charset="utf-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" href="http://unlogic.co.uk/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://unlogic.co.uk/theme/css/pygments.css" />
+		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<style type="text/css">
+			body.custom-background { background-color: #f5f5f5; }
+		</style>
+		<link rel="alternate" type="application/atom+xml"
+			title="Unlogic — Flux Atom"
+			href="http://unlogic.co.uk/" /> 
+		<link rel ="alternate" type="application/rss+xml"
+			title="Unlogic — Flux RSS"
+			href="http://unlogic.co.uk/feed.xml" /> 
+		<!--[if lte IE 8]><script src="http://unlogic.co.uk/theme/js/html5shiv.js"></script><![endif]-->
+</head>
+
+<body class="home blog custom-background single-author" >
+	<div id="container">
+		<div id="header">
+				<h1 id="site-title"><a href="http://unlogic.co.uk/">Unlogic</a></h1>
+<h2 id="site-description">I've got a keyboard, a terminal, and a whole load of luck</h2>		</div><!-- /#banner -->
+		
+		<div id="menu">
+            <div class="menu-social-container">
+                <ul id="menu-social" class="social">
+                    <li><a href="https://twitter.com/binaryheadache"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+                    <li><a href="https://github.com/svenito"><i class="fa fa-github-square fa-2x"></i></a></li>
+                </ul>
+            </div>
+			<div class="menu-navigation-container">
+                
+                <ul id="menu-navigation" class="menu">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://unlogic.co.uk/pages/all-posts.html">All posts</a></li>
+
+				</ul>
+			</div> <!--/#menu-navigation-container-->
+            <div style="clear: both;"></div>
+		</div><!-- /#menu -->
+		
+		<div class="page-title">
+		</div>
+	
+		<div id="contents">
+
+<div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="http://unlogic.co.uk/2014/03/20/unit-testing-houdini-python-plugins-with-nose-and-coverage/">Thu 20 March 2014</a></div>
+			<div class="comments"><a href="http://unlogic.co.uk/2014/03/20/unit-testing-houdini-python-plugins-with-nose-and-coverage/#disqus_thread" title="Comment on Unit testing Houdini Python plugins with nose and coverage">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="http://unlogic.co.uk/2014/03/20/unit-testing-houdini-python-plugins-with-nose-and-coverage/" title="Permalink to Unit testing Houdini Python plugins with nose and coverage" rel="bookmark">Unit testing Houdini Python plugins with nose and coverage</a>
+		</h2>
+		<div class="entry-content">
+			<p>We all know how important unit testing is, right? But often you wonder how can
+you test a not so straight forward tool. In this case we're talking about a
+Python script intended to run inside <a class="reference external" href="http://sidefx.com">Houdini</a>. In my specific
+case the python script is launched from a script on a node when the user clicks
+a button on the OTL. I want to run unit tests on this script, but the problem is
+that the script parses a set of nodes and does various things according to the
+types of nodes and layout of the nodes. It's clear that the HOM is required in the
+unit tests. So I need to somehow run my unit tests inside houdini and have
+some nodes available for my testing. Fortunately this isn't difficult to do, but
+it does require a little setup and some fiddling in order to get it to work.</p>
+<p>I'll be using <a class="reference external" href="https://nose.readthedocs.org">nose tests</a> as my test runner and
+<a class="reference external" href="http://nedbatchelder.com/code/coverage/">coverage</a> for coverage testing.
+Because I want to make sure I test as much code as possible. I created a hip file that
+contains whatever nodes and connections I need to run most of the tests and saved
+this to the same directory as my test script.</p>
+<p>Before we write some code you will need to install <code>nose</code> and <code>coverage</code> and make
+sure they work.</p>
+<p>Now that we have all our dependencies installed, we need to import all the
+modules we need and set some things up.</p>
+<pre class="code python literal-block">
+<span class="kn">import</span> <span class="nn">nose</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'../path_of_module'</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'NOSE_WITH_COVERAGE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1'</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'NOSE_COVER_PACKAGE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'module_to_test'</span>
+
+<span class="kn">import</span> <span class="nn">hou</span>
+
+<span class="kn">import</span> <span class="nn">module_to_test</span>
+</pre>
+<p>We import the <code>nose</code> module and then we need to tell nose to make use of the
+coverage package. <code>os.environ['NOSE_WITH_COVERAGE'] = '1'</code> does just that, and
+<code>os.environ['NOSE_COVER_PACKAGE'] = 'module_to_test'</code> restricts our test results to
+the module(s) we want to test. If you want to specify multiple modules simply
+separate them with commas: <code>os.environ['NOSE_COVER_PACKAGE'] = 'module_to_test,another_module'</code></p>
+<p>Unfortunately for this to work properly you need to patch nose's cover plugin.
+There's a small bug in older versions, so depending on your distro you may need to
+make the following change to <code>nose/plugins/cover.py</code></p>
+<p>Change these lines</p>
+<pre class="code python literal-block">
+<span class="k">for</span> <span class="n">pkgs</span> <span class="ow">in</span> <span class="p">[</span><span class="n">tolist</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">cover_packages</span><span class="p">]:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">coverPackages</span><span class="o">.</span><span class="n">extends</span><span class="p">(</span><span class="n">pkgs</span><span class="p">)</span>
+</pre>
+<p>to these lines</p>
+<pre class="code python literal-block">
+<span class="k">for</span> <span class="n">pkgs</span> <span class="ow">in</span> <span class="n">tolist</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">cover_packages</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">coverPackages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pkgs</span><span class="p">)</span>
+</pre>
+<p>Otherwise the <code>NOSE_COVER_PACKAGE</code> variable won't work properly.</p>
+<p>I also setup the <code>sys.path</code> so that I load my local module rather
+than the globally installed one. Depending on how your directories are laid out
+you might not need this.</p>
+<p>After this we need to import the <code>hou</code> module and finally the module(s) we want to test.</p>
+<p>Then we write our main function which will load our hip file and start our tests</p>
+<pre class="code python literal-block">
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">hou</span><span class="o">.</span><span class="n">hipFile</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">'/path/to/test.hip'</span><span class="p">)</span>
+
+    <span class="n">nose</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="n">__file__</span><span class="p">],</span> <span class="s1">'--cover_html'</span><span class="p">])</span>
+</pre>
+<p>As you can see, you can pass the commandline argments for nose into the run function.
+With <code>--cover_html</code> we automatically generate the html coverage information. You
+could omit this and run <code>coverage html</code> after the tests complete to generate the
+html coverage pages instead. The output from the two methods is slightly different,
+so pick the one that you prefer.</p>
+<p>The next bits are up to you now, here you write your tests following a format like</p>
+<pre class="code python literal-block">
+<span class="k">def</span> <span class="nf">test_afunction</span><span class="p">():</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">hou</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'/obj/geo/box1'</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">module_to_test</span><span class="o">.</span><span class="n">do_stuff</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
+</pre>
+<p>You can access any and all <code>hou.</code> calls from your tests, so do what you must.</p>
+<p>Once you are happy with your tests, or you just want to go ahead and test a single
+one, we need to run the tests through hython. Bear in mind that you'll consume a
+batch license when you run these tests.</p>
+<pre class="code bash literal-block">
+hython ./test.py
+</pre>
+<p>where <code>test.py</code> is the name of the file that contains the tests you wrote.
+After a while you'll see your tests run and the coverage output. It should
+look a little like this</p>
+<pre class="code bash literal-block">
+...
+Name          Stmts   Miss  Cover   Missing
+-------------------------------------------
+module_to_test  <span class="m">25</span>     <span class="m">14</span>    44%   1-2, 6, 9, 12-15, 21, 27-32
+another_module  <span class="m">314</span>    <span class="m">173</span>    45%   4-20, 24, 37-38, 46
+-------------------------------------------
+TOTAL           <span class="m">339</span>    <span class="m">187</span>    45%
+----------------------------------------------------------------------
+Ran <span class="m">3</span> tests in 0.053s
+
+OK
+</pre>
+<p>You'll also have a directory called <code>cover</code> which will contain the html output,
+assuming you have the <code>--cover_html</code> flag on. If not, run <code>coverage html</code> and
+after a short wait you will have a <code>htmlcov</code> directory with the html coverage
+info.</p>
+<p>I hope this helps you out if you ever wanted to unit test your Houdini Python
+script. It's not as difficult as I thought, but it does take a little bit of setting
+up to get everything to work right. There will still be some limitations as to what
+you can test and get results for, but any testing is always better than none at
+all I say.</p>
+<p>And the <code>test.py</code> file as a whole</p>
+<pre class="code python literal-block">
+<span class="kn">import</span> <span class="nn">nose</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'../path_of_module'</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'NOSE_WITH_COVERAGE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1'</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'NOSE_COVER_PACKAGE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'module_to_test'</span>
+
+<span class="kn">import</span> <span class="nn">hou</span>
+
+<span class="kn">import</span> <span class="nn">module_to_test</span>
+
+
+<span class="k">def</span> <span class="nf">test_afunction</span><span class="p">():</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">hou</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'/obj/geo/box1'</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">module_to_test</span><span class="o">.</span><span class="n">do_stuff</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">hou</span><span class="o">.</span><span class="n">hipFile</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">'/path/to/test.hip'</span><span class="p">)</span>
+
+    <span class="n">nose</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="n">__file__</span><span class="p">],</span> <span class="s1">'--cover_html'</span><span class="p">])</span>
+</pre>
+
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post-->
+	<div id="comments">
+		<div id="respond">
+			<div id="disqus_thread"></div>
+	        <script type="text/javascript">
+	            var disqus_shortname = 'unlogic';
+	
+	            /* * * DON'T EDIT BELOW THIS LINE * * */
+	            (function() {
+	                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	            })();
+	        </script>
+	        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		</div><!-- #respond -->					
+</div><!-- #comments -->
+
+		</div>
+		
+		<div id="footer">
+			<p><p>Powered by <a href="http://getpelican.com">Pelican</a></p>
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>		</div><!-- /#footer -->
+	</div><!-- /#container -->
+	<div style="display:none"></div>
+</body>
+</html>

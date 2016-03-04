@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Unlogic &mdash; Let's crack Bandit Part 1</title>
+		<meta charset="utf-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" href="http://unlogic.co.uk/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://unlogic.co.uk/theme/css/pygments.css" />
+		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<style type="text/css">
+			body.custom-background { background-color: #f5f5f5; }
+		</style>
+		<link rel="alternate" type="application/atom+xml"
+			title="Unlogic — Flux Atom"
+			href="http://unlogic.co.uk/" /> 
+		<link rel ="alternate" type="application/rss+xml"
+			title="Unlogic — Flux RSS"
+			href="http://unlogic.co.uk/feed.xml" /> 
+		<!--[if lte IE 8]><script src="http://unlogic.co.uk/theme/js/html5shiv.js"></script><![endif]-->
+</head>
+
+<body class="home blog custom-background single-author" >
+	<div id="container">
+		<div id="header">
+				<h1 id="site-title"><a href="http://unlogic.co.uk/">Unlogic</a></h1>
+<h2 id="site-description">I've got a keyboard, a terminal, and a whole load of luck</h2>		</div><!-- /#banner -->
+		
+		<div id="menu">
+            <div class="menu-social-container">
+                <ul id="menu-social" class="social">
+                    <li><a href="https://twitter.com/binaryheadache"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+                    <li><a href="https://github.com/svenito"><i class="fa fa-github-square fa-2x"></i></a></li>
+                </ul>
+            </div>
+			<div class="menu-navigation-container">
+                
+                <ul id="menu-navigation" class="menu">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://unlogic.co.uk/pages/all-posts.html">All posts</a></li>
+
+				</ul>
+			</div> <!--/#menu-navigation-container-->
+            <div style="clear: both;"></div>
+		</div><!-- /#menu -->
+		
+		<div class="page-title">
+		</div>
+	
+		<div id="contents">
+
+<div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part-1/">Fri 13 March 2015</a></div>
+			<div class="comments"><a href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part-1/#disqus_thread" title="Comment on Let's crack Bandit Part 1">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part-1/" title="Permalink to Let's crack Bandit Part 1" rel="bookmark">Let's crack Bandit Part 1</a>
+		</h2>
+		<div class="entry-content">
+			<p>Let's give Bandit from the <a class="reference external" href="http://overthewire.org/wargames">overthewire war games</a>
+a going over. I did this a while back, but never really wrote it up,
+so I'm going to do it again and write it up. Remember that you can copy
+and paste from all the <a class="reference external" href="https://asciinema.org">asciinema</a> videos below.</p>
+<p>Bandit is a CTF/wargame for beginners and a great intro to various
+linux tools as well. I won't repeat the level summary for each post, instead
+there's a link to the original page for each section.</p>
+<p>I'd be interested to know if the asciinema files are preferable over the
+plain text format or not. Let me know in the comments below. I've used
+asciinema in the first level only, but would post the asciinema vids if they
+are useful.</p>
+<div class="section" id="level-0-1">
+<h2>Level 0 -&gt; 1</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit1.html">level 00</a></p>
+<p>Not much to do here but login and read a file so:</p>
+<script type="text/javascript" src="https://asciinema.org/a/17664.js" id="asciicast-17664" async></script></div>
+<div class="section" id="level-1-2">
+<h2>Level 1 -&gt; 2</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit2.html">level 01</a></p>
+<p>Using the password from the last session, let's login and look at what's in
+<code>-</code>. The trick here is that <cite>:code:</cite>-` is a bit tricky to pass as an argument. Try
+it to see what happens. All we need to do it prefix it with the path:</p>
+<pre class="code console literal-block">
+<span class="gp">bandit1&#64;melinda:~$</span> ls -la
+<span class="go">total 24
+-rw-r-----   1 bandit2 bandit1   33 Jun  6  2013 -
+drwxr-xr-x   2 root    root    4096 Jun  6  2013 .
+drwxr-xr-x 160 root    root    4096 Oct 17  2013 ..
+-rw-r--r--   1 root    root     220 Apr  3  2012 .bash_logout
+-rw-r--r--   1 root    root    3486 Apr  3  2012 .bashrc
+-rw-r--r--   1 root    root     675 Apr  3  2012 .profile
+</span><span class="gp">bandit1&#64;melinda:~$</span> cat ./-
+<span class="go">CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9</span>
+</pre>
+</div>
+<div class="section" id="level-2-3">
+<h2>Level 2 -&gt; 3</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit3.html">level 02</a></p>
+<p>Not much trickiness here, merely the spaces in the filename. But with TAB
+completion the escaping of the spaces will be handled for us:</p>
+<pre class="code console literal-block">
+<span class="gp">bandit2&#64;melinda:~$</span> ls -la
+<span class="go">total 24
+drwxr-xr-x   2 root    root    4096 Jun  6  2013 .
+drwxr-xr-x 160 root    root    4096 Oct 17  2013 ..
+-rw-r--r--   1 root    root     220 Apr  3  2012 .bash_logout
+-rw-r--r--   1 root    root    3486 Apr  3  2012 .bashrc
+-rw-r--r--   1 root    root     675 Apr  3  2012 .profile
+-rw-r-----   1 bandit3 bandit2   33 Jun  6  2013 spaces in this filename
+</span><span class="gp">bandit2&#64;melinda:~$</span> cat ./spaces<span class="se">\ </span>in<span class="se">\ </span>this<span class="se">\ </span>filename
+<span class="go">UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK</span>
+</pre>
+</div>
+<div class="section" id="level-3-4">
+<h2>Level 3 -&gt; 4</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit4.html">level 03</a></p>
+<p>Hidden file? Just do a long listing with <code>ls -la</code></p>
+<pre class="code console literal-block">
+<span class="gp">bandit3&#64;melinda:~$</span> ls -la
+<span class="go">total 24
+drwxr-xr-x   3 root root 4096 Jun  6  2013 .
+drwxr-xr-x 160 root root 4096 Oct 17  2013 ..
+-rw-r--r--   1 root root  220 Apr  3  2012 .bash_logout
+-rw-r--r--   1 root root 3486 Apr  3  2012 .bashrc
+-rw-r--r--   1 root root  675 Apr  3  2012 .profile
+drwxr-xr-x   2 root root 4096 Jun  6  2013 inhere
+</span><span class="gp">bandit3&#64;melinda:~$</span> <span class="nb">cd</span> inhere/
+<span class="gp">bandit3&#64;melinda:~/inhere$</span> ls
+<span class="gp">bandit3&#64;melinda:~/inhere$</span> ls -la
+<span class="go">total 12
+drwxr-xr-x 2 root    root    4096 Jun  6  2013 .
+drwxr-xr-x 3 root    root    4096 Jun  6  2013 ..
+-rw-r----- 1 bandit4 bandit3   33 Jun  6  2013 .hidden
+</span><span class="gp">bandit3&#64;melinda:~/inhere$</span> cat .hidden
+<span class="go">pIwrPrtPN36QITSp3EQaw936yaFoFgAB</span>
+</pre>
+</div>
+<div class="section" id="level-4-5">
+<h2>Level 4 -&gt; 5</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit5.html">level 04</a></p>
+<p>We need to find a human readable file in the <code>inhere</code> directory. Using the
+power of bash:</p>
+<pre class="code console literal-block">
+<span class="gp">bandit4&#64;melinda:~$</span> <span class="nb">cd</span> inhere/
+<span class="gp">bandit4&#64;melinda:~/inhere$</span> <span class="k">for</span> f in <span class="k">$(</span>ls<span class="k">)</span><span class="p">;</span> <span class="k">do</span> file ./<span class="si">${</span><span class="nv">f</span><span class="si">}</span><span class="p">;</span> <span class="k">done</span>
+<span class="go">./-file00: data
+./-file01: data
+./-file02: data
+./-file03: data
+./-file04: data
+./-file05: data
+./-file06: data
+./-file07: ASCII text
+./-file08: data
+./-file09: data
+</span><span class="gp">bandit4&#64;melinda:~/inhere$</span> cat ./-file07
+<span class="go">koReBOKuIDDepwhWk7jZC0RTdopnAYKh</span>
+</pre>
+<p>Change into the <code>inhere</code> directory and then for each file returned by the <code>ls</code>
+command, get the filetype with the <code>file</code> command. Only one which is ASCII, so
+that's a good candidate. Sure enough, it's the one we are after.</p>
+</div>
+<div class="section" id="level-5-6">
+<h2>Level 5 -&gt; 6</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit6.html">level 05</a></p>
+<p>This is similar to the previous level, except now we are looking for something
+with a specific size. Luckily the <code>find</code> command is just right for this:</p>
+<pre class="code console literal-block">
+<span class="gp">bandit5&#64;melinda:~$</span> find ./ -size 1033c
+<span class="go">./inhere/maybehere07/.file2
+</span><span class="gp">bandit5&#64;melinda:~$</span> file ./inhere/maybehere07/.file2
+<span class="go">./inhere/maybehere07/.file2: ASCII text, with very long lines
+</span><span class="gp">bandit5&#64;melinda:~$</span> cat !$
+<span class="go">cat ./inhere/maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7</span>
+</pre>
+</div>
+<div class="section" id="level-6-7">
+<h2>Level 6 -&gt; 7</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit7.html">level 06</a></p>
+<p>Now we need to broaden our search. Once again <code>find</code> to the rescue. We know
+the user and group that own the file and its size. The user and group might
+be enough already, so let's give that a go</p>
+<pre class="code console literal-block">
+<span class="gp">bandit6&#64;melinda:~$</span> <span class="nb">cd</span> /
+<span class="gp">bandit6&#64;melinda:/$</span> find -user bandit7 -group bandit6  2&gt; /dev/null
+<span class="go">./var/lib/dpkg/info/bandit7.password
+</span><span class="gp">bandit6&#64;melinda:/$</span> cat ./var/lib/dpkg/info/bandit7.password
+<span class="go">HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs</span>
+</pre>
+<p>Perfect. I piped the <code>stderr</code> to <code>/dev/null</code> so it doesn't clutter the output
+with files that it can't read.</p>
+</div>
+<div class="section" id="level-7-8">
+<h2>Level 7 -&gt; 8</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit8.html">Level 07</a></p>
+<p>To find things in a file, <code>grep</code> is usually the answer. However it's probably
+wise to check the file format first in case all the words are smushed together
+and we need to filter grep again.</p>
+<pre class="code console literal-block">
+<span class="gp">bandit7&#64;melinda:~$</span> head data.txt
+<span class="go">Kunming's       0D0KZ3TdLRBXD8lyd7Bj2hAqnxaMInQe
+multitude's     8MFZa8yOjTt6m8PvxteTp7XTDFLiuFAk
+audibility      ZeLj0yAw7ylmEoLxSUEqF4iB43c9DN4h
+unadvised       Pgp8X2LSVdNrmIKcJ7Oe8eqTzEVfhGbR
+Brecht's        uKyKryNUZYFuTQpwRlDqucLLIUbiIMF0
+Alvin   IpQIV6mpjticdB790obqXAvYkAgnDV8E
+insufficient    cgHhWVJahfDqFIe82vOliryQQ8ihGlGN
+Sauterne        UhPBp0A04GkIRfvZnUt1UdwlKU2ViYUd
+cluster 1GeFZ0B6rsEtJ5Sqb5h8Wv7UwG15DQzb
+ember's f2XPIE1iDHW9oHPyodPyfTz87DAbWmXu
+</span><span class="gp">bandit7&#64;melinda:~$</span> grep millionth data.txt
+<span class="go">millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV</span>
+</pre>
+<p>Luckily it was one word and password per line, so grepping the file worked
+fine.</p>
+</div>
+<div class="section" id="level-8-9">
+<h2>Level 8 -&gt; 9</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit9.html">level 08</a></p>
+<p>So the only way we know which entry is the password is that it occurs
+only once. For this the linux tool <code>uniq</code> seems perfect. However it can
+only detect duplicate lines if they are next to each other. To fix this
+we also need to sort the contents of the file and then display only
+unique lines:</p>
+<pre class="code console literal-block">
+<span class="gp">bandit8&#64;melinda:~$</span> cat data.txt <span class="p">|</span> sort <span class="p">|</span> uniq -u
+<span class="go">UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR</span>
+</pre>
+</div>
+<div class="section" id="level-9-10">
+<h2>Level 9 -&gt; 10</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit10.html">Level 09</a></p>
+<p>This <code>data.txt</code> file is in binary. So in order to find the strings we need
+to dump it as hex, or, even simpler, run it through <code>strings</code>:</p>
+<pre class="code console literal-block">
+<span class="gp">bandit9&#64;melinda:~$</span> strings data.txt  <span class="p">|</span> <span class="nv">grep</span> <span class="o">==</span>
+<span class="go">I========== the6
+========== password
+========== ism
+========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk</span>
+</pre>
+</div>
+<div class="section" id="level-10-11">
+<h2>Level 10 -&gt; 11</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit11.html">Level 10</a></p>
+<p>Good ol base64. If you haven't seen it before, you'll get to see it a lot
+more if you carry on doing these kind of challenges. Simply done though:</p>
+<pre class="code console literal-block">
+<span class="gp">bandit10&#64;melinda:~$</span> cat data.txt  <span class="p">|</span> base64 -d
+<span class="go">The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR</span>
+</pre>
+</div>
+<div class="section" id="level-11-12">
+<h2>Level 11 -&gt; 12</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit12.html">level 11</a></p>
+<p>The description is a basically a verbose way of saying that the string
+has been encoded with rot13. The quickest way for me to un-rotate it, is
+using python:</p>
+<pre class="code console literal-block">
+<span class="gp">bandit11&#64;melinda:~$</span> cat data.txt
+<span class="go">Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+</span><span class="gp">bandit11&#64;melinda:~$</span> python -c <span class="s1">'import codecs;print codecs.decode(&quot;5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh&quot;, &quot;rot13&quot;)'</span>
+<span class="go">5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu</span>
+</pre>
+</div>
+<div class="section" id="level-12-13">
+<h2>Level 12 -&gt; 13</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit13.html">Level 12</a></p>
+<p>From here on it's going to get a little trickier. We know that data.txt is a hexdump
+of a binary, so first let's convert it back to a binary first with <code>xxd</code></p>
+<pre class="code console literal-block">
+<span class="gp">bandit12&#64;melinda:/tmp/unl$</span> cat data.txt <span class="p">|</span> xxd -r &gt; data2
+</pre>
+<p>Then we can find out the filetype of data2</p>
+<pre class="code console literal-block">
+<span class="gp">bandit12&#64;melinda:/tmp/unl$</span> file data2
+<span class="go">data2: gzip compressed data, was &quot;data2.bin&quot;, from Unix, last modified: Fri Nov 14 10:32:20 2014, max compression</span>
+</pre>
+<p><code>gzip</code> it is. So uncompress that to data3</p>
+<pre class="code console literal-block">
+<span class="gp">bandit12&#64;melinda:/tmp/unl$</span> cat data2 <span class="p">|</span> zcat &gt; data3
+</pre>
+<p>and get its filetype next. I won't go over each step in detail as there's quite
+a few iterations. I'll post the console log of how I got to the flag and hopefully
+that should be clear enough.</p>
+<pre class="code console literal-block">
+<span class="gp">bandit12&#64;melinda:/tmp/unl$</span> file data3
+<span class="go">data3: bzip2 compressed data, block size = 900k
+</span><span class="gp">bandit12&#64;melinda:/tmp/unl$</span> bzcat data3 &gt; data4
+<span class="gp">bandit12&#64;melinda:/tmp/unl$</span> file data4
+<span class="go">data4: gzip compressed data, was &quot;data4.bin&quot;, from Unix, last modified: Fri Nov 14 10:32:20 2014, max compression
+</span><span class="gp">bandit12&#64;melinda:/tmp/unl$</span> cat data4 <span class="p">|</span> zcat &gt; data5
+<span class="gp">bandit12&#64;melinda:/tmp/unl$</span> file data5
+<span class="go">data5: POSIX tar archive (GNU)
+</span><span class="gp">bandit12&#64;melinda:/tmp/unl$</span> tar xf data5
+<span class="gp">bandit12&#64;melinda:/tmp/unl$</span> ls
+<span class="go">data.txt  data2  data2.bin  data3  data4  data5  data5.bin
+</span><span class="gp">bandit12&#64;melinda:/tmp/unl$</span> file data5.bin
+<span class="go">data5.bin: POSIX tar archive (GNU)
+</span><span class="gp">bandit12&#64;melinda:/tmp/unl$</span> tar xf data5.bin
+<span class="gp">bandit12&#64;melinda:/tmp/unl$</span> ls
+<span class="go">data.txt  data2  data2.bin  data3  data4  data5  data5.bin  data6.bin
+</span><span class="gp">bandit12&#64;melinda:/tmp/unl$</span> file data6.bin
+<span class="go">data6.bin: bzip2 compressed data, block size = 900k
+</span><span class="gp">bandit12&#64;melinda:/tmp/unl$</span> bzcat data6.bin &gt; data7
+<span class="gp">bandit12&#64;melinda:/tmp/unl$</span> file data7
+<span class="go">data7: POSIX tar archive (GNU)
+</span><span class="gp">bandit12&#64;melinda:/tmp/unl$</span> tar xf data7
+<span class="gp">bandit12&#64;melinda:/tmp/unl$</span> ls
+<span class="go">data.txt  data2  data2.bin  data3  data4  data5  data5.bin  data6.bin  data7  data8.bin
+</span><span class="gp">bandit12&#64;melinda:/tmp/unl$</span> file data8.bin
+<span class="go">data8.bin: gzip compressed data, was &quot;data9.bin&quot;, from Unix, last modified: Fri Nov 14 10:32:20 2014, max compression
+</span><span class="gp">bandit12&#64;melinda:/tmp/unl$</span> cat data8.bin <span class="p">|</span> zcat &gt; data9
+<span class="gp">bandit12&#64;melinda:/tmp/unl$</span> file data9
+<span class="go">data9: ASCII text
+</span><span class="gp">bandit12&#64;melinda:/tmp/unl$</span> cat data9
+<span class="go">The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL</span>
+</pre>
+<p>Basically we identify, extract, repeat, until we're at the plain text file with the
+password.</p>
+</div>
+<div class="section" id="level-13-14">
+<h2>Level 13 -&gt; 14</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit14.html">Level 13</a></p>
+<p>We're given a lot of information here, and one of those is that we get the SSH
+key for the <code>bandit14</code> user. We can use this to login as that user without knowing
+the password:</p>
+<pre class="code console literal-block">
+<span class="gp">bandit13&#64;melinda:~$</span> ssh -i ./sshkey.private bandit14&#64;localhost
+<span class="go">Could not create directory '/home/bandit13/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is 05:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
+Are you sure you want to continue connecting (yes/no)? yes
+.
+.
+</span><span class="gp">bandit14&#64;melinda:~$</span> cat /etc/bandit_pass/bandit14
+<span class="go">4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e</span>
+</pre>
+<p>We pass the key as an argument to the ssh command, and connect to the localhost
+as bandit14. Then we can read the file with the password.</p>
+</div>
+<div class="section" id="level-14-15">
+<h2>Level 14 -&gt; 15</h2>
+<p><a class="reference external" href="http://overthewire.org/wargames/bandit/bandit15.html">Level 14</a></p>
+<p>This level starts introducing some networking and how to interact with remote
+hosts. Well, in this case it's localhost, but the principle is the same.
+We need to connect to a specific port on localhost and then supply
+the current password. I'm using <code>netcat</code> to do this</p>
+<pre class="code console literal-block">
+<span class="gp">bandit14&#64;melinda:~$</span> nc localhost 30000
+<span class="go">4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr</span>
+</pre>
+<p>All you get is a blank line when you've connected. The simply paste in the
+password you logged in with and hit enter.</p>
+<p>Continues with <a class="reference external" href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part2">Let's crack Bandit Part 2</a></p>
+</div>
+
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post-->
+	<div id="comments">
+		<div id="respond">
+			<div id="disqus_thread"></div>
+	        <script type="text/javascript">
+	            var disqus_shortname = 'unlogic';
+	
+	            /* * * DON'T EDIT BELOW THIS LINE * * */
+	            (function() {
+	                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	            })();
+	        </script>
+	        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		</div><!-- #respond -->					
+</div><!-- #comments -->
+
+		</div>
+		
+		<div id="footer">
+			<p><p>Powered by <a href="http://getpelican.com">Pelican</a></p>
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>		</div><!-- /#footer -->
+	</div><!-- /#container -->
+	<div style="display:none"></div>
+</body>
+</html>

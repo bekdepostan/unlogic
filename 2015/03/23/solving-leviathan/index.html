@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Unlogic &mdash; Solving Leviathan</title>
+		<meta charset="utf-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" href="http://unlogic.co.uk/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://unlogic.co.uk/theme/css/pygments.css" />
+		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<style type="text/css">
+			body.custom-background { background-color: #f5f5f5; }
+		</style>
+		<link rel="alternate" type="application/atom+xml"
+			title="Unlogic — Flux Atom"
+			href="http://unlogic.co.uk/" /> 
+		<link rel ="alternate" type="application/rss+xml"
+			title="Unlogic — Flux RSS"
+			href="http://unlogic.co.uk/feed.xml" /> 
+		<!--[if lte IE 8]><script src="http://unlogic.co.uk/theme/js/html5shiv.js"></script><![endif]-->
+</head>
+
+<body class="home blog custom-background single-author" >
+	<div id="container">
+		<div id="header">
+				<h1 id="site-title"><a href="http://unlogic.co.uk/">Unlogic</a></h1>
+<h2 id="site-description">I've got a keyboard, a terminal, and a whole load of luck</h2>		</div><!-- /#banner -->
+		
+		<div id="menu">
+            <div class="menu-social-container">
+                <ul id="menu-social" class="social">
+                    <li><a href="https://twitter.com/binaryheadache"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+                    <li><a href="https://github.com/svenito"><i class="fa fa-github-square fa-2x"></i></a></li>
+                </ul>
+            </div>
+			<div class="menu-navigation-container">
+                
+                <ul id="menu-navigation" class="menu">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://unlogic.co.uk/pages/all-posts.html">All posts</a></li>
+
+				</ul>
+			</div> <!--/#menu-navigation-container-->
+            <div style="clear: both;"></div>
+		</div><!-- /#menu -->
+		
+		<div class="page-title">
+		</div>
+	
+		<div id="contents">
+
+<div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="http://unlogic.co.uk/2015/03/23/solving-leviathan/">Mon 23 March 2015</a></div>
+			<div class="comments"><a href="http://unlogic.co.uk/2015/03/23/solving-leviathan/#disqus_thread" title="Comment on Solving Leviathan">comments</a></div>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="http://unlogic.co.uk/2015/03/23/solving-leviathan/" title="Permalink to Solving Leviathan" rel="bookmark">Solving Leviathan</a>
+		</h2>
+		<div class="entry-content">
+			<p>After having done <a class="reference external" href="http://overthewire.org/wargames/bandit/">Bandit</a>, let's move
+on to <a class="reference external" href="http://overthewire.org/wargames/leviathan/">Leviathan</a>. None of the levels
+have hints, so there won't be any links to each of the levels.</p>
+<p>Without further ado, let's get cracking.</p>
+<div class="section" id="level-0-1">
+<h2>Level 0 -&gt; 1</h2>
+<p>Logging in with <code>leviathan0:leviathan0</code> we take a quick look around to see
+what we have to work with, if anything</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan0&#64;melinda:~$</span> ls -la
+<span class="go">total 24
+drwxr-xr-x   3 root       root       4096 Nov 14 10:32 .
+drwxr-xr-x 167 root       root       4096 Mar 21 06:46 ..
+drwxr-x---   2 leviathan1 leviathan0 4096 Feb 10 18:08 .backup
+-rw-r--r--   1 root       root        220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root       root       3637 Apr  9  2014 .bashrc
+-rw-r--r--   1 root       root        675 Apr  9  2014 .profile</span>
+</pre>
+<p>Let's take a look in that <code>.backup</code> folder.</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan0&#64;melinda:~$</span> ls .backup/
+<span class="go">bookmarks.html</span>
+</pre>
+<p>Checking the contents of the file, we see it really is a list of bookmarks.
+Going on the assumption that the password for the next level is in there, let's
+grep for <em>leviathan</em> in this file</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan0&#64;melinda:~$</span> grep leviathan .backup/bookmarks.html
+<span class="go">&lt;DT&gt;&lt;A HREF=&quot;http://leviathan.labs.overthewire.org/passwordus.html | This will be fixed later, the password for leviathan1 is rioGegei8m&quot; ADD_DATE=&quot;1155384634&quot; LAST_CHARSET=&quot;ISO-8859-1&quot; ID=&quot;rdf:#$2wIU71&quot;&gt;password to leviathan1&lt;/A&gt;</span>
+</pre>
+<p>And there it is</p>
+</div>
+<div class="section" id="level-1-2">
+<h2>Level 1 -&gt; 2</h2>
+<p>As usual we login, do a <code>ls -la</code> and see a <code>check</code> binary that is setuid <code>leviathan2</code>.
+Let's run it and see what happens</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan1&#64;melinda:~$</span> ./check
+<span class="go">password: test
+Wrong password, Good Bye ...</span>
+</pre>
+<p>Trying the usual <code>strings check</code> shows us a couple of interesting strings: <code>secret</code> and <code>love</code>.
+Neither one or both will return success. Hrmm. Ok, let's take a look at the
+disassembly</p>
+<pre class="code console literal-block">
+<span class="go">(gdb) disass main
+Dump of assembler code for function main:
+   0x0804852d &lt;+0&gt;:     push   %ebp
+   0x0804852e &lt;+1&gt;:     mov    %esp,%ebp
+   0x08048530 &lt;+3&gt;:     and    $0xfffffff0,%esp
+   0x08048533 &lt;+6&gt;:     sub    $0x30,%esp
+   0x08048536 &lt;+9&gt;:     mov    %gs:0x14,%eax
+   0x0804853c &lt;+15&gt;:    mov    %eax,0x2c(%esp)
+   0x08048540 &lt;+19&gt;:    xor    %eax,%eax
+   0x08048542 &lt;+21&gt;:    movl   $0x786573,0x18(%esp)
+   0x0804854a &lt;+29&gt;:    movl   $0x72636573,0x25(%esp)
+   0x08048552 &lt;+37&gt;:    movw   $0x7465,0x29(%esp)
+   0x08048559 &lt;+44&gt;:    movb   $0x0,0x2b(%esp)
+   0x0804855e &lt;+49&gt;:    movl   $0x646f67,0x1c(%esp)
+   0x08048566 &lt;+57&gt;:    movl   $0x65766f6c,0x20(%esp)
+   0x0804856e &lt;+65&gt;:    movb   $0x0,0x24(%esp)
+   0x08048573 &lt;+70&gt;:    movl   $0x8048680,(%esp)
+   0x0804857a &lt;+77&gt;:    call   0x80483c0 &lt;printf&#64;plt&gt;
+   0x0804857f &lt;+82&gt;:    call   0x80483d0 &lt;getchar&#64;plt&gt;
+   0x08048584 &lt;+87&gt;:    mov    %al,0x14(%esp)
+   0x08048588 &lt;+91&gt;:    call   0x80483d0 &lt;getchar&#64;plt&gt;
+   0x0804858d &lt;+96&gt;:    mov    %al,0x15(%esp)
+   0x08048591 &lt;+100&gt;:   call   0x80483d0 &lt;getchar&#64;plt&gt;
+   0x08048596 &lt;+105&gt;:   mov    %al,0x16(%esp)
+   0x0804859a &lt;+109&gt;:   movb   $0x0,0x17(%esp)
+   0x0804859f &lt;+114&gt;:   lea    0x18(%esp),%eax
+   0x080485a3 &lt;+118&gt;:   mov    %eax,0x4(%esp)
+   0x080485a7 &lt;+122&gt;:   lea    0x14(%esp),%eax
+   0x080485ab &lt;+126&gt;:   mov    %eax,(%esp)
+   0x080485ae &lt;+129&gt;:   call   0x80483b0 &lt;strcmp&#64;plt&gt;
+   0x080485b3 &lt;+134&gt;:   test   %eax,%eax
+   0x080485b5 &lt;+136&gt;:   jne    0x80485c5 &lt;main+152&gt;
+   0x080485b7 &lt;+138&gt;:   movl   $0x804868b,(%esp)
+   0x080485be &lt;+145&gt;:   call   0x8048400 &lt;system&#64;plt&gt;
+   0x080485c3 &lt;+150&gt;:   jmp    0x80485d1 &lt;main+164&gt;
+   0x080485c5 &lt;+152&gt;:   movl   $0x8048693,(%esp)
+   0x080485cc &lt;+159&gt;:   call   0x80483f0 &lt;puts&#64;plt&gt;
+   0x080485d1 &lt;+164&gt;:   mov    $0x0,%eax
+   0x080485d6 &lt;+169&gt;:   mov    0x2c(%esp),%edx
+   0x080485da &lt;+173&gt;:   xor    %gs:0x14,%edx
+   0x080485e1 &lt;+180&gt;:   je     0x80485e8 &lt;main+187&gt;
+   0x080485e3 &lt;+182&gt;:   call   0x80483e0 &lt;__stack_chk_fail&#64;plt&gt;
+   0x080485e8 &lt;+187&gt;:   leave
+   0x080485e9 &lt;+188&gt;:   ret
+End of assembler dump.</span>
+</pre>
+<p>So it uses <code>strcmp</code> to compare our input to whatever the right pass is (<code>0x080485ae</code>)
+I'm going to use <code>ltrace</code> to trace through the library call and see what that reveals</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan1&#64;melinda:~$</span> ltrace ./check
+<span class="go">__libc_start_main(0x804852d, 1, 0xffffd794, 0x80485f0 &lt;unfinished ...&gt;
+printf(&quot;password: &quot;)                                       = 10
+getchar(0x8048680, 47, 0x804a000, 0x8048642password: test
+)               = 116
+getchar(0x8048680, 47, 0x804a000, 0x8048642)               = 101
+getchar(0x8048680, 47, 0x804a000, 0x8048642)               = 115
+strcmp(&quot;tes&quot;, &quot;sex&quot;)                                       = 1
+puts(&quot;Wrong password, Good Bye ...&quot;Wrong password, Good Bye ...
+)                       = 29
++++ exited (status 0) +++</span>
+</pre>
+<p>And there we have it.</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan1&#64;melinda:~$</span> ./check
+<span class="go">password: sex
+</span><span class="gp">$</span> whoami
+<span class="go">leviathan2
+</span><span class="gp">$</span> cat /etc/leviathan_pass/leviathan2
+<span class="go">ougahZi8Ta</span>
+</pre>
+</div>
+<div class="section" id="level-2-3">
+<h2>Level 2 -&gt; 3</h2>
+<p>This time we are given a file called <code>printfile</code> that is setuid <code>leviathan3</code>.
+Initially you'd think we can just print the contents of the <code>leviathan3</code> password
+file. Nope, there's a check in the binary preventing us from doing so.</p>
+<p>Let's find out what that check is with <code>ltrace</code> once again</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan2&#64;melinda:~$</span> ltrace ./printfile /tmp/unlogic
+<span class="go">__libc_start_main(0x804852d, 2, 0xffffd764, 0x8048600 &lt;unfinished ...&gt;
+access(&quot;/tmp/unlogic&quot;, 4)                                  = 0
+snprintf(&quot;/bin/cat /tmp/unlogic&quot;, 511, &quot;/bin/cat %s&quot;, &quot;/tmp/unlogic&quot;) = 21
+system(&quot;/bin/cat /tmp/unlogic&quot;testing
+ &lt;no return ...&gt;
+--- SIGCHLD (Child exited) ---
+&lt;... system resumed&gt; )                                     = 0
++++ exited (status 0) +++</span>
+</pre>
+<p>We can see that it checks access to the file, then runs <code>cat</code> on the file if it's
+ok for us to access it. Symlinks won't work here, as the <code>access</code> call dereferences
+the symlink. So what can we do? We exploit spaces. By creating a file that is a symlink to
+the <code>leviathan3</code> password file, along with another file, that has the same name followed
+by a space and another name, we can trick <code>access</code> into allowing it to carry on, and
+then <code>cat</code> to print the files. let me show you</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan2&#64;melinda:~$</span> ln -s /etc/leviathan_pass/leviathan3 /tmp/levpass3
+<span class="gp">leviathan2&#64;melinda:~$</span> touch /tmp/levpass3<span class="se">\ </span>other
+<span class="gp">leviathan2&#64;melinda:~$</span> ./printfile /tmp/levpass3<span class="se">\ </span>other
+<span class="go">Ahdiemoo1j
+/bin/cat: other: No such file or directory</span>
+</pre>
+<p>So access checks <code>/tmp/levpass3\ other</code> and deems it ok. Then that string gets
+passed to <code>cat</code> which interprets it as two files, hence the <code>/bin/cat: other: No such file or directory</code></p>
+</div>
+<div class="section" id="level-3-4">
+<h2>Level 3 -&gt; 4</h2>
+<p>Another program that prompts for a pass. Usual approaches of <code>strings</code> and checking
+the <em>disass</em> doesn't reveal much, but the function <code>do_stuff</code> does call <code>strcmp</code>
+and we know now that we can use <code>ltrace</code> to help us out</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan3&#64;melinda:~$</span> ltrace ./level3
+<span class="go">__libc_start_main(0x80485fe, 1, 0xffffd794, 0x80486d0 &lt;unfinished ...&gt;
+strcmp(&quot;h0no33&quot;, &quot;kakaka&quot;)                                 = -1
+printf(&quot;Enter the password&gt; &quot;)                             = 20
+fgets(Enter the password&gt; d
+&quot;d\n&quot;, 256, 0xf7fcac20)                              = 0xffffd58c
+strcmp(&quot;d\n&quot;, &quot;snlprintf\n&quot;)                               = -1
+puts(&quot;bzzzzzzzzap. WRONG&quot;bzzzzzzzzap. WRONG
+)                                 = 19
++++ exited (status 0) +++</span>
+</pre>
+<p>A little bit of obfuscation here, but to our keen eyes, we see where the test
+is happening <code>strcmp(&quot;d\n&quot;, &quot;snlprintf\n&quot;)</code>. Our password is <code>snlprintf</code>.</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan3&#64;melinda:~$</span> ./level3
+<span class="go">Enter the password&gt; snlprintf
+[You've got shell]!
+</span><span class="gp">$</span> whoami
+<span class="go">leviathan4
+</span><span class="gp">$</span> cat /etc/leviathan_pass/leviathan4
+<span class="go">vuH0coox6m</span>
+</pre>
+</div>
+<div class="section" id="level-4-5">
+<h2>Level 4 -&gt; 5</h2>
+<p>Inside the hidden directory (you always run <code>ls -la</code>, right?) we have a bin file.
+It's executable, so let's run it</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan4&#64;melinda:~$</span> ./.trash/bin
+<span class="go">01010100 01101001 01110100 01101000 00110100 01100011 01101111 01101011 01100101 01101001 00001010</span>
+</pre>
+<p>I'm guessing we need to decode that from the current binary encoded string to text. This
+gives us <code>Tith4cokei</code>. Testing it out takes us to</p>
+</div>
+<div class="section" id="level-5-6">
+<h2>Level 5 -&gt; 6</h2>
+<p>We have a binary called <code>leviathan5</code> that is suid <code>leviathan6</code>. Upon running it,
+we get a message that file <code>tmp/file.log</code> cannot be found. If you create one, it
+will open it, print its contents, close it, and then delete it. So let's give the
+old symlink method a try:</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan5&#64;melinda:~$</span> ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
+<span class="gp">leviathan5&#64;melinda:~$</span> ./leviathan5
+<span class="go">UgaoFee4li</span>
+</pre>
+<p>Result.</p>
+</div>
+<div class="section" id="level-6-7">
+<h2>Level 6 -&gt; 7</h2>
+<p>We need a 4 digit pass code to access this. I opted for brute force. For 4 digits
+that's by far the simplest and quickest way. After looking at the disassembly, we
+see that it will call <code>/bin/sh</code> and drop us to a shell, so we don't need an exit condition.</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan6&#64;melinda:~$</span> <span class="k">for</span> i in <span class="k">$(</span>seq -f <span class="s2">&quot;%04g&quot;</span> <span class="m">0</span> 9999<span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="nv">$i</span> <span class="o">&amp;&amp;</span> ./leviathan6 <span class="nv">$i</span> &gt; /dev/null<span class="p">;</span> <span class="k">done</span>
+<span class="go">0000
+0001
+.
+.
+7123</span>
+</pre>
+<p>It stops there. Because we redirect to /dev/null, we need to ctrl+c and then enter
+the last printed number to get the password</p>
+<pre class="code console literal-block">
+<span class="gp">leviathan6&#64;melinda:~$</span> ./leviathan6  7123
+<span class="gp">$</span> cat /etc/leviathan_pass/leviathan7
+<span class="go">ahy7MaeBo9</span>
+</pre>
+<p>The final flag for level 7 is</p>
+<blockquote>
+Well Done, you seem to have used a * nix system before, now try something more serious.
+(Please don't post writeups, solutions or spoilers about the games on the web. Thank you!)</blockquote>
+<p>I understand the reasons, but this is not the only write up out there, and it is a fairly old
+wargame too. IMO I feel that providing these walkthroughs will help those who are stuck.
+If you are however just following this so that you can complete Leviathan, then you should
+sit down and have a go at this, or other war games without a guide. Challenge yourself.</p>
+</div>
+
+		</div> <!--/#entry-content-->
+	</div> <!--/#main-->
+</div>  <!--/#post-->
+	<div id="comments">
+		<div id="respond">
+			<div id="disqus_thread"></div>
+	        <script type="text/javascript">
+	            var disqus_shortname = 'unlogic';
+	
+	            /* * * DON'T EDIT BELOW THIS LINE * * */
+	            (function() {
+	                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	            })();
+	        </script>
+	        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		</div><!-- #respond -->					
+</div><!-- #comments -->
+
+		</div>
+		
+		<div id="footer">
+			<p><p>Powered by <a href="http://getpelican.com">Pelican</a></p>
+<script type="text/javascript">
+    var disqus_shortname = 'unlogic';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>		</div><!-- /#footer -->
+	</div><!-- /#container -->
+	<div style="display:none"></div>
+</body>
+</html>
