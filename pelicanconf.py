@@ -8,6 +8,8 @@ THEME = "../pelican-chunk"
 AUTHOR = u'Sven Steinbauer'
 SINGLE_AUTHOR = True
 
+FOOTER_TEXT = '<p>Powered by <a href="http://getpelican.com">Pelican</a>'
+
 DISPLAY_CATEGORIES_ON_MENU = False
 
 SITENAME = u'Unlogic'
@@ -46,8 +48,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Twitter', 'https://twitter.com/binaryheadache'),
-         ('Github', 'https://github.com/svenito'))
+LINKS = ()
+
         #('Pelican', 'http://getpelican.com/'),
          #('Python.org', 'http://python.org/'),
          #('Jinja2', 'http://jinja.pocoo.org/'),

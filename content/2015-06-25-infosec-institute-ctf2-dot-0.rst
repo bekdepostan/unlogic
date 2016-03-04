@@ -18,7 +18,7 @@ to use the provided form to perform a cross site scripting exploit. Here's what 
 looks like:
 
 .. image:: http://i.imgur.com/CJTNyK4.png
-
+    :width: 500px
 
 At first I might as well test how the form works. Entering something like :code:`test` and
 :code:`www.test.com` in the fields simply adds the supplied information to the column on the left.
@@ -43,6 +43,7 @@ source I find some javscript in :code:`ex1.js` which contains the following code
 
 .. image:: http://i.imgur.com/VVe74tW.png
     :target: http://i.imgur.com/VVe74tW.png
+    :width: 500px
 
 The :code:`siteName` variable has all :code:`<` and :code:`>` characters replaced with their equivalent html codes.
 By clicking on the gutter in the source code I set a breakpoint on the line that does this, and resubmit
@@ -93,7 +94,7 @@ form and a login form. The instructions indicate that the data is stored in a de
 to sign up as a new user with admin rights.
 
 .. image:: http://i.imgur.com/f0g5TmV.png
-
+    :width: 500px
 
 First things first, let's see if we can figure out the delimiter... Signing up and logging in
 shows us our name and current role: :code:`role:normal`. This already tells me that the delimiter is not
@@ -104,7 +105,9 @@ but had no luck. Unless..
 So let's not use :code:`\n` but a real new line. I can achieve this by editing the source with Firebug
 once again, changing the :code:`lastname` field to a :code:`textarea` type:
 
-`{{< figure src="http://i.imgur.com/QBVptMv.png" >}} <http://i.imgur.com/QBVptMv.png>`_
+.. image:: http://i.imgur.com/QBVptMv.png
+    :width: 500px
+    :target: http://i.imgur.com/QBVptMv.png
 
 Now I can have multiple lines and enter a real carriage return into the field. My last
 name will be
@@ -125,6 +128,7 @@ Level 04
 `Level 04 <http://ctf.infosecinstitute.com/ctf2/exercises/ex4.php>`_ 
 
 .. image:: http://i.imgur.com/nmRe8U2.png
+    :width: 500px
     :target: http://i.imgur.com/nmRe8U2.png
 
 Here we need to load a php file instead of the text files that load when you click
@@ -154,7 +158,7 @@ This time we get an *invalid file* message, so that bypass worked. Now we need t
 
 .. image:: http://i.imgur.com/WTFYtJi.png
     :target: http://i.imgur.com/WTFYtJi.png
-
+    :width: 500px
 
 Level 05
 ==========
@@ -211,6 +215,7 @@ Level 07
 we need to perform another XSS attack. 
 
 .. image:: http://i.imgur.com/WO8dRpe.png
+    :width: 500px
 
 
 Well, lucky for me I perform these challenges through a proxy which unhides hidden fields like
@@ -312,7 +317,7 @@ Level 10
 edit its source so we look like we're really good at it.
 
 .. image:: http://i.imgur.com/g03njlQ.png
-
+    :width: 500px
 
 Entering anything in the name I field I have a poke around to see how the whole thing
 works. We're shown some coloured squares and then they are turn over. We need to then 
@@ -392,6 +397,7 @@ but that gives me an error. Hrmm... trying a few other redirect options tells me
 relative, which means if I strip off the protocol off the URL, I should be able to make this work:
 
 .. image:: http://i.imgur.com/QM7V8Dk.png
+    :width: 500px
     :target: http://i.imgur.com/QM7V8Dk.png
 
 Sure enough, that worked. That's it, the final flag.

