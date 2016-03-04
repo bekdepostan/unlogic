@@ -7563,7 +7563,7 @@ to suit your colourscheme. It also turns off line wrapping for python files.&lt;
 &lt;div class="section" id="powerline"&gt;
 &lt;h2&gt;Powerline&lt;/h2&gt;
 &lt;p&gt;Next up we install &lt;a class="reference external" href="https://github.com/Lokaltog/powerline"&gt;Powerline&lt;/a&gt; which looks like this:&lt;/p&gt;
-&lt;img alt="" src="/images/powerline.png" /&gt;
+&lt;a class="reference external image-reference" href="/images/powerline.png"&gt;&lt;img alt="" src="/images/powerline.png" style="width: 500px;" /&gt;&lt;/a&gt;
 &lt;p&gt;It shows you your current mode (NORMAL), the current branch in Git, the file you are editing and some other
 useful information.&lt;/p&gt;
 &lt;p&gt;Simply add:&lt;/p&gt;
