@@ -1,7 +1,7 @@
 Another move
 ############
 
-:date: 20016-03-04
+:date: 2016-03-04
 :tag: 
 :category: self
 
