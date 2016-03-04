@@ -92,6 +92,8 @@ Powerline
 Next up we install `Powerline <https://github.com/Lokaltog/powerline>`_ which looks like this:
 
 .. image:: /images/powerline.png
+    :width: 500px
+    :target: /images/powerline.png
 
 
 It shows you your current mode (NORMAL), the current branch in Git, the file you are editing and some other
