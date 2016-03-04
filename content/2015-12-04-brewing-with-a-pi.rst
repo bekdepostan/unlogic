@@ -31,7 +31,9 @@ source so everyone can use and improve upon it.
 But more about the software, it's running on `CherryPy <https://cherrypy.org>`_ and 
 currently looks like this:
 
-`{{< figure src="http://i.imgur.com/c4IR4yT.png" >}} <http://i.imgur.com/c4IR4yT.png>`_
+.. image:: http://i.imgur.com/c4IR4yT.png
+    :width: 500px
+    :target: http://i.imgur.com/c4IR4yT.png
 
 I've put the `code on Github <https://github.com/Svenito/brewpy>`_ already, so if
 you are keen and fancy building the rest of the kit yourself already, please

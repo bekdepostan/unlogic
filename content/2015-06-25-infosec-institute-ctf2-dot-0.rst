@@ -10,14 +10,14 @@ Infosec Institute CTF2.0
 The folks over at the `Infosec Institue <https://infosecinstitute.com>`_ have released
 their `second CTF <http://ctf.infosecinstitute.com/ctf2/>`_. Here's how I got on...
 
-Level 01 #
+Level 01
 ==========
 
 In `level 01 <http://ctf.infosecinstitute.com/ctf2/exercises/ex1.php>`_ I am supposed
 to use the provided form to perform a cross site scripting exploit. Here's what the form
 looks like:
 
-.. image:: "http://i.imgur.com/CJTNyK4.png"
+.. image:: http://i.imgur.com/CJTNyK4.png
 
 
 At first I might as well test how the form works. Entering something like :code:`test` and
@@ -27,7 +27,7 @@ So I try the usual XSS payload: :code:`<script>alert("Ex1");</script>` in the :c
 A popup tells me that I need to *match the requested format*. Probably some client side
 checks, so I inspect the field with Firebug and notice this:
 
-.. image:: "http://i.imgur.com/f5KzFDx.png"
+.. image:: http://i.imgur.com/f5KzFDx.png
 
 
 The field has a regular expression premitting only upper or lowercase characters. I can either
@@ -35,7 +35,7 @@ delete this or just change it to :code:`.+` so it matches any character.
 
 Now resubmitting the XSS payload works and the string is reflected on the page:
 
-.. image:: "http://i.imgur.com/yvSc4To.png"
+.. image:: http://i.imgur.com/yvSc4To.png
 
 
 However, there's no pop up. So there must be something else validating input. Heading back to the
@@ -50,15 +50,15 @@ my data. The Firebug debugger breaks on the line and I step over it. Sure enough
 what I want it to be. Double clicking on the value in the right hand window allows me to edit it, and 
 revert it back to what I want it to be. Then clicking continue I am rewarded with:
 
-.. image:: "http://i.imgur.com/VEFDpio.png"
+.. image:: http://i.imgur.com/VEFDpio.png
 
 
-Level 02 #
+Level 02
 ==========
 
 `Level 02 <http://ctf.infosecinstitute.com/ctf2/exercises/ex2.php>`_ is a simple web calculator:
 
-.. image:: "http://i.imgur.com/asgTWCw.png"
+.. image:: http://i.imgur.com/asgTWCw.png
 
 
 I'm supposed to use the form to print :code:`phpinfo` or other data to the page. This is a PHP
@@ -77,22 +77,22 @@ I'm going to guess that code looks somewhat like this:
 So I need to change the operand to something that prints :code:`phpinfo` but leaves the rest of the statement
 valid. With Firebug I can edit the value of the operand to the following:
 
-.. image:: "http://i.imgur.com/8xnqMxv.png"
+.. image:: http://i.imgur.com/8xnqMxv.png
 
 
 Hit submit and....
 
-.. image:: "http://i.imgur.com/rUgaixe.png"
+.. image:: http://i.imgur.com/rUgaixe.png
 
 
-Level 03 #
+Level 03
 ==========
 
 `Level 03 <http://ctf.infosecinstitute.com/ctf2/exercises/ex3.php>`_ provides me with a registration
 form and a login form. The instructions indicate that the data is stored in a delimited file and I need
 to sign up as a new user with admin rights.
 
-.. image:: "http://i.imgur.com/f0g5TmV.png"
+.. image:: http://i.imgur.com/f0g5TmV.png
 
 
 First things first, let's see if we can figure out the delimiter... Signing up and logging in
@@ -116,10 +116,10 @@ name will be
 
 And after a login with the new creds:
 
-.. image:: "http://i.imgur.com/Akj9NL8.png"
+.. image:: http://i.imgur.com/Akj9NL8.png
 
 
-Level 04 #
+Level 04
 ==========
 
 `Level 04 <http://ctf.infosecinstitute.com/ctf2/exercises/ex4.php>`_ 
@@ -156,13 +156,13 @@ This time we get an *invalid file* message, so that bypass worked. Now we need t
     :target: http://i.imgur.com/WTFYtJi.png
 
 
-Level 05 #
+Level 05
 ==========
 
 `Level 05 <http://ctf.infosecinstitute.com/ctf2/exercises/ex5.php>`_ starts by telling
 me that I am not logged in. 
 
-.. image:: "http://i.imgur.com/BOBdkHX.png"
+.. image:: http://i.imgur.com/BOBdkHX.png
 
 
 Well, I don't remember logging in, so that's not unusual. What is unusual is
@@ -176,21 +176,21 @@ this page will just assume that the user is allowed to be here.
 Using an intercepting proxy I'll edit the :code:`Referer` field in the original request, so that
 it appears to be coming from the login page:
 
-.. image:: "http://i.imgur.com/EK9u7Ir.png"
+.. image:: http://i.imgur.com/EK9u7Ir.png
 
 
 Forward the request and
 
-.. image:: "http://i.imgur.com/QCisDvN.png"
+.. image:: http://i.imgur.com/QCisDvN.png
 
 
-Level 06 #
+Level 06
 ==========
 
 `Level 06 <http://ctf.infosecinstitute.com/ctf2/exercises/ex6.php>`_ shows a nice
 big text area with allowable HTML tags.
 
-.. image:: "http://i.imgur.com/Waq1AVN.png"
+.. image:: http://i.imgur.com/Waq1AVN.png
 
 
 This time I need to perform a cross site request forgery. This can be accomlished by an :code:`href`
@@ -199,18 +199,18 @@ without the need for user interaction. Ok, fine, let's revisit the allowed tags.
 
 Let's try the following
 
-.. image:: "http://i.imgur.com/qCd5NUP.png"
+.. image:: http://i.imgur.com/qCd5NUP.png
 
 
 Yep, that's what we needed. 
 
-Level 07 #
+Level 07
 ==========
 
 `Level 07 <http://ctf.infosecinstitute.com/ctf2/exercises/ex7.php>`_ is a login form on which
 we need to perform another XSS attack. 
 
-.. image:: "http://i.imgur.com/WO8dRpe.png"
+.. image:: http://i.imgur.com/WO8dRpe.png
 
 
 Well, lucky for me I perform these challenges through a proxy which unhides hidden fields like
@@ -227,12 +227,12 @@ By employing the :code:`arg` paramater we can close the :code:`input` tag, and t
 
 Submitting that puts :code:`username` on the page surrounded by :code:`h1` tags and nabs the flag
 
-Level 08 #
+Level 08
 ==========
 
 `Level 08 <http://ctf.infosecinstitute.com/ctf2/exercises/ex8.php>`_
 
-.. image:: "http://i.imgur.com/610ZNNq.png"
+.. image:: http://i.imgur.com/610ZNNq.png
 
 
 Here we need to upload an image that will produce a javscript alert. First things first with these
@@ -272,13 +272,13 @@ Success
 
 `{ %img http://i.imgur.com/RVoJGMr.png %} <http://i.imgur.com/RVoJGMr.png>`_
 
-Level 09 #
+Level 09
 ==========
 
 `Level 09 <http://ctf.infosecinstitute.com/ctf2/exercises/ex9.php>`_ starts off by showing me the 
 details of one John Doe.
 
-.. image:: "http://i.imgur.com/8NESmpB.png"
+.. image:: http://i.imgur.com/8NESmpB.png
 
 
 I need to change something to make it show the details for Mary Jane. There's no URL parms,
@@ -286,7 +286,7 @@ no login, so how can the page know who to show? There's one place left: the cook
 
 Using Firebug once again I inspect the cookies and sure enough
 
-.. image:: "http://i.imgur.com/xGdtDa7.png"
+.. image:: http://i.imgur.com/xGdtDa7.png
 
 
 This is "JOHN+DOE" encoded as base64 as it turns out. One thing to note is when you
@@ -305,13 +305,13 @@ use echo with the :code:`-n` flag:
 
 Editing the cookie and inserting that base64 string will show us Mary Jane's details.
 
-Level 10 #
+Level 10
 ==========
 
 `Level 10 <http://ctf.infosecinstitute.com/ctf2/exercises/ex10.php>`_ is a game and we need to
 edit its source so we look like we're really good at it.
 
-.. image:: "http://i.imgur.com/g03njlQ.png"
+.. image:: http://i.imgur.com/g03njlQ.png
 
 
 Entering anything in the name I field I have a poke around to see how the whole thing
@@ -321,7 +321,7 @@ at the extreme level, which only shows us the squares for a second.
 
 Finding the square colours isn't hard. With Firebug we can see:
 
-.. image:: "http://i.imgur.com/isDO7LM.png"
+.. image:: http://i.imgur.com/isDO7LM.png
 
 
 and those numbers are 0 indexed into the list of numbers from the selction popup. So playing
@@ -329,41 +329,41 @@ along I can win one game. So let's find out where my current win/loss count is s
 
 In the Javscript I find a structure that does this:
 
-.. image:: "http://i.imgur.com/gZghIIn.png"
+.. image:: http://i.imgur.com/gZghIIn.png
 
 
 but all this does is increment and decrement the values. Clearly that data is stored somewhere. 
 Turns out that this :code:`localstorage` is in the DOM. Using the *DOM* tab in Firebug I can find
 the structure and its data:
 
-.. image:: "http://i.imgur.com/xGIZXpb.png"
+.. image:: http://i.imgur.com/xGIZXpb.png
 
 
 Now I can edit the number of wins and then, all I need to do is play one more game to take the flag.
 
-Level 11 #
+Level 11
 ==========
 
 `Level 11 <http://ctf.infosecinstitute.com/ctf2/exercises/ex11.php>`_ blacklists me
 
-.. image:: "http://i.imgur.com/RaGy98O.png"
+.. image:: http://i.imgur.com/RaGy98O.png
 
 
 Awwwww I was having such fun. But how? Not from my IP, as that's going to change. First thing
 to check: cookie jar. Yay!
 
-.. image:: "http://i.imgur.com/QgGrvwE.png"
+.. image:: http://i.imgur.com/QgGrvwE.png
 
 
 There it is, a big :code:`no`. I'll change that to a :code:`yes`, reload and take the flag, thanks very much.
 
-Level 12 #
+Level 12
 ==========
 
 `Level 12 <http://ctf.infosecinstitute.com/ctf2/exercises/ex12.php>`_ is a bruteforce challange. No 
 login attempt limits, no rate limits, so it's ripe for the picking.
 
-.. image:: "http://i.imgur.com/LMUBNoq.png"
+.. image:: http://i.imgur.com/LMUBNoq.png
 
 
 After searching for the suggested password list, the first hit is the Openwall password list for
@@ -377,14 +377,14 @@ I fire up :code:`wfuzz` with the following commandline
 
 Within a few seconds I get a hit with :code:`princess`. Enter that with the username :code:`admin` and onto the next level
 
-Level 13 #
+Level 13
 ==========
 
 `Level 13 <http://ctf.infosecinstitute.com/ctf2/exercises/ex13.php?redirect=ex13-task.php>`_ is actually
 redirect to :code:`ex13-task.php`. I need to make the redirect point to an external page so that to another user
 it looks like they are visiting :code:`ctf.infosecinstitute.com` but are infact taken to another site
 
-.. image:: "http://i.imgur.com/jNgQ4Ww.png"
+.. image:: http://i.imgur.com/jNgQ4Ww.png
 
 
 Well the obvious thing is just to try and type in another URL :code:`http://ctf.infosecinstitute.com/ctf2/exercises/ex13.php?redirect=http://unlogic.co.uk`

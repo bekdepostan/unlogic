@@ -11,7 +11,7 @@ Another day, another VM. Today it's the `SpyderSec Challenge <https://www.vulnhu
 
 So let me start it up and get on it. 
 
-.. image:: "http://i.imgur.com/nah3Wah.gif"
+.. image:: http://i.imgur.com/nah3Wah.gif
 
 
 As per usual I need the IP of the machine and
@@ -53,7 +53,9 @@ the services it has running (if any). Straight from the Unlogic Cookbook
 Lucky me, only one service running, and it's good old http at that. 
 Let's take a look at that page then:
 
-`{{< figure src="http://i.imgur.com/IiA6MlY.png" >}} <http://i.imgur.com/IiA6MlY.png>`_
+.. image:: http://i.imgur.com/IiA6MlY.png
+    :width: 500px
+    :target: http://i.imgur.com/IiA6MlY.png
 
 Without wasting much time, let's get to the clue hunting. First things first: check the source.
 And there's clue number one, right between those script tags. It evals a function which seems to 
@@ -117,6 +119,8 @@ Watch out, here comes the reliable :code:`dirbuster`. Running it with the regula
 Browsing to that however merely responds with a :code:`403 Forbidden` reply. I've not exhausted all the
 nooks and crannies yet, there's still that cookie jar to poke at.
 
+.. code:: text
+
     Firebug -> Cookie tab -> URI /v/81JHPbvyEQ8729161jd6aKQ0N4/
     
 Another clue.... leading me to a subdirectory under :code:`v`. But that's also forbidden. Well, let
@@ -145,7 +149,8 @@ A video file, which when I play it, is the song "Twilight Time" by "The Platters
 So here I hit another dead end. 
 
 Let me think
-.. image:: "http://i.imgur.com/CbfWCmv.gif"
+
+.. image:: http://i.imgur.com/CbfWCmv.gif
 
 
 I'll take inventory of the clues I have left now:

@@ -13,9 +13,10 @@ time which allows you to move on and get to finishing the rest of the project, r
 &lt;em&gt;tried and tested&lt;/em&gt; answers are often effective and suitable for your needs, they
 don't provide you with something more valuable: exercise. I don't mean squats, or
 a big cardio session, I mean mental exercise. It's easy to fall into this trap&lt;/p&gt;
-&lt;p&gt;&amp;gt; I've got to parse this text file, capitalise every 10th word, and add a new line
-&amp;gt; if the line is over 120 characters long. I wonder what the best way to do that is...
-&amp;gt; I'll just check &amp;lt;insert name of site here&amp;gt; and see what others have done.&lt;/p&gt;
+&lt;blockquote&gt;
+I've got to parse this text file, capitalise every 10th word, and add a new line
+if the line is over 120 characters long. I wonder what the best way to do that is...
+I'll just check &amp;lt;insert name of site here&amp;gt; and see what others have done.&lt;/blockquote&gt;
 &lt;p&gt;That's great, no one is going to complain that you are being resourceful, and often
 project time constraints don't let you spend too much time designing and testing out
 various algorithms before you can confidently say: &amp;quot;This is the right way to do it&amp;quot;&lt;/p&gt;
@@ -44,27 +45,7 @@ will decrease.&lt;/p&gt;
 &lt;p&gt;So next time you feel like coding a little something, why not unplug from the internet
 for an hour or so, and see how you get on. In this age of &lt;em&gt;always connected&lt;/em&gt;, I can
 only reccommend that any developer give this a try.&lt;/p&gt;
-</summary><category term="tips"></category><category term="coding"></category><category term="programming"></category></entry><entry><title>Hello Hugo, goodbye Jekyll</title><link href="/2016/02/09/hello-hugo-goodbye-jekyll/" rel="alternate"></link><updated>2016-02-09T11:06:24+00:00</updated><author><name>Sven Steinbauer</name></author><id>tag:,2016-02-09:2016/02/09/hello-hugo-goodbye-jekyll/</id><summary type="html">&lt;p&gt;It's time to move on from Jekyll and welcome the dawn of &lt;a class="reference external" href="http://gohugo.io"&gt;Hugo&lt;/a&gt;.
-I've now &lt;em&gt;successfully&lt;/em&gt; migrated the blog over from Jekyll. There were a few hiccups
-along the way, but that's to be expected with anything new and shiny.&lt;/p&gt;
-&lt;p&gt;The reasons I moved generators are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p class="first"&gt;Jekyll was taking a long time to generate the blog. Hugo takes around 900ms&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;dl class="first docutils"&gt;
-&lt;dt&gt;The amount of setup needed to get Jekyll working on a new system was painful. Ruby&lt;/dt&gt;
-&lt;dd&gt;&lt;p class="first last"&gt;versions, bundles, etc. It just got too much. Hugo is a single binary.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;I fancied something new :)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Still hosted on Github pages of course, so no difference there. There's probably
-a few things that need tobe tweaked here and there to get the transition working
-(like gist tags and such), but overall all it took was the built in importer
-and some runs of &lt;code&gt;sed&lt;/code&gt;.&lt;/p&gt;
-</summary><category term="hugo"></category><category term="jekyll"></category><category term="blog"></category></entry><entry><title>Brewing with a Pi</title><link href="/2015/12/04/brewing-with-a-pi/" rel="alternate"></link><updated>2015-12-04T13:00:00+00:00</updated><author><name>Sven Steinbauer</name></author><id>tag:,2015-12-04:2015/12/04/brewing-with-a-pi/</id><summary type="html">&lt;p&gt;It's been a while since I've written here, but that doesn't mean I haven't
+</summary><category term="tips"></category><category term="coding"></category><category term="programming"></category></entry><entry><title>Brewing with a Pi</title><link href="/2015/12/04/brewing-with-a-pi/" rel="alternate"></link><updated>2015-12-04T13:00:00+00:00</updated><author><name>Sven Steinbauer</name></author><id>tag:,2015-12-04:2015/12/04/brewing-with-a-pi/</id><summary type="html">&lt;p&gt;It's been a while since I've written here, but that doesn't mean I haven't
 been busy. I've been working on a DIY version of &lt;a class="reference external" href="http://www.speidels-braumeister.de/en/braumeister/id-10-20-50-litre-braumeister.html"&gt;Speidel's Braumeister&lt;/a&gt;
 and the software side of things has come along quite nicely.&lt;/p&gt;
 &lt;p&gt;The idea is to have a Raspberry Pi controlled beer brewing system for cooking
@@ -83,7 +64,7 @@ Once done I will write a complete build process, and the project will be open
 source so everyone can use and improve upon it.&lt;/p&gt;
 &lt;p&gt;But more about the software, it's running on &lt;a class="reference external" href="https://cherrypy.org"&gt;CherryPy&lt;/a&gt; and
 currently looks like this:&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://i.imgur.com/c4IR4yT.png"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/c4IR4yT.png&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/c4IR4yT.png"&gt;&lt;img alt="" src="http://i.imgur.com/c4IR4yT.png" style="width: 500px;" /&gt;&lt;/a&gt;
 &lt;p&gt;I've put the &lt;a class="reference external" href="https://github.com/Svenito/brewpy"&gt;code on Github&lt;/a&gt; already, so if
 you are keen and fancy building the rest of the kit yourself already, please
 check it out.&lt;/p&gt;
@@ -91,7 +72,7 @@ check it out.&lt;/p&gt;
 next year. Got a house to get up to speed as well, so time is a little limited.&lt;/p&gt;
 </summary></entry><entry><title>SpyderSec solution</title><link href="/2015/09/09/spydersec-solution/" rel="alternate"></link><updated>2015-09-09T15:00:00+01:00</updated><author><name>Sven Steinbauer</name></author><id>tag:,2015-09-09:2015/09/09/spydersec-solution/</id><summary type="html">&lt;p&gt;Another day, another VM. Today it's the &lt;a class="reference external" href="https://www.vulnhub.com/entry/spydersec-challenge,128/"&gt;SpyderSec Challenge&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;So let me start it up and get on it.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/nah3Wah.gif&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/nah3Wah.gif" /&gt;
 &lt;p&gt;As per usual I need the IP of the machine and
 the services it has running (if any). Straight from the Unlogic Cookbook&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
@@ -127,7 +108,7 @@ Nmap done: 1 IP address (1 host up) scanned in 155.80 seconds&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Lucky me, only one service running, and it's good old http at that.
 Let's take a look at that page then:&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://i.imgur.com/IiA6MlY.png"&gt;{{&amp;lt; figure src=&amp;quot;http://i.imgur.com/IiA6MlY.png&amp;quot; &amp;gt;}}&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://i.imgur.com/IiA6MlY.png"&gt;&lt;img alt="" src="http://i.imgur.com/IiA6MlY.png" style="width: 500px;" /&gt;&lt;/a&gt;
 &lt;p&gt;Without wasting much time, let's get to the clue hunting. First things first: check the source.
 And there's clue number one, right between those script tags. It evals a function which seems to
 do some text processing. I'll open Firebug to see if that shows anything interesting, and sure
@@ -182,8 +163,9 @@ not encoded anymore. I make a note of it and carry on sleuthing.&lt;/p&gt;
 &lt;p&gt;Watch out, here comes the reliable &lt;code&gt;dirbuster&lt;/code&gt;. Running it with the regular word list I discover the &lt;code&gt;v&lt;/code&gt; subdirectory.
 Browsing to that however merely responds with a &lt;code&gt;403 Forbidden&lt;/code&gt; reply. I've not exhausted all the
 nooks and crannies yet, there's still that cookie jar to poke at.&lt;/p&gt;
-&lt;blockquote&gt;
-Firebug -&amp;gt; Cookie tab -&amp;gt; URI /v/81JHPbvyEQ8729161jd6aKQ0N4/&lt;/blockquote&gt;
+&lt;pre class="code text literal-block"&gt;
+Firebug -&amp;gt; Cookie tab -&amp;gt; URI /v/81JHPbvyEQ8729161jd6aKQ0N4/
+&lt;/pre&gt;
 &lt;p&gt;Another clue.... leading me to a subdirectory under &lt;code&gt;v&lt;/code&gt;. But that's also forbidden. Well, let
 me just plug some of the data we've found so far into it. The random characters from the
 exif data result in a 404, but the string from the javascript alert box however brings up a
@@ -205,8 +187,8 @@ mulder.fbi.1            100%[===============================&amp;gt;]  13.31M  5
 &lt;/pre&gt;
 &lt;p&gt;A video file, which when I play it, is the song &amp;quot;Twilight Time&amp;quot; by &amp;quot;The Platters&amp;quot;.&lt;/p&gt;
 &lt;p&gt;So here I hit another dead end.&lt;/p&gt;
-&lt;p&gt;Let me think
-.. image:: &amp;quot;&lt;a class="reference external" href="http://i.imgur.com/CbfWCmv.gif"&gt;http://i.imgur.com/CbfWCmv.gif&lt;/a&gt;&amp;quot;&lt;/p&gt;
+&lt;p&gt;Let me think&lt;/p&gt;
+&lt;img alt="" src="http://i.imgur.com/CbfWCmv.gif" /&gt;
 &lt;p&gt;I'll take inventory of the clues I have left now:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;A music video &amp;quot;Twilight time&amp;quot; titled &lt;em&gt;mulder.fbi&lt;/em&gt;&lt;/li&gt;
@@ -276,7 +258,7 @@ Service Info: OS: Linux&lt;span class="p"&gt;;&lt;/span&gt; CPE: cpe:/o:linux:li
 &lt;p&gt;HTTP server on 80 and ssh on 777. I'm going to take the straightforward one, and head
 to the HTTP server first.&lt;/p&gt;
 &lt;p&gt;Upon opening the page I only get an image and some text&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/SlVGKol.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/SlVGKol.png" /&gt;
 &lt;p&gt;I ran &lt;code&gt;dirbuster&lt;/code&gt; on the root and got a couple of hits: &lt;code&gt;uploads&lt;/code&gt; and &lt;code&gt;phpmyadmin&lt;/code&gt;. The first had disabled directory listing
 and the second was a no go, but at least told me there was a SQL server available somewhere.&lt;/p&gt;
 &lt;p&gt;The source of the page doesn't reveal anything else either, so that last place we might be able to find something
@@ -448,21 +430,21 @@ uptime.&lt;/p&gt;
 </summary></entry><entry><title>Infosec Institute CTF2.0</title><link href="/2015/06/25/infosec-institute-ctf20/" rel="alternate"></link><updated>2015-07-06T19:00:00+01:00</updated><author><name>Sven Steinbauer</name></author><id>tag:,2015-06-25:2015/06/25/infosec-institute-ctf20/</id><summary type="html">&lt;p&gt;The folks over at the &lt;a class="reference external" href="https://infosecinstitute.com"&gt;Infosec Institue&lt;/a&gt; have released
 their &lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/"&gt;second CTF&lt;/a&gt;. Here's how I got on...&lt;/p&gt;
 &lt;div class="section" id="level-01"&gt;
-&lt;h2&gt;Level 01 #&lt;/h2&gt;
+&lt;h2&gt;Level 01&lt;/h2&gt;
 &lt;p&gt;In &lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex1.php"&gt;level 01&lt;/a&gt; I am supposed
 to use the provided form to perform a cross site scripting exploit. Here's what the form
 looks like:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/CJTNyK4.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/CJTNyK4.png" /&gt;
 &lt;p&gt;At first I might as well test how the form works. Entering something like &lt;code&gt;test&lt;/code&gt; and
 &lt;code&gt;www.test.com&lt;/code&gt; in the fields simply adds the supplied information to the column on the left.
 So I try the usual XSS payload: &lt;code&gt;&amp;lt;script&amp;gt;alert(&amp;quot;Ex1&amp;quot;);&amp;lt;/script&amp;gt;&lt;/code&gt; in the &lt;code&gt;Site Name&lt;/code&gt; field.&lt;/p&gt;
 &lt;p&gt;A popup tells me that I need to &lt;em&gt;match the requested format&lt;/em&gt;. Probably some client side
 checks, so I inspect the field with Firebug and notice this:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/f5KzFDx.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/f5KzFDx.png" /&gt;
 &lt;p&gt;The field has a regular expression premitting only upper or lowercase characters. I can either
 delete this or just change it to &lt;code&gt;.+&lt;/code&gt; so it matches any character.&lt;/p&gt;
 &lt;p&gt;Now resubmitting the XSS payload works and the string is reflected on the page:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/yvSc4To.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/yvSc4To.png" /&gt;
 &lt;p&gt;However, there's no pop up. So there must be something else validating input. Heading back to the
 source I find some javscript in &lt;code&gt;ex1.js&lt;/code&gt; which contains the following code:&lt;/p&gt;
 &lt;a class="reference external image-reference" href="http://i.imgur.com/VVe74tW.png"&gt;&lt;img alt="" src="http://i.imgur.com/VVe74tW.png" /&gt;&lt;/a&gt;
@@ -471,12 +453,12 @@ By clicking on the gutter in the source code I set a breakpoint on the line that
 my data. The Firebug debugger breaks on the line and I step over it. Sure enough &lt;code&gt;siteName&lt;/code&gt; is not
 what I want it to be. Double clicking on the value in the right hand window allows me to edit it, and
 revert it back to what I want it to be. Then clicking continue I am rewarded with:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/VEFDpio.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/VEFDpio.png" /&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-02"&gt;
-&lt;h2&gt;Level 02 #&lt;/h2&gt;
+&lt;h2&gt;Level 02&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex2.php"&gt;Level 02&lt;/a&gt; is a simple web calculator:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/asgTWCw.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/asgTWCw.png" /&gt;
 &lt;p&gt;I'm supposed to use the form to print &lt;code&gt;phpinfo&lt;/code&gt; or other data to the page. This is a PHP
 script evaluating a simple expression. I am guessing that it's going to be calling &lt;code&gt;eval&lt;/code&gt;, as
 that's a fairly common vulnerability, and fits to how the page works. After entering some numbers
@@ -489,16 +471,16 @@ other thing under our control.&lt;/p&gt;
 &lt;/pre&gt;
 &lt;p&gt;So I need to change the operand to something that prints &lt;code&gt;phpinfo&lt;/code&gt; but leaves the rest of the statement
 valid. With Firebug I can edit the value of the operand to the following:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/8xnqMxv.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/8xnqMxv.png" /&gt;
 &lt;p&gt;Hit submit and....&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/rUgaixe.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/rUgaixe.png" /&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-03"&gt;
-&lt;h2&gt;Level 03 #&lt;/h2&gt;
+&lt;h2&gt;Level 03&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex3.php"&gt;Level 03&lt;/a&gt; provides me with a registration
 form and a login form. The instructions indicate that the data is stored in a delimited file and I need
 to sign up as a new user with admin rights.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/f0g5TmV.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/f0g5TmV.png" /&gt;
 &lt;p&gt;First things first, let's see if we can figure out the delimiter... Signing up and logging in
 shows us our name and current role: &lt;code&gt;role:normal&lt;/code&gt;. This already tells me that the delimiter is not
 &lt;code&gt;:&lt;/code&gt;. After fuzzing the input it turns out most characters are ok to use. So what's the delimeter?
@@ -514,10 +496,10 @@ name will be&lt;/p&gt;
 role:admin&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;And after a login with the new creds:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/Akj9NL8.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/Akj9NL8.png" /&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-04"&gt;
-&lt;h2&gt;Level 04 #&lt;/h2&gt;
+&lt;h2&gt;Level 04&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex4.php"&gt;Level 04&lt;/a&gt;&lt;/p&gt;
 &lt;a class="reference external image-reference" href="http://i.imgur.com/nmRe8U2.png"&gt;&lt;img alt="" src="http://i.imgur.com/nmRe8U2.png" /&gt;&lt;/a&gt;
 &lt;p&gt;Here we need to load a php file instead of the text files that load when you click
@@ -542,10 +524,10 @@ This time we get an &lt;em&gt;invalid file&lt;/em&gt; message, so that bypass wo
 &lt;a class="reference external image-reference" href="http://i.imgur.com/WTFYtJi.png"&gt;&lt;img alt="" src="http://i.imgur.com/WTFYtJi.png" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-05"&gt;
-&lt;h2&gt;Level 05 #&lt;/h2&gt;
+&lt;h2&gt;Level 05&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex5.php"&gt;Level 05&lt;/a&gt; starts by telling
 me that I am not logged in.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/BOBdkHX.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/BOBdkHX.png" /&gt;
 &lt;p&gt;Well, I don't remember logging in, so that's not unusual. What is unusual is
 that the &lt;code&gt;login&lt;/code&gt; button doesn't work. I'll quickly check the source code and notice
 that it's disabled, but also that it points to &lt;code&gt;login.html&lt;/code&gt;. Enabling and clicking it
@@ -555,27 +537,27 @@ assume that if the user is successful on &lt;code&gt;login.html&lt;/code&gt;, th
 this page will just assume that the user is allowed to be here.&lt;/p&gt;
 &lt;p&gt;Using an intercepting proxy I'll edit the &lt;code&gt;Referer&lt;/code&gt; field in the original request, so that
 it appears to be coming from the login page:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/EK9u7Ir.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/EK9u7Ir.png" /&gt;
 &lt;p&gt;Forward the request and&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/QCisDvN.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/QCisDvN.png" /&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-06"&gt;
-&lt;h2&gt;Level 06 #&lt;/h2&gt;
+&lt;h2&gt;Level 06&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex6.php"&gt;Level 06&lt;/a&gt; shows a nice
 big text area with allowable HTML tags.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/Waq1AVN.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/Waq1AVN.png" /&gt;
 &lt;p&gt;This time I need to perform a cross site request forgery. This can be accomlished by an &lt;code&gt;href&lt;/code&gt;
 tag, but trying this tells me that they are expecting something that will perform the request
 without the need for user interaction. Ok, fine, let's revisit the allowed tags. &lt;code&gt;img&lt;/code&gt; looks useful, right?&lt;/p&gt;
 &lt;p&gt;Let's try the following&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/qCd5NUP.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/qCd5NUP.png" /&gt;
 &lt;p&gt;Yep, that's what we needed.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-07"&gt;
-&lt;h2&gt;Level 07 #&lt;/h2&gt;
+&lt;h2&gt;Level 07&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex7.php"&gt;Level 07&lt;/a&gt; is a login form on which
 we need to perform another XSS attack.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/WO8dRpe.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/WO8dRpe.png" /&gt;
 &lt;p&gt;Well, lucky for me I perform these challenges through a proxy which unhides hidden fields like
 the one you see there. Some investigation shows that the value of the hidden field comes from
 a php_self value. That is it uses whatever the URL part is to populate the field, so that form
@@ -588,9 +570,9 @@ By employing the &lt;code&gt;arg&lt;/code&gt; paramater we can close the &lt;cod
 &lt;p&gt;Submitting that puts &lt;code&gt;username&lt;/code&gt; on the page surrounded by &lt;code&gt;h1&lt;/code&gt; tags and nabs the flag&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-08"&gt;
-&lt;h2&gt;Level 08 #&lt;/h2&gt;
+&lt;h2&gt;Level 08&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex8.php"&gt;Level 08&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/610ZNNq.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/610ZNNq.png" /&gt;
 &lt;p&gt;Here we need to upload an image that will produce a javscript alert. First things first with these
 things I upload an image to see how it behaves. Once uploaded I click on the example links and notice that
 images are fetched via an id. The URL is&lt;/p&gt;
@@ -619,14 +601,14 @@ for example? Maybe if I just reference the filename directly?&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://i.imgur.com/RVoJGMr.png"&gt;{ %img http://i.imgur.com/RVoJGMr.png %}&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-09"&gt;
-&lt;h2&gt;Level 09 #&lt;/h2&gt;
+&lt;h2&gt;Level 09&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex9.php"&gt;Level 09&lt;/a&gt; starts off by showing me the
 details of one John Doe.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/8NESmpB.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/8NESmpB.png" /&gt;
 &lt;p&gt;I need to change something to make it show the details for Mary Jane. There's no URL parms,
 no login, so how can the page know who to show? There's one place left: the cookie jar.&lt;/p&gt;
 &lt;p&gt;Using Firebug once again I inspect the cookies and sure enough&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/xGdtDa7.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/xGdtDa7.png" /&gt;
 &lt;p&gt;This is &amp;quot;JOHN+DOE&amp;quot; encoded as base64 as it turns out. One thing to note is when you&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
 &lt;span class="go"&gt;echo Sk9ITitET0u= | base64 -d&lt;/span&gt;
@@ -640,40 +622,40 @@ use echo with the &lt;code&gt;-n&lt;/code&gt; flag:&lt;/p&gt;
 &lt;p&gt;Editing the cookie and inserting that base64 string will show us Mary Jane's details.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-10"&gt;
-&lt;h2&gt;Level 10 #&lt;/h2&gt;
+&lt;h2&gt;Level 10&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex10.php"&gt;Level 10&lt;/a&gt; is a game and we need to
 edit its source so we look like we're really good at it.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/g03njlQ.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/g03njlQ.png" /&gt;
 &lt;p&gt;Entering anything in the name I field I have a poke around to see how the whole thing
 works. We're shown some coloured squares and then they are turn over. We need to then
 remember which colour each square had. Except we need to do it at least 9999 times and
 at the extreme level, which only shows us the squares for a second.&lt;/p&gt;
 &lt;p&gt;Finding the square colours isn't hard. With Firebug we can see:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/isDO7LM.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/isDO7LM.png" /&gt;
 &lt;p&gt;and those numbers are 0 indexed into the list of numbers from the selction popup. So playing
 along I can win one game. So let's find out where my current win/loss count is stored.&lt;/p&gt;
 &lt;p&gt;In the Javscript I find a structure that does this:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/gZghIIn.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/gZghIIn.png" /&gt;
 &lt;p&gt;but all this does is increment and decrement the values. Clearly that data is stored somewhere.
 Turns out that this &lt;code&gt;localstorage&lt;/code&gt; is in the DOM. Using the &lt;em&gt;DOM&lt;/em&gt; tab in Firebug I can find
 the structure and its data:&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/xGIZXpb.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/xGIZXpb.png" /&gt;
 &lt;p&gt;Now I can edit the number of wins and then, all I need to do is play one more game to take the flag.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-11"&gt;
-&lt;h2&gt;Level 11 #&lt;/h2&gt;
+&lt;h2&gt;Level 11&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex11.php"&gt;Level 11&lt;/a&gt; blacklists me&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/RaGy98O.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/RaGy98O.png" /&gt;
 &lt;p&gt;Awwwww I was having such fun. But how? Not from my IP, as that's going to change. First thing
 to check: cookie jar. Yay!&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/QgGrvwE.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/QgGrvwE.png" /&gt;
 &lt;p&gt;There it is, a big &lt;code&gt;no&lt;/code&gt;. I'll change that to a &lt;code&gt;yes&lt;/code&gt;, reload and take the flag, thanks very much.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-12"&gt;
-&lt;h2&gt;Level 12 #&lt;/h2&gt;
+&lt;h2&gt;Level 12&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex12.php"&gt;Level 12&lt;/a&gt; is a bruteforce challange. No
 login attempt limits, no rate limits, so it's ripe for the picking.&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/LMUBNoq.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/LMUBNoq.png" /&gt;
 &lt;p&gt;After searching for the suggested password list, the first hit is the Openwall password list for
 john the ripper. So why not download it and give it a try?&lt;/p&gt;
 &lt;p&gt;I fire up &lt;code&gt;wfuzz&lt;/code&gt; with the following commandline&lt;/p&gt;
@@ -683,11 +665,11 @@ john the ripper. So why not download it and give it a try?&lt;/p&gt;
 &lt;p&gt;Within a few seconds I get a hit with &lt;code&gt;princess&lt;/code&gt;. Enter that with the username &lt;code&gt;admin&lt;/code&gt; and onto the next level&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="level-13"&gt;
-&lt;h2&gt;Level 13 #&lt;/h2&gt;
+&lt;h2&gt;Level 13&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex13.php?redirect=ex13-task.php"&gt;Level 13&lt;/a&gt; is actually
 redirect to &lt;code&gt;ex13-task.php&lt;/code&gt;. I need to make the redirect point to an external page so that to another user
 it looks like they are visiting &lt;code&gt;ctf.infosecinstitute.com&lt;/code&gt; but are infact taken to another site&lt;/p&gt;
-&lt;img alt="" src="&amp;quot;http://i.imgur.com/jNgQ4Ww.png&amp;quot;" /&gt;
+&lt;img alt="" src="http://i.imgur.com/jNgQ4Ww.png" /&gt;
 &lt;p&gt;Well the obvious thing is just to try and type in another URL &lt;code&gt;http://ctf.infosecinstitute.com/ctf2/exercises/ex13.php?redirect=http://unlogic.co.uk&lt;/code&gt;
 but that gives me an error. Hrmm... trying a few other redirect options tells me that the redirect is URL
 relative, which means if I strip off the protocol off the URL, I should be able to make this work:&lt;/p&gt;
@@ -1118,7 +1100,7 @@ O:4:&amp;quot;Test&amp;quot;:3:{s:3:&amp;quot;url&amp;quot;;s:30:&amp;quot;http:
 &lt;/pre&gt;
 &lt;p&gt;Using Burp suite I use a &lt;code&gt;GET&lt;/code&gt; request to &lt;code&gt;sec.php&lt;/code&gt;, send it to &lt;code&gt;Repeater&lt;/code&gt; and convert
 it to a &lt;code&gt;POST&lt;/code&gt; request with the required payload:&lt;/p&gt;
-&lt;img alt="" src="http://i.imgur.com/kiutbRt.png" /&gt;
+&lt;img alt="" src="http://i.imgur.com/kiutbRt.png" style="width: 500px;" /&gt;
 &lt;p&gt;Then I, once again, browse to my DAws url and bind a shell to finally get:&lt;/p&gt;
 &lt;pre class="code console literal-block"&gt;
 &lt;span class="gp"&gt;#&lt;/span&gt; whoami &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; id

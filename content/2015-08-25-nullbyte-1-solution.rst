@@ -37,7 +37,7 @@ to the HTTP server first.
 
 Upon opening the page I only get an image and some text
 
-.. image:: "http://i.imgur.com/SlVGKol.png"
+.. image:: http://i.imgur.com/SlVGKol.png
 
 
 I ran :code:`dirbuster` on the root and got a couple of hits: :code:`uploads` and :code:`phpmyadmin`. The first had disabled directory listing
