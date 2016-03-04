@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unlogic</title><link>https://svenito.github.io/pelcian-test/</link><description>I've got a keyboard, a terminal, and a whole load of luck</description><atom:link href="https://svenito.github.io/pelcian-test/feed.xml" rel="self"></atom:link><lastBuildDate>Tue, 16 Feb 2016 09:34:12 +0000</lastBuildDate><item><title>Offline coding</title><link>https://svenito.github.io/pelcian-test/2016/02/16/offline-coding/</link><description>&lt;p&gt;These days, when you sit at your box, tapping out your code be it in whatever
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unlogic</title><link>http://unlogic.co.uk/</link><description>I've got a keyboard, a terminal, and a whole load of luck</description><atom:link href="http://unlogic.co.uk/feed.xml" rel="self"></atom:link><lastBuildDate>Tue, 16 Feb 2016 09:34:12 +0000</lastBuildDate><item><title>Offline coding</title><link>http://unlogic.co.uk/2016/02/16/offline-coding/</link><description>&lt;p&gt;These days, when you sit at your box, tapping out your code be it in whatever
 language you use these days, you usually have one or more tabs open, ready to
 help you with any programming issues: DuckDuckGo, Google, Stack Overflow, Reddit,
 or whatever your go to site for answers is.&lt;/p&gt;
@@ -45,7 +45,7 @@ will decrease.&lt;/p&gt;
 &lt;p&gt;So next time you feel like coding a little something, why not unplug from the internet
 for an hour or so, and see how you get on. In this age of &lt;em&gt;always connected&lt;/em&gt;, I can
 only reccommend that any developer give this a try.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 16 Feb 2016 09:34:12 +0000</pubDate><guid>tag:svenito.github.io,2016-02-16:pelcian-test/2016/02/16/offline-coding/</guid><category>tips</category><category>coding</category><category>programming</category></item><item><title>Brewing with a Pi</title><link>https://svenito.github.io/pelcian-test/2015/12/04/brewing-with-a-pi/</link><description>&lt;p&gt;It's been a while since I've written here, but that doesn't mean I haven't
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 16 Feb 2016 09:34:12 +0000</pubDate><guid>tag:unlogic.co.uk,2016-02-16:2016/02/16/offline-coding/</guid><category>tips</category><category>coding</category><category>programming</category></item><item><title>Brewing with a Pi</title><link>http://unlogic.co.uk/2015/12/04/brewing-with-a-pi/</link><description>&lt;p&gt;It's been a while since I've written here, but that doesn't mean I haven't
 been busy. I've been working on a DIY version of &lt;a class="reference external" href="http://www.speidels-braumeister.de/en/braumeister/id-10-20-50-litre-braumeister.html"&gt;Speidel's Braumeister&lt;/a&gt;
 and the software side of things has come along quite nicely.&lt;/p&gt;
 &lt;p&gt;The idea is to have a Raspberry Pi controlled beer brewing system for cooking
@@ -70,7 +70,7 @@ you are keen and fancy building the rest of the kit yourself already, please
 check it out.&lt;/p&gt;
 &lt;p&gt;Hopefully I'll get the time to put the rest of the project together early
 next year. Got a house to get up to speed as well, so time is a little limited.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 04 Dec 2015 13:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-12-04:pelcian-test/2015/12/04/brewing-with-a-pi/</guid></item><item><title>SpyderSec solution</title><link>https://svenito.github.io/pelcian-test/2015/09/09/spydersec-solution/</link><description>&lt;p&gt;Another day, another VM. Today it's the &lt;a class="reference external" href="https://www.vulnhub.com/entry/spydersec-challenge,128/"&gt;SpyderSec Challenge&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 04 Dec 2015 13:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-12-04:2015/12/04/brewing-with-a-pi/</guid></item><item><title>SpyderSec solution</title><link>http://unlogic.co.uk/2015/09/09/spydersec-solution/</link><description>&lt;p&gt;Another day, another VM. Today it's the &lt;a class="reference external" href="https://www.vulnhub.com/entry/spydersec-challenge,128/"&gt;SpyderSec Challenge&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;So let me start it up and get on it.&lt;/p&gt;
 &lt;img alt="" src="http://i.imgur.com/nah3Wah.gif" /&gt;
 &lt;p&gt;As per usual I need the IP of the machine and
@@ -225,7 +225,7 @@ https://www.spydersec.com/feedback
 &lt;p&gt;Well that was a nice challenge, especially the truecrypt volume in the MP4. That's
 something new I learned from this. So thanks to &lt;a class="reference external" href="https://twitter.com/Spydersec"&gt;&amp;#64;SpyderSec&lt;/a&gt;
 for the challenge, and thanks to you for stopping by to read this.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 09 Sep 2015 15:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-09-09:pelcian-test/2015/09/09/spydersec-solution/</guid></item><item><title>Extracting bup files in Linux</title><link>https://svenito.github.io/pelcian-test/2015/09/03/extracting-bup-files-in-linux/</link><description>&lt;p&gt;I recently got hold of some malware that got snapped up by McAfee and stored in a bup file.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 09 Sep 2015 15:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-09-09:2015/09/09/spydersec-solution/</guid></item><item><title>Extracting bup files in Linux</title><link>http://unlogic.co.uk/2015/09/03/extracting-bup-files-in-linux/</link><description>&lt;p&gt;I recently got hold of some malware that got snapped up by McAfee and stored in a bup file.
 Keen to take a look at it, I researched how to 'unbup' files and found this page:&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://blog.opensecurityresearch.com/2012/07/unbup-mcafee-bup-extractor-for-linux.html"&gt;http://blog.opensecurityresearch.com/2012/07/unbup-mcafee-bup-extractor-for-linux.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;A slow bash script? A faster script in Perl? No, that won't do. Rather than search
@@ -235,7 +235,7 @@ something, and thus my &lt;cite&gt;unbup.py&lt;/cite&gt; was born. You can get i
 it is also fairly fast. I've only tested it with the one file I have, but if
 you decide to use it, and it doesn't work, send me the bup file and I'll take a look
 at fixing it. Otherwise feel free to fork it and make your own fixes.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 03 Sep 2015 14:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-09-03:pelcian-test/2015/09/03/extracting-bup-files-in-linux/</guid></item><item><title>Nullbyte 1 solution</title><link>https://svenito.github.io/pelcian-test/2015/08/25/nullbyte-1-solution/</link><description>&lt;p&gt;I've been AFK for a while because of various reasons, but now I'm back and have
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 03 Sep 2015 14:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-09-03:2015/09/03/extracting-bup-files-in-linux/</guid></item><item><title>Nullbyte 1 solution</title><link>http://unlogic.co.uk/2015/08/25/nullbyte-1-solution/</link><description>&lt;p&gt;I've been AFK for a while because of various reasons, but now I'm back and have
 managed to scrape a little time together to get on with some of &lt;a class="reference external" href="https://vulnhub.com"&gt;Vulnhub's&lt;/a&gt;
 new VMs.&lt;/p&gt;
 &lt;p&gt;So let's start with &lt;a class="reference external" href="https://www.vulnhub.com/entry/nullbyte-1,126/"&gt;Nullbyte 1&lt;/a&gt;&lt;/p&gt;
@@ -417,7 +417,7 @@ ramses&amp;#64;NullByte:/var/www/backup$ ./procwatch
 &lt;p&gt;And that concludes the NullByte VM walkthrough. A nice little machine with some fun
 challenges. Thanks to ly0n for creating it.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 25 Aug 2015 11:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-08-25:pelcian-test/2015/08/25/nullbyte-1-solution/</guid></item><item><title>Honeypotting with Dionaea and Raspi</title><link>https://svenito.github.io/pelcian-test/2015/07/16/honeypotting-with-dionaea-and-raspi/</link><description>&lt;p&gt;I recently setup a &lt;a class="reference external" href="http://dionaea.carnivore.it/"&gt;dionaea&lt;/a&gt; honeypot on my Raspberry Pi
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 25 Aug 2015 11:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-08-25:2015/08/25/nullbyte-1-solution/</guid></item><item><title>Honeypotting with Dionaea and Raspi</title><link>http://unlogic.co.uk/2015/07/16/honeypotting-with-dionaea-and-raspi/</link><description>&lt;p&gt;I recently setup a &lt;a class="reference external" href="http://dionaea.carnivore.it/"&gt;dionaea&lt;/a&gt; honeypot on my Raspberry Pi
 and after tweaking and configuring it for a few days have now got a working setup.
 It's a low interaction honeypot aimed to capture malware rather than ssh bruteforce
 attacks.&lt;/p&gt;
@@ -429,7 +429,7 @@ during testing, it managed to collect 8 unique samples from 154 connections.&lt;
 &lt;a class="reference external image-reference" href="http://i.imgur.com/j828Fpw.png"&gt;&lt;img alt="" src="http://i.imgur.com/j828Fpw.png" style="width: 500px;" /&gt;&lt;/a&gt;
 &lt;p&gt;It should be fairly interesting to see if anything else comes along during its
 uptime.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 16 Jul 2015 12:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-07-16:pelcian-test/2015/07/16/honeypotting-with-dionaea-and-raspi/</guid></item><item><title>Infosec Institute CTF2.0</title><link>https://svenito.github.io/pelcian-test/2015/06/25/infosec-institute-ctf20/</link><description>&lt;p&gt;The folks over at the &lt;a class="reference external" href="https://infosecinstitute.com"&gt;Infosec Institue&lt;/a&gt; have released
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 16 Jul 2015 12:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-07-16:2015/07/16/honeypotting-with-dionaea-and-raspi/</guid></item><item><title>Infosec Institute CTF2.0</title><link>http://unlogic.co.uk/2015/06/25/infosec-institute-ctf20/</link><description>&lt;p&gt;The folks over at the &lt;a class="reference external" href="https://infosecinstitute.com"&gt;Infosec Institue&lt;/a&gt; have released
 their &lt;a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/"&gt;second CTF&lt;/a&gt;. Here's how I got on...&lt;/p&gt;
 &lt;div class="section" id="level-01"&gt;
 &lt;h2&gt;Level 01&lt;/h2&gt;
@@ -679,7 +679,7 @@ relative, which means if I strip off the protocol off the URL, I should be able 
 &lt;p&gt;Sure enough, that worked. That's it, the final flag.&lt;/p&gt;
 &lt;p&gt;Thanks to the Infosec Institute for another great CTF!&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 06 Jul 2015 19:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-06-25:pelcian-test/2015/06/25/infosec-institute-ctf20/</guid></item><item><title>Vulnhub Darknet1.0 write up</title><link>https://svenito.github.io/pelcian-test/2015/06/08/vulnhub-darknet10-write-up/</link><description>&lt;p&gt;[Darknet 1.0](&lt;a class="reference external" href="https://www.vulnhub.com/entry/darknet-10,120/"&gt;https://www.vulnhub.com/entry/darknet-10,120/&lt;/a&gt;) by &lt;a class="reference external" href="https://www.vulnhub.com/author/q3rv0,111/"&gt;q3rv0&lt;/a&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 06 Jul 2015 19:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-06-25:2015/06/25/infosec-institute-ctf20/</guid></item><item><title>Vulnhub Darknet1.0 write up</title><link>http://unlogic.co.uk/2015/06/08/vulnhub-darknet10-write-up/</link><description>&lt;p&gt;[Darknet 1.0](&lt;a class="reference external" href="https://www.vulnhub.com/entry/darknet-10,120/"&gt;https://www.vulnhub.com/entry/darknet-10,120/&lt;/a&gt;) by &lt;a class="reference external" href="https://www.vulnhub.com/author/q3rv0,111/"&gt;q3rv0&lt;/a&gt;
 isn't easy... for me anyway.&lt;/p&gt;
 &lt;p&gt;With some help and lots of reading I did however get to the bottom of it.&lt;/p&gt;
 &lt;p&gt;Here's my journey&lt;/p&gt;
@@ -1142,7 +1142,7 @@ taken us directly to the end stage. All the info was there and &lt;code&gt;suphp
 Had I done that though I would have missed out on the XPath challenge, which taught me some new tricks,
 as well as all the other fun puzzles.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 08 Jul 2015 18:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-06-08:pelcian-test/2015/06/08/vulnhub-darknet10-write-up/</guid></item><item><title>Hacky Easter 2015</title><link>https://svenito.github.io/pelcian-test/2015/06/01/hacky-easter-2015/</link><description>&lt;p&gt;Another year, another Hacky Easter and a month, of fun, learning, and
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 08 Jul 2015 18:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-06-08:2015/06/08/vulnhub-darknet10-write-up/</guid></item><item><title>Hacky Easter 2015</title><link>http://unlogic.co.uk/2015/06/01/hacky-easter-2015/</link><description>&lt;p&gt;Another year, another Hacky Easter and a month, of fun, learning, and
 frustrations. All in all this was another great year and I'm already looking
 forward to 2016's edition. I found this year's challenges were a bit harder than
 last year, but I did my best.&lt;/p&gt;
@@ -1809,7 +1809,7 @@ sentence.&lt;/p&gt;
 &lt;p&gt;Here's a quick example for a couple of the lines:&lt;/p&gt;
 &lt;p&gt;[!`asciicast](&lt;a class="reference external" href="https://asciinema.org/a/65rhh2rqofe51f0yst1nktmbu.png"&gt;https://asciinema.org/a/65rhh2rqofe51f0yst1nktmbu.png&lt;/a&gt;) &amp;lt;&lt;a class="reference external" href="https://asciinema.org/a/65rhh2rqofe51f0yst1nktmbu"&gt;https://asciinema.org/a/65rhh2rqofe51f0yst1nktmbu&lt;/a&gt;&amp;gt;`_&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 01 Jun 2015 08:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-06-01:pelcian-test/2015/06/01/hacky-easter-2015/</guid></item><item><title>'Burnmail</title><link>https://svenito.github.io/pelcian-test/2015/05/29/burnmail/</link><description>&lt;p&gt;A while back I got curious about how easy it would be to setup a temporary
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 01 Jun 2015 08:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-06-01:2015/06/01/hacky-easter-2015/</guid></item><item><title>'Burnmail</title><link>http://unlogic.co.uk/2015/05/29/burnmail/</link><description>&lt;p&gt;A while back I got curious about how easy it would be to setup a temporary
 email forwarding service, akin to &lt;a class="reference external" href="https://meltmail.com/"&gt;Meltmail&lt;/a&gt;. So I got
 to it and made it.&lt;/p&gt;
 &lt;p&gt;In essence you will create a temporary email address that will forward all
@@ -1867,7 +1867,7 @@ receiving any mail.&lt;/p&gt;
 please let me know.&lt;/p&gt;
 &lt;p&gt;Also bear in mind that it's early days so there might be bugs.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 29 May 2015 09:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-05-29:pelcian-test/2015/05/29/burnmail/</guid></item><item><title>'I made this</title><link>https://svenito.github.io/pelcian-test/2015/05/14/i-made-this/</link><description>&lt;p&gt;Had this script sitting around for a while and I figured I would clean it up
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 29 May 2015 09:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-05-29:2015/05/29/burnmail/</guid></item><item><title>'I made this</title><link>http://unlogic.co.uk/2015/05/14/i-made-this/</link><description>&lt;p&gt;Had this script sitting around for a while and I figured I would clean it up
 a bit and share it.&lt;/p&gt;
 &lt;p&gt;Get &lt;a class="reference external" href="https://github.com/Svenito/purplescraper"&gt;Purplescraper from my Github&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In short: you give it a starting directory, which will usually be where all the user
@@ -1875,7 +1875,7 @@ directories are, and it will go get all &lt;code&gt;.purple/accounts.xml&lt;/cod
 any usernames and passwords it finds into a new file.&lt;/p&gt;
 &lt;p&gt;Useful to make sure none of your sensitive data is available to other, non
 authorised users via slack file permissions.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 14 May 2015 12:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-05-14:pelcian-test/2015/05/14/i-made-this/</guid></item><item><title>The joys of server ownership</title><link>https://svenito.github.io/pelcian-test/2015/05/08/the-joys-of-server-ownership/</link><description>&lt;p&gt;This post serves mostly as a &amp;quot;note to self&amp;quot;.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 14 May 2015 12:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-05-14:2015/05/14/i-made-this/</guid></item><item><title>The joys of server ownership</title><link>http://unlogic.co.uk/2015/05/08/the-joys-of-server-ownership/</link><description>&lt;p&gt;This post serves mostly as a &amp;quot;note to self&amp;quot;.&lt;/p&gt;
 &lt;p&gt;I just ordered myself a super cheap VPS from &lt;a class="reference external" href="http://ramnode.com"&gt;Ramnode&lt;/a&gt; as I have
 a little project I would like to setup and see if I can make it work.&lt;/p&gt;
 &lt;p&gt;But first I had to setup the server (Debian 7.0) and it's been a while since I've done that, so
@@ -1940,7 +1940,7 @@ can do&lt;/p&gt;
 &lt;p&gt;Lifted from the docs. This will allow and block only the IP from where the knock originated.&lt;/p&gt;
 &lt;p&gt;That's all for now. Postfix next time....&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 08 May 2015 13:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-05-08:pelcian-test/2015/05/08/the-joys-of-server-ownership/</guid></item><item><title>How's that Pizza coming along?</title><link>https://svenito.github.io/pelcian-test/2015/04/15/hows-that-pizza-coming-along/</link><description>&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: Published what I have done so far &lt;a class="reference external" href="https://github.com/Svenito/dominos"&gt;on my Github&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 08 May 2015 13:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-05-08:2015/05/08/the-joys-of-server-ownership/</guid></item><item><title>How's that Pizza coming along?</title><link>http://unlogic.co.uk/2015/04/15/hows-that-pizza-coming-along/</link><description>&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: Published what I have done so far &lt;a class="reference external" href="https://github.com/Svenito/dominos"&gt;on my Github&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Having been a bit busy with other things recently, I've not mentioned the Domino's
 thing for a while. So in case anyone is wondering where I am with this:&lt;/p&gt;
 &lt;script type="text/javascript" src="https://asciinema.org/a/17706.js" id="asciicast-17706" async&gt;&lt;/script&gt;&lt;p&gt;Basically I've reworked how the store finder works. I've collapsed the whole store finding and
@@ -1960,7 +1960,7 @@ URL callback, but I'll find out eventually.&lt;/p&gt;
 &lt;p&gt;Then it's really about hoping that enough people like it, and want to help
 by adding support for ordering in their own country.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 14 May 2015 17:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-04-15:pelcian-test/2015/04/15/hows-that-pizza-coming-along/</guid><category>[]</category></item><item><title>Revisiting strong passwords</title><link>https://svenito.github.io/pelcian-test/2015/04/14/revisiting-strong-passwords/</link><description>&lt;p&gt;Some time ago I wrote a post about &lt;a class="reference external" href="http://unlogic.co.uk/2012/06/06/strong-passwords/"&gt;strong passwords&lt;/a&gt;.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 14 May 2015 17:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-04-15:2015/04/15/hows-that-pizza-coming-along/</guid><category>[]</category></item><item><title>Revisiting strong passwords</title><link>http://unlogic.co.uk/2015/04/14/revisiting-strong-passwords/</link><description>&lt;p&gt;Some time ago I wrote a post about &lt;a class="reference external" href="http://unlogic.co.uk/2012/06/06/strong-passwords/"&gt;strong passwords&lt;/a&gt;.
 That was three years ago and I figured I might as well revist what I wrote back then.&lt;/p&gt;
 &lt;p&gt;Since then technology has moved on a lot, and the number of password breaches has increased,
 aswell as the number of reports mocking our poorly chosen passwords.&lt;/p&gt;
@@ -2069,7 +2069,7 @@ to encourage good password creation. Long, random, and unpredictable, passwords
 from a large vat of possibilities.&lt;/p&gt;
 &lt;p&gt;Don't tell attackers what the password isn't. Let them guess.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 14 Apr 2015 09:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-04-14:pelcian-test/2015/04/14/revisiting-strong-passwords/</guid></item><item><title>Solving Narnia Part 2</title><link>https://svenito.github.io/pelcian-test/2015/04/13/solving-narnia-part-2/</link><description>&lt;p&gt;Carrying on from &lt;a class="reference external" href="http://unlogic.co.uk/2015/04/08/solving-narnia-part1/"&gt;Part 1&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 14 Apr 2015 09:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-04-14:2015/04/14/revisiting-strong-passwords/</guid></item><item><title>Solving Narnia Part 2</title><link>http://unlogic.co.uk/2015/04/13/solving-narnia-part-2/</link><description>&lt;p&gt;Carrying on from &lt;a class="reference external" href="http://unlogic.co.uk/2015/04/08/solving-narnia-part1/"&gt;Part 1&lt;/a&gt;&lt;/p&gt;
 &lt;div class="section" id="level-05"&gt;
 &lt;h2&gt;Level 05&lt;/h2&gt;
 &lt;pre class="code c literal-block"&gt;
@@ -2607,7 +2607,7 @@ Way to go!!!!$ whomai
 level, I decided to post anyway. I'll update this when I have this figured out.&lt;/p&gt;
 &lt;p&gt;Sorry.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 13 Apr 2015 20:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-04-13:pelcian-test/2015/04/13/solving-narnia-part-2/</guid></item><item><title>Vulnhub's 'TopHatSec Freshly'</title><link>https://svenito.github.io/pelcian-test/2015/04/11/vulnhubs-tophatsec-freshly/</link><description>&lt;p&gt;This is my first writeup of a &lt;a class="reference external" href="https://vulnhub.com"&gt;Vulnhub&lt;/a&gt; wargame: Freshly.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 13 Apr 2015 20:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-04-13:2015/04/13/solving-narnia-part-2/</guid></item><item><title>Vulnhub's 'TopHatSec Freshly'</title><link>http://unlogic.co.uk/2015/04/11/vulnhubs-tophatsec-freshly/</link><description>&lt;p&gt;This is my first writeup of a &lt;a class="reference external" href="https://vulnhub.com"&gt;Vulnhub&lt;/a&gt; wargame: Freshly.&lt;/p&gt;
 &lt;p&gt;The challenge is:&lt;/p&gt;
 &lt;blockquote&gt;
 The goal of this challenge is to break into the machine via
@@ -2915,7 +2915,7 @@ be looking for the file now :)&lt;/p&gt;
 &lt;p&gt;This seems to be the most direct route in. It might be worth exploring the
 vulnerabilities on the plugins, but it's late now, so I'll save that for
 another time.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sat, 11 Apr 2015 21:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-04-11:pelcian-test/2015/04/11/vulnhubs-tophatsec-freshly/</guid></item><item><title>Solving Narnia Part 1</title><link>https://svenito.github.io/pelcian-test/2015/04/08/solving-narnia-part-1/</link><description>&lt;p&gt;Next up we take on &lt;a class="reference external" href="http://overthewire.org/wargames/narnia/"&gt;Narnia&lt;/a&gt;. This is a
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sat, 11 Apr 2015 21:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-04-11:2015/04/11/vulnhubs-tophatsec-freshly/</guid></item><item><title>Solving Narnia Part 1</title><link>http://unlogic.co.uk/2015/04/08/solving-narnia-part-1/</link><description>&lt;p&gt;Next up we take on &lt;a class="reference external" href="http://overthewire.org/wargames/narnia/"&gt;Narnia&lt;/a&gt;. This is a
 binary exploit centered wargame, so fire up your debuggers and let's smash those
 stacks. For levels 5, 6, 7, and 8, see &lt;a class="reference external" href="http://unlogic.co.uk/2015/04/13/solving-narnia-part-2/"&gt;part 2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;All levels are in &lt;code&gt;/narnia&lt;/code&gt; and both the binary and the source are provided.&lt;/p&gt;
@@ -3370,7 +3370,7 @@ inside &lt;em&gt;gdb&lt;/em&gt; are a bit different.&lt;/p&gt;
 &lt;span class="go"&gt;[password]&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 08 Apr 2015 12:00:00 +0100</pubDate><guid>tag:svenito.github.io,2015-04-08:pelcian-test/2015/04/08/solving-narnia-part-1/</guid></item><item><title>Fix Kali Live Build error</title><link>https://svenito.github.io/pelcian-test/2015/03/25/fix-kali-live-build-error/</link><description>&lt;p&gt;I was trying out the Kali Linux live build, and ran into an an issue where
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 08 Apr 2015 12:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2015-04-08:2015/04/08/solving-narnia-part-1/</guid></item><item><title>Fix Kali Live Build error</title><link>http://unlogic.co.uk/2015/03/25/fix-kali-live-build-error/</link><description>&lt;p&gt;I was trying out the Kali Linux live build, and ran into an an issue where
 the &lt;code&gt;lb build&lt;/code&gt; command would throw an error: &lt;code&gt;chroot: failed to run command '/usr/bin/env': No such file or directory&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Turns out this is a Debian bug that's been around since 2013. Luckily the fix
 is straightforward. First follow the usual &lt;a class="reference external" href="http://docs.kali.org/development/live-build-a-custom-kali-iso"&gt;live build instructions&lt;/a&gt;
@@ -3396,7 +3396,7 @@ lb config
 lb build&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;After this the build ran fine.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 25 Mar 2015 06:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-03-25:pelcian-test/2015/03/25/fix-kali-live-build-error/</guid></item><item><title>Solving Leviathan</title><link>https://svenito.github.io/pelcian-test/2015/03/23/solving-leviathan/</link><description>&lt;p&gt;After having done &lt;a class="reference external" href="http://overthewire.org/wargames/bandit/"&gt;Bandit&lt;/a&gt;, let's move
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 25 Mar 2015 06:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-03-25:2015/03/25/fix-kali-live-build-error/</guid></item><item><title>Solving Leviathan</title><link>http://unlogic.co.uk/2015/03/23/solving-leviathan/</link><description>&lt;p&gt;After having done &lt;a class="reference external" href="http://overthewire.org/wargames/bandit/"&gt;Bandit&lt;/a&gt;, let's move
 on to &lt;a class="reference external" href="http://overthewire.org/wargames/leviathan/"&gt;Leviathan&lt;/a&gt;. None of the levels
 have hints, so there won't be any links to each of the levels.&lt;/p&gt;
 &lt;p&gt;Without further ado, let's get cracking.&lt;/p&gt;
@@ -3627,7 +3627,7 @@ wargame too. IMO I feel that providing these walkthroughs will help those who ar
 If you are however just following this so that you can complete Leviathan, then you should
 sit down and have a go at this, or other war games without a guide. Challenge yourself.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 23 Mar 2015 21:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-03-23:pelcian-test/2015/03/23/solving-leviathan/</guid></item><item><title>Dominos CLI Update</title><link>https://svenito.github.io/pelcian-test/2015/03/15/dominos-cli-update/</link><description>&lt;p&gt;Small update on some progress and changes. Setting the store is now done by
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 23 Mar 2015 21:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-03-23:2015/03/23/solving-leviathan/</guid></item><item><title>Dominos CLI Update</title><link>http://unlogic.co.uk/2015/03/15/dominos-cli-update/</link><description>&lt;p&gt;Small update on some progress and changes. Setting the store is now done by
 enetering your postcode and the nearest delivery store to that postcode is
 automatically selected. Setting the address also works and isn't just a stub,
 and finally it is also able to determine if cash on delivery is available to you,
@@ -3638,7 +3638,7 @@ I reckon it's time to release it. Then work on investigating how credit card ord
 are handled will start.&lt;/p&gt;
 &lt;p&gt;It's a fun, fairly pointless, and interesting ride :)&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/Svenito/dominos"&gt;Now on Github&lt;/a&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sun, 15 Mar 2015 06:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-03-15:pelcian-test/2015/03/15/dominos-cli-update/</guid><category>[]</category></item><item><title>Let's crack Bandit Part 2</title><link>https://svenito.github.io/pelcian-test/2015/03/13/lets-crack-bandit-part-2/</link><description>&lt;p&gt;Continues on from &lt;a class="reference external" href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part1"&gt;Let's crack Bandit Part 1&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sun, 15 Mar 2015 06:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-03-15:2015/03/15/dominos-cli-update/</guid><category>[]</category></item><item><title>Let's crack Bandit Part 2</title><link>http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part-2/</link><description>&lt;p&gt;Continues on from &lt;a class="reference external" href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part1"&gt;Let's crack Bandit Part 1&lt;/a&gt;&lt;/p&gt;
 &lt;div class="section" id="level-15-16"&gt;
 &lt;h2&gt;Level 15 -&amp;gt; 16&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit16.html"&gt;Level 15&lt;/a&gt;&lt;/p&gt;
@@ -3759,7 +3759,7 @@ we need to do a &lt;code&gt;diff&lt;/code&gt;&lt;/p&gt;
 &amp;lt; BS8bqB1kqkinKJjuxL6k072Qq9NRwQpR&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 13 Mar 2015 21:10:00 +0000</pubDate><guid>tag:svenito.github.io,2015-03-13:pelcian-test/2015/03/13/lets-crack-bandit-part-2/</guid></item><item><title>Let's crack Bandit Part 1</title><link>https://svenito.github.io/pelcian-test/2015/03/13/lets-crack-bandit-part-1/</link><description>&lt;p&gt;Let's give Bandit from the &lt;a class="reference external" href="http://overthewire.org/wargames"&gt;overthewire war games&lt;/a&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 13 Mar 2015 21:10:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-03-13:2015/03/13/lets-crack-bandit-part-2/</guid></item><item><title>Let's crack Bandit Part 1</title><link>http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part-1/</link><description>&lt;p&gt;Let's give Bandit from the &lt;a class="reference external" href="http://overthewire.org/wargames"&gt;overthewire war games&lt;/a&gt;
 a going over. I did this a while back, but never really wrote it up,
 so I'm going to do it again and write it up. Remember that you can copy
 and paste from all the &lt;a class="reference external" href="https://asciinema.org"&gt;asciinema&lt;/a&gt; videos below.&lt;/p&gt;
@@ -4058,7 +4058,7 @@ BfMYroe26WYalil77FoDi9qh59eK5xNr&lt;/span&gt;
 password you logged in with and hit enter.&lt;/p&gt;
 &lt;p&gt;Continues with &lt;a class="reference external" href="http://unlogic.co.uk/2015/03/13/lets-crack-bandit-part2"&gt;Let's crack Bandit Part 2&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 13 Mar 2015 21:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-03-13:pelcian-test/2015/03/13/lets-crack-bandit-part-1/</guid></item><item><title>Solving Infosec n00bsCTF</title><link>https://svenito.github.io/pelcian-test/2015/03/11/solving-infosec-n00bsctf/</link><description>&lt;p&gt;The InfoSec Institue is running a &lt;a class="reference external" href="http://ctf.infosecinstitute.com/index.php"&gt;n00bsCTF&lt;/a&gt;,
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 13 Mar 2015 21:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-03-13:2015/03/13/lets-crack-bandit-part-1/</guid></item><item><title>Solving Infosec n00bsCTF</title><link>http://unlogic.co.uk/2015/03/11/solving-infosec-n00bsctf/</link><description>&lt;p&gt;The InfoSec Institue is running a &lt;a class="reference external" href="http://ctf.infosecinstitute.com/index.php"&gt;n00bsCTF&lt;/a&gt;,
 and I can't resist a CTF really. Plus this will be a nice warmup for Hackyeaster 2015.
 So let's jump on it and get some flags...&lt;/p&gt;
 &lt;p&gt;I haven't managed to get all of them, but I will be updating this post when
@@ -4415,7 +4415,7 @@ which contains the morsecode for&lt;/p&gt;
 INFOSECFLAGISMORSECODETONES&lt;/blockquote&gt;
 &lt;p&gt;Which level this belongs to, I don't know.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 13 Mar 2015 21:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-03-11:pelcian-test/2015/03/11/solving-infosec-n00bsctf/</guid></item><item><title>CLI Pizza</title><link>https://svenito.github.io/pelcian-test/2015/03/04/cli-pizza/</link><description>&lt;p&gt;Recently someone was talking about ordering Pizza from within
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 13 Mar 2015 21:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-03-11:2015/03/11/solving-infosec-n00bsctf/</guid></item><item><title>CLI Pizza</title><link>http://unlogic.co.uk/2015/03/04/cli-pizza/</link><description>&lt;p&gt;Recently someone was talking about ordering Pizza from within
 &lt;a class="reference external" href="http://sidefx.com"&gt;Houdini&lt;/a&gt;. I figured that it must be possible somehow.
 I looked for an API and only found a US based, possibly out of date,
 &lt;a class="reference external" href="https://www.npmjs.com/package/dominos"&gt;API for Dominos&lt;/a&gt; written in node.js.
@@ -4430,7 +4430,7 @@ tuned for that. Follow on &lt;a class="reference external" href="https://www.tit
 subscribe to the &lt;a class="reference external" href="http://unlogic.co.uk/feed.xml"&gt;RSS&lt;/a&gt;. The code will go up
 on Github once it's more feature complete.&lt;/p&gt;
 &lt;p&gt;UPDATE: &lt;a class="reference external" href="https://github.com/Svenito/dominos"&gt;it's on github&lt;/a&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 04 Mar 2015 22:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-03-04:pelcian-test/2015/03/04/cli-pizza/</guid></item><item><title>Why I think Gear VR is the way forward</title><link>https://svenito.github.io/pelcian-test/2015/02/10/why-i-think-gear-vr-is-the-way-forward/</link><description>&lt;p&gt;Recently I've been lucky enough to try out and work with the DK2 and the Samsung
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 04 Mar 2015 22:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-03-04:2015/03/04/cli-pizza/</guid></item><item><title>Why I think Gear VR is the way forward</title><link>http://unlogic.co.uk/2015/02/10/why-i-think-gear-vr-is-the-way-forward/</link><description>&lt;p&gt;Recently I've been lucky enough to try out and work with the DK2 and the Samsung
 GearVR, and while both do what they do really well, I much prefer my experience
 with the GearVR. This isn't down to a technical advantage like improved
 resolution, or the way it looks, it's about the experience. I've strapped on the
@@ -4473,7 +4473,7 @@ doubt. If however you want to play games, or watch movies whereever and whenever
 and not have to fiddle around with a mess of cables, then the GearVR is unbeatable.
 And right now, the display quality on the GearVR beats the DK2 IMO. I imagine
 that the next Rift will be on par though.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 10 Feb 2015 09:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-02-10:pelcian-test/2015/02/10/why-i-think-gear-vr-is-the-way-forward/</guid></item><item><title>'Python</title><link>https://svenito.github.io/pelcian-test/2015/01/23/python/</link><description>&lt;p&gt;I've not really had much of a play with Python 3, but I'm aware of some of its
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 10 Feb 2015 09:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-02-10:2015/02/10/why-i-think-gear-vr-is-the-way-forward/</guid></item><item><title>'Python</title><link>http://unlogic.co.uk/2015/01/23/python/</link><description>&lt;p&gt;I've not really had much of a play with Python 3, but I'm aware of some of its
 differences. Yesterday I found out about a difference that took me by surprise.
 Enough of a surprise that I felt the urge to write this post.&lt;/p&gt;
 &lt;div class="section" id="opinion-divided"&gt;
@@ -4537,7 +4537,7 @@ perhaps have kept &lt;code&gt;/&lt;/code&gt; as it is and made &lt;code&gt;//&lt
 &lt;/pre&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://i.imgur.com/WEllYN3.gif"&gt;Yeah, sure, why not?&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 23 Jan 2015 09:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-01-23:pelcian-test/2015/01/23/python/</guid></item><item><title>Solving Project Euler with Rust 2</title><link>https://svenito.github.io/pelcian-test/2015/01/20/solving-project-euler-with-rust-2/</link><description>&lt;p&gt;Carrying on with &lt;a class="reference external" href="http://unlogic.co.uk/2015/01/12/solving-project-euler-with-rust-1/"&gt;the series&lt;/a&gt;, here's
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 23 Jan 2015 09:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-01-23:2015/01/23/python/</guid></item><item><title>Solving Project Euler with Rust 2</title><link>http://unlogic.co.uk/2015/01/20/solving-project-euler-with-rust-2/</link><description>&lt;p&gt;Carrying on with &lt;a class="reference external" href="http://unlogic.co.uk/2015/01/12/solving-project-euler-with-rust-1/"&gt;the series&lt;/a&gt;, here's
 how I solved Project Euler's problem 2:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Even Fibonacci numbers
@@ -4688,7 +4688,7 @@ are in the sequence. So for each number we don't need to recursively
 call the &lt;code&gt;fib&lt;/code&gt; function until n is 1, which is where the big saving comes from.&lt;/p&gt;
 &lt;p&gt;This and all future solutions are on &lt;a class="reference external" href="https://github.com/Svenito/euler_rust"&gt;my Github&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Also posted to &lt;a class="reference external" href="https://www.reddit.com/r/rust/comments/2t23ow/still_learning_rust_following_on_with_a_write_up/"&gt;/r/rust&lt;/a&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 20 Jan 2015 21:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-01-20:pelcian-test/2015/01/20/solving-project-euler-with-rust-2/</guid></item><item><title>WASD V2</title><link>https://svenito.github.io/pelcian-test/2015/01/15/wasd-v2/</link><description>&lt;p&gt;It arrived! I am now the proud owner of a WASD V2 mechanical keyboard. I ordered
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 20 Jan 2015 21:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-01-20:2015/01/20/solving-project-euler-with-rust-2/</guid></item><item><title>WASD V2</title><link>http://unlogic.co.uk/2015/01/15/wasd-v2/</link><description>&lt;p&gt;It arrived! I am now the proud owner of a WASD V2 mechanical keyboard. I ordered
 it with brown MX switches, large centered font and light grey alphanumeric caps
 and grey modifiers. I went of the 87 key version (no keypad) and also threw in a
 wrist rest to go with it.&lt;/p&gt;
@@ -4702,7 +4702,7 @@ at some point in the future.&lt;/p&gt;
 &lt;p&gt;So thanks to WASD for shipping (2 weeks to the UK from point of ordering) such a
 lovely keyboard to me. If you are after your own mechanical keyboard, you can't
 go wrong with a WASD. I'm even tempted to get a CODE in the future maybe.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 15 Jan 2015 15:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-01-15:pelcian-test/2015/01/15/wasd-v2/</guid><category>[]</category></item><item><title>Checking in follow up</title><link>https://svenito.github.io/pelcian-test/2015/01/12/checking-in-follow-up/</link><description>&lt;p&gt;In a &lt;a class="reference external" href="http://unlogic.co.uk/2014/10/29/checking-in/"&gt;previous post&lt;/a&gt; I wrote about how I use
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 15 Jan 2015 15:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-01-15:2015/01/15/wasd-v2/</guid><category>[]</category></item><item><title>Checking in follow up</title><link>http://unlogic.co.uk/2015/01/12/checking-in-follow-up/</link><description>&lt;p&gt;In a &lt;a class="reference external" href="http://unlogic.co.uk/2014/10/29/checking-in/"&gt;previous post&lt;/a&gt; I wrote about how I use
 my inbox as a TODO list. Since then I have received my Google Inbox invite and have now
 been using Inbox exclusively to manage my email.&lt;/p&gt;
 &lt;p&gt;It works pretty much as I expected, which is great. The added bonus of its &amp;quot;Bundles&amp;quot; is
@@ -4713,7 +4713,7 @@ bundle. Once a mail is in a bundle they get grouped together and appear in a sin
 your inbox less cluttered.&lt;/p&gt;
 &lt;p&gt;I have a few invites left for those who are interested, but by now I imagine anyone who wants
 and invite, will have had one.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 12 Jan 2015 09:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-01-12:pelcian-test/2015/01/12/checking-in-follow-up/</guid><category>[]</category></item><item><title>Solving Project Euler with Rust 1</title><link>https://svenito.github.io/pelcian-test/2015/01/12/solving-project-euler-with-rust-1/</link><description>&lt;p&gt;It's time to poke at &lt;a class="reference external" href="http://www.rust-lang.org/"&gt;Rust&lt;/a&gt; a little bit. And what
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 12 Jan 2015 09:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-01-12:2015/01/12/checking-in-follow-up/</guid><category>[]</category></item><item><title>Solving Project Euler with Rust 1</title><link>http://unlogic.co.uk/2015/01/12/solving-project-euler-with-rust-1/</link><description>&lt;p&gt;It's time to poke at &lt;a class="reference external" href="http://www.rust-lang.org/"&gt;Rust&lt;/a&gt; a little bit. And what
 better way to get acquainted with a new language than to solve
 some problems with it? And seeing as there's not always a suitably
 simple problem handy, I've picked some problems from &lt;a class="reference external" href="https://projecteuler.net"&gt;Project Euler&lt;/a&gt;
@@ -4866,7 +4866,7 @@ and having taken some suggestions on board, I have made some small changes:&lt;/
 &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Also made the code (and all future solutions) available on &lt;a class="reference external" href="https://github.com/Svenito/euler_rust"&gt;Github&lt;/a&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 13 Jan 2015 20:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-01-12:pelcian-test/2015/01/12/solving-project-euler-with-rust-1/</guid></item><item><title>Vim settings done better</title><link>https://svenito.github.io/pelcian-test/2015/01/07/vim-settings-done-better/</link><description>&lt;p&gt;Today we'll cover a nice config setup for vim that I use. I got the idea from another
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 13 Jan 2015 20:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-01-12:2015/01/12/solving-project-euler-with-rust-1/</guid></item><item><title>Vim settings done better</title><link>http://unlogic.co.uk/2015/01/07/vim-settings-done-better/</link><description>&lt;p&gt;Today we'll cover a nice config setup for vim that I use. I got the idea from another
 blog post elsewhere and I am sorry to say I cannot locate the post right now. If you
 know of it, please leave a comment below and I will add it to the post as a credit.&lt;/p&gt;
 &lt;p&gt;I say 'better' rather than 'right' because I don't believe there's necessarily a right way
@@ -4965,7 +4965,7 @@ Vundle needs to have specific settings set that I change.&lt;/p&gt;
 is now to find that specific setting that I need to tweak. No more searching through a long
 .vimrc file, just go directly to a much smaller file and get back to your code much quicker.&lt;/p&gt;
 &lt;p&gt;Hope you find this useful too. Feel free to share any other config tips in the comments below.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 07 Jan 2015 21:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-01-07:pelcian-test/2015/01/07/vim-settings-done-better/</guid></item><item><title>'[dis]like'</title><link>https://svenito.github.io/pelcian-test/2015/01/05/dislike/</link><description>&lt;p&gt;Isn't it just like me to start a new year with a post titled &amp;quot;[dis]like&amp;quot;? It's not as bad as it sounds. I want to write about coding challenge sites and what I like and dislike about them, specifically regarding Python challenges.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 07 Jan 2015 21:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-01-07:2015/01/07/vim-settings-done-better/</guid></item><item><title>'[dis]like'</title><link>http://unlogic.co.uk/2015/01/05/dislike/</link><description>&lt;p&gt;Isn't it just like me to start a new year with a post titled &amp;quot;[dis]like&amp;quot;? It's not as bad as it sounds. I want to write about coding challenge sites and what I like and dislike about them, specifically regarding Python challenges.&lt;/p&gt;
 &lt;div class="section" id="what-i-like"&gt;
 &lt;h2&gt;What I Like&lt;/h2&gt;
 &lt;p&gt;I take part in coding challenges regularily for various reasons and I get a great deal of benefit from them. Albeit some challenges are a bit contrived, they do offer some great practice in problem solving and writing clean code.&lt;/p&gt;
@@ -5039,7 +5039,7 @@ clever. Being clever on your own and on challenge sites is great practice, but i
 to solve an issue on a project that is or will me maintained by other people who you may
 never get to talk to and explain your code to. But perhaps I'm just not as good at reading Python anymore.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 05 Jan 2015 22:00:00 +0000</pubDate><guid>tag:svenito.github.io,2015-01-05:pelcian-test/2015/01/05/dislike/</guid></item><item><title>Checking in</title><link>https://svenito.github.io/pelcian-test/2014/10/29/checking-in/</link><description>&lt;p&gt;Just wanted to write a post to indicate that I am still around and also write about
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 05 Jan 2015 22:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2015-01-05:2015/01/05/dislike/</guid></item><item><title>Checking in</title><link>http://unlogic.co.uk/2014/10/29/checking-in/</link><description>&lt;p&gt;Just wanted to write a post to indicate that I am still around and also write about
 something: How I use Gmail as my to-do list.&lt;/p&gt;
 &lt;p&gt;I'm not usually one to write about things like this, because I personally don't
 think they are that special, but after having a number of people marvel at
@@ -5076,7 +5076,7 @@ you forgot to reply because you lost the email in the huge list of other mail yo
 have sitting in your inbox.&lt;/p&gt;
 &lt;p&gt;I am curious to see how Google's new Inbox will work for me, but right now I am
 still waiting on my invite.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 29 Oct 2014 16:00:00 +0000</pubDate><guid>tag:svenito.github.io,2014-10-29:pelcian-test/2014/10/29/checking-in/</guid><category>[]</category></item><item><title>Why it will be quiet</title><link>https://svenito.github.io/pelcian-test/2014/08/08/why-it-will-be-quiet/</link><description>&lt;p&gt;If you are reading this in the &lt;a class="reference external" href="http://i.imgur.com/pQSJhyw.png"&gt;future&lt;/a&gt; you might
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 29 Oct 2014 16:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2014-10-29:2014/10/29/checking-in/</guid><category>[]</category></item><item><title>Why it will be quiet</title><link>http://unlogic.co.uk/2014/08/08/why-it-will-be-quiet/</link><description>&lt;p&gt;If you are reading this in the &lt;a class="reference external" href="http://i.imgur.com/pQSJhyw.png"&gt;future&lt;/a&gt; you might
 be wondering why the posts are so old and why there are no recent ones.
 The simple reason is that I have had nothing to add. &amp;quot;But how did you
 know this?&amp;quot; you ask. Well, I decided so. I've not been very good at adding
@@ -5100,7 +5100,7 @@ So with this I will leave what is here for your reference and who knows,
 maybe one day there will be another post about something or other.&lt;/p&gt;
 &lt;p&gt;Time to kickback and &lt;a class="reference external" href="http://i.imgur.com/rSxyNlO.gif"&gt;have a beer&lt;/a&gt; methinks.&lt;/p&gt;
 &lt;p&gt;Thanks for reading&lt;a class="reference external" href="https://i.imgur.com/vG96Num.gif"&gt;.&lt;/a&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 08 Aug 2014 16:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-08-08:pelcian-test/2014/08/08/why-it-will-be-quiet/</guid><category>[]</category></item><item><title>nmap's idle scan with scapy</title><link>https://svenito.github.io/pelcian-test/2014/07/17/nmaps-idle-scan-with-scapy/</link><description>&lt;p&gt;If you've used nmap before you are probably familiar with its idle scan feature.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 08 Aug 2014 16:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-08-08:2014/08/08/why-it-will-be-quiet/</guid><category>[]</category></item><item><title>nmap's idle scan with scapy</title><link>http://unlogic.co.uk/2014/07/17/nmaps-idle-scan-with-scapy/</link><description>&lt;p&gt;If you've used nmap before you are probably familiar with its idle scan feature.
 Should you not be, go and &lt;a class="reference external" href="http://nmap.org/book/idlescan.html"&gt;skim the docs&lt;/a&gt;.
 I'll quickly cover the basics here anyway.&lt;/p&gt;
 &lt;p&gt;Basically it will allow us to conduct a port scan of a remote host without revealing
@@ -5164,7 +5164,7 @@ PORT   STATE  SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 0.04 seconds&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Approved.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 17 Jul 2014 12:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-07-17:pelcian-test/2014/07/17/nmaps-idle-scan-with-scapy/</guid></item><item><title>Exploit pattern generator</title><link>https://svenito.github.io/pelcian-test/2014/07/16/exploit-pattern-generator/</link><description>&lt;p&gt;I've been playing around with various stack exploits and have made a fair bit
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 17 Jul 2014 12:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-07-17:2014/07/17/nmaps-idle-scan-with-scapy/</guid></item><item><title>Exploit pattern generator</title><link>http://unlogic.co.uk/2014/07/16/exploit-pattern-generator/</link><description>&lt;p&gt;I've been playing around with various stack exploits and have made a fair bit
 of use of metasploit's pattern generation and search tools in order to find
 EIP overwrite locations in an overflow string. This works very well indeed,
 but I had a couple of issues: Firstly I had to have my Kali (or whatever
@@ -5199,7 +5199,7 @@ position is &lt;strong&gt;0&lt;/strong&gt; (zero) indexed. I'll have to double c
 returns the offset to match that.&lt;/p&gt;
 &lt;p&gt;Not sure how often you need a pattern above 20k characters, but if you do,
 let me know and I'll work on it.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 16 Jul 2014 13:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-07-16:pelcian-test/2014/07/16/exploit-pattern-generator/</guid></item><item><title>Cracking Nebula Part 2</title><link>https://svenito.github.io/pelcian-test/2014/07/02/cracking-nebula-part-2/</link><description>&lt;p&gt;On &lt;a class="reference external" href="http://www.exploit-exercises.com/"&gt;Exploit Exercises&lt;/a&gt; you can find a
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 16 Jul 2014 13:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-07-16:2014/07/16/exploit-pattern-generator/</guid></item><item><title>Cracking Nebula Part 2</title><link>http://unlogic.co.uk/2014/07/02/cracking-nebula-part-2/</link><description>&lt;p&gt;On &lt;a class="reference external" href="http://www.exploit-exercises.com/"&gt;Exploit Exercises&lt;/a&gt; you can find a
 number of CTF (Capture The Flag) VM images where you can practice your
 exploiting, hacking and general computer savviness. I've been working
 my way through the Nebula machine and figured I might as well write
@@ -6116,7 +6116,7 @@ but trust me, there's quite a bit of puzzling and thinking to do.&lt;/p&gt;
 &lt;p&gt;It's early days for me too, and I very much enjoyed &lt;em&gt;Nebula&lt;/em&gt;, and have a whole
 new set of tools and ideas in my arsenal for the next challenge.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 02 Jul 2014 22:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-07-02:pelcian-test/2014/07/02/cracking-nebula-part-2/</guid></item><item><title>Cracking Nebula Part 1</title><link>https://svenito.github.io/pelcian-test/2014/06/24/cracking-nebula-part-1/</link><description>&lt;p&gt;On &lt;a class="reference external" href="http://www.exploit-exercises.com/"&gt;Exploit Exercises&lt;/a&gt; you can find a
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 02 Jul 2014 22:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-07-02:2014/07/02/cracking-nebula-part-2/</guid></item><item><title>Cracking Nebula Part 1</title><link>http://unlogic.co.uk/2014/06/24/cracking-nebula-part-1/</link><description>&lt;p&gt;On &lt;a class="reference external" href="http://www.exploit-exercises.com/"&gt;Exploit Exercises&lt;/a&gt; you can find a
 number of CTF (Capture The Flag) VM images where you can practice your
 exploiting, hacking and general computer savviness. I've been working
 my way through the Nebula machine and figured I might as well write
@@ -6624,7 +6624,7 @@ flag10&amp;#64;localhost's password: 615a2ce1-b2b5-4c76-8eed-8aa5c4015c27
 &lt;/pre&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://unlogic.co.uk/2014/07/02/cracking-nebula-part2/"&gt;Part 2 of Cracking Nebula&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 24 Jun 2014 22:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-06-24:pelcian-test/2014/06/24/cracking-nebula-part-1/</guid></item><item><title>On YAGNI and TEFNAR</title><link>https://svenito.github.io/pelcian-test/2014/05/29/on-yagni-and-tefnar/</link><description>&lt;p&gt;You've probably heard of &lt;a class="reference external" href="https://en.wikipedia.org/wiki/You_Ain%27t_Gonna_Need_It"&gt;YAGNI&lt;/a&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 24 Jun 2014 22:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-06-24:2014/06/24/cracking-nebula-part-1/</guid></item><item><title>On YAGNI and TEFNAR</title><link>http://unlogic.co.uk/2014/05/29/on-yagni-and-tefnar/</link><description>&lt;p&gt;You've probably heard of &lt;a class="reference external" href="https://en.wikipedia.org/wiki/You_Ain%27t_Gonna_Need_It"&gt;YAGNI&lt;/a&gt;
 but not of TEFNAR. To recap YAGNI stands for &lt;strong&gt;Y&lt;/strong&gt;ou &lt;strong&gt;A&lt;/strong&gt;in't &lt;strong&gt;G&lt;/strong&gt;onna &lt;strong&gt;N&lt;/strong&gt;eed &lt;strong&gt;I&lt;/strong&gt;t and
 refers to the development principle of that you shouldn't write a feature that no one has asked for
 in the first place as it's probably never going to be needed. Instead wait until
@@ -6685,7 +6685,7 @@ animated his graphs, so some points were slightly higher than they should be.&lt
 just another area where you can introduce bugs. In this case it was a pretty small
 issue, but a different feature could affect a larger part of the program or
 even other programs.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 29 May 2014 09:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-05-29:pelcian-test/2014/05/29/on-yagni-and-tefnar/</guid></item><item><title>Fixing Kali VM after dist-upgrade</title><link>https://svenito.github.io/pelcian-test/2014/05/27/fixing-kali-vm-after-dist-upgrade/</link><description>&lt;p&gt;I just did a &lt;code&gt;apt-get dist-upgrade&lt;/code&gt; to bump up to Kali 1.0.7.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 29 May 2014 09:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-05-29:2014/05/29/on-yagni-and-tefnar/</guid></item><item><title>Fixing Kali VM after dist-upgrade</title><link>http://unlogic.co.uk/2014/05/27/fixing-kali-vm-after-dist-upgrade/</link><description>&lt;p&gt;I just did a &lt;code&gt;apt-get dist-upgrade&lt;/code&gt; to bump up to Kali 1.0.7.
 I've got it running on VirtualBox, and after it booted back up all the
 VBoxAddition features were gone and the keyboard and mouse in X no longer
 worked. GRUB was fine however. Poking around the logs a little I discovered
@@ -6704,7 +6704,7 @@ and you should be back to a working system with all the integration you
 had before.&lt;/p&gt;
 &lt;p&gt;I have no idea why this happens, but hopefully this post will help you
 should you have the same problem.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 27 May 2014 23:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-05-27:pelcian-test/2014/05/27/fixing-kali-vm-after-dist-upgrade/</guid></item><item><title>London Hacker Olympics 2014</title><link>https://svenito.github.io/pelcian-test/2014/05/26/london-hacker-olympics-2014/</link><description>&lt;p&gt;I recently attended the &lt;a class="reference external" href="http://thehackerolympics.com/"&gt;2014 London Hacker Olympics&lt;/a&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 27 May 2014 23:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-05-27:2014/05/27/fixing-kali-vm-after-dist-upgrade/</guid></item><item><title>London Hacker Olympics 2014</title><link>http://unlogic.co.uk/2014/05/26/london-hacker-olympics-2014/</link><description>&lt;p&gt;I recently attended the &lt;a class="reference external" href="http://thehackerolympics.com/"&gt;2014 London Hacker Olympics&lt;/a&gt;
 and had a blast. Amidst meeting some amazing people and having a lot of
 fun, our team managed to get first (second actually, as it was 0 indexed) place,
 but only because it went into over time (even though it wasn't a draw), but who's bitter,
@@ -6720,7 +6720,7 @@ Here's some of them hard at work:&lt;/p&gt;
 I'll be there at the next one, will you? If so, I hope to see you there.&lt;/p&gt;
 &lt;p&gt;Anyway it was great and I hope that a few of the people who I told about this URL
 are going to be reading this.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 26 May 2014 20:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-05-26:pelcian-test/2014/05/26/london-hacker-olympics-2014/</guid></item><item><title>Capturing smartphone traffic - Part 1</title><link>https://svenito.github.io/pelcian-test/2014/05/16/capturing-smartphone-traffic-part-1/</link><description>&lt;p&gt;We all carry phones around that are connected to some of network at all times.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 26 May 2014 20:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-05-26:2014/05/26/london-hacker-olympics-2014/</guid></item><item><title>Capturing smartphone traffic - Part 1</title><link>http://unlogic.co.uk/2014/05/16/capturing-smartphone-traffic-part-1/</link><description>&lt;p&gt;We all carry phones around that are connected to some of network at all times.
 Unless you are the truly paranoid or battery saving type, then there will be periods
 when your phone is dark.&lt;/p&gt;
 &lt;p&gt;But even so, I often wonder what my phone is transmitting when I'm not using it,
@@ -6790,7 +6790,7 @@ used) and what traffic some common apps generate. If I'm lucky I might even
 discover some interesting things about some apps.&lt;/p&gt;
 &lt;p&gt;Stay tuned for part 2.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 16 May 2014 15:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-05-16:pelcian-test/2014/05/16/capturing-smartphone-traffic-part-1/</guid></item><item><title>Hackyeaster All Eggs</title><link>https://svenito.github.io/pelcian-test/2014/04/25/hackyeaster-all-eggs/</link><description>&lt;p&gt;I started writing these up as separate posts, but then I figured it'd be neater to post them all in one.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 16 May 2014 15:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-05-16:2014/05/16/capturing-smartphone-traffic-part-1/</guid></item><item><title>Hackyeaster All Eggs</title><link>http://unlogic.co.uk/2014/04/25/hackyeaster-all-eggs/</link><description>&lt;p&gt;I started writing these up as separate posts, but then I figured it'd be neater to post them all in one.&lt;/p&gt;
 &lt;p&gt;So here you go, all the Hacky Easter eggs. Some answers will guide you directly to the eggs, others will
 require a little bit of work to achieve it. But if you got stuck and are wondering where those missing eggs
 are, I hope this guide will help you.&lt;/p&gt;
@@ -7133,7 +7133,7 @@ Each components is an index into one part. The letters tell you the line, the &l
 &lt;/pre&gt;
 &lt;p&gt;So &lt;em&gt;Dii2&lt;/em&gt; translates to &lt;code&gt;n&lt;/code&gt;. Use the table to get the full text&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 22 Apr 2014 13:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-04-25:pelcian-test/2014/04/25/hackyeaster-all-eggs/</guid></item><item><title>Thoughts on piracy</title><link>https://svenito.github.io/pelcian-test/2014/04/12/thoughts-on-piracy/</link><description>&lt;p&gt;Piracy is rampant, or so certain media and copyright trolls would lead you to believe.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 22 Apr 2014 13:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-04-25:2014/04/25/hackyeaster-all-eggs/</guid></item><item><title>Thoughts on piracy</title><link>http://unlogic.co.uk/2014/04/12/thoughts-on-piracy/</link><description>&lt;p&gt;Piracy is rampant, or so certain media and copyright trolls would lead you to believe.
 I'm not sure how true this is as I have no access to figures proving it either way, and it would
 require me to define at what level copying copyrighted stuff becomes &lt;em&gt;rampant&lt;/em&gt;. Besides,
 this is not really what I wanted to write about. I'm more interested in airing a few
@@ -7190,11 +7190,11 @@ should start making stuff people actually don't feel like they are wasting money
 it on your product. Alternatively you could lower prices and then going to see a movie that turns
 out to suck won't be such a big loss. You'd spend a few units of your currency and if you didn't like
 it, then so what? Fork over 10 times that and you'll think twice before you spend it.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sat, 12 Apr 2014 20:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-04-12:pelcian-test/2014/04/12/thoughts-on-piracy/</guid></item><item><title>Threading Python</title><link>https://svenito.github.io/pelcian-test/2014/04/11/threading-python/</link><description>&lt;p&gt;Having helped my colleague deal with PyQt threads, I feel that
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sat, 12 Apr 2014 20:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-04-12:2014/04/12/thoughts-on-piracy/</guid></item><item><title>Threading Python</title><link>http://unlogic.co.uk/2014/04/11/threading-python/</link><description>&lt;p&gt;Having helped my colleague deal with PyQt threads, I feel that
 this gif sums up threading in Python very well:&lt;/p&gt;
 &lt;img alt="threads" src="https://i.imgur.com/h7mePfx.gif" /&gt;
 &lt;p&gt;Happy Friday&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 11 Apr 2014 15:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-04-11:pelcian-test/2014/04/11/threading-python/</guid></item><item><title>Rekindling old flames</title><link>https://svenito.github.io/pelcian-test/2014/04/10/rekindling-old-flames/</link><description>&lt;p&gt;Some time ago, some long, long time ago, I started working on a ray tracer. Yes, you're
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 11 Apr 2014 15:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-04-11:2014/04/11/threading-python/</guid></item><item><title>Rekindling old flames</title><link>http://unlogic.co.uk/2014/04/10/rekindling-old-flames/</link><description>&lt;p&gt;Some time ago, some long, long time ago, I started working on a ray tracer. Yes, you're
 right, the world doesn't need another ray tracer. I wasn't writing another ray tracer though.
 I was writing the ray tracer from &lt;a class="reference external" href="http://www.raytracegroundup.com/"&gt;this book&lt;/a&gt;. Well,
 not line for line, but I was using it for the most part and just adjusting a few things
@@ -7207,7 +7207,7 @@ post the code on github. Right now I need to make sure the build still works and
 that my system has all the dependencies, after that I'll push the code to
 &lt;a class="reference external" href="https://github.com/Svenito/lemon"&gt;https://github.com/Svenito/lemon&lt;/a&gt; then I'll continue
 building on the code from the book, chapter by chapter until, one day, Lemon will be complete.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 10 Apr 2014 21:00:00 +0100</pubDate><guid>tag:svenito.github.io,2014-04-10:pelcian-test/2014/04/10/rekindling-old-flames/</guid></item><item><title>Unit testing Houdini Python plugins with nose and coverage</title><link>https://svenito.github.io/pelcian-test/2014/03/20/unit-testing-houdini-python-plugins-with-nose-and-coverage/</link><description>&lt;p&gt;We all know how important unit testing is, right? But often you wonder how can
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 10 Apr 2014 21:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2014-04-10:2014/04/10/rekindling-old-flames/</guid></item><item><title>Unit testing Houdini Python plugins with nose and coverage</title><link>http://unlogic.co.uk/2014/03/20/unit-testing-houdini-python-plugins-with-nose-and-coverage/</link><description>&lt;p&gt;We all know how important unit testing is, right? But often you wonder how can
 you test a not so straight forward tool. In this case we're talking about a
 Python script intended to run inside &lt;a class="reference external" href="http://sidefx.com"&gt;Houdini&lt;/a&gt;. In my specific
 case the python script is launched from a script on a node when the user clicks
@@ -7339,7 +7339,7 @@ all I say.&lt;/p&gt;
 
     &lt;span class="n"&gt;nose&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;__file__&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;'--cover_html'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;/pre&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 20 Mar 2014 12:00:00 +0000</pubDate><guid>tag:svenito.github.io,2014-03-20:pelcian-test/2014/03/20/unit-testing-houdini-python-plugins-with-nose-and-coverage/</guid></item><item><title>Effort Vs Benefit</title><link>https://svenito.github.io/pelcian-test/2014/03/12/effort-vs-benefit/</link><description>&lt;p&gt;How often have you thought: &amp;quot;Everything would be a lot better if this
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 20 Mar 2014 12:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2014-03-20:2014/03/20/unit-testing-houdini-python-plugins-with-nose-and-coverage/</guid></item><item><title>Effort Vs Benefit</title><link>http://unlogic.co.uk/2014/03/12/effort-vs-benefit/</link><description>&lt;p&gt;How often have you thought: &amp;quot;Everything would be a lot better if this
 tool worked faster&amp;quot;? Probably quite often. You've most likely also heard the
 saying &amp;quot;Don't optimise prematurely&amp;quot;. It's true, there's no point making
 something faster if you don't know it's too slow. Don't waste time on
@@ -7357,13 +7357,13 @@ written paper that every developer should read.&lt;/p&gt;
 that should be taken on board. The next time you decide you should spend
 some time improving the speed of a certain task, consider if the payoff is
 worth the time you will spend making the improvement.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 12 Mar 2014 22:00:00 +0000</pubDate><guid>tag:svenito.github.io,2014-03-12:pelcian-test/2014/03/12/effort-vs-benefit/</guid></item><item><title>A little less mollusc</title><link>https://svenito.github.io/pelcian-test/2014/03/05/a-little-less-mollusc/</link><description>&lt;p&gt;I've migrated once more... from Octopress to a pure Jekyll blog.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 12 Mar 2014 22:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2014-03-12:2014/03/12/effort-vs-benefit/</guid></item><item><title>A little less mollusc</title><link>http://unlogic.co.uk/2014/03/05/a-little-less-mollusc/</link><description>&lt;p&gt;I've migrated once more... from Octopress to a pure Jekyll blog.
 The main reason is that I almost borked the octopress version again and
 was struggling to get it fixed. This blog is much simpler and will be easier to
 customise too.&lt;/p&gt;
 &lt;p&gt;UPDATE: I've also managed to add Disqus to this blog and port all the old comments
 to the new URLs, so all old comment threads are back with their posts.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 06 Mar 2014 12:00:00 +0000</pubDate><guid>tag:svenito.github.io,2014-03-05:pelcian-test/2014/03/05/a-little-less-mollusc/</guid><category>[]</category></item><item><title>Get it done</title><link>https://svenito.github.io/pelcian-test/2014/03/04/get-it-done/</link><description>&lt;p&gt;A few years ago, during a particularily active developing phase I had an idea for a project.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 06 Mar 2014 12:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2014-03-05:2014/03/05/a-little-less-mollusc/</guid><category>[]</category></item><item><title>Get it done</title><link>http://unlogic.co.uk/2014/03/04/get-it-done/</link><description>&lt;p&gt;A few years ago, during a particularily active developing phase I had an idea for a project.
 I toyed with it in my head and thought about issues I might encounter. Will it work
 in this situation? Is it something that will be useful? How do I make feature X work?
 Do I need it to also do this? The usual stuff. So much so I never got round to starting it.
@@ -7379,7 +7379,7 @@ Do something, anything, to get started. That's the hard part. Once you get start
 yourself to make it work in a day, or a week even. Take your time, do it as long as you enjoy it.&lt;/p&gt;
 &lt;p&gt;So I'm going to take some of my own medicine and make a start on this project myself. It's been a
 long time coming after all.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 04 Mar 2014 10:00:00 +0000</pubDate><guid>tag:svenito.github.io,2014-03-04:pelcian-test/2014/03/04/get-it-done/</guid></item><item><title>Back it up</title><link>https://svenito.github.io/pelcian-test/2014/02/26/back-it-up/</link><description>&lt;p&gt;For years I've been paying for &lt;a class="reference external" href="http://www.backblaze.com"&gt;Backblaze&lt;/a&gt; in order to ensure
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 04 Mar 2014 10:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2014-03-04:2014/03/04/get-it-done/</guid></item><item><title>Back it up</title><link>http://unlogic.co.uk/2014/02/26/back-it-up/</link><description>&lt;p&gt;For years I've been paying for &lt;a class="reference external" href="http://www.backblaze.com"&gt;Backblaze&lt;/a&gt; in order to ensure
 my photos, music, and other import data doesn't get lost in a hard drive crash, theft or fire.
 I don't think I really need to go over all the reason why you should backup your data, do I?
 But you should at least have a local backup, and ideally an offsite one too.&lt;/p&gt;
@@ -7458,7 +7458,7 @@ Backblaze, but so far this is the backup solution I am going with. I'll update
 this post with any discoveries if they are minor, or write new posts if they
 require a bit more space.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 26 Feb 2014 00:00:00 +0000</pubDate><guid>tag:svenito.github.io,2014-02-26:pelcian-test/2014/02/26/back-it-up/</guid></item><item><title>Sorting</title><link>https://svenito.github.io/pelcian-test/2014/02/25/sorting/</link><description>&lt;p&gt;A very quick post about sorting a list of objects in python. Suppose you have a
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 26 Feb 2014 00:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2014-02-26:2014/02/26/back-it-up/</guid></item><item><title>Sorting</title><link>http://unlogic.co.uk/2014/02/25/sorting/</link><description>&lt;p&gt;A very quick post about sorting a list of objects in python. Suppose you have a
 list of same objects and you wish to sort them based on one of these attributes, perhaps
 a return value from a method. There's a really nice way to do it in place:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
@@ -7472,8 +7472,8 @@ in this case it was returning something else. I didn't have control over the
 code for the user class.&lt;/p&gt;
 &lt;p&gt;So now the &lt;code&gt;people&lt;/code&gt; list is sorted by whichever attribute you decide and
 you can iterate over it as normal.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 25 Feb 2014 09:00:00 +0000</pubDate><guid>tag:svenito.github.io,2014-02-25:pelcian-test/2014/02/25/sorting/</guid></item><item><title>Back to the Octo</title><link>https://svenito.github.io/pelcian-test/2014/01/28/back-to-the-octo/</link><description>&lt;p&gt;Back to the Ocotpress we go....&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 28 Jan 2014 22:00:00 +0000</pubDate><guid>tag:svenito.github.io,2014-01-28:pelcian-test/2014/01/28/back-to-the-octo/</guid></item><item><title>YouCompleteMe</title><link>https://svenito.github.io/pelcian-test/2013/11/07/youcompleteme/</link><description>&lt;p&gt;If you haven't heard of the YouCompleteMe plugin for Vim, headover to
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 25 Feb 2014 09:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2014-02-25:2014/02/25/sorting/</guid></item><item><title>Back to the Octo</title><link>http://unlogic.co.uk/2014/01/28/back-to-the-octo/</link><description>&lt;p&gt;Back to the Ocotpress we go....&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 28 Jan 2014 22:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2014-01-28:2014/01/28/back-to-the-octo/</guid></item><item><title>YouCompleteMe</title><link>http://unlogic.co.uk/2013/11/07/youcompleteme/</link><description>&lt;p&gt;If you haven't heard of the YouCompleteMe plugin for Vim, headover to
 &lt;a class="reference external" href="http://valloric.github.io/YouCompleteMe/"&gt;http://valloric.github.io/YouCompleteMe/&lt;/a&gt; and take a look.
 It's a very competent auto completer for a variety of languages. But as always the C style completer takes
 a little bit of work to get going. So just for you, I've written up how I managed to get it to work
@@ -7494,7 +7494,7 @@ make ycm_support_libs
 &lt;/pre&gt;
 &lt;p&gt;And with some patience you are done.&lt;/p&gt;
 &lt;p&gt;Now you need to add a &lt;code&gt;.ycm_extra_conf.py&lt;/code&gt; to your project and you should start seeing autocompletion.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 07 Nov 2013 12:00:00 +0000</pubDate><guid>tag:svenito.github.io,2013-11-07:pelcian-test/2013/11/07/youcompleteme/</guid></item><item><title>Vim as a Python IDE</title><link>https://svenito.github.io/pelcian-test/2013/02/08/vim-as-a-python-ide/</link><description>&lt;p&gt;I've been spending quite a bit of time with our good old buddy Python recently, and when
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 07 Nov 2013 12:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2013-11-07:2013/11/07/youcompleteme/</guid></item><item><title>Vim as a Python IDE</title><link>http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/</link><description>&lt;p&gt;I've been spending quite a bit of time with our good old buddy Python recently, and when
 I do, I always invite along our mutual friend Vim. He's a barrell of laughs and always
 knows of a quicker way to do things. So I've been getting the two acquainted more and more
 and Vim's turned into a totally different person. So I am going to share with you how
@@ -7735,7 +7735,7 @@ I said above, feel free to leave a comment with any plugins or settings that you
 about what else is out there.&lt;/p&gt;
 &lt;p&gt;Thanks for reading.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 08 Feb 2013 00:00:00 +0000</pubDate><guid>tag:svenito.github.io,2013-02-08:pelcian-test/2013/02/08/vim-as-a-python-ide/</guid></item><item><title>Houdini voronoi shatter</title><link>https://svenito.github.io/pelcian-test/2012/12/08/houdini-voronoi-shatter/</link><description>&lt;p&gt;Thought I would write about creating a very simple voronoi shatter effect in Houdini and how to explode it. The video below demonstrates the effect we're looking to achieve:&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 08 Feb 2013 00:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2013-02-08:2013/02/08/vim-as-a-python-ide/</guid></item><item><title>Houdini voronoi shatter</title><link>http://unlogic.co.uk/2012/12/08/houdini-voronoi-shatter/</link><description>&lt;p&gt;Thought I would write about creating a very simple voronoi shatter effect in Houdini and how to explode it. The video below demonstrates the effect we're looking to achieve:&lt;/p&gt;
 &lt;iframe src="https://player.vimeo.com/video/55168444" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href="https://vimeo.com/55168444"&gt;voronoi&lt;/a&gt; from &lt;a href="https://vimeo.com/user1380774"&gt;Sven&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;The process of creating this is very simple, and I learned a few things from setting this up, so I figured I would share and hope you learn something from it too.&lt;/p&gt;
 &lt;p&gt;So first we need to drop down a &lt;code&gt;Geometry&lt;/code&gt; node and dive inside. Delete the file node and then create a &lt;code&gt;box&lt;/code&gt; node. This box will be the object we will shatter. But in order to create a voronoi shatter we also need some seed points to generate the pattern with. So let's do that first. We'll use our box to generate the points we need, so drop down a &lt;code&gt;Points From Volume&lt;/code&gt; node and connect the box to its input. Adjust the settings to your liking, or copy the ones below. I kept the number of points low as I wanted fewer and larger pieces.&lt;/p&gt;
@@ -7748,7 +7748,7 @@ about what else is out there.&lt;/p&gt;
 &lt;img alt="" src="/images/finalnetwork.png" /&gt;
 &lt;p&gt;And yet still to exploding pieces? Well, we need to tell our solver to use the point velocity. So dive into the &lt;em&gt;Autodop Network&lt;/em&gt; and on the &lt;em&gt;RBD Fracture Object&lt;/em&gt; enable &lt;em&gt;Inherit Velocity From Point Velocity&lt;/em&gt;. Hit play and you should see it explode.&lt;/p&gt;
 &lt;img alt="" src="/images/inherit_pv.png" /&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sat, 08 Dec 2012 00:00:00 +0000</pubDate><guid>tag:svenito.github.io,2012-12-08:pelcian-test/2012/12/08/houdini-voronoi-shatter/</guid></item><item><title>Random album generator in python</title><link>https://svenito.github.io/pelcian-test/2012/11/06/random-album-generator-in-python/</link><description>&lt;p&gt;You may have heard about the &amp;quot;random music album&amp;quot; thing. Basically it goes like this:&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sat, 08 Dec 2012 00:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2012-12-08:2012/12/08/houdini-voronoi-shatter/</guid></item><item><title>Random album generator in python</title><link>http://unlogic.co.uk/2012/11/06/random-album-generator-in-python/</link><description>&lt;p&gt;You may have heard about the &amp;quot;random music album&amp;quot; thing. Basically it goes like this:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;The album cover is the 4th image from a random page of Flickr's interesting pics&lt;/li&gt;
 &lt;li&gt;The band name is the title of a random Wikipedia article&lt;/li&gt;
@@ -7861,7 +7861,7 @@ about what else is out there.&lt;/p&gt;
 &lt;/pre&gt;
 &lt;p&gt;Let's go over what's happening here. You're welcome to clean it up as an exercise if you wish or think some values (like filenames) etc need configuring. Firstly we call the previously defined functions to fetch our album data and then we start the drawing. I use the &lt;code&gt;DejaVuSans.ttf&lt;/code&gt; font for this example, but you can use any font you have, or even use different fonts for the title and band name, to make your cover look a bit more pleasing. Once the image we saved from Flickr is open, we start writing our title and band name on the album cover, and save out the result as a &lt;code&gt;JPEG&lt;/code&gt;. The code here is commented so I won't go over the details here.&lt;/p&gt;
 &lt;p&gt;And that's all there is to it. If you want the the script as a whole file, you can &lt;a class="reference external" href="https://gist.github.com/4025200"&gt;get it from this gist&lt;/a&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 06 Nov 2012 00:00:00 +0000</pubDate><guid>tag:svenito.github.io,2012-11-06:pelcian-test/2012/11/06/random-album-generator-in-python/</guid></item><item><title>Show animated gifs using PyQT</title><link>https://svenito.github.io/pelcian-test/2012/11/02/show-animated-gifs-using-pyqt/</link><description>&lt;p&gt;This is just a quick post to show you how to display animated gifs in PyQt. It's a straightforward process and by the end I will give you a class that wraps up the work for you.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Tue, 06 Nov 2012 00:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2012-11-06:2012/11/06/random-album-generator-in-python/</guid></item><item><title>Show animated gifs using PyQT</title><link>http://unlogic.co.uk/2012/11/02/show-animated-gifs-using-pyqt/</link><description>&lt;p&gt;This is just a quick post to show you how to display animated gifs in PyQt. It's a straightforward process and by the end I will give you a class that wraps up the work for you.&lt;/p&gt;
 &lt;p&gt;The way we're going to approach this is by using a &lt;code&gt;QLabel&lt;/code&gt; to render a &lt;code&gt;QMovie&lt;/code&gt;. Assuming we have our gif (&lt;code&gt;anim.gif&lt;/code&gt;) we need to load it into a &lt;code&gt;QMovie&lt;/code&gt; and set it on the &lt;code&gt;QLabel&lt;/code&gt;.
 I'll give you the code now:&lt;/p&gt;
 &lt;script src="https://gist.github.com/Svenito/4000025.js"&gt;&lt;/script&gt;&lt;p&gt;The code should be fairly easy to follow, so I won't spend much time here going over it. If you want to call this from a &lt;code&gt;__main__&lt;/code&gt; function you simply do:&lt;/p&gt;
@@ -7873,13 +7873,13 @@ I'll give you the code now:&lt;/p&gt;
     &lt;span class="n"&gt;player&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exec_&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
 &lt;/pre&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate><guid>tag:svenito.github.io,2012-11-02:pelcian-test/2012/11/02/show-animated-gifs-using-pyqt/</guid></item><item><title>Parsing email in python</title><link>https://svenito.github.io/pelcian-test/2012/10/11/parsing-email-in-python/</link><description>&lt;p&gt;I have a domain where I host images. It's nothing fancy, just a collection where gifs and generally humerous images get stored in a custom gallery script.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2012-11-02:2012/11/02/show-animated-gifs-using-pyqt/</guid></item><item><title>Parsing email in python</title><link>http://unlogic.co.uk/2012/10/11/parsing-email-in-python/</link><description>&lt;p&gt;I have a domain where I host images. It's nothing fancy, just a collection where gifs and generally humerous images get stored in a custom gallery script.
 I also have a script on my host that I can pass a URL to and it will get the image with wget, put it in the right directory and then curl the import URL for the gallery. So if you've ever wanted to parse email addresses for content via a script, read on. Example code inside.&lt;/p&gt;
 &lt;p&gt;Now this in principle is great, but sometimes I need to add an image from my phone and the whole ssh thing becomes a bit cumbersome. Usually I'll see something in Reeder or some other iPhone app which allows me to email the URL. Perfect. So I wrote a quick script that would do the work for me, and set up an email address that passes any content to this script. The script in question is here:&lt;/p&gt;
 &lt;script src="https://gist.github.com/Svenito/3872497.js"&gt;&lt;/script&gt;&lt;p&gt;I use the &lt;code&gt;fileinput&lt;/code&gt; module to read the data from stdin and then join it all to a single text chunk. I'm not expecting too much data in the email, so this isn't a big issue. Then I extract the message via the &lt;code&gt;email&lt;/code&gt; module and parse the payload in order to get the actual email body, discarding the headers and all the other things I don't need. Assuming people have good etiquette and have the correct signature separator (&lt;code&gt;-- \n&lt;/code&gt;), I also strip off the signature.
 Once I have the body I extract the image URL(s) using regular expressions, and then pass the URL to my import script.&lt;/p&gt;
 &lt;p&gt;As you can see this only works with image URLs that are prefixed with &lt;code&gt;http://&lt;/code&gt;. The email address is a random collection of letters and numbers to reduce the likelyhood of just anyone emailling links.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 11 Oct 2012 00:00:00 +0100</pubDate><guid>tag:svenito.github.io,2012-10-11:pelcian-test/2012/10/11/parsing-email-in-python/</guid></item><item><title>cmake and gcov</title><link>https://svenito.github.io/pelcian-test/2012/08/13/cmake-and-gcov/</link><description>&lt;p&gt;Recently I setup a project that uses CMake as its build tool and &lt;a class="reference external" href="https://code.google.com/p/googletest/"&gt;googletest&lt;/a&gt; as a unit test framework. As is common place I wanted to make sure that my tests cover as much of the code as possible, so I went and grabbed the trusty gcov/lcov to analyse the tests only to find it wasn't as easy as I expected. I should mention this is the first time I have used CMake aswell as googletest. Granted, googletest is fairly simple and doesn't really complicate things when it comes to getting code coverage. I just had to figure out how we get CMake to build the test runner properly and then how to invoke lcov correctly. Turns out this was fairly easy too, once you ironed out some of the trickier bits and learned a little more about CMake.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 11 Oct 2012 00:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2012-10-11:2012/10/11/parsing-email-in-python/</guid></item><item><title>cmake and gcov</title><link>http://unlogic.co.uk/2012/08/13/cmake-and-gcov/</link><description>&lt;p&gt;Recently I setup a project that uses CMake as its build tool and &lt;a class="reference external" href="https://code.google.com/p/googletest/"&gt;googletest&lt;/a&gt; as a unit test framework. As is common place I wanted to make sure that my tests cover as much of the code as possible, so I went and grabbed the trusty gcov/lcov to analyse the tests only to find it wasn't as easy as I expected. I should mention this is the first time I have used CMake aswell as googletest. Granted, googletest is fairly simple and doesn't really complicate things when it comes to getting code coverage. I just had to figure out how we get CMake to build the test runner properly and then how to invoke lcov correctly. Turns out this was fairly easy too, once you ironed out some of the trickier bits and learned a little more about CMake.&lt;/p&gt;
 &lt;p&gt;In the &lt;code&gt;CMakeLists.txt&lt;/code&gt; file for your test suite you need to add the following (I've omitted some lines that aren't relevant to this article):&lt;/p&gt;
 &lt;pre class="code cmake literal-block"&gt;
 &lt;span class="nb"&gt;SET&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;PROJECT_TEST_NAME&lt;/span&gt; &lt;span class="o"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PROJECT_NAME_STR&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="s"&gt;_test&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -7907,7 +7907,7 @@ $ genthml app.info
 &lt;p&gt;Now you can point your browser to that directory and you will have the nice html view of your coverage data.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: sometimes I got an error from the second to last line saying it could not find any gcno files. In this case I just ran the test runner again and then ran the last two lines from above again.&lt;/p&gt;
 &lt;p&gt;Hope this helps you out in case you have the same issue as me.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 13 Aug 2012 00:00:00 +0100</pubDate><guid>tag:svenito.github.io,2012-08-13:pelcian-test/2012/08/13/cmake-and-gcov/</guid></item><item><title>vim clang autocompletion</title><link>https://svenito.github.io/pelcian-test/2012/07/13/vim-clang-autocompletion/</link><description>&lt;p&gt;Code completion. Isn't it nice? Especially when you have a so many APIs that you can't always remember EVERY method, member or class name in it.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Mon, 13 Aug 2012 00:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2012-08-13:2012/08/13/cmake-and-gcov/</guid></item><item><title>vim clang autocompletion</title><link>http://unlogic.co.uk/2012/07/13/vim-clang-autocompletion/</link><description>&lt;p&gt;Code completion. Isn't it nice? Especially when you have a so many APIs that you can't always remember EVERY method, member or class name in it.&lt;/p&gt;
 &lt;p&gt;Vim. Isn't it powerful? The ease and speed with which it allows you to edit your code and do your work is just lovely.&lt;/p&gt;
 &lt;p&gt;But code completion in vim? Well yes. You can use ctags. Yes, you can make tag files for ALL your APIs and autocompletion works rather well. I did this and the Qt tags file is 1.7GB. So, urm yeah, that's not entirely awesome either. Plus it doesn't handle things like smart pointers, which you will no doubt come across at some stage.&lt;/p&gt;
 &lt;p&gt;So come on down &lt;a class="reference external" href="https://github.com/Rip-Rip/clang_complete"&gt;clang_complete&lt;/a&gt;. A little plugin for vim that uses &lt;a class="reference external" href="http://clang.llvm.org/"&gt;clang&lt;/a&gt; to resolve the necessary symbols. Plus it's reasonably easy to set up. All you need to do is follow the instructions that come with the plugin to install it. You will also need to install/build clang. For our purposes we will only need &lt;code&gt;libclang.so&lt;/code&gt; as we will be using the library to do the completion instead of the binary - this is also the faster way. In order to use the library you need to add two things to your &lt;code&gt;.vimrc&lt;/code&gt; file&lt;/p&gt;
@@ -7922,7 +7922,7 @@ But in order to specify the right paths to header files, we also need to make a 
 &lt;/pre&gt;
 &lt;p&gt;I should also mention that symbol resolution is scope dependant in case you see some weird completions. Enjoy.&lt;/p&gt;
 &lt;p&gt;EDIT 17/11/2012 The &lt;code&gt;.clang_include&lt;/code&gt; file should actually be called &lt;code&gt;.clang_complete&lt;/code&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 13 Jul 2012 00:00:00 +0100</pubDate><guid>tag:svenito.github.io,2012-07-13:pelcian-test/2012/07/13/vim-clang-autocompletion/</guid></item><item><title>Tube status for Conky</title><link>https://svenito.github.io/pelcian-test/2012/06/07/tube-status-for-conky/</link><description>&lt;p&gt;Last night I was affected by &amp;quot;severe delays on the Central line&amp;quot; caused by a burst watermain and bringing part of the line to its knees. Unfortunately I only found this out once I got to the station. Usually the line is well behaved and I have little need to check it often. I know it's really quick to do so and there's a whole host of ways to dit too. But the problems I have with them are:&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 13 Jul 2012 00:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2012-07-13:2012/07/13/vim-clang-autocompletion/</guid></item><item><title>Tube status for Conky</title><link>http://unlogic.co.uk/2012/06/07/tube-status-for-conky/</link><description>&lt;p&gt;Last night I was affected by &amp;quot;severe delays on the Central line&amp;quot; caused by a burst watermain and bringing part of the line to its knees. Unfortunately I only found this out once I got to the station. Usually the line is well behaved and I have little need to check it often. I know it's really quick to do so and there's a whole host of ways to dit too. But the problems I have with them are:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;strong&gt;Check online&lt;/strong&gt;: Have to remember to go online and check, which I often/always forget.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;iPhone app&lt;/strong&gt;: Same again. Have to remember to actually do that each time I leave the office.&lt;/li&gt;
@@ -7937,12 +7937,12 @@ But in order to specify the right paths to header files, we also need to make a 
 &lt;code&gt;$alignr${execi 2 /path/to/tube.py central -s}&lt;/code&gt; where &lt;em&gt;central&lt;/em&gt; is the name(s)
 of the line(s) (separate multiple lines with spaces) you want to get statuses for. The full list of lines is &lt;a class="reference external" href="http://tubeupdates.com/documentation/"&gt;here&lt;/a&gt;. The -s simply tells the script to supress the output of the full message and shows only the line name and short status.&lt;/p&gt;
 &lt;p&gt;It'd be good to know if you find it useful or if you have any suggestions for it.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 07 Jun 2012 00:00:00 +0100</pubDate><guid>tag:svenito.github.io,2012-06-07:pelcian-test/2012/06/07/tube-status-for-conky/</guid></item><item><title>Sitting is bad</title><link>https://svenito.github.io/pelcian-test/2012/06/06/sitting-is-bad/</link><description>&lt;p&gt;So the internet has recently been telling me that sitting is bad. Really bad. Well only if you &lt;a class="reference external" href="http://www.msnbc.msn.com/id/34956099/ns/health-fitness/t/you-sitting-down-experts-say-itll-kill-you/"&gt;sit&lt;/a&gt; &lt;a class="reference external" href="http://mashable.com/2011/05/09/sitting-down-infographic/"&gt;for&lt;/a&gt; &lt;a class="reference external" href="http://lifehacker.com/5800720/the-sitting-is-killing-you-infographic-illustrates-the-stress-of-prolonged-sitting-importance-of-getting-up"&gt;long&lt;/a&gt; &lt;a class="reference external" href="http://www.sciencedaily.com/releases/2011/07/110712093859.htm"&gt;periods&lt;/a&gt; of time. At my office it is very unlikely that they will be willing to furnish me with a standing desk unless my doctor tells them to. The latter also being unlikely as my back isn't in a bad enough shape &lt;em&gt;yet&lt;/em&gt;.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Thu, 07 Jun 2012 00:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2012-06-07:2012/06/07/tube-status-for-conky/</guid></item><item><title>Sitting is bad</title><link>http://unlogic.co.uk/2012/06/06/sitting-is-bad/</link><description>&lt;p&gt;So the internet has recently been telling me that sitting is bad. Really bad. Well only if you &lt;a class="reference external" href="http://www.msnbc.msn.com/id/34956099/ns/health-fitness/t/you-sitting-down-experts-say-itll-kill-you/"&gt;sit&lt;/a&gt; &lt;a class="reference external" href="http://mashable.com/2011/05/09/sitting-down-infographic/"&gt;for&lt;/a&gt; &lt;a class="reference external" href="http://lifehacker.com/5800720/the-sitting-is-killing-you-infographic-illustrates-the-stress-of-prolonged-sitting-importance-of-getting-up"&gt;long&lt;/a&gt; &lt;a class="reference external" href="http://www.sciencedaily.com/releases/2011/07/110712093859.htm"&gt;periods&lt;/a&gt; of time. At my office it is very unlikely that they will be willing to furnish me with a standing desk unless my doctor tells them to. The latter also being unlikely as my back isn't in a bad enough shape &lt;em&gt;yet&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;I'm also not willing to &lt;a class="reference external" href="http://gregschlom.com/post/4555981908/standing-desk"&gt;make my own&lt;/a&gt; version of a standing desk either, unless it was a better looking one. So now what? Fear not. It turns out that if you stand for about 5 minutes every hour it already helps &lt;strong&gt;A LOT&lt;/strong&gt;. So that I don't miss my standing breaks, I need a timer. An unobtrusive little app that sits in my taskbar and just alerts me at intervals to take a break and have a stand. Far be it for me to actually go looking for something that does this just how I want it. That sounds like too much work really. Thus I decided to turn it into a project for myself and write my own. I mean, how hard can it be?&lt;/p&gt;
 &lt;p&gt;Turns out: not so hard at all. After about an hour of hacking around with some PyQt I made this: &lt;a class="reference external" href="https://github.com/Svenito/EasyTimer"&gt;https://github.com/Svenito/EasyTimer&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;It runs in the system tray, lets you set a custom timer period and then it pops up a window once the time expires. Not tested to destruction or particularily pretty, but it does what it needs to do. I'll need to tweak some dialogs and add some little features, but if you want to do yourself a favour and take regular breaks, grab the timer and give it a go.&lt;/p&gt;
 &lt;p&gt;Right, time for a stand me thinks....&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 06 Jun 2012 00:00:00 +0100</pubDate><guid>tag:svenito.github.io,2012-06-06:pelcian-test/2012/06/06/sitting-is-bad/</guid><category>python</category></item><item><title>Strong passwords?</title><link>https://svenito.github.io/pelcian-test/2012/06/06/strong-passwords/</link><description>&lt;p&gt;As I'm just going around and updating the passwords to some of my online accounts, which was prompted by &lt;a class="reference external" href="http://translate.google.com/translate?hl=en&amp;amp;sl=no&amp;amp;tl=en&amp;amp;u=http://www.dagensit.no/article2411857.ece"&gt;this&lt;/a&gt; article, I was wonderingwhat a good password really is. Not just in terms of security but also in terms of user friendliness.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 06 Jun 2012 00:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2012-06-06:2012/06/06/sitting-is-bad/</guid><category>python</category></item><item><title>Strong passwords?</title><link>http://unlogic.co.uk/2012/06/06/strong-passwords/</link><description>&lt;p&gt;As I'm just going around and updating the passwords to some of my online accounts, which was prompted by &lt;a class="reference external" href="http://translate.google.com/translate?hl=en&amp;amp;sl=no&amp;amp;tl=en&amp;amp;u=http://www.dagensit.no/article2411857.ece"&gt;this&lt;/a&gt; article, I was wonderingwhat a good password really is. Not just in terms of security but also in terms of user friendliness.&lt;/p&gt;
 &lt;p&gt;&amp;lt;!--more--&amp;gt;&lt;/p&gt;
 &lt;p&gt;I use &lt;a class="reference external" href="http://www.lastpass.com)tomanagemypasswordsandhaveitautofillinmycredentialsonvarioussites.ThisworkswelluntilIneedtomanuallyenterthemonanotherdevice(iPhoneforexample-Ihaven'tgotapremiumsubscriptionyet"&gt;Lastpass&lt;/a&gt; or have to type it in just because.&lt;/p&gt;
 &lt;p&gt;We know that everywhere suggests some wonderfully random characters of at least 8 characters in length and Lastpass actually provides a tool to generate these:&lt;/p&gt;
@@ -7975,7 +7975,7 @@ For example:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;harder to remember, harder to crack but still easily typed out even with an onscreen keyboard. The pronounceable part is optional but it might aid in remembering the password better.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 06 Jun 2012 00:00:00 +0100</pubDate><guid>tag:svenito.github.io,2012-06-06:pelcian-test/2012/06/06/strong-passwords/</guid></item><item><title>Did a change cross a threshold?</title><link>https://svenito.github.io/pelcian-test/2011/10/21/did-a-change-cross-a-threshold/</link><description>&lt;p&gt;So recently I needed to check if a change to a number caused it to cross a threshold. In this case, did the change cause a crossing of a threshold that is a multiple of 25? To try and make this a little easier to understand:&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Wed, 06 Jun 2012 00:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2012-06-06:2012/06/06/strong-passwords/</guid></item><item><title>Did a change cross a threshold?</title><link>http://unlogic.co.uk/2011/10/21/did-a-change-cross-a-threshold/</link><description>&lt;p&gt;So recently I needed to check if a change to a number caused it to cross a threshold. In this case, did the change cause a crossing of a threshold that is a multiple of 25? To try and make this a little easier to understand:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;True if the first value is 14 and the new value is 28. (crosses 25)&lt;/li&gt;
 &lt;li&gt;True if the first value is 43 and the new value is 58 . (crosses 50)&lt;/li&gt;
@@ -7989,7 +7989,7 @@ For example:&lt;/p&gt;
     &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Crossed&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Nice and simple :)&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 21 Oct 2011 15:00:00 +0100</pubDate><guid>tag:svenito.github.io,2011-10-21:pelcian-test/2011/10/21/did-a-change-cross-a-threshold/</guid></item><item><title>Shapely Window in PyQT</title><link>https://svenito.github.io/pelcian-test/2011/05/27/shapely-window-in-pyqt/</link><description>&lt;p&gt;Recently I needed to make a PyQt app where the&amp;nbsp;&lt;code&gt;window&lt;/code&gt;&amp;nbsp;is the shape of an image and doesn’t
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 21 Oct 2011 15:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2011-10-21:2011/10/21/did-a-change-cross-a-threshold/</guid></item><item><title>Shapely Window in PyQT</title><link>http://unlogic.co.uk/2011/05/27/shapely-window-in-pyqt/</link><description>&lt;p&gt;Recently I needed to make a PyQt app where the&amp;nbsp;&lt;code&gt;window&lt;/code&gt;&amp;nbsp;is the shape of an image and doesn’t
 have a border. I say needed, that’s not strictly true, more like wanted to because it’d be more
 interesting.&lt;/p&gt;
 &lt;p&gt;It wasn’t as straight forward as I had hoped but I managed to get it working in the end and
@@ -8062,7 +8062,7 @@ More coffee, we're almost there. Right now, as you're swallowing that last sip, 
 top left corner of the&amp;nbsp;&lt;code&gt;window&lt;/code&gt;&amp;nbsp;(this is what the move function uses) and then when
 the mouse moves, we move the&amp;nbsp;&lt;cite&gt;window&lt;/cite&gt;&amp;nbsp;with it.&lt;/p&gt;
 &lt;p&gt;That's it really. Pretty simple once you know how. Now go and enjoy the rest of that coffee.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 27 May 2011 15:00:00 +0100</pubDate><guid>tag:svenito.github.io,2011-05-27:pelcian-test/2011/05/27/shapely-window-in-pyqt/</guid></item><item><title>Bounding box of rotated image</title><link>https://svenito.github.io/pelcian-test/2009/12/04/bounding-box-of-rotated-image/</link><description>&lt;p&gt;In a previous post I mentioned about finding the width and height of the bounding box of a rotated rectangle, in this post I will explain the math in more detail. Given a 2D rectangle and an arbitrary angle of rotation, how do we work out the new bounding box of the rectangle?&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 27 May 2011 15:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2011-05-27:2011/05/27/shapely-window-in-pyqt/</guid></item><item><title>Bounding box of rotated image</title><link>http://unlogic.co.uk/2009/12/04/bounding-box-of-rotated-image/</link><description>&lt;p&gt;In a previous post I mentioned about finding the width and height of the bounding box of a rotated rectangle, in this post I will explain the math in more detail. Given a 2D rectangle and an arbitrary angle of rotation, how do we work out the new bounding box of the rectangle?&lt;/p&gt;
 &lt;p&gt;&amp;lt;!--more--&amp;gt;&lt;/p&gt;
 &lt;p&gt;I'll use the image below to help illustrate:&lt;/p&gt;
 &lt;img alt="" src="&amp;quot;/images/content/bbox.jpg&amp;quot;" /&gt;
@@ -8085,7 +8085,7 @@ h2 = w * sin(a)&lt;/blockquote&gt;
 &lt;span class="kt"&gt;float&lt;/span&gt; &lt;span class="n"&gt;w_dash&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;fabs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cos&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;alpha&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;fabs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;alpha&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;The more astute of you may have noticed that this is slightly different to what I posted in my previous article. That’s because I noticed I can do away with beta and use just the angle of rotation. In terms of execution time this means very little as beta is obtained once by subtraction alpha from 90, but in a neatness sense it’s an improvement.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 04 Dec 2009 17:00:00 +0000</pubDate><guid>tag:svenito.github.io,2009-12-04:pelcian-test/2009/12/04/bounding-box-of-rotated-image/</guid></item><item><title>Compositing images on an iPhone with Core Graphics</title><link>https://svenito.github.io/pelcian-test/2009/04/12/compositing-images-on-an-iphone-with-core-graphics/</link><description>&lt;p&gt;How do you take two images, one with rotation and scale applied, and compose the two together in memory and save the result to the device? We make use of core graphics and a little bit of math.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Fri, 04 Dec 2009 17:00:00 +0000</pubDate><guid>tag:unlogic.co.uk,2009-12-04:2009/12/04/bounding-box-of-rotated-image/</guid></item><item><title>Compositing images on an iPhone with Core Graphics</title><link>http://unlogic.co.uk/2009/04/12/compositing-images-on-an-iphone-with-core-graphics/</link><description>&lt;p&gt;How do you take two images, one with rotation and scale applied, and compose the two together in memory and save the result to the device? We make use of core graphics and a little bit of math.&lt;/p&gt;
 &lt;p&gt;&amp;lt;!--more--&amp;gt;&lt;/p&gt;
 &lt;p&gt;To set the scene properly here’s what we have: we have an image that’s been scaled and rotated and positioned on screen, over which we would like to place an image that will fill the screen and always be the same size, this is the overlay. Our overlay is 320×480 and positioned centrally in the display and contains transparency to let the background show through. Both images are PNG files.&lt;/p&gt;
 &lt;p&gt;So what we want to do is create two frames, one for the background image and one for the overlay. Then we create a graphics context for the background image, rotate it, draw our image into it, position it on screen,&amp;nbsp;and then composite the overlay on top of that. Once that’s done we grab the image (now composited) from the graphics context and write it to the device.&lt;/p&gt;
@@ -8169,4 +8169,4 @@ h2 = w * sin(a)&lt;/blockquote&gt;
 &lt;span class="n"&gt;UIImageWriteToSavedPhotosAlbum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;newImage&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;And there we go. You can adjust the :code:&lt;tt class="docutils literal"&gt;UIImageWriteToSavedPhotosAlbum&lt;/tt&gt; if you need the callback, but I omitted it in this case.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sun, 12 Apr 2009 15:00:00 +0100</pubDate><guid>tag:svenito.github.io,2009-04-12:pelcian-test/2009/04/12/compositing-images-on-an-iphone-with-core-graphics/</guid></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sven Steinbauer</dc:creator><pubDate>Sun, 12 Apr 2009 15:00:00 +0100</pubDate><guid>tag:unlogic.co.uk,2009-04-12:2009/04/12/compositing-images-on-an-iphone-with-core-graphics/</guid></item></channel></rss>
