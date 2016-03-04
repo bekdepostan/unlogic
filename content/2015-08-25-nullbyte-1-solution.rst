@@ -39,7 +39,6 @@ Upon opening the page I only get an image and some text
 
 .. image:: http://i.imgur.com/SlVGKol.png
 
-
 I ran :code:`dirbuster` on the root and got a couple of hits: :code:`uploads` and :code:`phpmyadmin`. The first had disabled directory listing
 and the second was a no go, but at least told me there was a SQL server available somewhere.
 
@@ -81,7 +80,6 @@ Typing in something random just shows :code:`invalid key`. Ok, let me take a loo
 see where this thing goes.
 
 .. code:: html
-
 	
 	<center>
 	<form method="post" action="index.php">
@@ -133,6 +131,7 @@ try to :code:`sqlmap` the URL to see if there's any vulnerabilities there
 Result! Using this we can now dump the databasenames, tables, and data in the DB
 
 (output shortened for clarity)
+
 .. code:: bash
 
 	root@kali:~# sqlmap -u http://192.168.56.101/kzMb5nVYJw/420search.php?usrtosearch=ramses --current-db

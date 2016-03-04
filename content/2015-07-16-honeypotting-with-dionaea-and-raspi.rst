@@ -19,7 +19,9 @@ during testing, it managed to collect 8 unique samples from 154 connections.
 
 Here's the stats from that period:
 
-.. image:: "http://i.imgur.com/j828Fpw.png"
+.. image:: http://i.imgur.com/j828Fpw.png
+    :width: 500px
+    :target: http://i.imgur.com/j828Fpw.png
 
 
 It should be fairly interesting to see if anything else comes along during its 
