@@ -21,9 +21,9 @@ Well, maybe, maybe not. But that's not the point I want to make here. While the
 don't provide you with something more valuable: exercise. I don't mean squats, or
 a big cardio session, I mean mental exercise. It's easy to fall into this trap
 
-> I've got to parse this text file, capitalise every 10th word, and add a new line
-> if the line is over 120 characters long. I wonder what the best way to do that is...
-> I'll just check <insert name of site here> and see what others have done.
+    I've got to parse this text file, capitalise every 10th word, and add a new line
+    if the line is over 120 characters long. I wonder what the best way to do that is...
+    I'll just check <insert name of site here> and see what others have done.
 
 That's great, no one is going to complain that you are being resourceful, and often
 project time constraints don't let you spend too much time designing and testing out 

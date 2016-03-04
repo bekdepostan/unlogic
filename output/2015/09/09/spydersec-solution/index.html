@@ -28,8 +28,9 @@
 		<div id="menu">
 			<div class="menu-navigation-container">
 				<ul id="menu-navigation" class="menu">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/about.html">About</a></li>
 						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/all-posts.html">All posts</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://twitter.com/binaryheadache">Twitter</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/svenito">Github</a></li>
 
 				</ul>
 			</div> <!--/#menu-navigation-container-->
@@ -52,7 +53,7 @@
 		<div class="entry-content">
 			<p>Another day, another VM. Today it's the <a class="reference external" href="https://www.vulnhub.com/entry/spydersec-challenge,128/">SpyderSec Challenge</a></p>
 <p>So let me start it up and get on it.</p>
-<img alt="" src="&quot;http://i.imgur.com/nah3Wah.gif&quot;" />
+<img alt="" src="http://i.imgur.com/nah3Wah.gif" />
 <p>As per usual I need the IP of the machine and
 the services it has running (if any). Straight from the Unlogic Cookbook</p>
 <pre class="code console literal-block">
@@ -88,7 +89,7 @@ Nmap done: 1 IP address (1 host up) scanned in 155.80 seconds</span>
 </pre>
 <p>Lucky me, only one service running, and it's good old http at that.
 Let's take a look at that page then:</p>
-<p><a class="reference external" href="http://i.imgur.com/IiA6MlY.png">{{&lt; figure src=&quot;http://i.imgur.com/IiA6MlY.png&quot; &gt;}}</a></p>
+<a class="reference external image-reference" href="http://i.imgur.com/IiA6MlY.png"><img alt="" src="http://i.imgur.com/IiA6MlY.png" style="width: 500px;" /></a>
 <p>Without wasting much time, let's get to the clue hunting. First things first: check the source.
 And there's clue number one, right between those script tags. It evals a function which seems to
 do some text processing. I'll open Firebug to see if that shows anything interesting, and sure
@@ -143,8 +144,9 @@ not encoded anymore. I make a note of it and carry on sleuthing.</p>
 <p>Watch out, here comes the reliable <code>dirbuster</code>. Running it with the regular word list I discover the <code>v</code> subdirectory.
 Browsing to that however merely responds with a <code>403 Forbidden</code> reply. I've not exhausted all the
 nooks and crannies yet, there's still that cookie jar to poke at.</p>
-<blockquote>
-Firebug -&gt; Cookie tab -&gt; URI /v/81JHPbvyEQ8729161jd6aKQ0N4/</blockquote>
+<pre class="code text literal-block">
+Firebug -&gt; Cookie tab -&gt; URI /v/81JHPbvyEQ8729161jd6aKQ0N4/
+</pre>
 <p>Another clue.... leading me to a subdirectory under <code>v</code>. But that's also forbidden. Well, let
 me just plug some of the data we've found so far into it. The random characters from the
 exif data result in a 404, but the string from the javascript alert box however brings up a
@@ -166,8 +168,8 @@ mulder.fbi.1            100%[===============================&gt;]  13.31M  5.52M
 </pre>
 <p>A video file, which when I play it, is the song &quot;Twilight Time&quot; by &quot;The Platters&quot;.</p>
 <p>So here I hit another dead end.</p>
-<p>Let me think
-.. image:: &quot;<a class="reference external" href="http://i.imgur.com/CbfWCmv.gif">http://i.imgur.com/CbfWCmv.gif</a>&quot;</p>
+<p>Let me think</p>
+<img alt="" src="http://i.imgur.com/CbfWCmv.gif" />
 <p>I'll take inventory of the clues I have left now:</p>
 <ul class="simple">
 <li>A music video &quot;Twilight time&quot; titled <em>mulder.fbi</em></li>

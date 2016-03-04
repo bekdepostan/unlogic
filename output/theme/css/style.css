@@ -41,6 +41,12 @@ body {
 	padding-bottom: 10px;
 }
 
+dd {
+    padding-bottom: 10px;
+}
+dl {
+    text-align: left;
+}
 
 /* =Header
 ----------------------------------------------- */

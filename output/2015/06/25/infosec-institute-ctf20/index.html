@@ -28,8 +28,9 @@
 		<div id="menu">
 			<div class="menu-navigation-container">
 				<ul id="menu-navigation" class="menu">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/about.html">About</a></li>
 						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/all-posts.html">All posts</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://twitter.com/binaryheadache">Twitter</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/svenito">Github</a></li>
 
 				</ul>
 			</div> <!--/#menu-navigation-container-->
@@ -53,21 +54,21 @@
 			<p>The folks over at the <a class="reference external" href="https://infosecinstitute.com">Infosec Institue</a> have released
 their <a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/">second CTF</a>. Here's how I got on...</p>
 <div class="section" id="level-01">
-<h2>Level 01 #</h2>
+<h2>Level 01</h2>
 <p>In <a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex1.php">level 01</a> I am supposed
 to use the provided form to perform a cross site scripting exploit. Here's what the form
 looks like:</p>
-<img alt="" src="&quot;http://i.imgur.com/CJTNyK4.png&quot;" />
+<img alt="" src="http://i.imgur.com/CJTNyK4.png" />
 <p>At first I might as well test how the form works. Entering something like <code>test</code> and
 <code>www.test.com</code> in the fields simply adds the supplied information to the column on the left.
 So I try the usual XSS payload: <code>&lt;script&gt;alert(&quot;Ex1&quot;);&lt;/script&gt;</code> in the <code>Site Name</code> field.</p>
 <p>A popup tells me that I need to <em>match the requested format</em>. Probably some client side
 checks, so I inspect the field with Firebug and notice this:</p>
-<img alt="" src="&quot;http://i.imgur.com/f5KzFDx.png&quot;" />
+<img alt="" src="http://i.imgur.com/f5KzFDx.png" />
 <p>The field has a regular expression premitting only upper or lowercase characters. I can either
 delete this or just change it to <code>.+</code> so it matches any character.</p>
 <p>Now resubmitting the XSS payload works and the string is reflected on the page:</p>
-<img alt="" src="&quot;http://i.imgur.com/yvSc4To.png&quot;" />
+<img alt="" src="http://i.imgur.com/yvSc4To.png" />
 <p>However, there's no pop up. So there must be something else validating input. Heading back to the
 source I find some javscript in <code>ex1.js</code> which contains the following code:</p>
 <a class="reference external image-reference" href="http://i.imgur.com/VVe74tW.png"><img alt="" src="http://i.imgur.com/VVe74tW.png" /></a>
@@ -76,12 +77,12 @@ By clicking on the gutter in the source code I set a breakpoint on the line that
 my data. The Firebug debugger breaks on the line and I step over it. Sure enough <code>siteName</code> is not
 what I want it to be. Double clicking on the value in the right hand window allows me to edit it, and
 revert it back to what I want it to be. Then clicking continue I am rewarded with:</p>
-<img alt="" src="&quot;http://i.imgur.com/VEFDpio.png&quot;" />
+<img alt="" src="http://i.imgur.com/VEFDpio.png" />
 </div>
 <div class="section" id="level-02">
-<h2>Level 02 #</h2>
+<h2>Level 02</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex2.php">Level 02</a> is a simple web calculator:</p>
-<img alt="" src="&quot;http://i.imgur.com/asgTWCw.png&quot;" />
+<img alt="" src="http://i.imgur.com/asgTWCw.png" />
 <p>I'm supposed to use the form to print <code>phpinfo</code> or other data to the page. This is a PHP
 script evaluating a simple expression. I am guessing that it's going to be calling <code>eval</code>, as
 that's a fairly common vulnerability, and fits to how the page works. After entering some numbers
@@ -94,16 +95,16 @@ other thing under our control.</p>
 </pre>
 <p>So I need to change the operand to something that prints <code>phpinfo</code> but leaves the rest of the statement
 valid. With Firebug I can edit the value of the operand to the following:</p>
-<img alt="" src="&quot;http://i.imgur.com/8xnqMxv.png&quot;" />
+<img alt="" src="http://i.imgur.com/8xnqMxv.png" />
 <p>Hit submit and....</p>
-<img alt="" src="&quot;http://i.imgur.com/rUgaixe.png&quot;" />
+<img alt="" src="http://i.imgur.com/rUgaixe.png" />
 </div>
 <div class="section" id="level-03">
-<h2>Level 03 #</h2>
+<h2>Level 03</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex3.php">Level 03</a> provides me with a registration
 form and a login form. The instructions indicate that the data is stored in a delimited file and I need
 to sign up as a new user with admin rights.</p>
-<img alt="" src="&quot;http://i.imgur.com/f0g5TmV.png&quot;" />
+<img alt="" src="http://i.imgur.com/f0g5TmV.png" />
 <p>First things first, let's see if we can figure out the delimiter... Signing up and logging in
 shows us our name and current role: <code>role:normal</code>. This already tells me that the delimiter is not
 <code>:</code>. After fuzzing the input it turns out most characters are ok to use. So what's the delimeter?
@@ -119,10 +120,10 @@ name will be</p>
 role:admin</span>
 </pre>
 <p>And after a login with the new creds:</p>
-<img alt="" src="&quot;http://i.imgur.com/Akj9NL8.png&quot;" />
+<img alt="" src="http://i.imgur.com/Akj9NL8.png" />
 </div>
 <div class="section" id="level-04">
-<h2>Level 04 #</h2>
+<h2>Level 04</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex4.php">Level 04</a></p>
 <a class="reference external image-reference" href="http://i.imgur.com/nmRe8U2.png"><img alt="" src="http://i.imgur.com/nmRe8U2.png" /></a>
 <p>Here we need to load a php file instead of the text files that load when you click
@@ -147,10 +148,10 @@ This time we get an <em>invalid file</em> message, so that bypass worked. Now we
 <a class="reference external image-reference" href="http://i.imgur.com/WTFYtJi.png"><img alt="" src="http://i.imgur.com/WTFYtJi.png" /></a>
 </div>
 <div class="section" id="level-05">
-<h2>Level 05 #</h2>
+<h2>Level 05</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex5.php">Level 05</a> starts by telling
 me that I am not logged in.</p>
-<img alt="" src="&quot;http://i.imgur.com/BOBdkHX.png&quot;" />
+<img alt="" src="http://i.imgur.com/BOBdkHX.png" />
 <p>Well, I don't remember logging in, so that's not unusual. What is unusual is
 that the <code>login</code> button doesn't work. I'll quickly check the source code and notice
 that it's disabled, but also that it points to <code>login.html</code>. Enabling and clicking it
@@ -160,27 +161,27 @@ assume that if the user is successful on <code>login.html</code>, that page will
 this page will just assume that the user is allowed to be here.</p>
 <p>Using an intercepting proxy I'll edit the <code>Referer</code> field in the original request, so that
 it appears to be coming from the login page:</p>
-<img alt="" src="&quot;http://i.imgur.com/EK9u7Ir.png&quot;" />
+<img alt="" src="http://i.imgur.com/EK9u7Ir.png" />
 <p>Forward the request and</p>
-<img alt="" src="&quot;http://i.imgur.com/QCisDvN.png&quot;" />
+<img alt="" src="http://i.imgur.com/QCisDvN.png" />
 </div>
 <div class="section" id="level-06">
-<h2>Level 06 #</h2>
+<h2>Level 06</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex6.php">Level 06</a> shows a nice
 big text area with allowable HTML tags.</p>
-<img alt="" src="&quot;http://i.imgur.com/Waq1AVN.png&quot;" />
+<img alt="" src="http://i.imgur.com/Waq1AVN.png" />
 <p>This time I need to perform a cross site request forgery. This can be accomlished by an <code>href</code>
 tag, but trying this tells me that they are expecting something that will perform the request
 without the need for user interaction. Ok, fine, let's revisit the allowed tags. <code>img</code> looks useful, right?</p>
 <p>Let's try the following</p>
-<img alt="" src="&quot;http://i.imgur.com/qCd5NUP.png&quot;" />
+<img alt="" src="http://i.imgur.com/qCd5NUP.png" />
 <p>Yep, that's what we needed.</p>
 </div>
 <div class="section" id="level-07">
-<h2>Level 07 #</h2>
+<h2>Level 07</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex7.php">Level 07</a> is a login form on which
 we need to perform another XSS attack.</p>
-<img alt="" src="&quot;http://i.imgur.com/WO8dRpe.png&quot;" />
+<img alt="" src="http://i.imgur.com/WO8dRpe.png" />
 <p>Well, lucky for me I perform these challenges through a proxy which unhides hidden fields like
 the one you see there. Some investigation shows that the value of the hidden field comes from
 a php_self value. That is it uses whatever the URL part is to populate the field, so that form
@@ -193,9 +194,9 @@ By employing the <code>arg</code> paramater we can close the <code>input</code> 
 <p>Submitting that puts <code>username</code> on the page surrounded by <code>h1</code> tags and nabs the flag</p>
 </div>
 <div class="section" id="level-08">
-<h2>Level 08 #</h2>
+<h2>Level 08</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex8.php">Level 08</a></p>
-<img alt="" src="&quot;http://i.imgur.com/610ZNNq.png&quot;" />
+<img alt="" src="http://i.imgur.com/610ZNNq.png" />
 <p>Here we need to upload an image that will produce a javscript alert. First things first with these
 things I upload an image to see how it behaves. Once uploaded I click on the example links and notice that
 images are fetched via an id. The URL is</p>
@@ -224,14 +225,14 @@ for example? Maybe if I just reference the filename directly?</p>
 <p><a class="reference external" href="http://i.imgur.com/RVoJGMr.png">{ %img http://i.imgur.com/RVoJGMr.png %}</a></p>
 </div>
 <div class="section" id="level-09">
-<h2>Level 09 #</h2>
+<h2>Level 09</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex9.php">Level 09</a> starts off by showing me the
 details of one John Doe.</p>
-<img alt="" src="&quot;http://i.imgur.com/8NESmpB.png&quot;" />
+<img alt="" src="http://i.imgur.com/8NESmpB.png" />
 <p>I need to change something to make it show the details for Mary Jane. There's no URL parms,
 no login, so how can the page know who to show? There's one place left: the cookie jar.</p>
 <p>Using Firebug once again I inspect the cookies and sure enough</p>
-<img alt="" src="&quot;http://i.imgur.com/xGdtDa7.png&quot;" />
+<img alt="" src="http://i.imgur.com/xGdtDa7.png" />
 <p>This is &quot;JOHN+DOE&quot; encoded as base64 as it turns out. One thing to note is when you</p>
 <pre class="code console literal-block">
 <span class="go">echo Sk9ITitET0u= | base64 -d</span>
@@ -245,40 +246,40 @@ use echo with the <code>-n</code> flag:</p>
 <p>Editing the cookie and inserting that base64 string will show us Mary Jane's details.</p>
 </div>
 <div class="section" id="level-10">
-<h2>Level 10 #</h2>
+<h2>Level 10</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex10.php">Level 10</a> is a game and we need to
 edit its source so we look like we're really good at it.</p>
-<img alt="" src="&quot;http://i.imgur.com/g03njlQ.png&quot;" />
+<img alt="" src="http://i.imgur.com/g03njlQ.png" />
 <p>Entering anything in the name I field I have a poke around to see how the whole thing
 works. We're shown some coloured squares and then they are turn over. We need to then
 remember which colour each square had. Except we need to do it at least 9999 times and
 at the extreme level, which only shows us the squares for a second.</p>
 <p>Finding the square colours isn't hard. With Firebug we can see:</p>
-<img alt="" src="&quot;http://i.imgur.com/isDO7LM.png&quot;" />
+<img alt="" src="http://i.imgur.com/isDO7LM.png" />
 <p>and those numbers are 0 indexed into the list of numbers from the selction popup. So playing
 along I can win one game. So let's find out where my current win/loss count is stored.</p>
 <p>In the Javscript I find a structure that does this:</p>
-<img alt="" src="&quot;http://i.imgur.com/gZghIIn.png&quot;" />
+<img alt="" src="http://i.imgur.com/gZghIIn.png" />
 <p>but all this does is increment and decrement the values. Clearly that data is stored somewhere.
 Turns out that this <code>localstorage</code> is in the DOM. Using the <em>DOM</em> tab in Firebug I can find
 the structure and its data:</p>
-<img alt="" src="&quot;http://i.imgur.com/xGIZXpb.png&quot;" />
+<img alt="" src="http://i.imgur.com/xGIZXpb.png" />
 <p>Now I can edit the number of wins and then, all I need to do is play one more game to take the flag.</p>
 </div>
 <div class="section" id="level-11">
-<h2>Level 11 #</h2>
+<h2>Level 11</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex11.php">Level 11</a> blacklists me</p>
-<img alt="" src="&quot;http://i.imgur.com/RaGy98O.png&quot;" />
+<img alt="" src="http://i.imgur.com/RaGy98O.png" />
 <p>Awwwww I was having such fun. But how? Not from my IP, as that's going to change. First thing
 to check: cookie jar. Yay!</p>
-<img alt="" src="&quot;http://i.imgur.com/QgGrvwE.png&quot;" />
+<img alt="" src="http://i.imgur.com/QgGrvwE.png" />
 <p>There it is, a big <code>no</code>. I'll change that to a <code>yes</code>, reload and take the flag, thanks very much.</p>
 </div>
 <div class="section" id="level-12">
-<h2>Level 12 #</h2>
+<h2>Level 12</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex12.php">Level 12</a> is a bruteforce challange. No
 login attempt limits, no rate limits, so it's ripe for the picking.</p>
-<img alt="" src="&quot;http://i.imgur.com/LMUBNoq.png&quot;" />
+<img alt="" src="http://i.imgur.com/LMUBNoq.png" />
 <p>After searching for the suggested password list, the first hit is the Openwall password list for
 john the ripper. So why not download it and give it a try?</p>
 <p>I fire up <code>wfuzz</code> with the following commandline</p>
@@ -288,11 +289,11 @@ john the ripper. So why not download it and give it a try?</p>
 <p>Within a few seconds I get a hit with <code>princess</code>. Enter that with the username <code>admin</code> and onto the next level</p>
 </div>
 <div class="section" id="level-13">
-<h2>Level 13 #</h2>
+<h2>Level 13</h2>
 <p><a class="reference external" href="http://ctf.infosecinstitute.com/ctf2/exercises/ex13.php?redirect=ex13-task.php">Level 13</a> is actually
 redirect to <code>ex13-task.php</code>. I need to make the redirect point to an external page so that to another user
 it looks like they are visiting <code>ctf.infosecinstitute.com</code> but are infact taken to another site</p>
-<img alt="" src="&quot;http://i.imgur.com/jNgQ4Ww.png&quot;" />
+<img alt="" src="http://i.imgur.com/jNgQ4Ww.png" />
 <p>Well the obvious thing is just to try and type in another URL <code>http://ctf.infosecinstitute.com/ctf2/exercises/ex13.php?redirect=http://unlogic.co.uk</code>
 but that gives me an error. Hrmm... trying a few other redirect options tells me that the redirect is URL
 relative, which means if I strip off the protocol off the URL, I should be able to make this work:</p>

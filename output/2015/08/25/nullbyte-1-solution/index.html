@@ -28,8 +28,9 @@
 		<div id="menu">
 			<div class="menu-navigation-container">
 				<ul id="menu-navigation" class="menu">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/about.html">About</a></li>
 						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages/all-posts.html">All posts</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://twitter.com/binaryheadache">Twitter</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/svenito">Github</a></li>
 
 				</ul>
 			</div> <!--/#menu-navigation-container-->
@@ -73,7 +74,7 @@ Service Info: OS: Linux<span class="p">;</span> CPE: cpe:/o:linux:linux_kernel
 <p>HTTP server on 80 and ssh on 777. I'm going to take the straightforward one, and head
 to the HTTP server first.</p>
 <p>Upon opening the page I only get an image and some text</p>
-<img alt="" src="&quot;http://i.imgur.com/SlVGKol.png&quot;" />
+<img alt="" src="http://i.imgur.com/SlVGKol.png" />
 <p>I ran <code>dirbuster</code> on the root and got a couple of hits: <code>uploads</code> and <code>phpmyadmin</code>. The first had disabled directory listing
 and the second was a no go, but at least told me there was a SQL server available somewhere.</p>
 <p>The source of the page doesn't reveal anything else either, so that last place we might be able to find something

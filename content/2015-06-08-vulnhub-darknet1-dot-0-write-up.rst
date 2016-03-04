@@ -522,6 +522,7 @@ Using Burp suite I use a :code:`GET` request to :code:`sec.php`, send it to :cod
 it to a :code:`POST` request with the required payload:
 
 .. image:: http://i.imgur.com/kiutbRt.png
+    :width: 500px
 
 
 Then I, once again, browse to my DAws url and bind a shell to finally get:

@@ -23,8 +23,8 @@ ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 PYGMENTS_RST_OPTIONS = {'classprefix': 'hll'}
 
 DISQUS_SITENAME = 'unlogic'
-#GITHUB_HANDLE = 'svenito'
-#TWITTER_HANDLE = 'binaryheadache'
+GITHUB_HANDLE = 'svenito'
+TWITTER_HANDLE = 'binaryheadache'
 
 COLOR_SCHEME_CSS = 'monokai.css'
 
@@ -46,7 +46,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = ()#('Pelican', 'http://getpelican.com/'),
+LINKS = (('Twitter', 'https://twitter.com/binaryheadache'),
+         ('Github', 'https://github.com/svenito'))
+        #('Pelican', 'http://getpelican.com/'),
          #('Python.org', 'http://python.org/'),
          #('Jinja2', 'http://jinja.pocoo.org/'),
          #('You can modify those links in your config file', '#'),)
