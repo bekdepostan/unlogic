@@ -35,9 +35,6 @@ STATIC_PATHS = ['images', 'extra/CNAME', 'extra/favicon.ico']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
                        'extra/favicon.ico': {'path': 'favicon.ico'},}
 
-FEED_ATOM = 'post/index.xml'
-FEED_RSS = 'feed.xml'
-
 TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG = u'en'

@@ -13,8 +13,9 @@ from pelicanconf import *
 SITEURL = 'http://unlogic.co.uk'
 RELATIVE_URLS = False
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+FEED_DOMAIN = 'http://unlogic.co.uk'
+FEED_ATOM = 'feed.xml'
+FEED_RSS = 'rss.xml'
 
 DELETE_OUTPUT_DIRECTORY = True
 
