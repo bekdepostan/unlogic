@@ -31,7 +31,8 @@ TWITTER_HANDLE = 'binaryheadache'
 COLOR_SCHEME_CSS = 'monokai.css'
 
 PATH = 'content'
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['images', 'extra/CNAME']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
 FEED_ATOM = 'post/index.xml'
 FEED_RSS = 'feed.xml'
