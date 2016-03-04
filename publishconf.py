@@ -10,8 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-#SITEURL = 'http://unlogic.co.uk'
-SITEURL = 'https://svenito.github.io/pelcian-test'
+SITEURL = 'http://unlogic.co.uk'
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
