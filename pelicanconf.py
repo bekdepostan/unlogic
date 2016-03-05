@@ -31,9 +31,10 @@ TWITTER_HANDLE = 'binaryheadache'
 COLOR_SCHEME_CSS = 'monokai.css'
 
 PATH = 'content'
-STATIC_PATHS = ['images', 'extra/CNAME', 'extra/favicon.ico']
+STATIC_PATHS = ['images', 'extra/CNAME', 'extra/favicon.ico', 'extra/keybase.txt']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
-                       'extra/favicon.ico': {'path': 'favicon.ico'},}
+                       'extra/favicon.ico': {'path': 'favicon.ico'},
+                       'extra/keybase.txt': {'path': 'keybase.txt'},}
 
 TIMEZONE = 'Europe/London'
 
