@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 # nest, blueidea, clean-blog, pelican-cait
-THEME = "../pelican-chunk"
+THEME = "theme/pelican-chunk"
 
 AUTHOR = u'Sven Steinbauer'
 SINGLE_AUTHOR = True
@@ -27,6 +27,7 @@ PYGMENTS_RST_OPTIONS = {'classprefix': 'hll'}
 DISQUS_SITENAME = 'unlogic'
 GITHUB_HANDLE = 'svenito'
 TWITTER_HANDLE = 'binaryheadache'
+KEYBASE_HANDLE = 'svenito'
 
 COLOR_SCHEME_CSS = 'monokai.css'
 
