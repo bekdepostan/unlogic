@@ -1,4 +1,3 @@
-==================================================================
 https://keybase.io/svenito
 --------------------------------------------------------------------
 
@@ -6,18 +5,16 @@ I hereby claim:
 
   * I am an admin of http://unlogic.co.uk
   * I am svenito (https://keybase.io/svenito) on keybase.
-  * I have a public key with fingerprint D93F 7336 D153 F0D6 BAB8  1565 3CC3 1B88 AEE7 4A58
+  * I have a public key with fingerprint 48D7 41EB 5838 B174 83D4  DECF 5F5E 5288 41A7 43E2
 
-To do so, I am signing this object:
+To claim this, I am signing this object:
 
 {
     "body": {
         "key": {
-            "eldest_kid": "0101db3a98db943b55c3da7b14fdd4463a296ed38c3b005b0e2107b6e86ca47d18850a",
-            "fingerprint": "d93f7336d153f0d6bab815653cc31b88aee74a58",
+            "fingerprint": "48d741eb5838b17483d4decf5f5e528841a743e2",
             "host": "keybase.io",
-            "key_id": "3cc31b88aee74a58",
-            "kid": "0101db3a98db943b55c3da7b14fdd4463a296ed38c3b005b0e2107b6e86ca47d18850a",
+            "key_id": "5f5e528841a743e2",
             "uid": "e77f7c3389dda8829df0edbaf34fa600",
             "username": "svenito"
         },
@@ -28,36 +25,35 @@ To do so, I am signing this object:
         "type": "web_service_binding",
         "version": 1
     },
-    "ctime": 1457218446,
+    "ctime": 1414487981,
     "expire_in": 157680000,
-    "prev": "54b4c65733614c4f7e3e78f3c345b373c4e5507a77eb5dc82b3f9b9345f486d7",
-    "seqno": 20,
+    "prev": "984caccdba9a52f9e72fd7226a804cbd5c30cec3ea932d70d32878c5889bf799",
+    "seqno": 2,
     "tag": "signature"
 }
 
-which yields the signature:
+with the aforementioned key, yielding the PGP signature:
 
 -----BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v2.0.51
+Version: Keybase OpenPGP v1.1.3
 Comment: https://keybase.io/crypto
 
-yMInAnicrVJbbAxRGN6i6KYVl0aIB8lEaXQ1M3vOmXNmQwQvUpdWSFPXNecya9Ka
-2e7O7rZpGyEi6lK8dKlK3MWDRgQPiliVEERChAgSjUsfBJEWlVDONLx5dF5Ozv9/
-33e+789/q2hkIJg3t2fazq6+ipq8e7lsKlD9nLU1KdTljUqkSakVw5eo4yLpRWtt
-rkQUVVM1ToFpEE4NCChCDHATUw1anEOoAzNs6IIDwgBVVURVEdZUTHVBdGZCzDVC
-kGoqIcWynZhIxBO240lZbgALA6BzDQFL5To1KdGQjgBjQKOEmEJgaCIiiZvcpM+Q
-5qiZFOW2K2vyER229w/8f/adGpYTGFuYAUAMzk1Cwga3VMGpaQFombqq+sCkSDjm
-ZiHRybRwbM9VWkKKLKZtJvy5+kH+AFJOnRuzWTlzy1O1khtPuJ7L3DrZ2uR58YjP
-9BrjPjQjaPSPSJTaDpdjlIS0SCRt11EimkQyz/ZVNYhwWCMyXEgRDXE7IaK2j0BY
-J6o8/jciLSURpJDpyJ+/Bhm0sAACEwswABEFGDAoEFKxibGgiDMSpsAyqCG7FiQ6
-x4ofq95xlUhYinpmzI9sxxzTSyWE0nLzxrpRgbxgYHT+CH+/AsGC8X+3Lrh3bKC1
-b+OtFbnQ8dEzwM8JO44uyaYy8x6+yPY2L/p1Nnv/dc/qH5O25w12lmaOtTcvbzwx
-sOFMUYWYD9uyi2Nj0h2f7zy5vuXDxceDsy5v/Vbs8cfF/blQb/ub+VNXdisBBbTs
-e95++tIAOnG7Z2ImN+h1J99Wua1rJx+ub/7kdKx/cGncyWsLu5teTLz68cdIMmpK
-35z35Mmr0kjvsZILle9ju7e1Bav3o6GZVUOr2mvn0l1TLj79aZV8XdaVmz317p5n
-c4zNx480eKUHoPVmwaErh2DxYFnV0m3jm86fml7U+aiwcyiTrqo5+KAyf+nr6IK7
-X/pf6qym8lzZmuLC8Lt1Bd8/Fs78DYjTQtk=
-=wDUd
+yMHuAnicbZFdSBRRFMd3K0VXDBMi6ENq7EHKltn52LmzkoFlUJg+qGQobDN37uyO
+rjPr7uz6XUiYCEkbQZYWBaXZx/ZBSSB+LKZtIYWGIUUPlmhZiS71UILRnbC37svh
+nvP7/885nJHktSaLefpU7Hjc+PtB81gkFjAVFTjD9YSoSbWEo56oQH+DrKgu5PP6
+FFUnHAQDJI6xIZEFNBBtHANoiZEQlFmZRSwFAGMTOIZGFJFJuDW/ocA2ouBHVkXD
+OfxxKhLO/ocP/C0gjpM5SNOAlyQBAIqXZBJJoiDTjCzYSdIA/cinCpUI0/4gUhVd
+IxozCZwMKhAZIxudV4GA6tFcCrRCzRqowFqvT9M1qHlwya3rXoeh1Gu9BlqNROeq
+iVNUVAnvjQVB5PMrmko4bJiEumK42hgbwwCOB7ZMAtV4FR9yKgbBcnZA4me0QUFs
+yQMGChDi8XmBpWQecZQscRRlFwDJQFFiIU1CBGkk8DQlcaREU4ADkAWAF2WO5wlj
+rSpVIxwUHlNwGRsrLlXQAz5ENA5HytaZzBZTfNwa43ImS2LKv3vW1SSYbrsvjadF
+T26bfDE3sO/33fwLs1m7S9vehprOdzLCpJp2ru/qVuUdNdsS7mnuGJyZ+nJnyF3n
+785aKGk0d5fPfchLjk9NWprlep4ObV/wP1sfCyZcb9obuhKmJqKpLcsbOvt6neJ8
+K2WdWM7LeJXrHjjbVfowWrRSPLI5Ozp8xrl46Gf4zZZjS9M1BY97b05+u9i9c09s
+tGfsY2c7HfNk51v6PcX77z/ZmHag/Fft1OiJl82t7afLZqQdVTmbvEdKDi82LBOh
+/qO533eNHnxdp4ZSFgsbpn9ExuarCx9l3Oq6kXyPS18JmZ+bc0rbPpFF6Snwwdek
+hcrLkZWGRHvH52t/AOiXH6w=
+=kpgk
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
@@ -66,4 +62,3 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/svenito
 
 ==================================================================
-
