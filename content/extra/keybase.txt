@@ -1,3 +1,4 @@
+==================================================================
 https://keybase.io/svenito
 --------------------------------------------------------------------
 
@@ -5,18 +6,25 @@ I hereby claim:
 
   * I am an admin of http://unlogic.co.uk
   * I am svenito (https://keybase.io/svenito) on keybase.
-  * I have a public key with fingerprint 48D7 41EB 5838 B174 83D4  DECF 5F5E 5288 41A7 43E2
+  * I have a public key with fingerprint D93F 7336 D153 F0D6 BAB8  1565 3CC3 1B88 AEE7 4A58
 
-To claim this, I am signing this object:
+To do so, I am signing this object:
 
 {
     "body": {
         "key": {
-            "fingerprint": "48d741eb5838b17483d4decf5f5e528841a743e2",
+            "eldest_kid": "0101db3a98db943b55c3da7b14fdd4463a296ed38c3b005b0e2107b6e86ca47d18850a",
+            "fingerprint": "d93f7336d153f0d6bab815653cc31b88aee74a58",
             "host": "keybase.io",
-            "key_id": "5f5e528841a743e2",
+            "key_id": "3cc31b88aee74a58",
+            "kid": "0101db3a98db943b55c3da7b14fdd4463a296ed38c3b005b0e2107b6e86ca47d18850a",
             "uid": "e77f7c3389dda8829df0edbaf34fa600",
             "username": "svenito"
+        },
+        "revoke": {
+            "sig_ids": [
+                "c4fefe9335bf0aff86c0109d4144e098e63a13dfda8693272dae8857bc8aa5e80f"
+            ]
         },
         "service": {
             "hostname": "unlogic.co.uk",
@@ -25,35 +33,38 @@ To claim this, I am signing this object:
         "type": "web_service_binding",
         "version": 1
     },
-    "ctime": 1414487981,
+    "ctime": 1457429375,
     "expire_in": 157680000,
-    "prev": "984caccdba9a52f9e72fd7226a804cbd5c30cec3ea932d70d32878c5889bf799",
-    "seqno": 2,
+    "prev": "3753687e8e72620231d78a9f31140baa024287d1ed4d63c687fdc3dfeea52667",
+    "seqno": 22,
     "tag": "signature"
 }
 
-with the aforementioned key, yielding the PGP signature:
+which yields the signature:
 
 -----BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v1.1.3
+Version: Keybase OpenPGP v2.0.51
 Comment: https://keybase.io/crypto
 
-yMHuAnicbZFdSBRRFMd3K0VXDBMi6ENq7EHKltn52LmzkoFlUJg+qGQobDN37uyO
-rjPr7uz6XUiYCEkbQZYWBaXZx/ZBSSB+LKZtIYWGIUUPlmhZiS71UILRnbC37svh
-nvP7/885nJHktSaLefpU7Hjc+PtB81gkFjAVFTjD9YSoSbWEo56oQH+DrKgu5PP6
-FFUnHAQDJI6xIZEFNBBtHANoiZEQlFmZRSwFAGMTOIZGFJFJuDW/ocA2ouBHVkXD
-OfxxKhLO/ocP/C0gjpM5SNOAlyQBAIqXZBJJoiDTjCzYSdIA/cinCpUI0/4gUhVd
-IxozCZwMKhAZIxudV4GA6tFcCrRCzRqowFqvT9M1qHlwya3rXoeh1Gu9BlqNROeq
-iVNUVAnvjQVB5PMrmko4bJiEumK42hgbwwCOB7ZMAtV4FR9yKgbBcnZA4me0QUFs
-yQMGChDi8XmBpWQecZQscRRlFwDJQFFiIU1CBGkk8DQlcaREU4ADkAWAF2WO5wlj
-rSpVIxwUHlNwGRsrLlXQAz5ENA5HytaZzBZTfNwa43ImS2LKv3vW1SSYbrsvjadF
-T26bfDE3sO/33fwLs1m7S9vehprOdzLCpJp2ru/qVuUdNdsS7mnuGJyZ+nJnyF3n
-785aKGk0d5fPfchLjk9NWprlep4ObV/wP1sfCyZcb9obuhKmJqKpLcsbOvt6neJ8
-K2WdWM7LeJXrHjjbVfowWrRSPLI5Ozp8xrl46Gf4zZZjS9M1BY97b05+u9i9c09s
-tGfsY2c7HfNk51v6PcX77z/ZmHag/Fft1OiJl82t7afLZqQdVTmbvEdKDi82LBOh
-/qO533eNHnxdp4ZSFgsbpn9ExuarCx9l3Oq6kXyPS18JmZ+bc0rbPpFF6Snwwdek
-hcrLkZWGRHvH52t/AOiXH6w=
-=kpgk
+yMJ1AnicrZJhaFZVGMffZZqOcm5W2yqdndIPNta599x7zrkvjcggNB3EPjhJ7eWc
+e57z7vJu9767977veidTIhjLomKhhFa0hlCUGwvxQzpRJ6T0ZRArgjGQDBWytISE
+Cjp32Lc+dr9c7rn/5///ned5LjywLFdf98zso6OTV1/cVffNud8ruZ2LRw/sQzJS
+NZTfh0qw9II+BUlaKAUK5RG2sKUkER5X0nOIdF2fKMGk5WilHIcSYXsUFOE+kRi7
+EoNtYSYpcOoLhymLcxcL1I50EBYhLsdBmBpb5RHNCKHKconGikohueVSl/g+sSTn
+AoA5wuWmsDdKsgoDJ0UCHUFkzsxHYQnvP/T/M3dlyQ4Y08wnhHtKCc5tT2kMSgpN
+HC0oxpkwgTgU/WDUSRXCII3QcDuKoRqVIGtrEhQNc4Lyu5HvaNDgEeJKjYXWJtPw
+esqxHAewx8HgWURpE0U9YjNbCTA8TPpcCBc41miv8TaB1cBfMs+adDe8EvZFxcDv
+8KOOSslwleMojfyoz/zqTdNyPqNKa+VMOgiycNekIINQmRGZgirESRCFKG8ZpZ8G
+mavluMyxPcLcdgSvloMYCkGmcBnl2DxZDFSzgTCXUM6AA7OpjW1iKcaFp4llOVgK
+gW3H5qa9oBxFiW+kWpnJaADh2pQylF1rIIxQ3rYNpyhm7QyKoUgrMaDh82f33Jur
+q8+tWH5Ptru5+lVr/t3ouSfv+7sxvn/w1NALIz9d5+90z0yt7Vh89/TY2Oqzuy/T
+ry5PNs09Prym0NKw7qGTX584f/QOffbW1oXOK9cmvxh45dLDTx1pGGwdrZxZua3n
+5cHHJrs/7Un+bKgda+y/EbzZO75+amH+0HRxZDSl10++8cETUdf8tPvzts8bb5S3
+DxQ/1it/nNjy1sSRPY/URr7ftPft6eXF939bte6vY7PTH85ceW2xsEkcbHGax1pL
+rfnN4xubbv8wu/a7wsbO5raWbz9bHW84jYbmdtgYDu/vri12Pdf1x8TtzXFveuDX
+qZmL47Mr2j5Jl/U3ndhydWvzg+duvnfwo0N31v/y+pfP98Tzhxeude5vq7309PEd
+U0P/ABj1WZs=
+=Gz87
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
@@ -62,3 +73,4 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/svenito
 
 ==================================================================
+
