@@ -27,7 +27,7 @@ PYGMENTS_RST_OPTIONS = {'classprefix': 'hll'}
 DISQUS_SITENAME = 'unlogic'
 GITHUB_HANDLE = 'svenito'
 TWITTER_HANDLE = 'binaryheadache'
-KEYBASE_HANDLE = 'svenito'
+# KEYBASE_HANDLE = 'svenito'
 
 COLOR_SCHEME_CSS = 'monokai.css'
 
