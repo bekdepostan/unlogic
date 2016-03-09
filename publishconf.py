@@ -10,10 +10,10 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'http://unlogic.co.uk'
+SITEURL = 'https://unlogic.co.uk'
 RELATIVE_URLS = False
 
-FEED_DOMAIN = 'http://unlogic.co.uk'
+FEED_DOMAIN = 'https://unlogic.co.uk'
 FEED_ATOM = 'feed.xml'
 FEED_RSS = 'rss.xml'
 
