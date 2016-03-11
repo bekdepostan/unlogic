@@ -2009,7 +2009,7 @@ introduce too many variables.&lt;/p&gt;
 &lt;p&gt;I'll be basing the calculations of a few assumptions:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Hashes are SHA256&lt;/li&gt;
-&lt;li&gt;We have a &lt;em&gt;reasonable&lt;/em&gt; PC available (1x NVidia gtx580), managing 355 Mh/s (355,000,000 hashes/s) (&lt;a class="reference external" href="https://hashcat.net/oclhashcat/#performance)"&gt;ref&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;We have a &lt;em&gt;reasonable&lt;/em&gt; PC available (1x NVidia gtx580), managing 355 Mh/s (355,000,000 hashes/s) (&lt;a class="reference external" href="https://hashcat.net/oclhashcat/#performance"&gt;ref&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;These are pure bruteforce attacks. No wordlists, permutation or combination attacks&lt;/li&gt;
 &lt;li&gt;Timings for each attack assume &lt;em&gt;worst case&lt;/em&gt;. i.e. we have to run through all guesses.
 Usually an attack stops when a valid match is found, shortening the attack.&lt;/li&gt;
