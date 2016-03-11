@@ -52,7 +52,7 @@ introduce too many variables.
 I'll be basing the calculations of a few assumptions:
 
 * Hashes are SHA256
-* We have a *reasonable* PC available (1x NVidia gtx580), managing 355 Mh/s (355,000,000 hashes/s) (`ref <https://hashcat.net/oclhashcat/#performance)>`_
+* We have a *reasonable* PC available (1x NVidia gtx580), managing 355 Mh/s (355,000,000 hashes/s) (`ref <https://hashcat.net/oclhashcat/#performance>`_)
 * These are pure bruteforce attacks. No wordlists, permutation or combination attacks
 * Timings for each attack assume *worst case*. i.e. we have to run through all guesses.
   Usually an attack stops when a valid match is found, shortening the attack.
