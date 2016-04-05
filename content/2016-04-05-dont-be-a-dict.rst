@@ -8,7 +8,7 @@ Don't be a dict
 You're probably familiar with the :code:`__dict__` attribute of Python 
 classes. If not, it basically lists that object's attributes.
 
-.. code-block:: python
+.. code:: python
 
     >>> class A():
     ...     var = 0
@@ -22,15 +22,19 @@ So why is this useful? Well I recently used this to allow users
 to leverage a member variable to define an element in a path. The class
 computes a path and the user can use it like this
 
-.. code-block:: python
+.. code:: python
 
-    the_class.path = {'new_path': 'computed_path}/myfolder'}
+    the_class.path = {'new_path': '{computed_path}/myfolder'}
 
 and in the code it would do
 
-.. code-block:: python
+.. code:: python
 
     user_path = new_path.format(**self.__dict__)
+
+This will replace the :code:`{computed_path}` in the string (new_path)
+with the value from :code:`self.computed_path`, or specifically,
+:code:`self.__dict__['computed_path']`
 
 Of course :code:`self` has a :code:`computed_path` member variable.
 
