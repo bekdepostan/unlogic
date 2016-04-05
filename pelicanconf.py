@@ -65,6 +65,7 @@ SOCIAL = (('Github', 'https://github.com/svenito'),
 
 DEFAULT_PAGINATION = 10
 
+PLUGIN_PATHS = ['plugins']
 PLUGINS = ['pelicanfly',
            'pelican_gist' ]
 # Uncomment following line if you want document-relative URLs when developing
