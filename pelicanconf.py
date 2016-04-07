@@ -34,11 +34,14 @@ COLOR_SCHEME_CSS = 'monokai.css'
 
 PATH = 'content'
 STATIC_PATHS = ['images', 'extra/CNAME', 'extra/favicon.ico', 'extra/keybase.txt',
-                'extra/sven_unlogic.asc']
+                'extra/sven_unlogic.asc',
+                'extra/.well-known/acme-challenge/KBwpWJ61Qfln1wLxSFKelofWbktKhkJ7I5EqXbPnXm4']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
                        'extra/favicon.ico': {'path': 'favicon.ico'},
                        'extra/keybase.txt': {'path': 'keybase.txt'},
-                       'extra/sven_unlogic.asc': {'path': 'sven_unlogic.asc'},}
+                       'extra/sven_unlogic.asc': {'path': 'sven_unlogic.asc'},
+                       'extra/.well-known/acme-challenge/KBwpWJ61Qfln1wLxSFKelofWbktKhkJ7I5EqXbPnXm4': {'path': '.well-known/acme-challenge/KBwpWJ61Qfln1wLxSFKelofWbktKhkJ7I5EqXbPnXm4'},
+                       }
 
 TIMEZONE = 'Europe/London'
 
