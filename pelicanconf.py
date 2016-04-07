@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 # nest, blueidea, clean-blog, pelican-cait
 THEME = "theme/pelican-chunk"
+CSS_FILE = 'style.css'
 
 AUTHOR = u'Sven Steinbauer'
 SINGLE_AUTHOR = True
